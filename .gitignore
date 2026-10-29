@@ -5,6 +5,7 @@ __pycache__/
 _scratch*/
 _to_delete/
 RELEASE_PROMPT.md
+print.prt
 # external data placed locally (see README)
 external/
 data/DEMs/
