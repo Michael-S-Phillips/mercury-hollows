@@ -1,0 +1,172 @@
+{
+ "isolated": {
+  "peak": {
+   "d": 20.98,
+   "ci": [
+    14.65,
+    27.69
+   ]
+  },
+  "floor": {
+   "d": 7.17,
+   "ci": [
+    4.87,
+    10.11
+   ]
+  },
+  "wall_eq": {
+   "d": 1.63,
+   "ci": [
+    0.99,
+    2.47
+   ]
+  },
+  "wall_pole": {
+   "d": 1.89,
+   "ci": [
+    1.08,
+    2.95
+   ]
+  },
+  "wall": {
+   "d": 1.76,
+   "ci": [
+    1.15,
+    2.58
+   ]
+  },
+  "N": 211,
+  "craters_with_wall_hollows": 77,
+  "craters_with_peak_hollows": 71
+ },
+ "inside_Orgel_basin_only": {
+  "peak": {
+   "d": 11.96,
+   "ci": [
+    5.35,
+    19.65
+   ]
+  },
+  "floor": {
+   "d": 8.82,
+   "ci": [
+    3.99,
+    14.65
+   ]
+  },
+  "wall_eq": {
+   "d": 3.4,
+   "ci": [
+    1.36,
+    6.33
+   ]
+  },
+  "wall_pole": {
+   "d": 1.94,
+   "ci": [
+    1.18,
+    2.82
+   ]
+  },
+  "wall": {
+   "d": 2.67,
+   "ci": [
+    1.43,
+    4.46
+   ]
+  },
+  "N": 73,
+  "craters_with_wall_hollows": 40,
+  "craters_with_peak_hollows": 18
+ },
+ "inside_larger_Herrick_crater": {
+  "peak": {
+   "d": 7.44,
+   "ci": [
+    3.01,
+    14.24
+   ]
+  },
+  "floor": {
+   "d": 13.16,
+   "ci": [
+    8.31,
+    20.5
+   ]
+  },
+  "wall_eq": {
+   "d": 11.38,
+   "ci": [
+    4.04,
+    22.39
+   ]
+  },
+  "wall_pole": {
+   "d": 4.04,
+   "ci": [
+    2.26,
+    6.67
+   ]
+  },
+  "wall": {
+   "d": 7.74,
+   "ci": [
+    3.42,
+    13.88
+   ]
+  },
+  "N": 68,
+  "craters_with_wall_hollows": 34,
+  "craters_with_peak_hollows": 17
+ },
+ "inside_larger_Herrick_crater_no_SholemAleichem": {
+  "peak": {
+   "d": 7.49,
+   "ci": [
+    3.15,
+    15.09
+   ]
+  },
+  "floor": {
+   "d": 13.26,
+   "ci": [
+    8.07,
+    21.31
+   ]
+  },
+  "wall_eq": {
+   "d": 7.05,
+   "ci": [
+    2.9,
+    13.27
+   ]
+  },
+  "wall_pole": {
+   "d": 3.96,
+   "ci": [
+    2.05,
+    6.89
+   ]
+  },
+  "wall": {
+   "d": 5.52,
+   "ci": [
+    2.72,
+    9.83
+   ]
+  },
+  "N": 67,
+  "craters_with_wall_hollows": 33,
+  "craters_with_peak_hollows": 17
+ },
+ "filled_y": {
+  "peak": 4.73,
+  "floor": 2.68,
+  "wall": 2.92
+ },
+ "filled_n": {
+  "peak": 22.59,
+  "floor": 12.0,
+  "wall": 2.63
+ }
+}

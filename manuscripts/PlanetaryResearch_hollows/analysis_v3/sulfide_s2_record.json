@@ -1,0 +1,32 @@
+{
+ "pS2_bar": 1e-06,
+ "T_K": {
+  "FeS -> Fe(s) + 1/2 S2": 1186,
+  "MgS -> Mg(g) + 1/2 S2 (congruent)": 1471,
+  "CaS -> Ca(g) + 1/2 S2 (congruent)": 1911,
+  "MgS + 1/2 SiO2 -> MgO + 1/2 Si + 1/2 S2": 1930,
+  "MgS + 1/2 SiO2 -> MgO + 1/2 Si + 1/2 S2, a_Si=0.01": 1693,
+  "CaS + 1/2 SiO2 -> CaO + 1/2 Si + 1/2 S2": 2590,
+  "CaS + 1/2 SiO2 -> CaO + 1/2 Si + 1/2 S2, a_Si=0.01": 2282
+ },
+ "iron_budget": {
+  "Fe_wt_pct": 1.5,
+  "max_S_wt_pct": 0.86,
+  "source_to_layer_volume_ratio_10volpct_S": [
+   8.6,
+   8.0
+  ]
+ },
+ "vapor_overburden_depth_m": {
+  "718K_rho2000": 18.6,
+  "718K_rho3000": 12.4,
+  "750K_rho2000": 31.9,
+  "750K_rho3000": 21.3,
+  "800K_rho2000": 67.7,
+  "800K_rho3000": 45.1
+ },
+ "mercury_day_lowering": {
+  "m_per_1e5yr": 2.0,
+  "um_per_solar_day": 9.6
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "task": "SSS v7: two catalog tests of the insolation-driven deep-devolatilization (karst) model",
+ "date": "2026-10-23",
+ "thermal_model": {
+  "description": "1-D heat equation over the 176-day solar day, 3:2 spin-orbit resonance, e=0.2056, obliquity ignored, Bond albedo 0.09, emissivity 0.95, thermal inertia 47 J m-2 K-1 s-0.5. Driven to radiative steady state by a flux-balance accelerator; deep-layer temperature = mean annual surface temperature.",
+  "validation": "peak equilibrium T 702 K at the hot-pole equator and 570 K at the warm pole, matching published values",
+  "mean_annual_T_K": {
+   "equator_hot_pole": 329.1,
+   "equator_warm_pole": 266.8,
+   "lat60_hot": 290.5,
+   "lat75_hot": 259.2,
+   "lat85_warm": 181.9
+  }
+ },
+ "test_1_depth_vs_temperature": {
+  "data": "Blewett et al. 2016 shadow-length depths, n=2518, with pixel scale",
+  "prediction": "diffusion-limited relief h = sqrt(2 mu D Pv f t / (R T rho)) gives d ln(h)/d(1/T) = B/2 = -4514 K for elemental sulfur",
+  "measured_slope_K": -151,
+  "measured_se_K": 75,
+  "controls": "log pixel scale and |latitude|",
+  "robustness": "slope -146 to -158 K across thermal inertia 21-103; null permutation sd 54 K; attenuation would require 96.7% of modeled 1/T variance to be noise",
+  "depth_ratio_across_T_range": {
+   "observed": 1.25,
+   "predicted": 794
+  },
+  "absolute_rate_check_m_per_4Gyr": {
+   "220K": 0.005,
+   "260K": 0.112,
+   "300K": 1.1,
+   "330K": 4.21,
+   "375K": 21.1
+  },
+  "verdict": "REJECTED. Hollow depth is independent of mean annual temperature over 105 K, and at the actual mean annual temperatures sulfur cannot deliver the observed 20.8 m median anywhere on the planet, even at the most favorable transport parameters. Insolation alone cannot drive deep devolatilization. Depth is layer-limited, not rate-limited."
+ },
+ "test_2_crater_size_insolation_interaction": {
+  "data": "707 hollow-hosting craters from host_assignments, 511 matched into the Herrick post-flyby catalog of 16876 craters",
+  "prediction": "an impact-supplied thermal boost scaling with melt volume should let large craters host hollows at lower insolation: negative Tmean x logD interaction",
+  "logistic_interaction": {
+   "coef": -0.0224,
+   "se": 0.0064,
+   "p": 0.00042
+  },
+  "clean_design": "hot-pole vs warm-pole longitude at |lat|<=60; imaging coverage tracks latitude, not longitude, so this cannot be a coverage artifact",
+  "hot_pole_preference": {
+   "D_lt_60km": {
+    "coef": 0.01682,
+    "se": 0.00233,
+    "p": 5.4e-13
+   },
+   "D_ge_60km": {
+    "coef": 0.00623,
+    "se": 0.00327,
+    "p": 0.057
+   },
+   "interaction": {
+    "coef": -0.01104,
+    "se": 0.00398,
+    "p": 0.0055
+   },
+   "continuous": {
+    "coef": -0.01442,
+    "se": 0.00487,
+    "p": 0.00306
+   }
+  },
+  "split_sensitivity": "interaction strengthens monotonically with the size cut: -0.0058 (30 km) to -0.0214 (120 km)",
+  "crater_size_vs_area": "logD coefficient 2.909 +/- 0.123 against the 2.0 expected if hosting simply scaled with crater area; excess z=7.4",
+  "freshness": "rayed craters +6.96 +/- 4.40 K (p=0.11, wrong sign for a decaying pulse); shallow-interior craters -2.29 +/- 2.29 K (p=0.32). Null.",
+  "verdict": "SUPPORTED for crater size, NULL for crater freshness. Hollows in craters below 60 km need the hot longitudes; hollows in craters above 60 km do not. The null freshness result argues the thermal boost is not what sustains present activity."
+ },
+ "synthesis": "Insolation cannot excavate hollows at depth, so an external heat source is required, and crater size - not crater freshness - carries that signature. The absence of a freshness signal means hollow activity is decoupled in time from the thermal event, which is the collapse-doline reading: the impact-era thermal pulse creates the void volume, and collapse of that fossil void, triggered by slow present-day near-surface sublimation, produces and refreshes the landform long afterward.",
+ "caveats": [
+  "Blewett shadow-length depths carry a strong pixel-scale trend (R2 0.54 between craters); all regressions control for it but the correction is not perfect.",
+  "511 of 707 hosts matched into the Herrick catalog; the unmatched 196 are mostly basins and may bias the large-D end.",
+  "The Herrick freshness flags (rayed, interior shape) are morphological classes, not ages; a proper crater-degradation chronology would be a better test.",
+  "The thermal model has no slope or aspect resolution, so wall hollows sit at temperatures the model does not resolve."
+ ],
+ "test_3_speyerer_change_character": {
+  "script": "speyerer_check.py",
+  "record": "speyerer_record.json",
+  "verdict": "PASSES, in the form the data can test, on a thin sample. Detectable activity on hollows is discrete, localized, and brightening, two orders of magnitude rarer than pervasive detectable change, at a rate consistent with renewing hollow surfaces within their ~10^5-yr maximum model age. The on-hollow association rests on one catalog-confirmed site (Sholem Aleichem, p = 0.04 alone) and one site the catalog does not confirm (Lermontov, 11.3 km from the nearest detection). The test is asymmetric: it cannot exclude a slow pervasive component, and it does not discriminate episodic collapse from other discrete mechanisms such as slope failure on hollow walls."
+ }
+}

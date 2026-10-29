@@ -1,0 +1,55 @@
+{
+  "title": "Mercury hollows: code and derived data for a hollow formation model",
+  "upload_type": "software",
+  "version": "0.1.0",
+  "description": "Analysis code, derived data, analysis records, and figure scripts behind a model of how hollows form on Mercury (Phillips, in preparation). The record contains: the 19,110 hollow detections of Bickel et al. (2025) at positions recomputed through the MDIS camera model; the 6,731 merged hollows and 1,228 hollow fields; imaging coverage, the fitted detection model, and completeness grids; host-crater assignments; the thermal-model grid and the hot-longitude temperature excess; the northern smooth plains mask; peak, floor, and wall terrain densities; the Caloris penetration test; slope and depth analyses of the shadow-length depths of Blewett et al. (2016); the sulfur-charging calculations; the records of every fit; the figure scripts; and the data behind each figure. A script reruns every analysis that needs only the included data. The crater containment graph used in the paper is a separate record (mercury-crater-graph).",
+  "creators": [
+    {
+      "name": "Phillips, Michael S.",
+      "affiliation": "Lunar and Planetary Laboratory, University of Arizona"
+    }
+  ],
+  "keywords": [
+    "Mercury",
+    "hollows",
+    "MESSENGER",
+    "MDIS",
+    "sulfur",
+    "impact craters",
+    "thermal model",
+    "volatiles"
+  ],
+  "license": "MIT",
+  "related_identifiers": [
+    {
+      "identifier": "10.1029/2024JH000431",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1029/2017JE005516",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1029/2019JE006212",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1002/2016JE005070",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/j.icarus.2020.113716",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1007/s11214-017-0440-y",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ]
+}

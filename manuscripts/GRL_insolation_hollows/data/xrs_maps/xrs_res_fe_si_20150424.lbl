@@ -1,0 +1,87 @@
+PDS_VERSION_ID                   = "PDS3"
+
+PRODUCT_ID                       = "XRS_RES_FE_SI_20150424_JP2"
+PRODUCT_VERSION_ID               = "1.0"
+PRODUCT_CREATION_TIME            = 2015-11-25T16:23:01
+PRODUCT_TYPE                     = "RDR"
+STANDARD_DATA_PRODUCT_ID         = "XRSRDR"
+SOFTWARE_NAME                    = "UA_LPL_EDR2CDR"
+SOFTWARE_VERSION_ID              = "1.0"
+INSTRUMENT_HOST_NAME             = "MESSENGER"
+INSTRUMENT_NAME                  = "XRAY SPECTROMETER"
+INSTRUMENT_ID                    = "XRS"
+DATA_SET_ID                      = "MESS-H-XRS-3-RDR-MAPS-V1.0"
+MISSION_PHASE_NAME               = {"MERCURY ORBIT", "MERCURY ORBIT YEAR 2",
+                                    "MERCURY ORBIT YEAR 3",
+                                    "MERCURY ORBIT YEAR 4",
+                                    "MERCURY ORBIT YEAR 5"}
+TARGET_NAME                      = "MERCURY"
+START_TIME                       = 2011-04-07T03:19:53.691
+STOP_TIME                        = 2015-04-24T21:05:34.295
+SPACECRAFT_CLOCK_START_COUNT     = "1/210633861"
+SPACECRAFT_CLOCK_STOP_COUNT      = "2/072233522"
+DESCRIPTION                      = "Map of the average footprint size of the
+                                    samples used to create the map of the 
+                                    ratio of Fe to Si, linearly scaled such
+                                    that the maximum pixel value corresponds 
+                                    to a resolution of 2893.93 km."
+
+OBJECT                           = COMPRESSED_FILE
+    FILE_NAME                    = "XRS_RES_FE_SI_20150424.JP2"
+    RECORD_TYPE                  = UNDEFINED
+    FILE_RECORDS                 = UNK
+    ENCODING_TYPE                = JP2
+    ENCODING_TYPE_VERSION_NAME   = "ISO/IEC15444-1:2004"
+    INTERCHANGE_FORMAT           = BINARY
+    REQUIRED_STORAGE_BYTES       = "14745600"
+    UNCOMPRESSED_FILE_NAME       = "XRS_RES_FE_SI_20150424.IMG"
+    ^DESCRIPTION                 = "JP2INFO.TXT"
+END_OBJECT                       = COMPRESSED_FILE
+
+OBJECT                           = UNCOMPRESSED_FILE
+    RECORD_TYPE                  = FIXED_LENGTH
+    FILE_RECORDS                 = 1440
+    RECORD_BYTES                 = 11520
+    ^IMAGE                       = "XRS_RES_FE_SI_20150424.IMG"
+    OBJECT                       = IMAGE
+        NAME                     = "RESOLUTION OF THE RATIO OF FE TO SI"
+        LINES                    = 1440
+        LINE_SAMPLES             = 720
+        SAMPLE_TYPE              = LSB_INTEGER
+        SAMPLE_BITS              = 8
+        UNIT                     = NONE
+        SCALING_FACTOR           = 11.3487450980
+        OFFSET                   = 0
+        DERIVED_MINIMUM          = 0
+        DERIVED_MAXIMUM          = 2893.93
+        MISSING_CONSTANT         = 0
+    END_OBJECT                   = IMAGE
+END_OBJECT                       = UNCOMPRESSED_FILE
+
+OBJECT                           = IMAGE_MAP_PROJECTION
+    ^DATA_SET_MAP_PROJECTION     = "DSMAP.CAT"
+    MAP_PROJECTION_TYPE          = "SIMPLE CYLINDRICAL"
+    KEYWORD_LATITUDE_TYPE        = "PLANETOCENTRIC"
+    MAP_RESOLUTION               = 4 <pix/degree>
+    A_AXIS_RADIUS                = 2439.4 <km>
+    B_AXIS_RADIUS                = 2439.4 <km>
+    C_AXIS_RADIUS                = 2439.4 <km>
+    POSITIVE_LONGITUDE_DIRECTION = "EAST"
+    CENTER_LATITUDE              = 0.0 <deg>
+    CENTER_LONGITUDE             = 0.0 <deg>
+    LINE_FIRST_PIXEL             = 1
+    LINE_LAST_PIXEL              = 1440
+    SAMPLE_FIRST_PIXEL           = 1
+    SAMPLE_LAST_PIXEL            = 720
+    MAP_PROJECTION_ROTATION      = 0.0
+    MAP_SCALE                    = 10.6 <km/pix>
+    MAXIMUM_LATITUDE             = 90.0 <deg>
+    MINIMUM_LATITUDE             = -90.0 <deg>
+    WESTERNMOST_LONGITUDE        = -180.0 <deg>
+    EASTERNMOST_LONGITUDE        = 180.0 <deg>
+    LINE_PROJECTION_OFFSET       = 0.0 <pixel>
+    SAMPLE_PROJECTION_OFFSET     = 0.0 <pixel>
+    COORDINATE_SYSTEM_TYPE       = "BODY-FIXED ROTATING"
+    COORDINATE_SYSTEM_NAME       = "PLANETOCENTRIC"
+END_OBJECT                       = IMAGE_MAP_PROJECTION
+END

@@ -1,0 +1,239 @@
+{
+ "parents_60_300_field": {
+  "floor_fill_only": {
+   "N": 253,
+   "k": 0,
+   "rate": 0.0,
+   "hollows": 8,
+   "D_med": 12.6,
+   "C_med": 0.02
+  },
+  "floor_through": {
+   "N": 561,
+   "k": 6,
+   "rate": 0.0107,
+   "hollows": 54,
+   "D_med": 16.3,
+   "C_med": 0.02
+  },
+  "raised": {
+   "N": 829,
+   "k": 7,
+   "rate": 0.0084,
+   "hollows": 165,
+   "D_med": 15.4,
+   "C_med": 0.02
+  },
+  "ambiguous": {
+   "N": 479,
+   "k": 7,
+   "rate": 0.0146,
+   "hollows": 55,
+   "D_med": 16.1,
+   "C_med": 0.03
+  },
+  "D10_20_fill_vs_through": {
+   "fill": "0/237",
+   "through": "2/356",
+   "fisher_p": 0.5193,
+   "C_fill": 0.02,
+   "C_through": 0.02
+  },
+  "logit": {
+   "Intercept": [
+    -34.093,
+    23751.43,
+    0.9989
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.floor_through]": [
+    20.503,
+    23751.43,
+    0.9993
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.raised]": [
+    19.922,
+    23751.43,
+    0.9993
+   ],
+   "logD": [
+    6.126,
+    1.468,
+    0.0
+   ],
+   "C_mean": [
+    8.357,
+    1.536,
+    0.0
+   ],
+   "abslat": [
+    -0.031,
+    0.018,
+    0.073
+   ]
+  },
+  "logit_margin": {
+   "Intercept": [
+    -17.199,
+    5.835,
+    0.0032
+   ],
+   "margin": [
+    -0.961,
+    0.715,
+    0.179
+   ],
+   "logD": [
+    9.566,
+    4.383,
+    0.0291
+   ],
+   "C_mean": [
+    9.92,
+    2.868,
+    0.0005
+   ],
+   "abslat": [
+    -0.069,
+    0.035,
+    0.0508
+   ]
+  }
+ },
+ "parents_60_300_any": {
+  "floor_fill_only": {
+   "N": 253,
+   "k": 7,
+   "rate": 0.0277,
+   "hollows": 8,
+   "D_med": 12.6,
+   "C_med": 0.02
+  },
+  "floor_through": {
+   "N": 561,
+   "k": 25,
+   "rate": 0.0446,
+   "hollows": 54,
+   "D_med": 16.3,
+   "C_med": 0.02
+  },
+  "raised": {
+   "N": 829,
+   "k": 18,
+   "rate": 0.0217,
+   "hollows": 165,
+   "D_med": 15.4,
+   "C_med": 0.02
+  },
+  "ambiguous": {
+   "N": 479,
+   "k": 19,
+   "rate": 0.0397,
+   "hollows": 55,
+   "D_med": 16.1,
+   "C_med": 0.03
+  },
+  "D10_20_fill_vs_through": {
+   "fill": "7/237",
+   "through": "12/356",
+   "fisher_p": 1.0,
+   "C_fill": 0.02,
+   "C_through": 0.02
+  },
+  "logit": {
+   "Intercept": [
+    -5.573,
+    0.973,
+    0.0
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.floor_through]": [
+    0.343,
+    0.471,
+    0.4668
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.raised]": [
+    -0.436,
+    0.489,
+    0.3727
+   ],
+   "logD": [
+    1.846,
+    0.722,
+    0.0106
+   ],
+   "C_mean": [
+    5.838,
+    0.765,
+    0.0
+   ],
+   "abslat": [
+    -0.038,
+    0.009,
+    0.0
+   ]
+  },
+  "logit_margin": {
+   "Intercept": [
+    -4.744,
+    1.699,
+    0.0052
+   ],
+   "margin": [
+    0.087,
+    0.274,
+    0.7513
+   ],
+   "logD": [
+    1.414,
+    1.411,
+    0.3165
+   ],
+   "C_mean": [
+    6.464,
+    1.052,
+    0.0
+   ],
+   "abslat": [
+    -0.047,
+    0.013,
+    0.0002
+   ]
+  }
+ },
+ "field_rates_by_D_parents60_300": [
+  {
+   "D": "10-15",
+   "isolated": "2/3889",
+   "floor_fill_only": "0/196",
+   "floor_through": "1/246",
+   "raised": "0/394"
+  },
+  {
+   "D": "15-20",
+   "isolated": "0/1551",
+   "floor_fill_only": "0/41",
+   "floor_through": "1/110",
+   "raised": "0/139"
+  },
+  {
+   "D": "20-30",
+   "isolated": "2/1612",
+   "floor_fill_only": "0/16",
+   "floor_through": "2/124",
+   "raised": "1/159"
+  },
+  {
+   "D": "30-50",
+   "isolated": "11/1549",
+   "floor_fill_only": "0/0",
+   "floor_through": "2/74",
+   "raised": "4/107"
+  },
+  {
+   "D": "50-250",
+   "isolated": "89/1549",
+   "floor_fill_only": "0/0",
+   "floor_through": "0/7",
+   "raised": "2/30"
+  }
+ ]
+}

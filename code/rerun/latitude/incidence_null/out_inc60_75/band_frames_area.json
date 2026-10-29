@@ -1,0 +1,90 @@
+{
+ "n_frames_full": 106155,
+ "n_frames_inc60_75": 38604,
+ "inc_lo": 60.0,
+ "inc_hi": 75.0,
+ "per_band_restricted": [
+  {
+   "band": "0-10",
+   "n_frames_center": 1837,
+   "covered_area_km2": 3982933.494913748
+  },
+  {
+   "band": "10-20",
+   "n_frames_center": 2654,
+   "covered_area_km2": 4363348.250987203
+  },
+  {
+   "band": "20-30",
+   "n_frames_center": 3087,
+   "covered_area_km2": 4152700.2128107934
+  },
+  {
+   "band": "30-40",
+   "n_frames_center": 3486,
+   "covered_area_km2": 2729391.797464704
+  },
+  {
+   "band": "40-50",
+   "n_frames_center": 4454,
+   "covered_area_km2": 1106726.4002385375
+  },
+  {
+   "band": "50-60",
+   "n_frames_center": 6883,
+   "covered_area_km2": 1077113.0019096478
+  },
+  {
+   "band": "60-70",
+   "n_frames_center": 8798,
+   "covered_area_km2": 1113896.9831741604
+  },
+  {
+   "band": "70-80",
+   "n_frames_center": 2185,
+   "covered_area_km2": 292245.8907084228
+  }
+ ],
+ "per_band_full": [
+  {
+   "band": "0-10",
+   "n_frames_center": 8022,
+   "covered_area_km2": 6476632.15026018
+  },
+  {
+   "band": "10-20",
+   "n_frames_center": 7629,
+   "covered_area_km2": 6134267.253114105
+  },
+  {
+   "band": "20-30",
+   "n_frames_center": 8095,
+   "covered_area_km2": 5538832.774398911
+  },
+  {
+   "band": "30-40",
+   "n_frames_center": 8814,
+   "covered_area_km2": 4252000.328434061
+  },
+  {
+   "band": "40-50",
+   "n_frames_center": 9625,
+   "covered_area_km2": 2497879.701232228
+  },
+  {
+   "band": "50-60",
+   "n_frames_center": 12841,
+   "covered_area_km2": 1961532.100590895
+  },
+  {
+   "band": "60-70",
+   "n_frames_center": 14032,
+   "covered_area_km2": 1580380.5299393472
+  },
+  {
+   "band": "70-80",
+   "n_frames_center": 13123,
+   "covered_area_km2": 1072595.331630247
+  }
+ ]
+}

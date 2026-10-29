@@ -1,0 +1,14 @@
+{
+ "link_km": 20,
+ "n_hollows": 9904,
+ "n_fields": 1372,
+ "note": "declustering on CANONICAL (deduplicated) hollows, not raw detections; the basin paper's 1,372 fields were on 11,058 raw detections",
+ "largest_extent_km": 119.98248927449916,
+ "columns_added": [
+  "field_id",
+  "cov_nframes",
+  "cov_bestpx_m",
+  "C_D0.5km..C_D5km",
+  "C_own"
+ ]
+}

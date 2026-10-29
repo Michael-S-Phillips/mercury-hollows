@@ -1,0 +1,804 @@
+{
+ "main_Dp<=400": {
+  "groups": {
+   "floor_fill_only": {
+    "N": 19,
+    "host": 0.158,
+    "wall": 0.053,
+    "peak": 0.0,
+    "n_hosts": 3,
+    "wall_dens": 5.5,
+    "D_med": 19.7,
+    "C_med": 0.46
+   },
+   "floor_through": {
+    "N": 36,
+    "host": 0.222,
+    "wall": 0.083,
+    "peak": 0.0,
+    "n_hosts": 8,
+    "wall_dens": 2.26,
+    "D_med": 23.3,
+    "C_med": 0.31
+   },
+   "raised": {
+    "N": 57,
+    "host": 0.158,
+    "wall": 0.088,
+    "peak": 0.018,
+    "n_hosts": 9,
+    "wall_dens": 3.46,
+    "D_med": 23.9,
+    "C_med": 0.35
+   },
+   "ambiguous": {
+    "N": 38,
+    "host": 0.263,
+    "wall": 0.105,
+    "peak": 0.026,
+    "n_hosts": 10,
+    "wall_dens": 1.86,
+    "D_med": 28.9,
+    "C_med": 0.35
+   }
+  },
+  "by_D": [
+   {
+    "D": "15-20",
+    "floor_fill_only": "1/11",
+    "floor_through": "3/10",
+    "raised": "3/22"
+   },
+   {
+    "D": "20-30",
+    "floor_fill_only": "2/7",
+    "floor_through": "4/17",
+    "raised": "0/13"
+   },
+   {
+    "D": "30-50",
+    "floor_fill_only": "0/1",
+    "floor_through": "0/6",
+    "raised": "4/16"
+   },
+   {
+    "D": "50-250",
+    "floor_fill_only": "0/0",
+    "floor_through": "1/3",
+    "raised": "2/6"
+   }
+  ],
+  "logit_group": {
+   "Intercept": [
+    -4.558,
+    1.988,
+    0.02185310971811398
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.floor_through]": [
+    0.2,
+    0.78,
+    0.7980167323672106
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.raised]": [
+    -0.274,
+    0.788,
+    0.7279126469854796
+   ],
+   "logD": [
+    2.147,
+    1.393,
+    0.1231075774047776
+   ],
+   "C_mean": [
+    2.708,
+    1.68,
+    0.10697641383193478
+   ],
+   "abslat": [
+    -0.031,
+    0.016,
+    0.050182531956993535
+   ]
+  },
+  "logit_margin_floor": {
+   "Intercept": [
+    -2.195,
+    4.273,
+    0.6074809242670297
+   ],
+   "margin": [
+    0.361,
+    0.393,
+    0.3589091090987905
+   ],
+   "logD": [
+    0.214,
+    3.35,
+    0.949132577584145
+   ],
+   "C_mean": [
+    4.561,
+    2.64,
+    0.08409312867877523
+   ],
+   "abslat": [
+    -0.052,
+    0.03,
+    0.07737519393830501
+   ]
+  }
+ },
+ "hf300_hr600": {
+  "groups": {
+   "floor_fill_only": {
+    "N": 14,
+    "host": 0.0,
+    "wall": 0.0,
+    "peak": 0.0,
+    "n_hosts": 0,
+    "wall_dens": 0.0,
+    "D_med": 19.3,
+    "C_med": 0.44
+   },
+   "floor_through": {
+    "N": 27,
+    "host": 0.185,
+    "wall": 0.037,
+    "peak": 0.0,
+    "n_hosts": 5,
+    "wall_dens": 2.06,
+    "D_med": 23.4,
+    "C_med": 0.38
+   },
+   "raised": {
+    "N": 68,
+    "host": 0.147,
+    "wall": 0.074,
+    "peak": 0.029,
+    "n_hosts": 10,
+    "wall_dens": 3.01,
+    "D_med": 24.7,
+    "C_med": 0.35
+   },
+   "ambiguous": {
+    "N": 41,
+    "host": 0.366,
+    "wall": 0.171,
+    "peak": 0.0,
+    "n_hosts": 15,
+    "wall_dens": 4.11,
+    "D_med": 25.3,
+    "C_med": 0.31
+   }
+  },
+  "by_D": [
+   {
+    "D": "15-20",
+    "floor_fill_only": "0/8",
+    "floor_through": "2/7",
+    "raised": "3/24"
+   },
+   {
+    "D": "20-30",
+    "floor_fill_only": "0/5",
+    "floor_through": "2/12",
+    "raised": "0/17"
+   },
+   {
+    "D": "30-50",
+    "floor_fill_only": "0/1",
+    "floor_through": "0/5",
+    "raised": "4/19"
+   },
+   {
+    "D": "50-250",
+    "floor_fill_only": "0/0",
+    "floor_through": "1/3",
+    "raised": "3/8"
+   }
+  ],
+  "logit_group": {
+   "Intercept": [
+    -25.733,
+    21432.549,
+    0.9990420295944468
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.floor_through]": [
+    20.724,
+    21432.549,
+    0.9992284872089031
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.raised]": [
+    20.353,
+    21432.549,
+    0.9992422913491209
+   ],
+   "logD": [
+    2.646,
+    1.407,
+    0.059957214677968
+   ],
+   "C_mean": [
+    1.0,
+    1.711,
+    0.5590860666658646
+   ],
+   "abslat": [
+    -0.018,
+    0.016,
+    0.24836672990250885
+   ]
+  },
+  "logit_margin_floor": {
+   "Intercept": [
+    2.403,
+    6.878,
+    0.7267476739466243
+   ],
+   "margin": [
+    1.351,
+    0.897,
+    0.13209684781244652
+   ],
+   "logD": [
+    -3.941,
+    5.595,
+    0.48128417207330176
+   ],
+   "C_mean": [
+    0.814,
+    3.782,
+    0.8295145927367751
+   ],
+   "abslat": [
+    -0.022,
+    0.045,
+    0.6310189319050887
+   ]
+  }
+ },
+ "fill_x0.5": {
+  "groups": {
+   "floor_fill_only": {
+    "N": 2,
+    "host": 0.0,
+    "wall": 0.0,
+    "peak": 0.0,
+    "n_hosts": 0,
+    "wall_dens": 0.0,
+    "D_med": 15.7,
+    "C_med": 0.34
+   },
+   "floor_through": {
+    "N": 53,
+    "host": 0.208,
+    "wall": 0.075,
+    "peak": 0.0,
+    "n_hosts": 11,
+    "wall_dens": 3.38,
+    "D_med": 22.4,
+    "C_med": 0.36
+   },
+   "raised": {
+    "N": 57,
+    "host": 0.158,
+    "wall": 0.088,
+    "peak": 0.018,
+    "n_hosts": 9,
+    "wall_dens": 3.46,
+    "D_med": 23.9,
+    "C_med": 0.35
+   },
+   "ambiguous": {
+    "N": 38,
+    "host": 0.263,
+    "wall": 0.105,
+    "peak": 0.026,
+    "n_hosts": 10,
+    "wall_dens": 1.86,
+    "D_med": 28.9,
+    "C_med": 0.35
+   }
+  },
+  "by_D": [
+   {
+    "D": "15-20",
+    "floor_fill_only": "0/2",
+    "floor_through": "4/19",
+    "raised": "3/22"
+   },
+   {
+    "D": "20-30",
+    "floor_fill_only": "0/0",
+    "floor_through": "6/24",
+    "raised": "0/13"
+   },
+   {
+    "D": "30-50",
+    "floor_fill_only": "0/0",
+    "floor_through": "0/7",
+    "raised": "4/16"
+   },
+   {
+    "D": "50-250",
+    "floor_fill_only": "0/0",
+    "floor_through": "1/3",
+    "raised": "2/6"
+   }
+  ],
+  "logit_group": {
+   "Intercept": [
+    -23.3,
+    22421.737,
+    0.999170845672355
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.floor_through]": [
+    19.007,
+    22421.737,
+    0.9993236448173799
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.raised]": [
+    18.559,
+    22421.737,
+    0.9993395831654417
+   ],
+   "logD": [
+    2.121,
+    1.381,
+    0.12450773784298422
+   ],
+   "C_mean": [
+    2.621,
+    1.678,
+    0.1182439067272706
+   ],
+   "abslat": [
+    -0.031,
+    0.016,
+    0.04788940612699339
+   ]
+  },
+  "logit_margin_floor": {
+   "Intercept": [
+    -0.611,
+    5.165,
+    0.9057771025475565
+   ],
+   "margin": [
+    0.712,
+    0.77,
+    0.35535553462906133
+   ],
+   "logD": [
+    -1.498,
+    4.539,
+    0.741314256598367
+   ],
+   "C_mean": [
+    4.539,
+    2.633,
+    0.08474727007791405
+   ],
+   "abslat": [
+    -0.053,
+    0.029,
+    0.07426091735764444
+   ]
+  }
+ },
+ "fill_x1.5": {
+  "groups": {
+   "floor_fill_only": {
+    "N": 27,
+    "host": 0.111,
+    "wall": 0.037,
+    "peak": 0.0,
+    "n_hosts": 3,
+    "wall_dens": 4.13,
+    "D_med": 20.0,
+    "C_med": 0.46
+   },
+   "floor_through": {
+    "N": 28,
+    "host": 0.286,
+    "wall": 0.107,
+    "peak": 0.0,
+    "n_hosts": 8,
+    "wall_dens": 2.74,
+    "D_med": 22.9,
+    "C_med": 0.29
+   },
+   "raised": {
+    "N": 57,
+    "host": 0.158,
+    "wall": 0.088,
+    "peak": 0.018,
+    "n_hosts": 9,
+    "wall_dens": 3.46,
+    "D_med": 23.9,
+    "C_med": 0.35
+   },
+   "ambiguous": {
+    "N": 38,
+    "host": 0.263,
+    "wall": 0.105,
+    "peak": 0.026,
+    "n_hosts": 10,
+    "wall_dens": 1.86,
+    "D_med": 28.9,
+    "C_med": 0.35
+   }
+  },
+  "by_D": [
+   {
+    "D": "15-20",
+    "floor_fill_only": "1/13",
+    "floor_through": "3/8",
+    "raised": "3/22"
+   },
+   {
+    "D": "20-30",
+    "floor_fill_only": "2/11",
+    "floor_through": "4/13",
+    "raised": "0/13"
+   },
+   {
+    "D": "30-50",
+    "floor_fill_only": "0/2",
+    "floor_through": "0/5",
+    "raised": "4/16"
+   },
+   {
+    "D": "50-250",
+    "floor_fill_only": "0/1",
+    "floor_through": "1/2",
+    "raised": "2/6"
+   }
+  ],
+  "logit_group": {
+   "Intercept": [
+    -5.156,
+    2.089,
+    0.0135788644319859
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.floor_through]": [
+    1.039,
+    0.792,
+    0.1894774872433298
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.raised]": [
+    0.236,
+    0.761,
+    0.7562629110073629
+   ],
+   "logD": [
+    2.087,
+    1.379,
+    0.1301985993942269
+   ],
+   "C_mean": [
+    2.862,
+    1.664,
+    0.08542707148943374
+   ],
+   "abslat": [
+    -0.027,
+    0.016,
+    0.08297764543121361
+   ]
+  },
+  "logit_margin_floor": {
+   "Intercept": [
+    -2.738,
+    4.092,
+    0.5034233910181274
+   ],
+   "margin": [
+    0.24,
+    0.263,
+    0.3616066292063228
+   ],
+   "logD": [
+    0.8,
+    3.097,
+    0.7960576917472169
+   ],
+   "C_mean": [
+    4.57,
+    2.643,
+    0.08383376275004871
+   ],
+   "abslat": [
+    -0.052,
+    0.03,
+    0.07797181560340487
+   ]
+  }
+ },
+ "basins_Dp>400_capped400": {
+  "groups": {
+   "floor_fill_only": {
+    "N": 12,
+    "host": 0.0,
+    "wall": 0.0,
+    "peak": 0.0,
+    "n_hosts": 0,
+    "wall_dens": 0.0,
+    "D_med": 19.5,
+    "C_med": 0.31
+   },
+   "floor_through": {
+    "N": 12,
+    "host": 0.333,
+    "wall": 0.25,
+    "peak": 0.083,
+    "n_hosts": 4,
+    "wall_dens": 2.16,
+    "D_med": 43.4,
+    "C_med": 0.49
+   },
+   "raised": {
+    "N": 74,
+    "host": 0.23,
+    "wall": 0.135,
+    "peak": 0.068,
+    "n_hosts": 17,
+    "wall_dens": 5.14,
+    "D_med": 27.0,
+    "C_med": 0.34
+   },
+   "ambiguous": {
+    "N": 28,
+    "host": 0.036,
+    "wall": 0.036,
+    "peak": 0.036,
+    "n_hosts": 1,
+    "wall_dens": 0.13,
+    "D_med": 27.9,
+    "C_med": 0.37
+   }
+  },
+  "by_D": [
+   {
+    "D": "15-20",
+    "floor_fill_only": "0/6",
+    "floor_through": "0/0",
+    "raised": "0/21"
+   },
+   {
+    "D": "20-30",
+    "floor_fill_only": "0/5",
+    "floor_through": "0/2",
+    "raised": "3/22"
+   },
+   {
+    "D": "30-50",
+    "floor_fill_only": "0/1",
+    "floor_through": "3/5",
+    "raised": "7/19"
+   },
+   {
+    "D": "50-250",
+    "floor_fill_only": "0/0",
+    "floor_through": "1/5",
+    "raised": "7/12"
+   }
+  ],
+  "logit_group": {
+   "Intercept": [
+    -28.515,
+    22579.144,
+    0.9989923567582188
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.floor_through]": [
+    19.972,
+    22579.143,
+    0.9992942441188253
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.raised]": [
+    19.792,
+    22579.143,
+    0.9993005962897562
+   ],
+   "logD": [
+    4.516,
+    1.337,
+    0.0007325161200120028
+   ],
+   "C_mean": [
+    4.083,
+    1.505,
+    0.006683082092364988
+   ],
+   "abslat": [
+    -0.037,
+    0.018,
+    0.043420905754925986
+   ]
+  },
+  "logit_margin_floor": {
+   "Intercept": [
+    -9.03,
+    15.626,
+    0.5633218365145526
+   ],
+   "margin": [
+    0.082,
+    1.829,
+    0.9640601121323374
+   ],
+   "logD": [
+    3.84,
+    11.382,
+    0.7358442909030807
+   ],
+   "C_mean": [
+    14.249,
+    8.074,
+    0.07759762308700713
+   ],
+   "abslat": [
+    -0.13,
+    0.071,
+    0.06655106867782945
+   ]
+  }
+ },
+ "all_capped400": {
+  "groups": {
+   "floor_fill_only": {
+    "N": 31,
+    "host": 0.097,
+    "wall": 0.032,
+    "peak": 0.0,
+    "n_hosts": 3,
+    "wall_dens": 4.2,
+    "D_med": 19.7,
+    "C_med": 0.36
+   },
+   "floor_through": {
+    "N": 48,
+    "host": 0.25,
+    "wall": 0.125,
+    "peak": 0.021,
+    "n_hosts": 12,
+    "wall_dens": 2.19,
+    "D_med": 25.8,
+    "C_med": 0.37
+   },
+   "raised": {
+    "N": 131,
+    "host": 0.198,
+    "wall": 0.115,
+    "peak": 0.046,
+    "n_hosts": 26,
+    "wall_dens": 4.52,
+    "D_med": 26.0,
+    "C_med": 0.34
+   },
+   "ambiguous": {
+    "N": 66,
+    "host": 0.167,
+    "wall": 0.076,
+    "peak": 0.03,
+    "n_hosts": 11,
+    "wall_dens": 0.9,
+    "D_med": 28.5,
+    "C_med": 0.35
+   }
+  },
+  "by_D": [
+   {
+    "D": "15-20",
+    "floor_fill_only": "1/17",
+    "floor_through": "3/10",
+    "raised": "3/43"
+   },
+   {
+    "D": "20-30",
+    "floor_fill_only": "2/12",
+    "floor_through": "4/19",
+    "raised": "3/35"
+   },
+   {
+    "D": "30-50",
+    "floor_fill_only": "0/2",
+    "floor_through": "3/11",
+    "raised": "11/35"
+   },
+   {
+    "D": "50-250",
+    "floor_fill_only": "0/0",
+    "floor_through": "2/8",
+    "raised": "9/18"
+   }
+  ],
+  "logit_group": {
+   "Intercept": [
+    -6.899,
+    1.383,
+    6.089149240533292e-07
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.floor_through]": [
+    0.504,
+    0.73,
+    0.49026595602637923
+   ],
+   "C(group, Treatment('floor_fill_only'))[T.raised]": [
+    0.046,
+    0.7,
+    0.9480259698594055
+   ],
+   "logD": [
+    3.427,
+    0.886,
+    0.00010926376142849861
+   ],
+   "C_mean": [
+    3.524,
+    1.078,
+    0.0010846575328532654
+   ],
+   "abslat": [
+    -0.035,
+    0.011,
+    0.001706813790213886
+   ]
+  },
+  "logit_margin_floor": {
+   "Intercept": [
+    -4.247,
+    3.143,
+    0.17660184558793446
+   ],
+   "margin": [
+    0.243,
+    0.331,
+    0.46418515633538404
+   ],
+   "logD": [
+    1.645,
+    2.435,
+    0.4993967496002496
+   ],
+   "C_mean": [
+    6.693,
+    2.42,
+    0.0056754088028374665
+   ],
+   "abslat": [
+    -0.076,
+    0.026,
+    0.003900176819247081
+   ]
+  }
+ },
+ "isolated_baseline": {
+  "N": 716,
+  "host": 0.159,
+  "wall": 0.068,
+  "peak": 0.063,
+  "n_hosts": 114,
+  "wall_dens": 0.75,
+  "D_med": 30.8,
+  "C_med": 0.33
+ },
+ "isolated_by_D": [
+  {
+   "D": "15-20",
+   "rate": "2/169"
+  },
+  {
+   "D": "20-30",
+   "rate": "11/185"
+  },
+  {
+   "D": "30-50",
+   "rate": "26/170"
+  },
+  {
+   "D": "50-250",
+   "rate": "75/192"
+  }
+ ]
+}

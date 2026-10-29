@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this code or these data, please cite them as below, together with the source data sets listed in LICENSE-DATA.md."
+title: "Mercury hollows: code and derived data for a hollow formation model"
+version: 0.1.0
+license: [MIT, CC-BY-4.0]
+type: software
+authors:
+  - family-names: Phillips
+    given-names: Michael S.
+    affiliation: "Lunar and Planetary Laboratory, University of Arizona"
+keywords: [Mercury, hollows, MESSENGER, sulfur, impact craters, thermal model]
+references:
+  - type: article
+    title: "Hollows on Mercury: Creation and analysis of a global reference catalog with deep learning"
+    authors:
+      - family-names: Bickel
+        given-names: Valentin T.
+      - family-names: Deutsch
+        given-names: Ariel N.
+      - family-names: Blewett
+        given-names: David T.
+    year: 2025
+    doi: 10.1029/2024JH000431
+  - type: article
+    title: "Observations from a global database of impact craters on Mercury with diameters greater than 5 km"
+    authors:
+      - family-names: Herrick
+        given-names: Robert R.
+    year: 2018
+    doi: 10.1029/2017JE005516
+  - type: article
+    title: "Analysis of MESSENGER high-resolution images of Mercury's hollows and implications for hollow formation"
+    authors:
+      - family-names: Blewett
+        given-names: David T.
+    year: 2016
+    doi: 10.1002/2016JE005070

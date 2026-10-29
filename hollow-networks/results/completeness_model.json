@@ -1,0 +1,91 @@
+{
+ "headline": "The catalog's size floor is a fixed pixel count, not a physical size; the observed size distribution is nearly universal in D/pixel across all resolutions, so hollow SIZES in this catalog are set by imaging resolution, not by hollow physics, over 0.1-10 km.",
+ "evidence": {
+  "floor_loglog_slope_vs_px": 0.96,
+  "floor_r": 0.989,
+  "KS_physical_units_between_px_bins": "D = 0.83-0.97 (distributions nearly disjoint)",
+  "KS_pixel_units_between_px_bins": "D = 0.05-0.23 (nearly collapse)",
+  "nac_median_D_px": 37.3,
+  "nac_p05_D_px": 16.8,
+  "nac_p95_D_px": 100.7,
+  "upper_rolloff": "tail slope in pixel units steepens 3.2 -> 3.9 -> 4.6 for xmin 40/60/80 px, i.e. the detector also has an upper size limit near 100-200 px"
+ },
+ "non_identifiability": "A scale-free intrinsic law times a completeness window in D/px predicts exactly the observed universality, so the intrinsic slope and the completeness curve cannot be separated from single-coverage data. A joint fit converged (alpha 4.0, D50 53 px) but FAILED validation against per-bin quantiles; it is not used.",
+ "how_the_degeneracy_was_broken": "Repeat coverage. Every searched NAC frame covering a hollow is a detection trial; 147,704 hollow-frame pairs over 9,803 hollows. Fitted with a binomial likelihood conditional on >=1 detection per hollow (the naive fit is biased by that selection, which made the apparent per-frame rate fall from 0.43 to 0.06 with the number of covering frames).",
+ "per_frame_detection_function": {
+  "p_max": 0.05484480358800661,
+  "x50_px": 45.24533908580378,
+  "sigma_lo": 0.5620447441572579,
+  "x_hi_px": 203.9164544551668,
+  "sigma_hi": 0.17865810623936126,
+  "b_inc": -0.29252527910507725
+ },
+ "per_frame_form": "p(x,inc)=p_max*Phi((ln x-ln x50)/sigma_lo)*(1-Phi((ln x-ln x_hi)/sigma_hi))*exp(b_inc*(inc-60)/25); x=D_eq/px",
+ "implied_catalog_completeness": {
+  "plateau_size_x50px": {
+   "1": 0.03,
+   "4": 0.12,
+   "7": 0.2,
+   "12": 0.32,
+   "25": 0.55
+  },
+  "by_hemisphere_area_weighted": {
+   "D=0.1km": {
+    "north": 0.0,
+    "south": 0.0
+   },
+   "D=0.15km": {
+    "north": 0.001,
+    "south": 0.0
+   },
+   "D=0.2km": {
+    "north": 0.002,
+    "south": 0.0
+   },
+   "D=0.3km": {
+    "north": 0.004,
+    "south": 0.0
+   },
+   "D=0.5km": {
+    "north": 0.012,
+    "south": 0.0
+   },
+   "D=0.7km": {
+    "north": 0.022,
+    "south": 0.001
+   },
+   "D=1.0km": {
+    "north": 0.037,
+    "south": 0.003
+   },
+   "D=1.5km": {
+    "north": 0.06,
+    "south": 0.014
+   },
+   "D=2.0km": {
+    "north": 0.088,
+    "south": 0.036
+   },
+   "D=3.0km": {
+    "north": 0.144,
+    "south": 0.099
+   },
+   "D=5.0km": {
+    "north": 0.245,
+    "south": 0.227
+   }
+  },
+  "reading": "even a well-resolved hollow is in the catalog with probability of order 0.2-0.3 at typical northern coverage; the catalog samples the tip of a much larger population, and north-south completeness ratios exceed 10x below 1 km"
+ },
+ "what_downstream_tracks_must_do": [
+  "size fits: weight each hollow by 1/C(D, site) (Vmax analog) or fit with the per-site completeness as the censoring model; never fit raw sizes",
+  "spatial statistics: the null intensity is coverage x completeness, from completeness_10ppd.npz",
+  "prediction: 'large' for the south is the size at which southern C(D) becomes non-negligible; degrade the north to the southern frame distribution before training"
+ ],
+ "files": [
+  "data/coverage_10ppd.npz",
+  "data/completeness_10ppd.npz",
+  "data/completeness_pairs.csv",
+  "results/per_frame_detection_function.json"
+ ]
+}

@@ -1,0 +1,1 @@
+canonical 6731 fields 1228 detections_qc 11058 completeness pairs 92382 theta [0.243, 3.57, -0.527, 5.278, -1.322, -0.102]

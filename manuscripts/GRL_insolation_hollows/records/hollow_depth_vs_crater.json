@@ -1,0 +1,30 @@
+{
+ "task": "SSS v4 concept Task 2.1: hollow depth versus host-crater diameter",
+ "data": "Blewett et al. 2016 shadow-length depths (n=2,518, with pixel scale, lat, lon) assigned to the smallest Herrick crater (D>=5 km) whose 1.1 R contains the hollow; 1,960 assigned to 128 craters; 87 craters with >=3 measured hollows used for per-crater statistics",
+ "result": {
+  "per_crater_slope_logdepth_vs_logD": 0.002,
+  "se": 0.053,
+  "p": 0.973,
+  "controls": "log pixel scale and |latitude| in the regression; pixel scale carries slope +0.66 per hollow and R2 0.54 between craters",
+  "sensitivity": "largest containing crater instead of smallest: +0.040 +/- 0.013; D>=20 km only: +0.017 +/- 0.018",
+  "binned_corrected_median_depth_m": {
+   "5-30 km": 20.0,
+   "30-60": 22.5,
+   "60-120": 19.6,
+   "120-250": 22.5,
+   "250-800": 15.0
+  },
+  "max_depth_signal": "Spearman(max depth, D)=+0.26 is a sample-size artifact: max depth tracks number of hollows measured (rho +0.65), and with n in the model the D slope is +0.02 +/- 0.06"
+ },
+ "prediction_test": "H-EROSION as written (depth = melt-sheet/breccia thickness, slope ~0.8-1.9) is REJECTED. H-BODY and H-VRL (slope 0) survive this test.",
+ "additional_finding": {
+  "per_crater_characteristic_depth": true,
+  "between_crater_sd_dex": 0.203,
+  "within_crater_sd_dex": 0.132,
+  "anova_F": 11.29,
+  "anova_p": "3e-115",
+  "reading": "After removing the pixel-scale trend, depths are more uniform within a crater than between craters: each crater has its own characteristic depth (factor ~1.6 between-crater spread), but that depth is unrelated to crater size. Whatever sets depth is crater-specific and not impact-scale-controlled: a local layer thickness, a local composition, or a process ceiling (lag, export) with a local parameter."
+ },
+ "implication_for_proposal": "Drop 'depth scales with melt-sheet thickness' from Table 1 and Task 2.1. The universal ~20 m depth from 5 km craters to 800 km basins is itself the sharper constraint: it favors a process-limited depth (Blewett lag ceiling, or an export ceiling in the erosion model) or a universal-thickness horizon over a crater-scaled melt sheet. The erosion hypothesis survives only in a form where the eroded layer has a thickness set locally, not by the impact.",
+ "figure": "hollow_depth_vs_crater.png"
+}

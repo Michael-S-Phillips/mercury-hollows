@@ -1,0 +1,19 @@
+{
+ "theta": {
+  "p_max": 0.05484480358800661,
+  "x50_px": 45.24533908580378,
+  "sigma_lo": 0.5620447441572579,
+  "x_hi_px": 203.9164544551668,
+  "sigma_hi": 0.17865810623936126,
+  "b_inc": -0.29252527910507725
+ },
+ "form": "p(x,inc)=p_max*Phi((ln x-ln x50)/sigma_lo)*(1-Phi((ln x-ln x_hi)/sigma_hi))*exp(b_inc*(inc-60)/25); x=D_eq/px",
+ "likelihood": "binomial over hollow-frame pairs conditional on >=1 detection per hollow (truncated)",
+ "catalog_completeness": "C(D,site)=1-prod_f(1-p(D/px_f,inc_f)) over searched frames covering the site",
+ "n_pairs": 147704,
+ "n_hollows": 9803,
+ "caveats": [
+  "footprint model contains 83% of detecting frames",
+  "hollows never detected are unobservable"
+ ]
+}

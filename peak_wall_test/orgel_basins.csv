@@ -1,0 +1,95 @@
+Diam_km,x_coord,y_coord,tag,Note,Basin_Name,Confidence,Basin_Nr,Stratigrap,Topography,Optical_Ca,Mappabilit,Comment,Mapping_te,perimeter,Controlled
+8.48199761742e+002,-7.92203815493e+001,7.04948458349e+001,standard,Probable in Fassett et al 2012,Borealis,Certain,10,"pre-dates b95, b55, Chong-Gauguin, Vy-Asa, Goethe",Y,Y,Y,"Southern basin ring, covered by plains","1, 2",7.52902e+006,Y
+4.67639736660e+002,-7.43460626511e+001,6.82070201402e+001,standard,Probable in Fassett et al 2012,b95,Certain,40,"pre-dates b55, Chong-Gauguin, Vy-Asa",Y,N,P,Only craters beneath the plains and southern rim,2,3.79637e+006,Y
+5.79812777430e+002,-5.95315440417e+001,5.33566620447e+001,standard,It was not verified by Fassett et al 2012,b55,Suggestion,28,Undistinguishable relationship with Vy-Asa,P,N,P,"Craters around possible rim, signs for thin crust?",2,2.48402e+006,Y
+5.42667032103e+002,-2.70021846637e+001,5.17800229825e+001,standard,Probable in Fassett et al 2012,Derzhavin-Sor Juana,Probable,31,-,Y,P,Y,"Fully covered by plains, pre-plains craters","1, 2",2.26714e+006,Y
+3.83738590530e+002,-1.08390942710e+001,5.54255113309e+001,standard,Probable in Fassett et al 2012,b32,Certain,57,pre-dates Derzhavin-Sor Juana,Y,Y,P,Fully covered by plains,"1, 2",1.69970e+006,Y
+7.57826295317e+002,2.97008980678e+000,3.61770840945e+001,standard,Probable in Fassett et al 2012,b31,Certain,14,pre-dates b30,Y,N,P,Interior covered by plains.,2,2.67770e+006,Y
+1.40416138719e+003,2.10359595202e+001,1.55953355156e+001,standard,Probable in Fassett et al 2012,b30,Certain,3,pre-dates b36,Y,P,P,"Subdued, covered by plains, good for crater counts",2,4.50685e+006,Y
+1.02844587902e+003,-5.27503241649e+001,1.38384260784e+001,standard,It was not discovered previously.,b70,Probable,5,"pre-dates b94, b76, b11, b20, Homer",Y,P,Y,,2,3.28338e+006,Y
+5.76606656685e+002,-6.81166526791e+001,6.08569796571e-001,standard,It was not discovered previously.,b76,Probable,29,pre-dates b11,Y,N,P,,2,1.81206e+006,Y
+3.95785430817e+002,-5.60295756029e+001,-2.85729477368e+000,standard,Probable in Fassett et al 2012,b11,Certain,55,"pre-dates b20,",Y,Y,Y,,"1, 2",1.24435e+006,Y
+3.64264407722e+002,-4.39968373796e+001,-2.97685136121e+000,standard,Certain in Fassett et al 2012,b20,Certain,60,pre-dates Homer,Y,P,Y,Scarps visible on images.,1,1.14529e+006,Y
+3.17737167086e+002,-3.68344795696e+001,-1.29849229177e+000,standard,Certain in Fassett et al 2012,Homer,Certain,72,-,Y,Y,Y,Overprinted by plains,1,9.98424e+005,Y
+4.97764374798e+002,-5.66583029665e+001,-2.62397277547e+001,standard,It was not discovered previously.,b80,Probable,37,"pre-dates Matisse-Repin, b98, Undistinguishable relationship with Andal-Coleridge",Y,N,P,Overprinted by thick plains and ejecta,2,1.65561e+006,Y
+8.27658036695e+002,-5.12218373003e+001,-4.11111483546e+001,standard,Probable in Fassett et al 2012,Andal-Coleridge,Probable,11,-,Y,P,Y,Overprinted by plains,2,3.04973e+006,Y
+3.44910285730e+002,-2.29506958027e+001,-1.71048548933e+001,standard,Probable in Fassett et al 2012,Hiroshige-Mahler,Certain,64,-,Y,Y,P,Overprinted by plains.,2,1.10896e+006,Y
+6.96483800014e+002,6.49687903842e+000,-3.00441760706e+001,standard,Probable in Fassett et al 2012,b34,Certain,19,pre-dates b37,Y,P,P,"Crater at SE corner overprints the basin+possible plains, hard to define a rim",2,2.36360e+006,Y
+8.72792951443e+002,2.68458306687e+001,-3.41386205923e+001,standard,It was not discovered previously.,b71,Suggestion,7,"Undistinguishable relationship with b56, pre-dates b34",P,N,P,"High topo in the center, circular feature, scarps with various facing",2,3.04085e+006,Y
+5.95307515242e+002,-2.35277849761e-001,-5.71502363310e+001,standard,Probable in Fassett et al 2012,b54,Certain,24,-,Y,N,P,Interior covered by plains.,2,2.73069e+006,Y
+7.11141802561e+002,4.17780204867e+001,4.36979150304e+001,standard,Probable in Fassett et al 2012,b45,Probable,16,pre-dates b72,Y,Y,P,Fully overprinted by plains,"1, 2",2.68629e+006,Y
+6.15659106804e+002,6.83632568713e+001,5.61416098291e+001,standard,It was not verified by Fassett et al 2012,b50,Certain,23,Undistinguishable relationship with b45,Y,Y,P,"Fully overprinted by plains, but rim is visible","1, 2",2.77068e+006,Y
+5.94270823017e+002,7.62632440007e+001,4.09912300972e+000,standard,Probable in Fassett et al 2012,b12,Probable,25,"pre-dates b57, Undistinguishable relationship with b18",Y,N,P,Fully overprinted,2,1.86996e+006,Y
+1.20274689523e+003,8.58263696607e+001,-1.55209487256e+001,standard,It was not verified by Fassett et al 2012,b57,Certain,4,"pre-dates b44, Rembrandt, b25, b101",Y,N,Y,"Not visible, overprinted by plains",2,3.85713e+006,Y
+4.43929052217e+002,9.33393887019e+001,-1.54120215335e+001,standard,It was not verified by Fassett et al 2012,b25,Probable,45,pre-dates Rembrandt,Y,N,P,"Totally overprinted by plains, probably poor statistics",2,1.42111e+006,Y
+4.58687059465e+002,1.02612291392e+002,-1.02341579369e+001,standard,Probable in Fassett et al 2012,b44,Probable,42,pre-dates b25,Y,N,P,Overprinted by larger complex crater,2,1.45300e+006,Y
+3.17977209385e+002,9.22778285434e+001,-5.06864384643e+001,standard,Probable in Fassett et al 2012,b3,Probable,71,"post-dates b91, b100",Y,P,Y,Overprinted by plains,2,1.30516e+006,Y
+4.00998025627e+002,1.02455047217e+002,-3.78626627844e+001,standard,It was not discovered previously.,b83,Probable,54,"pre-dates Rembrandt, Undistinguishable relationship with b77",Y,N,P,No pronounced rim system,2,1.43350e+006,Y
+5.36996805674e+002,1.17488031806e+002,-4.04618114841e+001,standard,It was not discovered previously.,b77,Suggestion,32,Undistinguishable relationship with b83,Y,N,P,Overprinted by plains,2,1.96355e+006,Y
+7.00585784534e+002,1.19259272194e+002,5.00504181466e+001,standard,It was not verified by Fassett et al 2012,b59,Probable,17,pre-dates Caloris,Y,N,P,"Overprinted by plains, pre-craters could be counted",2,2.85882e+006,Y
+3.75772957777e+002,1.65326832901e+002,7.86382388267e+001,standard,It was not verified by Fassett et al 2012,b62,Certain,58,Pre-dates Caloris,Y,N,P,"Overprinted by plains, pre-craters could be counted",2,4.67183e+006,Y
+1.55591479183e+003,1.61431849032e+002,2.99087500241e+001,standard,Certain in Fassett et al 2012,Caloris,Certain,2,-,Y,Y,Y,"Young, overprinted interior + positive interior topography",1,6.81653e+006,Y
+3.08394143370e+002,1.34665007989e+002,6.42498974304e+000,standard,Probable in Fassett et al 2012,b40,Certain,75,pre-dates Caloris,Y,P,P,Overprinted by plains,2,9.72005e+005,Y
+5.30680898775e+002,1.49519554841e+002,-8.08190339486e-001,standard,It was not verified by Fassett et al 2012,b43,Certain,33,pre-date Caloris,Y,P,P,Overprinted by plains,2,1.66769e+006,Y
+4.51583359879e+002,1.49146216688e+002,-7.35086981409e+001,standard,Probable in Fassett et al 2012,b33,Certain,43,-,Y,Y,P,Overprinted by plains,2,3.51453e+006,Y
+6.99415387062e+002,-1.63599999159e+002,-5.00976374774e+001,standard,Probable in Fassett et al 2012,Vincent-Yakolev,Certain,18,pre-dates Dostoevskij,Y,Y,P,,2,2.85590e+006,Y
+5.12846209381e+002,-1.40921156841e+002,-6.17460971696e+001,standard,It was not verified by Fassett et al 2012,b58,Certain,36,pre-dates Vincent-Yakolev,Y,Y,P,,2,2.60146e+006,Y
+6.46454973253e+002,-1.51251799552e+002,-3.34071142875e+001,standard,It was not discovered previously.,b73,Suggestion,22,"pre-dates b39, b97",Y,P,P,,2,2.23900e+006,Y
+5.88949630856e+002,-1.51506386245e+002,-4.11866847480e+000,standard,It was not discovered previously.,b74,Probable,26,pre-dates Tolstoj,Y,N,P,Overprinted by subsequent impacts,2,1.85323e+006,Y
+4.25155696823e+002,-1.38560231152e+002,6.29206032257e+000,standard,It was not discovered previously.,b81,Probable,49,-,Y,P,P,,2,1.33995e+006,Y
+6.61389286390e+002,-1.24174693862e+002,-2.09846750571e+001,standard,Certain in Fassett et al 2012,Beethoven,Certain,21,-,Y,Y,Y,,1,7.88281e+005,Y
+4.80944231958e+002,-1.05745468857e+002,-5.53669625326e+001,standard,Probable in Fassett et al 2012,Hawthorne-Riemenschneider,Certain,39,-,Y,P,P,Fully covered by plains,2,2.13010e+006,Y
+4.25480418978e+002,-9.39183878024e+001,-4.61808347660e+001,standard,Probable in Fassett et al 2012,b65,Suggestion,48,"pre-dates b2,probably pre-dates Hawthorne-Riemenschneider",Y,N,P,Fully covered by younger ejecta,2,1.64893e+006,Y
+4.46741515966e+002,-9.84246020045e+001,-3.35027947315e+001,standard,It was not verified by Fassett et al 2012,b66,Suggestion,44,"pre-dates b2, b9",Y,N,N,,N,1.54733e+006,Y
+4.24839385277e+002,-1.05130464683e+002,-1.45417684322e+001,standard,It was not discovered previously.,b82,Certain,50,-,Y,P,P,,2,1.35714e+006,Y
+3.64166091391e+002,-1.07787084145e+002,-5.65058028727e+000,standard,It was not discovered previously.,b84,Probable,61,"undistinguishable relationship with b82, b75",Y,N,P,"Lots of secondary chains, plains",2,1.14700e+006,Y
+3.43496172123e+002,-9.48833723178e+001,1.46279271795e+001,standard,It was not discovered previously.,b85,Suggestion,65,-,Y,N,N,,N,1.09743e+006,Y
+2.03230512001e+003,-1.12725884820e+002,3.98848066910e+000,standard,It was not discovered previously.,b69,Suggestion,1,"pre-dates b85, b4, Sobkou, b81, Beethoven, b82, b84, b75, b6",Y,N,P,"Hard to outline, combination of multiple large basins?",2,6.41722e+006,Y
+3.61947199575e+002,-1.52422169066e+002,4.87177106514e+001,standard,Certain in Fassett et al 2012,Shakespeare,Certain,62,-,Y,Y,Y,,"1, 2",1.44669e+006,Y
+8.20724754721e+002,-1.32860671964e+002,3.35589023355e+001,standard,Certain in Fassett et al 2012,Sobkou,Certain,12,"pre-dates b4,may pre-date Budh and b27",Y,Y,Y,,"1, 2",2.84750e+006,Y
+3.21854518192e+002,-1.13690315105e+002,2.89969791470e+001,standard,Probable in Fassett et al 2012,b4,Certain,69,-,Y,Y,P,"Overprinted by ejectas: West: Sobkou ejecta, South: young, fresh ejecta",2,1.08506e+006,Y
+6.86564854355e+002,-1.52318187760e+002,1.75241387301e+001,standard,Probable in Fassett et al 2012,Budh,Certain,20,-,Y,N,P,Totally overprinted by plains,2,2.21106e+006,Y
+3.92700743563e+002,-1.58495624261e+002,2.80449864345e+001,standard,Certain in Fassett et al 2012,b27,Certain,56,pre-dates Budh,Y,N,N,,N,1.31748e+006,Y
+3.70945254339e+002,-1.70526800029e+002,2.29178153694e+001,standard,It was not verified by Fassett et al 2012,b47,Suggestion,59,pre-dates Caloris,Y,N,N,,N,1.21609e+006,Y
+3.31771096550e+002,-1.07125709734e+002,5.63818544225e+001,standard,Certain in Fassett et al 2012,Chong-Gauguin,Certain,67,Undistinguishable relationship with Vy-Asa,Y,Y,Y,"Subdued, partly covered by plains",1,1.49480e+006,Y
+3.59915545954e+002,-1.42630446197e+002,7.70563230754e+001,standard,It was not verified by Fassett et al 2012,b61,Certain,63,Undistinguishable relationship with Borealis,Y,Y,Y,"Subdued, partly covered by plains",2,3.46348e+006,Y
+3.16771338154e+002,-8.47023764198e+001,4.97418514112e+001,standard,Certain in Fassett et al 2012,Vy-Asa,Certain,73,-,Y,Y,Y,"Subdued, but visible rim",1,1.28306e+006,Y
+1.97736007221e+003,1.66279529149e+002,3.37716952787e+000,standard,It was not discovered previously.,b90,Probable,0,"Pre-dates Caloris, b99, b64, b42, b43, b93, Tolstoj, b92",Y,N,P,Partly overprinted by plains,2,9.46497e+006,Y
+1.00108595150e+003,8.16633052863e+001,-6.00713695126e+001,standard,It was not discovered previously.,b91,Suggestion,0,pre-dates b3,Y,N,P,Fully overprinted by plains.,2,4.94461e+006,Y
+1.42609849584e+003,4.83550718691e+001,-1.32544920072e+001,standard,It was not verified by Fassett et al 2012,b56,Certain,6,pre-dates b36,Y,N,P,Overprinted,2,4.55217e+006,Y
+4.25596239235e+002,1.71136204500e+002,-1.17011001429e+001,standard,It was not verified by Fassett et al 2012,b42,Probable,0,Pre-dates Caloris,Y,P,P/N,"Overprinted by plains, very challenging",2,1.35154e+006,Y
+3.20499801304e+002,-1.75846001954e+002,-2.66308618191e+000,standard,It was not discovered previously.,b92,Probable,0,-,Y,N,P/N,"Maybe impossible to date, only craters beneath the plains",2,1.00752e+006,Y
+5.42877526447e+002,-1.79272047853e+002,9.63278458004e+000,standard,It was not discovered previously.,b93,Suggestion,0,pre-Caloris,Y,N,N,Overprinted,N,2.79711e+006,Y
+4.30599286669e+002,-6.26637061952e+001,-5.99946165208e+001,standard,It was not discovered previously.,b78,Probable,0,-,Y,P,Y,Scarps as basin outlines.,2,2.09215e+006,Y
+3.63747911243e+002,-6.01568323703e+001,1.92042818878e+001,standard,It was not discovered previously.,b94,Probable,0,-,Y,N,Y,Overprinted by secondaries,2,1.17685e+006,Y
+4.24968819090e+002,6.48204832646e+001,1.17549265603e+001,standard,It was not verified by Fassett et al 2012,b18,Suggestion,0,Undistinguishable relationship with b12,P,P,N/P,Fully overprinted interior,2,1.34968e+006,Y
+3.62060695501e+002,-2.87746900422e+001,5.54763460983e+001,standard,It was not verified by Fassett et al 2012,b49,Probable,0,"pre-dates Derzhavin-Sor Juana,",Y,P,N,75% overprinted by Derzhavin-Sor Juana basin,N,1.60429e+006,Y
+3.36420224592e+002,1.52605080848e+002,-2.93528684518e+001,standard,Probable in Fassett et al 2012,b52,Probable,0,-,P,N,P,Partly overprinted by plains,2,1.13636e+006,Y
+3.07504096491e+002,-1.41881722236e+002,-4.43846806619e+001,standard,Probable in Fassett et al 2012,b41,Probable,0,-,P,P,P,"Secondaries, bad stat expected",2,1.16754e+006,Y
+3.11733523127e+002,-9.66839102557e+001,-1.72186128075e+001,standard,Probable in Fassett et al 2012,b6,Certain,0,"pre-dates b82, b9",Y,P,N,,N,1.00258e+006,Y
+3.16025048769e+002,-9.90186949886e+001,-2.49754375905e+001,standard,Probable in Fassett et al 2012,b9,Certain,0,-,Y,N,N,"Missing large craters, hard to date",N,1.04485e+006,Y
+3.14134051918e+002,1.60758893133e+002,-1.63157590533e+001,standard,Probable in Fassett et al 2012,b64,Probable,0,"pre-dates Caloris, b90",Y,Y,P/N,"S-SW rim visible, oberprinted by plains",2,1.00782e+006,Y
+3.32446927855e+002,-9.66714619717e+001,-4.78070793248e+000,standard,It was not discovered previously.,b75,Certain,0,-,Y,N,P,Fully covered by plains,2,1.04635e+006,Y
+3.86148645132e+002,6.71306931248e+001,3.17990031389e+001,standard,It was not discovered previously.,b96,Probable,0,"pre-dates Rachmaninoff, might post-date b72",Y,P,P,Fully overprinted by plains,2,1.32292e+006,Y
+6.28748802685e+002,5.79743659144e+001,3.09914149793e+001,standard,It was not discovered previously.,b72,Probable,0,"pre-dates Rachmaninoff, b96",Y,P,P,"Overprinted by Rachmaninoff, visible rim",2,2.14156e+006,Y
+3.33835034632e+002,-1.60444826141e+002,-2.58574527117e+001,standard,It was not discovered previously.,b97,Certain,0,pre-dates Tolstoj,Y,Y,Y,"Partly covered by plains, rim is visible, but not good for mapping",2,1.10812e+006,Y
+6.44758519644e+002,1.64850941381e+002,5.36994279115e+001,standard,It was not discovered previously.,b79,Probable,0,Pre-dates Caloris,Y,N,P/N,"Overprinted by Caloris and plains, poor statistics expected",2,2.78017e+006,Y
+3.58388774775e+002,-4.74845289316e+001,-2.05806383932e+001,standard,It was not discovered previously.,b98,Suggestion,0,-,Y,P,P,"Overprinted by subsequent large impact, secondaries, poor stat expected",2,1.16483e+006,Y
+5.61550716846e+002,1.46295755842e+002,-1.65053497035e+001,standard,It was not discovered previously.,b99,Certain,0,pre-dates Caloris,Y,P,P,Overprinted by plains,2,1.80299e+006,Y
+7.36748188326e+002,2.15606009471e+001,-7.64944551880e+000,standard,Certain in Fassett et al 2012,b36,Certain,0,-,Y,Y,Y,"Not much plains, but subdued",1,2.32590e+006,Y
+4.84607649513e+002,-6.94078276786e+000,-1.32881175334e+001,standard,Certain in Fassett et al 2012,b38,Certain,38,-,Y,Y,Y,75% covered by plains,1,1.54386e+006,Y
+4.42395938080e+002,-3.01470596185e+000,-2.72974293908e+001,standard,Certain in Fassett et al 2012,b37,Certain,47,-,Y,Y,Y,"Subdued, Overprinted by ejectas",1,1.47878e+006,Y
+7.31386376560e+002,8.75328505651e+001,-3.27223955736e+001,standard,Certain in Fassett et al 2012,Rembrandt,Certain,15,-,Y,Y,Y,-,1,2.52272e+006,Y
+4.23105222029e+002,-1.77460838211e+002,-4.46074444827e+001,standard,Certain in Fassett et al 2012,Dostoevskij,Certain,52,-,Y,Y,Y,,1,3.10472e+006,Y
+4.67480994686e+002,-1.64674235679e+002,-1.64728691633e+001,standard,Certain in Fassett et al 2012,Tolstoj,Certain,41,pre-dates b97,Y,Y,Y,,"1, 2",1.50064e+006,Y
+4.43876317841e+002,-1.42397621799e+002,-2.61025075377e+001,standard,Certain in Fassett et al 2012,b39,Certain,46,pre-dates Beethoven,Y,Y,Y,Overprinted by large complex crater,1,1.47529e+006,Y
+4.19899998711e+002,-1.01389265882e+002,-3.89103166109e+001,standard,Certain in Fassett et al 2012,b2,Certain,53,-,Y,Y,Y,,1,1.51411e+006,Y
+8.52092622044e+002,-7.68517994675e+001,-2.40491654775e+001,standard,Certain in Fassett et al 2012,Matisse-Repin,Certain,9,"pre-dates Raphael, b102",Y,Y,Y,,1,2.80954e+006,Y
+3.93524699800e+002,-7.63997518743e+001,-2.00558403896e+001,standard,Certain in Fassett et al 2012,Raphael,Certain,0,-,Y,Y,Y,,1,1.27680e+006,Y
+3.19008753073e+002,-5.42328779081e+001,8.12823861871e+001,standard,Certain in Fassett et al 2012,Goethe,Certain,0,-,Y,P,Y,"Interior is fully overprinted, but W-rim is ok","1, 2",4.74026e+006,Y
+3.11001165794e+002,8.35995693926e+001,-5.64888787746e+000,standard,It was not discovered previously.,b101,Probable,0,-,Y,P,P,,2,9.78934e+005,Y
+3.75010660402e+002,-7.53681541723e+001,-1.17067039266e+001,standard,It was not discovered previously.,b102,Certain,0,pre-dates Raphael,Y,P,P,"Fully overprinted, but topographic low is visible on optical data",2,1.19086e+006,Y
+8.14026819708e+002,1.37168123436e+002,-7.44847477742e+001,standard,It was not discovered previously.,b103,Probable,0,pre-dates b33,Y,P,P,,2,0.00000e+000,Y
+6.99513436438e+002,9.72706427226e+001,3.63273543530e+001,standard,It was not verified by Fassett et al 2012,b63,Probable,0,-,Y,N,N/P,Totally overprinted by plains,2,0.00000e+000,Y
+2.08186317274e+003,7.56741705804e+001,-6.09738267252e+001,standard,It was not discovered previously.,b100,Suggestion,0,"pre-dates b91, b3, Rembrandt, b83, b77, b54, b33",P,N,P,"Fully overprinted, maybe not a basin, but mappable",2,0.00000e+000,Y
+8.76937941965e+02,1.34259568898e+02,8.04271585380e+01,standard,It was not verified by Fassett et al,b60,Probable,0,pre-dates b62,Y,N,P/N,,2,0.00000e+00,

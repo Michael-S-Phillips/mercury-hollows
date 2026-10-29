@@ -1,0 +1,102 @@
+{
+ "anchor": {
+  "Tb_K": 717.8,
+  "pb_Pa": 101325.0,
+  "B_K": [
+   7750,
+   8420
+  ]
+ },
+ "vapor_pressure_MPa": {
+  "717.8K": [
+   0.101,
+   0.101
+  ],
+  "750K": [
+   0.161,
+   0.168
+  ],
+  "775K": [
+   0.225,
+   0.241
+  ],
+  "800K": [
+   0.307,
+   0.338
+  ],
+  "850K": [
+   0.543,
+   0.628
+  ]
+ },
+ "depth_m": {
+  "717.8K": [
+   9.1,
+   13.7
+  ],
+  "750K": [
+   14.5,
+   22.7
+  ],
+  "775K": [
+   20.3,
+   32.5
+  ],
+  "800K": [
+   27.7,
+   45.7
+  ],
+  "850K": [
+   48.9,
+   84.9
+  ]
+ },
+ "fit_used_for_fronts_MPa": {
+  "750K": 0.236,
+  "800K": 0.501
+ },
+ "S2_release_T_K_at_1e-6bar": {
+  "FeS": 1186,
+  "MgS_congruent_Mg_gas": 1471,
+  "MgS_with_SiO2": [
+   1693,
+   1930
+  ],
+  "CaS_congruent_Ca_gas": 1911,
+  "CaS_with_SiO2": [
+   2282,
+   2590
+  ],
+  "source": "sulfide_s2_record.json"
+ },
+ "iron_budget": {
+  "Fe_wt_pct": 1.5,
+  "max_S_wt_pct": 0.86,
+  "rock_volume_per_layer_volume_10volpct_S": [
+   8.0,
+   8.6
+  ]
+ },
+ "solar_day_yr": 0.4817,
+ "cycles_per_Gyr": 2076000000.0,
+ "lowering_um_per_day_for_2m_per_1e5yr": 9.6,
+ "charging_T_K_for_depth": {
+  "20.8m_raw_median": [
+   744,
+   777
+  ],
+  "24m": [
+   754,
+   788
+  ],
+  "28m": [
+   764,
+   801
+  ]
+ },
+ "depth_ratio_minus20K_at_770K": [
+  0.76,
+  0.75
+ ],
+ "FeS_pS2_at_1186K_Pa": 0.1
+}

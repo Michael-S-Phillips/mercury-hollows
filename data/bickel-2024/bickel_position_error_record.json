@@ -1,0 +1,41 @@
+{
+ "finding": "Bickel et al. 2024 detection positions carry per-source-image georeferencing errors of ~1-3.5 km relative to the ISIS camera model (spiceinit, reconstructed kernels).",
+ "evidence": {
+  "site": "A5 (crater +14.7, 297.7E); frame EN0259178827M",
+  "per_image_shift_km": {
+   "CN0254138067M (33 m/px, n=11)": [
+    -0.26,
+    -1.69
+   ],
+   "CN0259207642M (36 m/px, n=7)": [
+    1.08,
+    -0.43
+   ],
+   "CN0223702116M (26 m/px, n=3)": [
+    -1.35,
+    0.94
+   ],
+   "CN0241502006M (113 m/px, n=22)": [
+    3.49,
+    2.59
+   ]
+  },
+  "method": "shift maximizing high-pass brightness anomaly under the image's own detections; at zero shift the anomaly is ~0 in all four images, at the best shift 4-9 sigma",
+  "visual": "a5_shift_demo.png: in CN0254138067M the catalogued polygons sit 1.5-2 km north of unmistakable hollow clusters; shifted polygons land on them",
+  "direction_varies_per_image": true,
+  "hollows_real": true
+ },
+ "not_a_projection_problem": "GeoPackage CRS, longitude convention and geometry/attribute agreement verified; the shift differs in direction per image so it is not a convention error",
+ "recompute_not_possible": "'Image x/y coord (pix)' columns are normalized 0-1 but are NOT full-frame coordinates (all 8 axis conventions give >14 km residuals via campt); presumably tile-relative (thumbnail tags M2, M3...), tile layout not released",
+ "implications": [
+  "project analyses at >=8 ppd (14 km cells) unaffected",
+  "per-detection work at <3 km (QGIS overlays on NAC frames, halo/pit matching) must expect 1-3.5 km displacement",
+  "A5 remains a valid Priority A site: hollow fields are present in three source images",
+  "coarse-resolution (>100 m/px, low-incidence) detections additionally look like bright ejecta at 35 m/px and should be treated as 'bright material'"
+ ],
+ "options": [
+  "per-image shift correction by texture correlation where hollows are bright (risk: chases bright craters where n is small)",
+  "hand-tie polygons per site in QGIS",
+  "contact the catalogue authors for tile geometry or full-frame pixel coordinates -> exact recomputation via campt"
+ ]
+}

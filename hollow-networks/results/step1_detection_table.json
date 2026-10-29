@@ -1,0 +1,122 @@
+{
+ "pi_question": "is this consistent with a pareto distribution?",
+ "short_answer": "Partly. A pure Pareto over the whole range is rejected (p = 0.02). Restricted to fields of 2 or more detections it is not rejected (p = 0.13-0.38), with exponent alpha = 1.83. That tail is 40% of fields but 93% of all detections, so for the purpose the panel is making - that a few fields dominate any raw count - Pareto is a fair description.",
+ "method": "Discrete (zeta) power law fitted by maximum likelihood, with the Clauset, Shalizi & Newman goodness-of-fit test: 400-1000 synthetic datasets drawn from the fitted law, each refitted, and p taken as the fraction whose KS distance equals or exceeds the observed. p > 0.1 means the power law cannot be rejected. An independent MLE written here reproduces the powerlaw package's alpha to three decimals (1.833).",
+ "full_range": {
+  "xmin": 1,
+  "alpha": 1.902,
+  "KS_D": 0.0232,
+  "p_gof": 0.02,
+  "verdict": "REJECTED",
+  "why": "the failure is at the small end: 817 singletons observed against 785 expected, with a deficit at sizes 4-5 (46 vs 56 and 28 vs 37). Singleton fields are exactly where detection completeness and the linking distance bite, so this is as likely to be a property of the catalog as of the hollows."
+ },
+ "tail": {
+  "xmin": 2,
+  "alpha": 1.833,
+  "n_fields": 555,
+  "pct_of_fields": 40,
+  "pct_of_detections": 93,
+  "p_gof": 0.133,
+  "best_p": "0.38 at xmin = 4 (alpha = 1.76)",
+  "verdict": "NOT REJECTED"
+ },
+ "xmin_scan": {
+  "1": {
+   "n": 1372,
+   "alpha": 1.902,
+   "D": 0.0232,
+   "p": 0.02
+  },
+  "2": {
+   "n": 555,
+   "alpha": 1.833,
+   "D": 0.0313,
+   "p": 0.133
+  },
+  "3": {
+   "n": 351,
+   "alpha": 1.786,
+   "D": 0.0336,
+   "p": 0.352
+  },
+  "4": {
+   "n": 263,
+   "alpha": 1.761,
+   "D": 0.0399,
+   "p": 0.38
+  },
+  "5": {
+   "n": 217,
+   "alpha": 1.759,
+   "D": 0.048,
+   "p": 0.275
+  },
+  "8": {
+   "n": 143,
+   "alpha": 1.734,
+   "D": 0.0695,
+   "p": 0.15
+  },
+  "10": {
+   "n": 124,
+   "alpha": 1.762,
+   "D": 0.0837,
+   "p": 0.068
+  },
+  "15": {
+   "n": 96,
+   "alpha": 1.823,
+   "D": 0.1078,
+   "p": 0.022
+  },
+  "20": {
+   "n": 76,
+   "alpha": 1.832,
+   "D": 0.1349,
+   "p": 0.015
+  },
+  "30": {
+   "n": 60,
+   "alpha": 1.953,
+   "D": 0.1288,
+   "p": 0.043
+  },
+  "50": {
+   "n": 44,
+   "alpha": 2.214,
+   "D": 0.0798,
+   "p": 0.557
+  }
+ },
+ "non_monotonic_caveat": "p drops below 0.1 again for xmin between 10 and 30 and rises at 50. Those samples are 44-124 fields, where the KS test has little power and p is unstable. This is small-sample noise, not evidence of a second regime.",
+ "model_comparison_on_the_tail": {
+  "vs_exponential": "R = +6.92, p < 1e-4, power law strongly favored",
+  "vs_stretched_exponential": "R = +1.59, p = 0.113, not distinguishable",
+  "vs_truncated_power_law": "R = -1.55, p = 0.150, not distinguishable (lambda = 4e-4, i.e. no detectable exponential cutoff)",
+  "vs_lognormal": "R = -2.08, p = 0.038 nominally favors lognormal, BUT the fitted lognormal is degenerate (mu = -980, sigma = 34.6), so this comparison is not usable. Reported here rather than quoted as evidence either way."
+ },
+ "exponent_depends_on_the_linking_distance": {
+  "values": {
+   "16": 1.972,
+   "20": 1.902,
+   "25": 1.849,
+   "30": 1.804,
+   "40": 1.756,
+   "50": 1.701
+  },
+  "note": "alpha falls steadily from 1.97 to 1.70 across the calibrated 16-50 km plateau, so the exponent is not a parameter-free property of the hollow population. Quote it as alpha ~ 1.8 with the linking distance stated, never as a bare number."
+ },
+ "concentration": {
+  "top20_pct_of_detections": 87,
+  "gini": 0.815,
+  "note": "the classic '80/20' Pareto statement would be 80%; here the top 20% of fields hold 87% of detections, i.e. slightly more concentrated than the folk version."
+ },
+ "relation_to_bickel": "Bickel et al. 2025 report that the hollow DIAMETER size-frequency distribution follows a power law with exponent 1.4-1.5. That is a different quantity - the size of an individual hollow, not the number of detections grouped into a field - so the two exponents should not be compared directly.",
+ "figure": "figS_fieldsize_pareto.png",
+ "files": [
+  "data/detections_qc.csv",
+  "data/hollows_canonical.csv",
+  "data/detections_conf08_dedup_bickel.csv"
+ ],
+ "size_repeatability_note": "the pooled log-size sd of 0.466 is inflated by the merged-field tail; the MAD-based 0.294 (a factor 1.34) is the appropriate per-hollow measurement error"
+}

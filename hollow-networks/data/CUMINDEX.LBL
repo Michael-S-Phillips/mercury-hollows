@@ -1,0 +1,753 @@
+PDS_VERSION_ID           = PDS3
+RECORD_TYPE              = FIXED_LENGTH
+RECORD_BYTES             = 1084
+FILE_RECORDS             = 694232
+^INDEX_TABLE             = "CUMINDEX.TAB"
+VOLUME_ID                = MSGRMDS_2001
+DATA_SET_ID              = "MESS-E/V/H-MDIS-4-CDR-CALDATA-V1.0"
+INSTRUMENT_HOST_NAME     = "MESSENGER"
+INSTRUMENT_NAME          = {"MERCURY DUAL IMAGING SYSTEM NARROW ANGLE CAMERA",
+                            "MERCURY DUAL IMAGING SYSTEM WIDE ANGLE CAMERA"}
+
+OBJECT                   = INDEX_TABLE
+    INTERCHANGE_FORMAT       = ASCII
+    ROW_BYTES                = 1084
+    ROWS                     = 694232
+    COLUMNS                  = 71
+    INDEX_TYPE               = SINGLE
+
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 1
+        NAME                    = "VOLUME_ID"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 2
+        BYTES                   = 12
+        DESCRIPTION             = "The identifier of the volume on which the
+                                   product is stored."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 2
+        NAME                    = "PATH_NAME"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 17
+        BYTES                   = 13
+        DESCRIPTION             = "Path to directory containing file."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 3
+        NAME                    = "FILE_NAME"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 33
+        BYTES                   = 22
+        DESCRIPTION             = "Name of file in archive."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 4
+        NAME                    = "PRODUCT_ID"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 58
+        BYTES                   = 18
+        DESCRIPTION             = "A permanent, unique identifier assigned to
+                                   a data product by its producer."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 5
+        NAME                    = "OBSERVATION_ID"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 78
+        BYTES                   = 7
+        DESCRIPTION             = "Image counter from header."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 6
+        NAME                    = "DATA_QUALITY_ID"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 87
+        BYTES                   = 16
+        DESCRIPTION             = "A data quality index is used to encode
+                                   figures-of-merit into one parameter that is
+                                   included in the label of each EDR."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 7
+        NAME                    = "MISSION_PHASE_NAME"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 106
+        BYTES                   = 20
+        DESCRIPTION             = "Provides the commonly-used identifiers of
+                                   the MESSENGER Mission Phase. " 
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 8
+        NAME                    = "TARGET_NAME"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 129
+        BYTES                   = 20
+        DESCRIPTION             = "Identifies the target." 
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 9
+        NAME                    = "SEQUENCE_NAME"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 152
+        BYTES                   = 27
+        DESCRIPTION             = "Identifies the imaging sequence name." 
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 10
+        NAME                    = "PRODUCT_CREATION_TIME"
+        DATA_TYPE               = TIME
+        START_BYTE              = 181
+        BYTES                   = 19
+        DESCRIPTION             = "The time in UTC when the EDR product was
+                                   created."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 11
+        NAME                    = "START_TIME"
+        DATA_TYPE               = TIME
+        START_BYTE              = 201
+        BYTES                   = 26
+        DESCRIPTION             = "The UTC date and time for the start of the
+                                   exposure."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 12
+        NAME                    = "STOP_TIME"
+        DATA_TYPE               = TIME
+        START_BYTE              = 228
+        BYTES                   = 26
+        DESCRIPTION             = "The UTC date and time for the end of the
+                                   exposure."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 13
+        NAME                    = "SPACECRAFT_CLOCK_START_COUNT"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 256
+        BYTES                   = 19
+        DESCRIPTION             = "Clock count of the spacecraft computer at
+                                   the start of the exposure. For MESSENGER,
+                                   this is also known as the Mission Elapsed
+                                   Time (MET)."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 14
+        NAME                    = "SPACECRAFT_CLOCK_STOP_COUNT"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 278
+        BYTES                   = 19
+        DESCRIPTION             = "Clock count of the spacecraft computer at
+                                   the end of the exposure. For MESSENGER,
+                                   this is also known as the Mission Elapsed
+                                   Time (MET)."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 15
+        NAME                    = "INSTRUMENT_ID"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 300
+        BYTES                   = 8
+        DESCRIPTION             = "Abbreviated name or acronym which
+                                   identifies the instrument."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 16
+        NAME                    = "FILTER_NUMBER"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 310
+        BYTES                   = 2
+        NOT_APPLICABLE_CONSTANT = 99
+        UNKNOWN_CONSTANT        = 98
+        DESCRIPTION             = "Provides the number of the WAC filter wheel
+                                   through which an image or measurement was
+                                   acquired."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 17
+        NAME                    = "CENTER_FILTER_WAVELENGTH"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 313
+        BYTES                   = 6
+        NOT_APPLICABLE_CONSTANT = -999.9
+        UNKNOWN_CONSTANT        = -888.8
+        DESCRIPTION             = "The mid point wavelength value between the
+                                   minimum and maximum instrument filter
+                                   wavelength values."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 18
+        NAME                    = "EXPOSURE_DURATION"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 320
+        BYTES                   = 4
+        DESCRIPTION             = "The exposure duration (integration time) of
+                                   the image observation expressed in
+                                   milliseconds."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 19
+        NAME                    = "EXPOSURE_TYPE"
+        DATA_TYPE               = CHARACTER
+        START_BYTE              = 326
+        BYTES                   = 6
+        DESCRIPTION             = "The MDIS exposure setting. There are two
+                                   settings - automatic exposure setting and
+                                   manually commanded exposure setting."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 20
+        NAME                    = "DETECTOR_TEMPERATURE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 334
+        BYTES                   = 6
+        DESCRIPTION             = "Temperature of the CCD in degrees Celsius
+                                   at the time the observation was made. The
+                                   conversion formula depends on the camera
+                                   performing the observation."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 21
+        NAME                    = "FOCAL_PLANE_TEMPERATURE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 341
+        BYTES                   = 6
+        DESCRIPTION             = "Indicates the temperature of the focal
+                                   plane array in degrees Celsius at
+                                   observation time. The conversion formula
+                                   depends on the camera performing the
+                                   observation."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 22
+        NAME                    = "FILTER_TEMPERATURE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 348
+        BYTES                   = 8
+        NOT_APPLICABLE_CONSTANT = -999.999
+        DESCRIPTION             = "The temperature of the filter wheel."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 23
+        NAME                    = "OPTICS_TEMPERATURE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 357
+        BYTES                   = 8
+        NOT_APPLICABLE_CONSTANT = -999.999
+        DESCRIPTION             = "The temperature of the NAC telescope."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 24
+        NAME                    = "MESS:PIV_POS"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 366
+        BYTES                   = 6
+        DESCRIPTION             = "Pivot position in 180deg/2^15 units."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 25
+        NAME                    = "MESS:PIV_POS_MOTOR"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 373
+        BYTES                   = 6
+        NOT_APPLICABLE_CONSTANT = -99999
+        DESCRIPTION             = "Pivot position in motor steps."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 26
+        NAME                    = "MESS:PIV_READ"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 380
+        BYTES                   = 5
+        DESCRIPTION             = "Pivot reading from resolver.  Note: these
+                                   are the pivot position values being used to
+                                   generate the MDIS pivot platform SPICE
+                                   C-kernel."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 27
+        NAME                    = "MESS:FPU_BIN"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 386
+        BYTES                   = 1
+        DESCRIPTION             = "Identifies the image binning in FPU -
+                                   0=1x1, 1=2x2."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 28
+        NAME                    = "MESS:COMP12_8"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 388
+        BYTES                   = 1
+        DESCRIPTION             = "Identifies if 12 to 8 bit image compression
+                                   is enabled or disabled. 0=disabled,
+                                   1=enabled."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 29
+        NAME                    = "MESS:COMP_ALG"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 390
+        BYTES                   = 1
+        DESCRIPTION             = "Identifies the 12 to 8 bit compression
+                                   algorithm used."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 30
+        NAME                    = "MESS:COMP_FST"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 392
+        BYTES                   = 1
+        DESCRIPTION             = "Identifies if Fast image compression is
+                                   disabled (=0) or enabled (=1)."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 31
+        NAME                    = "MESS:WVLRATIO"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 394
+        BYTES                   = 2
+        DESCRIPTION             = "Identifies the wavelet compression ratio."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 32
+        NAME                    = "MESS:PIXELBIN"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 397
+        BYTES                   = 1
+        DESCRIPTION             = "Identifies the MP software pixel binning."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 33
+        NAME                    = "MESS:SUBFRAME"
+        DATA_TYPE               = ASCII_INTEGER
+        START_BYTE              = 399
+        BYTES                   = 1
+        DESCRIPTION             = "Identifies the number of subframes."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 34
+        NAME                    = "RETICLE_POINT_RA_1"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 401
+        BYTES                   = 18
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "The right ascension of the principle points
+                                   of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 35
+        NAME                    = "RETICLE_POINT_RA_2"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 420
+        BYTES                   = 18
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "The right ascension of the principle points
+                                   of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 36
+        NAME                    = "RETICLE_POINT_RA_3"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 439
+        BYTES                   = 18
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "The right ascension of the principle points
+                                   of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 37
+        NAME                    = "RETICLE_POINT_RA_4"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 458
+        BYTES                   = 18
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "The right ascension of the principle points
+                                   of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 38
+        NAME                    = "RETICLE_POINT_DECLINATION_1"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 477
+        BYTES                   = 27
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "The declination of the principle points of
+                                   the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 39
+        NAME                    = "RETICLE_POINT_DECLINATION_2"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 505
+        BYTES                   = 27
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "The declination of the principle points of
+                                   the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 40
+        NAME                    = "RETICLE_POINT_DECLINATION_3"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 533
+        BYTES                   = 27
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "The declination of the principle points of
+                                   the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 41
+        NAME                    = "RETICLE_POINT_DECLINATION_4"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 561
+        BYTES                   = 27
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "The declination of the principle points of
+                                   the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 42
+        NAME                    = "SPACECRAFT_SOLAR_DISTANCE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 589
+        BYTES                   = 15
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Distance from spacecraft to Sun."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 43
+        NAME                    = "SLANT_DISTANCE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 605
+        BYTES                   = 13
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Distance from spacecraft to the camera
+                                   boresight intercept point on the surface in
+                                   kilometers"
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 44
+        NAME                    = "CENTER_LATITUDE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 619
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Latitude at the center of the full image
+                                   frame."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 45
+        NAME                    = "CENTER_LONGITUDE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 629
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -999.999
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "Longitude at the center of the full image
+                                   frame."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 46
+        NAME                    = "HORIZONTAL_PIXEL_SCALE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 639
+        BYTES                   = 12
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "The scale of a pixel in the horizontal
+                                   direction."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 47
+        NAME                    = "SMEAR_MAGNITUDE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 652
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Norm of velocity vector of camera boresight
+                                   intercept point projected on the target,
+                                   multiplied by the exposure duration with
+                                   the scale of the image factored to obtain
+                                   the smear in pixels. Spacecraft rotation is
+                                   taken into account. (Units are in pixels.)"
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 48
+        NAME                    = "RETICLE_POINT_LATITUDE_1"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 662
+        BYTES                   = 24
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Latitudes of the surface intercept points
+                                   of the principle points of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 49
+        NAME                    = "RETICLE_POINT_LATITUDE_2"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 687
+        BYTES                   = 24
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Latitudes of the surface intercept points
+                                   of the principle points of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 50
+        NAME                    = "RETICLE_POINT_LATITUDE_3"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 712
+        BYTES                   = 24
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Latitudes of the surface intercept points
+                                   of the principle points of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 51
+        NAME                    = "RETICLE_POINT_LATITUDE_4"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 737
+        BYTES                   = 24
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Latitudes of the surface intercept points
+                                   of the principle points of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 52
+        NAME                    = "RETICLE_POINT_LONGITUDE_1"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 762
+        BYTES                   = 25
+        NOT_APPLICABLE_CONSTANT = -999.999
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "Longitudes of the surface intercept points
+                                   of the principle points of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 53
+        NAME                    = "RETICLE_POINT_LONGITUDE_2"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 788
+        BYTES                   = 25
+        NOT_APPLICABLE_CONSTANT = -999.999
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "Longitudes of the surface intercept points
+                                   of the principle points of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 54
+        NAME                    = "RETICLE_POINT_LONGITUDE_3"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 814
+        BYTES                   = 25
+        NOT_APPLICABLE_CONSTANT = -999.999
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "Longitudes of the surface intercept points
+                                   of the principle points of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 55
+        NAME                    = "RETICLE_POINT_LONGITUDE_4"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 840
+        BYTES                   = 25
+        NOT_APPLICABLE_CONSTANT = -999.999
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "Longitudes of the surface intercept points
+                                   of the principle points of the camera."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 56
+        NAME                    = "SOLAR_DISTANCE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 866
+        BYTES                   = 16
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Distance from target body center to Sun."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 57
+        NAME                    = "SUB_SOLAR_AZIMUTH"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 883
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -999.999
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "Azimuth of the apparent sub-solar point, as
+                                   seen by the spacecraft. This point is the
+                                   surface intercept of the
+                                   target-center-to-Sun vector, evaluated at
+                                   the camera epoch minus one-way light time
+                                   from target to spacecraft at the epoch."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 58
+        NAME                    = "SUB_SPACECRAFT_LATITUDE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 893
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Planetocentric latitude of
+                                   spacecraft-to-body-center surface intercept
+                                   vector."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 59
+        NAME                    = "SUB_SPACECRAFT_LONGITUDE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 903
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -999.999
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "Planetocentric longitude of
+                                   spacecraft-to-body-center surface intercept
+                                   vector."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 60
+        NAME                    = "SPACECRAFT_ALTITUDE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 913
+        BYTES                   = 16
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Altitude of the spacecraft above a
+                                   reference ellipsoid."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 61
+        NAME                    = "SUB_SOLAR_LATITUDE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 930
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Planetocentric latitude of the apparent
+                                   sub-solar point."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 62
+        NAME                    = "SUB_SOLAR_LONGITUDE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 940
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -999.999
+        UNKNOWN_CONSTANT        = -998.888
+        DESCRIPTION             = "Planetocentric latitude of the apparent
+                                   sub-solar point."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 63
+        NAME                    = "INCIDENCE_ANGLE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 950
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Provides a measure of the lighting
+                                   condition at the intercept point. Incidence
+                                   angle is the angle between the local
+                                   vertical at the intercept point (surface)
+                                   and a vector from the intercept point to
+                                   the sun."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 64
+        NAME                    = "PHASE_ANGLE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 960
+        BYTES                   = 9
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Provides a measure of the relationship
+                                   between the instrument viewing position and
+                                   incident illumination. Phase angle is
+                                   measured at the target; it is the angle
+                                   between a vector to the illumination source
+                                   and a vector to the instrument."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 65
+        NAME                    = "EMISSION_ANGLE"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 970
+        BYTES                   = 8
+        NOT_APPLICABLE_CONSTANT = -99.999
+        UNKNOWN_CONSTANT        = -98.888
+        DESCRIPTION             = "Provides the value of the angle between the
+                                   surface normal vector at the intercept
+                                   point and a vector from the intercept point
+                                   to the spacecraft."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 66
+        NAME                    = "DARK_STRIP_MEAN"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 979
+        BYTES                   = 19
+        NOT_APPLICABLE_CONSTANT = -999.999
+        DESCRIPTION             = "The mean value in the CCD dark strip.  This
+                                   is a measure of the dark current even if
+                                   the rest of the CCD is illuminated."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 67
+        NAME                    = "MINIMUM"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 999
+        BYTES                   = 19
+        DESCRIPTION             = "The lowest value within the exposed area of
+                                   the CCD."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 68
+        NAME                    = "MAXIMUM"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 1019
+        BYTES                   = 18
+        DESCRIPTION             = "The highest value within the exposed area
+                                   of the CCD."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 69
+        NAME                    = "MEAN"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 1038
+        BYTES                   = 19
+        DESCRIPTION             = "The arithmetic mean value within the
+                                   exposed area of the CCD."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 70
+        NAME                    = "STANDARD_DEVIATION"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 1058
+        BYTES                   = 18
+        DESCRIPTION             = "The standard deviation of the values within
+                                   the exposed area of the CCD."
+    END_OBJECT              = COLUMN
+    OBJECT                  = COLUMN
+        COLUMN_NUMBER           = 71
+        NAME                    = "SATURATED_PIXEL_COUNT"
+        DATA_TYPE               = ASCII_REAL
+        START_BYTE              = 1077
+        BYTES                   = 6
+        DESCRIPTION             = "The number of pixels whose values indicate
+                                   that the corresponding detector elements
+                                   exceeded their linear response range. In
+                                   the WAC (MESS:IMAGER=0) the 12-bit DN value
+                                   where saturation occurs is approximately
+                                   3600; in the NAC (MESS:IMAGER=1) it is
+                                   approximately 3400."
+    END_OBJECT              = COLUMN
+END_OBJECT               = INDEX_TABLE
+END

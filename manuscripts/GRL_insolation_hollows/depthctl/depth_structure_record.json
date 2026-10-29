@@ -1,0 +1,134 @@
+{
+ "n_hollows": 2518,
+ "n_assigned": 1960,
+ "n_craters": 87,
+ "crater_median_sd_log10": 0.1533410368031642,
+ "crater_median_range_m": [
+  0.5479488029068678,
+  1.3561106654582549
+ ],
+ "R2_crater": 0.28008866525226817,
+ "R2_crater_image": 0.6209566717741493,
+ "R2_image_only": 0.6200324678437408,
+ "variogram": [
+  {
+   "bin": "0-300 km",
+   "n_pairs": 105,
+   "semivar": 0.018096567247424325,
+   "null_mean": 0.023233688615616414,
+   "p_lower": 0.149
+  },
+  {
+   "bin": "300-600 km",
+   "n_pairs": 207,
+   "semivar": 0.020167190979862006,
+   "null_mean": 0.023426301795748963,
+   "p_lower": 0.161
+  },
+  {
+   "bin": "600-1000 km",
+   "n_pairs": 320,
+   "semivar": 0.02030719882143962,
+   "null_mean": 0.0234405956676665,
+   "p_lower": 0.1045
+  },
+  {
+   "bin": "1000-2000 km",
+   "n_pairs": 787,
+   "semivar": 0.026611866239575937,
+   "null_mean": 0.02354217218632631,
+   "p_lower": 0.947
+  },
+  {
+   "bin": "2000-4000 km",
+   "n_pairs": 1802,
+   "semivar": 0.024422585450094306,
+   "null_mean": 0.02349657088343719,
+   "p_lower": 0.849
+  },
+  {
+   "bin": "4000-8000 km",
+   "n_pairs": 520,
+   "semivar": 0.020072721517521878,
+   "null_mean": 0.023664657663064595,
+   "p_lower": 0.1425
+  }
+ ],
+ "total_var_crater_medians": 0.023243203756744418,
+ "pairs_lt600_corr": 0.007888886543390896,
+ "tiles": {
+  "n_tiles": 25,
+  "R2": 0.3729357406318662,
+  "R2_adj": 0.13020118861839491,
+  "F_p": 0.08982455963942643
+ },
+ "position_effects_vs_inner_floor": {
+  "center": [
+   0.9222575145214112,
+   0.8164814391948871,
+   1.0417369976345414
+  ],
+  "outer_floor_lower_wall": [
+   0.8702994890137349,
+   0.8205378466425227,
+   0.9230789337466695
+  ],
+  "wall_rim": [
+   0.8893629373968858,
+   0.7917469251919643,
+   0.9990142168514792
+  ]
+ },
+ "position_n": {
+  "outer_floor_lower_wall": 741,
+  "inner_floor": 696,
+  "wall_rim": 179,
+  "center": 129
+ },
+ "pair_correlations_corrected_depth": {
+  "note": "Pearson r of pixel- and incidence-corrected log10 depth between pairs of measurements, by separation and by image/crater membership",
+  "diff_image_lt0.2km": 0.69,
+  "same_image_lt0.2km": 0.7,
+  "0-0.5km": {
+   "diff_img_same_crater": 0.36,
+   "diff_img_diff_crater": 0.57,
+   "same_img": 0.67
+  },
+  "0.5-2km": {
+   "diff_img_same_crater": 0.18,
+   "diff_img_diff_crater": 0.32,
+   "same_img": 0.5
+  },
+  "2-5km": {
+   "diff_img_same_crater": 0.06,
+   "diff_img_diff_crater": -0.01,
+   "same_img": 0.4
+  },
+  "5-10km": {
+   "diff_img_same_crater": 0.16,
+   "diff_img_diff_crater": -0.06,
+   "same_img": 0.35
+  },
+  "10-20km": {
+   "diff_img_same_crater": 0.19,
+   "diff_img_diff_crater": -0.07,
+   "same_img": 0.25
+  },
+  "20-60km": {
+   "diff_img_same_crater": 0.06,
+   "diff_img_diff_crater": 0.05
+  },
+  "per_measurement_sd_dex_from_repeat_pairs": 0.108
+ },
+ "red_province_90_150E_40_70N_vs_rest_40_70N": {
+  "depth_ratio": 0.985,
+  "ci95": [
+   0.896,
+   1.083
+  ],
+  "p": 0.76,
+  "n_in": 687,
+  "n_out": 922,
+  "note": "province is S/Si-, Mg/Si-, Ca/Si-depleted and Al/Si-enriched (earlier XRS analysis); pixel scale and incidence controlled, image-clustered SE"
+ }
+}
