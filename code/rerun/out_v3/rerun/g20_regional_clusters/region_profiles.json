@@ -1,0 +1,301 @@
+{
+ "global": {
+  "label": "all craters",
+  "n_craters": 31554,
+  "hosts": 446,
+  "predicted": 438.8,
+  "hosts_D5_10": [
+   39,
+   39.3
+  ],
+  "hosts_D10_30": [
+   112,
+   110.9
+  ],
+  "hosts_D30plus": [
+   295,
+   288.6
+  ],
+  "median_C1": 0.025,
+  "median_C03": 0.0,
+  "median_bestpx_m": 86.7,
+  "median_nimg": 6.0,
+  "host_median_D": 52.1,
+  "host_median_P": 0.129,
+  "age_frac_D10": {
+   "fresh": 0.015,
+   "standard": 0.131,
+   "degraded": 0.102,
+   "filled": 0.751
+  },
+  "rayed": 74,
+  "nested_frac": 0.473,
+  "vent_craters": 148,
+  "mean_z": {
+   "lrm": 0.0,
+   "s_si": 0.0,
+   "mg_si": -0.0,
+   "ca_si": 0.0,
+   "al_si": -0.0,
+   "pc1": 0.0,
+   "pc2": -0.0
+  },
+  "mean_z_hosts": {
+   "lrm": -0.02,
+   "pc1": 0.09,
+   "pc2": -0.14,
+   "mg_si": 0.14,
+   "s_si": 0.24
+  },
+  "hollows": {
+   "n": 4974,
+   "median_D_km": 0.98,
+   "frac_lt_0p5km": 0.22,
+   "median_px_best": 24.3,
+   "stage1_share_inc_lt70": null,
+   "n_staged": 0,
+   "frac_in_host_wall_rim": 0.48
+  }
+ },
+ "1_province": {
+  "label": "1_province",
+  "n_craters": 275,
+  "hosts": 23,
+  "predicted": 4.9,
+  "hosts_D5_10": [
+   6,
+   0.8
+  ],
+  "hosts_D10_30": [
+   9,
+   0.9
+  ],
+  "hosts_D30plus": [
+   8,
+   3.2
+  ],
+  "median_C1": 0.337,
+  "median_C03": 0.052,
+  "median_bestpx_m": 13.6,
+  "median_nimg": 2.0,
+  "host_median_D": 21.6,
+  "host_median_P": 0.009,
+  "age_frac_D10": {
+   "fresh": 0.015,
+   "standard": 0.12,
+   "degraded": 0.075,
+   "filled": 0.789
+  },
+  "rayed": 0,
+  "nested_frac": 0.345,
+  "vent_craters": 2,
+  "mean_z": {
+   "lrm": -0.55,
+   "s_si": -0.87,
+   "mg_si": -1.39,
+   "ca_si": -1.48,
+   "al_si": -0.45,
+   "pc1": 1.39,
+   "pc2": -0.71
+  },
+  "mean_z_hosts": {
+   "lrm": -0.58,
+   "pc1": 2.02,
+   "pc2": -0.36,
+   "mg_si": -1.25,
+   "s_si": -0.85
+  },
+  "hollows": {
+   "n": 88,
+   "median_D_km": 0.51,
+   "frac_lt_0p5km": 0.49,
+   "median_px_best": 15.1,
+   "stage1_share_inc_lt70": null,
+   "n_staged": 0,
+   "frac_in_host_wall_rim": 0.59
+  },
+  "dist_caloris_center_km": 1776,
+  "vents_within_500km": 3,
+  "vents_expected_by_area": 3.2
+ },
+ "2_abu_nuwas_sinan": {
+  "label": "2_abu_nuwas_sinan",
+  "n_craters": 321,
+  "hosts": 23,
+  "predicted": 8.0,
+  "hosts_D5_10": [
+   3,
+   0.5
+  ],
+  "hosts_D10_30": [
+   5,
+   2.5
+  ],
+  "hosts_D30plus": [
+   15,
+   5.1
+  ],
+  "median_C1": 0.061,
+  "median_C03": 0.0,
+  "median_bestpx_m": 67.7,
+  "median_nimg": 17.0,
+  "host_median_D": 40.7,
+  "host_median_P": 0.12,
+  "age_frac_D10": {
+   "fresh": 0.026,
+   "standard": 0.268,
+   "degraded": 0.137,
+   "filled": 0.568
+  },
+  "rayed": 1,
+  "nested_frac": 0.327,
+  "vent_craters": 0,
+  "mean_z": {
+   "lrm": -0.22,
+   "s_si": 0.65,
+   "mg_si": 0.52,
+   "ca_si": 0.48,
+   "al_si": 0.65,
+   "pc1": -0.85,
+   "pc2": -0.64
+  },
+  "mean_z_hosts": {
+   "lrm": 0.05,
+   "pc1": -1.03,
+   "pc2": -1.0,
+   "mg_si": 0.47,
+   "s_si": 0.81
+  },
+  "hollows": {
+   "n": 152,
+   "median_D_km": 1.58,
+   "frac_lt_0p5km": 0.0,
+   "median_px_best": 44.2,
+   "stage1_share_inc_lt70": null,
+   "n_staged": 0,
+   "frac_in_host_wall_rim": 0.28
+  },
+  "dist_caloris_center_km": 5768,
+  "vents_within_500km": 0,
+  "vents_expected_by_area": 3.2
+ },
+ "3_tyagaraja": {
+  "label": "3_tyagaraja",
+  "n_craters": 265,
+  "hosts": 19,
+  "predicted": 6.2,
+  "hosts_D5_10": [
+   1,
+   0.4
+  ],
+  "hosts_D10_30": [
+   6,
+   1.2
+  ],
+  "hosts_D30plus": [
+   12,
+   4.5
+  ],
+  "median_C1": 0.081,
+  "median_C03": 0.0,
+  "median_bestpx_m": 63.1,
+  "median_nimg": 24.0,
+  "host_median_D": 62.9,
+  "host_median_P": 0.051,
+  "age_frac_D10": {
+   "fresh": 0.026,
+   "standard": 0.17,
+   "degraded": 0.052,
+   "filled": 0.752
+  },
+  "rayed": 0,
+  "nested_frac": 0.487,
+  "vent_craters": 3,
+  "mean_z": {
+   "lrm": -0.45,
+   "s_si": 0.13,
+   "mg_si": -0.06,
+   "ca_si": -0.26,
+   "al_si": -0.0,
+   "pc1": -0.25,
+   "pc2": -0.86
+  },
+  "mean_z_hosts": {
+   "lrm": -0.46,
+   "pc1": 0.09,
+   "pc2": -0.89,
+   "mg_si": -0.05,
+   "s_si": 0.13
+  },
+  "hollows": {
+   "n": 159,
+   "median_D_km": 1.67,
+   "frac_lt_0p5km": 0.14,
+   "median_px_best": 41.0,
+   "stage1_share_inc_lt70": null,
+   "n_staged": 0,
+   "frac_in_host_wall_rim": 0.31
+  },
+  "dist_caloris_center_km": 1925,
+  "vents_within_500km": 3,
+  "vents_expected_by_area": 3.2
+ },
+ "outside_regions": {
+  "label": "outside the three 500 km windows",
+  "n_craters": 30693,
+  "hosts": 381,
+  "predicted": 419.8,
+  "hosts_D5_10": [
+   29,
+   37.7
+  ],
+  "hosts_D10_30": [
+   92,
+   106.3
+  ],
+  "hosts_D30plus": [
+   260,
+   275.8
+  ],
+  "median_C1": 0.023,
+  "median_C03": 0.0,
+  "median_bestpx_m": 88.2,
+  "median_nimg": 6.0,
+  "host_median_D": 54.5,
+  "host_median_P": 0.152,
+  "age_frac_D10": {
+   "fresh": 0.014,
+   "standard": 0.129,
+   "degraded": 0.102,
+   "filled": 0.753
+  },
+  "rayed": 73,
+  "nested_frac": 0.475,
+  "vent_craters": 143,
+  "mean_z": {
+   "lrm": 0.01,
+   "s_si": -0.0,
+   "mg_si": 0.01,
+   "ca_si": 0.01,
+   "al_si": -0.0,
+   "pc1": -0.0,
+   "pc2": 0.02
+  },
+  "mean_z_hosts": {
+   "lrm": 0.04,
+   "pc1": 0.04,
+   "pc2": -0.04,
+   "mg_si": 0.21,
+   "s_si": 0.24
+  },
+  "hollows": {
+   "n": 4575,
+   "median_D_km": 0.96,
+   "frac_lt_0p5km": 0.23,
+   "median_px_best": 23.8,
+   "stage1_share_inc_lt70": null,
+   "n_staged": 0,
+   "frac_in_host_wall_rim": 0.49
+  }
+ }
+}

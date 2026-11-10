@@ -1,0 +1,969 @@
+{
+  "description": "Hot-pole vs warm-pole longitude preference, both hemispheres, v2 corrected positions.",
+  "definitions": {
+    "hot_pole_lon": "within +-45 deg of 0 or 180 E",
+    "warm_pole_lon": "within +-45 deg of 90 or 270 E",
+    "over_representation": "observed fraction in sector / null fraction in sector, within a latitude band",
+    "hot_over_warm": "over_rep(hot) / over_rep(warm)",
+    "null": "size-marginalized coverage x completeness (net_pipeline recipe), built per hemisphere",
+    "caloris_exclusion_km": 1200.0,
+    "province": "90-150 E, 40-70 N"
+  },
+  "n_fields": {
+    "north": 764,
+    "south": 171
+  },
+  "variants": {
+    "all": {
+      "north": {
+        "n_after_excl": 764,
+        "size_weights": [
+          0.0131,
+          0.0118,
+          0.0484,
+          0.123,
+          0.1047,
+          0.0942,
+          0.127,
+          0.1296,
+          0.1139,
+          0.1466,
+          0.0877
+        ],
+        "bands": [
+          {
+            "band": "0-15",
+            "n": 133,
+            "npool": 135384,
+            "null_hot_frac": 0.5197,
+            "over_hot": 1.302,
+            "over_warm": 0.673,
+            "hot_over_warm": 1.934,
+            "hw_ci": [
+              1.352,
+              2.8
+            ],
+            "perm_p": 0.0005
+          },
+          {
+            "band": "15-30",
+            "n": 202,
+            "npool": 112248,
+            "null_hot_frac": 0.5551,
+            "over_hot": 1.133,
+            "over_warm": 0.834,
+            "hot_over_warm": 1.357,
+            "hw_ci": [
+              1.038,
+              1.81
+            ],
+            "perm_p": 0.039
+          },
+          {
+            "band": "30-45",
+            "n": 163,
+            "npool": 66676,
+            "null_hot_frac": 0.581,
+            "over_hot": 0.834,
+            "over_warm": 1.23,
+            "hot_over_warm": 0.678,
+            "hw_ci": [
+              0.491,
+              0.934
+            ],
+            "perm_p": 0.02
+          },
+          {
+            "band": "45-60",
+            "n": 161,
+            "npool": 36002,
+            "null_hot_frac": 0.5214,
+            "over_hot": 0.572,
+            "over_warm": 1.467,
+            "hot_over_warm": 0.39,
+            "hw_ci": [
+              0.274,
+              0.517
+            ],
+            "perm_p": 0.0005
+          },
+          {
+            "band": "60-75",
+            "n": 91,
+            "npool": 33402,
+            "null_hot_frac": 0.507,
+            "over_hot": 0.802,
+            "over_warm": 1.204,
+            "hot_over_warm": 0.666,
+            "hw_ci": [
+              0.432,
+              0.995
+            ],
+            "perm_p": 0.0675
+          },
+          {
+            "band": "75-90",
+            "n": 14,
+            "npool": 16288,
+            "null_hot_frac": 0.4546,
+            "over_hot": 1.571,
+            "over_warm": 0.524,
+            "hot_over_warm": 2.999,
+            "hw_ci": [
+              1.2,
+              15.595
+            ],
+            "perm_p": 0.1014
+          }
+        ]
+      },
+      "south": {
+        "n_after_excl": 171,
+        "size_weights": [
+          0.0,
+          0.0,
+          0.0,
+          0.0058,
+          0.0175,
+          0.0058,
+          0.0819,
+          0.0819,
+          0.1404,
+          0.3977,
+          0.269
+        ],
+        "bands": [
+          {
+            "band": "0-15",
+            "n": 104,
+            "npool": 163002,
+            "null_hot_frac": 0.5269,
+            "over_hot": 1.205,
+            "over_warm": 0.772,
+            "hot_over_warm": 1.56,
+            "hw_ci": [
+              1.048,
+              2.322
+            ],
+            "perm_p": 0.0315
+          },
+          {
+            "band": "15-30",
+            "n": 41,
+            "npool": 121255,
+            "null_hot_frac": 0.5129,
+            "over_hot": 1.046,
+            "over_warm": 0.951,
+            "hot_over_warm": 1.099,
+            "hw_ci": [
+              0.548,
+              2.045
+            ],
+            "perm_p": 0.8731
+          },
+          {
+            "band": "30-45",
+            "n": 17,
+            "npool": 62590,
+            "null_hot_frac": 0.5255,
+            "over_hot": 1.231,
+            "over_warm": 0.744,
+            "hot_over_warm": 1.656,
+            "hw_ci": [
+              0.632,
+              6.773
+            ],
+            "perm_p": 0.3295
+          },
+          {
+            "band": "45-60",
+            "n": 9,
+            "npool": 39026,
+            "null_hot_frac": 0.5204,
+            "over_hot": 0.854,
+            "over_warm": 1.158,
+            "hot_over_warm": 0.737,
+            "hw_ci": [
+              0.115,
+              3.226
+            ],
+            "perm_p": 0.75
+          },
+          {
+            "band": "60-75",
+            "n": 0,
+            "npool": 12958,
+            "null_hot_frac": null,
+            "over_hot": null,
+            "over_warm": null,
+            "hot_over_warm": null,
+            "hw_ci": null,
+            "perm_p": null
+          },
+          {
+            "band": "75-90",
+            "n": 0,
+            "npool": 1169,
+            "null_hot_frac": null,
+            "over_hot": null,
+            "over_warm": null,
+            "hot_over_warm": null,
+            "hw_ci": null,
+            "perm_p": null
+          }
+        ]
+      }
+    },
+    "caloris_excl": {
+      "north": {
+        "n_after_excl": 641,
+        "size_weights": [
+          0.0131,
+          0.0118,
+          0.0484,
+          0.123,
+          0.1047,
+          0.0942,
+          0.127,
+          0.1296,
+          0.1139,
+          0.1466,
+          0.0877
+        ],
+        "bands": [
+          {
+            "band": "0-15",
+            "n": 113,
+            "npool": 146155,
+            "null_hot_frac": 0.4875,
+            "over_hot": 1.271,
+            "over_warm": 0.743,
+            "hot_over_warm": 1.711,
+            "hw_ci": [
+              1.149,
+              2.548
+            ],
+            "perm_p": 0.0095
+          },
+          {
+            "band": "15-30",
+            "n": 152,
+            "npool": 105345,
+            "null_hot_frac": 0.461,
+            "over_hot": 1.099,
+            "over_warm": 0.915,
+            "hot_over_warm": 1.201,
+            "hw_ci": [
+              0.874,
+              1.698
+            ],
+            "perm_p": 0.3013
+          },
+          {
+            "band": "30-45",
+            "n": 131,
+            "npool": 58344,
+            "null_hot_frac": 0.4741,
+            "over_hot": 0.805,
+            "over_warm": 1.176,
+            "hot_over_warm": 0.685,
+            "hw_ci": [
+              0.488,
+              0.967
+            ],
+            "perm_p": 0.038
+          },
+          {
+            "band": "45-60",
+            "n": 140,
+            "npool": 32740,
+            "null_hot_frac": 0.414,
+            "over_hot": 0.518,
+            "over_warm": 1.341,
+            "hot_over_warm": 0.386,
+            "hw_ci": [
+              0.236,
+              0.566
+            ],
+            "perm_p": 0.0005
+          },
+          {
+            "band": "60-75",
+            "n": 91,
+            "npool": 38320,
+            "null_hot_frac": 0.5079,
+            "over_hot": 0.801,
+            "over_warm": 1.206,
+            "hot_over_warm": 0.664,
+            "hw_ci": [
+              0.431,
+              0.99
+            ],
+            "perm_p": 0.0575
+          },
+          {
+            "band": "75-90",
+            "n": 14,
+            "npool": 19096,
+            "null_hot_frac": 0.4589,
+            "over_hot": 1.556,
+            "over_warm": 0.528,
+            "hot_over_warm": 2.947,
+            "hw_ci": [
+              0.884,
+              15.326
+            ],
+            "perm_p": 0.1039
+          }
+        ]
+      },
+      "south": {
+        "n_after_excl": 171,
+        "size_weights": [
+          0.0,
+          0.0,
+          0.0,
+          0.0058,
+          0.0175,
+          0.0058,
+          0.0819,
+          0.0819,
+          0.1404,
+          0.3977,
+          0.269
+        ],
+        "bands": [
+          {
+            "band": "0-15",
+            "n": 104,
+            "npool": 162798,
+            "null_hot_frac": 0.5303,
+            "over_hot": 1.197,
+            "over_warm": 0.778,
+            "hot_over_warm": 1.538,
+            "hw_ci": [
+              1.074,
+              2.291
+            ],
+            "perm_p": 0.044
+          },
+          {
+            "band": "15-30",
+            "n": 41,
+            "npool": 120951,
+            "null_hot_frac": 0.5165,
+            "over_hot": 1.039,
+            "over_warm": 0.958,
+            "hot_over_warm": 1.084,
+            "hw_ci": [
+              0.599,
+              2.016
+            ],
+            "perm_p": 0.8701
+          },
+          {
+            "band": "30-45",
+            "n": 17,
+            "npool": 62855,
+            "null_hot_frac": 0.5238,
+            "over_hot": 1.235,
+            "over_warm": 0.741,
+            "hot_over_warm": 1.666,
+            "hw_ci": [
+              0.636,
+              4.242
+            ],
+            "perm_p": 0.3293
+          },
+          {
+            "band": "45-60",
+            "n": 9,
+            "npool": 39093,
+            "null_hot_frac": 0.5177,
+            "over_hot": 0.858,
+            "over_warm": 1.152,
+            "hot_over_warm": 0.745,
+            "hw_ci": [
+              0.116,
+              3.26
+            ],
+            "perm_p": 0.7366
+          },
+          {
+            "band": "60-75",
+            "n": 0,
+            "npool": 13117,
+            "null_hot_frac": null,
+            "over_hot": null,
+            "over_warm": null,
+            "hot_over_warm": null,
+            "hw_ci": null,
+            "perm_p": null
+          },
+          {
+            "band": "75-90",
+            "n": 0,
+            "npool": 1186,
+            "null_hot_frac": null,
+            "over_hot": null,
+            "over_warm": null,
+            "hot_over_warm": null,
+            "hw_ci": null,
+            "perm_p": null
+          }
+        ]
+      }
+    },
+    "caloris_and_province_excl": {
+      "north": {
+        "n_after_excl": 514,
+        "size_weights": [
+          0.0131,
+          0.0118,
+          0.0484,
+          0.123,
+          0.1047,
+          0.0942,
+          0.127,
+          0.1296,
+          0.1139,
+          0.1466,
+          0.0877
+        ],
+        "bands": [
+          {
+            "band": "0-15",
+            "n": 113,
+            "npool": 151037,
+            "null_hot_frac": 0.4861,
+            "over_hot": 1.274,
+            "over_warm": 0.74,
+            "hot_over_warm": 1.721,
+            "hw_ci": [
+              1.197,
+              2.563
+            ],
+            "perm_p": 0.007
+          },
+          {
+            "band": "15-30",
+            "n": 152,
+            "npool": 109377,
+            "null_hot_frac": 0.4621,
+            "over_hot": 1.096,
+            "over_warm": 0.917,
+            "hot_over_warm": 1.195,
+            "hw_ci": [
+              0.87,
+              1.644
+            ],
+            "perm_p": 0.2924
+          },
+          {
+            "band": "30-45",
+            "n": 119,
+            "npool": 58831,
+            "null_hot_frac": 0.4885,
+            "over_hot": 0.86,
+            "over_warm": 1.134,
+            "hot_over_warm": 0.759,
+            "hw_ci": [
+              0.53,
+              1.101
+            ],
+            "perm_p": 0.1369
+          },
+          {
+            "band": "45-60",
+            "n": 79,
+            "npool": 26843,
+            "null_hot_frac": 0.4936,
+            "over_hot": 0.744,
+            "over_warm": 1.25,
+            "hot_over_warm": 0.595,
+            "hw_ci": [
+              0.371,
+              0.904
+            ],
+            "perm_p": 0.0205
+          },
+          {
+            "band": "60-75",
+            "n": 37,
+            "npool": 34364,
+            "null_hot_frac": 0.5361,
+            "over_hot": 1.462,
+            "over_warm": 0.466,
+            "hot_over_warm": 3.136,
+            "hw_ci": [
+              1.597,
+              9.805
+            ],
+            "perm_p": 0.0035
+          },
+          {
+            "band": "75-90",
+            "n": 14,
+            "npool": 19548,
+            "null_hot_frac": 0.4591,
+            "over_hot": 1.556,
+            "over_warm": 0.528,
+            "hot_over_warm": 2.946,
+            "hw_ci": [
+              1.178,
+              15.318
+            ],
+            "perm_p": 0.1074
+          }
+        ]
+      },
+      "south": {
+        "n_after_excl": 171,
+        "size_weights": [
+          0.0,
+          0.0,
+          0.0,
+          0.0058,
+          0.0175,
+          0.0058,
+          0.0819,
+          0.0819,
+          0.1404,
+          0.3977,
+          0.269
+        ],
+        "bands": [
+          {
+            "band": "0-15",
+            "n": 104,
+            "npool": 163574,
+            "null_hot_frac": 0.5301,
+            "over_hot": 1.197,
+            "over_warm": 0.778,
+            "hot_over_warm": 1.54,
+            "hw_ci": [
+              1.034,
+              2.406
+            ],
+            "perm_p": 0.0375
+          },
+          {
+            "band": "15-30",
+            "n": 41,
+            "npool": 120249,
+            "null_hot_frac": 0.5134,
+            "over_hot": 1.045,
+            "over_warm": 0.952,
+            "hot_over_warm": 1.097,
+            "hw_ci": [
+              0.606,
+              2.041
+            ],
+            "perm_p": 0.8766
+          },
+          {
+            "band": "30-45",
+            "n": 17,
+            "npool": 62669,
+            "null_hot_frac": 0.5243,
+            "over_hot": 1.234,
+            "over_warm": 0.742,
+            "hot_over_warm": 1.663,
+            "hw_ci": [
+              0.635,
+              6.805
+            ],
+            "perm_p": 0.3548
+          },
+          {
+            "band": "45-60",
+            "n": 9,
+            "npool": 39190,
+            "null_hot_frac": 0.5167,
+            "over_hot": 0.86,
+            "over_warm": 1.149,
+            "hot_over_warm": 0.748,
+            "hw_ci": [
+              0.117,
+              3.274
+            ],
+            "perm_p": 0.7425
+          },
+          {
+            "band": "60-75",
+            "n": 0,
+            "npool": 13129,
+            "null_hot_frac": null,
+            "over_hot": null,
+            "over_warm": null,
+            "hot_over_warm": null,
+            "hw_ci": null,
+            "perm_p": null
+          },
+          {
+            "band": "75-90",
+            "n": 0,
+            "npool": 1189,
+            "null_hot_frac": null,
+            "over_hot": null,
+            "over_warm": null,
+            "hot_over_warm": null,
+            "hw_ci": null,
+            "perm_p": null
+          }
+        ]
+      }
+    }
+  },
+  "south_null_sensitivity_northweights": {
+    "note": "Southern null intensity rebuilt using the NORTHERN non-trace field D_max weights instead of southern; south is far less complete so the size weights matter.",
+    "north_weights": [
+      0.0131,
+      0.0118,
+      0.0484,
+      0.123,
+      0.1047,
+      0.0942,
+      0.127,
+      0.1296,
+      0.1139,
+      0.1466,
+      0.0877
+    ],
+    "bands": [
+      {
+        "band": "0-15",
+        "n": 104,
+        "npool": 168634,
+        "null_hot_frac": 0.54,
+        "over_hot": 1.175,
+        "over_warm": 0.794,
+        "hot_over_warm": 1.48,
+        "hw_ci": [
+          0.994,
+          2.312
+        ],
+        "perm_p": 0.0625
+      },
+      {
+        "band": "15-30",
+        "n": 41,
+        "npool": 121446,
+        "null_hot_frac": 0.5176,
+        "over_hot": 1.037,
+        "over_warm": 0.961,
+        "hot_over_warm": 1.079,
+        "hw_ci": [
+          0.597,
+          2.007
+        ],
+        "perm_p": 0.8801
+      },
+      {
+        "band": "30-45",
+        "n": 17,
+        "npool": 60206,
+        "null_hot_frac": 0.5329,
+        "over_hot": 1.214,
+        "over_warm": 0.756,
+        "hot_over_warm": 1.607,
+        "hw_ci": [
+          0.614,
+          6.574
+        ],
+        "perm_p": 0.4363
+      },
+      {
+        "band": "45-60",
+        "n": 9,
+        "npool": 36760,
+        "null_hot_frac": 0.5255,
+        "over_hot": 0.846,
+        "over_warm": 1.171,
+        "hot_over_warm": 0.722,
+        "hw_ci": [
+          0.113,
+          3.16
+        ],
+        "perm_p": 0.7409
+      },
+      {
+        "band": "60-75",
+        "n": 0,
+        "npool": 11877,
+        "null_hot_frac": null,
+        "over_hot": null,
+        "over_warm": null,
+        "hot_over_warm": null,
+        "hw_ci": null,
+        "perm_p": null
+      },
+      {
+        "band": "75-90",
+        "n": 0,
+        "npool": 1077,
+        "null_hot_frac": null,
+        "over_hot": null,
+        "over_warm": null,
+        "hot_over_warm": null,
+        "hw_ci": null,
+        "perm_p": null
+      }
+    ]
+  },
+  "cos2lon_fit": {
+    "n": 410,
+    "nbins": 12,
+    "latmax": 30.0,
+    "intercept": 1.001593636189703,
+    "slope": 0.4137836487051516,
+    "slope_ci": [
+      0.28844811297604944,
+      0.5433294220685646
+    ],
+    "slope_boot_p": 0.0,
+    "lon_bin_centers": [
+      15.0,
+      45.0,
+      75.0,
+      105.0,
+      135.0,
+      165.0,
+      195.0,
+      225.0,
+      255.0,
+      285.0,
+      315.0,
+      345.0
+    ],
+    "obs_over_null_ratio": [
+      1.1601558079686558,
+      1.236383594475742,
+      0.4278156453066975,
+      0.278986691730735,
+      0.2539067929984901,
+      0.3282930645422072,
+      1.520785839892293,
+      1.4048475622395624,
+      0.6689838542512562,
+      0.7482934383084945,
+      1.6952451019296468,
+      1.5225818571362035
+    ],
+    "cos2lon": [
+      0.8660254037844387,
+      6.123233995736766e-17,
+      -0.8660254037844387,
+      -0.8660254037844386,
+      -1.8369701987210297e-16,
+      0.8660254037844384,
+      0.8660254037844386,
+      3.061616997868383e-16,
+      -0.8660254037844388,
+      -0.8660254037844392,
+      -4.286263797015736e-16,
+      0.8660254037844387
+    ]
+  },
+  "individual_hollows": {
+    "note": "Robustness to field definition: same hot/warm test on individual non-trace canonical hollows, null size-weighted by hollow D_eq.",
+    "north": {
+      "n": 5775,
+      "size_weights": [
+        0.0076,
+        0.0165,
+        0.0379,
+        0.1401,
+        0.1815,
+        0.1536,
+        0.1638,
+        0.1276,
+        0.0911,
+        0.0597,
+        0.0206
+      ],
+      "bands": [
+        {
+          "band": "0-15",
+          "n": 777,
+          "npool": 109978,
+          "null_hot_frac": 0.5143,
+          "over_hot": 0.991,
+          "over_warm": 1.01,
+          "hot_over_warm": 0.982,
+          "hw_ci": [
+            0.85,
+            1.128
+          ],
+          "perm_p": 0.8056
+        },
+        {
+          "band": "15-30",
+          "n": 1979,
+          "npool": 97510,
+          "null_hot_frac": 0.5522,
+          "over_hot": 0.517,
+          "over_warm": 1.596,
+          "hot_over_warm": 0.324,
+          "hw_ci": [
+            0.294,
+            0.358
+          ],
+          "perm_p": 0.0005
+        },
+        {
+          "band": "30-45",
+          "n": 1296,
+          "npool": 71134,
+          "null_hot_frac": 0.5549,
+          "over_hot": 0.731,
+          "over_warm": 1.335,
+          "hot_over_warm": 0.548,
+          "hw_ci": [
+            0.488,
+            0.614
+          ],
+          "perm_p": 0.0005
+        },
+        {
+          "band": "45-60",
+          "n": 1446,
+          "npool": 48515,
+          "null_hot_frac": 0.4853,
+          "over_hot": 0.714,
+          "over_warm": 1.27,
+          "hot_over_warm": 0.562,
+          "hw_ci": [
+            0.503,
+            0.627
+          ],
+          "perm_p": 0.0005
+        },
+        {
+          "band": "60-75",
+          "n": 253,
+          "npool": 48960,
+          "null_hot_frac": 0.4987,
+          "over_hot": 0.65,
+          "over_warm": 1.348,
+          "hot_over_warm": 0.482,
+          "hw_ci": [
+            0.369,
+            0.625
+          ],
+          "perm_p": 0.0005
+        },
+        {
+          "band": "75-90",
+          "n": 24,
+          "npool": 23903,
+          "null_hot_frac": 0.4665,
+          "over_hot": 0.982,
+          "over_warm": 1.015,
+          "hot_over_warm": 0.968,
+          "hw_ci": [
+            0.381,
+            2.287
+          ],
+          "perm_p": 1.0
+        }
+      ]
+    },
+    "south": {
+      "n": 524,
+      "size_weights": [
+        0.0,
+        0.0,
+        0.0038,
+        0.0573,
+        0.0592,
+        0.063,
+        0.1317,
+        0.1546,
+        0.1584,
+        0.2385,
+        0.1336
+      ],
+      "bands": [
+        {
+          "band": "0-15",
+          "n": 398,
+          "npool": 167018,
+          "null_hot_frac": 0.5376,
+          "over_hot": 1.626,
+          "over_warm": 0.272,
+          "hot_over_warm": 5.986,
+          "hw_ci": [
+            4.574,
+            8.392
+          ],
+          "perm_p": 0.0005
+        },
+        {
+          "band": "15-30",
+          "n": 91,
+          "npool": 121816,
+          "null_hot_frac": 0.5169,
+          "over_hot": 1.169,
+          "over_warm": 0.819,
+          "hot_over_warm": 1.428,
+          "hw_ci": [
+            0.955,
+            2.215
+          ],
+          "perm_p": 0.1
+        },
+        {
+          "band": "30-45",
+          "n": 24,
+          "npool": 60580,
+          "null_hot_frac": 0.5279,
+          "over_hot": 1.105,
+          "over_warm": 0.883,
+          "hot_over_warm": 1.252,
+          "hw_ci": [
+            0.537,
+            3.398
+          ],
+          "perm_p": 0.6962
+        },
+        {
+          "band": "45-60",
+          "n": 11,
+          "npool": 37468,
+          "null_hot_frac": 0.5164,
+          "over_hot": 0.704,
+          "over_warm": 1.316,
+          "hot_over_warm": 0.535,
+          "hw_ci": [
+            0.094,
+            1.639
+          ],
+          "perm_p": 0.3947
+        },
+        {
+          "band": "60-75",
+          "n": 0,
+          "npool": 12062,
+          "null_hot_frac": null,
+          "over_hot": null,
+          "over_warm": null,
+          "hot_over_warm": null,
+          "hw_ci": null,
+          "perm_p": null
+        },
+        {
+          "band": "75-90",
+          "n": 0,
+          "npool": 1056,
+          "null_hot_frac": null,
+          "over_hot": null,
+          "over_warm": null,
+          "hot_over_warm": null,
+          "hw_ci": null,
+          "perm_p": null
+        }
+      ]
+    }
+  }
+}

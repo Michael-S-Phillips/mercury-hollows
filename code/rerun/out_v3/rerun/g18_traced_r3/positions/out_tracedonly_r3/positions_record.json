@@ -1,0 +1,7161 @@
+{
+ "description": "Melt-source position test, step 2 (5 Nov 2026): where do hollows sit within peak and floor terrain?\nReads cache/H{150,250,400}_000_354.npz from positions_build.py. Each hollow (or hollow field, counted once at its centroid)\nis compared with the completeness-weighted area of the same terrain class.\nTwo nulls: (i) pooled area -- density ratio DR = (n_in/A_in)/(n_out/A_out) summed over craters; (ii) crater-matched --\neach crater's hollows are spread over that crater's own weighted-area distribution (expected E_in = sum_c n_c A_in,c/A_c),\ngiving the stratified ratio SDR = (O_in/E_in)/(O_out/E_out), which removes between-crater differences.\n95% intervals: 2,000 bootstrap resamples of craters (seed 1). Position uncertainty: 25 jittered hollow positions\n(0.5 km per axis) from the build step. Writes positions_record.json, hollow_positions.csv and fig_positions.png.",
+ "n_host_craters": 111,
+ "terrain_threshold_m": 250,
+ "bands": {
+  "peak_low": "eta < 1/3 (eta = (z - z_floor)/(z_peak95 - z_floor))",
+  "peak_base": "distance to nearest floor-class cell <= 2 km",
+  "q": "completeness-weighted height quantile within the crater's peak terrain",
+  "floor_margin": "min(distance to wall-class, to peak-class cell) <= 3 km"
+ },
+ "ratio_definitions": {
+  "DR": "pooled density ratio in-band / out-of-band",
+  "SDR": "crater-matched (stratified) density ratio",
+  "OE_in": "observed / crater-matched expected count in band"
+ },
+ "sample": {
+  "craters": 111,
+  "craters_with_peak_terrain": 92,
+  "peak_hollows": 1448,
+  "floor_hollows": 1175,
+  "craters_with_peak_hollows": 76,
+  "craters_with_floor_hollows": 91,
+  "peak_fields": 105,
+  "floor_fields": 144,
+  "field_centroid_fallbacks_peak": 5,
+  "field_centroid_fallbacks_floor": 21,
+  "peak_hollows_with_eta_lt_1_3": 535,
+  "craters_with_low_eta_area": 90,
+  "median_peak_relief_z95_m_hollow_hosts": 537.75
+ },
+ "hollows": {
+  "peak_eta_low_vs_upper": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 1448,
+   "n_in": 535,
+   "frac_points_in": 0.369475138121547,
+   "frac_area_in_pooled": 0.33077338218434577,
+   "frac_expected_in_crater_matched": 0.33212752766071185,
+   "DR": [
+    1.1855657837316085,
+    0.8765491999278043,
+    1.4890864338758678
+   ],
+   "SDR": [
+    1.1783428621275502,
+    0.8667988972499777,
+    1.4750340349572917
+   ],
+   "OE_in": [
+    1.1124496085099815,
+    0.910302323566288,
+    1.2805891871185426
+   ]
+  },
+  "peak_eta_high_vs_lower": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 1448,
+   "n_in": 446,
+   "frac_points_in": 0.3080110497237569,
+   "frac_area_in_pooled": 0.3027192287755618,
+   "frac_expected_in_crater_matched": 0.3098663222709733,
+   "DR": [
+    1.0252618977641461,
+    0.7139458252597357,
+    1.57681798195267
+   ],
+   "SDR": [
+    0.9913476479673126,
+    0.6932570215680341,
+    1.4767258884536083
+   ],
+   "OE_in": [
+    0.99401266799948,
+    0.7684056988434596,
+    1.2884829538899576
+   ]
+  },
+  "peak_eta_terciles": {
+   "points": [
+    0.369475138121547,
+    0.32251381215469616,
+    0.3080110497237569
+   ],
+   "crater_matched_area": [
+    0.3321275276607118,
+    0.35800615006831493,
+    0.3098663222709733
+   ],
+   "pooled_area": [
+    0.33077338218434577,
+    0.3665073890400925,
+    0.3027192287755618
+   ],
+   "n_points": [
+    535,
+    467,
+    446
+   ]
+  },
+  "peak_base_within2km": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 1448,
+   "n_in": 247,
+   "frac_points_in": 0.17058011049723756,
+   "frac_area_in_pooled": 0.2519442037058543,
+   "frac_expected_in_crater_matched": 0.299065388450096,
+   "DR": [
+    0.6106376344331172,
+    0.4420318567677262,
+    0.8904925589250912
+   ],
+   "SDR": [
+    0.48202026534351083,
+    0.38944283060177887,
+    0.5921492215968279
+   ],
+   "OE_in": [
+    0.5703773057165445,
+    0.46718209053985105,
+    0.6907756150669431
+   ]
+  },
+  "peak_q_lowest_third": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 1448,
+   "n_in": 545,
+   "frac_points_in": 0.3763812154696133,
+   "frac_area_in_pooled": 0.33332238923308255,
+   "frac_expected_in_crater_matched": 0.33326761167753877,
+   "DR": [
+    1.2071469352981756,
+    0.8080519206741104,
+    1.6587346653856132
+   ],
+   "SDR": [
+    1.2074445496049129,
+    0.808085942522302,
+    1.6589891359532336
+   ],
+   "OE_in": [
+    1.1293663178820692,
+    0.8633112886602958,
+    1.3602149235257834
+   ]
+  },
+  "peak_q_terciles": {
+   "points": [
+    0.3763812154696133,
+    0.27486187845303867,
+    0.34875690607734805
+   ],
+   "crater_matched_area": [
+    0.3332676116775387,
+    0.33337407549932724,
+    0.33335831282313405
+   ],
+   "pooled_area": [
+    0.33332238923308255,
+    0.333343653729239,
+    0.33333395703767843
+   ],
+   "n_points": [
+    545,
+    398,
+    505
+   ]
+  },
+  "floor_margin_within3km_of_wall_or_peak": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 91,
+   "n_points": 1175,
+   "n_in": 367,
+   "frac_points_in": 0.3123404255319149,
+   "frac_area_in_pooled": 0.2523533693688663,
+   "frac_expected_in_crater_matched": 0.31071616075748537,
+   "DR": [
+    1.3456805527719928,
+    0.9857564649130085,
+    1.9308566473452482
+   ],
+   "SDR": [
+    1.0076018533914706,
+    0.7879739541690162,
+    1.2878241187057897
+   ],
+   "OE_in": [
+    1.0052274872683473,
+    0.8480683430335022,
+    1.18329118661309
+   ]
+  },
+  "floor_within3km_of_wall": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 91,
+   "n_points": 1175,
+   "n_in": 207,
+   "frac_points_in": 0.17617021276595746,
+   "frac_area_in_pooled": 0.14240602930502547,
+   "frac_expected_in_crater_matched": 0.20016053404658787,
+   "DR": [
+    1.2877997308657019,
+    0.854384581982234,
+    1.9082771401777856
+   ],
+   "SDR": [
+    0.8545143621935729,
+    0.6375059436277913,
+    1.1231836081163784
+   ],
+   "OE_in": [
+    0.8801445979603222,
+    0.6856224028992604,
+    1.0922893151983375
+   ]
+  },
+  "floor_within3km_of_peak": {
+   "n_craters": 111,
+   "n_craters_with_area": 93,
+   "n_craters_with_points": 74,
+   "n_points": 1037,
+   "n_in": 201,
+   "frac_points_in": 0.19382835101253615,
+   "frac_area_in_pooled": 0.13422117642351247,
+   "frac_expected_in_crater_matched": 0.1574303757195957,
+   "DR": [
+    1.550871081761308,
+    1.0311303396057607,
+    2.3571880415363875
+   ],
+   "SDR": [
+    1.2867881304744373,
+    0.9534449518375067,
+    1.7672505161451646
+   ],
+   "OE_in": [
+    1.231200460054609,
+    0.9614689131956846,
+    1.5661666100260747
+   ]
+  },
+  "floor_within3km_of_any_high_ground": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 91,
+   "n_points": 1175,
+   "n_in": 423,
+   "frac_points_in": 0.36,
+   "frac_area_in_pooled": 0.47979607201933283,
+   "frac_expected_in_crater_matched": 0.3843809889866542,
+   "DR": [
+    0.6098730826569475,
+    0.42263092454947104,
+    0.8890196869786218
+   ],
+   "SDR": [
+    0.9008918328867459,
+    0.6846469191785705,
+    1.201525869662596
+   ],
+   "OE_in": [
+    0.9365707730475172,
+    0.7768296838787024,
+    1.113474782239273
+   ]
+  },
+  "floor_within3km_of_any_nonfloor_cell": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 91,
+   "n_points": 1175,
+   "n_in": 367,
+   "frac_points_in": 0.3123404255319149,
+   "frac_area_in_pooled": 0.2523533693688663,
+   "frac_expected_in_crater_matched": 0.31071616075748537,
+   "DR": [
+    1.3456805527719928,
+    0.9857564649130085,
+    1.9308566473452482
+   ],
+   "SDR": [
+    1.0076018533914706,
+    0.7879739541690162,
+    1.2878241187057897
+   ],
+   "OE_in": [
+    1.0052274872683473,
+    0.8480683430335022,
+    1.18329118661309
+   ]
+  },
+  "floor_within3km_of_peak_craters_with_peaks": {
+   "n_craters": 92,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 74,
+   "n_points": 1037,
+   "n_in": 201,
+   "frac_points_in": 0.19382835101253615,
+   "frac_area_in_pooled": 0.13424896282568777,
+   "frac_expected_in_crater_matched": 0.1574303757195957,
+   "DR": [
+    1.5505003241143913,
+    1.0414415666573413,
+    2.3872000970673057
+   ],
+   "SDR": [
+    1.2867881304744373,
+    0.9600511303983096,
+    1.7615191697932249
+   ],
+   "OE_in": [
+    1.231200460054609,
+    0.9674864391166631,
+    1.5736969035289152
+   ]
+  }
+ },
+ "fields": {
+  "peak_eta_low_vs_upper": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 105,
+   "n_in": 36,
+   "frac_points_in": 0.34285714285714286,
+   "frac_area_in_pooled": 0.33077338218434577,
+   "frac_expected_in_crater_matched": 0.37767282017052817,
+   "DR": [
+    1.0555919322684681,
+    0.657844854785065,
+    1.5715433421863103
+   ],
+   "SDR": [
+    0.8597188473969425,
+    0.5670786928215574,
+    1.2412760409136494
+   ],
+   "OE_in": [
+    0.9078152425751337,
+    0.6754828990899425,
+    1.1404395020117666
+   ]
+  },
+  "peak_eta_high_vs_lower": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 105,
+   "n_in": 40,
+   "frac_points_in": 0.38095238095238093,
+   "frac_area_in_pooled": 0.3027192287755618,
+   "frac_expected_in_crater_matched": 0.28920083827427534,
+   "DR": [
+    1.4174714336801302,
+    0.9822708524188145,
+    2.074957345220596
+   ],
+   "SDR": [
+    1.5124951620626077,
+    1.0847397284407965,
+    2.0667682796925435
+   ],
+   "OE_in": [
+    1.317258909848281,
+    1.0599804755094573,
+    1.593334029203854
+   ]
+  },
+  "peak_eta_terciles": {
+   "points": [
+    0.34285714285714286,
+    0.2761904761904762,
+    0.38095238095238093
+   ],
+   "crater_matched_area": [
+    0.3776728201705283,
+    0.3331263415551965,
+    0.2892008382742752
+   ],
+   "pooled_area": [
+    0.33077338218434577,
+    0.3665073890400925,
+    0.3027192287755618
+   ],
+   "n_points": [
+    36,
+    29,
+    40
+   ]
+  },
+  "peak_base_within2km": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 105,
+   "n_in": 16,
+   "frac_points_in": 0.1523809523809524,
+   "frac_area_in_pooled": 0.2519442037058543,
+   "frac_expected_in_crater_matched": 0.37087336361644957,
+   "DR": [
+    0.5337766812203422,
+    0.3043121235947786,
+    0.8264195102999825
+   ],
+   "SDR": [
+    0.30495966783364226,
+    0.17502268054833142,
+    0.4809059574793502
+   ],
+   "OE_in": [
+    0.4108705755923254,
+    0.250176054320345,
+    0.591398227497057
+   ]
+  },
+  "peak_q_lowest_third": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 105,
+   "n_in": 32,
+   "frac_points_in": 0.3047619047619048,
+   "frac_area_in_pooled": 0.33332238923308255,
+   "frac_expected_in_crater_matched": 0.33324714104568337,
+   "DR": [
+    0.8767555069090381,
+    0.5384687532517508,
+    1.3242219127830746
+   ],
+   "SDR": [
+    0.8770524630034905,
+    0.5386943050534293,
+    1.3244924397691167
+   ],
+   "OE_in": [
+    0.9145221885643313,
+    0.6365402784098323,
+    1.1952313283780203
+   ]
+  },
+  "peak_q_terciles": {
+   "points": [
+    0.3047619047619048,
+    0.3047619047619048,
+    0.3904761904761905
+   ],
+   "crater_matched_area": [
+    0.33324714104568337,
+    0.3333914305389374,
+    0.33336142841537897
+   ],
+   "pooled_area": [
+    0.33332238923308255,
+    0.333343653729239,
+    0.33333395703767843
+   ],
+   "n_points": [
+    32,
+    32,
+    41
+   ]
+  },
+  "floor_margin_within3km_of_wall_or_peak": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 91,
+   "n_points": 144,
+   "n_in": 47,
+   "frac_points_in": 0.3263888888888889,
+   "frac_area_in_pooled": 0.2523533693688663,
+   "frac_expected_in_crater_matched": 0.3023039417472603,
+   "DR": [
+    1.4355337136455852,
+    0.9310716432832484,
+    2.143257234763976
+   ],
+   "SDR": [
+    1.1182749152047937,
+    0.7308106479494183,
+    1.6765593583352867
+   ],
+   "OE_in": [
+    1.0796712970476736,
+    0.7988410794582781,
+    1.4000870023712269
+   ]
+  },
+  "floor_within3km_of_wall": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 91,
+   "n_points": 144,
+   "n_in": 20,
+   "frac_points_in": 0.1388888888888889,
+   "frac_area_in_pooled": 0.14240602930502547,
+   "frac_expected_in_crater_matched": 0.19952282505902674,
+   "DR": [
+    0.9713184817500383,
+    0.5004340253494398,
+    1.541638230876825
+   ],
+   "SDR": [
+    0.6470899844490348,
+    0.34068550809161025,
+    1.0409379232911073
+   ],
+   "OE_in": [
+    0.6961052643866689,
+    0.39440495792122116,
+    1.033148398935501
+   ]
+  },
+  "floor_within3km_of_peak": {
+   "n_craters": 111,
+   "n_craters_with_area": 93,
+   "n_craters_with_points": 74,
+   "n_points": 115,
+   "n_in": 31,
+   "frac_points_in": 0.26956521739130435,
+   "frac_area_in_pooled": 0.13422117642351247,
+   "frac_expected_in_crater_matched": 0.16119363330777353,
+   "DR": [
+    2.3805007672901004,
+    1.4621286319589348,
+    3.623340874925297
+   ],
+   "SDR": [
+    1.9204200942520837,
+    1.2683962097463857,
+    2.833273272378514
+   ],
+   "OE_in": [
+    1.6723068514536963,
+    1.2140446699264391,
+    2.2019700358873613
+   ]
+  },
+  "floor_within3km_of_any_high_ground": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 91,
+   "n_points": 144,
+   "n_in": 55,
+   "frac_points_in": 0.3819444444444444,
+   "frac_area_in_pooled": 0.47979607201933283,
+   "frac_expected_in_crater_matched": 0.4358884255263169,
+   "DR": [
+    0.6700228623447113,
+    0.43753552996169903,
+    0.9861983610289563
+   ],
+   "SDR": [
+    0.7997649305305861,
+    0.5535506106565062,
+    1.0988887098997546
+   ],
+   "OE_in": [
+    0.876243602897376,
+    0.6835778231265993,
+    1.052033981025957
+   ]
+  },
+  "floor_within3km_of_any_nonfloor_cell": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 91,
+   "n_points": 144,
+   "n_in": 47,
+   "frac_points_in": 0.3263888888888889,
+   "frac_area_in_pooled": 0.2523533693688663,
+   "frac_expected_in_crater_matched": 0.3023039417472603,
+   "DR": [
+    1.4355337136455852,
+    0.9310716432832484,
+    2.143257234763976
+   ],
+   "SDR": [
+    1.1182749152047937,
+    0.7308106479494183,
+    1.6765593583352867
+   ],
+   "OE_in": [
+    1.0796712970476736,
+    0.7988410794582781,
+    1.4000870023712269
+   ]
+  },
+  "floor_within3km_of_peak_craters_with_peaks": {
+   "n_craters": 92,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 74,
+   "n_points": 115,
+   "n_in": 31,
+   "frac_points_in": 0.26956521739130435,
+   "frac_area_in_pooled": 0.13424896282568777,
+   "frac_expected_in_crater_matched": 0.16119363330777353,
+   "DR": [
+    2.3799316749436485,
+    1.4667600848170208,
+    3.542109082762342
+   ],
+   "SDR": [
+    1.9204200942520837,
+    1.2383492062887156,
+    2.7998083686953232
+   ],
+   "OE_in": [
+    1.6723068514536963,
+    1.196909614978713,
+    2.211173852307939
+   ]
+  }
+ },
+ "mean_q_peak_hollows": [
+  0.492266963623549,
+  0.43878654187227706,
+  0.5578407623837918
+ ],
+ "mean_q_peak_fields": 0.5393974048041162,
+ "sensitivity_exclude_within_0.7km_of_boundary": {
+  "peak_eta_low_vs_upper": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 1384,
+   "n_in": 497,
+   "frac_points_in": 0.3591040462427746,
+   "frac_area_in_pooled": 0.3106914678347579,
+   "frac_expected_in_crater_matched": 0.31000012174993713,
+   "DR": [
+    1.2431315712668993,
+    0.9059058140538881,
+    1.5834131606896757
+   ],
+   "SDR": [
+    1.2471535251388715,
+    0.9144239404071886,
+    1.5618899630047636
+   ],
+   "OE_in": [
+    1.1583996942183374,
+    0.9398492064159868,
+    1.340494106556635
+   ]
+  },
+  "peak_eta_high_vs_lower": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 1384,
+   "n_in": 440,
+   "frac_points_in": 0.3179190751445087,
+   "frac_area_in_pooled": 0.3155201469632518,
+   "frac_expected_in_crater_matched": 0.3240410280483123,
+   "DR": [
+    1.0111469036331626,
+    0.6970367350336436,
+    1.5740549520299405
+   ],
+   "SDR": [
+    0.9723016385223919,
+    0.6764129441914013,
+    1.4606123528369879
+   ],
+   "OE_in": [
+    0.9811074759863714,
+    0.759580344729194,
+    1.2690195478521868
+   ]
+  },
+  "peak_eta_terciles": {
+   "points": [
+    0.3591040462427746,
+    0.3229768786127168,
+    0.3179190751445087
+   ],
+   "crater_matched_area": [
+    0.3100001217499372,
+    0.36595885020175045,
+    0.32404102804831236
+   ],
+   "pooled_area": [
+    0.3106914678347579,
+    0.3737883852019903,
+    0.3155201469632518
+   ],
+   "n_points": [
+    497,
+    447,
+    440
+   ]
+  },
+  "peak_base_within2km": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 1384,
+   "n_in": 183,
+   "frac_points_in": 0.13222543352601157,
+   "frac_area_in_pooled": 0.18770210769389578,
+   "frac_expected_in_crater_matched": 0.22717644032248271,
+   "DR": [
+    0.6594080723253799,
+    0.47659735901142763,
+    0.9547826382177983
+   ],
+   "SDR": [
+    0.5183524377159637,
+    0.4195738709440522,
+    0.6348747837586686
+   ],
+   "OE_in": [
+    0.5820384954457172,
+    0.47762770282311545,
+    0.7051373971907093
+   ]
+  },
+  "peak_q_lowest_third": {
+   "n_craters": 111,
+   "n_craters_with_area": 92,
+   "n_craters_with_points": 76,
+   "n_points": 1384,
+   "n_in": 502,
+   "frac_points_in": 0.3627167630057804,
+   "frac_area_in_pooled": 0.31374563673715933,
+   "frac_expected_in_crater_matched": 0.3118870651636704,
+   "DR": [
+    1.2449231873147155,
+    0.81802015233881,
+    1.7480866658278418
+   ],
+   "SDR": [
+    1.2557335275783463,
+    0.8336549693489643,
+    1.746054080123935
+   ],
+   "OE_in": [
+    1.162974690263079,
+    0.8788993367609622,
+    1.4143785904249322
+   ]
+  },
+  "peak_q_terciles": {
+   "points": [
+    0.3627167630057804,
+    0.2796242774566474,
+    0.35765895953757226
+   ],
+   "crater_matched_area": [
+    0.3118870651636704,
+    0.3384394560139023,
+    0.3496734788224275
+   ],
+   "pooled_area": [
+    0.31374563673715933,
+    0.33837574374717777,
+    0.3478786195156629
+   ],
+   "n_points": [
+    502,
+    387,
+    495
+   ]
+  },
+  "floor_margin_within3km_of_wall_or_peak": {
+   "n_craters": 111,
+   "n_craters_with_area": 111,
+   "n_craters_with_points": 90,
+   "n_points": 1078,
+   "n_in": 270,
+   "frac_points_in": 0.2504638218923933,
+   "frac_area_in_pooled": 0.21155951794341296,
+   "frac_expected_in_crater_matched": 0.25536961935971914,
+   "DR": [
+    1.2453423274478925,
+    0.9289575913362026,
+    1.7116140393353203
+   ],
+   "SDR": [
+    0.9743700484268357,
+    0.7748530249644947,
+    1.2224152866364573
+   ],
+   "OE_in": [
+    0.9807894240527673,
+    0.82460603564344,
+    1.1561170915984182
+   ]
+  }
+ },
+ "breakdowns": {
+  "central_peak": {
+   "hollows": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 33,
+     "n_points": 293,
+     "n_in": 117,
+     "frac_points_in": 0.3993174061433447,
+     "frac_area_in_pooled": 0.4051480208300532,
+     "frac_expected_in_crater_matched": 0.4071116750978438,
+     "DR": [
+      0.9760417234822438,
+      0.6363071457330308,
+      1.4172107424280245
+     ],
+     "SDR": [
+      0.9681274520526583,
+      0.6430136538281831,
+      1.3909089050546202
+     ],
+     "OE_in": [
+      0.98085471522617,
+      0.7510081255906192,
+      1.198363579181835
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 33,
+     "n_points": 293,
+     "n_in": 115,
+     "frac_points_in": 0.3924914675767918,
+     "frac_area_in_pooled": 0.32309210301465596,
+     "frac_expected_in_crater_matched": 0.323758267519781,
+     "DR": [
+      1.3535711074712975,
+      0.9372664101191428,
+      1.9945848638424255
+     ],
+     "SDR": [
+      1.349456654371946,
+      0.953135929726861,
+      1.9663353627262696
+     ],
+     "OE_in": [
+      1.2122978992430251,
+      0.9697221957466678,
+      1.4908411631478833
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.3993174061433447,
+      0.20819112627986347,
+      0.3924914675767918
+     ],
+     "crater_matched_area": [
+      0.40711167509784396,
+      0.2691300573823752,
+      0.323758267519781
+     ],
+     "pooled_area": [
+      0.4051480208300532,
+      0.27175987615529085,
+      0.32309210301465596
+     ],
+     "n_points": [
+      117,
+      61,
+      115
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 33,
+     "n_points": 293,
+     "n_in": 91,
+     "frac_points_in": 0.310580204778157,
+     "frac_area_in_pooled": 0.4210696992922325,
+     "frac_expected_in_crater_matched": 0.4594254255539351,
+     "DR": [
+      0.6193873245109868,
+      0.3107655250833564,
+      1.0993337515601298
+     ],
+     "SDR": [
+      0.5300668098257185,
+      0.3201852798663297,
+      0.7747691409653634
+     ],
+     "OE_in": [
+      0.6760187562620995,
+      0.44124191942326113,
+      0.8824430235129576
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 33,
+     "n_points": 293,
+     "n_in": 89,
+     "frac_points_in": 0.3037542662116041,
+     "frac_area_in_pooled": 0.33316880905951907,
+     "frac_expected_in_crater_matched": 0.3329683100635075,
+     "DR": [
+      0.8731953383353837,
+      0.5570848554951504,
+      1.334648127942152
+     ],
+     "SDR": [
+      0.8739838439736806,
+      0.5575932876641259,
+      1.3366339470668627
+     ],
+     "OE_in": [
+      0.9122617889782623,
+      0.6539710414238391,
+      1.2019803682401176
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.3037542662116041,
+      0.3003412969283277,
+      0.39590443686006827
+     ],
+     "crater_matched_area": [
+      0.3329683100635075,
+      0.3336494912879448,
+      0.33338219864854773
+     ],
+     "pooled_area": [
+      0.33316880905951907,
+      0.33358410007555284,
+      0.3332470908649281
+     ],
+     "n_points": [
+      89,
+      88,
+      116
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 250,
+     "n_in": 160,
+     "frac_points_in": 0.64,
+     "frac_area_in_pooled": 0.4727691366690446,
+     "frac_expected_in_crater_matched": 0.6256051441817717,
+     "DR": [
+      1.9825729724918748,
+      1.1135628193033875,
+      3.650815322176207
+     ],
+     "SDR": [
+      1.0639152522610518,
+      0.7952261225303862,
+      1.4195108944565618
+     ],
+     "OE_in": [
+      1.0230094908139786,
+      0.9021262020068539,
+      1.1193372175793097
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 250,
+     "n_in": 118,
+     "frac_points_in": 0.472,
+     "frac_area_in_pooled": 0.3034007763883553,
+     "frac_expected_in_crater_matched": 0.4344556773061718,
+     "DR": [
+      2.0524584517772064,
+      1.124224311451308,
+      3.486203755487346
+     ],
+     "SDR": [
+      1.1636684142546105,
+      0.7690938801659731,
+      1.6429635086336147
+     ],
+     "OE_in": [
+      1.0864169227264344,
+      0.8558185565010127,
+      1.2767347860032088
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 250,
+     "n_in": 83,
+     "frac_points_in": 0.332,
+     "frac_area_in_pooled": 0.20983256180163104,
+     "frac_expected_in_crater_matched": 0.3212821348878676,
+     "DR": [
+      1.8715777234679065,
+      1.0488100170744261,
+      3.417665444159745
+     ],
+     "SDR": [
+      1.0499396216266277,
+      0.7787235328781497,
+      1.4403011996399262
+     ],
+     "OE_in": [
+      1.0333596672465872,
+      0.8316418600875015,
+      1.2396056386547645
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 250,
+     "n_in": 80,
+     "frac_points_in": 0.32,
+     "frac_area_in_pooled": 0.40542410966278336,
+     "frac_expected_in_crater_matched": 0.3289308985974401,
+     "DR": [
+      0.6901425256010234,
+      0.40266569447256956,
+      1.1485826113138113
+     ],
+     "SDR": [
+      0.9600716306555507,
+      0.5763825276209522,
+      1.456242417602235
+     ],
+     "OE_in": [
+      0.9728487088457745,
+      0.675647428106328,
+      1.2594580494954937
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 250,
+     "n_in": 160,
+     "frac_points_in": 0.64,
+     "frac_area_in_pooled": 0.4727691366690446,
+     "frac_expected_in_crater_matched": 0.6256051441817717,
+     "DR": [
+      1.9825729724918748,
+      1.1135628193033875,
+      3.650815322176207
+     ],
+     "SDR": [
+      1.0639152522610518,
+      0.7952261225303862,
+      1.4195108944565618
+     ],
+     "OE_in": [
+      1.0230094908139786,
+      0.9021262020068539,
+      1.1193372175793097
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 250,
+     "n_in": 83,
+     "frac_points_in": 0.332,
+     "frac_area_in_pooled": 0.20983256180163104,
+     "frac_expected_in_crater_matched": 0.3212821348878676,
+     "DR": [
+      1.8715777234679065,
+      1.0488100170744261,
+      3.417665444159745
+     ],
+     "SDR": [
+      1.0499396216266277,
+      0.7787235328781497,
+      1.4403011996399262
+     ],
+     "OE_in": [
+      1.0333596672465872,
+      0.8316418600875015,
+      1.2396056386547645
+     ]
+    }
+   },
+   "fields": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 33,
+     "n_points": 33,
+     "n_in": 11,
+     "frac_points_in": 0.3333333333333333,
+     "frac_area_in_pooled": 0.4051480208300532,
+     "frac_expected_in_crater_matched": 0.3995408416298639,
+     "DR": [
+      0.7341168518498928,
+      0.3428890328249001,
+      1.392209334108601
+     ],
+     "SDR": [
+      0.7514365188808451,
+      0.34741548193396854,
+      1.4050403824803255
+     ],
+     "OE_in": [
+      0.8342910125872302,
+      0.4666480381569347,
+      1.2078276099356045
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 33,
+     "n_points": 33,
+     "n_in": 14,
+     "frac_points_in": 0.42424242424242425,
+     "frac_area_in_pooled": 0.32309210301465596,
+     "frac_expected_in_crater_matched": 0.32231110888723963,
+     "DR": [
+      1.5437524941960978,
+      0.792355969899865,
+      2.747323900456977
+     ],
+     "SDR": [
+      1.5492786176838806,
+      0.7913853337633907,
+      2.7960926737806857
+     ],
+     "OE_in": [
+      1.3162513253331434,
+      0.8436397463397368,
+      1.7567430969542581
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.3333333333333333,
+      0.24242424242424243,
+      0.42424242424242425
+     ],
+     "crater_matched_area": [
+      0.399540841629864,
+      0.27814804948289645,
+      0.3223111088872397
+     ],
+     "pooled_area": [
+      0.4051480208300532,
+      0.27175987615529085,
+      0.32309210301465596
+     ],
+     "n_points": [
+      11,
+      8,
+      14
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 33,
+     "n_points": 33,
+     "n_in": 3,
+     "frac_points_in": 0.09090909090909091,
+     "frac_area_in_pooled": 0.4210696992922325,
+     "frac_expected_in_crater_matched": 0.5024242665432828,
+     "DR": [
+      0.13749037313320803,
+      0.0,
+      0.3540200204747985
+     ],
+     "SDR": [
+      0.09903497235117166,
+      0.0,
+      0.2521130517176889
+     ],
+     "OE_in": [
+      0.18094088395561062,
+      0.0,
+      0.3994157216313235
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 33,
+     "n_points": 33,
+     "n_in": 6,
+     "frac_points_in": 0.18181818181818182,
+     "frac_area_in_pooled": 0.33316880905951907,
+     "frac_expected_in_crater_matched": 0.3331142450458256,
+     "DR": [
+      0.44477365548169345,
+      0.12915777660712466,
+      0.9479088207879033
+     ],
+     "SDR": [
+      0.4448829092069418,
+      0.12923617429199927,
+      0.9481509615848617
+     ],
+     "OE_in": [
+      0.5458132893511342,
+      0.18200973948642357,
+      0.9648167239325848
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.18181818181818182,
+      0.36363636363636365,
+      0.45454545454545453
+     ],
+     "crater_matched_area": [
+      0.33311424504582554,
+      0.3335294348757651,
+      0.3333563200784093
+     ],
+     "pooled_area": [
+      0.33316880905951907,
+      0.33358410007555284,
+      0.3332470908649281
+     ],
+     "n_points": [
+      6,
+      12,
+      15
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 38,
+     "n_in": 19,
+     "frac_points_in": 0.5,
+     "frac_area_in_pooled": 0.4727691366690446,
+     "frac_expected_in_crater_matched": 0.5485951725343843,
+     "DR": [
+      1.1151972970266795,
+      0.5947046045505894,
+      2.0089997382365072
+     ],
+     "SDR": [
+      0.8228377682950228,
+      0.4934600422382286,
+      1.3618556443747072
+     ],
+     "OE_in": [
+      0.9114188841475114,
+      0.6610067792068357,
+      1.1294404998635181
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 38,
+     "n_in": 9,
+     "frac_points_in": 0.23684210526315788,
+     "frac_area_in_pooled": 0.3034007763883553,
+     "frac_expected_in_crater_matched": 0.3804271892465031,
+     "DR": [
+      0.7125425601143546,
+      0.28889098092163923,
+      1.370142044470407
+     ],
+     "SDR": [
+      0.5054350019283304,
+      0.2243990526034665,
+      0.9421262184966437
+     ],
+     "OE_in": [
+      0.6225688172610943,
+      0.308247803673362,
+      0.9615070160075491
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 38,
+     "n_in": 14,
+     "frac_points_in": 0.3684210526315789,
+     "frac_area_in_pooled": 0.20983256180163104,
+     "frac_expected_in_crater_matched": 0.2624479567816763,
+     "DR": [
+      2.1966610027449627,
+      1.1137939304701945,
+      3.9172776110150593
+     ],
+     "SDR": [
+      1.6393295537646726,
+      0.9216905081064143,
+      2.8117148109234256
+     ],
+     "OE_in": [
+      1.4037870865882143,
+      0.9374541874265477,
+      1.8712075079905695
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 38,
+     "n_in": 8,
+     "frac_points_in": 0.21052631578947367,
+     "frac_area_in_pooled": 0.40542410966278336,
+     "frac_expected_in_crater_matched": 0.4261991863793138,
+     "DR": [
+      0.39108076450724655,
+      0.15368404340592443,
+      0.737773789361068
+     ],
+     "SDR": [
+      0.3590188700235312,
+      0.14141105340275223,
+      0.6457261320896341
+     ],
+     "OE_in": [
+      0.49396226580805097,
+      0.2197407725913874,
+      0.7678268792929769
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 38,
+     "n_in": 19,
+     "frac_points_in": 0.5,
+     "frac_area_in_pooled": 0.4727691366690446,
+     "frac_expected_in_crater_matched": 0.5485951725343843,
+     "DR": [
+      1.1151972970266795,
+      0.5947046045505894,
+      2.0089997382365072
+     ],
+     "SDR": [
+      0.8228377682950228,
+      0.4934600422382286,
+      1.3618556443747072
+     ],
+     "OE_in": [
+      0.9114188841475114,
+      0.6610067792068357,
+      1.1294404998635181
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 46,
+     "n_craters_with_area": 46,
+     "n_craters_with_points": 36,
+     "n_points": 38,
+     "n_in": 14,
+     "frac_points_in": 0.3684210526315789,
+     "frac_area_in_pooled": 0.20983256180163104,
+     "frac_expected_in_crater_matched": 0.2624479567816763,
+     "DR": [
+      2.1966610027449627,
+      1.1137939304701945,
+      3.9172776110150593
+     ],
+     "SDR": [
+      1.6393295537646726,
+      0.9216905081064143,
+      2.8117148109234256
+     ],
+     "OE_in": [
+      1.4037870865882143,
+      0.9374541874265477,
+      1.8712075079905695
+     ]
+    }
+   }
+  },
+  "peak_ring": {
+   "hollows": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 39,
+     "n_points": 1123,
+     "n_in": 406,
+     "frac_points_in": 0.36153161175422976,
+     "frac_area_in_pooled": 0.3190436816216046,
+     "frac_expected_in_crater_matched": 0.3126006084951964,
+     "DR": [
+      1.2085816154063438,
+      0.825898555742176,
+      1.5807152550487604
+     ],
+     "SDR": [
+      1.2451629858249056,
+      0.8478191170125842,
+      1.6051968771061402
+     ],
+     "OE_in": [
+      1.156528816417148,
+      0.8922942641940906,
+      1.3478663338899248
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 39,
+     "n_points": 1123,
+     "n_in": 318,
+     "frac_points_in": 0.2831700801424755,
+     "frac_area_in_pooled": 0.2985812669360909,
+     "frac_expected_in_crater_matched": 0.3038479720158545,
+     "DR": [
+      0.9279958705849396,
+      0.609788181061985,
+      1.5249241122111434
+     ],
+     "SDR": [
+      0.905063373822967,
+      0.5779534181805048,
+      1.4810660998110967
+     ],
+     "OE_in": [
+      0.9319465858659737,
+      0.661675617302337,
+      1.2950813428059673
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.36153161175422976,
+      0.35529830810329477,
+      0.2831700801424755
+     ],
+     "crater_matched_area": [
+      0.3126006084951964,
+      0.38355141948894944,
+      0.30384797201585445
+     ],
+     "pooled_area": [
+      0.3190436816216046,
+      0.38237505144230455,
+      0.2985812669360909
+     ],
+     "n_points": [
+      406,
+      399,
+      318
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 39,
+     "n_points": 1123,
+     "n_in": 148,
+     "frac_points_in": 0.13178984861976847,
+     "frac_area_in_pooled": 0.22919551523262693,
+     "frac_expected_in_crater_matched": 0.2576045818118317,
+     "DR": [
+      0.5104993779019615,
+      0.39029749109301715,
+      0.7341630726379046
+     ],
+     "SDR": [
+      0.4374604540508112,
+      0.3508021181509156,
+      0.5606658755061692
+     ],
+     "OE_in": [
+      0.5115974556540881,
+      0.416573902086852,
+      0.6412202470859745
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 39,
+     "n_points": 1123,
+     "n_in": 444,
+     "frac_points_in": 0.39536954585930545,
+     "frac_area_in_pooled": 0.3333446526087326,
+     "frac_expected_in_crater_matched": 0.33334858953773927,
+     "DR": [
+      1.3077389833747084,
+      0.8060134246059057,
+      1.8764417708680932
+     ],
+     "SDR": [
+      1.307715815901759,
+      0.8060372070545405,
+      1.876401174424478
+     ],
+     "OE_in": [
+      1.186054353514955,
+      0.861755559651403,
+      1.4521532762093936
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.39536954585930545,
+      0.26714158504007124,
+      0.3374888691006233
+     ],
+     "crater_matched_area": [
+      0.33334858953773927,
+      0.3333041923907155,
+      0.3333472180715452
+     ],
+     "pooled_area": [
+      0.3333446526087326,
+      0.33331235221278155,
+      0.33334299517848587
+     ],
+     "n_points": [
+      444,
+      300,
+      379
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 34,
+     "n_points": 737,
+     "n_in": 175,
+     "frac_points_in": 0.23744911804613297,
+     "frac_area_in_pooled": 0.23682446860396472,
+     "frac_expected_in_crater_matched": 0.23677823863276679,
+     "DR": [
+      1.003458923502509,
+      0.6929519731740053,
+      1.4862821417209195
+     ],
+     "SDR": [
+      1.0037156419034385,
+      0.6603070758381788,
+      1.5519881590269036
+     ],
+     "OE_in": [
+      1.002833366010492,
+      0.7240748052118549,
+      1.3865816233823685
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 34,
+     "n_points": 737,
+     "n_in": 65,
+     "frac_points_in": 0.08819538670284939,
+     "frac_area_in_pooled": 0.11514057747707052,
+     "frac_expected_in_crater_matched": 0.1317949695809167,
+     "DR": [
+      0.7433442051708425,
+      0.3907761654399911,
+      1.1778881196430615
+     ],
+     "SDR": [
+      0.6371879398108884,
+      0.33246390346166316,
+      1.080923998067598
+     ],
+     "OE_in": [
+      0.6691862897597245,
+      0.3686805524372498,
+      1.0709804915962653
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 33,
+     "n_points": 722,
+     "n_in": 110,
+     "frac_points_in": 0.1523545706371191,
+     "frac_area_in_pooled": 0.12418015021131132,
+     "frac_expected_in_crater_matched": 0.10813449501991552,
+     "DR": [
+      1.2676631505465545,
+      0.7229469948758487,
+      2.23145222376085
+     ],
+     "SDR": [
+      1.4824374351090215,
+      0.8901437771287787,
+      2.424789346637406
+     ],
+     "OE_in": [
+      1.4089358868237136,
+      0.9027863968205935,
+      2.0872981595224256
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 34,
+     "n_points": 737,
+     "n_in": 258,
+     "frac_points_in": 0.35006784260515605,
+     "frac_area_in_pooled": 0.4927820512997284,
+     "frac_expected_in_crater_matched": 0.3888148294258577,
+     "DR": [
+      0.55440089771268,
+      0.32803497292369166,
+      1.0049143756645638
+     ],
+     "SDR": [
+      0.8466700165234375,
+      0.5639451953276227,
+      1.3100431922171847
+     ],
+     "OE_in": [
+      0.9003459130457618,
+      0.6718817173022558,
+      1.1656560658167108
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 34,
+     "n_points": 737,
+     "n_in": 175,
+     "frac_points_in": 0.23744911804613297,
+     "frac_area_in_pooled": 0.23682446860396472,
+     "frac_expected_in_crater_matched": 0.23677823863276679,
+     "DR": [
+      1.003458923502509,
+      0.6929519731740053,
+      1.4862821417209195
+     ],
+     "SDR": [
+      1.0037156419034385,
+      0.6603070758381788,
+      1.5519881590269036
+     ],
+     "OE_in": [
+      1.002833366010492,
+      0.7240748052118549,
+      1.3865816233823685
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 40,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 33,
+     "n_points": 722,
+     "n_in": 110,
+     "frac_points_in": 0.1523545706371191,
+     "frac_area_in_pooled": 0.12418015021131132,
+     "frac_expected_in_crater_matched": 0.10813449501991552,
+     "DR": [
+      1.2676631505465545,
+      0.7206561047703799,
+      2.206462187472616
+     ],
+     "SDR": [
+      1.4824374351090215,
+      0.9010308048561196,
+      2.482470858396746
+     ],
+     "OE_in": [
+      1.4089358868237136,
+      0.9124129746313402,
+      2.109837908361577
+     ]
+    }
+   },
+   "fields": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 39,
+     "n_points": 68,
+     "n_in": 24,
+     "frac_points_in": 0.35294117647058826,
+     "frac_area_in_pooled": 0.3190436816216046,
+     "frac_expected_in_crater_matched": 0.37099621124102733,
+     "DR": [
+      1.1642002036448929,
+      0.6354984675028152,
+      1.94211519895873
+     ],
+     "SDR": [
+      0.9247883544120967,
+      0.524104073245652,
+      1.4858495712312922
+     ],
+     "OE_in": [
+      0.9513336410901805,
+      0.6352581105568031,
+      1.2648601266465005
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 39,
+     "n_points": 68,
+     "n_in": 25,
+     "frac_points_in": 0.36764705882352944,
+     "frac_area_in_pooled": 0.2985812669360909,
+     "frac_expected_in_crater_matched": 0.26588220587754613,
+     "DR": [
+      1.3657976375253702,
+      0.890898296397461,
+      2.1668990768300125
+     ],
+     "SDR": [
+      1.6052697832588243,
+      1.0710849037406671,
+      2.430758973524226
+     ],
+     "OE_in": [
+      1.3827441276489625,
+      1.0521955918410666,
+      1.780434887434583
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.35294117647058826,
+      0.27941176470588236,
+      0.36764705882352944
+     ],
+     "crater_matched_area": [
+      0.37099621124102733,
+      0.3631215828814266,
+      0.26588220587754613
+     ],
+     "pooled_area": [
+      0.3190436816216046,
+      0.38237505144230455,
+      0.2985812669360909
+     ],
+     "n_points": [
+      24,
+      19,
+      25
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 39,
+     "n_points": 68,
+     "n_in": 12,
+     "frac_points_in": 0.17647058823529413,
+     "frac_area_in_pooled": 0.22919551523262693,
+     "frac_expected_in_crater_matched": 0.30257181760038465,
+     "DR": [
+      0.7206615252718328,
+      0.3865559081346134,
+      1.2349166278734116
+     ],
+     "SDR": [
+      0.49392867258334827,
+      0.27554269084750643,
+      0.8444049805450361
+     ],
+     "OE_in": [
+      0.5832353774215809,
+      0.35402930616825906,
+      0.8874856402392914
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 39,
+     "n_points": 68,
+     "n_in": 25,
+     "frac_points_in": 0.36764705882352944,
+     "frac_area_in_pooled": 0.3333446526087326,
+     "frac_expected_in_crater_matched": 0.33333590853480366,
+     "DR": [
+      1.1627314709190064,
+      0.6666466674191448,
+      1.8750623387886438
+     ],
+     "SDR": [
+      1.162777222887105,
+      0.6667049957727118,
+      1.8753228704971554
+     ],
+     "OE_in": [
+      1.1029326556491987,
+      0.7500287468295337,
+      1.451768475396156
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.36764705882352944,
+      0.2647058823529412,
+      0.36764705882352944
+     ],
+     "crater_matched_area": [
+      0.3333359085348037,
+      0.33331605877021225,
+      0.33334803269498386
+     ],
+     "pooled_area": [
+      0.3333446526087326,
+      0.33331235221278155,
+      0.33334299517848587
+     ],
+     "n_points": [
+      25,
+      18,
+      25
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 34,
+     "n_points": 67,
+     "n_in": 21,
+     "frac_points_in": 0.31343283582089554,
+     "frac_area_in_pooled": 0.23682446860396472,
+     "frac_expected_in_crater_matched": 0.2470358365584571,
+     "DR": [
+      1.471158039152374,
+      0.6077841444853157,
+      2.858063827799692
+     ],
+     "SDR": [
+      1.3914762901854707,
+      0.5600683536198982,
+      2.7738052783080294
+     ],
+     "OE_in": [
+      1.2687747663959947,
+      0.6299871083367752,
+      1.9407848233300953
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 34,
+     "n_points": 67,
+     "n_in": 6,
+     "frac_points_in": 0.08955223880597014,
+     "frac_area_in_pooled": 0.11514057747707052,
+     "frac_expected_in_crater_matched": 0.12977156092197686,
+     "DR": [
+      0.7559051286882313,
+      0.1183034249747967,
+      1.6943637905622202
+     ],
+     "SDR": [
+      0.6595916647775945,
+      0.10169223193275748,
+      1.5405400324206766
+     ],
+     "OE_in": [
+      0.6900759933049742,
+      0.11605312715217138,
+      1.448622721128012
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 41,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 33,
+     "n_points": 66,
+     "n_in": 15,
+     "frac_points_in": 0.22727272727272727,
+     "frac_area_in_pooled": 0.12418015021131132,
+     "frac_expected_in_crater_matched": 0.1211710152113642,
+     "DR": [
+      2.074357882712544,
+      0.929929956982233,
+      3.5821947162912724
+     ],
+     "SDR": [
+      2.1331760959685875,
+      0.9519393617483265,
+      3.755787130706805
+     ],
+     "OE_in": [
+      1.8756360741575449,
+      0.958603517009017,
+      2.876745945430641
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 34,
+     "n_points": 67,
+     "n_in": 29,
+     "frac_points_in": 0.43283582089552236,
+     "frac_area_in_pooled": 0.4927820512997284,
+     "frac_expected_in_crater_matched": 0.4414546975020909,
+     "DR": [
+      0.7855143686379883,
+      0.3966550351410453,
+      1.351766292732107
+     ],
+     "SDR": [
+      0.9655764443812223,
+      0.5637978611017052,
+      1.5031575910249266
+     ],
+     "OE_in": [
+      0.9804761923356187,
+      0.6850926922767463,
+      1.2310856076381156
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 34,
+     "n_points": 67,
+     "n_in": 21,
+     "frac_points_in": 0.31343283582089554,
+     "frac_area_in_pooled": 0.23682446860396472,
+     "frac_expected_in_crater_matched": 0.2470358365584571,
+     "DR": [
+      1.471158039152374,
+      0.6077841444853157,
+      2.858063827799692
+     ],
+     "SDR": [
+      1.3914762901854707,
+      0.5600683536198982,
+      2.7738052783080294
+     ],
+     "OE_in": [
+      1.2687747663959947,
+      0.6299871083367752,
+      1.9407848233300953
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 40,
+     "n_craters_with_area": 40,
+     "n_craters_with_points": 33,
+     "n_points": 66,
+     "n_in": 15,
+     "frac_points_in": 0.22727272727272727,
+     "frac_area_in_pooled": 0.12418015021131132,
+     "frac_expected_in_crater_matched": 0.1211710152113642,
+     "DR": [
+      2.074357882712544,
+      0.9253743044682137,
+      3.5420875061349455
+     ],
+     "SDR": [
+      2.1331760959685875,
+      0.9341924666953715,
+      3.739587946722039
+     ],
+     "OE_in": [
+      1.8756360741575449,
+      0.9420650094941028,
+      2.8460062703208866
+     ]
+    }
+   }
+  },
+  "unclassified_center": {
+   "hollows": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 24,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 4,
+     "n_points": 32,
+     "n_in": 12,
+     "frac_points_in": 0.375,
+     "frac_area_in_pooled": 0.392666086381796,
+     "frac_expected_in_crater_matched": 0.33082674715428023,
+     "DR": [
+      0.928015840452821,
+      0.0,
+      3.2139303833822774
+     ],
+     "SDR": [
+      1.2136381207417655,
+      1.0300613887245569,
+      3.4528105875419013
+     ],
+     "OE_in": [
+      1.1335238254636035,
+      1.0208117306554625,
+      1.8176035291806338
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 24,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 4,
+     "n_points": 32,
+     "n_in": 13,
+     "frac_points_in": 0.40625,
+     "frac_area_in_pooled": 0.3552572194939337,
+     "frac_expected_in_crater_matched": 0.39387467785215735,
+     "DR": [
+      1.2417475929603001,
+      0.903265104175763,
+      4.116500681289003
+     ],
+     "SDR": [
+      1.0529169530308544,
+      0.8984518744515914,
+      2.1284387071785646
+     ],
+     "OE_in": [
+      1.0314194408620698,
+      0.9365324215322447,
+      1.3860687602250852
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.375,
+      0.21875,
+      0.40625
+     ],
+     "crater_matched_area": [
+      0.3308267471542802,
+      0.2752985749935625,
+      0.39387467785215735
+     ],
+     "pooled_area": [
+      0.392666086381796,
+      0.2520766941242703,
+      0.3552572194939337
+     ],
+     "n_points": [
+      12,
+      7,
+      13
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 24,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 4,
+     "n_points": 32,
+     "n_in": 8,
+     "frac_points_in": 0.25,
+     "frac_area_in_pooled": 0.2417113667875255,
+     "frac_expected_in_crater_matched": 0.28578398167965813,
+     "DR": [
+      1.045721933133913,
+      0.6926830407641671,
+      2.789741180590291
+     ],
+     "SDR": [
+      0.8330488108799641,
+      0.3968912192770507,
+      1.6045312919874943
+     ],
+     "OE_in": [
+      0.874786608159973,
+      0.6984456096385253,
+      1.4030208613249961
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 24,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 4,
+     "n_points": 32,
+     "n_in": 12,
+     "frac_points_in": 0.375,
+     "frac_area_in_pooled": 0.33326990864097916,
+     "frac_expected_in_crater_matched": 0.3331662752995992,
+     "DR": [
+      1.2003425585187184,
+      0.0,
+      4.001976126759391
+     ],
+     "SDR": [
+      1.2009025657247305,
+      0.0,
+      3.9987172417707466
+     ],
+     "OE_in": [
+      1.1255641035779564,
+      0.0,
+      1.999572413923582
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.375,
+      0.3125,
+      0.3125
+     ],
+     "crater_matched_area": [
+      0.3331662752995992,
+      0.3333047600276422,
+      0.33352896467275867
+     ],
+     "pooled_area": [
+      0.33326990864097916,
+      0.33328908010969804,
+      0.33344101124932274
+     ],
+     "n_points": [
+      12,
+      10,
+      10
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 24,
+     "n_craters_with_area": 24,
+     "n_craters_with_points": 21,
+     "n_points": 188,
+     "n_in": 32,
+     "frac_points_in": 0.1702127659574468,
+     "frac_area_in_pooled": 0.1581593456399933,
+     "frac_expected_in_crater_matched": 0.18183319666092168,
+     "DR": [
+      1.0918435564717934,
+      0.5487923429930505,
+      1.9322185577661928
+     ],
+     "SDR": [
+      0.9229837617461573,
+      0.4826825781015859,
+      1.6880294612741487
+     ],
+     "OE_in": [
+      0.9360929086829817,
+      0.5318152806851338,
+      1.519099653067376
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 24,
+     "n_craters_with_area": 24,
+     "n_craters_with_points": 21,
+     "n_points": 188,
+     "n_in": 24,
+     "frac_points_in": 0.1276595744680851,
+     "frac_area_in_pooled": 0.14328196330042867,
+     "frac_expected_in_crater_matched": 0.15660540211203253,
+     "DR": [
+      0.8750115390410232,
+      0.37892094141940724,
+      1.6911801847690828
+     ],
+     "SDR": [
+      0.7881184047701444,
+      0.3463925466302947,
+      1.5981119767983625
+     ],
+     "OE_in": [
+      0.8151671190548068,
+      0.3863499169225877,
+      1.4710176138869357
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 24,
+     "n_craters_with_area": 7,
+     "n_craters_with_points": 5,
+     "n_points": 65,
+     "n_in": 8,
+     "frac_points_in": 0.12307692307692308,
+     "frac_area_in_pooled": 0.07642318834780892,
+     "frac_expected_in_crater_matched": 0.07479477684422908,
+     "DR": [
+      1.6961450898979584,
+      0.9711453036027857,
+      5.5105835034798965
+     ],
+     "SDR": [
+      1.7361287797392575,
+      1.1784522846186147,
+      2.7915972574031005
+     ],
+     "OE_in": [
+      1.6455283145405795,
+      1.1647251858017982,
+      2.3397395566261086
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 24,
+     "n_craters_with_area": 24,
+     "n_craters_with_points": 21,
+     "n_points": 188,
+     "n_in": 85,
+     "frac_points_in": 0.4521276595744681,
+     "frac_area_in_pooled": 0.4776820904610706,
+     "frac_expected_in_crater_matched": 0.44073621342075264,
+     "DR": [
+      0.9023554790283279,
+      0.5340834709085058,
+      1.508931238666343
+     ],
+     "SDR": [
+      1.0471759603851662,
+      0.6820139055617235,
+      1.570139343435048
+     ],
+     "OE_in": [
+      1.0258464038280433,
+      0.7775250568135875,
+      1.2317923437346678
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 24,
+     "n_craters_with_area": 24,
+     "n_craters_with_points": 21,
+     "n_points": 188,
+     "n_in": 32,
+     "frac_points_in": 0.1702127659574468,
+     "frac_area_in_pooled": 0.1581593456399933,
+     "frac_expected_in_crater_matched": 0.18183319666092168,
+     "DR": [
+      1.0918435564717934,
+      0.5487923429930505,
+      1.9322185577661928
+     ],
+     "SDR": [
+      0.9229837617461573,
+      0.4826825781015859,
+      1.6880294612741487
+     ],
+     "OE_in": [
+      0.9360929086829817,
+      0.5318152806851338,
+      1.519099653067376
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 6,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 5,
+     "n_points": 65,
+     "n_in": 8,
+     "frac_points_in": 0.12307692307692308,
+     "frac_area_in_pooled": 0.07683880154901246,
+     "frac_expected_in_crater_matched": 0.07479477684422908,
+     "DR": [
+      1.6862116714623103,
+      1.0526448998174294,
+      4.778835979691676
+     ],
+     "SDR": [
+      1.7361287797392575,
+      1.2717181294301707,
+      2.5939956043319743
+     ],
+     "OE_in": [
+      1.6455283145405795,
+      1.2443734861655944,
+      2.296263145413573
+     ]
+    }
+   },
+   "fields": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 24,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 4,
+     "n_points": 4,
+     "n_in": 1,
+     "frac_points_in": 0.25,
+     "frac_area_in_pooled": 0.392666086381796,
+     "frac_expected_in_crater_matched": 0.31076399493252316,
+     "DR": [
+      0.5155643558071228,
+      0.0,
+      2.2578853327781476
+     ],
+     "SDR": [
+      0.7392919989729743,
+      0.0,
+      2.6381156736607205
+     ],
+     "OE_in": [
+      0.8044689992297307,
+      0.0,
+      1.8190578368303603
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 24,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 4,
+     "n_points": 4,
+     "n_in": 1,
+     "frac_points_in": 0.25,
+     "frac_area_in_pooled": 0.3552572194939337,
+     "frac_expected_in_crater_matched": 0.4124578564617143,
+     "DR": [
+      0.6049539555447615,
+      0.0,
+      3.489578434422685
+     ],
+     "SDR": [
+      0.47483004169083587,
+      0.0,
+      1.403071914463153
+     ],
+     "OE_in": [
+      0.6061225312681269,
+      0.0,
+      1.32593805308398
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.25,
+      0.5,
+      0.25
+     ],
+     "crater_matched_area": [
+      0.31076399493252316,
+      0.27677814860576255,
+      0.4124578564617143
+     ],
+     "pooled_area": [
+      0.392666086381796,
+      0.2520766941242703,
+      0.3552572194939337
+     ],
+     "n_points": [
+      1,
+      2,
+      1
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 24,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 4,
+     "n_points": 4,
+     "n_in": 1,
+     "frac_points_in": 0.25,
+     "frac_area_in_pooled": 0.2417113667875255,
+     "frac_expected_in_crater_matched": 0.4467046967431748,
+     "DR": [
+      1.045721933133913,
+      0.0,
+      6.42212331626515
+     ],
+     "SDR": [
+      0.41287179001458085,
+      0.0,
+      5.07106534635091
+     ],
+     "OE_in": [
+      0.5596538425109356,
+      0.0,
+      4.209062583974989
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 24,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 4,
+     "n_points": 4,
+     "n_in": 1,
+     "frac_points_in": 0.25,
+     "frac_area_in_pooled": 0.33326990864097916,
+     "frac_expected_in_crater_matched": 0.3328344857294623,
+     "DR": [
+      0.6668569769548437,
+      0.0,
+      4.000148745272681
+     ],
+     "SDR": [
+      0.668165452475408,
+      0.0,
+      3.9995655459775135
+     ],
+     "OE_in": [
+      0.7511240893565561,
+      0.0,
+      2.9993586208853733
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.25,
+      0.5,
+      0.25
+     ],
+     "crater_matched_area": [
+      0.3328344857294623,
+      0.3335342148284376,
+      0.3336312994421001
+     ],
+     "pooled_area": [
+      0.33326990864097916,
+      0.33328908010969804,
+      0.33344101124932274
+     ],
+     "n_points": [
+      1,
+      2,
+      1
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 24,
+     "n_craters_with_area": 24,
+     "n_craters_with_points": 21,
+     "n_points": 39,
+     "n_in": 7,
+     "frac_points_in": 0.1794871794871795,
+     "frac_area_in_pooled": 0.1581593456399933,
+     "frac_expected_in_crater_matched": 0.15727564117646772,
+     "DR": [
+      1.1643487926437486,
+      0.3643962190272234,
+      2.1767100277172906
+     ],
+     "SDR": [
+      1.1721201841155193,
+      0.3457774612425806,
+      2.2801683758955025
+     ],
+     "OE_in": [
+      1.1412268177358107,
+      0.3857230809861095,
+      1.8927474151529489
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 24,
+     "n_craters_with_area": 24,
+     "n_craters_with_points": 21,
+     "n_points": 39,
+     "n_in": 5,
+     "frac_points_in": 0.1282051282051282,
+     "frac_area_in_pooled": 0.14328196330042867,
+     "frac_expected_in_crater_matched": 0.14308612911180213,
+     "DR": [
+      0.8793008112912244,
+      0.1752589695967789,
+      1.8946733020540223
+     ],
+     "SDR": [
+      0.8807055338004698,
+      0.16761107504667494,
+      1.9135161717068525
+     ],
+     "OE_in": [
+      0.8959996961337429,
+      0.19139280221588303,
+      1.7053419070381066
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 24,
+     "n_craters_with_area": 7,
+     "n_craters_with_points": 5,
+     "n_points": 11,
+     "n_in": 2,
+     "frac_points_in": 0.18181818181818182,
+     "frac_area_in_pooled": 0.07642318834780892,
+     "frac_expected_in_crater_matched": 0.05154167897638387,
+     "DR": [
+      2.6855630590051005,
+      0.0,
+      26.30504421632455
+     ],
+     "SDR": [
+      4.0892830805841385,
+      0.0,
+      20.32171646858117
+     ],
+     "OE_in": [
+      3.5275952477506594,
+      0.0,
+      8.880036987660402
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 24,
+     "n_craters_with_area": 24,
+     "n_craters_with_points": 21,
+     "n_points": 39,
+     "n_in": 18,
+     "frac_points_in": 0.46153846153846156,
+     "frac_area_in_pooled": 0.4776820904610706,
+     "frac_expected_in_crater_matched": 0.435766652839375,
+     "DR": [
+      0.9372364471252213,
+      0.45446755402516953,
+      1.7783789725071046
+     ],
+     "SDR": [
+      1.1098338528873224,
+      0.6152724566124029,
+      1.9655885397501847
+     ],
+     "OE_in": [
+      1.0591413054008658,
+      0.7393221754135585,
+      1.395784780404816
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 24,
+     "n_craters_with_area": 24,
+     "n_craters_with_points": 21,
+     "n_points": 39,
+     "n_in": 7,
+     "frac_points_in": 0.1794871794871795,
+     "frac_area_in_pooled": 0.1581593456399933,
+     "frac_expected_in_crater_matched": 0.15727564117646772,
+     "DR": [
+      1.1643487926437486,
+      0.3643962190272234,
+      2.1767100277172906
+     ],
+     "SDR": [
+      1.1721201841155193,
+      0.3457774612425806,
+      2.2801683758955025
+     ],
+     "OE_in": [
+      1.1412268177358107,
+      0.3857230809861095,
+      1.8927474151529489
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 6,
+     "n_craters_with_area": 6,
+     "n_craters_with_points": 5,
+     "n_points": 11,
+     "n_in": 2,
+     "frac_points_in": 0.18181818181818182,
+     "frac_area_in_pooled": 0.07683880154901246,
+     "frac_expected_in_crater_matched": 0.05154167897638387,
+     "DR": [
+      2.6698351464819914,
+      0.0,
+      27.775081270899808
+     ],
+     "SDR": [
+      4.0892830805841385,
+      0.0,
+      22.048021966321464
+     ],
+     "OE_in": [
+      3.5275952477506594,
+      0.0,
+      8.469868221817567
+     ]
+    }
+   }
+  },
+  "vent_inside_rim": {
+   "hollows": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 11,
+     "n_points": 555,
+     "n_in": 231,
+     "frac_points_in": 0.41621621621621624,
+     "frac_area_in_pooled": 0.3332862336971245,
+     "frac_expected_in_crater_matched": 0.3172215297856184,
+     "DR": [
+      1.4262281913013672,
+      0.8449801063818093,
+      1.813390275941764
+     ],
+     "SDR": [
+      1.534560915522809,
+      0.866832923239726,
+      1.9415534921474313
+     ],
+     "OE_in": [
+      1.3120679939268292,
+      0.916660046868672,
+      1.5203264191266808
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 11,
+     "n_points": 555,
+     "n_in": 123,
+     "frac_points_in": 0.22162162162162163,
+     "frac_area_in_pooled": 0.31307176195022335,
+     "frac_expected_in_crater_matched": 0.3182833575079708,
+     "DR": [
+      0.6247249296020022,
+      0.3697227949489642,
+      1.3245358312730822
+     ],
+     "SDR": [
+      0.6098335737561831,
+      0.35869837570430674,
+      1.3104959571802761
+     ],
+     "OE_in": [
+      0.6963028898426508,
+      0.4583143686506126,
+      1.1954267334965811
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.41621621621621624,
+      0.3621621621621622,
+      0.22162162162162163
+     ],
+     "crater_matched_area": [
+      0.3172215297856184,
+      0.36449511270641066,
+      0.3182833575079709
+     ],
+     "pooled_area": [
+      0.3332862336971245,
+      0.35364200435265214,
+      0.31307176195022335
+     ],
+     "n_points": [
+      231,
+      201,
+      123
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 11,
+     "n_points": 555,
+     "n_in": 76,
+     "frac_points_in": 0.13693693693693693,
+     "frac_area_in_pooled": 0.24643078262852341,
+     "frac_expected_in_crater_matched": 0.24164870798562735,
+     "DR": [
+      0.48518377829977566,
+      0.3373191243863199,
+      1.1107226491088806
+     ],
+     "SDR": [
+      0.49792511509848913,
+      0.35616342290553793,
+      1.0459362952286855
+     ],
+     "OE_in": [
+      0.5666777119498673,
+      0.418942866007767,
+      1.030403902618396
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 11,
+     "n_points": 555,
+     "n_in": 254,
+     "frac_points_in": 0.45765765765765765,
+     "frac_area_in_pooled": 0.33335884716501396,
+     "frac_expected_in_crater_matched": 0.33334691886721524,
+     "DR": [
+      1.6875138865272092,
+      0.7384585104396353,
+      2.5549699314631265
+     ],
+     "SDR": [
+      1.68760446755898,
+      0.738679403276797,
+      2.555119302704494
+     ],
+     "OE_in": [
+      1.3729170175409964,
+      0.809161927399344,
+      1.6827617443303278
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.45765765765765765,
+      0.3009009009009009,
+      0.24144144144144145
+     ],
+     "crater_matched_area": [
+      0.33334691886721524,
+      0.33329341863087736,
+      0.3333596625019073
+     ],
+     "pooled_area": [
+      0.33335884716501396,
+      0.3332751532259679,
+      0.3333659996090182
+     ],
+     "n_points": [
+      254,
+      167,
+      134
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 14,
+     "n_craters_with_area": 14,
+     "n_craters_with_points": 14,
+     "n_points": 453,
+     "n_in": 120,
+     "frac_points_in": 0.26490066225165565,
+     "frac_area_in_pooled": 0.22887145089660155,
+     "frac_expected_in_crater_matched": 0.2405440406215881,
+     "DR": [
+      1.2141495182140638,
+      0.7871830831952137,
+      1.9152411286040576
+     ],
+     "SDR": [
+      1.1377451816815698,
+      0.738097343476321,
+      1.7544006414012037
+     ],
+     "OE_in": [
+      1.1012563918321474,
+      0.8006127567172181,
+      1.5031312861305621
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 14,
+     "n_craters_with_area": 14,
+     "n_craters_with_points": 14,
+     "n_points": 453,
+     "n_in": 47,
+     "frac_points_in": 0.10375275938189846,
+     "frac_area_in_pooled": 0.12492793689952225,
+     "frac_expected_in_crater_matched": 0.13551549934698462,
+     "DR": [
+      0.8108790414897808,
+      0.31086684409453713,
+      1.378363560968862
+     ],
+     "SDR": [
+      0.7384822579686962,
+      0.27066118377534454,
+      1.4241822120355454
+     ],
+     "OE_in": [
+      0.7656154453317674,
+      0.30100409352168134,
+      1.356103957476289
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 12,
+     "n_points": 436,
+     "n_in": 73,
+     "frac_points_in": 0.16743119266055045,
+     "frac_area_in_pooled": 0.12275052880440776,
+     "frac_expected_in_crater_matched": 0.10997536012789817,
+     "DR": [
+      1.4371959293485805,
+      0.7738504118129708,
+      3.1555957491441933
+     ],
+     "SDR": [
+      1.6275070267656584,
+      0.9607625261557539,
+      3.191535018550806
+     ],
+     "OE_in": [
+      1.5224427768714084,
+      0.9632736324832224,
+      2.516905931436522
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 14,
+     "n_craters_with_area": 14,
+     "n_craters_with_points": 14,
+     "n_points": 453,
+     "n_in": 168,
+     "frac_points_in": 0.3708609271523179,
+     "frac_area_in_pooled": 0.5359237069447098,
+     "frac_expected_in_crater_matched": 0.4345922795134969,
+     "DR": [
+      0.5104472123124207,
+      0.29729338966656743,
+      1.0975029586605953
+     ],
+     "SDR": [
+      0.7669095558930736,
+      0.4915650139240017,
+      1.3437146940115092
+     ],
+     "OE_in": [
+      0.853353694104914,
+      0.626979045855634,
+      1.1759194747335224
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 14,
+     "n_craters_with_area": 14,
+     "n_craters_with_points": 14,
+     "n_points": 453,
+     "n_in": 120,
+     "frac_points_in": 0.26490066225165565,
+     "frac_area_in_pooled": 0.22887145089660155,
+     "frac_expected_in_crater_matched": 0.2405440406215881,
+     "DR": [
+      1.2141495182140638,
+      0.7871830831952137,
+      1.9152411286040576
+     ],
+     "SDR": [
+      1.1377451816815698,
+      0.738097343476321,
+      1.7544006414012037
+     ],
+     "OE_in": [
+      1.1012563918321474,
+      0.8006127567172181,
+      1.5031312861305621
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 12,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 12,
+     "n_points": 436,
+     "n_in": 73,
+     "frac_points_in": 0.16743119266055045,
+     "frac_area_in_pooled": 0.12275052880440776,
+     "frac_expected_in_crater_matched": 0.10997536012789817,
+     "DR": [
+      1.4371959293485805,
+      0.81485400720785,
+      3.1499993250051133
+     ],
+     "SDR": [
+      1.6275070267656584,
+      0.9705122983138794,
+      3.1672378256448233
+     ],
+     "OE_in": [
+      1.5224427768714084,
+      0.9731352377508915,
+      2.4787728979650687
+     ]
+    }
+   },
+   "fields": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 11,
+     "n_points": 12,
+     "n_in": 7,
+     "frac_points_in": 0.5833333333333334,
+     "frac_area_in_pooled": 0.3332862336971245,
+     "frac_expected_in_crater_matched": 0.40534423780271384,
+     "DR": [
+      2.8005935392826844,
+      0.8184088886868499,
+      9.723977356603237
+     ],
+     "SDR": [
+      2.0538544511921684,
+      0.7719713920963935,
+      6.204135522038162
+     ],
+     "OE_in": [
+      1.4391060213300702,
+      0.854988445665873,
+      1.9754937199737723
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 11,
+     "n_points": 12,
+     "n_in": 1,
+     "frac_points_in": 0.08333333333333333,
+     "frac_area_in_pooled": 0.31307176195022335,
+     "frac_expected_in_crater_matched": 0.288474271997242,
+     "DR": [
+      0.19946871366449737,
+      0.0,
+      0.9029734316662016
+     ],
+     "SDR": [
+      0.22422851314719058,
+      0.0,
+      0.8098129165688569
+     ],
+     "OE_in": [
+      0.2888761370515914,
+      0.0,
+      0.8643286037489054
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.5833333333333334,
+      0.3333333333333333,
+      0.08333333333333333
+     ],
+     "crater_matched_area": [
+      0.40534423780271395,
+      0.3061814902000441,
+      0.28847427199724207
+     ],
+     "pooled_area": [
+      0.3332862336971245,
+      0.35364200435265214,
+      0.31307176195022335
+     ],
+     "n_points": [
+      7,
+      4,
+      1
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 11,
+     "n_points": 12,
+     "n_in": 1,
+     "frac_points_in": 0.08333333333333333,
+     "frac_area_in_pooled": 0.24643078262852341,
+     "frac_expected_in_crater_matched": 0.3614104253688484,
+     "DR": [
+      0.2779940547913786,
+      0.0,
+      1.0464899727606982
+     ],
+     "SDR": [
+      0.1606306670165718,
+      0.0,
+      0.6989089514620681
+     ],
+     "OE_in": [
+      0.2305781114318575,
+      0.0,
+      0.7864239163033927
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 11,
+     "n_points": 12,
+     "n_in": 3,
+     "frac_points_in": 0.25,
+     "frac_area_in_pooled": 0.33335884716501396,
+     "frac_expected_in_crater_matched": 0.3333798962372641,
+     "DR": [
+      0.6665901310297768,
+      0.0,
+      1.7506676581715104
+     ],
+     "SDR": [
+      0.666526997465085,
+      0.0,
+      1.7507331843751874
+     ],
+     "OE_in": [
+      0.7498952480988138,
+      0.0,
+      1.4003148237589471
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.25,
+      0.75,
+      0.0
+     ],
+     "crater_matched_area": [
+      0.33337989623726416,
+      0.3330726546425593,
+      0.33354744912017664
+     ],
+     "pooled_area": [
+      0.33335884716501396,
+      0.3332751532259679,
+      0.3333659996090182
+     ],
+     "n_points": [
+      3,
+      9,
+      0
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 14,
+     "n_craters_with_area": 14,
+     "n_craters_with_points": 14,
+     "n_points": 19,
+     "n_in": 6,
+     "frac_points_in": 0.3157894736842105,
+     "frac_area_in_pooled": 0.22887145089660155,
+     "frac_expected_in_crater_matched": 0.27304075776650377,
+     "DR": [
+      1.5550453444818582,
+      0.41962533214845626,
+      3.608255846948384
+     ],
+     "SDR": [
+      1.2288262492610715,
+      0.3417784729396658,
+      2.920152677906323
+     ],
+     "OE_in": [
+      1.1565653284417858,
+      0.40574489878142167,
+      1.8461873250837386
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 14,
+     "n_craters_with_area": 14,
+     "n_craters_with_points": 14,
+     "n_points": 19,
+     "n_in": 1,
+     "frac_points_in": 0.05263157894736842,
+     "frac_area_in_pooled": 0.12492793689952225,
+     "frac_expected_in_crater_matched": 0.16828159231266762,
+     "DR": [
+      0.3891452610459231,
+      0.0,
+      1.320691514342381
+     ],
+     "SDR": [
+      0.27457892197145284,
+      0.0,
+      1.0209687112392034
+     ],
+     "OE_in": [
+      0.3127589787097974,
+      0.0,
+      1.0179602075547682
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 14,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 12,
+     "n_points": 16,
+     "n_in": 5,
+     "frac_points_in": 0.3125,
+     "frac_area_in_pooled": 0.12275052880440776,
+     "frac_expected_in_crater_matched": 0.1262049279833062,
+     "DR": [
+      3.2484565526372027,
+      0.8876202283828245,
+      8.619873658972002
+     ],
+     "SDR": [
+      3.147100390897123,
+      0.8965865236138183,
+      8.159147112745757
+     ],
+     "OE_in": [
+      2.4761315187417723,
+      0.9036218664317726,
+      4.180032050686125
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 14,
+     "n_craters_with_area": 14,
+     "n_craters_with_points": 14,
+     "n_points": 19,
+     "n_in": 8,
+     "frac_points_in": 0.42105263157894735,
+     "frac_area_in_pooled": 0.5359237069447098,
+     "frac_expected_in_crater_matched": 0.5159386081426134,
+     "DR": [
+      0.6297725346711684,
+      0.2739933192832698,
+      1.368558708204178
+     ],
+     "SDR": [
+      0.6823382531710893,
+      0.31455261607642143,
+      1.2523573809357127
+     ],
+     "OE_in": [
+      0.8160905676253674,
+      0.4785871762319822,
+      1.115753503095774
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 14,
+     "n_craters_with_area": 14,
+     "n_craters_with_points": 14,
+     "n_points": 19,
+     "n_in": 6,
+     "frac_points_in": 0.3157894736842105,
+     "frac_area_in_pooled": 0.22887145089660155,
+     "frac_expected_in_crater_matched": 0.27304075776650377,
+     "DR": [
+      1.5550453444818582,
+      0.41962533214845626,
+      3.608255846948384
+     ],
+     "SDR": [
+      1.2288262492610715,
+      0.3417784729396658,
+      2.920152677906323
+     ],
+     "OE_in": [
+      1.1565653284417858,
+      0.40574489878142167,
+      1.8461873250837386
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 12,
+     "n_craters_with_area": 12,
+     "n_craters_with_points": 12,
+     "n_points": 16,
+     "n_in": 5,
+     "frac_points_in": 0.3125,
+     "frac_area_in_pooled": 0.12275052880440776,
+     "frac_expected_in_crater_matched": 0.1262049279833062,
+     "DR": [
+      3.2484565526372027,
+      0.9528743430533934,
+      8.004356808428406
+     ],
+     "SDR": [
+      3.147100390897123,
+      0.9482943914534953,
+      7.97802085214187
+     ],
+     "OE_in": [
+      2.4761315187417723,
+      0.9540394590697737,
+      4.171795182732981
+     ]
+    }
+   }
+  },
+  "no_vent": {
+   "hollows": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 97,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 65,
+     "n_points": 893,
+     "n_in": 304,
+     "frac_points_in": 0.3404255319148936,
+     "frac_area_in_pooled": 0.3301246780397868,
+     "frac_expected_in_crater_matched": 0.34139161368610593,
+     "DR": [
+      1.0473076527020957,
+      0.7362142299779777,
+      1.4323492973571699
+     ],
+     "SDR": [
+      0.9957096057367801,
+      0.7438977013415885,
+      1.3035084992157981
+     ],
+     "OE_in": [
+      0.9971701654859615,
+      0.8137794811392969,
+      1.1775515872307214
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 97,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 65,
+     "n_points": 893,
+     "n_in": 323,
+     "frac_points_in": 0.3617021276595745,
+     "frac_area_in_pooled": 0.300046674849102,
+     "frac_expected_in_crater_matched": 0.3046351301583937,
+     "DR": [
+      1.321928389258055,
+      0.965656607471883,
+      1.8643226117391634
+     ],
+     "SDR": [
+      1.2934821164760746,
+      0.9852915935495844,
+      1.7178284878423746
+     ],
+     "OE_in": [
+      1.1873290105166432,
+      0.9895880151361935,
+      1.4041497794191324
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.3404255319148936,
+      0.2978723404255319,
+      0.3617021276595745
+     ],
+     "crater_matched_area": [
+      0.3413916136861057,
+      0.35397325615550046,
+      0.3046351301583937
+     ],
+     "pooled_area": [
+      0.3301246780397868,
+      0.3698286471111112,
+      0.300046674849102
+     ],
+     "n_points": [
+      304,
+      266,
+      323
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 97,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 65,
+     "n_points": 893,
+     "n_in": 171,
+     "frac_points_in": 0.19148936170212766,
+     "frac_area_in_pooled": 0.25336751864721674,
+     "frac_expected_in_crater_matched": 0.33474988750696066,
+     "DR": [
+      0.6979348011363223,
+      0.47673846801107517,
+      1.039667821542779
+     ],
+     "SDR": [
+      0.47067749101522205,
+      0.3572967557731254,
+      0.5921831931259208
+     ],
+     "OE_in": [
+      0.572037120395286,
+      0.4441651526262318,
+      0.704068334532465
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 97,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 65,
+     "n_points": 893,
+     "n_in": 291,
+     "frac_points_in": 0.3258678611422172,
+     "frac_area_in_pooled": 0.33331297745072064,
+     "frac_expected_in_crater_matched": 0.3332183222147499,
+     "DR": [
+      0.9668659722797397,
+      0.7221577687691585,
+      1.265619774876132
+     ],
+     "SDR": [
+      0.9672779370172089,
+      0.722382999611689,
+      1.266339839440578
+     ],
+     "OE_in": [
+      0.977941005693572,
+      0.7960109576135849,
+      1.1631274451862401
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.3258678611422172,
+      0.25867861142217247,
+      0.4154535274356103
+     ],
+     "crater_matched_area": [
+      0.33321832221474995,
+      0.33342420378822935,
+      0.3333574739970206
+     ],
+     "pooled_area": [
+      0.33331297745072064,
+      0.33336133744837265,
+      0.3333256851009067
+     ],
+     "n_points": [
+      291,
+      231,
+      371
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 97,
+     "n_craters_with_area": 97,
+     "n_craters_with_points": 77,
+     "n_points": 722,
+     "n_in": 247,
+     "frac_points_in": 0.34210526315789475,
+     "frac_area_in_pooled": 0.25876429843770016,
+     "frac_expected_in_crater_matched": 0.35474382062114385,
+     "DR": [
+      1.4895507886502153,
+      0.9572436700519842,
+      2.3333406002667556
+     ],
+     "SDR": [
+      0.9458465342384215,
+      0.7113883223807618,
+      1.242059377059969
+     ],
+     "OE_in": [
+      0.9643727198936983,
+      0.7917989066739192,
+      1.1439602453171298
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 97,
+     "n_craters_with_area": 97,
+     "n_craters_with_points": 77,
+     "n_points": 722,
+     "n_in": 160,
+     "frac_points_in": 0.22160664819944598,
+     "frac_area_in_pooled": 0.14717782045158578,
+     "frac_expected_in_crater_matched": 0.24072036883733616,
+     "DR": [
+      1.6496802935686807,
+      1.0123809314988685,
+      2.6548773078911365
+     ],
+     "SDR": [
+      0.8979922247217902,
+      0.6579044993485383,
+      1.1856566998762545
+     ],
+     "OE_in": [
+      0.9205978258914764,
+      0.7154085325554616,
+      1.1294077069846267
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 97,
+     "n_craters_with_area": 81,
+     "n_craters_with_points": 62,
+     "n_points": 601,
+     "n_in": 128,
+     "frac_points_in": 0.2129783693843594,
+     "frac_area_in_pooled": 0.1372895938555868,
+     "frac_expected_in_crater_matched": 0.19185697604901367,
+     "DR": [
+      1.7004984689738953,
+      1.0304582792999921,
+      2.698749045249912
+     ],
+     "SDR": [
+      1.1398808621924028,
+      0.823005743217109,
+      1.5228465741778445
+     ],
+     "OE_in": [
+      1.1100892642545868,
+      0.8532122843857725,
+      1.3946408762694784
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 97,
+     "n_craters_with_area": 97,
+     "n_craters_with_points": 77,
+     "n_points": 722,
+     "n_in": 255,
+     "frac_points_in": 0.35318559556786705,
+     "frac_area_in_pooled": 0.46447235446478125,
+     "frac_expected_in_crater_matched": 0.3528772291408651,
+     "DR": [
+      0.6295718851162071,
+      0.3876615254724692,
+      0.9857933691031208
+     ],
+     "SDR": [
+      1.0013510261995355,
+      0.7295855041976445,
+      1.3309897474905494
+     ],
+     "OE_in": [
+      1.0008738632066247,
+      0.7972485240461593,
+      1.1771937984386964
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 97,
+     "n_craters_with_area": 97,
+     "n_craters_with_points": 77,
+     "n_points": 722,
+     "n_in": 247,
+     "frac_points_in": 0.34210526315789475,
+     "frac_area_in_pooled": 0.25876429843770016,
+     "frac_expected_in_crater_matched": 0.35474382062114385,
+     "DR": [
+      1.4895507886502153,
+      0.9572436700519842,
+      2.3333406002667556
+     ],
+     "SDR": [
+      0.9458465342384215,
+      0.7113883223807618,
+      1.242059377059969
+     ],
+     "OE_in": [
+      0.9643727198936983,
+      0.7917989066739192,
+      1.1439602453171298
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 80,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 62,
+     "n_points": 601,
+     "n_in": 128,
+     "frac_points_in": 0.2129783693843594,
+     "frac_area_in_pooled": 0.1373256203072088,
+     "frac_expected_in_crater_matched": 0.19185697604901367,
+     "DR": [
+      1.6999813611268373,
+      1.0480435537242823,
+      2.828335706786098
+     ],
+     "SDR": [
+      1.1398808621924028,
+      0.8302836745305134,
+      1.54748491490896
+     ],
+     "OE_in": [
+      1.1100892642545868,
+      0.8601856164924827,
+      1.411522832971427
+     ]
+    }
+   },
+   "fields": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 97,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 65,
+     "n_points": 93,
+     "n_in": 29,
+     "frac_points_in": 0.3118279569892473,
+     "frac_area_in_pooled": 0.3301246780397868,
+     "frac_expected_in_crater_matched": 0.37410231466960103,
+     "DR": [
+      0.9194624802531095,
+      0.5297073600630695,
+      1.4236101888504222
+     ],
+     "SDR": [
+      0.7581078158145454,
+      0.448477165120732,
+      1.1508626105960937
+     ],
+     "OE_in": [
+      0.8335365614207625,
+      0.5676768225136422,
+      1.0910613850324757
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 97,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 65,
+     "n_points": 93,
+     "n_in": 39,
+     "frac_points_in": 0.41935483870967744,
+     "frac_area_in_pooled": 0.300046674849102,
+     "frac_expected_in_crater_matched": 0.28929458876163433,
+     "DR": [
+      1.6848106921916386,
+      1.1364306472071637,
+      2.665434966729264
+     ],
+     "SDR": [
+      1.77427183704724,
+      1.2704508145256879,
+      2.5720736527659356
+     ],
+     "OE_in": [
+      1.4495771957048487,
+      1.1808791725597119,
+      1.7685724735772541
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.3118279569892473,
+      0.26881720430107525,
+      0.41935483870967744
+     ],
+     "crater_matched_area": [
+      0.37410231466960103,
+      0.33660309656876464,
+      0.28929458876163433
+     ],
+     "pooled_area": [
+      0.3301246780397868,
+      0.3698286471111112,
+      0.300046674849102
+     ],
+     "n_points": [
+      29,
+      25,
+      39
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 97,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 65,
+     "n_points": 93,
+     "n_in": 15,
+     "frac_points_in": 0.16129032258064516,
+     "frac_area_in_pooled": 0.25336751864721674,
+     "frac_expected_in_crater_matched": 0.37209438790646243,
+     "DR": [
+      0.5666991975038514,
+      0.29907973107908054,
+      0.9055255928765772
+     ],
+     "SDR": [
+      0.32451733531415633,
+      0.1680287668768635,
+      0.5251101301432709
+     ],
+     "OE_in": [
+      0.43346615219896983,
+      0.24656848297018572,
+      0.6352622509804744
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 97,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 65,
+     "n_points": 93,
+     "n_in": 29,
+     "frac_points_in": 0.3118279569892473,
+     "frac_area_in_pooled": 0.33331297745072064,
+     "frac_expected_in_crater_matched": 0.3332300113435438,
+     "DR": [
+      0.9063330189035491,
+      0.5294428164645356,
+      1.3882463550668986
+     ],
+     "SDR": [
+      0.9066714906373643,
+      0.5295859404860355,
+      1.3890154913214272
+     ],
+     "OE_in": [
+      0.9357739290407667,
+      0.6280446971284931,
+      1.2296536902615287
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.3118279569892473,
+      0.24731182795698925,
+      0.44086021505376344
+     ],
+     "crater_matched_area": [
+      0.3332300113435439,
+      0.3334325629126637,
+      0.3333374257437923
+     ],
+     "pooled_area": [
+      0.33331297745072064,
+      0.33336133744837265,
+      0.3333256851009067
+     ],
+     "n_points": [
+      29,
+      23,
+      41
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 97,
+     "n_craters_with_area": 97,
+     "n_craters_with_points": 77,
+     "n_points": 125,
+     "n_in": 41,
+     "frac_points_in": 0.328,
+     "frac_area_in_pooled": 0.25876429843770016,
+     "frac_expected_in_crater_matched": 0.3067519457123352,
+     "DR": [
+      1.3981589362330316,
+      0.8585356060716903,
+      2.104569884116765
+     ],
+     "SDR": [
+      1.103077189391049,
+      0.6961699020765232,
+      1.6755544307761936
+     ],
+     "OE_in": [
+      1.0692678712707848,
+      0.7708732288603298,
+      1.4008613100283693
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 97,
+     "n_craters_with_area": 97,
+     "n_craters_with_points": 77,
+     "n_points": 125,
+     "n_in": 19,
+     "frac_points_in": 0.152,
+     "frac_area_in_pooled": 0.14717782045158578,
+     "frac_expected_in_crater_matched": 0.20427149243647333,
+     "DR": [
+      1.0386371565286774,
+      0.5562353872493224,
+      1.6273728775979968
+     ],
+     "SDR": [
+      0.6982402676122935,
+      0.37112107121336213,
+      1.1056539617014098
+     ],
+     "OE_in": [
+      0.7441077469352249,
+      0.42685803520245363,
+      1.0842048844552232
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 97,
+     "n_craters_with_area": 81,
+     "n_craters_with_points": 62,
+     "n_points": 99,
+     "n_in": 26,
+     "frac_points_in": 0.26262626262626265,
+     "frac_area_in_pooled": 0.1372895938555868,
+     "frac_expected_in_crater_matched": 0.16684837356223292,
+     "DR": [
+      2.2380918419778433,
+      1.3079607939750597,
+      3.537345241279732
+     ],
+     "SDR": [
+      1.7784946242398185,
+      1.0987010385129945,
+      2.6766870426725315
+     ],
+     "OE_in": [
+      1.5740414906010782,
+      1.0836969293256489,
+      2.110974994448951
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 97,
+     "n_craters_with_area": 97,
+     "n_craters_with_points": 77,
+     "n_points": 125,
+     "n_in": 47,
+     "frac_points_in": 0.376,
+     "frac_area_in_pooled": 0.46447235446478125,
+     "frac_expected_in_crater_matched": 0.42372079776863986,
+     "DR": [
+      0.6947447615090814,
+      0.43258338515349376,
+      1.044052067119994
+     ],
+     "SDR": [
+      0.8195140813184709,
+      0.5547115534348585,
+      1.1656944205705237
+     ],
+     "OE_in": [
+      0.8873767867427259,
+      0.6773170934167845,
+      1.0897663468235816
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 97,
+     "n_craters_with_area": 97,
+     "n_craters_with_points": 77,
+     "n_points": 125,
+     "n_in": 41,
+     "frac_points_in": 0.328,
+     "frac_area_in_pooled": 0.25876429843770016,
+     "frac_expected_in_crater_matched": 0.3067519457123352,
+     "DR": [
+      1.3981589362330316,
+      0.8585356060716903,
+      2.104569884116765
+     ],
+     "SDR": [
+      1.103077189391049,
+      0.6961699020765232,
+      1.6755544307761936
+     ],
+     "OE_in": [
+      1.0692678712707848,
+      0.7708732288603298,
+      1.4008613100283693
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 80,
+     "n_craters_with_area": 80,
+     "n_craters_with_points": 62,
+     "n_points": 99,
+     "n_in": 26,
+     "frac_points_in": 0.26262626262626265,
+     "frac_area_in_pooled": 0.1373256203072088,
+     "frac_expected_in_crater_matched": 0.16684837356223292,
+     "DR": [
+      2.2374112563289645,
+      1.2781919558517432,
+      3.5325826596266605
+     ],
+     "SDR": [
+      1.7784946242398185,
+      1.0876966505977377,
+      2.7043710362977085
+     ],
+     "OE_in": [
+      1.5740414906010782,
+      1.069364063287658,
+      2.1183206274540223
+     ]
+    }
+   }
+  },
+  "D_ge_100km": {
+   "hollows": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 52,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 36,
+     "n_points": 1155,
+     "n_in": 426,
+     "frac_points_in": 0.36883116883116884,
+     "frac_area_in_pooled": 0.32334497432141746,
+     "frac_expected_in_crater_matched": 0.3205544161781447,
+     "DR": [
+      1.2228783812750565,
+      0.8484118850478127,
+      1.5873252717906716
+     ],
+     "SDR": [
+      1.238611153929994,
+      0.8531152250453236,
+      1.6001263269300383
+     ],
+     "OE_in": [
+      1.1506039231298404,
+      0.8975479162902762,
+      1.348196030597321
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 52,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 36,
+     "n_points": 1155,
+     "n_in": 334,
+     "frac_points_in": 0.2891774891774892,
+     "frac_area_in_pooled": 0.296769920147702,
+     "frac_expected_in_crater_matched": 0.30087290243455517,
+     "DR": [
+      0.9640085122324037,
+      0.6299623178015482,
+      1.5963561050860098
+     ],
+     "SDR": [
+      0.9453146087383549,
+      0.5998528314778842,
+      1.5656527896700316
+     ],
+     "OE_in": [
+      0.961128392878086,
+      0.6874741625434612,
+      1.3399229582155292
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.36883116883116884,
+      0.341991341991342,
+      0.2891774891774892
+     ],
+     "crater_matched_area": [
+      0.3205544161781447,
+      0.37857268138730027,
+      0.3008729024345551
+     ],
+     "pooled_area": [
+      0.32334497432141746,
+      0.3798851055308806,
+      0.296769920147702
+     ],
+     "n_points": [
+      426,
+      395,
+      334
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 52,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 36,
+     "n_points": 1155,
+     "n_in": 136,
+     "frac_points_in": 0.11774891774891776,
+     "frac_area_in_pooled": 0.22483916885877692,
+     "frac_expected_in_crater_matched": 0.25278085131132105,
+     "DR": [
+      0.46013426247173894,
+      0.3569625518431322,
+      0.6513338522834451
+     ],
+     "SDR": [
+      0.3945195645476985,
+      0.31228735695784815,
+      0.5027519795143264
+     ],
+     "OE_in": [
+      0.4658142305403504,
+      0.3743492626607397,
+      0.5863895966170556
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 52,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 36,
+     "n_points": 1155,
+     "n_in": 447,
+     "frac_points_in": 0.38701298701298703,
+     "frac_area_in_pooled": 0.333345293709085,
+     "frac_expected_in_crater_matched": 0.33333958006921544,
+     "DR": [
+      1.2626439055575798,
+      0.7731388566343088,
+      1.8403624125176368
+     ],
+     "SDR": [
+      1.2626763698481507,
+      0.7731773761784523,
+      1.840377458534008
+     ],
+     "OE_in": [
+      1.1610172033354897,
+      0.8364146078663008,
+      1.43763481035761
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.38701298701298703,
+      0.26666666666666666,
+      0.3463203463203463
+     ],
+     "crater_matched_area": [
+      0.3333395800692154,
+      0.3333076478228883,
+      0.3333527721078963
+     ],
+     "pooled_area": [
+      0.333345293709085,
+      0.3333106732458541,
+      0.3333440330450609
+     ],
+     "n_points": [
+      447,
+      308,
+      400
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 52,
+     "n_craters_with_area": 52,
+     "n_craters_with_points": 43,
+     "n_points": 823,
+     "n_in": 192,
+     "frac_points_in": 0.2332928311057108,
+     "frac_area_in_pooled": 0.2155755447179213,
+     "frac_expected_in_crater_matched": 0.20977720104704942,
+     "DR": [
+      1.1071934352618216,
+      0.7770427139131034,
+      1.5762482433187766
+     ],
+     "SDR": [
+      1.1462072164091226,
+      0.7715941972054581,
+      1.7121854431525918
+     ],
+     "OE_in": [
+      1.1120981209649532,
+      0.8177909605674515,
+      1.514861189035312
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 52,
+     "n_craters_with_area": 52,
+     "n_craters_with_points": 43,
+     "n_points": 823,
+     "n_in": 78,
+     "frac_points_in": 0.09477521263669501,
+     "frac_area_in_pooled": 0.11314542420764293,
+     "frac_expected_in_crater_matched": 0.12182111428028855,
+     "DR": [
+      0.8206420111326769,
+      0.4729821480373696,
+      1.2467290749089683
+     ],
+     "SDR": [
+      0.7547424084293026,
+      0.4176110454372189,
+      1.234505005790708
+     ],
+     "OE_in": [
+      0.7779867488211792,
+      0.45150049666516123,
+      1.2046113539433942
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 52,
+     "n_craters_with_area": 42,
+     "n_craters_with_points": 33,
+     "n_points": 733,
+     "n_in": 114,
+     "frac_points_in": 0.15552523874488403,
+     "frac_area_in_pooled": 0.11858798661536737,
+     "frac_expected_in_crater_matched": 0.0993060358969623,
+     "DR": [
+      1.3688393209588152,
+      0.7809139710396101,
+      2.3089922171518626
+     ],
+     "SDR": [
+      1.6703820278726402,
+      1.044047080633114,
+      2.707612078262773
+     ],
+     "OE_in": [
+      1.5661207029374682,
+      1.0395465228395218,
+      2.3189919288628964
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 52,
+     "n_craters_with_area": 52,
+     "n_craters_with_points": 43,
+     "n_points": 823,
+     "n_in": 317,
+     "frac_points_in": 0.38517618469015796,
+     "frac_area_in_pooled": 0.49410869897821197,
+     "frac_expected_in_crater_matched": 0.40845645772622186,
+     "DR": [
+      0.6414214173499232,
+      0.40336871151356357,
+      1.0860858043663035
+     ],
+     "SDR": [
+      0.907297462677074,
+      0.6402685415250328,
+      1.3036184003318436
+     ],
+     "OE_in": [
+      0.9430042723142156,
+      0.7391345069780233,
+      1.157461560532242
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 52,
+     "n_craters_with_area": 52,
+     "n_craters_with_points": 43,
+     "n_points": 823,
+     "n_in": 192,
+     "frac_points_in": 0.2332928311057108,
+     "frac_area_in_pooled": 0.2155755447179213,
+     "frac_expected_in_crater_matched": 0.20977720104704942,
+     "DR": [
+      1.1071934352618216,
+      0.7770427139131034,
+      1.5762482433187766
+     ],
+     "SDR": [
+      1.1462072164091226,
+      0.7715941972054581,
+      1.7121854431525918
+     ],
+     "OE_in": [
+      1.1120981209649532,
+      0.8177909605674515,
+      1.514861189035312
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 33,
+     "n_points": 733,
+     "n_in": 114,
+     "frac_points_in": 0.15552523874488403,
+     "frac_area_in_pooled": 0.11861713970192146,
+     "frac_expected_in_crater_matched": 0.0993060358969623,
+     "DR": [
+      1.3684576311175527,
+      0.7958823395467838,
+      2.2983216138815825
+     ],
+     "SDR": [
+      1.6703820278726402,
+      1.0227960694423097,
+      2.7742848262937874
+     ],
+     "OE_in": [
+      1.5661207029374682,
+      1.0203120244865083,
+      2.3613131343255698
+     ]
+    }
+   },
+   "fields": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 52,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 36,
+     "n_points": 65,
+     "n_in": 26,
+     "frac_points_in": 0.4,
+     "frac_area_in_pooled": 0.32334497432141746,
+     "frac_expected_in_crater_matched": 0.3810475321931789,
+     "DR": [
+      1.3951147730039377,
+      0.8259917184674321,
+      2.278904410372314
+     ],
+     "SDR": [
+      1.082896341469253,
+      0.6607749104434362,
+      1.708122933289543
+     ],
+     "OE_in": [
+      1.0497378048815518,
+      0.7597730714642258,
+      1.342367558341957
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 52,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 36,
+     "n_points": 65,
+     "n_in": 23,
+     "frac_points_in": 0.35384615384615387,
+     "frac_area_in_pooled": 0.296769920147702,
+     "frac_expected_in_crater_matched": 0.25445791261100226,
+     "DR": [
+      1.2976456185118674,
+      0.8546484290476442,
+      2.036204962925691
+     ],
+     "SDR": [
+      1.6044816357509755,
+      1.1039617146396774,
+      2.338557689528188
+     ],
+     "OE_in": [
+      1.3905881338698611,
+      1.072349519771574,
+      1.7572140346593283
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.4,
+      0.24615384615384617,
+      0.35384615384615387
+     ],
+     "crater_matched_area": [
+      0.38104753219317894,
+      0.36449455519581897,
+      0.2544579126110022
+     ],
+     "pooled_area": [
+      0.32334497432141746,
+      0.3798851055308806,
+      0.296769920147702
+     ],
+     "n_points": [
+      26,
+      16,
+      23
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 52,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 36,
+     "n_points": 65,
+     "n_in": 9,
+     "frac_points_in": 0.13846153846153847,
+     "frac_area_in_pooled": 0.22483916885877692,
+     "frac_expected_in_crater_matched": 0.29674717941552153,
+     "DR": [
+      0.55408236884563,
+      0.2472217990089331,
+      0.9721629914883204
+     ],
+     "SDR": [
+      0.38087227976152227,
+      0.18489134906698548,
+      0.6862035004489553
+     ],
+     "OE_in": [
+      0.4665976564099269,
+      0.23884649321637966,
+      0.7531946418472214
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 52,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 36,
+     "n_points": 65,
+     "n_in": 23,
+     "frac_points_in": 0.35384615384615387,
+     "frac_area_in_pooled": 0.333345293709085,
+     "frac_expected_in_crater_matched": 0.3333338920986952,
+     "DR": [
+      1.0951791497869199,
+      0.6152473731780439,
+      1.7778823451558934
+     ],
+     "SDR": [
+      1.0952353413277138,
+      0.6152808435688277,
+      1.7781356661996965
+     ],
+     "OE_in": [
+      1.0615366820886767,
+      0.7057940874570103,
+      1.4119409490365011
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.35384615384615387,
+      0.27692307692307694,
+      0.36923076923076925
+     ],
+     "crater_matched_area": [
+      0.33333389209869513,
+      0.3332876783501179,
+      0.33337842955118685
+     ],
+     "pooled_area": [
+      0.333345293709085,
+      0.3333106732458541,
+      0.3333440330450609
+     ],
+     "n_points": [
+      23,
+      18,
+      24
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 52,
+     "n_craters_with_area": 52,
+     "n_craters_with_points": 43,
+     "n_points": 91,
+     "n_in": 24,
+     "frac_points_in": 0.26373626373626374,
+     "frac_area_in_pooled": 0.2155755447179213,
+     "frac_expected_in_crater_matched": 0.19729972118377231,
+     "DR": [
+      1.3034310777056146,
+      0.6241738257715478,
+      2.2865654811135796
+     ],
+     "SDR": [
+      1.4573483758999248,
+      0.6874573208639687,
+      2.536018507896801
+     ],
+     "OE_in": [
+      1.3367290240142304,
+      0.7367337619685902,
+      1.951182339373925
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 52,
+     "n_craters_with_area": 52,
+     "n_craters_with_points": 43,
+     "n_points": 91,
+     "n_in": 11,
+     "frac_points_in": 0.12087912087912088,
+     "frac_area_in_pooled": 0.11314542420764293,
+     "frac_expected_in_crater_matched": 0.11751688065942048,
+     "DR": [
+      1.0777502053256869,
+      0.4134784440192038,
+      1.9612198711180548
+     ],
+     "SDR": [
+      1.0325446712714683,
+      0.3978522429039775,
+      1.8835016232193291
+     ],
+     "OE_in": [
+      1.0286107000188733,
+      0.4283127774108596,
+      1.7105214391148666
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 52,
+     "n_craters_with_area": 42,
+     "n_craters_with_points": 33,
+     "n_points": 71,
+     "n_in": 13,
+     "frac_points_in": 0.18309859154929578,
+     "frac_area_in_pooled": 0.11858798661536737,
+     "frac_expected_in_crater_matched": 0.1034026807623376,
+     "DR": [
+      1.6659180302110685,
+      0.6498863417212715,
+      2.9867275542877545
+     ],
+     "SDR": [
+      1.9434841207539522,
+      0.7482186911032593,
+      3.4644250910913335
+     ],
+     "OE_in": [
+      1.7707335070947778,
+      0.768991999473686,
+      2.75947168918332
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 52,
+     "n_craters_with_area": 52,
+     "n_craters_with_points": 43,
+     "n_points": 91,
+     "n_in": 42,
+     "frac_points_in": 0.46153846153846156,
+     "frac_area_in_pooled": 0.49410869897821197,
+     "frac_expected_in_crater_matched": 0.45457483885712346,
+     "DR": [
+      0.8775824349140904,
+      0.5183248163850452,
+      1.3920464157551886
+     ],
+     "SDR": [
+      1.0284495335355543,
+      0.6839574940936185,
+      1.5200976360358665
+     ],
+     "OE_in": [
+      1.0153189795960678,
+      0.7900293533469236,
+      1.2240998144878812
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 52,
+     "n_craters_with_area": 52,
+     "n_craters_with_points": 43,
+     "n_points": 91,
+     "n_in": 24,
+     "frac_points_in": 0.26373626373626374,
+     "frac_area_in_pooled": 0.2155755447179213,
+     "frac_expected_in_crater_matched": 0.19729972118377231,
+     "DR": [
+      1.3034310777056146,
+      0.6241738257715478,
+      2.2865654811135796
+     ],
+     "SDR": [
+      1.4573483758999248,
+      0.6874573208639687,
+      2.536018507896801
+     ],
+     "OE_in": [
+      1.3367290240142304,
+      0.7367337619685902,
+      1.951182339373925
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 41,
+     "n_craters_with_area": 41,
+     "n_craters_with_points": 33,
+     "n_points": 71,
+     "n_in": 13,
+     "frac_points_in": 0.18309859154929578,
+     "frac_area_in_pooled": 0.11861713970192146,
+     "frac_expected_in_crater_matched": 0.1034026807623376,
+     "DR": [
+      1.6654535023597925,
+      0.6414507862858793,
+      3.092795978246994
+     ],
+     "SDR": [
+      1.9434841207539522,
+      0.7768367242754987,
+      3.4955734943889345
+     ],
+     "OE_in": [
+      1.7707335070947778,
+      0.7967353793236492,
+      2.782769220204152
+     ]
+    }
+   }
+  },
+  "D_lt_100km": {
+   "hollows": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 40,
+     "n_points": 293,
+     "n_in": 109,
+     "frac_points_in": 0.3720136518771331,
+     "frac_area_in_pooled": 0.3748943080655021,
+     "frac_expected_in_crater_matched": 0.3777484961329476,
+     "DR": [
+      0.9877641997584741,
+      0.6327353558024421,
+      1.4210817242152674
+     ],
+     "SDR": [
+      0.9758248776150414,
+      0.6380707198231991,
+      1.3619217396821366
+     ],
+     "OE_in": [
+      0.9848183531780463,
+      0.735876201740459,
+      1.1976144614684638
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 40,
+     "n_points": 293,
+     "n_in": 112,
+     "frac_points_in": 0.3822525597269625,
+     "frac_area_in_pooled": 0.33805506518323747,
+     "frac_expected_in_crater_matched": 0.34531819910053996,
+     "DR": [
+      1.2116407290346438,
+      0.8543240252829712,
+      1.6663773170480445
+     ],
+     "SDR": [
+      1.1731410964655538,
+      0.8560288543999957,
+      1.6281259502043393
+     ],
+     "OE_in": [
+      1.106957469147663,
+      0.9025529201270575,
+      1.350878195291691
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.3720136518771331,
+      0.24573378839590443,
+      0.3822525597269625
+     ],
+     "crater_matched_area": [
+      0.37774849613294775,
+      0.2769333047665124,
+      0.3453181991005399
+     ],
+     "pooled_area": [
+      0.3748943080655021,
+      0.2870506267512604,
+      0.33805506518323747
+     ],
+     "n_points": [
+      109,
+      72,
+      112
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 40,
+     "n_points": 293,
+     "n_in": 111,
+     "frac_points_in": 0.378839590443686,
+     "frac_area_in_pooled": 0.41293418373404206,
+     "frac_expected_in_crater_matched": 0.48151808604492585,
+     "DR": [
+      0.867076762590762,
+      0.4869826431355866,
+      1.3115007406045647
+     ],
+     "SDR": [
+      0.6567084407471073,
+      0.4262889192711793,
+      0.9214287093974152
+     ],
+     "OE_in": [
+      0.7867608744572475,
+      0.5718391498742533,
+      0.9605302971605745
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 40,
+     "n_points": 293,
+     "n_in": 98,
+     "frac_points_in": 0.33447098976109213,
+     "frac_area_in_pooled": 0.3331863484142826,
+     "frac_expected_in_crater_matched": 0.33298391375130487,
+     "DR": [
+      1.005793322510278,
+      0.6764134687684472,
+      1.3942910634280066
+     ],
+     "SDR": [
+      1.006710315236908,
+      0.6765847137687286,
+      1.3970176638506984
+     ],
+     "OE_in": [
+      1.0044659094580104,
+      0.7583092769874429,
+      1.2339746735466022
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.33447098976109213,
+      0.30716723549488056,
+      0.3583617747440273
+     ],
+     "crater_matched_area": [
+      0.332983913751305,
+      0.33363593203955594,
+      0.3333801542091392
+     ],
+     "pooled_area": [
+      0.3331863484142826,
+      0.33353954085469084,
+      0.33327411073102664
+     ],
+     "n_points": [
+      98,
+      90,
+      105
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 59,
+     "n_craters_with_area": 59,
+     "n_craters_with_points": 48,
+     "n_points": 352,
+     "n_in": 175,
+     "frac_points_in": 0.4971590909090909,
+     "frac_area_in_pooled": 0.43869058477184436,
+     "frac_expected_in_crater_matched": 0.546718330762283,
+     "DR": [
+      1.2650532179729135,
+      0.7762008272502747,
+      2.0606389963670093
+     ],
+     "SDR": [
+      0.8197271195238786,
+      0.6528280851839008,
+      1.0247541443708221
+     ],
+     "OE_in": [
+      0.9093514208969503,
+      0.7845126330479525,
+      1.0104842097027997
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 59,
+     "n_craters_with_area": 59,
+     "n_craters_with_points": 48,
+     "n_points": 352,
+     "n_in": 129,
+     "frac_points_in": 0.3664772727272727,
+     "frac_area_in_pooled": 0.2906567680749257,
+     "frac_expected_in_crater_matched": 0.38332343878427055,
+     "DR": [
+      1.4117598821935287,
+      0.8328394991213025,
+      2.285353419642726
+     ],
+     "SDR": [
+      0.9306297112514014,
+      0.6642718865454088,
+      1.2733660303063494
+     ],
+     "OE_in": [
+      0.9560523454802914,
+      0.7520417123006607,
+      1.1422602100237578
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 41,
+     "n_points": 304,
+     "n_in": 87,
+     "frac_points_in": 0.28618421052631576,
+     "frac_area_in_pooled": 0.2176199606367968,
+     "frac_expected_in_crater_matched": 0.2975788661471955,
+     "DR": [
+      1.4413802043769244,
+      0.8052766014434259,
+      2.5103787265915893
+     ],
+     "SDR": [
+      0.9463570109576165,
+      0.6998995804710563,
+      1.253708600575539
+     ],
+     "OE_in": [
+      0.9617087874269827,
+      0.7553392362202653,
+      1.1607521455722623
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 59,
+     "n_craters_with_area": 59,
+     "n_craters_with_points": 48,
+     "n_points": 352,
+     "n_in": 106,
+     "frac_points_in": 0.30113636363636365,
+     "frac_area_in_pooled": 0.4072802264539369,
+     "frac_expected_in_crater_matched": 0.32809090156431275,
+     "DR": [
+      0.6270856295743117,
+      0.40699570283211106,
+      0.9383896389891624
+     ],
+     "SDR": [
+      0.8824438753485739,
+      0.5920496868283055,
+      1.246487506179398
+     ],
+     "OE_in": [
+      0.9178442992492876,
+      0.6829805653594995,
+      1.150586146403896
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 59,
+     "n_craters_with_area": 59,
+     "n_craters_with_points": 48,
+     "n_points": 352,
+     "n_in": 175,
+     "frac_points_in": 0.4971590909090909,
+     "frac_area_in_pooled": 0.43869058477184436,
+     "frac_expected_in_crater_matched": 0.546718330762283,
+     "DR": [
+      1.2650532179729135,
+      0.7762008272502747,
+      2.0606389963670093
+     ],
+     "SDR": [
+      0.8197271195238786,
+      0.6528280851839008,
+      1.0247541443708221
+     ],
+     "OE_in": [
+      0.9093514208969503,
+      0.7845126330479525,
+      1.0104842097027997
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 51,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 41,
+     "n_points": 304,
+     "n_in": 87,
+     "frac_points_in": 0.28618421052631576,
+     "frac_area_in_pooled": 0.2176199606367968,
+     "frac_expected_in_crater_matched": 0.2975788661471955,
+     "DR": [
+      1.4413802043769244,
+      0.8072563187062298,
+      2.50436257007458
+     ],
+     "SDR": [
+      0.9463570109576165,
+      0.6905025175120226,
+      1.281605990242919
+     ],
+     "OE_in": [
+      0.9617087874269827,
+      0.7536531506247276,
+      1.1711741683363959
+     ]
+    }
+   },
+   "fields": {
+    "peak_eta_low_vs_upper": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 40,
+     "n_points": 40,
+     "n_in": 10,
+     "frac_points_in": 0.25,
+     "frac_area_in_pooled": 0.3748943080655021,
+     "frac_expected_in_crater_matched": 0.3721889131337208,
+     "DR": [
+      0.5558061552157775,
+      0.23653307835504855,
+      1.0354025200690573
+     ],
+     "SDR": [
+      0.562269199602871,
+      0.23976791288010726,
+      1.0466239523354384
+     ],
+     "OE_in": [
+      0.6717018997021533,
+      0.3325479609717228,
+      1.028680333134264
+     ]
+    },
+    "peak_eta_high_vs_lower": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 40,
+     "n_points": 40,
+     "n_in": 17,
+     "frac_points_in": 0.425,
+     "frac_area_in_pooled": 0.33805506518323747,
+     "frac_expected_in_crater_matched": 0.34565809247709395,
+     "DR": [
+      1.447289799394254,
+      0.7562542942933467,
+      2.630287719249591
+     ],
+     "SDR": [
+      1.399197730734272,
+      0.739609418678415,
+      2.5387610063479444
+     ],
+     "OE_in": [
+      1.2295386951722065,
+      0.8147121567950438,
+      1.672129948236806
+     ]
+    },
+    "peak_eta_terciles": {
+     "points": [
+      0.25,
+      0.325,
+      0.425
+     ],
+     "crater_matched_area": [
+      0.3721889131337208,
+      0.28215299438918523,
+      0.34565809247709395
+     ],
+     "pooled_area": [
+      0.3748943080655021,
+      0.2870506267512604,
+      0.33805506518323747
+     ],
+     "n_points": [
+      10,
+      13,
+      17
+     ]
+    },
+    "peak_base_within2km": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 40,
+     "n_points": 40,
+     "n_in": 7,
+     "frac_points_in": 0.175,
+     "frac_area_in_pooled": 0.41293418373404206,
+     "frac_expected_in_crater_matched": 0.4913284129429571,
+     "DR": [
+      0.301571333753926,
+      0.08782580367321267,
+      0.6085966330128258
+     ],
+     "SDR": [
+      0.21960878055445926,
+      0.06403170812755783,
+      0.46158070831084724
+     ],
+     "OE_in": [
+      0.3561772439574289,
+      0.11860896820357038,
+      0.6272193354167479
+     ]
+    },
+    "peak_q_lowest_third": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 40,
+     "n_points": 40,
+     "n_in": 9,
+     "frac_points_in": 0.225,
+     "frac_area_in_pooled": 0.3331863484142826,
+     "frac_expected_in_crater_matched": 0.3331061705845389,
+     "DR": [
+      0.5810293880860886,
+      0.22862945837520837,
+      1.120839498272292
+     ],
+     "SDR": [
+      0.5812391203455455,
+      0.22872659774516774,
+      1.121230216899004
+     ],
+     "OE_in": [
+      0.6754603182677978,
+      0.3078315620789967,
+      1.0777046994342747
+     ]
+    },
+    "peak_q_terciles": {
+     "points": [
+      0.225,
+      0.35,
+      0.425
+     ],
+     "crater_matched_area": [
+      0.3331061705845389,
+      0.3335600278457692,
+      0.3333338015696917
+     ],
+     "pooled_area": [
+      0.3331863484142826,
+      0.33353954085469084,
+      0.33327411073102664
+     ],
+     "n_points": [
+      9,
+      14,
+      17
+     ]
+    },
+    "floor_margin_within3km_of_wall_or_peak": {
+     "n_craters": 59,
+     "n_craters_with_area": 59,
+     "n_craters_with_points": 48,
+     "n_points": 53,
+     "n_in": 23,
+     "frac_points_in": 0.4339622641509434,
+     "frac_area_in_pooled": 0.43869058477184436,
+     "frac_expected_in_crater_matched": 0.48259420724306024,
+     "DR": [
+      0.9809584095938533,
+      0.590823970223853,
+      1.5912238492482123
+     ],
+     "SDR": [
+      0.8219696144160286,
+      0.5223479865694148,
+      1.2871155331785546
+     ],
+     "OE_in": [
+      0.8992280836317142,
+      0.6668244393098904,
+      1.1258254818253381
+     ]
+    },
+    "floor_within3km_of_wall": {
+     "n_craters": 59,
+     "n_craters_with_area": 59,
+     "n_craters_with_points": 48,
+     "n_points": 53,
+     "n_in": 9,
+     "frac_points_in": 0.16981132075471697,
+     "frac_area_in_pooled": 0.2906567680749257,
+     "frac_expected_in_crater_matched": 0.34032548431118087,
+     "DR": [
+      0.4991899372026801,
+      0.20595500493755647,
+      0.9297398671630025
+     ],
+     "SDR": [
+      0.39648345446926336,
+      0.17355579493884066,
+      0.696388207714024
+     ],
+     "OE_in": [
+      0.49896739616316205,
+      0.23617055171707035,
+      0.7796904131893048
+     ]
+    },
+    "floor_within3km_of_peak": {
+     "n_craters": 59,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 41,
+     "n_points": 44,
+     "n_in": 18,
+     "frac_points_in": 0.4090909090909091,
+     "frac_area_in_pooled": 0.2176199606367968,
+     "frac_expected_in_crater_matched": 0.2544472158242725,
+     "DR": [
+      2.4889615730752723,
+      1.3235882484899926,
+      4.424680962048473
+     ],
+     "SDR": [
+      2.028522598819632,
+      1.1386329054936748,
+      3.505827733030962
+     ],
+     "OE_in": [
+      1.6077633538479639,
+      1.0982294838705216,
+      2.1423338688894713
+     ]
+    },
+    "floor_within3km_of_any_high_ground": {
+     "n_craters": 59,
+     "n_craters_with_area": 59,
+     "n_craters_with_points": 48,
+     "n_points": 53,
+     "n_in": 13,
+     "frac_points_in": 0.24528301886792453,
+     "frac_area_in_pooled": 0.4072802264539369,
+     "frac_expected_in_crater_matched": 0.40380420641115855,
+     "DR": [
+      0.47297637815534177,
+      0.24342853555250096,
+      0.804484372052235
+     ],
+     "SDR": [
+      0.47984550393484743,
+      0.252243425115821,
+      0.8101127987024701
+     ],
+     "OE_in": [
+      0.607430569007432,
+      0.3568193265699599,
+      0.8814670310040142
+     ]
+    },
+    "floor_within3km_of_any_nonfloor_cell": {
+     "n_craters": 59,
+     "n_craters_with_area": 59,
+     "n_craters_with_points": 48,
+     "n_points": 53,
+     "n_in": 23,
+     "frac_points_in": 0.4339622641509434,
+     "frac_area_in_pooled": 0.43869058477184436,
+     "frac_expected_in_crater_matched": 0.48259420724306024,
+     "DR": [
+      0.9809584095938533,
+      0.590823970223853,
+      1.5912238492482123
+     ],
+     "SDR": [
+      0.8219696144160286,
+      0.5223479865694148,
+      1.2871155331785546
+     ],
+     "OE_in": [
+      0.8992280836317142,
+      0.6668244393098904,
+      1.1258254818253381
+     ]
+    },
+    "floor_within3km_of_peak_craters_with_peaks": {
+     "n_craters": 51,
+     "n_craters_with_area": 51,
+     "n_craters_with_points": 41,
+     "n_points": 44,
+     "n_in": 18,
+     "frac_points_in": 0.4090909090909091,
+     "frac_area_in_pooled": 0.2176199606367968,
+     "frac_expected_in_crater_matched": 0.2544472158242725,
+     "DR": [
+      2.4889615730752723,
+      1.3082660642165858,
+      4.3731989327051
+     ],
+     "SDR": [
+      2.028522598819632,
+      1.1493862991030745,
+      3.413871315559973
+     ],
+     "OE_in": [
+      1.6077633538479639,
+      1.1053978973819807,
+      2.126277273612605
+     ]
+    }
+   }
+  }
+ },
+ "sensitivity_position_jitter_0.5km": {
+  "peak_eta_low_DR": {
+   "median": 1.175925524547323,
+   "p2_5": 1.1348865858680621,
+   "p97_5": 1.208954503142203
+  },
+  "peak_eta_low_SDR": {
+   "median": 1.1738028244113181,
+   "p2_5": 1.1318282745397563,
+   "p97_5": 1.2030229277140259
+  },
+  "peak_base2_DR": {
+   "median": 0.6241644305790003,
+   "p2_5": 0.5719933663568134,
+   "p97_5": 0.6642578492293526
+  },
+  "peak_base2_SDR": {
+   "median": 0.49551126401734336,
+   "p2_5": 0.45662238980979003,
+   "p97_5": 0.5290943361049021
+  },
+  "peak_q_low_frac": {
+   "median": 0.37144837144837145,
+   "p2_5": 0.3663653404810708,
+   "p97_5": 0.38020576131687245
+  },
+  "floor_margin3_DR": {
+   "median": 1.355003681528024,
+   "p2_5": 1.296194833766769,
+   "p97_5": 1.419212231223092
+  },
+  "floor_margin3_SDR": {
+   "median": 1.017378651612331,
+   "p2_5": 0.9661380616812786,
+   "p97_5": 1.0562513397160038
+  },
+  "n_peak": {
+   "median": 1441.0,
+   "p2_5": 1431.6,
+   "p97_5": 1455.0
+  },
+  "n_floor": {
+   "median": 1179.0,
+   "p2_5": 1168.4,
+   "p97_5": 1187.2
+  }
+ },
+ "sensitivity_threshold": {},
+ "profiles": {
+  "eta": {
+   "edges": [
+    0.0,
+    0.16666666666666666,
+    0.3333333333333333,
+    0.5,
+    0.6666666666666666,
+    0.8333333333333334,
+    1.0,
+    1.1666666666666667,
+    null
+   ],
+   "frac_points": [
+    0.17955801104972377,
+    0.1899171270718232,
+    0.15331491712707182,
+    0.1691988950276243,
+    0.14295580110497239,
+    0.10980662983425414,
+    0.04696132596685083,
+    0.008287292817679558
+   ],
+   "frac_crater_matched": [
+    0.16793119655594785,
+    0.164196331104764,
+    0.17305130354358492,
+    0.1849548465247298,
+    0.15251498389781507,
+    0.1088861096575757,
+    0.04168934566196079,
+    0.006775883053621849
+   ],
+   "frac_pooled_area": [
+    0.15349256593140762,
+    0.17728081625293812,
+    0.18275772134848958,
+    0.1837496676916029,
+    0.1520280144706798,
+    0.10253256264843064,
+    0.0398712419505343,
+    0.00828740970591705
+   ],
+   "n": [
+    260,
+    275,
+    222,
+    245,
+    207,
+    159,
+    68,
+    12
+   ],
+   "OE": [
+    1.069235584169153,
+    1.1566465937088952,
+    0.8859506631133682,
+    0.9148119025094117,
+    0.9373229924789073,
+    1.0084539725000121,
+    1.1264586963690444,
+    1.2230572387535272
+   ],
+   "OE_lo": [
+    0.8063831314123094,
+    0.916540074626993,
+    0.5934801306824831,
+    0.7547053270211757,
+    0.748423369082964,
+    0.6863262455802643,
+    0.6619923260259796,
+    0.4961310028128824
+   ],
+   "OE_hi": [
+    1.2934408359058915,
+    1.3662653673775718,
+    1.1458403782943882,
+    1.1288615233492052,
+    1.1747052493884582,
+    1.509660331310603,
+    1.8709524591881423,
+    2.377007300388404
+   ]
+  },
+  "d_base": {
+   "edges": [
+    0.0,
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    6.0,
+    8.0,
+    10.0,
+    13.0,
+    16.0,
+    null
+   ],
+   "frac_points": [
+    0.05939226519337017,
+    0.1111878453038674,
+    0.13328729281767956,
+    0.13535911602209943,
+    0.23066298342541436,
+    0.16298342541436464,
+    0.1042817679558011,
+    0.04765193370165746,
+    0.013121546961325966,
+    0.0020718232044198894
+   ],
+   "frac_crater_matched": [
+    0.13553948813952968,
+    0.1635259003105663,
+    0.1371107591771577,
+    0.12463679229871877,
+    0.18900588095798712,
+    0.1278355946592655,
+    0.07104171208052633,
+    0.040362679560776105,
+    0.008944523171234052,
+    0.0019966696442383363
+   ],
+   "frac_pooled_area": [
+    0.11292994864025353,
+    0.13901425506560075,
+    0.1209777954161922,
+    0.1154687128336681,
+    0.18945014024471374,
+    0.14008043806761075,
+    0.0901238526454494,
+    0.06191640364909278,
+    0.021308954132628788,
+    0.008729499304789952
+   ],
+   "n": [
+    86,
+    161,
+    193,
+    196,
+    334,
+    236,
+    151,
+    69,
+    19,
+    3
+   ],
+   "OE": [
+    0.4381916001647389,
+    0.6799402730252571,
+    0.9721140311495327,
+    1.0860285596702643,
+    1.2204010915231096,
+    1.274945572465811,
+    1.467894915561676,
+    1.1805939105183927,
+    1.4669923382305488,
+    1.0376394564811555
+   ],
+   "OE_lo": [
+    0.3139272878219809,
+    0.551261570717203,
+    0.8074033032869853,
+    0.9207888358321252,
+    1.0895659858584292,
+    1.128429847587077,
+    1.0713782777005527,
+    0.6792236464199838,
+    0.0,
+    0.0
+   ],
+   "OE_hi": [
+    0.5647060466851885,
+    0.8335331386484237,
+    1.1795294664092761,
+    1.278118684731956,
+    1.3966652997827702,
+    1.3865742938245367,
+    1.9699045048572872,
+    1.555558715456983,
+    2.2843202861186396,
+    1.6320554262125193
+   ]
+  },
+  "d_marg": {
+   "edges": [
+    0.0,
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    6.0,
+    8.0,
+    10.0,
+    13.0,
+    16.0,
+    20.0,
+    null
+   ],
+   "frac_points": [
+    0.10553191489361702,
+    0.1276595744680851,
+    0.07914893617021276,
+    0.09106382978723404,
+    0.12851063829787235,
+    0.10893617021276596,
+    0.08595744680851064,
+    0.10127659574468086,
+    0.03574468085106383,
+    0.059574468085106386,
+    0.07659574468085106
+   ],
+   "frac_crater_matched": [
+    0.09932615170849529,
+    0.1181309149367534,
+    0.09325909411223667,
+    0.08486937374478953,
+    0.1346416909113343,
+    0.10244714084016453,
+    0.08167854186672832,
+    0.0867872380114284,
+    0.060663058330479275,
+    0.056482216234740916,
+    0.0817145793028494
+   ],
+   "frac_pooled_area": [
+    0.07427241646538833,
+    0.09422751345933,
+    0.08385343944414797,
+    0.08173544387083,
+    0.14071290436966874,
+    0.11522957473310577,
+    0.09275314296938644,
+    0.10202101736920413,
+    0.06550533825692818,
+    0.05275809536525995,
+    0.09693111369675048
+   ],
+   "n": [
+    124,
+    150,
+    93,
+    107,
+    151,
+    128,
+    101,
+    119,
+    42,
+    70,
+    90
+   ],
+   "OE": [
+    1.0624786431204398,
+    1.0806618617694894,
+    0.8486993887690736,
+    1.0729881200852482,
+    0.9544639363041019,
+    1.0633402681557063,
+    1.052387136743504,
+    1.1669526311154694,
+    0.5892330824524954,
+    1.0547473533530276,
+    0.9373571440290113
+   ],
+   "OE_lo": [
+    0.7915661428541968,
+    0.8902130496741132,
+    0.6479544287801875,
+    0.8427225046089286,
+    0.8277107438014344,
+    0.8883834802987587,
+    0.7603033023153168,
+    0.828850989094588,
+    0.3547567996033093,
+    0.6724659346118829,
+    0.5965822119954448
+   ],
+   "OE_hi": [
+    1.4033547469234013,
+    1.2693175597943462,
+    1.05775959602833,
+    1.3231774064620454,
+    1.0925347841155677,
+    1.2424216224632236,
+    1.4227114707680526,
+    1.543313111504858,
+    0.8463615545293911,
+    1.48765163780048,
+    1.2708933020869866
+   ]
+  },
+  "signed_peak_base": {
+   "edges": [
+    null,
+    -10.0,
+    -6.0,
+    -4.0,
+    -3.0,
+    -2.0,
+    -1.0,
+    0.0,
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    6.0,
+    10.0,
+    null
+   ],
+   "frac_points": [
+    0.186317907444668,
+    0.08209255533199195,
+    0.04225352112676056,
+    0.025754527162977867,
+    0.020925553319919517,
+    0.03340040241448692,
+    0.026559356136820925,
+    0.03460764587525151,
+    0.0647887323943662,
+    0.07766599597585513,
+    0.07887323943661972,
+    0.13440643863179075,
+    0.1557344064386318,
+    0.036619718309859155
+   ],
+   "frac_crater_matched": [
+    0.3927405980807429,
+    0.13299129928244047,
+    0.07752262344167123,
+    0.042558518052697,
+    0.0418127365129139,
+    0.04476067527102925,
+    0.033915373345306615,
+    0.03260184760916351,
+    0.038852816952657576,
+    0.032245877065562714,
+    0.029062769304936995,
+    0.04372410435239499,
+    0.04528753048687567,
+    0.011923230241607134
+   ],
+   "frac_pooled_area": [
+    0.41904809905542073,
+    0.12840390318034145,
+    0.06993835243645963,
+    0.036743598688710376,
+    0.03539681038182826,
+    0.037610554343800104,
+    0.02840263326436145,
+    0.027606409018739703,
+    0.03398287549923184,
+    0.029573753841718894,
+    0.02822702528191359,
+    0.0463122327002364,
+    0.05627483128977834,
+    0.02247892101745928
+   ],
+   "n": [
+    463,
+    204,
+    105,
+    64,
+    52,
+    83,
+    66,
+    86,
+    161,
+    193,
+    196,
+    334,
+    387,
+    91
+   ],
+   "OE": [
+    0.4744045009738545,
+    0.6172776397773795,
+    0.5450476164361558,
+    0.6051556384338378,
+    0.5004588330031123,
+    0.7461996990046503,
+    0.7831067010941912,
+    1.0615240672901074,
+    1.6675427285828903,
+    2.4085558540691476,
+    2.7138927680653353,
+    3.073966651175752,
+    3.438792196535504,
+    3.0712917194261258
+   ],
+   "OE_lo": [
+    0.2731374356334788,
+    0.47045315747088545,
+    0.39522906851915246,
+    0.40700912955057456,
+    0.360860151987942,
+    0.5331140583892293,
+    0.49235335007382647,
+    0.7828819165894819,
+    1.3128967427183522,
+    1.8614077007216014,
+    2.16938760224588,
+    2.4914302772431918,
+    2.764725335952767,
+    1.4829399133150754
+   ],
+   "OE_hi": [
+    0.6714645364120472,
+    0.7878144873153309,
+    0.7121332862010172,
+    0.8395572451098403,
+    0.6311499236597207,
+    0.9800332072454274,
+    1.013017475366365,
+    1.3139953711693113,
+    2.0912588476429903,
+    3.0839452749776686,
+    3.314934917470262,
+    3.6713517020797712,
+    4.063012548457386,
+    4.190767111328533
+   ],
+   "note": "craters with peak terrain; negative = floor cells (distance to nearest peak cell), positive = peak cells (distance to nearest floor cell); crater-matched null over peak+floor"
+  },
+  "signed_peak_base_fields": {
+   "edges": [
+    null,
+    -10.0,
+    -6.0,
+    -4.0,
+    -3.0,
+    -2.0,
+    -1.0,
+    0.0,
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    6.0,
+    10.0,
+    null
+   ],
+   "frac_points": [
+    0.2,
+    0.07272727272727272,
+    0.05454545454545454,
+    0.05454545454545454,
+    0.022727272727272728,
+    0.07727272727272727,
+    0.04090909090909091,
+    0.013636363636363636,
+    0.05909090909090909,
+    0.11363636363636363,
+    0.06363636363636363,
+    0.08636363636363636,
+    0.1,
+    0.04090909090909091
+   ],
+   "frac_crater_matched": [
+    0.3895559011317598,
+    0.13821161588485031,
+    0.08126319265096386,
+    0.045259522319011376,
+    0.0446572780969607,
+    0.04808171779921604,
+    0.03551647206229904,
+    0.033673312237921645,
+    0.03951634125723361,
+    0.03139323452467911,
+    0.026611205497558472,
+    0.03595938826742106,
+    0.03486997610369974,
+    0.015430842166425067
+   ],
+   "frac_pooled_area": [
+    0.41904809905542073,
+    0.12840390318034145,
+    0.06993835243645963,
+    0.036743598688710376,
+    0.03539681038182826,
+    0.037610554343800104,
+    0.02840263326436145,
+    0.027606409018739703,
+    0.03398287549923184,
+    0.029573753841718894,
+    0.02822702528191359,
+    0.0463122327002364,
+    0.05627483128977834,
+    0.02247892101745928
+   ],
+   "n": [
+    44,
+    16,
+    12,
+    12,
+    5,
+    17,
+    9,
+    3,
+    13,
+    25,
+    14,
+    19,
+    22,
+    9
+   ],
+   "OE": [
+    0.5134051349727952,
+    0.5262023185364156,
+    0.6712196846576589,
+    1.2051707961253182,
+    0.5089265108797464,
+    1.607112449588629,
+    1.1518343048637472,
+    0.4049605675858303,
+    1.4953537501423486,
+    3.6197723922659475,
+    2.3913371245884427,
+    2.401699264775346,
+    2.8677966311938454,
+    2.6511249656938527
+   ],
+   "OE_lo": [
+    0.40532186422991634,
+    0.30811518996028203,
+    0.33370533620349413,
+    0.6115685228684593,
+    0.10893432362254163,
+    0.9404243826819747,
+    0.519828765376253,
+    0.0,
+    0.8163666115721377,
+    2.407223245838322,
+    1.2315808000364623,
+    1.4787999958329598,
+    1.7731285561010024,
+    1.4100068179859886
+   ],
+   "OE_hi": [
+    0.6214848137339941,
+    0.7661348333236415,
+    1.0539396450774183,
+    1.8844005155198724,
+    0.9827403686591565,
+    2.3175986628517578,
+    1.9036219605683276,
+    0.9119559849700866,
+    2.2524868388979873,
+    5.081432390571332,
+    3.766861710946702,
+    3.559684874176892,
+    4.515202416084153,
+    4.613652650885398
+   ]
+  }
+ },
+ "floor_radius_stratified": {
+  "note": "crater-matched null within crater x radial bins (0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8 R)",
+  "within3km_of_wall_or_peak": {
+   "n_points": 1175,
+   "n_in": 367,
+   "frac_points_in": 0.3123404255319149,
+   "frac_area_in_pooled": 0.2523533693688663,
+   "frac_expected_in_crater_matched": 0.3081569584746609,
+   "DR": [
+    1.3456805527719928,
+    0.9857564649130085,
+    1.9308566473452482
+   ],
+   "SDR": [
+    1.0197419878530236,
+    0.8407384775861749,
+    1.239024233437437
+   ],
+   "OE_in": [
+    1.0135757669661645,
+    0.8863015771221034,
+    1.1540720737326722
+   ]
+  },
+  "within3km_of_wall": {
+   "n_points": 1175,
+   "n_in": 207,
+   "frac_points_in": 0.17617021276595746,
+   "frac_area_in_pooled": 0.14240602930502547,
+   "frac_expected_in_crater_matched": 0.18203987820624687,
+   "DR": [
+    1.2877997308657019,
+    0.854384581982234,
+    1.9082771401777856
+   ],
+   "SDR": [
+    0.9608610364294133,
+    0.7714958797484184,
+    1.165926872562352
+   ],
+   "OE_in": [
+    0.9677561559690826,
+    0.8027018664376532,
+    1.1317645617016885
+   ]
+  },
+  "within3km_of_peak": {
+   "n_points": 1037,
+   "n_in": 201,
+   "frac_points_in": 0.19382835101253615,
+   "frac_area_in_pooled": 0.13422117642351247,
+   "frac_expected_in_crater_matched": 0.17320237569799415,
+   "DR": [
+    1.550871081761308,
+    1.0311303396057607,
+    2.3571880415363875
+   ],
+   "SDR": [
+    1.1477179010153016,
+    0.9125234363505124,
+    1.395014440144101
+   ],
+   "OE_in": [
+    1.1190859838464726,
+    0.9257176184823864,
+    1.2946666975687193
+   ]
+  },
+  "fields_within3km_of_wall_or_peak": {
+   "n_points": 144,
+   "n_in": 47,
+   "frac_points_in": 0.3263888888888889,
+   "frac_area_in_pooled": 0.2523533693688663,
+   "frac_expected_in_crater_matched": 0.3047005411150144,
+   "DR": [
+    1.4355337136455852,
+    0.9310716432832484,
+    2.143257234763976
+   ],
+   "SDR": [
+    1.1056681249128892,
+    0.762295855554806,
+    1.5571333729813073
+   ],
+   "OE_in": [
+    1.0711792230315988,
+    0.8203184431992943,
+    1.3339795697062575
+   ]
+  },
+  "fields_within3km_of_peak": {
+   "n_points": 115,
+   "n_in": 31,
+   "frac_points_in": 0.26956521739130435,
+   "frac_area_in_pooled": 0.13422117642351247,
+   "frac_expected_in_crater_matched": 0.2346220919039392,
+   "DR": [
+    2.3805007672901004,
+    1.4621286319589348,
+    3.623340874925297
+   ],
+   "SDR": [
+    1.2038972645855786,
+    0.8137395211344842,
+    1.6846509808561836
+   ],
+   "OE_in": [
+    1.1489336541320747,
+    0.8533001921289012,
+    1.4588382646559308
+   ]
+  }
+ },
+ "floor_density_by_radius": {
+  "edges": [
+   0,
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1.01
+  ],
+  "n": [
+   46,
+   251,
+   492,
+   329,
+   57
+  ],
+  "OE": [
+   0.7383860523478583,
+   0.987974026641287,
+   1.1062139959245314,
+   1.0166029706673883,
+   0.6315115468293818
+  ],
+  "lo": [
+   0.437430096793516,
+   0.7679216231062649,
+   0.9482525191367114,
+   0.7974005595479111,
+   0.39006567003767806
+  ],
+  "hi": [
+   1.089161779759994,
+   1.2486077427550093,
+   1.2741759080219648,
+   1.1962333546831785,
+   0.8664000602075561
+  ]
+ },
+ "vent_craters_with_peak_hollows": [
+  {
+   "uid": 200309,
+   "D": 183.275445,
+   "lat": 27.201918,
+   "lon": 299.61433999999997,
+   "morph": "peak_ring",
+   "n_peak": 279,
+   "n_eta_low": 120,
+   "E_eta_low": 75.93395194921172,
+   "n_base2": 25,
+   "E_base2": 59.826313524676415
+  },
+  {
+   "uid": 200544,
+   "D": 126.338961,
+   "lat": 40.619868,
+   "lon": 258.614336,
+   "morph": "peak_ring",
+   "n_peak": 112,
+   "n_eta_low": 31,
+   "E_eta_low": 26.141023564493455,
+   "n_base2": 10,
+   "E_base2": 25.68560493472095
+  },
+  {
+   "uid": 200690,
+   "D": 107.930303,
+   "lat": 3.884566,
+   "lon": 211.145401,
+   "morph": "central_peak",
+   "n_peak": 53,
+   "n_eta_low": 27,
+   "E_eta_low": 28.44701398813301,
+   "n_base2": 4,
+   "E_base2": 13.195232204392232
+  },
+  {
+   "uid": 200588,
+   "D": 120.045724,
+   "lat": -2.945528,
+   "lon": 212.587343,
+   "morph": "peak_ring",
+   "n_peak": 41,
+   "n_eta_low": 23,
+   "E_eta_low": 14.792291795890065,
+   "n_base2": 14,
+   "E_base2": 13.482125539041887
+  },
+  {
+   "uid": 201110,
+   "D": 82.732439,
+   "lat": 27.122145,
+   "lon": 330.249439,
+   "morph": "unclassified",
+   "n_peak": 24,
+   "n_eta_low": 8,
+   "E_eta_low": 7.836900536853358,
+   "n_base2": 4,
+   "E_base2": 5.143435896712308
+  },
+  {
+   "uid": 200362,
+   "D": 161.943713,
+   "lat": 15.340563,
+   "lon": 310.98654,
+   "morph": "peak_ring",
+   "n_peak": 22,
+   "n_eta_low": 14,
+   "E_eta_low": 10.260614906196173,
+   "n_base2": 4,
+   "E_base2": 4.949684494168942
+  },
+  {
+   "uid": 201542,
+   "D": 66.719984,
+   "lat": 58.859946,
+   "lon": 160.391274,
+   "morph": "central_peak",
+   "n_peak": 12,
+   "n_eta_low": 0,
+   "E_eta_low": 6.779907375129378,
+   "n_base2": 11,
+   "E_base2": 5.875323777190406
+  },
+  {
+   "uid": 200875,
+   "D": 94.680951,
+   "lat": 21.94601,
+   "lon": 292.417742,
+   "morph": "central_peak",
+   "n_peak": 5,
+   "n_eta_low": 5,
+   "E_eta_low": 3.4644918691884334,
+   "n_base2": 0,
+   "E_base2": 1.9278972002944161
+  },
+  {
+   "uid": 201628,
+   "D": 63.993682,
+   "lat": 0.543161,
+   "lon": 197.976335,
+   "morph": "unclassified",
+   "n_peak": 3,
+   "n_eta_low": 2,
+   "E_eta_low": 1.1003499761587663,
+   "n_base2": 2,
+   "E_base2": 1.8571530264478724
+  },
+  {
+   "uid": 201995,
+   "D": 56.017344,
+   "lat": 25.506636,
+   "lon": 179.369995,
+   "morph": "central_peak",
+   "n_peak": 3,
+   "n_eta_low": 0,
+   "E_eta_low": 0.7370515769125009,
+   "n_base2": 2,
+   "E_base2": 1.5296628074954017
+  },
+  {
+   "uid": 200669,
+   "D": 110.217515,
+   "lat": 4.606846,
+   "lon": 305.314341,
+   "morph": "central_peak",
+   "n_peak": 1,
+   "n_eta_low": 1,
+   "E_eta_low": 0.5643514928513692,
+   "n_base2": 0,
+   "E_base2": 0.6425995268823527
+  }
+ ],
+ "vent_low_band_without_top_crater": {
+  "dropped_uid": 200309,
+  "eta_low": {
+   "n_craters": 13,
+   "n_craters_with_area": 11,
+   "n_craters_with_points": 10,
+   "n_points": 276,
+   "n_in": 111,
+   "frac_points_in": 0.40217391304347827,
+   "frac_area_in_pooled": 0.378059268183538,
+   "frac_expected_in_crater_matched": 0.3627681053688642,
+   "DR": [
+    1.1066955039170523,
+    0.7309365193471218,
+    1.5624091365749517
+   ],
+   "SDR": [
+    1.1817005635987479,
+    0.7230249744646514,
+    1.7193074286658048
+   ],
+   "OE_in": [
+    1.108625336934034,
+    0.8268227634565448,
+    1.3625038243916066
+   ]
+  },
+  "base2": {
+   "n_craters": 13,
+   "n_craters_with_area": 11,
+   "n_craters_with_points": 10,
+   "n_points": 276,
+   "n_in": 51,
+   "frac_points_in": 0.18478260869565216,
+   "frac_area_in_pooled": 0.26987124598654466,
+   "frac_expected_in_crater_matched": 0.2691620268382129,
+   "DR": [
+    0.6132400297213135,
+    0.3364931583255583,
+    1.469698538074468
+   ],
+   "SDR": [
+    0.6154531127437878,
+    0.3617828908888747,
+    1.2994948887207851
+   ],
+   "OE_in": [
+    0.6865106897367835,
+    0.42813088743995137,
+    1.1815696056249423
+   ]
+  }
+ },
+ "g9_additions": {
+  "note": "floor hollows/fields vs completeness-weighted floor area; d_marg_R = min(distance to wall-class, to peak-class cell) / host radius; radius_stratified = crater-matched null within crater x radial bins (RB)",
+  "RB": [
+   0,
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1.01
+  ],
+  "hollows": {
+   "floor_within0.05R_of_wall_or_peak": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 1175,
+    "n_in": 303,
+    "frac_points_in": 0.2578723404255319,
+    "frac_area_in_pooled": 0.2706259055057022,
+    "frac_expected_in_crater_matched": 0.24495133006979736,
+    "DR": [
+     0.936498553601304,
+     0.7076369293101452,
+     1.238741770665133
+    ],
+    "SDR": [
+     1.0710784672854916,
+     0.79621635812186,
+     1.4025900069673964
+    ],
+    "OE_in": [
+     1.0527492965727223,
+     0.8385907550166872,
+     1.2772446188150461
+    ]
+   },
+   "floor_within0.05R_of_wall_or_peak_radius_stratified": {
+    "n_points": 1175,
+    "n_in": 303,
+    "frac_points_in": 0.2578723404255319,
+    "frac_area_in_pooled": 0.2706259055057022,
+    "frac_expected_in_crater_matched": 0.2465930141758119,
+    "DR": [
+     0.936498553601304,
+     0.7076369293101452,
+     1.238741770665133
+    ],
+    "SDR": [
+     1.0616344849514605,
+     0.8454058780051461,
+     1.3121562899867965
+    ],
+    "OE_in": [
+     1.0457406560661051,
+     0.876441190243407,
+     1.2163238918845247
+    ]
+   },
+   "floor_within0.1R_of_wall_or_peak": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 1175,
+    "n_in": 584,
+    "frac_points_in": 0.4970212765957447,
+    "frac_area_in_pooled": 0.5237026489300508,
+    "frac_expected_in_crater_matched": 0.48486658898235835,
+    "DR": [
+     0.8987083190157296,
+     0.7101743196355598,
+     1.1903423839271356
+    ],
+    "SDR": [
+     1.0498392993553176,
+     0.8087092034938178,
+     1.3594597422027206
+    ],
+    "OE_in": [
+     1.0250681071651002,
+     0.893187595707254,
+     1.1553673548342458
+    ]
+   },
+   "floor_within0.1R_of_wall_or_peak_radius_stratified": {
+    "n_points": 1175,
+    "n_in": 584,
+    "frac_points_in": 0.4970212765957447,
+    "frac_area_in_pooled": 0.5237026489300508,
+    "frac_expected_in_crater_matched": 0.4878179575187127,
+    "DR": [
+     0.8987083190157296,
+     0.7101743196355598,
+     1.1903423839271356
+    ],
+    "SDR": [
+     1.0375091378017036,
+     0.8520846336570308,
+     1.266371885675453
+    ],
+    "OE_in": [
+     1.0188662982474952,
+     0.9177183238388846,
+     1.119448667608557
+    ]
+   },
+   "floor_within3km_of_wall_or_peak_radius_stratified": {
+    "n_points": 1175,
+    "n_in": 367,
+    "frac_points_in": 0.3123404255319149,
+    "frac_area_in_pooled": 0.2523533693688663,
+    "frac_expected_in_crater_matched": 0.3081569584746609,
+    "DR": [
+     1.3456805527719928,
+     0.9857564649130085,
+     1.9308566473452482
+    ],
+    "SDR": [
+     1.0197419878530236,
+     0.8407384775861749,
+     1.239024233437437
+    ],
+    "OE_in": [
+     1.0135757669661645,
+     0.8863015771221034,
+     1.1540720737326722
+    ]
+   },
+   "floor_within0.2R_of_center_vs_rest": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 1175,
+    "n_in": 46,
+    "frac_points_in": 0.03914893617021276,
+    "frac_area_in_pooled": 0.06732518027527448,
+    "frac_expected_in_crater_matched": 0.05301960410239363,
+    "DR": [
+     0.5644384838786479,
+     0.3221854885599796,
+     0.8849055766605204
+    ],
+    "SDR": [
+     0.7277268481033958,
+     0.4229578924528959,
+     1.0944382546763218
+    ],
+    "OE_in": [
+     0.7383860523478585,
+     0.4374300967935159,
+     1.0891617797599944
+    ]
+   }
+  },
+  "fields": {
+   "floor_within0.05R_of_wall_or_peak": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 144,
+    "n_in": 38,
+    "frac_points_in": 0.2638888888888889,
+    "frac_area_in_pooled": 0.2706259055057022,
+    "frac_expected_in_crater_matched": 0.245582634246725,
+    "DR": [
+     0.9661814581273059,
+     0.5882760519726797,
+     1.4751498799819294
+    ],
+    "SDR": [
+     1.1012647914098013,
+     0.6640679036088644,
+     1.6647834006930717
+    ],
+    "OE_in": [
+     1.0745421381211036,
+     0.7235178392144134,
+     1.4244025621743162
+    ]
+   },
+   "floor_within0.05R_of_wall_or_peak_radius_stratified": {
+    "n_points": 144,
+    "n_in": 38,
+    "frac_points_in": 0.2638888888888889,
+    "frac_area_in_pooled": 0.2706259055057022,
+    "frac_expected_in_crater_matched": 0.25154719809696313,
+    "DR": [
+     0.9661814581273059,
+     0.5882760519726797,
+     1.4751498799819294
+    ],
+    "SDR": [
+     1.0666517879611728,
+     0.684188840828883,
+     1.519316186250736
+    ],
+    "OE_in": [
+     1.049063121693641,
+     0.7414306969514425,
+     1.3383634946442835
+    ]
+   },
+   "floor_within0.1R_of_wall_or_peak": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 144,
+    "n_in": 74,
+    "frac_points_in": 0.5138888888888888,
+    "frac_area_in_pooled": 0.5237026489300508,
+    "frac_expected_in_crater_matched": 0.48466311803810236,
+    "DR": [
+     0.9614508225008297,
+     0.6896080925688629,
+     1.3551143559131822
+    ],
+    "SDR": [
+     1.1240481965979985,
+     0.8320893430924869,
+     1.5274596340108793
+    ],
+    "OE_in": [
+     1.0603012066795825,
+     0.904468798394996,
+     1.2113815115375743
+    ]
+   },
+   "floor_within0.1R_of_wall_or_peak_radius_stratified": {
+    "n_points": 144,
+    "n_in": 74,
+    "frac_points_in": 0.5138888888888888,
+    "frac_area_in_pooled": 0.5237026489300508,
+    "frac_expected_in_crater_matched": 0.48647711599431775,
+    "DR": [
+     0.9614508225008297,
+     0.6896080925688629,
+     1.3551143559131822
+    ],
+    "SDR": [
+     1.1159148723705798,
+     0.8572732058865866,
+     1.429353651063905
+    ],
+    "OE_in": [
+     1.0563475074023652,
+     0.9212904640644841,
+     1.1780215959044475
+    ]
+   },
+   "floor_within3km_of_wall_or_peak_radius_stratified": {
+    "n_points": 144,
+    "n_in": 47,
+    "frac_points_in": 0.3263888888888889,
+    "frac_area_in_pooled": 0.2523533693688663,
+    "frac_expected_in_crater_matched": 0.3047005411150144,
+    "DR": [
+     1.4355337136455852,
+     0.9310716432832484,
+     2.143257234763976
+    ],
+    "SDR": [
+     1.1056681249128892,
+     0.762295855554806,
+     1.5571333729813073
+    ],
+    "OE_in": [
+     1.0711792230315988,
+     0.8203184431992943,
+     1.3339795697062575
+    ]
+   },
+   "floor_within0.2R_of_center_vs_rest": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 144,
+    "n_in": 10,
+    "frac_points_in": 0.06944444444444445,
+    "frac_area_in_pooled": 0.06732518027527448,
+    "frac_expected_in_crater_matched": 0.06189131954063024,
+    "DR": [
+     1.0338271387069977,
+     0.4329454692728636,
+     1.8445144924978907
+    ],
+    "SDR": [
+     1.131145869916116,
+     0.4812396260301772,
+     2.017772995202227
+    ],
+    "OE_in": [
+     1.1220385178386085,
+     0.4970742622287879,
+     1.895065256869997
+    ]
+   }
+  }
+ },
+ "g11_additions": {
+  "note": "eta_b = (z - z_base)/(z_peak95 - z_base), z_base = 5th percentile of the crater's valid peak-cell elevations; bands as for eta (< 1/3 low, >= 2/3 high; eta_b < 0 counts as low). Near-wall / near-peak: floor cells and floor hollows/fields with d_wall/R or d_peak/R below the threshold vs the rest of the floor; floor in craters without wall (peak) cells has infinite distance and drops out of that test, as in g9.",
+  "RB": [
+   0,
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1.01
+  ],
+  "eta_b": {
+   "hollows": {
+    "n_points_finite_eta_b": 1448,
+    "n_points": 1448,
+    "craters_with_points": 76,
+    "peak_eta_b_low_vs_upper": {
+     "n_craters": 111,
+     "n_craters_with_area": 92,
+     "n_craters_with_points": 76,
+     "n_points": 1448,
+     "n_in": 541,
+     "frac_points_in": 0.3736187845303867,
+     "frac_area_in_pooled": 0.37436742344913587,
+     "frac_expected_in_crater_matched": 0.35465591894978826,
+     "DR": [
+      0.9968074653103093,
+      0.7049294989728542,
+      1.3466606119313043
+     ],
+     "SDR": [
+      1.0853607120233133,
+      0.7545195148735236,
+      1.4616764701211984
+     ],
+     "OE_in": [
+      1.0534683465505146,
+      0.8292404327992832,
+      1.2657803666952496
+     ]
+    },
+    "peak_eta_b_high_vs_lower": {
+     "n_craters": 111,
+     "n_craters_with_area": 92,
+     "n_craters_with_points": 76,
+     "n_points": 1448,
+     "n_in": 424,
+     "frac_points_in": 0.292817679558011,
+     "frac_area_in_pooled": 0.2780482300955748,
+     "frac_expected_in_crater_matched": 0.2946641909135482,
+     "DR": [
+      1.0751125969163602,
+      0.7305710920793755,
+      1.6952180556619383
+     ],
+     "SDR": [
+      0.9911387859665127,
+      0.6804579463863305,
+      1.5383770380364845
+     ],
+     "OE_in": [
+      0.9937335060978655,
+      0.7545292103014838,
+      1.3282571305344129
+     ]
+    },
+    "peak_eta_b_terciles": {
+     "points": [
+      0.3736187845303867,
+      0.3335635359116022,
+      0.292817679558011
+     ],
+     "crater_matched_area": [
+      0.35465591894978826,
+      0.35067989013666356,
+      0.29466419091354823
+     ],
+     "pooled_area": [
+      0.37436742344913587,
+      0.34758434645528935,
+      0.2780482300955748
+     ],
+     "n_points": [
+      541,
+      483,
+      424
+     ]
+    }
+   },
+   "fields": {
+    "n_points_finite_eta_b": 105,
+    "n_points": 105,
+    "craters_with_points": 76,
+    "peak_eta_b_low_vs_upper": {
+     "n_craters": 111,
+     "n_craters_with_area": 92,
+     "n_craters_with_points": 76,
+     "n_points": 105,
+     "n_in": 38,
+     "frac_points_in": 0.3619047619047619,
+     "frac_area_in_pooled": 0.37436742344913587,
+     "frac_expected_in_crater_matched": 0.402797803521555,
+     "DR": [
+      0.9478292299882781,
+      0.6146830296658021,
+      1.3881941319886286
+     ],
+     "SDR": [
+      0.8408975683676057,
+      0.5735524969656747,
+      1.1672713766908174
+     ],
+     "OE_in": [
+      0.898477496005996,
+      0.6894380580019862,
+      1.0915702290958023
+     ]
+    },
+    "peak_eta_b_high_vs_lower": {
+     "n_craters": 111,
+     "n_craters_with_area": 92,
+     "n_craters_with_points": 76,
+     "n_points": 105,
+     "n_in": 43,
+     "frac_points_in": 0.4095238095238095,
+     "frac_area_in_pooled": 0.2780482300955748,
+     "frac_expected_in_crater_matched": 0.2751313596171342,
+     "DR": [
+      1.8007972408483401,
+      1.269530625857041,
+      2.5987185430222506
+     ],
+     "SDR": [
+      1.827241638663643,
+      1.3280433654749095,
+      2.512613657129882
+     ],
+     "OE_in": [
+      1.4884664914013894,
+      1.2146794617602867,
+      1.7820448098712662
+     ]
+    },
+    "peak_eta_b_terciles": {
+     "points": [
+      0.3619047619047619,
+      0.22857142857142856,
+      0.4095238095238095
+     ],
+     "crater_matched_area": [
+      0.4027978035215552,
+      0.3220708368613107,
+      0.2751313596171341
+     ],
+     "pooled_area": [
+      0.37436742344913587,
+      0.34758434645528935,
+      0.2780482300955748
+     ],
+     "n_points": [
+      38,
+      24,
+      43
+     ]
+    }
+   },
+   "sample": {
+    "peak_hollows_with_eta_b_lt_1_3": 541,
+    "craters_with_low_eta_b_area": 93,
+    "median_zbase_minus_zfloor_m_hollow_hosts": 1.6375000000000455,
+    "median_peak_relief_above_base_m_hollow_hosts": 543.3625,
+    "peak_hollows_eta_lt_1_3": 535,
+    "peak_cells_frac_area_eta_lt_1_3": 0.33077338337898254,
+    "peak_cells_frac_area_eta_b_lt_1_3": 0.37436744570732117
+   },
+   "breakdowns": {
+    "central_peak": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "n_craters": 46,
+       "n_craters_with_area": 46,
+       "n_craters_with_points": 33,
+       "n_points": 293,
+       "n_in": 107,
+       "frac_points_in": 0.3651877133105802,
+       "frac_area_in_pooled": 0.3847954676598714,
+       "frac_expected_in_crater_matched": 0.39145260637141926,
+       "DR": [
+        0.9197301252281318,
+        0.5815728684478693,
+        1.2939117144787722
+       ],
+       "SDR": [
+        0.8943058077720689,
+        0.5885726475352374,
+        1.241279092583876
+       ],
+       "OE_in": [
+        0.932904028141996,
+        0.6945849529772881,
+        1.1412405885998298
+       ]
+      },
+      "peak_eta_b_high_vs_lower": {
+       "n_craters": 46,
+       "n_craters_with_area": 46,
+       "n_craters_with_points": 33,
+       "n_points": 293,
+       "n_in": 107,
+       "frac_points_in": 0.3651877133105802,
+       "frac_area_in_pooled": 0.3144559519857062,
+       "frac_expected_in_crater_matched": 0.3067714558547615,
+       "DR": [
+        1.254141036772482,
+        0.8533090160461907,
+        1.9337686364255957
+       ],
+       "SDR": [
+        1.2999669852970164,
+        0.8740183803829197,
+        1.99348454565105
+       ],
+       "OE_in": [
+        1.1904227278677304,
+        0.9063982896314869,
+        1.4993459586511457
+       ]
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "n_craters": 46,
+       "n_craters_with_area": 46,
+       "n_craters_with_points": 33,
+       "n_points": 33,
+       "n_in": 7,
+       "frac_points_in": 0.21212121212121213,
+       "frac_area_in_pooled": 0.3847954676598714,
+       "frac_expected_in_crater_matched": 0.369021079578804,
+       "DR": [
+        0.4304416330147475,
+        0.14701043012721227,
+        0.8461663375037449
+       ],
+       "SDR": [
+        0.4603502333993945,
+        0.14623490966301464,
+        0.9079538524351396
+       ],
+       "OE_in": [
+        0.5748213960116442,
+        0.20867146422559776,
+        0.9387246658311724
+       ]
+      },
+      "peak_eta_b_high_vs_lower": {
+       "n_craters": 46,
+       "n_craters_with_area": 46,
+       "n_craters_with_points": 33,
+       "n_points": 33,
+       "n_in": 16,
+       "frac_points_in": 0.48484848484848486,
+       "frac_area_in_pooled": 0.3144559519857062,
+       "frac_expected_in_crater_matched": 0.3243231344350706,
+       "DR": [
+        2.051854714367733,
+        1.0359174291531912,
+        3.9211664489879356
+       ],
+       "SDR": [
+        1.9607949605514035,
+        0.9975249739753709,
+        3.910582967856508
+       ],
+       "OE_in": [
+        1.4949549796779955,
+        0.9982437717417714,
+        1.9864961725890224
+       ]
+      }
+     }
+    },
+    "peak_ring": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "n_craters": 41,
+       "n_craters_with_area": 40,
+       "n_craters_with_points": 39,
+       "n_points": 1123,
+       "n_in": 423,
+       "frac_points_in": 0.37666963490650046,
+       "frac_area_in_pooled": 0.3749601016560257,
+       "frac_expected_in_crater_matched": 0.34656471127853283,
+       "DR": [
+        1.007314324270023,
+        0.6503661115190507,
+        1.4064003481499832
+       ],
+       "SDR": [
+        1.139358963374649,
+        0.7158472607083283,
+        1.599983110383488
+       ],
+       "OE_in": [
+        1.0868666735193717,
+        0.7996202513128933,
+        1.337865825885171
+       ]
+      },
+      "peak_eta_b_high_vs_lower": {
+       "n_craters": 41,
+       "n_craters_with_area": 40,
+       "n_craters_with_points": 39,
+       "n_points": 1123,
+       "n_in": 304,
+       "frac_points_in": 0.27070347284060553,
+       "frac_area_in_pooled": 0.2699418743169428,
+       "frac_expected_in_crater_matched": 0.28844756411609324,
+       "DR": [
+        1.0038685809506431,
+        0.6346436928315453,
+        1.7151556575189666
+       ],
+       "SDR": [
+        0.9156504555260334,
+        0.5690488391738413,
+        1.6025879715634461
+       ],
+       "OE_in": [
+        0.9384841701476593,
+        0.6547280605509804,
+        1.3700584403135518
+       ]
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "n_craters": 41,
+       "n_craters_with_area": 40,
+       "n_craters_with_points": 39,
+       "n_points": 68,
+       "n_in": 29,
+       "frac_points_in": 0.4264705882352941,
+       "frac_area_in_pooled": 0.3749601016560257,
+       "frac_expected_in_crater_matched": 0.42282977000848093,
+       "DR": [
+        1.239527234205096,
+        0.7462732716225597,
+        1.9095484219253602
+       ],
+       "SDR": [
+        1.0150133547087257,
+        0.6347266705846316,
+        1.497481563630464
+       ],
+       "OE_in": [
+        1.0086106004947102,
+        0.7472502510766161,
+        1.2380970179917428
+       ]
+      },
+      "peak_eta_b_high_vs_lower": {
+       "n_craters": 41,
+       "n_craters_with_area": 40,
+       "n_craters_with_points": 39,
+       "n_points": 68,
+       "n_in": 26,
+       "frac_points_in": 0.38235294117647056,
+       "frac_area_in_pooled": 0.2699418743169428,
+       "frac_expected_in_crater_matched": 0.24555207360300782,
+       "DR": [
+        1.6742150346775528,
+        1.1064875627589306,
+        2.616018912048528
+       ],
+       "SDR": [
+        1.9019965324607648,
+        1.305904522234123,
+        2.7913941972215808
+       ],
+       "OE_in": [
+        1.5571155053434136,
+        1.210424374823589,
+        1.938209381970065
+       ]
+      }
+     }
+    },
+    "unclassified_center": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "n_craters": 24,
+       "n_craters_with_area": 6,
+       "n_craters_with_points": 4,
+       "n_points": 32,
+       "n_in": 11,
+       "frac_points_in": 0.34375,
+       "frac_area_in_pooled": 0.2969718955338368,
+       "frac_expected_in_crater_matched": 0.30168706895859976,
+       "DR": [
+        1.2400258144399883,
+        0.0,
+        4.191315454142157
+       ],
+       "SDR": [
+        1.2124582108921107,
+        0.0,
+        4.3579584794669755
+       ],
+       "OE_in": [
+        1.1394257008979476,
+        0.0,
+        2.1193194931556585
+       ]
+      },
+      "peak_eta_b_high_vs_lower": {
+       "n_craters": 24,
+       "n_craters_with_area": 6,
+       "n_craters_with_points": 4,
+       "n_points": 32,
+       "n_in": 13,
+       "frac_points_in": 0.40625,
+       "frac_area_in_pooled": 0.39931145089714926,
+       "frac_expected_in_crater_matched": 0.4019717929687482,
+       "DR": [
+        1.0292653201157265,
+        0.8254651523095021,
+        4.203074421643597
+       ],
+       "SDR": [
+        1.0179251416189612,
+        0.8172608555415445,
+        3.2053456788042567
+       ],
+       "OE_in": [
+        1.0106430528362582,
+        0.8857880347134653,
+        2.0281657282454133
+       ]
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "n_craters": 24,
+       "n_craters_with_area": 6,
+       "n_craters_with_points": 4,
+       "n_points": 4,
+       "n_in": 2,
+       "frac_points_in": 0.5,
+       "frac_area_in_pooled": 0.2969718955338368,
+       "frac_expected_in_crater_matched": 0.34091234577151075,
+       "DR": [
+        2.367322009385432,
+        0.0,
+        9.15558828397357
+       ],
+       "SDR": [
+        1.9333053273178575,
+        0.0,
+        7.286003033645001
+       ],
+       "OE_in": [
+        1.4666526636589288,
+        0.0,
+        3.1789792397334873
+       ]
+      },
+      "peak_eta_b_high_vs_lower": {
+       "n_craters": 24,
+       "n_craters_with_area": 6,
+       "n_craters_with_points": 4,
+       "n_points": 4,
+       "n_in": 1,
+       "frac_points_in": 0.25,
+       "frac_area_in_pooled": 0.39931145089714926,
+       "frac_expected_in_crater_matched": 0.37214707960930576,
+       "DR": [
+        0.5014369508256102,
+        0.0,
+        3.3959209937467527
+       ],
+       "SDR": [
+        0.5623698754175708,
+        0.0,
+        2.4407038184115883
+       ],
+       "OE_in": [
+        0.6717774065631781,
+        0.0,
+        2.0281657282454133
+       ]
+      }
+     }
+    }
+   }
+  },
+  "hollows": {
+   "floor_within0.05R_of_wall": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 1175,
+    "n_in": 149,
+    "frac_points_in": 0.12680851063829787,
+    "frac_area_in_pooled": 0.14399038593307203,
+    "frac_expected_in_crater_matched": 0.14617423357020912,
+    "DR": [
+     0.863344356135647,
+     0.5744185304197994,
+     1.2340640277173858
+    ],
+    "SDR": [
+     0.8482763106788034,
+     0.5628954204341157,
+     1.2274490233171045
+    ],
+    "OE_in": [
+     0.867516165750172,
+     0.60119756421678,
+     1.188644793645404
+    ]
+   },
+   "floor_within0.05R_of_wall_radius_stratified": {
+    "n_points": 1175,
+    "n_in": 149,
+    "frac_points_in": 0.12680851063829787,
+    "frac_area_in_pooled": 0.14399038593307203,
+    "frac_expected_in_crater_matched": 0.12885278999615904,
+    "DR": [
+     0.863344356135647,
+     0.5744185304197994,
+     1.2340640277173858
+    ],
+    "SDR": [
+     0.9818307532644611,
+     0.7126600274716048,
+     1.2786374311747666
+    ],
+    "OE_in": [
+     0.9841347683824145,
+     0.7382577481357111,
+     1.2329769608208485
+    ]
+   },
+   "floor_within0.1R_of_wall": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 1175,
+    "n_in": 283,
+    "frac_points_in": 0.24085106382978724,
+    "frac_area_in_pooled": 0.28668043785523184,
+    "frac_expected_in_crater_matched": 0.2947865705394275,
+    "DR": [
+     0.7894191480118069,
+     0.5654974970282923,
+     1.0884862299154647
+    ],
+    "SDR": [
+     0.7589872152627043,
+     0.5486025386711754,
+     1.0432659024470772
+    ],
+    "OE_in": [
+     0.8170354008632615,
+     0.6332503724037397,
+     1.0304764239037367
+    ]
+   },
+   "floor_within0.1R_of_wall_radius_stratified": {
+    "n_points": 1175,
+    "n_in": 283,
+    "frac_points_in": 0.24085106382978724,
+    "frac_area_in_pooled": 0.28668043785523184,
+    "frac_expected_in_crater_matched": 0.2674966050966753,
+    "DR": [
+     0.7894191480118069,
+     0.5654974970282923,
+     1.0884862299154647
+    ],
+    "SDR": [
+     0.8687862690705828,
+     0.6906117905645759,
+     1.0828146724650904
+    ],
+    "OE_in": [
+     0.9003892357540083,
+     0.749734236193578,
+     1.0614107802800412
+    ]
+   },
+   "floor_within0.05R_of_peak": {
+    "n_craters": 111,
+    "n_craters_with_area": 93,
+    "n_craters_with_points": 74,
+    "n_points": 1037,
+    "n_in": 157,
+    "frac_points_in": 0.15139826422372227,
+    "frac_area_in_pooled": 0.14973924675631511,
+    "frac_expected_in_crater_matched": 0.11346132546899404,
+    "DR": [
+     1.0130560377985012,
+     0.6426998394268998,
+     1.549271999488663
+    ],
+    "SDR": [
+     1.3940129671942703,
+     0.9316645179847384,
+     1.9718481389798088
+    ],
+    "OE_in": [
+     1.3343600878794195,
+     0.9384460888808599,
+     1.7674260380767859
+    ]
+   },
+   "floor_within0.05R_of_peak_radius_stratified": {
+    "n_points": 1037,
+    "n_in": 157,
+    "frac_points_in": 0.15139826422372227,
+    "frac_area_in_pooled": 0.14973924675631511,
+    "frac_expected_in_crater_matched": 0.13417219544729292,
+    "DR": [
+     1.0130560377985012,
+     0.6426998394268998,
+     1.549271999488663
+    ],
+    "SDR": [
+     1.1512933136339996,
+     0.8764272875449003,
+     1.4058263176341266
+    ],
+    "OE_in": [
+     1.1283877685611567,
+     0.8905087792411385,
+     1.3241761397666907
+    ]
+   },
+   "floor_within0.1R_of_peak": {
+    "n_craters": 111,
+    "n_craters_with_area": 93,
+    "n_craters_with_points": 74,
+    "n_points": 1037,
+    "n_in": 318,
+    "frac_points_in": 0.30665380906460943,
+    "frac_area_in_pooled": 0.3073691399396753,
+    "frac_expected_in_crater_matched": 0.23959716353863286,
+    "DR": [
+     0.9966434233078104,
+     0.7038077201366402,
+     1.4887194272153075
+    ],
+    "SDR": [
+     1.4036547040047491,
+     1.0485856024424034,
+     1.9584994354642373
+    ],
+    "OE_in": [
+     1.2798724514748452,
+     1.0383867017543107,
+     1.5682579128568321
+    ]
+   },
+   "floor_within0.1R_of_peak_radius_stratified": {
+    "n_points": 1037,
+    "n_in": 318,
+    "frac_points_in": 0.30665380906460943,
+    "frac_area_in_pooled": 0.3073691399396753,
+    "frac_expected_in_crater_matched": 0.27340673378953884,
+    "DR": [
+     0.9966434233078104,
+     0.7038077201366402,
+     1.4887194272153075
+    ],
+    "SDR": [
+     1.1753856699386491,
+     1.004179092540612,
+     1.3866357292821374
+    ],
+    "OE_in": [
+     1.121602986196614,
+     1.003326352450741,
+     1.2416085926528602
+    ]
+   },
+   "floor_within3km_of_wall_radius_stratified": {
+    "n_points": 1175,
+    "n_in": 207,
+    "frac_points_in": 0.17617021276595746,
+    "frac_area_in_pooled": 0.14240602930502547,
+    "frac_expected_in_crater_matched": 0.18203987820624687,
+    "DR": [
+     1.2877997308657019,
+     0.854384581982234,
+     1.9082771401777856
+    ],
+    "SDR": [
+     0.9608610364294133,
+     0.7714958797484184,
+     1.165926872562352
+    ],
+    "OE_in": [
+     0.9677561559690826,
+     0.8027018664376532,
+     1.1317645617016885
+    ]
+   },
+   "floor_within3km_of_peak_radius_stratified": {
+    "n_points": 1037,
+    "n_in": 201,
+    "frac_points_in": 0.19382835101253615,
+    "frac_area_in_pooled": 0.13422117642351247,
+    "frac_expected_in_crater_matched": 0.17320237569799415,
+    "DR": [
+     1.550871081761308,
+     1.0311303396057607,
+     2.3571880415363875
+    ],
+    "SDR": [
+     1.1477179010153016,
+     0.9125234363505124,
+     1.395014440144101
+    ],
+    "OE_in": [
+     1.1190859838464726,
+     0.9257176184823864,
+     1.2946666975687193
+    ]
+   }
+  },
+  "fields": {
+   "floor_within0.05R_of_wall": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 144,
+    "n_in": 14,
+    "frac_points_in": 0.09722222222222222,
+    "frac_area_in_pooled": 0.14399038593307203,
+    "frac_expected_in_crater_matched": 0.15033791187472445,
+    "DR": [
+     0.6402208741111219,
+     0.28614425565178103,
+     1.0837925613748929
+    ],
+    "SDR": [
+     0.6086426895773561,
+     0.26959585703601596,
+     1.0260652082003021
+    ],
+    "OE_in": [
+     0.6466913169795576,
+     0.30273201221162294,
+     1.0219503603795088
+    ]
+   },
+   "floor_within0.05R_of_wall_radius_stratified": {
+    "n_points": 144,
+    "n_in": 14,
+    "frac_points_in": 0.09722222222222222,
+    "frac_area_in_pooled": 0.14399038593307203,
+    "frac_expected_in_crater_matched": 0.1087362116818852,
+    "DR": [
+     0.6402208741111219,
+     0.28614425565178103,
+     1.0837925613748929
+    ],
+    "SDR": [
+     0.8827073579440903,
+     0.459777353822988,
+     1.2846577185487793
+    ],
+    "OE_in": [
+     0.8941108092550815,
+     0.4878592300449125,
+     1.2508099024049995
+    ]
+   },
+   "floor_within0.1R_of_wall": {
+    "n_craters": 111,
+    "n_craters_with_area": 111,
+    "n_craters_with_points": 91,
+    "n_points": 144,
+    "n_in": 26,
+    "frac_points_in": 0.18055555555555555,
+    "frac_area_in_pooled": 0.28668043785523184,
+    "frac_expected_in_crater_matched": 0.3011858421126791,
+    "DR": [
+     0.5482484542339889,
+     0.33684307361647864,
+     0.7841090183075127
+    ],
+    "SDR": [
+     0.5112325327457504,
+     0.31314797671816985,
+     0.7317454312996712
+    ],
+    "OE_in": [
+     0.5994822143333233,
+     0.3971380430732689,
+     0.794719581822403
+    ]
+   },
+   "floor_within0.1R_of_wall_radius_stratified": {
+    "n_points": 144,
+    "n_in": 26,
+    "frac_points_in": 0.18055555555555555,
+    "frac_area_in_pooled": 0.28668043785523184,
+    "frac_expected_in_crater_matched": 0.2254799890482349,
+    "DR": [
+     0.5482484542339889,
+     0.33684307361647864,
+     0.7841090183075127
+    ],
+    "SDR": [
+     0.7568607408843544,
+     0.5228396234029438,
+     1.0009695422411646
+    ],
+    "OE_in": [
+     0.8007608848913459,
+     0.584740618270716,
+     1.0007852080728261
+    ]
+   },
+   "floor_within0.05R_of_peak": {
+    "n_craters": 111,
+    "n_craters_with_area": 93,
+    "n_craters_with_points": 74,
+    "n_points": 115,
+    "n_in": 25,
+    "frac_points_in": 0.21739130434782608,
+    "frac_area_in_pooled": 0.14973924675631511,
+    "frac_expected_in_crater_matched": 0.12320075830110348,
+    "DR": [
+     1.577298855737228,
+     0.9431881022297207,
+     2.3890997141787236
+    ],
+    "SDR": [
+     1.976898099288555,
+     1.2074282972862445,
+     2.8860069660750596
+    ],
+    "OE_in": [
+     1.764528947269304,
+     1.177457115762334,
+     2.341511127202799
+    ]
+   },
+   "floor_within0.05R_of_peak_radius_stratified": {
+    "n_points": 115,
+    "n_in": 25,
+    "frac_points_in": 0.21739130434782608,
+    "frac_area_in_pooled": 0.14973924675631511,
+    "frac_expected_in_crater_matched": 0.18250737296281108,
+    "DR": [
+     1.577298855737228,
+     0.9431881022297207,
+     2.3890997141787236
+    ],
+    "SDR": [
+     1.2442307486086035,
+     0.8009618580629814,
+     1.7839503759817992
+    ],
+    "OE_in": [
+     1.1911371076067332,
+     0.830371281746963,
+     1.5694563952595715
+    ]
+   },
+   "floor_within0.1R_of_peak": {
+    "n_craters": 111,
+    "n_craters_with_area": 93,
+    "n_craters_with_points": 74,
+    "n_points": 115,
+    "n_in": 52,
+    "frac_points_in": 0.45217391304347826,
+    "frac_area_in_pooled": 0.3073691399396753,
+    "frac_expected_in_crater_matched": 0.26049010088345126,
+    "DR": [
+     1.8599632779590904,
+     1.2995305214169672,
+     2.6728790023025266
+    ],
+    "SDR": [
+     2.343233470332245,
+     1.7169787515294581,
+     3.2426449260672787
+    ],
+    "OE_in": [
+     1.7358583359211432,
+     1.4404167692494192,
+     2.081747615202086
+    ]
+   },
+   "floor_within0.1R_of_peak_radius_stratified": {
+    "n_points": 115,
+    "n_in": 52,
+    "frac_points_in": 0.45217391304347826,
+    "frac_area_in_pooled": 0.3073691399396753,
+    "frac_expected_in_crater_matched": 0.3544416729875122,
+    "DR": [
+     1.8599632779590904,
+     1.2995305214169672,
+     2.6728790023025266
+    ],
+    "SDR": [
+     1.503327160244406,
+     1.1583690023497306,
+     1.9584267520134786
+    ],
+    "OE_in": [
+     1.275735748655631,
+     1.093625228025782,
+     1.4761968712447844
+    ]
+   },
+   "floor_within3km_of_wall_radius_stratified": {
+    "n_points": 144,
+    "n_in": 20,
+    "frac_points_in": 0.1388888888888889,
+    "frac_area_in_pooled": 0.14240602930502547,
+    "frac_expected_in_crater_matched": 0.1424772607413387,
+    "DR": [
+     0.9713184817500383,
+     0.5004340253494398,
+     1.541638230876825
+    ],
+    "SDR": [
+     0.9707522345363164,
+     0.591269104529157,
+     1.3920703030436623
+    ],
+    "OE_in": [
+     0.9748144241840503,
+     0.6233861378019456,
+     1.3175336533268394
+    ]
+   },
+   "floor_within3km_of_peak_radius_stratified": {
+    "n_points": 115,
+    "n_in": 31,
+    "frac_points_in": 0.26956521739130435,
+    "frac_area_in_pooled": 0.13422117642351247,
+    "frac_expected_in_crater_matched": 0.2346220919039392,
+    "DR": [
+     2.3805007672901004,
+     1.4621286319589348,
+     3.623340874925297
+    ],
+    "SDR": [
+     1.2038972645855786,
+     0.8137395211344842,
+     1.6846509808561836
+    ],
+    "OE_in": [
+     1.1489336541320747,
+     0.8533001921289012,
+     1.4588382646559308
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "1_province": {
+  "hosts": 23,
+  "hosts_only_lt1km": 17,
+  "hosts_only_lt0p5km": 10,
+  "median_px_of_hosts_only_lt1km": 15.3
+ },
+ "2_abu_nuwas_sinan": {
+  "hosts": 23,
+  "hosts_only_lt1km": 0,
+  "hosts_only_lt0p5km": 0,
+  "median_px_of_hosts_only_lt1km": null
+ },
+ "3_tyagaraja": {
+  "hosts": 19,
+  "hosts_only_lt1km": 0,
+  "hosts_only_lt0p5km": 0,
+  "median_px_of_hosts_only_lt1km": null
+ },
+ "all": {
+  "hosts": 446,
+  "hosts_only_lt1km": 104,
+  "hosts_only_lt0p5km": 49,
+  "median_px_of_hosts_only_lt1km": 15.4
+ },
+ "caloris_rings": [
+  {
+   "km": [
+    0,
+    778
+   ],
+   "n": 454,
+   "hosts": 20,
+   "predicted": 22.4,
+   "ratio": 0.89
+  },
+  {
+   "km": [
+    778,
+    1200
+   ],
+   "n": 567,
+   "hosts": 18,
+   "predicted": 16.2,
+   "ratio": 1.11
+  },
+  {
+   "km": [
+    1200,
+    1600
+   ],
+   "n": 935,
+   "hosts": 20,
+   "predicted": 18.0,
+   "ratio": 1.11
+  },
+  {
+   "km": [
+    1600,
+    2000
+   ],
+   "n": 1507,
+   "hosts": 49,
+   "predicted": 22.9,
+   "ratio": 2.14
+  },
+  {
+   "km": [
+    2000,
+    2400
+   ],
+   "n": 1844,
+   "hosts": 29,
+   "predicted": 30.0,
+   "ratio": 0.97
+  },
+  {
+   "km": [
+    2400,
+    2800
+   ],
+   "n": 2245,
+   "hosts": 18,
+   "predicted": 26.7,
+   "ratio": 0.67
+  },
+  {
+   "km": [
+    2800,
+    3500
+   ],
+   "n": 4451,
+   "hosts": 32,
+   "predicted": 45.5,
+   "ratio": 0.7
+  },
+  {
+   "km": [
+    3500,
+    8000
+   ],
+   "n": 19551,
+   "hosts": 260,
+   "predicted": 257.1,
+   "ratio": 1.01
+  }
+ ],
+ "ring_1500_2200_by_azimuth": [
+  {
+   "az": [
+    0,
+    45
+   ],
+   "n": 422,
+   "hosts": 6,
+   "predicted": 7.4
+  },
+  {
+   "az": [
+    45,
+    90
+   ],
+   "n": 331,
+   "hosts": 4,
+   "predicted": 5.7
+  },
+  {
+   "az": [
+    90,
+    135
+   ],
+   "n": 347,
+   "hosts": 17,
+   "predicted": 5.6
+  },
+  {
+   "az": [
+    135,
+    180
+   ],
+   "n": 314,
+   "hosts": 3,
+   "predicted": 4.0
+  },
+  {
+   "az": [
+    180,
+    225
+   ],
+   "n": 298,
+   "hosts": 2,
+   "predicted": 3.7
+  },
+  {
+   "az": [
+    225,
+    270
+   ],
+   "n": 275,
+   "hosts": 2,
+   "predicted": 3.0
+  },
+  {
+   "az": [
+    270,
+    315
+   ],
+   "n": 345,
+   "hosts": 10,
+   "predicted": 6.8
+  },
+  {
+   "az": [
+    315,
+    360
+   ],
+   "n": 386,
+   "hosts": 27,
+   "predicted": 6.5
+  }
+ ]
+}

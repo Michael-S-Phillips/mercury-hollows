@@ -1,0 +1,717 @@
+{
+ "rows_tracedonly_r3_v3": {
+  "all": {
+   "pooled_hollows": {
+    "ratio": 7.17,
+    "ci": [
+     4.33,
+     12.17
+    ],
+    "dens_a": 29.81,
+    "dens_b": 4.16,
+    "N": 111,
+    "n_a": 1448,
+    "n_b": 665
+   },
+   "pooled_fields": {
+    "ratio": 3.46,
+    "ci": [
+     2.53,
+     4.93
+    ],
+    "dens_a": 2.16,
+    "dens_b": 0.63,
+    "N": 111,
+    "n_a": 105,
+    "n_b": 100
+   },
+   "floor_vs_wall": {
+    "ratio": 1.63,
+    "ci": [
+     0.98,
+     2.73
+    ],
+    "dens_a": 6.8,
+    "dens_b": 4.16,
+    "N": 111,
+    "n_a": 1175,
+    "n_b": 665
+   },
+   "crater_level": {
+    "N": 88,
+    "presence_obs": 76,
+    "presence_exp": 62.7,
+    "presence_z": 4.4,
+    "presence_p": 5.247708090451749e-06,
+    "count_obs_over_exp": 2.59,
+    "ci": [
+     2.16,
+     3.43
+    ],
+    "median_area_frac": 0.15
+   },
+   "crater_level_fields": {
+    "N": 88,
+    "presence_obs": 76,
+    "presence_exp": 26.9,
+    "presence_z": 13.5,
+    "presence_p": 9.185878040168847e-42,
+    "count_obs_over_exp": 2.81,
+    "ci": [
+     2.3,
+     3.4
+    ],
+    "median_area_frac": 0.15
+   },
+   "eqwall_vs_polewall": {
+    "ratio": 1.8,
+    "ci": [
+     1.08,
+     3.11
+    ],
+    "dens_a": 5.31,
+    "dens_b": 2.94,
+    "N": 111,
+    "n_a": 437,
+    "n_b": 228
+   },
+   "floor_in_vs_wall": {
+    "ratio": 1.64,
+    "ci": [
+     0.97,
+     2.94
+    ],
+    "dens_a": 6.81,
+    "dens_b": 4.16,
+    "N": 111,
+    "n_a": 401,
+    "n_b": 665
+   },
+   "floor_out_vs_wall": {
+    "ratio": 1.63,
+    "ci": [
+     0.96,
+     2.71
+    ],
+    "dens_a": 6.79,
+    "dens_b": 4.16,
+    "N": 111,
+    "n_a": 774,
+    "n_b": 665
+   },
+   "floor_vs_wall_crater": {
+    "N": 105,
+    "presence_obs": 91,
+    "presence_exp": 92.1,
+    "presence_z": -0.4,
+    "presence_p": 0.6625582275925728,
+    "count_obs_over_exp": 1.38,
+    "ci": [
+     1.18,
+     1.58
+    ],
+    "median_area_frac": 0.41
+   },
+   "peak_vs_eqwall": {
+    "ratio": 5.62,
+    "ci": [
+     3.08,
+     10.5
+    ],
+    "dens_a": 29.81,
+    "dens_b": 5.31,
+    "N": 111,
+    "n_a": 1448,
+    "n_b": 437
+   },
+   "peak_vs_eqwall_crater": {
+    "N": 87,
+    "presence_obs": 76,
+    "presence_exp": 66.9,
+    "presence_z": 3.2,
+    "presence_p": 0.0005787553242135411,
+    "count_obs_over_exp": 1.89,
+    "ci": [
+     1.61,
+     2.4
+    ],
+    "median_area_frac": 0.26
+   },
+   "slope_stratified": {
+    "s0": {
+     "dens_peak": 30.38,
+     "dens_wall": 4.78,
+     "n_peak": 1299,
+     "n_wall": 464,
+     "A_peak": 42760,
+     "A_wall": 97024
+    },
+    "s1": {
+     "dens_peak": 25.65,
+     "dens_wall": 3.3,
+     "n_peak": 146,
+     "n_wall": 187,
+     "A_peak": 5692,
+     "A_wall": 56613
+    },
+    "s2": {
+     "dens_peak": 25.8,
+     "dens_wall": 2.25,
+     "n_peak": 3,
+     "n_wall": 14,
+     "A_peak": 116,
+     "A_wall": 6224
+    },
+    "MH_ratio": 6.51
+   }
+  },
+  "isolated": {
+   "pooled_hollows": {
+    "ratio": 14.12,
+    "ci": [
+     7.37,
+     28.38
+    ],
+    "dens_a": 30.96,
+    "dens_b": 2.19,
+    "N": 67,
+    "n_a": 1212,
+    "n_b": 230
+   },
+   "pooled_fields": {
+    "ratio": 3.78,
+    "ci": [
+     2.53,
+     5.9
+    ],
+    "dens_a": 1.84,
+    "dens_b": 0.49,
+    "N": 67,
+    "n_a": 72,
+    "n_b": 51
+   },
+   "crater_level": {
+    "N": 54,
+    "presence_obs": 48,
+    "presence_exp": 39.2,
+    "presence_z": 3.9,
+    "presence_p": 5.143008651382496e-05,
+    "count_obs_over_exp": 2.54,
+    "ci": [
+     2.09,
+     3.65
+    ],
+    "median_area_frac": 0.16
+   }
+  },
+  "nested": {
+   "pooled_hollows": {
+    "ratio": 3.17,
+    "ci": [
+     1.75,
+     6.44
+    ],
+    "dens_a": 25.06,
+    "dens_b": 7.91,
+    "N": 44,
+    "n_a": 236,
+    "n_b": 435
+   },
+   "pooled_fields": {
+    "ratio": 3.93,
+    "ci": [
+     2.41,
+     6.78
+    ],
+    "dens_a": 3.5,
+    "dens_b": 0.89,
+    "N": 44,
+    "n_a": 33,
+    "n_b": 49
+   },
+   "crater_level": {
+    "N": 34,
+    "presence_obs": 28,
+    "presence_exp": 23.5,
+    "presence_z": 2.3,
+    "presence_p": 0.012020920882468065,
+    "count_obs_over_exp": 2.87,
+    "ci": [
+     2.25,
+     3.68
+    ],
+    "median_area_frac": 0.13
+   }
+  },
+  "central_peak": {
+   "pooled_hollows": {
+    "ratio": 6.23,
+    "ci": [
+     3.62,
+     11.2
+    ],
+    "dens_a": 51.52,
+    "dens_b": 8.27,
+    "N": 46,
+    "n_a": 293,
+    "n_b": 309
+   },
+   "pooled_fields": {
+    "ratio": 5.42,
+    "ci": [
+     3.91,
+     7.93
+    ],
+    "dens_a": 5.8,
+    "dens_b": 1.07,
+    "N": 46,
+    "n_a": 33,
+    "n_b": 40
+   },
+   "crater_level": {
+    "N": 43,
+    "presence_obs": 33,
+    "presence_exp": 27.6,
+    "presence_z": 2.2,
+    "presence_p": 0.01304301775186956,
+    "count_obs_over_exp": 3.54,
+    "ci": [
+     2.66,
+     4.49
+    ],
+    "median_area_frac": 0.12
+   }
+  },
+  "ring": {
+   "pooled_hollows": {
+    "ratio": 23.43,
+    "ci": [
+     12.0,
+     52.58
+    ],
+    "dens_a": 26.87,
+    "dens_b": 1.15,
+    "N": 41,
+    "n_a": 1123,
+    "n_b": 110
+   },
+   "pooled_fields": {
+    "ratio": 4.88,
+    "ci": [
+     3.08,
+     8.61
+    ],
+    "dens_a": 1.63,
+    "dens_b": 0.33,
+    "N": 41,
+    "n_a": 68,
+    "n_b": 32
+   },
+   "crater_level": {
+    "N": 40,
+    "presence_obs": 39,
+    "presence_exp": 32.8,
+    "presence_z": 3.8,
+    "presence_p": 8.340555092664026e-05,
+    "count_obs_over_exp": 2.41,
+    "ci": [
+     1.99,
+     3.34
+    ],
+    "median_area_frac": 0.18
+   }
+  },
+  "unclassified": {
+   "pooled_hollows": {
+    "ratio": 3.18,
+    "ci": [
+     0.63,
+     15.13
+    ],
+    "dens_a": 29.46,
+    "dens_b": 9.26,
+    "N": 24,
+    "n_a": 32,
+    "n_b": 246
+   },
+   "pooled_fields": {
+    "ratio": 3.49,
+    "ci": [
+     1.3,
+     48.54
+    ],
+    "dens_a": 3.68,
+    "dens_b": 1.05,
+    "N": 24,
+    "n_a": 4,
+    "n_b": 28
+   },
+   "crater_level": {
+    "N": 5,
+    "presence_obs": 4,
+    "presence_exp": 2.3,
+    "presence_z": 2.4,
+    "presence_p": 0.00851290251834469,
+    "count_obs_over_exp": 3.46,
+    "ci": [
+     2.09,
+     10.75
+    ],
+    "median_area_frac": 0.08
+   }
+  },
+  "filled_y": {
+   "pooled_hollows": {
+    "ratio": 1.34,
+    "ci": [
+     0.48,
+     12.8
+    ],
+    "dens_a": 12.4,
+    "dens_b": 9.25,
+    "N": 24,
+    "n_a": 11,
+    "n_b": 244
+   },
+   "pooled_fields": {
+    "ratio": 5.13,
+    "ci": [
+     2.35,
+     45.14
+    ],
+    "dens_a": 5.64,
+    "dens_b": 1.1,
+    "N": 24,
+    "n_a": 5,
+    "n_b": 29
+   },
+   "crater_level": {
+    "N": 5,
+    "presence_obs": 4,
+    "presence_exp": 2.0,
+    "presence_z": 2.3,
+    "presence_p": 0.009539972870999598,
+    "count_obs_over_exp": 3.21,
+    "ci": [
+     1.79,
+     12.55
+    ],
+    "median_area_frac": 0.08
+   }
+  },
+  "filled_n": {
+   "pooled_hollows": {
+    "ratio": 9.56,
+    "ci": [
+     5.85,
+     16.02
+    ],
+    "dens_a": 30.14,
+    "dens_b": 3.15,
+    "N": 87,
+    "n_a": 1437,
+    "n_b": 421
+   },
+   "pooled_fields": {
+    "ratio": 3.94,
+    "ci": [
+     2.79,
+     5.73
+    ],
+    "dens_a": 2.1,
+    "dens_b": 0.53,
+    "N": 87,
+    "n_a": 100,
+    "n_b": 71
+   },
+   "crater_level": {
+    "N": 83,
+    "presence_obs": 72,
+    "presence_exp": 60.6,
+    "presence_z": 3.9,
+    "presence_p": 4.592749435366538e-05,
+    "count_obs_over_exp": 2.59,
+    "ci": [
+     2.15,
+     3.47
+    ],
+    "median_area_frac": 0.15
+   }
+  },
+  "fresh_s": {
+   "pooled_hollows": {
+    "ratio": 6.48,
+    "ci": [
+     3.7,
+     13.44
+    ],
+    "dens_a": 22.16,
+    "dens_b": 3.42,
+    "N": 37,
+    "n_a": 487,
+    "n_b": 185
+   },
+   "pooled_fields": {
+    "ratio": 3.17,
+    "ci": [
+     2.08,
+     5.38
+    ],
+    "dens_a": 1.82,
+    "dens_b": 0.57,
+    "N": 37,
+    "n_a": 40,
+    "n_b": 31
+   },
+   "crater_level": {
+    "N": 37,
+    "presence_obs": 31,
+    "presence_exp": 27.2,
+    "presence_z": 2.1,
+    "presence_p": 0.018237448176307007,
+    "count_obs_over_exp": 2.91,
+    "ci": [
+     2.38,
+     3.59
+    ],
+    "median_area_frac": 0.16
+   }
+  },
+  "degraded_d": {
+   "pooled_hollows": {
+    "ratio": 22.55,
+    "ci": [
+     7.96,
+     82.29
+    ],
+    "dens_a": 36.98,
+    "dens_b": 1.64,
+    "N": 22,
+    "n_a": 673,
+    "n_b": 64
+   },
+   "pooled_fields": {
+    "ratio": 3.16,
+    "ci": [
+     1.58,
+     7.76
+    ],
+    "dens_a": 1.54,
+    "dens_b": 0.49,
+    "N": 22,
+    "n_a": 28,
+    "n_b": 19
+   },
+   "crater_level": {
+    "N": 19,
+    "presence_obs": 17,
+    "presence_exp": 13.5,
+    "presence_z": 2.8,
+    "presence_p": 0.0025437616674170633,
+    "count_obs_over_exp": 2.11,
+    "ci": [
+     1.81,
+     3.62
+    ],
+    "median_area_frac": 0.16
+   }
+  },
+  "D30_60": {
+   "pooled_hollows": {
+    "ratio": 3.71,
+    "ci": [
+     2.02,
+     7.98
+    ],
+    "dens_a": 57.07,
+    "dens_b": 15.37,
+    "N": 24,
+    "n_a": 142,
+    "n_b": 224
+   },
+   "pooled_fields": {
+    "ratio": 5.56,
+    "ci": [
+     3.9,
+     7.95
+    ],
+    "dens_a": 7.64,
+    "dens_b": 1.37,
+    "N": 24,
+    "n_a": 19,
+    "n_b": 20
+   },
+   "crater_level": {
+    "N": 23,
+    "presence_obs": 19,
+    "presence_exp": 17.0,
+    "presence_z": 1.2,
+    "presence_p": 0.12448226675397045,
+    "count_obs_over_exp": 2.89,
+    "ci": [
+     1.89,
+     4.1
+    ],
+    "median_area_frac": 0.14
+   }
+  },
+  "D60_120": {
+   "pooled_hollows": {
+    "ratio": 13.27,
+    "ci": [
+     7.71,
+     24.83
+    ],
+    "dens_a": 39.31,
+    "dens_b": 2.96,
+    "N": 53,
+    "n_a": 329,
+    "n_b": 172
+   },
+   "pooled_fields": {
+    "ratio": 5.9,
+    "ci": [
+     3.82,
+     9.98
+    ],
+    "dens_a": 4.06,
+    "dens_b": 0.69,
+    "N": 53,
+    "n_a": 34,
+    "n_b": 40
+   },
+   "crater_level": {
+    "N": 39,
+    "presence_obs": 33,
+    "presence_exp": 22.4,
+    "presence_z": 4.8,
+    "presence_p": 6.26973263048076e-07,
+    "count_obs_over_exp": 4.49,
+    "ci": [
+     3.69,
+     5.59
+    ],
+    "median_area_frac": 0.11
+   }
+  },
+  "D120_250": {
+   "pooled_hollows": {
+    "ratio": 8.4,
+    "ci": [
+     3.33,
+     28.86
+    ],
+    "dens_a": 25.91,
+    "dens_b": 3.08,
+    "N": 34,
+    "n_a": 977,
+    "n_b": 269
+   },
+   "pooled_fields": {
+    "ratio": 3.01,
+    "ci": [
+     1.83,
+     5.07
+    ],
+    "dens_a": 1.38,
+    "dens_b": 0.46,
+    "N": 34,
+    "n_a": 52,
+    "n_b": 40
+   },
+   "crater_level": {
+    "N": 26,
+    "presence_obs": 24,
+    "presence_exp": 23.3,
+    "presence_z": 0.6,
+    "presence_p": 0.27185252548996364,
+    "count_obs_over_exp": 2.24,
+    "ci": [
+     1.88,
+     3.04
+    ],
+    "median_area_frac": 0.28
+   }
+  },
+  "isolated_central_peak": {
+   "pooled_hollows": {
+    "ratio": 13.02,
+    "ci": [
+     5.7,
+     35.51
+    ],
+    "dens_a": 55.97,
+    "dens_b": 4.3,
+    "N": 23,
+    "n_a": 202,
+    "n_b": 98
+   },
+   "pooled_fields": {
+    "ratio": 5.69,
+    "ci": [
+     3.56,
+     10.32
+    ],
+    "dens_a": 4.99,
+    "dens_b": 0.88,
+    "N": 23,
+    "n_a": 18,
+    "n_b": 20
+   },
+   "crater_level": {
+    "N": 22,
+    "presence_obs": 18,
+    "presence_exp": 13.3,
+    "presence_z": 2.7,
+    "presence_p": 0.0036909834875008905,
+    "count_obs_over_exp": 4.57,
+    "ci": [
+     3.55,
+     6.0
+    ],
+    "median_area_frac": 0.11
+   }
+  },
+  "top_peak_craters": [
+   {
+    "uid": 200309,
+    "name": "Praxiteles",
+    "D": 183.275445,
+    "n_peak": 279,
+    "n_wall": 0,
+    "A_peak": 4213.475568104135,
+    "A_wall": 2713.293610361078
+   },
+   {
+    "uid": 200544,
+    "name": "Scarlatti",
+    "D": 126.338961,
+    "n_peak": 112,
+    "n_wall": 1,
+    "A_peak": 1958.186418520536,
+    "A_wall": 1977.880994152037
+   },
+   {
+    "uid": 200334,
+    "name": "Larrocha",
+    "D": 172.159874,
+    "n_peak": 94,
+    "n_wall": 7,
+    "A_peak": 3170.627037391375,
+    "A_wall": 5236.334917495375
+   }
+  ],
+  "drop_top3": {
+   "ratio": 5.6,
+   "ci": [
+    3.6,
+    9.46
+   ],
+   "dens_a": 24.55,
+   "dens_b": 4.38,
+   "N": 108,
+   "n_a": 963,
+   "n_b": 657
+  }
+ }
+}

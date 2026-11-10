@@ -1,0 +1,38 @@
+{
+ "1.0-2.0R": {
+  "area_km2": 4270408.0,
+  "area_w_km2": 475597.125,
+  "mean_C": 0.11137042194604874,
+  "n_hollows": 543,
+  "n_fields": 48,
+  "density_per_1000km2_w": 1.141722629210595,
+  "all_terrain_incl_craters": {
+   "area_w_km2": 661433.75,
+   "n_hollows": 1052
+  }
+ },
+ "1.0-1.5R": {
+  "area_km2": 2017356.0,
+  "area_w_km2": 220946.21875,
+  "mean_C": 0.10952267050743103,
+  "n_hollows": 241,
+  "n_fields": 27,
+  "density_per_1000km2_w": 1.090763179218246,
+  "all_terrain_incl_craters": {
+   "area_w_km2": 273077.84375,
+   "n_hollows": 382
+  }
+ },
+ "1.5-2.0R": {
+  "area_km2": 2253052.0,
+  "area_w_km2": 254650.9375,
+  "mean_C": 0.11302488297224045,
+  "n_hollows": 302,
+  "n_fields": 22,
+  "density_per_1000km2_w": 1.1859371222617234,
+  "all_terrain_incl_craters": {
+   "area_w_km2": 388355.53125,
+   "n_hollows": 670
+  }
+ }
+}

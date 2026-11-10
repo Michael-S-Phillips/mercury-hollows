@@ -1,0 +1,468 @@
+{
+ "created": "2026-11-09",
+ "note": "g20 (9 Nov 2026), for Michael: where is hosting clustered beyond the joint model? Uses the paper's joint model (thinned presence,\ncomplementary log-log, seven physical groups, g4_completeness/g1/summary_model/v3r/out/improved_coefs.csv 'thinned_presence_all')\nto give each of the 31,554 craters a predicted probability P of hosting (>= 1 hollow within 0.9 R). On a 2-degree grid, counts observed\nhosts O and expected hosts E = sum P within 500 km (the radius of the regional hosting fraction), z = (O - E) / sqrt(sum P(1 - P)).\nFamily-wise threshold: 1,000 data sets simulated from P (Bernoulli), 95th percentile of the maximum z (and of the minimum) over nodes\nwith E >= 2. Significant nodes are grouped into clusters (8-connected, longitude wraps). Writes grid.npz, clusters.json, craters_P.csv.",
+ "n_craters": 31554,
+ "n_hosts": 446,
+ "sum_P": 438.8,
+ "radius_km": 300.0,
+ "grid_deg": 2,
+ "E_min": 2.0,
+ "nsim": 1000,
+ "z_threshold_excess": 5.08,
+ "z_threshold_deficit": -2.91,
+ "hosts_within_500km_of_excess_nodes": 72,
+ "expected_there": 24.2,
+ "excess": [
+  {
+   "peak_lat": 59.0,
+   "peak_lon": 119.0,
+   "z_peak": 8.902948334263629,
+   "O_peak": 16,
+   "E_peak": 2.5,
+   "OE_peak": 6.29,
+   "n_nodes": 51,
+   "lat_range": [
+    51.0,
+    65.0
+   ],
+   "O_union": 24,
+   "E_union": 7.2,
+   "top_hosts": [
+    {
+     "id": "200017",
+     "name": " ",
+     "D": 87.8,
+     "lat": 53.9,
+     "lon": 113.8,
+     "n09": 13,
+     "P": 0.131
+    },
+    {
+     "id": "201101",
+     "name": " ",
+     "D": 83.0,
+     "lat": 62.9,
+     "lon": 118.7,
+     "n09": 13,
+     "P": 0.2
+    },
+    {
+     "id": "107243",
+     "name": " ",
+     "D": 19.0,
+     "lat": 57.1,
+     "lon": 121.5,
+     "n09": 10,
+     "P": 0.025
+    },
+    {
+     "id": "200664",
+     "name": " ",
+     "D": 110.7,
+     "lat": 55.3,
+     "lon": 108.0,
+     "n09": 7,
+     "P": 0.164
+    },
+    {
+     "id": "200532",
+     "name": "Kofi",
+     "D": 127.7,
+     "lat": 56.7,
+     "lon": 118.2,
+     "n09": 3,
+     "P": 0.006
+    },
+    {
+     "id": "200761",
+     "name": " ",
+     "D": 102.2,
+     "lat": 65.8,
+     "lon": 118.2,
+     "n09": 3,
+     "P": 0.148
+    },
+    {
+     "id": "201427",
+     "name": " ",
+     "D": 70.0,
+     "lat": 64.5,
+     "lon": 121.8,
+     "n09": 3,
+     "P": 0.097
+    },
+    {
+     "id": "611029",
+     "name": "",
+     "D": 6.8,
+     "lat": 55.1,
+     "lon": 115.8,
+     "n09": 3,
+     "P": 0.008
+    }
+   ],
+   "lon_range_text": "105-125E"
+  },
+  {
+   "peak_lat": 39.0,
+   "peak_lon": 121.0,
+   "z_peak": 6.638662385436964,
+   "O_peak": 10,
+   "E_peak": 2.1,
+   "OE_peak": 4.72,
+   "n_nodes": 12,
+   "lat_range": [
+    39.0,
+    45.0
+   ],
+   "O_union": 13,
+   "E_union": 4.7,
+   "top_hosts": [
+    {
+     "id": "104434",
+     "name": " ",
+     "D": 14.9,
+     "lat": 41.2,
+     "lon": 123.8,
+     "n09": 25,
+     "P": 0.119
+    },
+    {
+     "id": "113972",
+     "name": " ",
+     "D": 20.2,
+     "lat": 40.9,
+     "lon": 127.5,
+     "n09": 6,
+     "P": 0.007
+    },
+    {
+     "id": "606980",
+     "name": "",
+     "D": 5.4,
+     "lat": 42.9,
+     "lon": 115.3,
+     "n09": 4,
+     "P": 0.013
+    },
+    {
+     "id": "104039",
+     "name": " ",
+     "D": 19.6,
+     "lat": 34.4,
+     "lon": 119.8,
+     "n09": 3,
+     "P": 0.01
+    },
+    {
+     "id": "200041",
+     "name": " ",
+     "D": 91.2,
+     "lat": 42.5,
+     "lon": 121.6,
+     "n09": 2,
+     "P": 0.202
+    },
+    {
+     "id": "104444",
+     "name": " ",
+     "D": 14.8,
+     "lat": 41.6,
+     "lon": 123.0,
+     "n09": 2,
+     "P": 0.134
+    },
+    {
+     "id": "105121",
+     "name": " ",
+     "D": 10.9,
+     "lat": 39.6,
+     "lon": 125.8,
+     "n09": 2,
+     "P": 0.024
+    },
+    {
+     "id": "201269",
+     "name": " ",
+     "D": 75.4,
+     "lat": 40.8,
+     "lon": 126.1,
+     "n09": 1,
+     "P": 0.083
+    }
+   ],
+   "lon_range_text": "119-125E"
+  },
+  {
+   "peak_lat": -1.0,
+   "peak_lon": 201.0,
+   "z_peak": 6.58660003016043,
+   "O_peak": 12,
+   "E_peak": 2.5,
+   "OE_peak": 4.79,
+   "n_nodes": 6,
+   "lat_range": [
+    -1.0,
+    3.0
+   ],
+   "O_union": 12,
+   "E_union": 3.4,
+   "top_hosts": [
+    {
+     "id": "201628",
+     "name": " ",
+     "D": 64.0,
+     "lat": 0.5,
+     "lon": 198.0,
+     "n09": 27,
+     "P": 0.112
+    },
+    {
+     "id": "201083",
+     "name": " ",
+     "D": 83.9,
+     "lat": 2.1,
+     "lon": 198.5,
+     "n09": 8,
+     "P": 0.051
+    },
+    {
+     "id": "200733",
+     "name": " ",
+     "D": 104.0,
+     "lat": 2.4,
+     "lon": 195.0,
+     "n09": 6,
+     "P": 0.041
+    },
+    {
+     "id": "110812",
+     "name": " ",
+     "D": 33.6,
+     "lat": 4.8,
+     "lon": 202.5,
+     "n09": 3,
+     "P": 0.547
+    },
+    {
+     "id": "201213",
+     "name": " ",
+     "D": 78.0,
+     "lat": -0.8,
+     "lon": 204.6,
+     "n09": 2,
+     "P": 0.041
+    },
+    {
+     "id": "200326",
+     "name": " ",
+     "D": 174.8,
+     "lat": 5.4,
+     "lon": 203.5,
+     "n09": 1,
+     "P": 0.225
+    },
+    {
+     "id": "200777",
+     "name": " ",
+     "D": 101.1,
+     "lat": -2.3,
+     "lon": 203.3,
+     "n09": 1,
+     "P": 0.052
+    },
+    {
+     "id": "201993",
+     "name": " ",
+     "D": 56.0,
+     "lat": -3.1,
+     "lon": 198.9,
+     "n09": 1,
+     "P": 0.068
+    }
+   ],
+   "lon_range_text": "199-201E"
+  },
+  {
+   "peak_lat": 13.0,
+   "peak_lon": 327.0,
+   "z_peak": 6.303638618844629,
+   "O_peak": 12,
+   "E_peak": 2.6,
+   "OE_peak": 4.67,
+   "n_nodes": 22,
+   "lat_range": [
+    9.0,
+    19.0
+   ],
+   "O_union": 24,
+   "E_union": 9.7,
+   "top_hosts": [
+    {
+     "id": "200428",
+     "name": "Sinan",
+     "D": 146.0,
+     "lat": 15.7,
+     "lon": 329.4,
+     "n09": 19,
+     "P": 0.12
+    },
+    {
+     "id": "200786",
+     "name": "Yeats",
+     "D": 100.4,
+     "lat": 9.5,
+     "lon": 324.9,
+     "n09": 11,
+     "P": 0.158
+    },
+    {
+     "id": "201410",
+     "name": " ",
+     "D": 70.4,
+     "lat": 13.7,
+     "lon": 329.6,
+     "n09": 10,
+     "P": 0.319
+    },
+    {
+     "id": "113745",
+     "name": " ",
+     "D": 21.0,
+     "lat": 17.0,
+     "lon": 330.1,
+     "n09": 8,
+     "P": 0.05
+    },
+    {
+     "id": "200876",
+     "name": " ",
+     "D": 94.6,
+     "lat": 13.0,
+     "lon": 332.3,
+     "n09": 5,
+     "P": 0.29
+    },
+    {
+     "id": "109746",
+     "name": " ",
+     "D": 41.9,
+     "lat": 14.4,
+     "lon": 333.1,
+     "n09": 4,
+     "P": 0.038
+    },
+    {
+     "id": "109950",
+     "name": " ",
+     "D": 40.1,
+     "lat": 12.3,
+     "lon": 324.5,
+     "n09": 4,
+     "P": 0.212
+    },
+    {
+     "id": "109866",
+     "name": " ",
+     "D": 40.7,
+     "lat": 9.0,
+     "lon": 329.0,
+     "n09": 2,
+     "P": 0.026
+    }
+   ],
+   "lon_range_text": "327-335E"
+  },
+  {
+   "peak_lat": 43.0,
+   "peak_lon": 129.0,
+   "z_peak": 5.34270843136219,
+   "O_peak": 10,
+   "E_peak": 2.4,
+   "OE_peak": 4.1,
+   "n_nodes": 1,
+   "lat_range": [
+    43.0,
+    43.0
+   ],
+   "O_union": 10,
+   "E_union": 2.4,
+   "top_hosts": [
+    {
+     "id": "110247",
+     "name": "Pasch",
+     "D": 37.6,
+     "lat": 46.1,
+     "lon": 134.8,
+     "n09": 54,
+     "P": 0.412
+    },
+    {
+     "id": "104434",
+     "name": " ",
+     "D": 14.9,
+     "lat": 41.2,
+     "lon": 123.8,
+     "n09": 25,
+     "P": 0.119
+    },
+    {
+     "id": "113972",
+     "name": " ",
+     "D": 20.2,
+     "lat": 40.9,
+     "lon": 127.5,
+     "n09": 6,
+     "P": 0.007
+    },
+    {
+     "id": "104125",
+     "name": " ",
+     "D": 18.2,
+     "lat": 43.4,
+     "lon": 131.4,
+     "n09": 3,
+     "P": 0.364
+    },
+    {
+     "id": "200041",
+     "name": " ",
+     "D": 91.2,
+     "lat": 42.5,
+     "lon": 121.6,
+     "n09": 2,
+     "P": 0.202
+    },
+    {
+     "id": "104444",
+     "name": " ",
+     "D": 14.8,
+     "lat": 41.6,
+     "lon": 123.0,
+     "n09": 2,
+     "P": 0.134
+    },
+    {
+     "id": "105121",
+     "name": " ",
+     "D": 10.9,
+     "lat": 39.6,
+     "lon": 125.8,
+     "n09": 2,
+     "P": 0.024
+    },
+    {
+     "id": "201269",
+     "name": " ",
+     "D": 75.4,
+     "lat": 40.8,
+     "lon": 126.1,
+     "n09": 1,
+     "P": 0.083
+    }
+   ],
+   "lon_range_text": "129-129E"
+  }
+ ],
+ "deficit": []
+}

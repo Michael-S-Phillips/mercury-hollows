@@ -1,0 +1,468 @@
+{
+ "created": "2026-11-09",
+ "note": "g25 copy of g20_regional_clusters/clusters.py (9 Nov 2026), with the composition-group joint model (comp_model.py: LRM + MDIS color\nPC1, PC2 and a no-color indicator; coefficients comp_coefs.csv). Otherwise unchanged. Original docstring: g20 (9 Nov 2026), for Michael: where is hosting clustered beyond the joint model? Uses the paper's joint model (thinned presence,\ncomplementary log-log, seven physical groups, g4_completeness/g1/summary_model/v3r/out/improved_coefs.csv 'thinned_presence_all')\nto give each of the 31,554 craters a predicted probability P of hosting (>= 1 hollow within 0.9 R). On a 2-degree grid, counts observed\nhosts O and expected hosts E = sum P within 500 km (the radius of the regional hosting fraction), z = (O - E) / sqrt(sum P(1 - P)).\nFamily-wise threshold: 1,000 data sets simulated from P (Bernoulli), 95th percentile of the maximum z (and of the minimum) over nodes\nwith E >= 2. Significant nodes are grouped into clusters (8-connected, longitude wraps). Writes grid.npz, clusters.json, craters_P.csv.",
+ "n_craters": 31554,
+ "n_hosts": 446,
+ "sum_P": 439.9,
+ "radius_km": 500.0,
+ "grid_deg": 2,
+ "E_min": 2.0,
+ "nsim": 1000,
+ "z_threshold_excess": 5.14,
+ "z_threshold_deficit": -3.22,
+ "hosts_within_500km_of_excess_nodes": 112,
+ "expected_there": 48.8,
+ "excess": [
+  {
+   "peak_lat": 65.0,
+   "peak_lon": 125.0,
+   "z_peak": 9.253058419880498,
+   "O_peak": 23,
+   "E_peak": 5.0,
+   "OE_peak": 4.6,
+   "n_nodes": 243,
+   "lat_range": [
+    45.0,
+    73.0
+   ],
+   "O_union": 55,
+   "E_union": 22.5,
+   "top_hosts": [
+    {
+     "id": "112519",
+     "name": " ",
+     "D": 25.3,
+     "lat": 71.7,
+     "lon": 104.6,
+     "n09": 14,
+     "P": 0.027
+    },
+    {
+     "id": "201101",
+     "name": " ",
+     "D": 83.0,
+     "lat": 62.9,
+     "lon": 118.7,
+     "n09": 13,
+     "P": 0.254
+    },
+    {
+     "id": "200627",
+     "name": "Oskison",
+     "D": 114.9,
+     "lat": 60.4,
+     "lon": 144.9,
+     "n09": 10,
+     "P": 0.915
+    },
+    {
+     "id": "107243",
+     "name": " ",
+     "D": 19.0,
+     "lat": 57.1,
+     "lon": 121.5,
+     "n09": 10,
+     "P": 0.025
+    },
+    {
+     "id": "200981",
+     "name": " ",
+     "D": 88.9,
+     "lat": 68.9,
+     "lon": 147.8,
+     "n09": 5,
+     "P": 0.004
+    },
+    {
+     "id": "200532",
+     "name": "Kofi",
+     "D": 127.7,
+     "lat": 56.7,
+     "lon": 118.2,
+     "n09": 3,
+     "P": 0.007
+    },
+    {
+     "id": "200761",
+     "name": " ",
+     "D": 102.2,
+     "lat": 65.8,
+     "lon": 118.2,
+     "n09": 3,
+     "P": 0.181
+    },
+    {
+     "id": "201427",
+     "name": " ",
+     "D": 70.0,
+     "lat": 64.5,
+     "lon": 121.8,
+     "n09": 3,
+     "P": 0.116
+    }
+   ],
+   "lon_range_text": "97-145E"
+  },
+  {
+   "peak_lat": 13.0,
+   "peak_lon": 329.0,
+   "z_peak": 5.637194068367901,
+   "O_peak": 23,
+   "E_peak": 8.8,
+   "OE_peak": 2.61,
+   "n_nodes": 5,
+   "lat_range": [
+    11.0,
+    17.0
+   ],
+   "O_union": 28,
+   "E_union": 14.1,
+   "top_hosts": [
+    {
+     "id": "200577",
+     "name": "Abu Nuwas",
+     "D": 121.9,
+     "lat": 17.6,
+     "lon": 338.8,
+     "n09": 23,
+     "P": 0.454
+    },
+    {
+     "id": "201006",
+     "name": "Asvaghosa",
+     "D": 87.4,
+     "lat": 10.6,
+     "lon": 338.5,
+     "n09": 21,
+     "P": 0.632
+    },
+    {
+     "id": "200428",
+     "name": "Sinan",
+     "D": 146.0,
+     "lat": 15.7,
+     "lon": 329.4,
+     "n09": 19,
+     "P": 0.124
+    },
+    {
+     "id": "201058",
+     "name": " ",
+     "D": 85.2,
+     "lat": 5.0,
+     "lon": 334.6,
+     "n09": 15,
+     "P": 0.11
+    },
+    {
+     "id": "200786",
+     "name": "Yeats",
+     "D": 100.4,
+     "lat": 9.5,
+     "lon": 324.9,
+     "n09": 11,
+     "P": 0.173
+    },
+    {
+     "id": "201410",
+     "name": " ",
+     "D": 70.4,
+     "lat": 13.7,
+     "lon": 329.6,
+     "n09": 10,
+     "P": 0.296
+    },
+    {
+     "id": "113745",
+     "name": " ",
+     "D": 21.0,
+     "lat": 17.0,
+     "lon": 330.1,
+     "n09": 8,
+     "P": 0.068
+    },
+    {
+     "id": "600745",
+     "name": "",
+     "D": 8.2,
+     "lat": 22.1,
+     "lon": 328.8,
+     "n09": 6,
+     "P": 0.639
+    }
+   ],
+   "lon_range_text": "329-333E"
+  },
+  {
+   "peak_lat": 7.0,
+   "peak_lon": 329.0,
+   "z_peak": 5.6045840448932465,
+   "O_peak": 19,
+   "E_peak": 6.5,
+   "OE_peak": 2.93,
+   "n_nodes": 2,
+   "lat_range": [
+    7.0,
+    7.0
+   ],
+   "O_union": 20,
+   "E_union": 7.0,
+   "top_hosts": [
+    {
+     "id": "201006",
+     "name": "Asvaghosa",
+     "D": 87.4,
+     "lat": 10.6,
+     "lon": 338.5,
+     "n09": 21,
+     "P": 0.632
+    },
+    {
+     "id": "200428",
+     "name": "Sinan",
+     "D": 146.0,
+     "lat": 15.7,
+     "lon": 329.4,
+     "n09": 19,
+     "P": 0.124
+    },
+    {
+     "id": "201058",
+     "name": " ",
+     "D": 85.2,
+     "lat": 5.0,
+     "lon": 334.6,
+     "n09": 15,
+     "P": 0.11
+    },
+    {
+     "id": "200786",
+     "name": "Yeats",
+     "D": 100.4,
+     "lat": 9.5,
+     "lon": 324.9,
+     "n09": 11,
+     "P": 0.173
+    },
+    {
+     "id": "201410",
+     "name": " ",
+     "D": 70.4,
+     "lat": 13.7,
+     "lon": 329.6,
+     "n09": 10,
+     "P": 0.296
+    },
+    {
+     "id": "113745",
+     "name": " ",
+     "D": 21.0,
+     "lat": 17.0,
+     "lon": 330.1,
+     "n09": 8,
+     "P": 0.068
+    },
+    {
+     "id": "200841",
+     "name": "Lu Hsun",
+     "D": 97.0,
+     "lat": -0.0,
+     "lon": 336.2,
+     "n09": 8,
+     "P": 0.233
+    },
+    {
+     "id": "200876",
+     "name": " ",
+     "D": 94.6,
+     "lat": 13.0,
+     "lon": 332.3,
+     "n09": 5,
+     "P": 0.317
+    }
+   ],
+   "lon_range_text": "327-329E"
+  },
+  {
+   "peak_lat": 7.0,
+   "peak_lon": 203.0,
+   "z_peak": 5.5836672486745185,
+   "O_peak": 19,
+   "E_peak": 6.7,
+   "OE_peak": 2.86,
+   "n_nodes": 3,
+   "lat_range": [
+    7.0,
+    7.0
+   ],
+   "O_union": 22,
+   "E_union": 8.8,
+   "top_hosts": [
+    {
+     "id": "200690",
+     "name": "Tyagaraja",
+     "D": 107.9,
+     "lat": 3.9,
+     "lon": 211.1,
+     "n09": 83,
+     "P": 1.0
+    },
+    {
+     "id": "201628",
+     "name": " ",
+     "D": 64.0,
+     "lat": 0.5,
+     "lon": 198.0,
+     "n09": 27,
+     "P": 0.118
+    },
+    {
+     "id": "200653",
+     "name": " ",
+     "D": 111.7,
+     "lat": 17.8,
+     "lon": 207.3,
+     "n09": 12,
+     "P": 0.193
+    },
+    {
+     "id": "201083",
+     "name": " ",
+     "D": 83.9,
+     "lat": 2.1,
+     "lon": 198.5,
+     "n09": 8,
+     "P": 0.054
+    },
+    {
+     "id": "200733",
+     "name": " ",
+     "D": 104.0,
+     "lat": 2.4,
+     "lon": 195.0,
+     "n09": 6,
+     "P": 0.043
+    },
+    {
+     "id": "110812",
+     "name": " ",
+     "D": 33.6,
+     "lat": 4.8,
+     "lon": 202.5,
+     "n09": 3,
+     "P": 0.616
+    },
+    {
+     "id": "201213",
+     "name": " ",
+     "D": 78.0,
+     "lat": -0.8,
+     "lon": 204.6,
+     "n09": 2,
+     "P": 0.045
+    },
+    {
+     "id": "201505",
+     "name": " ",
+     "D": 67.8,
+     "lat": 11.7,
+     "lon": 199.3,
+     "n09": 2,
+     "P": 0.174
+    }
+   ],
+   "lon_range_text": "203-207E"
+  },
+  {
+   "peak_lat": 9.0,
+   "peak_lon": 333.0,
+   "z_peak": 5.444112935196736,
+   "O_peak": 19,
+   "E_peak": 6.7,
+   "OE_peak": 2.83,
+   "n_nodes": 2,
+   "lat_range": [
+    9.0,
+    11.0
+   ],
+   "O_union": 20,
+   "E_union": 8.0,
+   "top_hosts": [
+    {
+     "id": "200577",
+     "name": "Abu Nuwas",
+     "D": 121.9,
+     "lat": 17.6,
+     "lon": 338.8,
+     "n09": 23,
+     "P": 0.454
+    },
+    {
+     "id": "201006",
+     "name": "Asvaghosa",
+     "D": 87.4,
+     "lat": 10.6,
+     "lon": 338.5,
+     "n09": 21,
+     "P": 0.632
+    },
+    {
+     "id": "200428",
+     "name": "Sinan",
+     "D": 146.0,
+     "lat": 15.7,
+     "lon": 329.4,
+     "n09": 19,
+     "P": 0.124
+    },
+    {
+     "id": "201058",
+     "name": " ",
+     "D": 85.2,
+     "lat": 5.0,
+     "lon": 334.6,
+     "n09": 15,
+     "P": 0.11
+    },
+    {
+     "id": "200786",
+     "name": "Yeats",
+     "D": 100.4,
+     "lat": 9.5,
+     "lon": 324.9,
+     "n09": 11,
+     "P": 0.173
+    },
+    {
+     "id": "201410",
+     "name": " ",
+     "D": 70.4,
+     "lat": 13.7,
+     "lon": 329.6,
+     "n09": 10,
+     "P": 0.296
+    },
+    {
+     "id": "200841",
+     "name": "Lu Hsun",
+     "D": 97.0,
+     "lat": -0.0,
+     "lon": 336.2,
+     "n09": 8,
+     "P": 0.233
+    },
+    {
+     "id": "113745",
+     "name": " ",
+     "D": 21.0,
+     "lat": 17.0,
+     "lon": 330.1,
+     "n09": 8,
+     "P": 0.068
+    }
+   ],
+   "lon_range_text": "333-335E"
+  }
+ ],
+ "deficit": []
+}

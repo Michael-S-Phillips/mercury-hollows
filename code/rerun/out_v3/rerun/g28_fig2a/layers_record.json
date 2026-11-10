@@ -1,0 +1,19 @@
+{
+ "grid": {
+  "pix_m": 2000.0,
+  "half_m": 2600000.0,
+  "n": 2600,
+  "proj": "laea lat_0=90 lon_0=0 R=2439400"
+ },
+ "basemap": {
+  "source": "MDIS BDR 166 m mosaic",
+  "reduced_ppd": 32.0,
+  "seconds": 2.3
+ },
+ "footprints": {
+  "source": "code/rerun/out_v2/coverage_10ppd.npz bestpx",
+  "frac_ge30N_imaged": 0.6235912382895613,
+  "frac_ge30N_le40": 0.43795286211423806,
+  "median_px_ge30N": 24.356090545654297
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "median_abs_ln_ratio": 0.108,
+ "panels": [
+  {
+   "hollow_id": 2949,
+   "set": "hand",
+   "image": "EN1066825590M",
+   "D_m": 54.2,
+   "px": 1.68,
+   "inc": 62.8,
+   "depth_auto": 6.94,
+   "depth_hand": 7.75,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 5607,
+   "set": "hand",
+   "image": "EN1066229888M",
+   "D_m": 101.4,
+   "px": 2.2,
+   "inc": 63.2,
+   "depth_auto": 9.43,
+   "depth_hand": 10.31,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 2499,
+   "set": "hand",
+   "image": "EN1067451087M",
+   "D_m": 181.5,
+   "px": 3.88,
+   "inc": 74.5,
+   "depth_auto": 5.85,
+   "depth_hand": 6.45,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 5613,
+   "set": "hand",
+   "image": "EN1056841011M",
+   "D_m": 267.5,
+   "px": 6.76,
+   "inc": 80.5,
+   "depth_auto": 5.92,
+   "depth_hand": 6.57,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 36,
+   "set": "hand",
+   "image": "EN1056841007M",
+   "D_m": 499.5,
+   "px": 6.82,
+   "inc": 80.4,
+   "depth_auto": 13.52,
+   "depth_hand": 14.77,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 5162,
+   "set": "hand",
+   "image": "EN1056959280M",
+   "D_m": 702.8,
+   "px": 6.83,
+   "inc": 73.8,
+   "depth_auto": 20.86,
+   "depth_hand": 23.18,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 6449,
+   "set": "auto",
+   "image": "EN1056079646M",
+   "D_m": 236.4,
+   "px": 12.95,
+   "inc": 78.5,
+   "depth_auto": 13.22,
+   "depth_hand": null,
+   "flags": ""
+  },
+  {
+   "hollow_id": 4471,
+   "set": "auto",
+   "image": "EN1070703930M",
+   "D_m": 358.7,
+   "px": 11.51,
+   "inc": 72.3,
+   "depth_auto": 19.28,
+   "depth_hand": null,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 4692,
+   "set": "auto",
+   "image": "EN0251228122M",
+   "D_m": 406.3,
+   "px": 12.35,
+   "inc": 73.6,
+   "depth_auto": 22.16,
+   "depth_hand": null,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 3865,
+   "set": "auto",
+   "image": "EN0249182316M",
+   "D_m": 692.5,
+   "px": 15.0,
+   "inc": 65.6,
+   "depth_auto": 44.44,
+   "depth_hand": null,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 5131,
+   "set": "auto",
+   "image": "EN0229105239M",
+   "D_m": 747.9,
+   "px": 19.45,
+   "inc": 65.0,
+   "depth_auto": 70.88,
+   "depth_hand": null,
+   "flags": "multi"
+  },
+  {
+   "hollow_id": 1537,
+   "set": "auto",
+   "image": "EN0221023165M",
+   "D_m": 970.4,
+   "px": 15.38,
+   "inc": 66.8,
+   "depth_auto": 57.85,
+   "depth_hand": null,
+   "flags": "multi"
+  }
+ ]
+}

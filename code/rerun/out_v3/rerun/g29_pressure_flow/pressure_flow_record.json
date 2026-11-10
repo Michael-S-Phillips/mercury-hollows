@@ -1,0 +1,45 @@
+{
+ "created": "2026-11-10",
+ "note": "g29 (10 Nov 2026): numbers for the \"Pressure-driven flow\" paragraph of supplement S13 (v28) and its row in Table S14, and the\n2 kPa / 2,150 K statement in main text 4.1 and 4.3 (v6.16). Michael's comment on v27 p. 38: sulfur cannot outrun heat by diffusion, so\nexplain pressure-driven flow through fractures. Inputs are the constants of S13: S2 at 1,000 K; 100 m of regolith with 5 vol% native\nsulfur (1.0e4 kg m-2, the \"Sulfur delivery\" paragraph); heat crossing 100 m in L^2/kappa = 317 yr (kappa = 1e-6 m2 s-1); FeS S2 pressure\n5.4 Pa at 1,600 K and an enthalpy of 314 kJ mol-1 (Table S16); MgS + SiO2 -> MgO + SiO(g) + 1/2 S2 at 350 Pa (2,000 K) and 7,000 Pa\n(2,300 K) (Table S15); native sulfur ln(P/101,325 Pa) = B (1/717.8 - 1/T), B = 7,750-8,420 K (S13). Permeabilities 1e-12 to 1e-14 m2\nfrom Alexander et al. (2024, doi:10.1029/2023EA003383) for the Chicxulub structure; open fractures 1 mm wide at 1% of the volume with a\ntortuosity of 3 (cubic law, k = eps a^2 / (12 tau)), as in S13. Viscosity of S2 from kinetic theory (hard spheres, d = 3.6 A).\nViscous (Darcy) flux of an ideal gas from a source at p into p ~ 0: J = k M p^2 / (2 mu R T L). Delivery time = mass / J, which scales\nas L^2 like the heat time, so the condition p >= p_min does not depend on L. Writes pressure_flow_record.json.",
+ "mu_S2_1000K_Pa_s": 5.2110625760585073e-05,
+ "heat_time_100m_yr": 316.85678073510775,
+ "mean_free_path_1000K_m": {
+  "1 Pa": 0.023978025107754482,
+  "5.4 Pa": 0.0044403750199545336
+ },
+ "p_min_kPa": {
+  "1e-12": 36.79536921328825,
+  "1e-13": 116.35717406082878,
+  "1e-14": 367.9536921328825,
+  "1e-15": 1163.5717406082879
+ },
+ "k_open_fractures_m2": 2.7777777777777777e-10,
+ "p_min_open_fractures_kPa": 2.2077221527972952,
+ "mean_free_path_at_half_pmin_um": {
+  "1e-12": 1.303317543507354,
+  "1e-14": 0.1303317543507354,
+  "open fractures": 21.721959058455898
+ },
+ "T_reach_K": {
+  "FeS (extrapolated), open fractures": 2146.9310755156607,
+  "MgS + SiO2, open fractures": 2174.365921654317,
+  "native S, open fractures, B 7,750 / 8,420": [
+   529.9779010592678,
+   541.2473248126482
+  ],
+  "native S, k 1e-12, B 7,750 / 8,420": [
+   656.2324007093735,
+   660.7420568418569
+  ],
+  "native S, k 1e-14, B 7,750 / 8,420": [
+   815.1669064824451,
+   806.4621898116526
+  ],
+  "FeS (extrapolated), k 1e-12": 2555.6592324544395
+ },
+ "mean_impact_velocity_km_s": {
+  "Mercury": 42.5,
+  "Earth": 20.4,
+  "source": "Le Feuvre and Wieczorek (2008), Table 2"
+ }
+}

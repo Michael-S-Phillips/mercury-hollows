@@ -1,0 +1,3530 @@
+{
+ "created": "2026-11-07",
+ "configuration": "v3 catalog and grid; only the 62 hosts with Michael's traced outlines (r2: refined wall feet, slump as wall)",
+ "positions": {
+  "tracedonly_eta": {
+   "counts": {
+    "peak_hollows": 1448,
+    "peak_fields": 105,
+    "craters_with_peak_hollows": 76,
+    "craters_with_peak_terrain": 92,
+    "floor_hollows": 1175,
+    "floor_fields": 144,
+    "craters_with_floor_hollows": 91
+   },
+   "peak_lowest_third_vs_upper_two_thirds": {
+    "hollows": {
+     "ratio": [
+      1.178,
+      0.867,
+      1.475
+     ],
+     "pooled_DR": [
+      1.186,
+      0.877,
+      1.489
+     ],
+     "n": 1448,
+     "n_in_band": 535,
+     "craters_with_points": 76
+    },
+    "fields": {
+     "ratio": [
+      0.86,
+      0.567,
+      1.241
+     ],
+     "pooled_DR": [
+      1.056,
+      0.658,
+      1.572
+     ],
+     "n": 105,
+     "n_in_band": 36,
+     "craters_with_points": 76
+    }
+   },
+   "peak_highest_third_vs_lower_two_thirds": {
+    "hollows": {
+     "ratio": [
+      0.991,
+      0.693,
+      1.477
+     ],
+     "pooled_DR": [
+      1.025,
+      0.714,
+      1.577
+     ],
+     "n": 1448,
+     "n_in_band": 446,
+     "craters_with_points": 76
+    },
+    "fields": {
+     "ratio": [
+      1.512,
+      1.085,
+      2.067
+     ],
+     "pooled_DR": [
+      1.417,
+      0.982,
+      2.075
+     ],
+     "n": 105,
+     "n_in_band": 40,
+     "craters_with_points": 76
+    }
+   },
+   "peak_height_thirds_fractions": {
+    "hollows": {
+     "points": [
+      0.369475138121547,
+      0.32251381215469616,
+      0.3080110497237569
+     ],
+     "crater_matched_area": [
+      0.3321275276607118,
+      0.35800615006831493,
+      0.3098663222709733
+     ],
+     "pooled_area": [
+      0.33077338218434577,
+      0.3665073890400925,
+      0.3027192287755618
+     ],
+     "n_points": [
+      535,
+      467,
+      446
+     ]
+    },
+    "fields": {
+     "points": [
+      0.34285714285714286,
+      0.2761904761904762,
+      0.38095238095238093
+     ],
+     "crater_matched_area": [
+      0.3776728201705283,
+      0.3331263415551965,
+      0.2892008382742752
+     ],
+     "pooled_area": [
+      0.33077338218434577,
+      0.3665073890400925,
+      0.3027192287755618
+     ],
+     "n_points": [
+      36,
+      29,
+      40
+     ]
+    }
+   },
+   "peak_within_2km_of_floor_vs_rest_of_peak": {
+    "hollows": {
+     "ratio": [
+      0.482,
+      0.389,
+      0.592
+     ],
+     "pooled_DR": [
+      0.611,
+      0.442,
+      0.89
+     ],
+     "n": 1448,
+     "n_in_band": 247,
+     "craters_with_points": 76
+    },
+    "fields": {
+     "ratio": [
+      0.305,
+      0.175,
+      0.481
+     ],
+     "pooled_DR": [
+      0.534,
+      0.304,
+      0.826
+     ],
+     "n": 105,
+     "n_in_band": 16,
+     "craters_with_points": 76
+    },
+    "note": "distance to the nearest floor-class cell; independent of eta / eta_b"
+   },
+   "mean_height_quantile_q_peak_hollows": [
+    0.492,
+    0.439,
+    0.558
+   ],
+   "breakdown_by_morphology": {
+    "central_peak": {
+     "hollows": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        0.968,
+        0.643,
+        1.391
+       ],
+       "pooled_DR": [
+        0.976,
+        0.636,
+        1.417
+       ],
+       "n": 293,
+       "n_in_band": 117,
+       "craters_with_points": 33
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        1.349,
+        0.953,
+        1.966
+       ],
+       "pooled_DR": [
+        1.354,
+        0.937,
+        1.995
+       ],
+       "n": 293,
+       "n_in_band": 115,
+       "craters_with_points": 33
+      }
+     },
+     "fields": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        0.751,
+        0.347,
+        1.405
+       ],
+       "pooled_DR": [
+        0.734,
+        0.343,
+        1.392
+       ],
+       "n": 33,
+       "n_in_band": 11,
+       "craters_with_points": 33
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        1.549,
+        0.791,
+        2.796
+       ],
+       "pooled_DR": [
+        1.544,
+        0.792,
+        2.747
+       ],
+       "n": 33,
+       "n_in_band": 14,
+       "craters_with_points": 33
+      }
+     }
+    },
+    "peak_ring": {
+     "hollows": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        1.245,
+        0.848,
+        1.605
+       ],
+       "pooled_DR": [
+        1.209,
+        0.826,
+        1.581
+       ],
+       "n": 1123,
+       "n_in_band": 406,
+       "craters_with_points": 39
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        0.905,
+        0.578,
+        1.481
+       ],
+       "pooled_DR": [
+        0.928,
+        0.61,
+        1.525
+       ],
+       "n": 1123,
+       "n_in_band": 318,
+       "craters_with_points": 39
+      }
+     },
+     "fields": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        0.925,
+        0.524,
+        1.486
+       ],
+       "pooled_DR": [
+        1.164,
+        0.635,
+        1.942
+       ],
+       "n": 68,
+       "n_in_band": 24,
+       "craters_with_points": 39
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        1.605,
+        1.071,
+        2.431
+       ],
+       "pooled_DR": [
+        1.366,
+        0.891,
+        2.167
+       ],
+       "n": 68,
+       "n_in_band": 25,
+       "craters_with_points": 39
+      }
+     }
+    },
+    "unclassified_center": {
+     "hollows": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        1.214,
+        1.03,
+        3.453
+       ],
+       "pooled_DR": [
+        0.928,
+        0.0,
+        3.214
+       ],
+       "n": 32,
+       "n_in_band": 12,
+       "craters_with_points": 4
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        1.053,
+        0.898,
+        2.128
+       ],
+       "pooled_DR": [
+        1.242,
+        0.903,
+        4.117
+       ],
+       "n": 32,
+       "n_in_band": 13,
+       "craters_with_points": 4
+      }
+     },
+     "fields": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        0.739,
+        0.0,
+        2.638
+       ],
+       "pooled_DR": [
+        0.516,
+        0.0,
+        2.258
+       ],
+       "n": 4,
+       "n_in_band": 1,
+       "craters_with_points": 4
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        0.475,
+        0.0,
+        1.403
+       ],
+       "pooled_DR": [
+        0.605,
+        0.0,
+        3.49
+       ],
+       "n": 4,
+       "n_in_band": 1,
+       "craters_with_points": 4
+      }
+     }
+    }
+   }
+  },
+  "tracedonly_eta_b": {
+   "counts": {
+    "peak_hollows": 1448,
+    "peak_fields": 105,
+    "craters_with_peak_hollows": 76,
+    "craters_with_peak_terrain": 92,
+    "floor_hollows": 1175,
+    "floor_fields": 144,
+    "craters_with_floor_hollows": 91
+   },
+   "peak_lowest_third_vs_upper_two_thirds": {
+    "hollows": {
+     "ratio": [
+      1.085,
+      0.755,
+      1.462
+     ],
+     "pooled_DR": [
+      0.997,
+      0.705,
+      1.347
+     ],
+     "n": 1448,
+     "n_in_band": 541,
+     "craters_with_points": 76
+    },
+    "fields": {
+     "ratio": [
+      0.841,
+      0.574,
+      1.167
+     ],
+     "pooled_DR": [
+      0.948,
+      0.615,
+      1.388
+     ],
+     "n": 105,
+     "n_in_band": 38,
+     "craters_with_points": 76
+    }
+   },
+   "peak_highest_third_vs_lower_two_thirds": {
+    "hollows": {
+     "ratio": [
+      0.991,
+      0.68,
+      1.538
+     ],
+     "pooled_DR": [
+      1.075,
+      0.731,
+      1.695
+     ],
+     "n": 1448,
+     "n_in_band": 424,
+     "craters_with_points": 76
+    },
+    "fields": {
+     "ratio": [
+      1.827,
+      1.328,
+      2.513
+     ],
+     "pooled_DR": [
+      1.801,
+      1.27,
+      2.599
+     ],
+     "n": 105,
+     "n_in_band": 43,
+     "craters_with_points": 76
+    }
+   },
+   "peak_height_thirds_fractions": {
+    "hollows": {
+     "points": [
+      0.3736187845303867,
+      0.3335635359116022,
+      0.292817679558011
+     ],
+     "crater_matched_area": [
+      0.35465591894978826,
+      0.35067989013666356,
+      0.29466419091354823
+     ],
+     "pooled_area": [
+      0.37436742344913587,
+      0.34758434645528935,
+      0.2780482300955748
+     ],
+     "n_points": [
+      541,
+      483,
+      424
+     ]
+    },
+    "fields": {
+     "points": [
+      0.3619047619047619,
+      0.22857142857142856,
+      0.4095238095238095
+     ],
+     "crater_matched_area": [
+      0.4027978035215552,
+      0.3220708368613107,
+      0.2751313596171341
+     ],
+     "pooled_area": [
+      0.37436742344913587,
+      0.34758434645528935,
+      0.2780482300955748
+     ],
+     "n_points": [
+      38,
+      24,
+      43
+     ]
+    }
+   },
+   "peak_within_2km_of_floor_vs_rest_of_peak": {
+    "hollows": {
+     "ratio": [
+      0.482,
+      0.389,
+      0.592
+     ],
+     "pooled_DR": [
+      0.611,
+      0.442,
+      0.89
+     ],
+     "n": 1448,
+     "n_in_band": 247,
+     "craters_with_points": 76
+    },
+    "fields": {
+     "ratio": [
+      0.305,
+      0.175,
+      0.481
+     ],
+     "pooled_DR": [
+      0.534,
+      0.304,
+      0.826
+     ],
+     "n": 105,
+     "n_in_band": 16,
+     "craters_with_points": 76
+    },
+    "note": "distance to the nearest floor-class cell; independent of eta / eta_b"
+   },
+   "mean_height_quantile_q_peak_hollows": [
+    0.492,
+    0.439,
+    0.558
+   ],
+   "breakdown_by_morphology": {
+    "central_peak": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        0.894,
+        0.589,
+        1.241
+       ],
+       "pooled_DR": [
+        0.92,
+        0.582,
+        1.294
+       ],
+       "n": 293,
+       "n_in_band": 107,
+       "craters_with_points": 33
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        1.3,
+        0.874,
+        1.993
+       ],
+       "pooled_DR": [
+        1.254,
+        0.853,
+        1.934
+       ],
+       "n": 293,
+       "n_in_band": 107,
+       "craters_with_points": 33
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        0.46,
+        0.146,
+        0.908
+       ],
+       "pooled_DR": [
+        0.43,
+        0.147,
+        0.846
+       ],
+       "n": 33,
+       "n_in_band": 7,
+       "craters_with_points": 33
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        1.961,
+        0.998,
+        3.911
+       ],
+       "pooled_DR": [
+        2.052,
+        1.036,
+        3.921
+       ],
+       "n": 33,
+       "n_in_band": 16,
+       "craters_with_points": 33
+      }
+     }
+    },
+    "peak_ring": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        1.139,
+        0.716,
+        1.6
+       ],
+       "pooled_DR": [
+        1.007,
+        0.65,
+        1.406
+       ],
+       "n": 1123,
+       "n_in_band": 423,
+       "craters_with_points": 39
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        0.916,
+        0.569,
+        1.603
+       ],
+       "pooled_DR": [
+        1.004,
+        0.635,
+        1.715
+       ],
+       "n": 1123,
+       "n_in_band": 304,
+       "craters_with_points": 39
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        1.015,
+        0.635,
+        1.497
+       ],
+       "pooled_DR": [
+        1.24,
+        0.746,
+        1.91
+       ],
+       "n": 68,
+       "n_in_band": 29,
+       "craters_with_points": 39
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        1.902,
+        1.306,
+        2.791
+       ],
+       "pooled_DR": [
+        1.674,
+        1.106,
+        2.616
+       ],
+       "n": 68,
+       "n_in_band": 26,
+       "craters_with_points": 39
+      }
+     }
+    },
+    "unclassified_center": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        1.212,
+        0.0,
+        4.358
+       ],
+       "pooled_DR": [
+        1.24,
+        0.0,
+        4.191
+       ],
+       "n": 32,
+       "n_in_band": 11,
+       "craters_with_points": 4
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        1.018,
+        0.817,
+        3.205
+       ],
+       "pooled_DR": [
+        1.029,
+        0.825,
+        4.203
+       ],
+       "n": 32,
+       "n_in_band": 13,
+       "craters_with_points": 4
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        1.933,
+        0.0,
+        7.286
+       ],
+       "pooled_DR": [
+        2.367,
+        0.0,
+        9.156
+       ],
+       "n": 4,
+       "n_in_band": 2,
+       "craters_with_points": 4
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        0.562,
+        0.0,
+        2.441
+       ],
+       "pooled_DR": [
+        0.501,
+        0.0,
+        3.396
+       ],
+       "n": 4,
+       "n_in_band": 1,
+       "craters_with_points": 4
+      }
+     }
+    }
+   },
+   "sample_eta_b": {
+    "peak_hollows_with_eta_b_lt_1_3": 541,
+    "craters_with_low_eta_b_area": 93,
+    "median_zbase_minus_zfloor_m_hollow_hosts": 1.6375000000000455,
+    "median_peak_relief_above_base_m_hollow_hosts": 543.3625,
+    "peak_hollows_eta_lt_1_3": 535,
+    "peak_cells_frac_area_eta_lt_1_3": 0.33077338337898254,
+    "peak_cells_frac_area_eta_b_lt_1_3": 0.37436744570732117
+   }
+  },
+  "g13r2_eta": {
+   "counts": {
+    "peak_hollows": 1316,
+    "peak_fields": 71,
+    "craters_with_peak_hollows": 49,
+    "craters_with_peak_terrain": 53,
+    "floor_hollows": 1037,
+    "floor_fields": 93,
+    "craters_with_floor_hollows": 52
+   },
+   "peak_lowest_third_vs_upper_two_thirds": {
+    "hollows": {
+     "ratio": [
+      1.185,
+      0.835,
+      1.502
+     ],
+     "pooled_DR": [
+      1.277,
+      0.909,
+      1.618
+     ],
+     "n": 1316,
+     "n_in_band": 473,
+     "craters_with_points": 49
+    },
+    "fields": {
+     "ratio": [
+      0.918,
+      0.491,
+      1.483
+     ],
+     "pooled_DR": [
+      1.09,
+      0.563,
+      1.805
+     ],
+     "n": 71,
+     "n_in_band": 23,
+     "craters_with_points": 49
+    }
+   },
+   "peak_highest_third_vs_lower_two_thirds": {
+    "hollows": {
+     "ratio": [
+      0.965,
+      0.666,
+      1.493
+     ],
+     "pooled_DR": [
+      0.94,
+      0.648,
+      1.473
+     ],
+     "n": 1316,
+     "n_in_band": 404,
+     "craters_with_points": 49
+    },
+    "fields": {
+     "ratio": [
+      1.257,
+      0.83,
+      1.86
+     ],
+     "pooled_DR": [
+      1.153,
+      0.737,
+      1.805
+     ],
+     "n": 71,
+     "n_in_band": 25,
+     "craters_with_points": 49
+    }
+   },
+   "peak_height_thirds_fractions": {
+    "hollows": {
+     "points": [
+      0.3594224924012158,
+      0.33358662613981765,
+      0.3069908814589666
+     ],
+     "crater_matched_area": [
+      0.32143168357963475,
+      0.36395103099059173,
+      0.3146172854297735
+     ],
+     "pooled_area": [
+      0.3052861823446661,
+      0.3743151642675383,
+      0.32039865338779566
+     ],
+     "n_points": [
+      473,
+      439,
+      404
+     ]
+    },
+    "fields": {
+     "points": [
+      0.323943661971831,
+      0.323943661971831,
+      0.352112676056338
+     ],
+     "crater_matched_area": [
+      0.34301306226565054,
+      0.35518369422208373,
+      0.30180324351226573
+     ],
+     "pooled_area": [
+      0.3052861823446661,
+      0.3743151642675383,
+      0.32039865338779566
+     ],
+     "n_points": [
+      23,
+      23,
+      25
+     ]
+    }
+   },
+   "peak_within_2km_of_floor_vs_rest_of_peak": {
+    "hollows": {
+     "ratio": [
+      0.505,
+      0.403,
+      0.642
+     ],
+     "pooled_DR": [
+      0.64,
+      0.462,
+      0.984
+     ],
+     "n": 1316,
+     "n_in_band": 224,
+     "craters_with_points": 49
+    },
+    "fields": {
+     "ratio": [
+      0.322,
+      0.154,
+      0.571
+     ],
+     "pooled_DR": [
+      0.572,
+      0.275,
+      0.998
+     ],
+     "n": 71,
+     "n_in_band": 11,
+     "craters_with_points": 49
+    },
+    "note": "distance to the nearest floor-class cell; independent of eta / eta_b"
+   },
+   "mean_height_quantile_q_peak_hollows": [
+    0.49,
+    0.434,
+    0.562
+   ],
+   "breakdown_by_morphology": {
+    "central_peak": {
+     "hollows": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        0.886,
+        0.482,
+        1.409
+       ],
+       "pooled_DR": [
+        0.974,
+        0.536,
+        1.603
+       ],
+       "n": 209,
+       "n_in_band": 79,
+       "craters_with_points": 17
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        1.42,
+        0.941,
+        2.381
+       ],
+       "pooled_DR": [
+        1.401,
+        0.956,
+        2.393
+       ],
+       "n": 209,
+       "n_in_band": 89,
+       "craters_with_points": 17
+      }
+     },
+     "fields": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        0.483,
+        0.096,
+        1.254
+       ],
+       "pooled_DR": [
+        0.493,
+        0.111,
+        1.227
+       ],
+       "n": 17,
+       "n_in_band": 4,
+       "craters_with_points": 17
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        1.329,
+        0.485,
+        3.118
+       ],
+       "pooled_DR": [
+        1.323,
+        0.486,
+        3.11
+       ],
+       "n": 17,
+       "n_in_band": 7,
+       "craters_with_points": 17
+      }
+     }
+    },
+    "peak_ring": {
+     "hollows": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        1.259,
+        0.851,
+        1.63
+       ],
+       "pooled_DR": [
+        1.308,
+        0.889,
+        1.698
+       ],
+       "n": 1077,
+       "n_in_band": 382,
+       "craters_with_points": 29
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        0.885,
+        0.562,
+        1.45
+       ],
+       "pooled_DR": [
+        0.846,
+        0.566,
+        1.373
+       ],
+       "n": 1077,
+       "n_in_band": 304,
+       "craters_with_points": 29
+      }
+     },
+     "fields": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        1.141,
+        0.572,
+        1.954
+       ],
+       "pooled_DR": [
+        1.298,
+        0.622,
+        2.369
+       ],
+       "n": 51,
+       "n_in_band": 18,
+       "craters_with_points": 29
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        1.351,
+        0.841,
+        2.075
+       ],
+       "pooled_DR": [
+        1.174,
+        0.726,
+        1.925
+       ],
+       "n": 51,
+       "n_in_band": 18,
+       "craters_with_points": 29
+      }
+     }
+    },
+    "unclassified_center": {
+     "hollows": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        1.223,
+        1.031,
+        3.453
+       ],
+       "pooled_DR": [
+        1.017,
+        0.875,
+        3.467
+       ],
+       "n": 30,
+       "n_in_band": 12,
+       "craters_with_points": 3
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        0.986,
+        0.898,
+        1.579
+       ],
+       "pooled_DR": [
+        1.068,
+        0.899,
+        1.483
+       ],
+       "n": 30,
+       "n_in_band": 11,
+       "craters_with_points": 3
+      }
+     },
+     "fields": {
+      "peak_eta_low_vs_upper": {
+       "ratio": [
+        0.707,
+        0.0,
+        2.208
+       ],
+       "pooled_DR": [
+        0.763,
+        0.0,
+        2.641
+       ],
+       "n": 3,
+       "n_in_band": 1,
+       "craters_with_points": 3
+      },
+      "peak_eta_high_vs_lower": {
+       "ratio": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "pooled_DR": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "n": 3,
+       "n_in_band": 0,
+       "craters_with_points": 3
+      }
+     }
+    }
+   }
+  },
+  "g13r2_eta_b": {
+   "counts": {
+    "peak_hollows": 1316,
+    "peak_fields": 71,
+    "craters_with_peak_hollows": 49,
+    "craters_with_peak_terrain": 53,
+    "floor_hollows": 1037,
+    "floor_fields": 93,
+    "craters_with_floor_hollows": 52
+   },
+   "peak_lowest_third_vs_upper_two_thirds": {
+    "hollows": {
+     "ratio": [
+      1.104,
+      0.734,
+      1.496
+     ],
+     "pooled_DR": [
+      1.08,
+      0.72,
+      1.457
+     ],
+     "n": 1316,
+     "n_in_band": 485,
+     "craters_with_points": 49
+    },
+    "fields": {
+     "ratio": [
+      1.04,
+      0.642,
+      1.538
+     ],
+     "pooled_DR": [
+      1.136,
+      0.657,
+      1.726
+     ],
+     "n": 71,
+     "n_in_band": 27,
+     "craters_with_points": 49
+    }
+   },
+   "peak_highest_third_vs_lower_two_thirds": {
+    "hollows": {
+     "ratio": [
+      0.974,
+      0.664,
+      1.581
+     ],
+     "pooled_DR": [
+      1.005,
+      0.686,
+      1.637
+     ],
+     "n": 1316,
+     "n_in_band": 383,
+     "craters_with_points": 49
+    },
+    "fields": {
+     "ratio": [
+      1.65,
+      1.1,
+      2.444
+     ],
+     "pooled_DR": [
+      1.595,
+      1.042,
+      2.469
+     ],
+     "n": 71,
+     "n_in_band": 28,
+     "craters_with_points": 49
+    }
+   },
+   "peak_height_thirds_fractions": {
+    "hollows": {
+     "points": [
+      0.36854103343465044,
+      0.3404255319148936,
+      0.29103343465045595
+     ],
+     "crater_matched_area": [
+      0.3458447782574938,
+      0.3575806871468091,
+      0.29657453459569716
+     ],
+     "pooled_area": [
+      0.35080524458320755,
+      0.3592415692225455,
+      0.2899531861942469
+     ],
+     "n_points": [
+      485,
+      448,
+      383
+     ]
+    },
+    "fields": {
+     "points": [
+      0.38028169014084506,
+      0.22535211267605634,
+      0.39436619718309857
+     ],
+     "crater_matched_area": [
+      0.3711615491792829,
+      0.3458418196835963,
+      0.2829966311371205
+     ],
+     "pooled_area": [
+      0.35080524458320755,
+      0.3592415692225455,
+      0.2899531861942469
+     ],
+     "n_points": [
+      27,
+      16,
+      28
+     ]
+    }
+   },
+   "peak_within_2km_of_floor_vs_rest_of_peak": {
+    "hollows": {
+     "ratio": [
+      0.505,
+      0.403,
+      0.642
+     ],
+     "pooled_DR": [
+      0.64,
+      0.462,
+      0.984
+     ],
+     "n": 1316,
+     "n_in_band": 224,
+     "craters_with_points": 49
+    },
+    "fields": {
+     "ratio": [
+      0.322,
+      0.154,
+      0.571
+     ],
+     "pooled_DR": [
+      0.572,
+      0.275,
+      0.998
+     ],
+     "n": 71,
+     "n_in_band": 11,
+     "craters_with_points": 49
+    },
+    "note": "distance to the nearest floor-class cell; independent of eta / eta_b"
+   },
+   "mean_height_quantile_q_peak_hollows": [
+    0.49,
+    0.434,
+    0.562
+   ],
+   "breakdown_by_morphology": {
+    "central_peak": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        0.941,
+        0.558,
+        1.43
+       ],
+       "pooled_DR": [
+        1.0,
+        0.563,
+        1.572
+       ],
+       "n": 209,
+       "n_in_band": 79,
+       "craters_with_points": 17
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        1.448,
+        0.905,
+        2.485
+       ],
+       "pooled_DR": [
+        1.404,
+        0.898,
+        2.386
+       ],
+       "n": 209,
+       "n_in_band": 82,
+       "craters_with_points": 17
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        0.562,
+        0.117,
+        1.478
+       ],
+       "pooled_DR": [
+        0.507,
+        0.114,
+        1.26
+       ],
+       "n": 17,
+       "n_in_band": 4,
+       "craters_with_points": 17
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        2.3,
+        0.828,
+        6.616
+       ],
+       "pooled_DR": [
+        2.446,
+        0.921,
+        6.533
+       ],
+       "n": 17,
+       "n_in_band": 9,
+       "craters_with_points": 17
+      }
+     }
+    },
+    "peak_ring": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        1.135,
+        0.701,
+        1.623
+       ],
+       "pooled_DR": [
+        1.075,
+        0.685,
+        1.519
+       ],
+       "n": 1077,
+       "n_in_band": 395,
+       "craters_with_points": 29
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        0.896,
+        0.554,
+        1.549
+       ],
+       "pooled_DR": [
+        0.926,
+        0.588,
+        1.587
+       ],
+       "n": 1077,
+       "n_in_band": 290,
+       "craters_with_points": 29
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        1.159,
+        0.679,
+        1.796
+       ],
+       "pooled_DR": [
+        1.299,
+        0.713,
+        2.123
+       ],
+       "n": 51,
+       "n_in_band": 21,
+       "craters_with_points": 29
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        1.647,
+        1.112,
+        2.477
+       ],
+       "pooled_DR": [
+        1.493,
+        0.973,
+        2.435
+       ],
+       "n": 51,
+       "n_in_band": 19,
+       "craters_with_points": 29
+      }
+     }
+    },
+    "unclassified_center": {
+     "hollows": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        1.307,
+        1.083,
+        4.358
+       ],
+       "pooled_DR": [
+        1.365,
+        1.049,
+        4.294
+       ],
+       "n": 30,
+       "n_in_band": 11,
+       "craters_with_points": 3
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        0.883,
+        0.817,
+        1.914
+       ],
+       "pooled_DR": [
+        0.874,
+        0.821,
+        1.46
+       ],
+       "n": 30,
+       "n_in_band": 11,
+       "craters_with_points": 3
+      }
+     },
+     "fields": {
+      "peak_eta_b_low_vs_upper": {
+       "ratio": [
+        3.26,
+        0.0,
+        7.3
+       ],
+       "pooled_DR": [
+        4.717,
+        0.0,
+        9.248
+       ],
+       "n": 3,
+       "n_in_band": 2,
+       "craters_with_points": 3
+      },
+      "peak_eta_b_high_vs_lower": {
+       "ratio": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "pooled_DR": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "n": 3,
+       "n_in_band": 0,
+       "craters_with_points": 3
+      }
+     }
+    }
+   },
+   "sample_eta_b": {
+    "peak_hollows_with_eta_b_lt_1_3": 485,
+    "craters_with_low_eta_b_area": 54,
+    "median_zbase_minus_zfloor_m_hollow_hosts": 3.5750000000000455,
+    "median_peak_relief_above_base_m_hollow_hosts": 539.225,
+    "peak_hollows_eta_lt_1_3": 473,
+    "peak_cells_frac_area_eta_lt_1_3": 0.30528613924980164,
+    "peak_cells_frac_area_eta_b_lt_1_3": 0.3508051633834839
+   }
+  }
+ },
+ "floors": {
+  "tracedonly": {
+   "floor_within_0.2R_of_center": {
+    "OE_vs_whole_floor_as_quoted_in_draft": {
+     "OE": [
+      0.738,
+      0.437,
+      1.089
+     ],
+     "n_in_band": 46,
+     "n": 1175
+    },
+    "hollows_vs_rest_of_floor": {
+     "ratio": [
+      0.728,
+      0.423,
+      1.094
+     ],
+     "pooled_DR": [
+      0.564,
+      0.322,
+      0.885
+     ],
+     "n": 1175,
+     "n_in_band": 46,
+     "craters_with_points": 91
+    },
+    "fields_vs_rest_of_floor": {
+     "ratio": [
+      1.131,
+      0.481,
+      2.018
+     ],
+     "pooled_DR": [
+      1.034,
+      0.433,
+      1.845
+     ],
+     "n": 144,
+     "n_in_band": 10,
+     "craters_with_points": 91
+    }
+   },
+   "floor_OE_by_radius": {
+    "edges": [
+     0,
+     0.2,
+     0.4,
+     0.6,
+     0.8,
+     1.01
+    ],
+    "n": [
+     46,
+     251,
+     492,
+     329,
+     57
+    ],
+    "OE": [
+     0.738,
+     0.988,
+     1.106,
+     1.017,
+     0.632
+    ],
+    "lo": [
+     0.437,
+     0.768,
+     0.948,
+     0.797,
+     0.39
+    ],
+    "hi": [
+     1.089,
+     1.249,
+     1.274,
+     1.196,
+     0.866
+    ]
+   },
+   "floor_margin_0.05R_of_wall_or_peak": {
+    "hollows": {
+     "ratio": [
+      1.071,
+      0.796,
+      1.403
+     ],
+     "pooled_DR": [
+      0.936,
+      0.708,
+      1.239
+     ],
+     "n": 1175,
+     "n_in_band": 303,
+     "craters_with_points": 91
+    },
+    "fields": {
+     "ratio": [
+      1.101,
+      0.664,
+      1.665
+     ],
+     "pooled_DR": [
+      0.966,
+      0.588,
+      1.475
+     ],
+     "n": 144,
+     "n_in_band": 38,
+     "craters_with_points": 91
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.062,
+      0.845,
+      1.312
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.067,
+      0.684,
+      1.519
+     ]
+    }
+   },
+   "floor_within_0.05R_of_wall_alone": {
+    "hollows": {
+     "ratio": [
+      0.848,
+      0.563,
+      1.227
+     ],
+     "pooled_DR": [
+      0.863,
+      0.574,
+      1.234
+     ],
+     "n": 1175,
+     "n_in_band": 149,
+     "craters_with_points": 91
+    },
+    "fields": {
+     "ratio": [
+      0.609,
+      0.27,
+      1.026
+     ],
+     "pooled_DR": [
+      0.64,
+      0.286,
+      1.084
+     ],
+     "n": 144,
+     "n_in_band": 14,
+     "craters_with_points": 91
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      0.982,
+      0.713,
+      1.279
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      0.883,
+      0.46,
+      1.285
+     ]
+    }
+   },
+   "floor_within_0.05R_of_peak_alone": {
+    "hollows": {
+     "ratio": [
+      1.394,
+      0.932,
+      1.972
+     ],
+     "pooled_DR": [
+      1.013,
+      0.643,
+      1.549
+     ],
+     "n": 1037,
+     "n_in_band": 157,
+     "craters_with_points": 74
+    },
+    "fields": {
+     "ratio": [
+      1.977,
+      1.207,
+      2.886
+     ],
+     "pooled_DR": [
+      1.577,
+      0.943,
+      2.389
+     ],
+     "n": 115,
+     "n_in_band": 25,
+     "craters_with_points": 74
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.151,
+      0.876,
+      1.406
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.244,
+      0.801,
+      1.784
+     ]
+    }
+   },
+   "floor_margin_0.1R_of_wall_or_peak": {
+    "hollows": {
+     "ratio": [
+      1.05,
+      0.809,
+      1.359
+     ],
+     "pooled_DR": [
+      0.899,
+      0.71,
+      1.19
+     ],
+     "n": 1175,
+     "n_in_band": 584,
+     "craters_with_points": 91
+    },
+    "fields": {
+     "ratio": [
+      1.124,
+      0.832,
+      1.527
+     ],
+     "pooled_DR": [
+      0.961,
+      0.69,
+      1.355
+     ],
+     "n": 144,
+     "n_in_band": 74,
+     "craters_with_points": 91
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.038,
+      0.852,
+      1.266
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.116,
+      0.857,
+      1.429
+     ]
+    }
+   },
+   "floor_within_0.1R_of_wall_alone": {
+    "hollows": {
+     "ratio": [
+      0.759,
+      0.549,
+      1.043
+     ],
+     "pooled_DR": [
+      0.789,
+      0.565,
+      1.088
+     ],
+     "n": 1175,
+     "n_in_band": 283,
+     "craters_with_points": 91
+    },
+    "fields": {
+     "ratio": [
+      0.511,
+      0.313,
+      0.732
+     ],
+     "pooled_DR": [
+      0.548,
+      0.337,
+      0.784
+     ],
+     "n": 144,
+     "n_in_band": 26,
+     "craters_with_points": 91
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      0.869,
+      0.691,
+      1.083
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      0.757,
+      0.523,
+      1.001
+     ]
+    }
+   },
+   "floor_within_0.1R_of_peak_alone": {
+    "hollows": {
+     "ratio": [
+      1.404,
+      1.049,
+      1.958
+     ],
+     "pooled_DR": [
+      0.997,
+      0.704,
+      1.489
+     ],
+     "n": 1037,
+     "n_in_band": 318,
+     "craters_with_points": 74
+    },
+    "fields": {
+     "ratio": [
+      2.343,
+      1.717,
+      3.243
+     ],
+     "pooled_DR": [
+      1.86,
+      1.3,
+      2.673
+     ],
+     "n": 115,
+     "n_in_band": 52,
+     "craters_with_points": 74
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.175,
+      1.004,
+      1.387
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.503,
+      1.158,
+      1.958
+     ]
+    }
+   },
+   "floor_margin_3km_of_wall_or_peak": {
+    "hollows": {
+     "ratio": [
+      1.008,
+      0.788,
+      1.288
+     ],
+     "pooled_DR": [
+      1.346,
+      0.986,
+      1.931
+     ],
+     "n": 1175,
+     "n_in_band": 367,
+     "craters_with_points": 91
+    },
+    "fields": {
+     "ratio": [
+      1.118,
+      0.731,
+      1.677
+     ],
+     "pooled_DR": [
+      1.436,
+      0.931,
+      2.143
+     ],
+     "n": 144,
+     "n_in_band": 47,
+     "craters_with_points": 91
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.02,
+      0.841,
+      1.239
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.106,
+      0.762,
+      1.557
+     ]
+    }
+   },
+   "floor_within_3km_of_wall_alone": {
+    "hollows": {
+     "ratio": [
+      0.855,
+      0.638,
+      1.123
+     ],
+     "pooled_DR": [
+      1.288,
+      0.854,
+      1.908
+     ],
+     "n": 1175,
+     "n_in_band": 207,
+     "craters_with_points": 91
+    },
+    "fields": {
+     "ratio": [
+      0.647,
+      0.341,
+      1.041
+     ],
+     "pooled_DR": [
+      0.971,
+      0.5,
+      1.542
+     ],
+     "n": 144,
+     "n_in_band": 20,
+     "craters_with_points": 91
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      0.961,
+      0.771,
+      1.166
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      0.971,
+      0.591,
+      1.392
+     ]
+    }
+   },
+   "floor_within_3km_of_peak_alone": {
+    "hollows": {
+     "ratio": [
+      1.287,
+      0.953,
+      1.767
+     ],
+     "pooled_DR": [
+      1.551,
+      1.031,
+      2.357
+     ],
+     "n": 1037,
+     "n_in_band": 201,
+     "craters_with_points": 74
+    },
+    "fields": {
+     "ratio": [
+      1.92,
+      1.268,
+      2.833
+     ],
+     "pooled_DR": [
+      2.381,
+      1.462,
+      3.623
+     ],
+     "n": 115,
+     "n_in_band": 31,
+     "craters_with_points": 74
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.148,
+      0.913,
+      1.395
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.204,
+      0.814,
+      1.685
+     ]
+    }
+   }
+  },
+  "g13r2": {
+   "floor_within_0.2R_of_center": {
+    "OE_vs_whole_floor_as_quoted_in_draft": {
+     "OE": [
+      0.694,
+      0.403,
+      1.073
+     ],
+     "n_in_band": 38,
+     "n": 1037
+    },
+    "hollows_vs_rest_of_floor": {
+     "ratio": [
+      0.682,
+      0.389,
+      1.078
+     ],
+     "pooled_DR": [
+      0.514,
+      0.28,
+      0.848
+     ],
+     "n": 1037,
+     "n_in_band": 38,
+     "craters_with_points": 52
+    },
+    "fields_vs_rest_of_floor": {
+     "ratio": [
+      1.377,
+      0.469,
+      2.767
+     ],
+     "pooled_DR": [
+      1.271,
+      0.432,
+      2.52
+     ],
+     "n": 93,
+     "n_in_band": 8,
+     "craters_with_points": 52
+    }
+   },
+   "floor_OE_by_radius": {
+    "edges": [
+     0,
+     0.2,
+     0.4,
+     0.6,
+     0.8,
+     1.01
+    ],
+    "n": [
+     38,
+     210,
+     431,
+     308,
+     50
+    ],
+    "OE": [
+     0.694,
+     0.942,
+     1.109,
+     1.066,
+     0.612
+    ],
+    "lo": [
+     0.403,
+     0.708,
+     0.939,
+     0.822,
+     0.34
+    ],
+    "hi": [
+     1.073,
+     1.249,
+     1.287,
+     1.264,
+     0.874
+    ]
+   },
+   "floor_margin_0.05R_of_wall_or_peak": {
+    "hollows": {
+     "ratio": [
+      1.129,
+      0.843,
+      1.507
+     ],
+     "pooled_DR": [
+      0.965,
+      0.737,
+      1.29
+     ],
+     "n": 1037,
+     "n_in_band": 282,
+     "craters_with_points": 52
+    },
+    "fields": {
+     "ratio": [
+      1.498,
+      0.844,
+      2.333
+     ],
+     "pooled_DR": [
+      1.291,
+      0.729,
+      2.064
+     ],
+     "n": 93,
+     "n_in_band": 31,
+     "craters_with_points": 52
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.113,
+      0.885,
+      1.401
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.339,
+      0.788,
+      2.003
+     ]
+    }
+   },
+   "floor_within_0.05R_of_wall_alone": {
+    "hollows": {
+     "ratio": [
+      0.915,
+      0.608,
+      1.352
+     ],
+     "pooled_DR": [
+      0.954,
+      0.632,
+      1.395
+     ],
+     "n": 1037,
+     "n_in_band": 139,
+     "craters_with_points": 52
+    },
+    "fields": {
+     "ratio": [
+      0.789,
+      0.31,
+      1.361
+     ],
+     "pooled_DR": [
+      0.827,
+      0.327,
+      1.428
+     ],
+     "n": 93,
+     "n_in_band": 11,
+     "craters_with_points": 52
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.039,
+      0.748,
+      1.388
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.134,
+      0.55,
+      1.712
+     ]
+    }
+   },
+   "floor_within_0.05R_of_peak_alone": {
+    "hollows": {
+     "ratio": [
+      1.38,
+      0.89,
+      2.024
+     ],
+     "pooled_DR": [
+      0.964,
+      0.587,
+      1.475
+     ],
+     "n": 949,
+     "n_in_band": 144,
+     "craters_with_points": 44
+    },
+    "fields": {
+     "ratio": [
+      2.359,
+      1.35,
+      3.627
+     ],
+     "pooled_DR": [
+      1.892,
+      1.044,
+      3.031
+     ],
+     "n": 77,
+     "n_in_band": 20,
+     "craters_with_points": 44
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.162,
+      0.879,
+      1.427
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.376,
+      0.795,
+      2.062
+     ]
+    }
+   },
+   "floor_margin_0.1R_of_wall_or_peak": {
+    "hollows": {
+     "ratio": [
+      1.114,
+      0.855,
+      1.479
+     ],
+     "pooled_DR": [
+      0.91,
+      0.705,
+      1.241
+     ],
+     "n": 1037,
+     "n_in_band": 537,
+     "craters_with_points": 52
+    },
+    "fields": {
+     "ratio": [
+      1.547,
+      1.05,
+      2.269
+     ],
+     "pooled_DR": [
+      1.283,
+      0.837,
+      1.985
+     ],
+     "n": 93,
+     "n_in_band": 56,
+     "craters_with_points": 52
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.089,
+      0.884,
+      1.375
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.404,
+      0.989,
+      1.941
+     ]
+    }
+   },
+   "floor_within_0.1R_of_wall_alone": {
+    "hollows": {
+     "ratio": [
+      0.808,
+      0.56,
+      1.152
+     ],
+     "pooled_DR": [
+      0.866,
+      0.595,
+      1.245
+     ],
+     "n": 1037,
+     "n_in_band": 259,
+     "craters_with_points": 52
+    },
+    "fields": {
+     "ratio": [
+      0.542,
+      0.3,
+      0.826
+     ],
+     "pooled_DR": [
+      0.582,
+      0.324,
+      0.892
+     ],
+     "n": 93,
+     "n_in_band": 17,
+     "craters_with_points": 52
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      0.903,
+      0.713,
+      1.146
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      0.804,
+      0.497,
+      1.161
+     ]
+    }
+   },
+   "floor_within_0.1R_of_peak_alone": {
+    "hollows": {
+     "ratio": [
+      1.403,
+      1.023,
+      1.98
+     ],
+     "pooled_DR": [
+      0.954,
+      0.655,
+      1.445
+     ],
+     "n": 949,
+     "n_in_band": 293,
+     "craters_with_points": 44
+    },
+    "fields": {
+     "ratio": [
+      3.211,
+      2.284,
+      5.089
+     ],
+     "pooled_DR": [
+      2.564,
+      1.739,
+      4.125
+     ],
+     "n": 77,
+     "n_in_band": 42,
+     "craters_with_points": 44
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.196,
+      1.019,
+      1.431
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.905,
+      1.437,
+      2.68
+     ]
+    }
+   },
+   "floor_margin_3km_of_wall_or_peak": {
+    "hollows": {
+     "ratio": [
+      1.068,
+      0.822,
+      1.381
+     ],
+     "pooled_DR": [
+      1.499,
+      1.086,
+      2.239
+     ],
+     "n": 1037,
+     "n_in_band": 336,
+     "craters_with_points": 52
+    },
+    "fields": {
+     "ratio": [
+      1.598,
+      0.951,
+      2.585
+     ],
+     "pooled_DR": [
+      2.067,
+      1.239,
+      3.336
+     ],
+     "n": 93,
+     "n_in_band": 37,
+     "craters_with_points": 52
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.076,
+      0.878,
+      1.326
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.463,
+      0.921,
+      2.264
+     ]
+    }
+   },
+   "floor_within_3km_of_wall_alone": {
+    "hollows": {
+     "ratio": [
+      0.907,
+      0.662,
+      1.224
+     ],
+     "pooled_DR": [
+      1.503,
+      0.959,
+      2.407
+     ],
+     "n": 1037,
+     "n_in_band": 188,
+     "craters_with_points": 52
+    },
+    "fields": {
+     "ratio": [
+      0.702,
+      0.297,
+      1.265
+     ],
+     "pooled_DR": [
+      1.103,
+      0.471,
+      1.882
+     ],
+     "n": 93,
+     "n_in_band": 13,
+     "craters_with_points": 52
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      0.996,
+      0.781,
+      1.229
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.088,
+      0.555,
+      1.722
+     ]
+    }
+   },
+   "floor_within_3km_of_peak_alone": {
+    "hollows": {
+     "ratio": [
+      1.316,
+      0.954,
+      1.831
+     ],
+     "pooled_DR": [
+      1.629,
+      1.058,
+      2.614
+     ],
+     "n": 949,
+     "n_in_band": 187,
+     "craters_with_points": 44
+    },
+    "fields": {
+     "ratio": [
+      2.799,
+      1.734,
+      4.302
+     ],
+     "pooled_DR": [
+      3.584,
+      2.177,
+      5.735
+     ],
+     "n": 77,
+     "n_in_band": 27,
+     "craters_with_points": 44
+    },
+    "hollows_radius_stratified": {
+     "ratio": [
+      1.206,
+      0.964,
+      1.469
+     ]
+    },
+    "fields_radius_stratified": {
+     "ratio": [
+      1.608,
+      1.042,
+      2.315
+     ]
+    }
+   }
+  }
+ },
+ "slope": {
+  "tracedonly_eta": {
+   "screens": {
+    "main_30cells_norelief": {
+     "min_peak_cells": 30,
+     "min_relief_m": null,
+     "hosts_passing": 93,
+     "hosts_with_peak_hollows": 76,
+     "peak_hollows": 1448,
+     "peak_fields": 105,
+     "median_relief_m": 466.2,
+     "eta_slope_r_within_crater": 0.06,
+     "eta_slope_spearman_per_crater_median": 0.159,
+     "mean_slope_deg_by_third": [
+      2.37,
+      2.94,
+      3.03
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.195,
+       0.843,
+       1.517
+      ],
+      "slope_bins": [
+       1.189,
+       0.826,
+       1.516
+      ],
+      "slope_terciles": [
+       1.203,
+       0.828,
+       1.534
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.991,
+       0.664,
+       1.556
+      ],
+      "slope_bins": [
+       0.97,
+       0.64,
+       1.552
+      ],
+      "slope_terciles": [
+       0.992,
+       0.651,
+       1.596
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.583,
+       1.103,
+       2.27
+      ],
+      "slope_bins": [
+       1.374,
+       0.924,
+       2.011
+      ],
+      "slope_terciles": [
+       1.505,
+       1.021,
+       2.191
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       0.848,
+       0.52,
+       1.28
+      ],
+      "slope_bins": [
+       1.07,
+       0.659,
+       1.626
+      ],
+      "slope_terciles": [
+       0.99,
+       0.609,
+       1.52
+      ]
+     }
+    },
+    "sens_30cells_500m": {
+     "min_peak_cells": 30,
+     "min_relief_m": 500,
+     "hosts_passing": 45,
+     "hosts_with_peak_hollows": 40,
+     "peak_hollows": 1171,
+     "peak_fields": 68,
+     "median_relief_m": 818.5,
+     "eta_slope_r_within_crater": 0.066,
+     "eta_slope_spearman_per_crater_median": 0.238,
+     "mean_slope_deg_by_third": [
+      2.53,
+      3.08,
+      3.28
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.234,
+       0.828,
+       1.623
+      ],
+      "slope_bins": [
+       1.22,
+       0.797,
+       1.597
+      ],
+      "slope_terciles": [
+       1.234,
+       0.81,
+       1.613
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.962,
+       0.607,
+       1.692
+      ],
+      "slope_bins": [
+       0.95,
+       0.587,
+       1.74
+      ],
+      "slope_terciles": [
+       0.974,
+       0.596,
+       1.826
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.449,
+       0.933,
+       2.176
+      ],
+      "slope_bins": [
+       1.321,
+       0.809,
+       2.037
+      ],
+      "slope_terciles": [
+       1.447,
+       0.893,
+       2.274
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.147,
+       0.664,
+       1.828
+      ],
+      "slope_bins": [
+       1.406,
+       0.817,
+       2.373
+      ],
+      "slope_terciles": [
+       1.293,
+       0.752,
+       2.117
+      ]
+     }
+    },
+    "sens_30cells_750m": {
+     "min_peak_cells": 30,
+     "min_relief_m": 750,
+     "hosts_passing": 27,
+     "hosts_with_peak_hollows": 24,
+     "peak_hollows": 909,
+     "peak_fields": 43,
+     "median_relief_m": 952.6,
+     "eta_slope_r_within_crater": 0.021,
+     "eta_slope_spearman_per_crater_median": 0.184,
+     "mean_slope_deg_by_third": [
+      2.82,
+      3.28,
+      3.37
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.187,
+       0.73,
+       1.592
+      ],
+      "slope_bins": [
+       1.134,
+       0.668,
+       1.532
+      ],
+      "slope_terciles": [
+       1.164,
+       0.688,
+       1.575
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.887,
+       0.548,
+       1.595
+      ],
+      "slope_bins": [
+       0.873,
+       0.536,
+       1.591
+      ],
+      "slope_terciles": [
+       0.894,
+       0.545,
+       1.66
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.013,
+       0.536,
+       1.599
+      ],
+      "slope_bins": [
+       0.94,
+       0.443,
+       1.639
+      ],
+      "slope_terciles": [
+       0.963,
+       0.459,
+       1.689
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.504,
+       0.899,
+       2.779
+      ],
+      "slope_bins": [
+       1.727,
+       1.005,
+       3.451
+      ],
+      "slope_terciles": [
+       1.646,
+       0.96,
+       3.176
+      ]
+     }
+    }
+   },
+   "main_screen_2cell_slope": {
+    "hollows_lowest_third_vs_upper_two_thirds_slope_bins": [
+     1.193,
+     0.826,
+     1.526
+    ],
+    "fields_highest_third_vs_lower_two_thirds_slope_bins": [
+     1.328,
+     0.888,
+     1.957
+    ],
+    "eta_slope_r_within_crater": 0.058
+   }
+  },
+  "tracedonly_eta_b": {
+   "screens": {
+    "main_30cells_norelief": {
+     "min_peak_cells": 30,
+     "min_relief_m": null,
+     "hosts_passing": 93,
+     "hosts_with_peak_hollows": 76,
+     "peak_hollows": 1448,
+     "peak_fields": 105,
+     "median_relief_m": 466.2,
+     "eta_slope_r_within_crater": 0.055,
+     "eta_slope_spearman_per_crater_median": 0.159,
+     "mean_slope_deg_by_third": [
+      2.51,
+      2.91,
+      2.97
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.09,
+       0.732,
+       1.481
+      ],
+      "slope_bins": [
+       1.088,
+       0.715,
+       1.499
+      ],
+      "slope_terciles": [
+       1.096,
+       0.72,
+       1.516
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.991,
+       0.659,
+       1.58
+      ],
+      "slope_bins": [
+       0.959,
+       0.636,
+       1.565
+      ],
+      "slope_terciles": [
+       0.982,
+       0.647,
+       1.611
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.918,
+       1.38,
+       2.705
+      ],
+      "slope_bins": [
+       1.696,
+       1.179,
+       2.452
+      ],
+      "slope_terciles": [
+       1.769,
+       1.229,
+       2.59
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       0.827,
+       0.526,
+       1.184
+      ],
+      "slope_bins": [
+       1.045,
+       0.669,
+       1.497
+      ],
+      "slope_terciles": [
+       0.951,
+       0.593,
+       1.385
+      ]
+     }
+    },
+    "sens_30cells_500m": {
+     "min_peak_cells": 30,
+     "min_relief_m": 500,
+     "hosts_passing": 45,
+     "hosts_with_peak_hollows": 40,
+     "peak_hollows": 1171,
+     "peak_fields": 68,
+     "median_relief_m": 818.5,
+     "eta_slope_r_within_crater": 0.057,
+     "eta_slope_spearman_per_crater_median": 0.238,
+     "mean_slope_deg_by_third": [
+      2.64,
+      3.09,
+      3.28
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.139,
+       0.724,
+       1.605
+      ],
+      "slope_bins": [
+       1.126,
+       0.687,
+       1.603
+      ],
+      "slope_terciles": [
+       1.134,
+       0.697,
+       1.612
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.977,
+       0.599,
+       1.827
+      ],
+      "slope_bins": [
+       0.955,
+       0.579,
+       1.866
+      ],
+      "slope_terciles": [
+       0.98,
+       0.588,
+       1.942
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.708,
+       1.14,
+       2.539
+      ],
+      "slope_bins": [
+       1.534,
+       1.002,
+       2.323
+      ],
+      "slope_terciles": [
+       1.671,
+       1.087,
+       2.527
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.162,
+       0.726,
+       1.764
+      ],
+      "slope_bins": [
+       1.383,
+       0.853,
+       2.169
+      ],
+      "slope_terciles": [
+       1.301,
+       0.797,
+       2.031
+      ]
+     }
+    },
+    "sens_30cells_750m": {
+     "min_peak_cells": 30,
+     "min_relief_m": 750,
+     "hosts_passing": 27,
+     "hosts_with_peak_hollows": 24,
+     "peak_hollows": 909,
+     "peak_fields": 43,
+     "median_relief_m": 952.6,
+     "eta_slope_r_within_crater": 0.014,
+     "eta_slope_spearman_per_crater_median": 0.184,
+     "mean_slope_deg_by_third": [
+      2.94,
+      3.26,
+      3.38
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.115,
+       0.624,
+       1.664
+      ],
+      "slope_bins": [
+       1.071,
+       0.575,
+       1.622
+      ],
+      "slope_terciles": [
+       1.093,
+       0.588,
+       1.649
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.895,
+       0.539,
+       1.74
+      ],
+      "slope_bins": [
+       0.874,
+       0.524,
+       1.765
+      ],
+      "slope_terciles": [
+       0.896,
+       0.53,
+       1.824
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.216,
+       0.719,
+       1.873
+      ],
+      "slope_bins": [
+       1.141,
+       0.64,
+       1.802
+      ],
+      "slope_terciles": [
+       1.162,
+       0.662,
+       1.843
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.663,
+       1.033,
+       2.844
+      ],
+      "slope_bins": [
+       1.852,
+       1.097,
+       3.329
+      ],
+      "slope_terciles": [
+       1.819,
+       1.094,
+       3.233
+      ]
+     }
+    }
+   },
+   "main_screen_2cell_slope": {
+    "hollows_lowest_third_vs_upper_two_thirds_slope_bins": [
+     1.088,
+     0.713,
+     1.509
+    ],
+    "fields_highest_third_vs_lower_two_thirds_slope_bins": [
+     1.636,
+     1.139,
+     2.37
+    ],
+    "eta_slope_r_within_crater": 0.053
+   }
+  },
+  "g13r2_eta": {
+   "screens": {
+    "main_30cells_norelief": {
+     "min_peak_cells": 30,
+     "min_relief_m": null,
+     "hosts_passing": 54,
+     "hosts_with_peak_hollows": 49,
+     "peak_hollows": 1316,
+     "peak_fields": 71,
+     "median_relief_m": 471.8,
+     "eta_slope_r_within_crater": 0.018,
+     "eta_slope_spearman_per_crater_median": 0.137,
+     "mean_slope_deg_by_third": [
+      2.52,
+      3.02,
+      3.03
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.2,
+       0.834,
+       1.549
+      ],
+      "slope_bins": [
+       1.181,
+       0.802,
+       1.526
+      ],
+      "slope_terciles": [
+       1.195,
+       0.806,
+       1.545
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.962,
+       0.629,
+       1.553
+      ],
+      "slope_bins": [
+       0.944,
+       0.605,
+       1.534
+      ],
+      "slope_terciles": [
+       0.967,
+       0.615,
+       1.601
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.288,
+       0.8,
+       1.987
+      ],
+      "slope_bins": [
+       1.317,
+       0.78,
+       2.142
+      ],
+      "slope_terciles": [
+       1.299,
+       0.771,
+       2.072
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       0.913,
+       0.473,
+       1.521
+      ],
+      "slope_bins": [
+       1.048,
+       0.566,
+       1.745
+      ],
+      "slope_terciles": [
+       1.025,
+       0.556,
+       1.705
+      ]
+     }
+    },
+    "sens_30cells_500m": {
+     "min_peak_cells": 30,
+     "min_relief_m": 500,
+     "hosts_passing": 26,
+     "hosts_with_peak_hollows": 25,
+     "peak_hollows": 1092,
+     "peak_fields": 47,
+     "median_relief_m": 837.7,
+     "eta_slope_r_within_crater": 0.018,
+     "eta_slope_spearman_per_crater_median": 0.198,
+     "mean_slope_deg_by_third": [
+      2.7,
+      3.18,
+      3.25
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.266,
+       0.821,
+       1.635
+      ],
+      "slope_bins": [
+       1.245,
+       0.787,
+       1.617
+      ],
+      "slope_terciles": [
+       1.257,
+       0.796,
+       1.632
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.939,
+       0.59,
+       1.744
+      ],
+      "slope_bins": [
+       0.927,
+       0.574,
+       1.76
+      ],
+      "slope_terciles": [
+       0.951,
+       0.583,
+       1.845
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.2,
+       0.721,
+       1.874
+      ],
+      "slope_bins": [
+       1.277,
+       0.718,
+       2.133
+      ],
+      "slope_terciles": [
+       1.177,
+       0.651,
+       1.977
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.633,
+       0.827,
+       2.861
+      ],
+      "slope_bins": [
+       1.755,
+       0.876,
+       3.103
+      ],
+      "slope_terciles": [
+       1.777,
+       0.894,
+       3.157
+      ]
+     }
+    },
+    "sens_30cells_750m": {
+     "min_peak_cells": 30,
+     "min_relief_m": 750,
+     "hosts_passing": 17,
+     "hosts_with_peak_hollows": 17,
+     "peak_hollows": 870,
+     "peak_fields": 32,
+     "median_relief_m": 1003.0,
+     "eta_slope_r_within_crater": -0.012,
+     "eta_slope_spearman_per_crater_median": 0.184,
+     "mean_slope_deg_by_third": [
+      2.98,
+      3.3,
+      3.32
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.227,
+       0.736,
+       1.632
+      ],
+      "slope_bins": [
+       1.16,
+       0.668,
+       1.566
+      ],
+      "slope_terciles": [
+       1.188,
+       0.674,
+       1.601
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.876,
+       0.534,
+       1.612
+      ],
+      "slope_bins": [
+       0.865,
+       0.531,
+       1.627
+      ],
+      "slope_terciles": [
+       0.886,
+       0.535,
+       1.713
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.825,
+       0.357,
+       1.312
+      ],
+      "slope_bins": [
+       0.833,
+       0.316,
+       1.498
+      ],
+      "slope_terciles": [
+       0.747,
+       0.285,
+       1.332
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.87,
+       0.976,
+       4.308
+      ],
+      "slope_bins": [
+       1.937,
+       0.987,
+       4.624
+      ],
+      "slope_terciles": [
+       2.051,
+       1.036,
+       5.018
+      ]
+     }
+    }
+   },
+   "main_screen_2cell_slope": {
+    "hollows_lowest_third_vs_upper_two_thirds_slope_bins": [
+     1.188,
+     0.802,
+     1.539
+    ],
+    "fields_highest_third_vs_lower_two_thirds_slope_bins": [
+     1.269,
+     0.758,
+     2.052
+    ],
+    "eta_slope_r_within_crater": 0.016
+   }
+  },
+  "g13r2_eta_b": {
+   "screens": {
+    "main_30cells_norelief": {
+     "min_peak_cells": 30,
+     "min_relief_m": null,
+     "hosts_passing": 54,
+     "hosts_with_peak_hollows": 49,
+     "peak_hollows": 1316,
+     "peak_fields": 71,
+     "median_relief_m": 471.8,
+     "eta_slope_r_within_crater": 0.011,
+     "eta_slope_spearman_per_crater_median": 0.137,
+     "mean_slope_deg_by_third": [
+      2.68,
+      2.97,
+      2.98
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.11,
+       0.726,
+       1.54
+      ],
+      "slope_bins": [
+       1.097,
+       0.7,
+       1.534
+      ],
+      "slope_terciles": [
+       1.103,
+       0.702,
+       1.543
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.972,
+       0.631,
+       1.626
+      ],
+      "slope_bins": [
+       0.947,
+       0.607,
+       1.605
+      ],
+      "slope_terciles": [
+       0.97,
+       0.616,
+       1.654
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.715,
+       1.1,
+       2.562
+      ],
+      "slope_bins": [
+       1.802,
+       1.146,
+       2.815
+      ],
+      "slope_terciles": [
+       1.747,
+       1.117,
+       2.728
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.044,
+       0.617,
+       1.599
+      ],
+      "slope_bins": [
+       1.191,
+       0.722,
+       1.814
+      ],
+      "slope_terciles": [
+       1.217,
+       0.732,
+       1.874
+      ]
+     }
+    },
+    "sens_30cells_500m": {
+     "min_peak_cells": 30,
+     "min_relief_m": 500,
+     "hosts_passing": 26,
+     "hosts_with_peak_hollows": 25,
+     "peak_hollows": 1092,
+     "peak_fields": 47,
+     "median_relief_m": 837.7,
+     "eta_slope_r_within_crater": 0.01,
+     "eta_slope_spearman_per_crater_median": 0.198,
+     "mean_slope_deg_by_third": [
+      2.82,
+      3.15,
+      3.24
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.151,
+       0.689,
+       1.633
+      ],
+      "slope_bins": [
+       1.134,
+       0.658,
+       1.632
+      ],
+      "slope_terciles": [
+       1.139,
+       0.652,
+       1.643
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.952,
+       0.591,
+       1.902
+      ],
+      "slope_bins": [
+       0.931,
+       0.571,
+       1.919
+      ],
+      "slope_terciles": [
+       0.957,
+       0.582,
+       2.012
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.447,
+       0.969,
+       2.132
+      ],
+      "slope_bins": [
+       1.559,
+       0.996,
+       2.43
+      ],
+      "slope_terciles": [
+       1.436,
+       0.907,
+       2.221
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.53,
+       0.903,
+       2.437
+      ],
+      "slope_bins": [
+       1.559,
+       0.913,
+       2.501
+      ],
+      "slope_terciles": [
+       1.665,
+       0.975,
+       2.734
+      ]
+     }
+    },
+    "sens_30cells_750m": {
+     "min_peak_cells": 30,
+     "min_relief_m": 750,
+     "hosts_passing": 17,
+     "hosts_with_peak_hollows": 17,
+     "peak_hollows": 870,
+     "peak_fields": 32,
+     "median_relief_m": 1003.0,
+     "eta_slope_r_within_crater": -0.018,
+     "eta_slope_spearman_per_crater_median": 0.184,
+     "mean_slope_deg_by_third": [
+      3.08,
+      3.27,
+      3.32
+     ],
+     "hollows_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.138,
+       0.624,
+       1.708
+      ],
+      "slope_bins": [
+       1.083,
+       0.565,
+       1.652
+      ],
+      "slope_terciles": [
+       1.102,
+       0.572,
+       1.678
+      ]
+     },
+     "hollows_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       0.882,
+       0.525,
+       1.835
+      ],
+      "slope_bins": [
+       0.864,
+       0.514,
+       1.838
+      ],
+      "slope_terciles": [
+       0.886,
+       0.519,
+       1.925
+      ]
+     },
+     "fields_highest_third_vs_lower_two_thirds": {
+      "no_slope_control": [
+       1.033,
+       0.57,
+       1.507
+      ],
+      "slope_bins": [
+       1.041,
+       0.558,
+       1.576
+      ],
+      "slope_terciles": [
+       0.931,
+       0.481,
+       1.416
+      ]
+     },
+     "fields_lowest_third_vs_upper_two_thirds": {
+      "no_slope_control": [
+       1.922,
+       1.104,
+       3.963
+      ],
+      "slope_bins": [
+       1.875,
+       1.07,
+       3.983
+      ],
+      "slope_terciles": [
+       2.106,
+       1.188,
+       4.803
+      ]
+     }
+    }
+   },
+   "main_screen_2cell_slope": {
+    "hollows_lowest_third_vs_upper_two_thirds_slope_bins": [
+     1.096,
+     0.695,
+     1.536
+    ],
+    "fields_highest_third_vs_lower_two_thirds_slope_bins": [
+     1.731,
+     1.094,
+     2.699
+    ],
+    "eta_slope_r_within_crater": 0.009
+   }
+  }
+ }
+}

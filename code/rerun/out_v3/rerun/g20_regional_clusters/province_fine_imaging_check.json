@@ -1,0 +1,38 @@
+{
+ "5-30 km, best px <= 20 m, 45-75N | province": {
+  "n": 143,
+  "hosts": 13,
+  "rate": 0.091,
+  "predicted": 1.5
+ },
+ "5-30 km, best px <= 20 m, 45-75N | elsewhere": {
+  "n": 831,
+  "hosts": 9,
+  "rate": 0.011,
+  "predicted": 15.0
+ },
+ "5-30 km, best px <= 20 m, all latitudes | province": {
+  "n": 150,
+  "hosts": 14,
+  "rate": 0.093,
+  "predicted": 1.5
+ },
+ "5-30 km, best px <= 20 m, all latitudes | elsewhere": {
+  "n": 1515,
+  "hosts": 34,
+  "rate": 0.022,
+  "predicted": 31.7
+ },
+ "5-30 km, C(0.3 km) >= 0.05, 45-75N | province": {
+  "n": 143,
+  "hosts": 13,
+  "rate": 0.091,
+  "predicted": 1.5
+ },
+ "5-30 km, C(0.3 km) >= 0.05, 45-75N | elsewhere": {
+  "n": 841,
+  "hosts": 9,
+  "rate": 0.011,
+  "predicted": 15.1
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "hand_field_id": {
+  "n": 94,
+  "groups": 24,
+  "D_range_within_median": 1.54,
+  "within_slope": 0.365,
+  "within_se": 0.104,
+  "between_slope": 0.737,
+  "between_se": 0.151
+ },
+ "hand_host_uid": {
+  "n": 80,
+  "groups": 21,
+  "D_range_within_median": 1.54,
+  "within_slope": 0.428,
+  "within_se": 0.089,
+  "between_slope": 0.78,
+  "between_se": 0.201
+ },
+ "hand_pooled_slope": 0.571,
+ "auto_field_id": {
+  "n": 422,
+  "groups": 121,
+  "D_range_within_median": 1.6,
+  "within_slope": 0.488,
+  "within_se": 0.063,
+  "between_slope": 0.843,
+  "between_se": 0.101
+ },
+ "auto_host_uid": {
+  "n": 259,
+  "groups": 67,
+  "D_range_within_median": 1.82,
+  "within_slope": 0.494,
+  "within_se": 0.075,
+  "between_slope": 0.851,
+  "between_se": 0.115
+ },
+ "auto_pooled_slope": 0.604
+}

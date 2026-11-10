@@ -1,0 +1,134 @@
+{
+ "created": "2026-11-08",
+ "cant_tell_hosts": [
+  {
+   "uid": 109266,
+   "D": 46.949182,
+   "kclass": 1,
+   "n_assigned": 1,
+   "n_p015": 0,
+   "A_p015": 3.674120285138056,
+   "note": ""
+  },
+  {
+   "uid": 200363,
+   "D": 161.135777,
+   "kclass": 2,
+   "n_assigned": 3,
+   "n_p015": 1,
+   "A_p015": 203.6245601553848,
+   "note": "i can't distinguish the high topography in the center from a smaller impact into the middle of this larger impact."
+  },
+  {
+   "uid": 200651,
+   "D": 111.842151,
+   "kclass": 2,
+   "n_assigned": 3,
+   "n_p015": 0,
+   "A_p015": 81.2038287203395,
+   "note": "too overprinted by contraction tectonics"
+  },
+  {
+   "uid": 200668,
+   "D": 110.307318,
+   "kclass": 2,
+   "n_assigned": 3,
+   "n_p015": 0,
+   "A_p015": 13.484454287892529,
+   "note": ""
+  },
+  {
+   "uid": 201010,
+   "D": 87.266267,
+   "kclass": 1,
+   "n_assigned": 1,
+   "n_p015": 0,
+   "A_p015": 131.8139803839958,
+   "note": "no peak, degraded, at least can't tell peak from other stuff going on"
+  },
+  {
+   "uid": 201019,
+   "D": 87.065868,
+   "kclass": 2,
+   "n_assigned": 1,
+   "n_p015": 0,
+   "A_p015": 42.286931370831645,
+   "note": ""
+  },
+  {
+   "uid": 201182,
+   "D": 79.284887,
+   "kclass": 2,
+   "n_assigned": 1,
+   "n_p015": 0,
+   "A_p015": 1.664430579171572,
+   "note": ""
+  }
+ ],
+ "cant_tell_sample": [
+  {
+   "uid": 201652,
+   "D": 63.645743,
+   "kclass": 2,
+   "pi": 0.121725,
+   "n_p015": 0,
+   "A_p015": 30.52492846623857,
+   "note": ""
+  }
+ ],
+ "n_knob_hollows": 24,
+ "n_knobs": 2011,
+ "n_knobs_with_hollows": 19,
+ "main": {
+  "ratio": 0.76,
+  "ci": [
+   0.32,
+   1.63
+  ],
+  "peak_hollows": 74,
+  "peak_area_km2": 12296,
+  "sd_log": 0.417
+ },
+ "bound_cant_tell_within_0p15R_as_peak": {
+  "ratio": 0.79,
+  "ci": [
+   0.34,
+   1.76
+  ],
+  "peak_hollows": 75,
+  "peak_area_km2": 12950,
+  "sd_log": 0.417
+ },
+ "components": {
+  "knobs_only": {
+   "ratio": 0.76,
+   "ci": [
+    0.42,
+    1.18
+   ],
+   "peak_hollows": 74,
+   "peak_area_km2": 12296,
+   "sd_log": 0.264
+  },
+  "hosts_only": {
+   "ratio": 0.76,
+   "ci": [
+    0.44,
+    1.46
+   ],
+   "peak_hollows": 74,
+   "peak_area_km2": 12296,
+   "sd_log": 0.304
+  },
+  "sample_only": {
+   "ratio": 0.76,
+   "ci": [
+    0.6,
+    0.96
+   ],
+   "peak_hollows": 74,
+   "peak_area_km2": 12296,
+   "sd_log": 0.121
+  }
+ }
+}

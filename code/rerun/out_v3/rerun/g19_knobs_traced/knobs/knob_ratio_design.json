@@ -1,0 +1,67 @@
+{
+ "created": "2026-11-07",
+ "note": "g19 (7 Nov 2026), new script: knob hollow density / hollow density on the peaks of Kinczyk et al. (2020) Class 1-2 craters, with peak\noutlines traced by hand (tracer groups A-D, traces_clean_r3k.json). Class 1-2 craters 30-250 km (2,160, as g13). Hosts (assigned hollows > 0)\nare all traced: their hollows on traced peaks and their traced peak area enter exactly. Craters without hollows enter through the PPS sample\nof tracer group D (g17 selection.json, inclusion probabilities pi): Horvitz-Thompson total of traced peak area, sum(A_i / pi_i). Craters\nmarked can't tell: hosts contribute no hollows and no area (as a crater with no peak); a sampled crater without hollows is dropped and the\nnon-certainty part of the sample is scaled by m / (m - dropped). Intervals: 4,000 bootstrap replicates resampling knobs, hosts, and the\nnon-certainty sample units independently (certainty units fixed), default_rng(1). Sensitivity: can't-tell craters with curvature v3 peaks;\ncurvature v3 for every crater (the g13 definition). Writes class12_peaks_traced_r3k.csv and knob_ratio_design.json.",
+ "n_class12": 2160,
+ "n_hosts": 108,
+ "n_nonhosts": 2052,
+ "sample": 60,
+ "sample_certainty": 5,
+ "host_status": {
+  "done": 101,
+  "skip": 7
+ },
+ "sample_status": {
+  "done": 59,
+  "skip": 1
+ },
+ "sample_with_traced_peak": 10,
+ "design_check": {
+  "curv_nonhost_total": 46668,
+  "curv_nonhost_HT_from_sample": 38833
+ },
+ "traced": {
+  "peak_hollows": 74,
+  "hosts": 108,
+  "hosts_with_peak_hollows": 20,
+  "host_peak_area_km2": 8166,
+  "nonhost_peak_area_HT_km2": 4130,
+  "peak_density_per_1000km2": 6.018,
+  "knob_density_per_1000km2": 4.586,
+  "knob_over_peak": 0.76,
+  "ci": [
+   0.32,
+   1.63
+  ],
+  "n_boot": 4000
+ },
+ "traced_skip_curv": {
+  "peak_hollows": 75,
+  "hosts": 108,
+  "hosts_with_peak_hollows": 21,
+  "host_peak_area_km2": 9020,
+  "nonhost_peak_area_HT_km2": 4305,
+  "peak_density_per_1000km2": 5.629,
+  "knob_density_per_1000km2": 4.586,
+  "knob_over_peak": 0.81,
+  "ci": [
+   0.35,
+   1.81
+  ],
+  "n_boot": 4000
+ },
+ "curvature_all": {
+  "peak_hollows": 112,
+  "hosts": 108,
+  "hosts_with_peak_hollows": 33,
+  "host_peak_area_km2": 23179,
+  "nonhost_peak_area_HT_km2": 38833,
+  "peak_density_per_1000km2": 1.806,
+  "knob_density_per_1000km2": 4.586,
+  "knob_over_peak": 2.54,
+  "ci": [
+   1.24,
+   4.9
+  ],
+  "n_boot": 4000
+ }
+}

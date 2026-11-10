@@ -1,0 +1,7 @@
+# g25: composition group in the joint model (9 Nov 2026)
+Michael (v6.10 comment 32): the joint model should have a composition group with LRM and MDIS color from the start; XRS stays out (footprints of hundreds of km).
+- comp_model.py: thinned occurrence model (cloglog, offset 2 ln D, g ln C) with seven groups; composition = LRM fraction + host-interior color PC1 and PC2 (g6_remaining/color/out_v3/crater_color.csv, standardized) + a no-color indicator (142 craters). Dominance analysis, 100 block bootstraps (~640 km blocks); shares and intervals use the 87 converged draws (boot_failure_check). Also the XRS subset, counts model, and well-imaged logistic model. Writes comp.json, comp_coefs.csv, crater_color_z.csv.
+- Result: R2 0.23 (0.20-0.27); shares degradation 37 (29-47), insolation 18 (11-21), nesting 16 (12-19), size 12 (9-20), volcanic cover 7 (1-10), composition 7 (3-14), vents 3 (2-7). Regional fraction adds 0.030 (0.015-0.042); XRS lowers that by 0.001.
+- clusters_comp.py: g20 clusters.py with the composition coefficients. Same three regions: province 23 vs 5.0; 13N 329E 23 vs 8.8; Tyagaraja 19 vs 6.7; 112 hosts within 500 km of excess nodes vs 48.8. Writes grid.npz, clusters.json, craters_P.csv. The 300/750 km window checks were not rerun.
+- fig_regional_comp.py -> fig_regional_excess_comp_v1.png/.pdf (main-text Figure 6 of v6.11).
+- fig7_lifecycle_v11.png/.pdf: written here by manuscripts/.../figscripts/lifecycle_fig_v11.py (main-text Figure 7 of v6.11).
