@@ -1,0 +1,442 @@
+{
+ "step7_improved:thinned_presence_all": {
+  "draws": 100,
+  "failed": 13,
+  "ci_share_all": {
+   "size": [
+    8.1,
+    39.3
+   ],
+   "insolation": [
+    7.0,
+    21.7
+   ],
+   "age": [
+    30.5,
+    51.0
+   ],
+   "nesting": [
+    11.9,
+    21.2
+   ],
+   "cover": [
+    -6.1,
+    10.7
+   ],
+   "volcanism": [
+    1.7,
+    7.9
+   ],
+   "composition": [
+    0.3,
+    5.8
+   ]
+  },
+  "ci_share_without_failed": {
+   "size": [
+    9.5,
+    19.0
+   ],
+   "insolation": [
+    11.2,
+    21.6
+   ],
+   "age": [
+    30.7,
+    48.4
+   ],
+   "nesting": [
+    12.0,
+    20.5
+   ],
+   "cover": [
+    1.8,
+    10.7
+   ],
+   "volcanism": [
+    1.8,
+    6.8
+   ],
+   "composition": [
+    0.6,
+    5.4
+   ]
+  },
+  "ci_R2_all": [
+   19.5,
+   26.5
+  ],
+  "ci_R2_without_failed": [
+   19.5,
+   26.6
+  ]
+ },
+ "step7_improved:thinned_presence_xrs_subset_lrm_only": {
+  "draws": 100,
+  "failed": 22,
+  "ci_share_all": {
+   "size": [
+    10.2,
+    40.1
+   ],
+   "insolation": [
+    4.2,
+    21.1
+   ],
+   "age": [
+    31.1,
+    49.3
+   ],
+   "nesting": [
+    11.4,
+    23.9
+   ],
+   "cover": [
+    -8.4,
+    9.5
+   ],
+   "volcanism": [
+    0.9,
+    9.3
+   ],
+   "composition": [
+    0.3,
+    7.1
+   ]
+  },
+  "ci_share_without_failed": {
+   "size": [
+    10.2,
+    16.9
+   ],
+   "insolation": [
+    13.8,
+    21.0
+   ],
+   "age": [
+    31.8,
+    45.7
+   ],
+   "nesting": [
+    11.9,
+    23.6
+   ],
+   "cover": [
+    3.5,
+    9.2
+   ],
+   "volcanism": [
+    1.8,
+    8.2
+   ],
+   "composition": [
+    0.5,
+    6.7
+   ]
+  },
+  "ci_R2_all": [
+   18.5,
+   26.7
+  ],
+  "ci_R2_without_failed": [
+   18.9,
+   26.8
+  ]
+ },
+ "step7_improved:thinned_presence_xrs_subset_lrm_xrs": {
+  "draws": 100,
+  "failed": 20,
+  "ci_share_all": {
+   "size": [
+    9.9,
+    40.3
+   ],
+   "insolation": [
+    4.7,
+    20.7
+   ],
+   "age": [
+    30.2,
+    47.2
+   ],
+   "nesting": [
+    10.6,
+    23.6
+   ],
+   "cover": [
+    -8.4,
+    8.5
+   ],
+   "volcanism": [
+    0.9,
+    8.8
+   ],
+   "composition": [
+    1.9,
+    11.1
+   ]
+  },
+  "ci_share_without_failed": {
+   "size": [
+    9.9,
+    18.9
+   ],
+   "insolation": [
+    13.6,
+    20.6
+   ],
+   "age": [
+    30.2,
+    44.7
+   ],
+   "nesting": [
+    11.4,
+    22.5
+   ],
+   "cover": [
+    1.1,
+    8.4
+   ],
+   "volcanism": [
+    1.1,
+    7.9
+   ],
+   "composition": [
+    2.4,
+    10.3
+   ]
+  },
+  "ci_R2_all": [
+   18.9,
+   27.3
+  ],
+  "ci_R2_without_failed": [
+   19.3,
+   27.6
+  ]
+ },
+ "step9_color:lrm_only": {
+  "draws": 60,
+  "failed": 4,
+  "ci_share_all": {
+   "size": [
+    8.2,
+    39.3
+   ],
+   "insolation": [
+    6.0,
+    21.1
+   ],
+   "age": [
+    30.8,
+    48.7
+   ],
+   "nesting": [
+    11.0,
+    20.7
+   ],
+   "cover": [
+    -5.4,
+    10.7
+   ],
+   "volcanism": [
+    1.7,
+    7.5
+   ],
+   "composition": [
+    0.1,
+    5.9
+   ]
+  },
+  "ci_share_without_failed": {
+   "size": [
+    8.5,
+    25.2
+   ],
+   "insolation": [
+    11.8,
+    21.0
+   ],
+   "age": [
+    30.6,
+    48.0
+   ],
+   "nesting": [
+    10.9,
+    19.8
+   ],
+   "cover": [
+    2.6,
+    10.7
+   ],
+   "volcanism": [
+    1.7,
+    7.4
+   ],
+   "composition": [
+    0.5,
+    5.9
+   ]
+  },
+  "ci_R2_all": [
+   19.2,
+   26.0
+  ],
+  "ci_R2_without_failed": [
+   19.2,
+   26.1
+  ]
+ },
+ "step9_color:lrm_pc": {
+  "draws": 60,
+  "failed": 5,
+  "ci_share_all": {
+   "size": [
+    7.9,
+    41.2
+   ],
+   "insolation": [
+    5.5,
+    20.2
+   ],
+   "age": [
+    28.9,
+    47.8
+   ],
+   "nesting": [
+    10.5,
+    19.8
+   ],
+   "cover": [
+    -6.3,
+    10.1
+   ],
+   "volcanism": [
+    1.7,
+    7.6
+   ],
+   "composition": [
+    1.6,
+    10.6
+   ]
+  },
+  "ci_share_without_failed": {
+   "size": [
+    8.2,
+    24.2
+   ],
+   "insolation": [
+    12.1,
+    20.1
+   ],
+   "age": [
+    28.7,
+    47.0
+   ],
+   "nesting": [
+    10.7,
+    19.3
+   ],
+   "cover": [
+    3.1,
+    10.1
+   ],
+   "volcanism": [
+    1.7,
+    7.5
+   ],
+   "composition": [
+    2.3,
+    10.6
+   ]
+  },
+  "ci_R2_all": [
+   19.5,
+   26.3
+  ],
+  "ci_R2_without_failed": [
+   19.5,
+   26.4
+  ]
+ },
+ "step3_dominance:None": {
+  "draws": 200,
+  "failed": 0,
+  "ci_share_all": {
+   "detection": [
+    22.6,
+    32.2
+   ],
+   "size": [
+    14.3,
+    19.5
+   ],
+   "insolation": [
+    14.2,
+    19.7
+   ],
+   "age": [
+    16.1,
+    22.7
+   ],
+   "nesting": [
+    10.9,
+    16.4
+   ],
+   "cover": [
+    1.6,
+    4.6
+   ],
+   "volcanism": [
+    1.6,
+    4.7
+   ],
+   "composition": [
+    0.1,
+    1.1
+   ]
+  },
+  "ci_share_without_failed": {
+   "detection": [
+    22.6,
+    32.2
+   ],
+   "size": [
+    14.3,
+    19.5
+   ],
+   "insolation": [
+    14.2,
+    19.7
+   ],
+   "age": [
+    16.1,
+    22.7
+   ],
+   "nesting": [
+    10.9,
+    16.4
+   ],
+   "cover": [
+    1.6,
+    4.6
+   ],
+   "volcanism": [
+    1.6,
+    4.7
+   ],
+   "composition": [
+    0.1,
+    1.1
+   ]
+  },
+  "ci_R2_all": [
+   39.4,
+   46.8
+  ],
+  "ci_R2_without_failed": [
+   39.4,
+   46.8
+  ]
+ }
+}

@@ -1,0 +1,441 @@
+{
+ "method": {
+  "region": "crater interior d <= 0.9 R, annulus 1.2-2.0 R; hollow-masked (r_excl = 1 km + min(D_eq,5 km)/2 around 6,731 canonical hollows; 1 km around 2,518 depth-measured hollows)",
+  "pixel_qc": "all 8 bands > 0; r750 >= 0.035; 0.40 <= r430/r750 <= 0.85; 0.95 <= r1000/r750 <= 1.60",
+  "normalization": "nl_k = ln r_k - mean_k ln r_k (divide by geometric mean); albedo_gm = exp(mean ln r)",
+  "indices": {
+   "slope": "ln(r750/r430)",
+   "curv": "ln(r1000/r750) - ln(r750/r560)",
+   "curv_wl": "ln r1000 - [ln r750 + (ln r750 - ln r560)*250/190]"
+  },
+  "pca": "sklearn PCA, centered, unscaled, on nl430..nl1000 of craters with n_pix >= 20; signs fixed as in script docstring",
+  "n_min": 20,
+  "statistic": "per-band median of valid pixels; spectra then normalized"
+ },
+ "n_craters": 31554,
+ "n_pca": 31412,
+ "variance_ratio": [
+  0.87725,
+  0.05071,
+  0.02205,
+  0.01878,
+  0.01368,
+  0.01053,
+  0.00701,
+  0.0
+ ],
+ "eigenvalues": [
+  0.0037564737907170207,
+  0.00021715158197763094,
+  9.440634281700408e-05,
+  8.041677557522729e-05,
+  5.857316563032232e-05,
+  4.5070523599894e-05,
+  3.003257803654546e-05,
+  0.0
+ ],
+ "mean_nl": {
+  "430": -0.4047,
+  "480": -0.2565,
+  "560": -0.1159,
+  "630": -0.02,
+  "750": 0.0906,
+  "830": 0.1988,
+  "900": 0.2394,
+  "1000": 0.2683
+ },
+ "loadings": {
+  "PC1": {
+   "430": -0.488,
+   "480": -0.4147,
+   "560": -0.3041,
+   "630": -0.0726,
+   "750": 0.1045,
+   "830": 0.2856,
+   "900": 0.3977,
+   "1000": 0.4915
+  },
+  "PC2": {
+   "430": 0.6566,
+   "480": -0.0492,
+   "560": -0.2613,
+   "630": -0.5327,
+   "750": -0.2032,
+   "830": -0.103,
+   "900": 0.1031,
+   "1000": 0.3897
+  },
+  "PC3": {
+   "430": 0.2773,
+   "480": -0.1999,
+   "560": -0.565,
+   "630": 0.6907,
+   "750": 0.0707,
+   "830": -0.2018,
+   "900": -0.175,
+   "1000": 0.1029
+  }
+ },
+ "pc_sd": [
+  0.06129007905621448,
+  0.014736063992044515,
+  0.009716292647764583
+ ],
+ "correlations": {
+  "PC1": {
+   "slope": {
+    "pearson": 0.928,
+    "spearman": 0.922,
+    "n": 31412
+   },
+   "curv": {
+    "pearson": -0.061,
+    "spearman": -0.021,
+    "n": 31412
+   },
+   "curv_wl": {
+    "pearson": -0.353,
+    "spearman": -0.385,
+    "n": 31412
+   },
+   "albedo_gm": {
+    "pearson": -0.312,
+    "spearman": -0.348,
+    "n": 31412
+   },
+   "lrm": {
+    "pearson": -0.26,
+    "spearman": -0.217,
+    "n": 31412
+   },
+   "nsp": {
+    "pearson": 0.242,
+    "spearman": 0.203,
+    "n": 31412
+   },
+   "abslat": {
+    "pearson": 0.3,
+    "spearman": 0.291,
+    "n": 31412
+   },
+   "logD": {
+    "pearson": 0.198,
+    "spearman": 0.213,
+    "n": 31412
+   },
+   "img_count_med": {
+    "pearson": -0.212,
+    "spearman": -0.231,
+    "n": 31412
+   }
+  },
+  "PC2": {
+   "slope": {
+    "pearson": -0.324,
+    "spearman": -0.248,
+    "n": 31412
+   },
+   "curv": {
+    "pearson": 0.367,
+    "spearman": 0.388,
+    "n": 31412
+   },
+   "curv_wl": {
+    "pearson": 0.291,
+    "spearman": 0.274,
+    "n": 31412
+   },
+   "albedo_gm": {
+    "pearson": -0.248,
+    "spearman": -0.306,
+    "n": 31412
+   },
+   "lrm": {
+    "pearson": 0.233,
+    "spearman": 0.23,
+    "n": 31412
+   },
+   "nsp": {
+    "pearson": -0.019,
+    "spearman": -0.0,
+    "n": 31412
+   },
+   "abslat": {
+    "pearson": 0.179,
+    "spearman": 0.293,
+    "n": 31412
+   },
+   "logD": {
+    "pearson": -0.027,
+    "spearman": -0.013,
+    "n": 31412
+   },
+   "img_count_med": {
+    "pearson": -0.008,
+    "spearman": -0.003,
+    "n": 31412
+   }
+  },
+  "PC3": {
+   "slope": {
+    "pearson": -0.051,
+    "spearman": 0.003,
+    "n": 31412
+   },
+   "curv": {
+    "pearson": -0.273,
+    "spearman": -0.299,
+    "n": 31412
+   },
+   "curv_wl": {
+    "pearson": -0.299,
+    "spearman": -0.342,
+    "n": 31412
+   },
+   "albedo_gm": {
+    "pearson": 0.016,
+    "spearman": 0.049,
+    "n": 31412
+   },
+   "lrm": {
+    "pearson": -0.016,
+    "spearman": -0.051,
+    "n": 31412
+   },
+   "nsp": {
+    "pearson": -0.005,
+    "spearman": -0.016,
+    "n": 31412
+   },
+   "abslat": {
+    "pearson": -0.028,
+    "spearman": -0.028,
+    "n": 31412
+   },
+   "logD": {
+    "pearson": -0.051,
+    "spearman": -0.057,
+    "n": 31412
+   },
+   "img_count_med": {
+    "pearson": 0.136,
+    "spearman": 0.133,
+    "n": 31412
+   }
+  }
+ },
+ "sensitivity": {
+  "abs_cosine_loadings_all_vs_lat65": [
+   0.9996,
+   0.9908,
+   0.9947
+  ],
+  "variance_ratio_lat65": [
+   0.90296,
+   0.04435,
+   0.01755,
+   0.01316
+  ],
+  "raw_logR_pca_variance": [
+   0.98168,
+   0.01593,
+   0.00096
+  ],
+  "raw_logR_pc1_corr_with_ln_albedo": 1.0
+ },
+ "lrm_nsp": {
+  "by_lrm_fraction": {
+   "0": {
+    "n": 19282,
+    "pc1": 0.0067,
+    "pc2": -0.0014,
+    "pc3": 0.0002,
+    "slope": 0.5028,
+    "albedo_gm": 0.0695
+   },
+   "(0,0.25]": {
+    "n": 2950,
+    "pc1": 0.0241,
+    "pc2": -0.002,
+    "pc3": -0.0003,
+    "slope": 0.5102,
+    "albedo_gm": 0.0648
+   },
+   "(0.25,0.5]": {
+    "n": 2506,
+    "pc1": 0.0021,
+    "pc2": 0.0034,
+    "pc3": -0.0005,
+    "slope": 0.493,
+    "albedo_gm": 0.0629
+   },
+   "(0.5,1]": {
+    "n": 6674,
+    "pc1": -0.026,
+    "pc2": 0.007,
+    "pc3": -0.0014,
+    "slope": 0.4748,
+    "albedo_gm": 0.0609
+   }
+  },
+  "by_nsp": {
+   "0": {
+    "n": 29669,
+    "pc1": -0.0028,
+    "pc2": 0.0007,
+    "pc3": -0.0002,
+    "slope": 0.4944,
+    "albedo_gm": 0.066
+   },
+   "1": {
+    "n": 1743,
+    "pc1": 0.0614,
+    "pc2": 0.0008,
+    "pc3": -0.0012,
+    "slope": 0.5335,
+    "albedo_gm": 0.0779
+   }
+  },
+  "lrm_ge_0.5_vs_0_within_65deg": {
+   "pc1": [
+    -0.026,
+    0.0047
+   ],
+   "pc2": [
+    0.0062,
+    -0.0011
+   ],
+   "albedo": [
+    0.0609,
+    0.0694
+   ],
+   "auc_pc1": 0.329,
+   "auc_pc2": 0.659,
+   "auc_albedo": 0.2
+  },
+  "nsp1_vs_nsp0_north_within_65deg": {
+   "pc1": [
+    0.0492,
+    0.0004
+   ],
+   "pc2": [
+    0.0082,
+    -0.0028
+   ],
+   "albedo": [
+    0.0754,
+    0.0686
+   ],
+   "auc_pc1": 0.733
+  }
+ },
+ "coverage": {
+  "frac_ge20_all": 0.9955,
+  "n_ge20": 31412,
+  "by_abslat": {
+   "(-0.001, 30.0]": {
+    "n": 14231,
+    "frac_ge20": 0.9995,
+    "hosts": 248,
+    "hosts_frac_ge20": 0.9879
+   },
+   "(30.0, 50.0]": {
+    "n": 9526,
+    "frac_ge20": 0.9998,
+    "hosts": 127,
+    "hosts_frac_ge20": 0.9921
+   },
+   "(50.0, 65.0]": {
+    "n": 4943,
+    "frac_ge20": 0.999,
+    "hosts": 52,
+    "hosts_frac_ge20": 1.0
+   },
+   "(65.0, 70.0]": {
+    "n": 1043,
+    "frac_ge20": 0.9952,
+    "hosts": 8,
+    "hosts_frac_ge20": 1.0
+   },
+   "(70.0, 90.0]": {
+    "n": 1811,
+    "frac_ge20": 0.9321,
+    "hosts": 11,
+    "hosts_frac_ge20": 1.0
+   }
+  },
+  "by_D_km": {
+   "(5.0, 7.0]": 0.9934,
+   "(7.0, 10.0]": 0.9941,
+   "(10.0, 20.0]": 0.9971,
+   "(20.0, 10000.0]": 0.9969
+  },
+  "frac_hosts_ge20": 0.991
+ },
+ "host_size_matched_diff_lat65": {
+  "pc1": -0.0072,
+  "pc2": -0.0028,
+  "pc3": 0.0002,
+  "slope": -0.0042,
+  "curv": -0.003,
+  "albedo_gm": 0.0013
+ },
+ "hosts_frac_masked_median": 0.025641369686560757,
+ "hollow_settings": {
+  "n": 2518,
+  "n_set_ge20": 2518,
+  "median_set": {
+   "pc1": 0.04663087329708649,
+   "pc2": 0.001505211734627142,
+   "pc3": -5.683217146976147e-05,
+   "slope": 0.5155224288469835,
+   "albedo_gm": 0.06262762727799184
+  },
+  "median_all": {
+   "pc1": 0.042303548150028875,
+   "pc2": 0.0019295182752528486,
+   "pc3": -3.556452764141072e-05,
+   "slope": 0.5128245316600153,
+   "albedo_gm": 0.06392987869769609
+  },
+  "median_frac_masked": 0.16792762783929424,
+  "corr_depth": {
+   "set_pc1": {
+    "pearson": -0.195,
+    "spearman": -0.211,
+    "n": 2518
+   },
+   "set_pc2": {
+    "pearson": 0.036,
+    "spearman": 0.018,
+    "n": 2518
+   },
+   "set_pc3": {
+    "pearson": 0.094,
+    "spearman": 0.096,
+    "n": 2518
+   },
+   "set_slope": {
+    "pearson": -0.201,
+    "spearman": -0.214,
+    "n": 2518
+   },
+   "set_curv": {
+    "pearson": 0.148,
+    "spearman": 0.15,
+    "n": 2518
+   },
+   "set_albedo_gm": {
+    "pearson": 0.028,
+    "spearman": -0.054,
+    "n": 2518
+   }
+  }
+ },
+ "crater_ref": {
+  "pc1_median_all_craters": -0.00046503919323100963,
+  "pc1_median_hosts": 0.005370479686848296,
+  "pc2_median_all_craters": 0.00073545831679714,
+  "pc2_median_hosts": -0.0034295574820399745
+ }
+}

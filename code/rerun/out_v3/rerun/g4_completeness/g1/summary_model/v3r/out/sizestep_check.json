@@ -1,0 +1,47 @@
+{
+ "paper": {
+  "n": 31554,
+  "hosts": 446,
+  "R2": 0.2207,
+  "share_pct": {
+   "size": 13.1,
+   "insolation": 18.1,
+   "age": 39.4,
+   "nesting": 16.2,
+   "cover": 7.4,
+   "volcanism": 3.5,
+   "composition": 2.4
+  },
+  "g": 0.947
+ },
+ "size_plus_ge10": {
+  "n": 31554,
+  "hosts": 446,
+  "R2": 0.2207,
+  "share_pct": {
+   "insolation": 18.1,
+   "age": 39.4,
+   "nesting": 16.2,
+   "cover": 7.4,
+   "volcanism": 3.5,
+   "composition": 2.4,
+   "size": 13.1
+  },
+  "g": 0.947
+ },
+ "D_ge10_only": {
+  "n": 17014,
+  "hosts": 407,
+  "R2": 0.2223,
+  "share_pct": {
+   "size": 22.0,
+   "insolation": 8.4,
+   "age": 41.5,
+   "nesting": 22.6,
+   "cover": -2.6,
+   "volcanism": 5.4,
+   "composition": 2.7
+  },
+  "g": 0.904
+ }
+}

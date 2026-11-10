@@ -1,0 +1,146 @@
+{
+ "lnC1": {
+  "g": 0.8827277934075669,
+  "llf_full": -1969.2615691718051,
+  "llf_detection_and_area_only": -2624.0938758274688,
+  "R2_physical": 0.2495460671921168,
+  "share": {
+   "size": 0.1691,
+   "insolation": 0.2546,
+   "age": 0.3105,
+   "nesting": 0.1575,
+   "cover": 0.0669,
+   "volcanism": 0.0314,
+   "composition": 0.01
+  },
+  "region_add": 0.031157261384984758
+ },
+ "lnE_1.6": {
+  "g": 0.7734828840977913,
+  "llf_full": -2021.863338415375,
+  "llf_detection_and_area_only": -2703.9942166659403,
+  "R2_physical": 0.2522678761834193,
+  "share": {
+   "size": 0.1573,
+   "insolation": 0.2572,
+   "age": 0.3188,
+   "nesting": 0.1637,
+   "cover": 0.0582,
+   "volcanism": 0.0389,
+   "composition": 0.0059
+  },
+  "region_add": 0.040627098083081736
+ },
+ "lnE_1.3": {
+  "g": 0.9072735780573197,
+  "llf_full": -2030.6568880251104,
+  "llf_detection_and_area_only": -2698.6375840200835,
+  "R2_physical": 0.24752515860240165,
+  "share": {
+   "size": 0.1614,
+   "insolation": 0.2455,
+   "age": 0.3234,
+   "nesting": 0.1677,
+   "cover": 0.0567,
+   "volcanism": 0.0392,
+   "composition": 0.0061
+  },
+  "region_add": 0.0425478357200888
+ },
+ "lnE_1.9": {
+  "g": 0.6695412474569663,
+  "llf_full": -2017.658572314133,
+  "llf_detection_and_area_only": -2711.5734959646197,
+  "R2_physical": 0.25590858027015506,
+  "share": {
+   "size": 0.1543,
+   "insolation": 0.2655,
+   "age": 0.3157,
+   "nesting": 0.1612,
+   "cover": 0.0588,
+   "volcanism": 0.0388,
+   "composition": 0.0057
+  },
+  "region_add": 0.039560600983008176
+ },
+ "lnCold_0.3": {
+  "g": 0.9249200529699493,
+  "llf_full": -2067.6700626607717,
+  "llf_detection_and_area_only": -2894.634350555287,
+  "R2_physical": 0.28568868732448915,
+  "share": {
+   "size": 0.1377,
+   "insolation": 0.3257,
+   "age": 0.2934,
+   "nesting": 0.1506,
+   "cover": 0.0576,
+   "volcanism": 0.0322,
+   "composition": 0.0027
+  },
+  "region_add": 0.042663615714957026
+ },
+ "lnCold_2.0": {
+  "g": 1.088240720868288,
+  "llf_full": -2062.855158686174,
+  "llf_detection_and_area_only": -2685.7532278031294,
+  "R2_physical": 0.23192676924620825,
+  "share": {
+   "size": 0.1784,
+   "insolation": 0.2048,
+   "age": 0.3409,
+   "nesting": 0.1878,
+   "cover": 0.0424,
+   "volcanism": 0.0397,
+   "composition": 0.006
+  },
+  "region_add": 0.04903614872345197
+ },
+ "lnCold_5.0": {
+  "g": 0.194993600042167,
+  "llf_full": -2228.6776918250243,
+  "llf_detection_and_area_only": -2940.8697127808846,
+  "R2_physical": 0.24217054494481904,
+  "share": {
+   "size": 0.1609,
+   "insolation": 0.2101,
+   "age": 0.3497,
+   "nesting": 0.1965,
+   "cover": 0.0413,
+   "volcanism": 0.0404,
+   "composition": 0.0011
+  },
+  "region_add": 0.07337155007719465
+ },
+ "lnE_1.7": {
+  "g": 0.7357285621441487,
+  "llf_full": -2020.0409899913332,
+  "llf_detection_and_area_only": -2706.385375815589,
+  "R2_physical": 0.2536018676266387,
+  "share": {
+   "size": 0.1562,
+   "insolation": 0.2603,
+   "age": 0.3176,
+   "nesting": 0.1627,
+   "cover": 0.0585,
+   "volcanism": 0.0389,
+   "composition": 0.0058
+  },
+  "region_add": 0.04019395939806758
+ },
+ "lnE_1.8": {
+  "g": 0.7011489704028986,
+  "llf_full": -2018.651687863559,
+  "llf_detection_and_area_only": -2708.92829084448,
+  "R2_physical": 0.25481538411846805,
+  "share": {
+   "size": 0.1552,
+   "insolation": 0.2631,
+   "age": 0.3166,
+   "nesting": 0.1619,
+   "cover": 0.0587,
+   "volcanism": 0.0388,
+   "composition": 0.0058
+  },
+  "region_add": 0.03984053935463727
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "parents_without_hollows": {
+  "parents_with_hosting_child": 103,
+  "host_no_hollows": 44,
+  "median_C1_no": 0.138237835,
+  "median_C1_hosting_parents": 0.24710083,
+  "no_C1_ge_0p2": 19,
+  "no_C1_ge_0p5": 5
+ },
+ "Praxiteles": {
+  "id": "200309",
+  "D": 183.275445,
+  "children": 6,
+  "children_h09": 4,
+  "parent_h09": 1
+ },
+ "Lermontov": {
+  "id": "200362",
+  "D": 161.943713,
+  "children": 5,
+  "children_h09": 3,
+  "parent_h09": 1
+ },
+ "h09_rate_all_tests": {
+  "hosts": 446,
+  "craters": 31554,
+  "rate": 0.01413449958800786
+ }
+}

@@ -1,0 +1,262 @@
+{
+ "fields": {
+  "total": 935,
+  "total_noCaloris": 812,
+  "|lat|<15": {
+   "n": 237,
+   "frac": 0.253,
+   "n_noCal": 217,
+   "frac_noCal": 0.267
+  },
+  "0-15N": {
+   "n": 133,
+   "frac": 0.142,
+   "n_noCal": 113,
+   "frac_noCal": 0.139
+  },
+  "0-15S": {
+   "n": 104,
+   "frac": 0.111,
+   "n_noCal": 104,
+   "frac_noCal": 0.128
+  },
+  "15-30N": {
+   "n": 202,
+   "frac": 0.216,
+   "n_noCal": 152,
+   "frac_noCal": 0.187
+  },
+  "15-75N": {
+   "n": 617,
+   "frac": 0.66,
+   "n_noCal": 514,
+   "frac_noCal": 0.633
+  },
+  "30-75N": {
+   "n": 415,
+   "frac": 0.444,
+   "n_noCal": 362,
+   "frac_noCal": 0.446
+  },
+  "15-75S": {
+   "n": 67,
+   "frac": 0.072,
+   "n_noCal": 67,
+   "frac_noCal": 0.083
+  },
+  ">=75 both": {
+   "n": 14,
+   "frac": 0.015,
+   "n_noCal": 14,
+   "frac_noCal": 0.017
+  }
+ },
+ "hollows": {
+  "total": 6299,
+  "total_noCaloris": 5411,
+  "|lat|<15": {
+   "n": 1175,
+   "frac": 0.187,
+   "n_noCal": 1114,
+   "frac_noCal": 0.206
+  },
+  "0-15N": {
+   "n": 777,
+   "frac": 0.123,
+   "n_noCal": 716,
+   "frac_noCal": 0.132
+  },
+  "0-15S": {
+   "n": 398,
+   "frac": 0.063,
+   "n_noCal": 398,
+   "frac_noCal": 0.074
+  },
+  "15-30N": {
+   "n": 1979,
+   "frac": 0.314,
+   "n_noCal": 1786,
+   "frac_noCal": 0.33
+  },
+  "15-75N": {
+   "n": 4974,
+   "frac": 0.79,
+   "n_noCal": 4147,
+   "frac_noCal": 0.766
+  },
+  "30-75N": {
+   "n": 2995,
+   "frac": 0.475,
+   "n_noCal": 2361,
+   "frac_noCal": 0.436
+  },
+  "15-75S": {
+   "n": 126,
+   "frac": 0.02,
+   "n_noCal": 126,
+   "frac_noCal": 0.023
+  },
+  ">=75 both": {
+   "n": 24,
+   "frac": 0.004,
+   "n_noCal": 24,
+   "frac_noCal": 0.004
+  }
+ },
+ "h09_hosts": {
+  "total": 446,
+  "total_noCaloris": 406,
+  "|lat|<15": {
+   "n": 133,
+   "frac": 0.298,
+   "n_noCal": 128,
+   "frac_noCal": 0.315
+  },
+  "0-15N": {
+   "n": 79,
+   "frac": 0.177,
+   "n_noCal": 74,
+   "frac_noCal": 0.182
+  },
+  "0-15S": {
+   "n": 54,
+   "frac": 0.121,
+   "n_noCal": 54,
+   "frac_noCal": 0.133
+  },
+  "15-30N": {
+   "n": 90,
+   "frac": 0.202,
+   "n_noCal": 78,
+   "frac_noCal": 0.192
+  },
+  "15-75N": {
+   "n": 264,
+   "frac": 0.592,
+   "n_noCal": 229,
+   "frac_noCal": 0.564
+  },
+  "30-75N": {
+   "n": 174,
+   "frac": 0.39,
+   "n_noCal": 151,
+   "frac_noCal": 0.372
+  },
+  "15-75S": {
+   "n": 44,
+   "frac": 0.099,
+   "n_noCal": 44,
+   "frac_noCal": 0.108
+  },
+  ">=75 both": {
+   "n": 5,
+   "frac": 0.011,
+   "n_noCal": 5,
+   "frac_noCal": 0.012
+  }
+ },
+ "hosts_1.1R": {
+  "total": 532,
+  "total_noCaloris": 490,
+  "|lat|<15": {
+   "n": 157,
+   "frac": 0.295,
+   "n_noCal": 152,
+   "frac_noCal": 0.31
+  },
+  "0-15N": {
+   "n": 97,
+   "frac": 0.182,
+   "n_noCal": 92,
+   "frac_noCal": 0.188
+  },
+  "0-15S": {
+   "n": 60,
+   "frac": 0.113,
+   "n_noCal": 60,
+   "frac_noCal": 0.122
+  },
+  "15-30N": {
+   "n": 99,
+   "frac": 0.186,
+   "n_noCal": 87,
+   "frac_noCal": 0.178
+  },
+  "15-75N": {
+   "n": 315,
+   "frac": 0.592,
+   "n_noCal": 278,
+   "frac_noCal": 0.567
+  },
+  "30-75N": {
+   "n": 216,
+   "frac": 0.406,
+   "n_noCal": 191,
+   "frac_noCal": 0.39
+  },
+  "15-75S": {
+   "n": 54,
+   "frac": 0.102,
+   "n_noCal": 54,
+   "frac_noCal": 0.11
+  },
+  ">=75 both": {
+   "n": 6,
+   "frac": 0.011,
+   "n_noCal": 6,
+   "frac_noCal": 0.012
+  }
+ },
+ "craters_ge5km": {
+  "total": 31554,
+  "total_noCaloris": 30514,
+  "|lat|<15": {
+   "n": 7382,
+   "frac": 0.234,
+   "n_noCal": 7254,
+   "frac_noCal": 0.238
+  },
+  "0-15N": {
+   "n": 3529,
+   "frac": 0.112,
+   "n_noCal": 3401,
+   "frac_noCal": 0.111
+  },
+  "0-15S": {
+   "n": 3853,
+   "frac": 0.122,
+   "n_noCal": 3853,
+   "frac_noCal": 0.126
+  },
+  "15-30N": {
+   "n": 3326,
+   "frac": 0.105,
+   "n_noCal": 2995,
+   "frac_noCal": 0.098
+  },
+  "15-75N": {
+   "n": 10181,
+   "frac": 0.323,
+   "n_noCal": 9269,
+   "frac_noCal": 0.304
+  },
+  "30-75N": {
+   "n": 6855,
+   "frac": 0.217,
+   "n_noCal": 6274,
+   "frac_noCal": 0.206
+  },
+  "15-75S": {
+   "n": 12971,
+   "frac": 0.411,
+   "n_noCal": 12971,
+   "frac_noCal": 0.425
+  },
+  ">=75 both": {
+   "n": 1020,
+   "frac": 0.032,
+   "n_noCal": 1020,
+   "frac_noCal": 0.033
+  }
+ }
+}

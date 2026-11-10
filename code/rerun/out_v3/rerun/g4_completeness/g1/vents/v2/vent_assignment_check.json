@@ -1,0 +1,90 @@
+{
+ "in_crater_agreement": {
+  "swapped": {
+   "incrater_yes_inside": 0.9016393442622951,
+   "incrater_no_inside": 0.35384615384615387,
+   "n_yes": 244,
+   "n_no": 65,
+   "agreement": 0.8478964401294499
+  },
+  "shifted_100km_null": {
+   "incrater_yes_inside": 0.4344262295081967,
+   "incrater_no_inside": 0.27692307692307694,
+   "n_yes": 244,
+   "n_no": 65,
+   "agreement": 0.49514563106796117
+  },
+  "as_labeled_valid_rows": {
+   "incrater_yes_inside": 0.5974025974025974,
+   "incrater_no_inside": 0.6666666666666666,
+   "n_yes": 77,
+   "n_no": 39,
+   "agreement": 0.5086206896551724
+  }
+ },
+ "test8_paperspec_subsets": {
+  "all_vents": {
+   "n_vents": 309,
+   "vent_craters": 148,
+   "vent_hosts": 40,
+   "odds_ratio": 4.88,
+   "lo": 2.89,
+   "hi": 8.25,
+   "p": 3.264716301431578e-09
+  },
+  "in_crater_yes": {
+   "n_vents": 244,
+   "vent_craters": 137,
+   "vent_hosts": 37,
+   "odds_ratio": 4.29,
+   "lo": 2.49,
+   "hi": 7.39,
+   "p": 1.5402816224219265e-07
+  },
+  "quality_good_or_reasonable": {
+   "n_vents": 224,
+   "vent_craters": 123,
+   "vent_hosts": 36,
+   "odds_ratio": 5.2,
+   "lo": 2.93,
+   "hi": 9.23,
+   "p": 1.7214369683212086e-08
+  },
+  "facula_yes": {
+   "n_vents": 269,
+   "vent_craters": 126,
+   "vent_hosts": 36,
+   "odds_ratio": 5.47,
+   "lo": 3.14,
+   "hi": 9.55,
+   "p": 2.1171918553783966e-09
+  },
+  "quality_good": {
+   "n_vents": 109,
+   "vent_craters": 74,
+   "vent_hosts": 21,
+   "odds_ratio": 5.82,
+   "lo": 2.7,
+   "hi": 12.55,
+   "p": 7.002187461084555e-06
+  },
+  "in_crater_yes_and_not_poor": {
+   "n_vents": 183,
+   "vent_craters": 113,
+   "vent_hosts": 33,
+   "odds_ratio": 4.45,
+   "lo": 2.45,
+   "hi": 8.08,
+   "p": 9.537650728181788e-07
+  },
+  "all_vents_0.8R": {
+   "n_vents": 309,
+   "vent_craters": 136,
+   "vent_hosts": 36,
+   "odds_ratio": 3.9,
+   "lo": 2.25,
+   "hi": 6.76,
+   "p": 1.1810558085958127e-06
+  }
+ }
+}

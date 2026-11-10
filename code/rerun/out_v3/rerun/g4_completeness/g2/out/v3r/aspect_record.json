@@ -1,0 +1,806 @@
+{
+ "note": "position-as-aspect proxy; 665 m DEM cannot resolve hollow-scale slopes",
+ "thomas2014": {
+  "n": 31,
+  "median_aspect_deg": 187,
+  "desc": "equator-facing in the north"
+ },
+ "n_assigned_hollows": 5104,
+ "rng_seed": 20260911,
+ "n_bootstrap": 10000,
+ "wall_definition": "0.55 < rho < 1.05 and host_D_km >= 15",
+ "n_wall_hollows": 2301,
+ "wall_all": {
+  "label": "wall_all",
+  "n": 2301,
+  "n_craters": 271,
+  "k_poleward": 1188,
+  "frac_poleward": 0.516297262059974,
+  "frac_poleward_ci95": [
+   0.49565145368350444,
+   0.5369015218363554
+  ],
+  "binom_p": 0.1228918265147927,
+  "per_crater_frac_poleward": 0.5138190766783665,
+  "per_crater_ci95": [
+   0.4630960220479694,
+   0.5635849071400594
+  ],
+  "per_crater_n": 271,
+  "rayleigh": {
+   "n": 2301,
+   "Rbar": 0.04445426522550391,
+   "mean_deg": 129.79971787472638,
+   "p": 0.010583556549779842
+  },
+  "vtest_equatorfacing": {
+   "n": 2301,
+   "Vbar": 0.011098194022995783,
+   "u": 0.7528797569682805,
+   "p": 0.2257610867808224
+  },
+  "median_facing_aspect_deg": 121.18217412447126,
+  "median_facing_aspect_ci95": [
+   39.89936517581184,
+   327.2081984849149
+  ],
+  "median_abs_equator_dev_deg": 86.75866821320119
+ },
+ "wall_by_hemisphere": {
+  "N": {
+   "label": "wall_N",
+   "n": 2085,
+   "n_craters": 216,
+   "k_poleward": 1089,
+   "frac_poleward": 0.5223021582733813,
+   "frac_poleward_ci95": [
+    0.5006033307171908,
+    0.5439381979766864
+   ],
+   "binom_p": 0.04389838813332125,
+   "per_crater_frac_poleward": 0.5363321960721638,
+   "per_crater_ci95": [
+    0.47941851606437275,
+    0.5923360783703274
+   ],
+   "per_crater_n": 216,
+   "rayleigh": {
+    "n": 2085,
+    "Rbar": 0.022154959788086917,
+    "mean_deg": 170.10872555897674,
+    "p": 0.3594118935932112
+   },
+   "vtest_equatorfacing": {
+    "n": 2085,
+    "Vbar": 0.02182563733886878,
+    "u": 1.4094022551008716,
+    "p": 0.07935812881081694
+   },
+   "median_facing_aspect_deg": 195.37076783713337,
+   "median_facing_aspect_ci95": [
+    24.311061751243045,
+    346.05244530012783
+   ],
+   "median_abs_equator_dev_deg": 85.39121505670296
+  },
+  "S": {
+   "label": "wall_S",
+   "n": 216,
+   "n_craters": 57,
+   "k_poleward": 99,
+   "frac_poleward": 0.4583333333333333,
+   "frac_poleward_ci95": [
+    0.3905511969042728,
+    0.5272748106264655
+   ],
+   "binom_p": 0.24733281888174377,
+   "per_crater_frac_poleward": 0.4221733700862558,
+   "per_crater_ci95": [
+    0.3132713309074471,
+    0.5382977427895758
+   ],
+   "per_crater_n": 57,
+   "rayleigh": {
+    "n": 216,
+    "Rbar": 0.3399091964284427,
+    "mean_deg": 105.78263551196045,
+    "p": 7.47047640438658e-12
+   },
+   "vtest_equatorfacing": {
+    "n": 216,
+    "Vbar": -0.09245143242883379,
+    "u": -1.9215669383911327,
+    "p": 0.9726698639803724
+   },
+   "median_facing_aspect_deg": 97.01383595179423,
+   "median_facing_aspect_ci95": [
+    85.10999448884661,
+    116.00740463023487
+   ],
+   "median_abs_equator_dev_deg": 94.98368382787538
+  }
+ },
+ "wall_by_band": {
+  "N": {
+   "0-15": {
+    "label": "wall_N_0-15",
+    "n": 240,
+    "n_craters": 49,
+    "k_poleward": 111,
+    "frac_poleward": 0.4625,
+    "frac_poleward_ci95": [
+     0.3981471745812422,
+     0.5277904621862766
+    ],
+    "binom_p": 0.27245731767300774,
+    "per_crater_frac_poleward": 0.5413693615974529,
+    "per_crater_ci95": [
+     0.4221109764252021,
+     0.6587458035162116
+    ],
+    "per_crater_n": 49,
+    "rayleigh": {
+     "n": 240,
+     "Rbar": 0.03712830587209591,
+     "mean_deg": 20.1777970331135,
+     "p": 0.718731549188554
+    },
+    "vtest_equatorfacing": {
+     "n": 240,
+     "Vbar": -0.034849621462807255,
+     "u": -0.7635169518278287,
+     "p": 0.7774224217440027
+    },
+    "median_facing_aspect_deg": 8.47441903568074,
+    "median_facing_aspect_ci95": [
+     5.027012616259867,
+     296.63431995164314
+    ],
+    "median_abs_equator_dev_deg": 97.63668209870735
+   },
+   "15-30": {
+    "label": "wall_N_15-30",
+    "n": 851,
+    "n_craters": 54,
+    "k_poleward": 330,
+    "frac_poleward": 0.38777908343125733,
+    "frac_poleward_ci95": [
+     0.35489243873203863,
+     0.42144574187693784
+    ],
+    "binom_p": 6.15101268284554e-11,
+    "per_crater_frac_poleward": 0.5193537391721029,
+    "per_crater_ci95": [
+     0.40727522895320617,
+     0.6340647629430474
+    ],
+    "per_crater_n": 54,
+    "rayleigh": {
+     "n": 851,
+     "Rbar": 0.18119323557302291,
+     "mean_deg": 324.46612309749594,
+     "p": 5.92204990393632e-13
+    },
+    "vtest_equatorfacing": {
+     "n": 851,
+     "Vbar": -0.14744998670261228,
+     "u": -6.08309383297497,
+     "p": 0.9999999994105735
+    },
+    "median_facing_aspect_deg": 311.8276709232017,
+    "median_facing_aspect_ci95": [
+     281.01240785963404,
+     351.91026255481876
+    ],
+    "median_abs_equator_dev_deg": 108.44411081844623
+   },
+   "30-45": {
+    "label": "wall_N_30-45",
+    "n": 610,
+    "n_craters": 59,
+    "k_poleward": 374,
+    "frac_poleward": 0.6131147540983607,
+    "frac_poleward_ci95": [
+     0.5731734118817569,
+     0.65195545914676
+    ],
+    "binom_p": 2.5481553883746266e-08,
+    "per_crater_frac_poleward": 0.48493338861798707,
+    "per_crater_ci95": [
+     0.38087435240392137,
+     0.5897845496468376
+    ],
+    "per_crater_n": 59,
+    "rayleigh": {
+     "n": 610,
+     "Rbar": 0.15446043043204585,
+     "mean_deg": 199.88638782471182,
+     "p": 4.432041838135622e-07
+    },
+    "vtest_equatorfacing": {
+     "n": 610,
+     "Vbar": 0.14524979539541188,
+     "u": 5.0733572450734234,
+     "p": 1.9542885998369286e-07
+    },
+    "median_facing_aspect_deg": 205.763614291552,
+    "median_facing_aspect_ci95": [
+     157.79311879440772,
+     244.04058569683104
+    ],
+    "median_abs_equator_dev_deg": 70.35678360569382
+   },
+   "45-60": {
+    "label": "wall_N_45-60",
+    "n": 325,
+    "n_craters": 35,
+    "k_poleward": 230,
+    "frac_poleward": 0.7076923076923077,
+    "frac_poleward_ci95": [
+     0.6549667721657384,
+     0.7565858743651783
+    ],
+    "binom_p": 4.5813800864528557e-14,
+    "per_crater_frac_poleward": 0.49945228536384395,
+    "per_crater_ci95": [
+     0.3593513010798725,
+     0.6431155332539683
+    ],
+    "per_crater_n": 35,
+    "rayleigh": {
+     "n": 325,
+     "Rbar": 0.412530763403861,
+     "mean_deg": 119.02310284946917,
+     "p": 1.0410292827248098e-24
+    },
+    "vtest_equatorfacing": {
+     "n": 325,
+     "Vbar": 0.2001443515826359,
+     "u": 5.1026997712761775,
+     "p": 1.674209915147884e-07
+    },
+    "median_facing_aspect_deg": 110.66834589804124,
+    "median_facing_aspect_ci95": [
+     106.8485410027984,
+     116.2122704420804
+    ],
+    "median_abs_equator_dev_deg": 71.000783719326
+   },
+   "60-75": {
+    "label": "wall_N_60-75",
+    "n": 56,
+    "n_craters": 26,
+    "k_poleward": 42,
+    "frac_poleward": 0.75,
+    "frac_poleward_ci95": [
+     0.6162798091192944,
+     0.8560668878356129
+    ],
+    "binom_p": 0.00023444586091919684,
+    "per_crater_frac_poleward": 0.7147435897435896,
+    "per_crater_ci95": [
+     0.5384615384615384,
+     0.8782051282051282
+    ],
+    "per_crater_n": 26,
+    "rayleigh": {
+     "n": 56,
+     "Rbar": 0.47155583962826736,
+     "mean_deg": 158.67904220690778,
+     "p": 2.025959793561036e-06
+    },
+    "vtest_equatorfacing": {
+     "n": 56,
+     "Vbar": 0.4392817536402858,
+     "u": 4.648921102482155,
+     "p": 1.6683790428073664e-06
+    },
+    "median_facing_aspect_deg": 159.79612038384118,
+    "median_facing_aspect_ci95": [
+     143.33034871514644,
+     179.12080500642355
+    ],
+    "median_abs_equator_dev_deg": 42.8402086985767
+   },
+   "75-90": {
+    "label": "wall_N_75-90",
+    "n": 3,
+    "n_craters": 3,
+    "k_poleward": 2,
+    "frac_poleward": 0.6666666666666666,
+    "frac_poleward_ci95": [
+     0.09429932405071303,
+     0.9915962413403874
+    ],
+    "binom_p": 1.0,
+    "per_crater_frac_poleward": 0.6666666666666666,
+    "per_crater_ci95": [
+     0.0,
+     1.0
+    ],
+    "per_crater_n": 3,
+    "rayleigh": {
+     "n": 3,
+     "Rbar": 0.3813921393583947,
+     "mean_deg": 195.74715094841443,
+     "p": 0.6852886066147768
+    },
+    "vtest_equatorfacing": {
+     "n": 3,
+     "Vbar": 0.36707800904141824,
+     "u": 0.8991538179482246,
+     "p": 0.18428536763989856
+    },
+    "median_facing_aspect_deg": 182.1736729282349,
+    "median_facing_aspect_ci95": [
+     167.86069402898602,
+     331.1262235165613
+    ],
+    "median_abs_equator_dev_deg": 12.139305971013982
+   }
+  },
+  "S": {
+   "0-15": {
+    "label": "wall_S_0-15",
+    "n": 161,
+    "n_craters": 32,
+    "k_poleward": 69,
+    "frac_poleward": 0.42857142857142855,
+    "frac_poleward_ci95": [
+     0.35098484237548333,
+     0.5088368153212778
+    ],
+    "binom_p": 0.08262582271649303,
+    "per_crater_frac_poleward": 0.3209065718763995,
+    "per_crater_ci95": [
+     0.18327820616883114,
+     0.4676085633116882
+    ],
+    "per_crater_n": 32,
+    "rayleigh": {
+     "n": 161,
+     "Rbar": 0.46147149990677183,
+     "mean_deg": 107.59627988596566,
+     "p": 7.178213249948154e-16
+    },
+    "vtest_equatorfacing": {
+     "n": 161,
+     "Vbar": -0.1395065267116684,
+     "u": -2.503355120720872,
+     "p": 0.993848898175434
+    },
+    "median_facing_aspect_deg": 97.01383595179423,
+    "median_facing_aspect_ci95": [
+     89.18015215555965,
+     110.4248191172614
+    ],
+    "median_abs_equator_dev_deg": 95.93314138551114
+   },
+   "15-30": {
+    "label": "wall_S_15-30",
+    "n": 44,
+    "n_craters": 18,
+    "k_poleward": 24,
+    "frac_poleward": 0.5454545454545454,
+    "frac_poleward_ci95": [
+     0.38847212247340657,
+     0.6960928864839905
+    ],
+    "binom_p": 0.651587827208914,
+    "per_crater_frac_poleward": 0.5256410256410257,
+    "per_crater_ci95": [
+     0.3055555555555556,
+     0.7222222222222222
+    ],
+    "per_crater_n": 18,
+    "rayleigh": {
+     "n": 44,
+     "Rbar": 0.05157219614739335,
+     "mean_deg": 337.44561124212237,
+     "p": 0.8906736599932031
+    },
+    "vtest_equatorfacing": {
+     "n": 44,
+     "Vbar": 0.04762774051639081,
+     "u": 0.44678780944572066,
+     "p": 0.32751413699604304
+    },
+    "median_facing_aspect_deg": 331.7694275911048,
+    "median_facing_aspect_ci95": [
+     1.458125224807759,
+     355.3867657254184
+    ],
+    "median_abs_equator_dev_deg": 87.49032234202713
+   },
+   "30-45": {
+    "label": "wall_S_30-45",
+    "n": 5,
+    "n_craters": 4,
+    "k_poleward": 3,
+    "frac_poleward": 0.6,
+    "frac_poleward_ci95": [
+     0.14663279963467254,
+     0.9472550494736843
+    ],
+    "binom_p": 1.0,
+    "per_crater_frac_poleward": 0.625,
+    "per_crater_ci95": [
+     0.25,
+     1.0
+    ],
+    "per_crater_n": 4,
+    "rayleigh": {
+     "n": 5,
+     "Rbar": 0.24617735813948838,
+     "mean_deg": 67.2268681779896,
+     "p": 0.7578646835548866
+    },
+    "vtest_equatorfacing": {
+     "n": 5,
+     "Vbar": 0.09529113113655754,
+     "u": 0.3013370152053114,
+     "p": 0.3815787589067434
+    },
+    "median_facing_aspect_deg": 45.82690149741279,
+    "median_facing_aspect_ci95": [
+     23.1593060899744,
+     296.40718595427927
+    ],
+    "median_abs_equator_dev_deg": 63.59281404572073
+   },
+   "45-60": {
+    "label": "wall_S_45-60",
+    "n": 6,
+    "n_craters": 5,
+    "k_poleward": 3,
+    "frac_poleward": 0.5,
+    "frac_poleward_ci95": [
+     0.11811724875702524,
+     0.8818827512429748
+    ],
+    "binom_p": 1.0,
+    "per_crater_frac_poleward": 0.6,
+    "per_crater_ci95": [
+     0.2,
+     1.0
+    ],
+    "per_crater_n": 5,
+    "rayleigh": {
+     "n": 6,
+     "Rbar": 0.07336643913956693,
+     "mean_deg": 259.392093310843,
+     "p": 0.9707240795638692
+    },
+    "vtest_equatorfacing": {
+     "n": 6,
+     "Vbar": -0.013505807075578838,
+     "u": -0.046785488104251566,
+     "p": 0.5186579024083604
+    },
+    "median_facing_aspect_deg": 205.7837557989457,
+    "median_facing_aspect_ci95": [
+     0.4455338793522969,
+     328.4682844643987
+    ],
+    "median_abs_equator_dev_deg": 99.6229113170846
+   },
+   "60-75": {
+    "label": "wall_S_60-75",
+    "n": 0
+   },
+   "75-90": {
+    "label": "wall_S_75-90",
+    "n": 0
+   }
+  }
+ },
+ "wall_hotwarm": {
+  "N": {
+   "hot": {
+    "label": "wall_N_hot",
+    "n": 806,
+    "n_craters": 115,
+    "k_poleward": 383,
+    "frac_poleward": 0.47518610421836227,
+    "frac_poleward_ci95": [
+     0.4402348230745656,
+     0.5103194821276174
+    ],
+    "binom_p": 0.16949064582073617,
+    "per_crater_frac_poleward": 0.5775637703013297,
+    "per_crater_ci95": [
+     0.503872837407078,
+     0.6493512412860301
+    ],
+    "per_crater_n": 115,
+    "rayleigh": {
+     "n": 806,
+     "Rbar": 0.17302537526618042,
+     "mean_deg": 75.67012335970442,
+     "p": 2.8027877837243457e-11
+    },
+    "vtest_equatorfacing": {
+     "n": 806,
+     "Vbar": -0.04282451889346646,
+     "u": -1.719392434132612,
+     "p": 0.9572285305230513
+    },
+    "median_facing_aspect_deg": 62.72757704233692,
+    "median_facing_aspect_ci95": [
+     44.67114951243934,
+     113.65115565926033
+    ],
+    "median_abs_equator_dev_deg": 94.70519726852547
+   },
+   "warm": {
+    "label": "wall_N_warm",
+    "n": 1279,
+    "n_craters": 104,
+    "k_poleward": 706,
+    "frac_poleward": 0.5519937451133698,
+    "frac_poleward_ci95": [
+     0.5242560986494664,
+     0.5794918998821363
+    ],
+    "binom_p": 0.0002207524164735348,
+    "per_crater_frac_poleward": 0.4854584464115792,
+    "per_crater_ci95": [
+     0.3987439935758664,
+     0.5705865439530252
+    ],
+    "per_crater_n": 104,
+    "rayleigh": {
+     "n": 1279,
+     "Rbar": 0.11748630858988804,
+     "mean_deg": 237.82236142607485,
+     "p": 2.0384378403412054e-08
+    },
+    "vtest_equatorfacing": {
+     "n": 1279,
+     "Vbar": 0.06256686167292835,
+     "u": 3.164423795166371,
+     "p": 0.0007769517427500539
+    },
+    "median_facing_aspect_deg": 237.21910601629747,
+    "median_facing_aspect_ci95": [
+     200.0971757725507,
+     288.34903015276745
+    ],
+    "median_abs_equator_dev_deg": 80.3824221468194
+   }
+  },
+  "S": {
+   "hot": {
+    "label": "wall_S_hot",
+    "n": 174,
+    "n_craters": 33,
+    "k_poleward": 77,
+    "frac_poleward": 0.4425287356321839,
+    "frac_poleward_ci95": [
+     0.3674059469299862,
+     0.5196431788792931
+    ],
+    "binom_p": 0.14954904000438302,
+    "per_crater_frac_poleward": 0.4160772351994923,
+    "per_crater_ci95": [
+     0.27854027285845473,
+     0.5575790310351437
+    ],
+    "per_crater_n": 33,
+    "rayleigh": {
+     "n": 174,
+     "Rbar": 0.39933267204420203,
+     "mean_deg": 108.9883072525732,
+     "p": 3.657027085904324e-13
+    },
+    "vtest_equatorfacing": {
+     "n": 174,
+     "Vbar": -0.1299329436962456,
+     "u": -2.42386763467706,
+     "p": 0.9923218992714986
+    },
+    "median_facing_aspect_deg": 97.01383595179423,
+    "median_facing_aspect_ci95": [
+     88.55057458640874,
+     116.4303096080971
+    ],
+    "median_abs_equator_dev_deg": 95.85817183414918
+   },
+   "warm": {
+    "label": "wall_S_warm",
+    "n": 42,
+    "n_craters": 25,
+    "k_poleward": 22,
+    "frac_poleward": 0.5238095238095238,
+    "frac_poleward_ci95": [
+     0.36417797092133253,
+     0.6799594911400524
+    ],
+    "binom_p": 0.8776143287523154,
+    "per_crater_frac_poleward": 0.42,
+    "per_crater_ci95": [
+     0.24,
+     0.6
+    ],
+    "per_crater_n": 25,
+    "rayleigh": {
+     "n": 42,
+     "Rbar": 0.13354885245225445,
+     "mean_deg": 61.93597531403259,
+     "p": 0.4754623888361396
+    },
+    "vtest_equatorfacing": {
+     "n": 42,
+     "Vbar": 0.06282911425044381,
+     "u": 0.5758383437993748,
+     "p": 0.2823622267351029
+    },
+    "median_facing_aspect_deg": 56.32126731117262,
+    "median_facing_aspect_ci95": [
+     2.449824977188314,
+     355.3867657254184
+    ],
+    "median_abs_equator_dev_deg": 81.25168373220927
+   }
+  }
+ },
+ "floor_definition": "rho < 0.55 and host_D_km >= 15 (control: no expected preference)",
+ "n_floor_hollows": 2537,
+ "floor_all": {
+  "label": "floor_all",
+  "n": 2537,
+  "n_craters": 277,
+  "k_poleward": 1382,
+  "frac_poleward": 0.5447378793851005,
+  "frac_poleward_ci95": [
+   0.5251203746900444,
+   0.5642519952596379
+  ],
+  "binom_p": 7.13079324769609e-06,
+  "per_crater_frac_poleward": 0.491931552138123,
+  "per_crater_ci95": [
+   0.4438345266211913,
+   0.5411192367023008
+  ],
+  "per_crater_n": 277,
+  "rayleigh": {
+   "n": 2537,
+   "Rbar": 0.0945138909843367,
+   "mean_deg": 218.98469714915237,
+   "p": 1.3727042034411734e-10
+  },
+  "vtest_equatorfacing": {
+   "n": 2537,
+   "Vbar": 0.05926578676417398,
+   "u": 4.2216214280131945,
+   "p": 1.2127561589969638e-05
+  },
+  "median_facing_aspect_deg": 219.5610133771656,
+  "median_facing_aspect_ci95": [
+   142.27981301391583,
+   287.0567520227153
+  ],
+  "median_abs_equator_dev_deg": 81.6789913779154
+ },
+ "floor_by_hemisphere": {
+  "N": {
+   "label": "floor_N",
+   "n": 2275,
+   "n_craters": 214,
+   "k_poleward": 1263,
+   "frac_poleward": 0.5551648351648352,
+   "frac_poleward_ci95": [
+    0.5344644169514532,
+    0.5757229864657659
+   ],
+   "binom_p": 1.549914284285882e-07,
+   "per_crater_frac_poleward": 0.5078331714183123,
+   "per_crater_ci95": [
+    0.4548643037459601,
+    0.5606128840410046
+   ],
+   "per_crater_n": 214,
+   "rayleigh": {
+    "n": 2275,
+    "Rbar": 0.1111951593371036,
+    "mean_deg": 228.27303998329006,
+    "p": 5.603620376160667e-13
+   },
+   "vtest_equatorfacing": {
+    "n": 2275,
+    "Vbar": 0.07400945261066463,
+    "u": 4.992210511844675,
+    "p": 2.984607128109218e-07
+   },
+   "median_facing_aspect_deg": 235.6212289480428,
+   "median_facing_aspect_ci95": [
+    173.2436992555105,
+    288.39535774950343
+   ],
+   "median_abs_equator_dev_deg": 79.40715983607856
+  },
+  "S": {
+   "label": "floor_S",
+   "n": 262,
+   "n_craters": 64,
+   "k_poleward": 119,
+   "frac_poleward": 0.4541984732824427,
+   "frac_poleward_ci95": [
+    0.3928224383349999,
+    0.5166223289353027
+   ],
+   "binom_p": 0.15519918039132682,
+   "per_crater_frac_poleward": 0.44474595716783216,
+   "per_crater_ci95": [
+    0.3320790186376124,
+    0.5590938163399101
+   ],
+   "per_crater_n": 64,
+   "rayleigh": {
+    "n": 262,
+    "Rbar": 0.16032860029007745,
+    "mean_deg": 115.39443514068115,
+    "p": 0.0011527335836657973
+   },
+   "vtest_equatorfacing": {
+    "n": 262,
+    "Vbar": -0.06875650255172785,
+    "u": -1.5739082822732644,
+    "p": 0.9422456725527726
+   },
+   "median_facing_aspect_deg": 103.78459306295804,
+   "median_facing_aspect_ci95": [
+    85.07283730810036,
+    146.9851659072807
+   ],
+   "median_abs_equator_dev_deg": 96.44604040128613
+  }
+ },
+ "peak_definition": "rho < 0.3 and host_D_km > 100 (central-peak/peak-ring)",
+ "n_peak_hollows": 393,
+ "peak_all": {
+  "label": "peak_all",
+  "n": 393,
+  "n_craters": 48,
+  "k_poleward": 150,
+  "frac_poleward": 0.3816793893129771,
+  "frac_poleward_ci95": [
+   0.3334281420703383,
+   0.43172709441643375
+  ],
+  "binom_p": 3.140548539911162e-06,
+  "per_crater_frac_poleward": 0.46627315667652547,
+  "per_crater_ci95": [
+   0.3548653206648552,
+   0.5773075534345482
+  ],
+  "per_crater_n": 48,
+  "rayleigh": {
+   "n": 393,
+   "Rbar": 0.19109903843764675,
+   "mean_deg": 0.6786609573321039,
+   "p": 5.213191187317474e-07
+  },
+  "vtest_equatorfacing": {
+   "n": 393,
+   "Vbar": -0.20332969552809646,
+   "u": -5.700488624290821,
+   "p": 0.9999999940267748
+  },
+  "median_facing_aspect_deg": 354.7598709666264,
+  "median_facing_aspect_ci95": [
+   2.048073482169116,
+   359.16497064567767
+  ],
+  "median_abs_equator_dev_deg": 115.50723878684084
+ },
+ "thomas_comparison": {
+  "north_wall_median_facing_aspect_deg": 195.37076783713337,
+  "north_wall_median_ci95": [
+   24.508281741815956,
+   344.1617823955145
+  ],
+  "thomas_median_deg": 187,
+  "consistent_187_in_ci": true
+ }
+}

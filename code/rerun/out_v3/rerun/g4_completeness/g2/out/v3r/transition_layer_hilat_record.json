@@ -1,0 +1,182 @@
+{
+ "abslat_le60": {
+  "n": 27271,
+  "hosts": 485,
+  "corr": 0.856,
+  "fits": {
+   "dT": {
+    "aic": 3927.6,
+    "p": {
+     "Intercept": 9.3e-49,
+     "dT": 0.00063,
+     "logD": 1.6e-22,
+     "dT:logD": 0.061,
+     "abslat": 0.16
+    }
+   },
+   "L368": {
+    "aic": 3936.1,
+    "p": {
+     "Intercept": 7.9e-37,
+     "L368": 0.0045,
+     "logD": 1.6e-14,
+     "L368:logD": 0.35,
+     "abslat": 0.13
+    }
+   },
+   "both": {
+    "aic": 3928.4,
+    "p": {
+     "Intercept": 1.9e-21,
+     "dT": 0.0021,
+     "logD": 3e-14,
+     "dT:logD": 0.049,
+     "L368": 0.083,
+     "L368:logD": 0.3,
+     "abslat": 0.061
+    }
+   }
+  },
+  "thin_layer_lt3cm": {
+   "n": 0,
+   "hosts": 0
+  }
+ },
+ "abslat_le75": {
+  "n": 30551,
+  "hosts": 528,
+  "corr": 0.782,
+  "fits": {
+   "dT": {
+    "aic": 4345.0,
+    "p": {
+     "Intercept": 3.8e-51,
+     "dT": 0.0048,
+     "logD": 2.1e-21,
+     "dT:logD": 0.26,
+     "abslat": 0.064
+    }
+   },
+   "L368": {
+    "aic": 4354.1,
+    "p": {
+     "Intercept": 1.8e-42,
+     "L368": 0.11,
+     "logD": 2.2e-14,
+     "L368:logD": 0.52,
+     "abslat": 0.071
+    }
+   },
+   "both": {
+    "aic": 4341.7,
+    "p": {
+     "Intercept": 4.3e-28,
+     "dT": 0.00018,
+     "logD": 7.1e-16,
+     "dT:logD": 0.009,
+     "L368": 0.0068,
+     "L368:logD": 0.017,
+     "abslat": 0.066
+    }
+   }
+  },
+  "thin_layer_lt3cm": {
+   "n": 55,
+   "hosts": 0
+  }
+ },
+ "abslat_le90": {
+  "n": 31571,
+  "hosts": 534,
+  "corr": 0.759,
+  "fits": {
+   "dT": {
+    "aic": 4422.6,
+    "p": {
+     "Intercept": 4.6e-51,
+     "dT": 0.0068,
+     "logD": 8.3e-21,
+     "dT:logD": 0.34,
+     "abslat": 0.012
+    }
+   },
+   "L368": {
+    "aic": 4427.9,
+    "p": {
+     "Intercept": 3e-45,
+     "L368": 0.16,
+     "logD": 1.9e-14,
+     "L368:logD": 0.27,
+     "abslat": 0.075
+    }
+   },
+   "both": {
+    "aic": 4418.5,
+    "p": {
+     "Intercept": 4.9e-34,
+     "dT": 0.00043,
+     "logD": 3e-16,
+     "dT:logD": 0.0053,
+     "L368": 0.016,
+     "L368:logD": 0.0045,
+     "abslat": 0.28
+    }
+   }
+  },
+  "thin_layer_lt3cm": {
+   "n": 687,
+   "hosts": 2
+  }
+ },
+ "highlat_bands": {
+  "N60-75_lt3cm": {
+   "n": 21,
+   "hosts": 0
+  },
+  "N60-75_3to6cm": {
+   "n": 308,
+   "hosts": 7
+  },
+  "N60-75_ge6cm": {
+   "n": 1100,
+   "hosts": 36
+  },
+  "N75-90_lt3cm": {
+   "n": 290,
+   "hosts": 2
+  },
+  "N75-90_3to6cm": {
+   "n": 159,
+   "hosts": 3
+  },
+  "N75-90_ge6cm": {
+   "n": 14,
+   "hosts": 1
+  },
+  "S60-75_lt3cm": {
+   "n": 34,
+   "hosts": 0
+  },
+  "S60-75_3to6cm": {
+   "n": 414,
+   "hosts": 0
+  },
+  "S60-75_ge6cm": {
+   "n": 1403,
+   "hosts": 0
+  },
+  "S75-90_lt3cm": {
+   "n": 342,
+   "hosts": 0
+  },
+  "S75-90_3to6cm": {
+   "n": 193,
+   "hosts": 0
+  },
+  "S75-90_ge6cm": {
+   "n": 22,
+   "hosts": 0
+  }
+ },
+ "note": "dT model vs L368 model: logit hosts ~ X*logD + abslat; craters >=5 km from test2_craters_h18.csv; L368 from transition_layer_grid.npz"
+}

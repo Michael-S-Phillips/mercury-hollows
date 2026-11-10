@@ -1,0 +1,20 @@
+{
+ "v2": {
+  "pairs": 92382,
+  "pair_hollows": 6667,
+  "detections": 10669,
+  "crater_hosts": 707
+ },
+ "v3": {
+  "pairs": 85602,
+  "pair_hollows": 6299,
+  "detections": 10214,
+  "crater_hosts": 534
+ },
+ "v3b": {
+  "pairs": 81484,
+  "pair_hollows": 6067,
+  "detections": 9913,
+  "crater_hosts": 441
+ }
+}
