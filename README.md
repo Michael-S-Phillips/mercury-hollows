@@ -1,6 +1,6 @@
 # Mercury hollows: code and derived data for a hollow formation model
 
-This repository holds the analysis code, derived data, analysis records, hand-measurement data, and figure scripts behind the paper "Toward a Geologically Plausible Model of Hollow Formation on Mercury" (Phillips, submitted to *Planetary Research*). Version 0.2.0 matches the manuscript and supplement as submitted (v6.14 final and v25 final). The repository stays private until the paper is accepted; reviewers receive a Zenodo copy through a share link.
+This repository holds the analysis code, derived data, analysis records, hand-measurement data, and figure scripts behind the paper "Toward a Geologically Plausible Model of Hollow Formation on Mercury" (Phillips, submitted to *Planetary Research*). 
 
 The crater containment graph (craters that formed inside older craters, and an interactive map) is also a separate public repository with its own DOI: [mercury-crater-graph](https://github.com/Michael-S-Phillips/mercury-crater-graph), version 0.3.0, which reproduces the graph results of this paper.
 
