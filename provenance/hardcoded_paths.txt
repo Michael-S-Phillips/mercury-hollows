@@ -1,0 +1,12 @@
+code/rerun/out_v3/qc_sheet.py
+code/rerun/out_v3/rerun/g2_insolation/make_copies.py
+code/rerun/out_v3/rerun/g2_insolation/make_figs_pr_insolation_v9.py
+code/rerun/out_v3/rerun/g3_catalog/make_copies_sfd.py
+code/rerun/out_v3/rerun/g4_completeness/g1/degradation/host_age_tests.py
+code/rerun/out_v3/rerun/g4_completeness/g1/summary_model/common.py
+code/rerun/out_v3/rerun/g4_completeness/g2/make_figs_pr_insolation_v9.py
+code/rerun/out_v3/rerun/g5_figures/color_fig_v1_v3cat.py
+code/rerun/out_v3/rerun/g5_figures/make_figs_pr_insolation_v9_v3cat.py
+code/rerun/out_v3/rerun/g6_remaining/make_copies_aspect.py
+code/rerun/out_v3/rerun/g6_remaining/make_copies_color.py
+code/rerun/out_v3/rerun/g8_figS5/make_figS5_v10.py

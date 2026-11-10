@@ -4,7 +4,7 @@ __pycache__/
 .DS_Store
 _scratch*/
 _to_delete/
-RELEASE_PROMPT.md
+RELEASE_PROMPT*.md
 print.prt
 # external data placed locally (see README)
 external/
@@ -23,3 +23,22 @@ manuscripts/PlanetaryResearch_hollows/analysis_v3/pair_offsets_rel.csv
 manuscripts/PlanetaryResearch_hollows/figures/fig2_insolation.png
 manuscripts/PlanetaryResearch_hollows/figures/fig2_insolation.pdf
 manuscripts/PlanetaryResearch_hollows/figures/data/fig2_insolation_data.csv
+# v0.2.0: the Figure S4 input lives in a scratch folder of g5_figures
+!code/rerun/out_v3/rerun/g5_figures/_scratch/
+# stray files in this folder that are not part of the archive
+/1-s2.0-S0012821X22002837-main.pdf
+/data/12033876.zip
+/data/the-geochemical-and-mineralogical-diversity-of-mercury.pdf
+# v0.2.0: written again by run_all.sh; not part of the archive
+*.log
+run_status.txt
+DONE
+*.done
+code/rerun/out_v3/rerun/g4_completeness/g2/out/v3r/*.png
+code/rerun/out_v3/rerun/g4_completeness/g2/out/v3r/*.pdf
+code/rerun/out_v3/rerun/g4_completeness/g2/out/v3r/density_by_band.csv
+code/rerun/out_v3/rerun/g4_completeness/g2/out/v3r/fields_flagged.csv
+code/rerun/out_v3/rerun/g23_smallest_hollows/fig_depth_v3.png
+code/rerun/out_v3/rerun/g23_smallest_hollows/fig_depth_v3.pdf
+data/bickel-2024/Bickel_et_al_2024_MDIS_hollows_08_v1.0.csv
+data/Concentrated_LRM_560_params_BW.tif

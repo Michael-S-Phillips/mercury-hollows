@@ -1,105 +1,113 @@
 # Mercury hollows: code and derived data for a hollow formation model
 
-This repository holds the analysis code, derived data, analysis records, and figure scripts behind the paper on how hollows form on Mercury (Phillips, in preparation; working title of manuscript v6: "Hollows on Mercury Form by Daily Cycling of Impact-Charged Sulfur"). It stays private until the paper is submitted; a restricted Zenodo record gives reviewers access during review.
+This repository holds the analysis code, derived data, analysis records, hand-measurement data, and figure scripts behind the paper "Toward a Geologically Plausible Model of Hollow Formation on Mercury" (Phillips, submitted to *Planetary Research*). Version 0.2.0 matches the manuscript and supplement as submitted (v6.14 final and v25 final). The repository stays private until the paper is accepted; reviewers receive a Zenodo copy through a share link.
 
-The crater containment graph used in the paper (craters that formed inside older craters, and the interactive map) is a separate public repository with its own DOI: [mercury-crater-graph](https://github.com/Michael-S-Phillips/mercury-crater-graph).
+The crater containment graph (craters that formed inside older craters, and an interactive map) is also a separate public repository with its own DOI: [mercury-crater-graph](https://github.com/Michael-S-Phillips/mercury-crater-graph), version 0.3.0, which reproduces the graph results of this paper.
+
+## Running the scripts
+
+The analyses ran in a working folder mounted at `~/mnt/hollows-emissivity`, and the scripts in this repository are byte-identical to the scripts that wrote the archived records. Most scripts therefore locate their inputs under `~/mnt/hollows-emissivity`. Link the repository there before running anything:
+
+```bash
+bash setup_root.sh        # creates ~/mnt/hollows-emissivity -> this repository (stops if that path already exists)
+pip install -r requirements.txt
+bash run_all.sh           # reruns the analyses that need only the data in this repository (a few minutes)
+```
+
+Scripts kept from version 0.1.0 instead find the repository root from their own location or from `$MERCURY_HOLLOWS_ROOT`. Twelve scripts also contain absolute paths of the machines where earlier versions ran (`/Users/...`, `/home/claude/...`, `/mnt/user-data/...`, `/sessions/...`); they are listed in `provenance/hardcoded_paths.txt`. In these scripts the absolute paths belong to helpers that copied scripts between rerun folders, to optional figure panels, to defaults that environment variables override, or to blocks that are off by default; none of the steps in the reproduction check below depends on them.
+
+## What the paper uses
+
+**Catalog.** The paper uses the screened hollow catalog v3: 368 hollow entries that visual screening classed as crater bowls, crater walls, or other features are flagged as crater traces, together with the 64 detections larger than 10 km that outline whole craters. `code/rerun/out_v3/README.md` describes the screen; `code/rerun/out_v3/build_v3_catalog.py` rebuilds the catalog files from the v2 products and the visual classes.
+
+**Detection model and completeness.** Completeness comes from the detection model refit on the screened catalog (tag **v3r**: `code/rerun/out_v3/rerun/g3_catalog/sfd/out_v3_refit/`, grid `g4_completeness/completeness_10ppd_v3.npz`). Results tagged v3b or v3br use the stricter catalog that also drops uncertain entries; they are sensitivity checks.
+
+**Terrain classes.** Peak, floor, and wall classes come only from hand tracings of the host craters (`g12_tracer` and `g17_tracer_round2` hold the tracing pages' inputs; `g13_traced`, `g18_traced_r3`, and `g19_knobs_traced` hold the exported tracings and the analyses). The traced-class scripts import two modules of automated curvature classes (`g10_threshold/curv_classes.py`, `curv_classes_v3.py`) and one gap-filling module (`g7_terrain_fix/terrain_classes.py`). Those modules assign classes to hosts that were not traced, in intermediate tables only; every reported terrain number uses the traced hosts alone (`rows_tracedonly_r3_v3.csv`). The S8 share of wall area with regional slope below 5° (61%) also uses the traced hosts (`R/g18_traced_r3/terrain/out_v3/peak_wall_record_rows_tracedonly_r3_v3.json`, read by `R/g27_text_numbers/text_numbers.py`); supplement v25 had taken it from the automated relief-threshold classes, whose record has left the archive.
 
 ## Layout
 
-The folders keep the layout in which the analyses were run, so the scripts find each other's outputs by the same relative paths. Every script locates the repository root from its own location, or from `$MERCURY_HOLLOWS_ROOT` if that is set.
+Folders keep the layout in which the analyses ran, so scripts find one another's outputs by the same relative paths. `R/` below is `code/rerun/out_v3/rerun/`, `G/` is `manuscripts/GRL_insolation_hollows/`, and `P/` is `manuscripts/PlanetaryResearch_hollows/`.
 
 | Folder | Contents |
 |---|---|
-| `georeference/` | Recomputation of hollow-detection positions through the MDIS camera model (ISIS), and a check against the archived positions |
-| `GIS/vector/` | `bickel2024_hollows_corrected.gpkg`: all 19,110 detections of the 0.7-confidence release at camera-model positions, with its README |
-| `data/` | Bickel catalog position-error record; Herrick et al. (2018) crater catalog (`data/ME6M300TGT/herrick2018_all.csv`) |
-| `code/rerun/` | Hollow products (`build_hollow_products.py`, `out_v2/`): merged hollows, hollow fields, detection QC, imaging coverage, detection model, completeness; host assignment, hot/warm-longitude, wall-orientation, incidence, and province analyses (`latitude/`) |
-| `hollow-networks/` | Fitted per-frame detection function and declustering settings written by `build_hollow_products.py` |
-| `manuscripts/GRL_insolation_hollows/` | Thermal model, crater hosting test, plains densities, depth analyses (`scripts/`, `depthctl/`), their inputs (`data/`) and records (`records/`) |
-| `manuscripts/PlanetaryResearch_hollows/` | Analyses added for the Planetary Research paper (`analysis_v3/`), figure scripts (`figscripts/`), figures, and the data behind each figure (`figures/data/`) |
-| `peak_wall_test/` | Peak, floor, and wall terrain densities; Caloris penetration test; Caloris example figure |
-| `slope_test/` | Hollow occurrence against regional slope; depth against slope with shadow geometry corrected |
-| `run_all.sh` | Reruns every analysis and figure that needs only the data in this repository |
+| `georeference/`, `GIS/vector/`, `data/bickel-2024/` | Camera-model positions of the 19,110 hollow detections of Bickel et al. (2025) and the position-error record (Section S1) |
+| `code/rerun/build_hollow_products.py`, `code/rerun/out_v2/`, `hollow-networks/` | Merged hollows, hollow fields, imaging coverage, the first detection model (v2 products) |
+| `code/rerun/out_v3/` | Screened catalog v3/v3b, host assignments, screening sets and classes (`qc/`), `build_v3_catalog.py` |
+| `R/g1_graph_joint/`, `R/g4_completeness/g1/` | Crater containment graph, degradation state (Herrick and Kinczyk), vents, joint model of hosting (`summary_model/`); `g4_completeness` holds the v3r runs |
+| `R/g2_insolation/`, `R/g4_completeness/g2/` | Hot longitudes, ΔT_w, latitude, wall orientation, Stage 1 tests, plains hosts, Figure 4; `g4_completeness/g2/out/v3r/` holds the records |
+| `R/g3_catalog/` | Size distribution and detection-model refit (`sfd/`), catalog counts, Caloris penetration test (`caloris/`) |
+| `R/g4_completeness/` | Completeness grids from the refit model, Figure S2, and the reference-size checks (`s2/`) |
+| `R/g5_figures/`, `R/g8_figS5/` | Figures redrawn on the screened catalog, including Figures 1, 3, S4, S5, and S9 (`g5_figures`) and Figure S6 (`g8_figS5`) |
+| `R/g6_remaining/color/` | MDIS eight-filter color of crater interiors (Section S9) |
+| `R/g9_draft_reruns/knobs/`, `R/g19_knobs_traced/` | Hollows on the knobs around Caloris (Section S17) |
+| `R/g12_tracer/`, `R/g13_traced/`, `R/g17_tracer_round2/`, `R/g18_traced_r3/` | Hand tracings of host terrain and the peak, floor, and wall tests (Section S4, Figure 2d, Figure S3) |
+| `R/g20_regional_clusters/`, `R/g25_composition/`, `R/g22_province_screen/` | Regional excess of host craters over the joint model, the composition group, and the visual screen of the excess regions (Section 3.8, Figure 6, Section S16) |
+| `R/g23_smallest_hollows/`, `R/g24_blewett_compare/`, `R/g26_measurement_error/` | Automatic shadow depths, hand depths, the blind check of Blewett et al. (2016) depths, and measurement uncertainty (Section 3.7, Figure 5, Section S9, Figures S7 and S8) |
+| `G/scripts/`, `G/depthctl/`, `G/data/`, `G/records/` | Thermal model, plains mask, Blewett depth tables, XRS maps |
+| `P/analysis_v3/`, `P/analysis_v7/`, `P/analysis_v8/`, `P/analysis_v9/` | Sulfur release and vapor pressure, transition layer, collapse depth, model-logic calculations, first graph versions |
+| `P/analysis_workshop/` | Volatile fits, sulfur redox, Kinczyk classes, vent checks, depth pilot, province basins, Caloris |
+| `P/figscripts/` | Life-cycle figure (Figure 7, `lifecycle_fig_v12.py`) and base temperature against φ (Figure 8) |
+| `P/submission/` | The submitted manuscript and supplement (`Hollow_Formation_Model_Paper_final.tex` = v6.16, `supplementary-materials_final.tex` = v28; earlier versions one level up) and their figures (`figures/`) |
+| `peak_wall_test/` | DEM morphometry of the cataloged craters (`morph_all.csv`) and the Caloris children |
+| `R/g27_text_numbers/` | Numbers that the text computes from stated inputs (S2, S8, S13, Section 3.6), recorded in `text_numbers.json` |
+| `R/g28_fig2a/` | Figure 2 with panel a on the MDIS mosaic (`layers.py` needs the external 166 m mosaic; `make_figs_pr_v10.py` draws the figure) |
+| `provenance/` | Where each number and figure comes from (next section) |
 
 ## Where each result comes from
 
-Section numbers refer to manuscript v6 and its supplement (S1–S16); the formation-model draft uses the same supplement sections. Paths are relative to the repository root; `G/` is `manuscripts/GRL_insolation_hollows/` and `P/` is `manuscripts/PlanetaryResearch_hollows/`.
+`provenance/main_text.csv` (150 rows) and `provenance/supplement.csv` (114 rows) map every quantitative result of the manuscript and the supplement to the script that computed it and the record that holds it, with the JSON key or table column where one was found. The column `value_found` says whether the printed value appears in the record exactly (`yes`), after rounding or a simple derivation (`approx`), or not at all (`no`, with a note). `provenance/figures.csv` gives the script, the data, and any external data behind each of the 17 figures; every submitted figure is byte-identical to its script's output. These tables were compiled on 9 November 2026 by matching the printed values against the records.
 
-| Result | Script(s) | Record or output |
-|---|---|---|
-| Recomputed positions; 1.90 → 0.41 km cross-image separation (S1) | `georeference/georeference_bickel.py` | `GIS/vector/bickel2024_hollows_corrected.gpkg` and README; `data/bickel-2024/bickel_position_error_record.json` |
-| Relative offsets between overlapping images, Table S1; Figure S1 | `P/analysis_v3/pair_offsets.py`, `figS_positions.py` | `P/analysis_v3/pair_offsets_record.json` |
-| 6,731 hollows, 1,228 fields, 92,382 hollow–image pairs, detection model, completeness (S2) | `code/rerun/build_hollow_products.py corrected code/rerun/out_v2` | `code/rerun/out_v2/`, `hollow-networks/results/per_frame_detection_function.json`, `code/rerun/dedup_before_after.json` |
-| Host craters (707 among 31,571) | `code/rerun/latitude/aspect/assign_hosts.py` | `code/rerun/latitude/aspect/host_assignments.csv` |
-| Thermal model and ΔT (S5) | `G/scripts/thermal.py` | `G/data/thermal_grid.npz` |
-| Plains densities 0.41 and 0.13; Figure 1a–b (S6) | `G/scripts/nsp_mask2.py` (mask), `latcorr.py` → `latcorr3.py`, `latcorr5.py`; `P/analysis_v3/dT_plains.py` | `G/data/nsp_mask_10ppd_r40.npy`, `G/records/latcorr_density_record.json`, `latcorr_inc60_75_record.json`, `P/analysis_v3/dT_plains_record.json` |
-| Caloris: 0 of 128, 14 of 32, 3 of 5 vs 1 of 57; Figure 1c (S7); Figures S3, S4 | `peak_wall_test/caloris_test.py`; `P/analysis_v3/figS_caloris_map.py`; `peak_wall_test/nested_figs.py` (Figure S4 is its panel B) | `peak_wall_test/caloris_test_record.json` |
-| Peak 6.7 and floor 3.1 times wall density; Figure 1d; Table S2; Figure S2 (S4) | `peak_wall_test/peak_wall.py` (DEM, writes `rows_*.csv`), `analyze.py`; `P/analysis_v3/terrain_table.py`, `figS_terrain_examples.py` | `peak_wall_test/peak_wall_record.json`, `peak_wall_by_setting.json`, `P/analysis_v3/terrain_table_record.json` |
-| Hot/warm longitudes 1.9 and 2.1; cos 2λ fit; Figure 3a (S8) | `code/rerun/latitude/hotwarm/hotwarm.py` | `code/rerun/latitude/hotwarm/hotwarm_record.json` (copy in `G/records/`) |
-| ΔT × size: 1.60 and 1.18 per 10 K; Figure 3b (S3) | `G/scripts/test2_h18.py`, `P/analysis_v3/dT_hosting.py` | `G/records/test2_h18_record.json`, `P/analysis_v3/dT_record.json` |
-| Equator-facing walls (S8) | `code/rerun/latitude/aspect/aspect_stats.py`, `aspect_robustness/aspect_robustness.py` | `aspect_record.json`, `aspect_robustness_record.json` (copies in `G/records/`) |
-| Slope occurrence and slope figure (S9) | `slope_test/slope_occurrence.py` (DEM), `occ_analysis.py`; `P/figscripts/slope_fig.py` | `slope_test/occ_analysis_record.json` |
-| Layer crossing 368 K: 22 and 10 cm (S15) | `P/analysis_v3/transition_layer.py`, `transition_layer_hilat.py` | `transition_layer_record.json`, `transition_layer_hilat_record.json`, `transition_layer_grid.npz` |
-| Fresh craters 4.9 (3.4–7.0); depth ratio 1.02 (S13) | `P/analysis_v3/host_age_tests.py` | `P/analysis_v3/host_age_record.json` |
-| Depth against temperature: 1.5-fold vs 794-fold; 0.77 poleward; Figure 4a (S10) | `G/scripts/test1.py`, `depth_reanalysis.py`; `slope_test/subsolar_for_depths.py`, `depth_points_slope.py`, `depth_slope_geometry.py`, `depth_slope_eqface.py` | `G/data/test1_rows.csv`, `test1_rows_inc.csv`, `G/records/depth_reanalysis_record.json`, `slope_test/depth_slope_record.json` |
-| Depth against host size (Figure 4b); within-field correlation r = 0.69; r = 0.01 between craters (S11) | `G/depthctl/depth_structure.py`, `depth_structure_extras.py` | `G/depthctl/depth_structure_record.json`, `crater_median_depths.csv` |
-| Depth against X-ray ratios, at most 11% (S12) | `G/depthctl/depth_vs_xrs.py`, `depth_vs_xrs_tiles.py` | `G/depthctl/depth_vs_xrs_record.json` |
-| Sulfur release, vapor pressure, 15–46 m, iron budget (S16) | `P/analysis_v3/sulfur_charge.py`, `sulfide_s2.py` | `sulfur_charge_record.json`, `sulfide_s2_record.json` |
-| Overburden and strength | `G/depthctl/strength_calc.py` | `G/depthctl/strength_calc_record.json` |
-| Craters inside older craters (formation-model draft) | [mercury-crater-graph](https://github.com/Michael-S-Phillips/mercury-crater-graph) | that repository's `outputs/` |
+## Reproduction check (9 November 2026)
 
-| Figure | Script | Data table |
-|---|---|---|
-| Exposure (v6 Figure 2; draft Figure 1) | `P/figscripts/make_figs_pr.py` | `P/figures/data/fig1_exposure_data.csv` |
-| Insolation, full (Figure S5) | `make_figs_pr.py` (saved as `fig2_insolation`, archived as `fig2_insolation_v3`) | `fig2_insolation_v3_data.csv` |
-| Insolation, panels a–b (v6 and draft Figure 3) | `P/figscripts/fig3_insolation_v6.py` (crop of the above) | `fig2_insolation_v3_data.csv`, panels a–b |
-| Depth (v6 and draft Figure 4) | `make_figs_pr.py` | `fig4_depth_data.csv` |
-| Life cycle (v6 Figure 1; draft Figure 5) | `P/figscripts/lifecycle_fig_v5.py G/scripts P/figures/fig5_lifecycle_v5.png` | `fig5_lifecycle_v5_data.csv` (panel 7 is data; panels 1–6 are schematic) |
-| Slope (supplement) | `P/figscripts/slope_fig.py` | `fig3_slope_data.csv` |
-| Craters inside two hollow-bearing craters (draft Figure 2) | `scripts/make_figures.py` in mercury-crater-graph | that repository's `outputs/` |
-| Figures S1–S4 | `P/analysis_v3/figS_*.py`, `peak_wall_test/nested_figs.py` | maps drawn from the MDIS mosaics and the USGS DEM; plotted hollows and craters are in `code/rerun/out_v2/` and `peak_wall_test/` |
+The following analyses were rerun from this repository, with `~/mnt/hollows-emissivity` pointing at it, and every record they write is byte-identical to the archived record:
+- the screened catalog (`build_v3_catalog.py`);
+- the containment graph, its tests, and its sensitivity runs (`R/g4_completeness/g1/run_dag.sh v3r main`);
+- degradation state and vents (`run_degr_vents.sh v3r`);
+- all 22 insolation analyses (`R/g4_completeness/g2/run_g2.sh` with `G2_CAT=v3r`), including Figure 4, which is byte-identical to the submitted figure;
+- the size distribution and the detection-model refit (`R/g3_catalog/sfd/run_sfd.sh v3 refit`, `sfd_derived.py`);
+- the depth analyses `depth_regress.py`, `within_field.py`, `bench_analyze.py`, `fig_depth_v3.py` (Figure 5, byte-identical), `cmp_analyze.py`, `me.py`, and `no_shadow_check.py`;
+- the traced terrain tests (`R/g18_traced_r3/terrain/analyze.py out_v3/rows_tracedonly_r3_v3.csv`) and the knob ratio (`knob_ratio_design.py`);
+- the model calculations in `P/analysis_v3` (sulfur charge, FeS vapor), `P/analysis_v7`, `P/analysis_v8`, and `P/analysis_workshop/volatile_fit`;
+- the Caloris tests on the refit grid (`G3_CAT=v3 G3_GRID=v3r` with `R/g3_catalog/caloris/caloris_v9.py` and `caloris_v9_controls.py`, records in `caloris/out_v3r/`), which differ only in the recorded paths of their inputs;
+- the depth regressions on the automatic depths (`R/g23_smallest_hollows/depth_paper.py`, which reads the external map of low-reflectance material of Klima et al., 2018), the depth fits on the screened-mask colors (`R/g6_remaining/color/depth_color_fits.py`), and the text numbers (`R/g27_text_numbers/text_numbers.py`).
 
-`P/figure_numbers_pr.json` lists the numbers printed in the figures. The data tables come from `P/figscripts/figure_data.py`, which reads the plotted lines, points, bars, and interval segments of each panel just before the figure is saved.
+Partial checks:
+- **Joint model with the composition group** (`R/g25_composition/comp_model.py`). A run with 2 bootstrap draws reproduces every point estimate (R² 0.226, the shares, and the coefficients) to 10⁻¹⁵. The archived intervals come from 100 draws, which were not rerun.
+- **Records that need Cantera or external data.** `P/analysis_workshop/sulfur_redox/redox_check.py` (Cantera; `redox_check_record.json`) and `G/scripts/nsp_mask2.py` (the northern smooth plains lineament map; `nsp_mask2_record.json`) were not rerun here.
 
-## Running
+Not rerun, because the steps need external data: georeferencing (ISIS and MDIS EDRs), the catalog screen and the automatic shadow depths (MDIS EDRs), the completeness grid (MDIS CDR index), DEM morphometry, terrain measurements and hollow positions on peaks (USGS 665 m DEM), MDIS color (MDR tiles), and the map figures (MDIS mosaics). Their outputs are archived.
 
-Python 3.10 or later with the packages in `requirements.txt`.
+## Hand-measurement and visual-classification data
 
-```bash
-bash run_all.sh          # 29 analyses and figures, about 3 minutes
-git status; git diff --stat
-```
-
-`run_all.sh` lists the order and the arguments each script takes. Scripts that read files relative to their own folder (`peak_wall_test/`, `slope_test/`) are run from that folder. The scripts that need external data are run the same way once the data are in place (next section).
-
-**Reproduction check (29 October 2026).** On a fresh copy, `run_all.sh` rewrites 21 analysis records. Nineteen match the archived records to within 10⁻¹¹, the CSV tables match to within floating-point printing, and the figures match to within font rendering (1–2.5% of pixels differ; `fig3_insolation_v6.png` is identical). Two records differ slightly:
-- `code/rerun/latitude/aspect/aspect_record.json`: bootstrap intervals differ in the third significant figure under the current NumPy, and the archived record has three text fields (`interpretation`, `limitation`, `verdict`) that were added by hand.
-- `G/depthctl/depth_structure_record.json`: `R2_crater_image` is 0.616 against 0.621 archived. That fit has collinear image and crater dummies, so its R² depends on the linear-algebra library; it is not cited.
+The author measured and classified features by hand in browser pages; the exported results are data in this repository.
+- **Terrain tracings** of 111 host craters: `R/g13_traced/traces/`, `R/g18_traced_r3/traces/`, and, for the Caloris knobs, `R/g19_knobs_traced/traces/` (raw exports `traces_raw_artifact_*.json` and cleaned `traces_clean*.json`).
+- **Hand shadow depths** of 135 hollows: `R/g23_smallest_hollows/bench_shadows_2026-11-09.json`, `bench_depths.csv`.
+- **Blind measurement** of 178 points of Blewett et al. (2016): `R/g24_blewett_compare/blewett_cmp_2026-11-09.json`, `cmp_points.csv`.
+- **Visual screen of the regions with excess hosts**: `R/g22_province_screen/calls_2026-11-09.json`.
+- **Catalog screen**: `code/rerun/out_v3/screen_set.csv`, `screen_classes.csv`, `qc/class_*.csv`, `qc/decide_ids.csv`.
 
 ## External data (not included)
 
 | Data | Used by | Source |
 |---|---|---|
-| Bickel et al. hollow catalog, 0.7-confidence release (`Bickel_et_al_2024_MDIS_hollows_07_v1.0.csv`) | `build_hollow_products.py`, `georeference_bickel.py` | data release of Bickel et al. (2025); place in `data/bickel-2024/` |
-| MDIS CDR cumulative index | `build_hollow_products.py` (downloads it), `depth_reanalysis.py` and `subsolar_for_depths.py` (`external/mdis_index/cdr_index.pkl`, `CDR_CUMINDEX.TAB`) | PDS Imaging Node, `msgrmds_2001/INDEX/` |
-| MDIS EDR images | `georeference_bickel.py` (downloads them) | PDS Imaging Node, `msgrmds_1001/DATA/` |
-| USGS MESSENGER global DEM, 665 m/pixel (`data/DEMs/Mercury_Messenger_USGS_DEM_Global_665m_v2_cog.tif`) | `peak_wall.py`, `measure_all.py`, `nested_build.py`, `slope_occurrence.py`, `aspect_robustness.py`, `figS_terrain_examples.py` | USGS Astrogeology (Becker et al., 2016) |
-| MDIS global mosaics: 166 m/pixel monochrome (`data/`), 665 m/pixel enhanced color (`GIS/raster/`) | `figS_caloris_map.py`, `nested_figs.py` | USGS Astrogeology (Denevi et al., 2018) |
-| Map-projected MDIS frames for Figure S1 (`data/mdis_frames/`) | `figS_positions.py` | made with ISIS from PDS EDRs |
-| Northern smooth plains lineament shapefile (`data/data/NSP_map_data/`) | `nsp_mask.py`, `nsp_mask2.py` | source to be cited (open item in the manuscript); the resulting mask is included |
-| ISIS 8 with MESSENGER kernels | `georeference_bickel.py` | USGS Astrogeology |
+| Bickel et al. hollow catalog, releases 0.7 and 0.8 confidence (`data/bickel-2024/Bickel_et_al_2024_MDIS_hollows_07_v1.0.csv`, `_08_v1.0.csv`) | `build_hollow_products.py`, `georeference_bickel.py`, the Stage tests in `g2` | Bickel et al. (2025) data release |
+| MDIS CDR cumulative index | `build_hollow_products.py`, `g4_completeness/build_completeness.py`, depth scripts | PDS Imaging Node, `msgrmds_2001/INDEX/` |
+| MDIS EDR images | georeferencing, catalog screen, automatic depths, province screen | PDS Imaging Node, `msgrmds_1001/DATA/` |
+| MDIS MDR eight-filter mosaics (`data/mdis_mdr/`, fetched by `data/mdis_mdr/_download.sh`) | `g6_remaining/color/` | PDS Imaging Node |
+| USGS MESSENGER global DEM, 665 m/pixel (`data/DEMs/`) | `peak_wall_test/measure_all.py`, `nested_build.py`, traced terrain and position builders, knob scripts | USGS Astrogeology (Becker et al., 2016) |
+| MDIS global mosaics, 166 m/pixel monochrome and 665 m/pixel enhanced color | map figures, tracing pages | USGS Astrogeology (Denevi et al., 2018) |
+| Low-reflectance material map (`data/Concentrated_LRM_560_params_BW.tif`) | `depth_paper.py`, composition steps | Klima et al. (2018) |
+| Volcanic vent catalog (`data/data/MER_Vent_Locations_Classifications.csv`) | vent tests | source to be cited |
+| Northern smooth plains lineament map (`data/data/NSP_map_data/`) | `G/scripts/nsp_mask2.py` | Klimczak et al. (2025); the resulting mask is included |
+| Kinczyk et al. (2020) degradation table | `P/analysis_workshop/kinczyk_degradation/` | Kinczyk et al. (2020) supplement; the matched classes are included |
+| ISIS 8 with MESSENGER kernels; Cantera (sulfur-redox checks) | georeferencing; `P/analysis_workshop/sulfur_redox/` | USGS Astrogeology; cantera.org |
 
-## Changes made for the archive
+## Versions
 
-The scripts are the ones that produced the records, with these changes only:
-1. Absolute paths from the machines where the analyses ran (`/Users/...`, `/home/claude/...`, `/mnt/user-data/...`, `/sessions/...`) are replaced by paths relative to the repository root; a two-line header in each script defines that root.
-2. Inputs and outputs that were read or written in the working directory now point to their folders in the repository: `test1.py`, `test2_h18.py`, `latcorr.py`, `latcorr3.py`, `latcorr5.py`, `depth_vs_xrs.py`, `transition_layer_hilat.py`, `hotwarm.py` (reads `code/rerun/out_v2/`, identical to the former `hollow-networks/data_v2/`), `make_figs_pr.py`.
-3. `dT_hosting.py` writes `craters_dT.csv`, the input of `transition_layer.py`, which was previously passed by hand. `make_figs_pr.py`, `slope_fig.py`, and `lifecycle_fig_v5.py` also write the data behind each figure (`figure_data.py`); the figures are unchanged.
-4. New scripts recreate results first computed inline, and each reproduces the archived values exactly: `depth_structure_extras.py`, `depth_vs_xrs_tiles.py`, `depth_slope_eqface.py`, `fig3_insolation_v6.py`.
-5. `georeference/georeference_bickel.py` re-implements the camera-model georeferencing documented in `GIS/vector/bickel2024_hollows_corrected_README.md`; the original per-image driver script was not saved. Its reader and the comparison script are tested, but the ISIS steps have not been run from this script. Before the code is cited, run it on a few images with ISIS and check the result with `georeference/compare_to_archive.py` (median difference below 0.05 km).
+**v0.2.0 (November 2026).** Matches the submitted manuscript v6.16 and supplement v28, held as `manuscripts/PlanetaryResearch_hollows/submission/Hollow_Formation_Model_Paper_final.tex` and `supplementary-materials_final.tex` (the submission folder holds only the current version; v6.13, v6.14, v6.15, v24, v25, v26 and v27 are one level up). v6.15 redraws Figure 2a on the MDIS mosaic (`g28_fig2a`) and letters the panels of Figure 7 (`lifecycle_fig_v12.py`); v26 takes the S8 wall-area share from the traced classes, and v27 fixes the panel titles of Figure S1 (`analysis_v3/figS_positions_v4.py`). v6.16 and v28 rename the solar-day average "mean surface temperature" (Figure 5 v4, `g23_smallest_hollows/fig_depth_v4.py`) and add the pressure-driven flow of S2 to S13 (`g29_pressure_flow/pressure_flow.py`). The corrections came from the provenance cross-check: crater counts and the Caloris tests on the refit completeness grid (`g3_catalog/caloris/out_v3r`, Figure 2c), the S2 pair ranges and rounding, the S9 color fits on the screened mask (`g6_remaining/color/depth_color_fits.py`) with Figure S9 redrawn from it, and new records for numbers that had none (`g27_text_numbers`, `redox_check_record.json`, `nsp_mask2_record.json`); `depth_paper.py` now writes every key of its record. The provenance tables describe v6.15 and v27. Adds the screened catalog and every rerun on it (`code/rerun/out_v3/`), the refit detection model and completeness grid, the hand-traced terrain classes, the automatic and hand shadow depths and their uncertainty, MDIS color, the Kinczyk degradation classes, the joint model of hosting with the composition group, the regional excess, the knobs, the provenance tables, and the submitted figures. The automated relief-threshold terrain classes and the analyses that the paper no longer uses (slope tests, the version-6 figures and their data tables, superseded latitude records) are removed. `build_v3_catalog.py` is new: it rebuilds the screened catalog files, which were first made by commands run outside a script, and it reproduces them exactly.
 
-Scripts kept for completeness but not needed for the paper's numbers: `G/scripts/make_figs_v2.py` and `lifecycle_fig.py` (GRL draft figures), `latcorr2.py` and `latcorr4.py` (superseded by `latcorr3.py` and `latcorr5.py`), `peak_wall_test/nested_test*.py` (earlier nested-crater tests), and `code/rerun/latitude/province/` (its analysis script read temporary files from an earlier session and does not run as archived).
+**v0.1.0 (29 October 2026).** First archive, for manuscript draft v6.
 
 ## Licenses and credits
 
-Code is under the MIT License (`LICENSE`). Derived data are under CC BY 4.0 (`LICENSE-DATA.md`), which also lists the source data sets. The derived files redistribute fields from the hollow catalog of Bickel et al. (2025), the crater catalog of Herrick et al. (2018), the basin catalog of Orgel et al. (2020), the hollow depths of Blewett et al. (2016), and the MESSENGER X-Ray Spectrometer maps (Nittler et al., 2020); please cite them with this record.
+Code is under the MIT License (`LICENSE`). Derived data are under CC BY 4.0 (`LICENSE-DATA.md`), which also lists the source data sets. The derived files redistribute fields from the hollow catalog of Bickel et al. (2025), the crater catalog of Herrick et al. (2018), the basin catalog of Orgel et al. (2020), the degradation classes of Kinczyk et al. (2020), and the hollow depths of Blewett et al. (2016), so the record credits them. Much of the analysis code was written with Claude (Anthropic) and checked by the author.
