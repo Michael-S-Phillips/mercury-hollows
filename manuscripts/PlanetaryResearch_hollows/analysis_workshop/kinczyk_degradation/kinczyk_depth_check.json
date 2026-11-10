@@ -1,0 +1,198 @@
+{
+ "crosstab": {
+  "degraded": {
+   "1": 0,
+   "2": 57,
+   "3": 424,
+   "4": 91,
+   "5": 0
+  },
+  "filled": {
+   "1": 136,
+   "2": 46,
+   "3": 153,
+   "4": 8,
+   "5": 0
+  },
+  "fresh": {
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 286,
+   "5": 88
+  },
+  "standard": {
+   "1": 0,
+   "2": 0,
+   "3": 51,
+   "4": 144,
+   "5": 0
+  }
+ },
+ "hosts_crosstab": {
+  "degraded": {
+   "1": 0,
+   "2": 5,
+   "3": 8,
+   "4": 2,
+   "5": 0
+  },
+  "filled": {
+   "1": 22,
+   "2": 14,
+   "3": 2,
+   "4": 1,
+   "5": 0
+  },
+  "fresh": {
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 11,
+   "5": 2
+  },
+  "standard": {
+   "1": 0,
+   "2": 0,
+   "3": 5,
+   "4": 8,
+   "5": 0
+  }
+ },
+ "kinczyk_all_cl_filename": {
+  "C(kgrp)[T.C3]": [
+   1.32,
+   1.14,
+   1.51
+  ],
+  "C(kgrp)[T.C4-5]": [
+   1.27,
+   1.12,
+   1.44
+  ]
+ },
+ "kinczyk_all_cl_filename_plus_logD": {
+  "C(kgrp)[T.C3]": [
+   1.31,
+   1.15,
+   1.51
+  ],
+  "C(kgrp)[T.C4-5]": [
+   1.26,
+   1.11,
+   1.42
+  ]
+ },
+ "kinczyk_no_filled_cl_filename": {
+  "C(kgrp)[T.C3]": [
+   1.25,
+   1.02,
+   1.54
+  ],
+  "C(kgrp)[T.C4-5]": [
+   1.23,
+   1.02,
+   1.48
+  ]
+ },
+ "kinczyk_no_filled_cl_filename_plus_logD": {
+  "C(kgrp)[T.C3]": [
+   1.25,
+   1.0,
+   1.56
+  ],
+  "C(kgrp)[T.C4-5]": [
+   1.23,
+   1.01,
+   1.49
+  ]
+ },
+ "herrick_all_cl_filename": {
+  "C(hcat)[T.degraded]": [
+   1.16,
+   1.0,
+   1.35
+  ],
+  "C(hcat)[T.standard]": [
+   0.92,
+   0.79,
+   1.08
+  ],
+  "C(hcat)[T.fresh]": [
+   1.23,
+   1.05,
+   1.45
+  ]
+ },
+ "kinczyk_all_cl_host": {
+  "C(kgrp)[T.C3]": [
+   1.32,
+   1.13,
+   1.53
+  ],
+  "C(kgrp)[T.C4-5]": [
+   1.27,
+   1.05,
+   1.54
+  ]
+ },
+ "kinczyk_all_cl_host_plus_logD": {
+  "C(kgrp)[T.C3]": [
+   1.31,
+   1.15,
+   1.5
+  ],
+  "C(kgrp)[T.C4-5]": [
+   1.26,
+   1.05,
+   1.5
+  ]
+ },
+ "kinczyk_no_filled_cl_host": {
+  "C(kgrp)[T.C3]": [
+   1.25,
+   1.04,
+   1.51
+  ],
+  "C(kgrp)[T.C4-5]": [
+   1.23,
+   1.0,
+   1.51
+  ]
+ },
+ "kinczyk_no_filled_cl_host_plus_logD": {
+  "C(kgrp)[T.C3]": [
+   1.25,
+   0.99,
+   1.58
+  ],
+  "C(kgrp)[T.C4-5]": [
+   1.23,
+   0.98,
+   1.53
+  ]
+ },
+ "herrick_all_cl_host": {
+  "C(hcat)[T.degraded]": [
+   1.16,
+   0.94,
+   1.43
+  ],
+  "C(hcat)[T.standard]": [
+   0.92,
+   0.72,
+   1.18
+  ],
+  "C(hcat)[T.fresh]": [
+   1.23,
+   0.96,
+   1.58
+  ]
+ },
+ "n": {
+  "hollows": 1484,
+  "hosts": 80,
+  "hollows_no_filled": 1141,
+  "hosts_no_filled": 41
+ }
+}

@@ -1,0 +1,166 @@
+{
+ "boiling_T_gradient_K_per_m_at_base": {
+  "0.4": [
+   1.18,
+   1.63
+  ],
+  "0.2": [
+   0.68,
+   0.96
+  ],
+  "0.1": [
+   0.4,
+   0.57
+  ]
+ },
+ "S2_mean_speed_m_s_1000K": 575,
+ "heat_conduction_time_100m_yr": 317,
+ "vapor_crossing": {
+  "aperture_10um": {
+   "D_K_m2_s": 0.0019,
+   "crossing_time_100m_days_single_fracture": 60.0,
+   "crossing_time_100m_yr_eps0.01_tau3": 50.0
+  },
+  "aperture_1000um": {
+   "D_K_m2_s": 0.19,
+   "crossing_time_100m_days_single_fracture": 0.6,
+   "crossing_time_100m_yr_eps0.01_tau3": 0.5
+  }
+ },
+ "S2_mean_free_path_m_1Pa_1000K": 0.019,
+ "sulfur_needed_kg_m2_100m_5volpct": 10350.0,
+ "sulfur_delivery_from_FeS": {
+  "a1mm_eps_over_tau0.003_dp0.1Pa": {
+   "flux_kg_m2_yr": 0.00014,
+   "time_yr": 74000000.0
+  },
+  "a1mm_eps_over_tau0.003_dp1.0Pa": {
+   "flux_kg_m2_yr": 0.0014,
+   "time_yr": 7400000.0
+  },
+  "a1mm_eps_over_tau0.1_dp0.1Pa": {
+   "flux_kg_m2_yr": 0.0047,
+   "time_yr": 2200000.0
+  },
+  "a1mm_eps_over_tau0.1_dp1.0Pa": {
+   "flux_kg_m2_yr": 0.047,
+   "time_yr": 220000.0
+  },
+  "a1mm_eps_over_tau0.1_dp5.4Pa_1600K": {
+   "flux_kg_m2_yr": 0.25,
+   "time_yr": 41000.0
+  }
+ },
+ "vapor_pressure_ratio_charging_vs_present": {
+  "820K_vs_270K": 3300000000.0,
+  "820K_vs_330K": 7400000.0,
+  "1050K_vs_270K": 26000000000.0,
+  "1050K_vs_330K": 59000000.0
+ },
+ "native_S_vapor_pressure_Pa_500K": 574,
+ "contact_T_equal_inertia_K": {
+  "1300": 825.0,
+  "1700": 1025.0
+ },
+ "half_weighted_surface_temperature_test": {
+  "0.4": {
+   "coef_on_1_over_Ts_K": [
+    -490,
+    -451
+   ],
+   "poleward_depth_ratio": [
+    0.882,
+    0.891
+   ]
+  },
+  "0.2": {
+   "coef_on_1_over_Ts_K": [
+    -418,
+    -385
+   ],
+   "poleward_depth_ratio": [
+    0.899,
+    0.906
+   ]
+  },
+  "0.1": {
+   "coef_on_1_over_Ts_K": [
+    -354,
+    -326
+   ],
+   "poleward_depth_ratio": [
+    0.913,
+    0.92
+   ]
+  }
+ },
+ "max_lowering_before_residue_exceeds_0.1m": {
+  "0.4": 0.067,
+  "0.2": 0.025,
+  "0.1": 0.011
+ },
+ "max_lowering_before_residue_exceeds_0.22m": {
+  "0.4": 0.147,
+  "0.2": 0.055,
+  "0.1": 0.024
+ },
+ "wang_vertical_rate_per_solar_day_mm": 0.111,
+ "FeS_pS2_Pa_JANAF_liquid": {
+  "1500": 1.6,
+  "1600": 5.4
+ },
+ "heat_front_over_sulfur_front_distance_ratio_1mm_fS0.05": {
+  "eps_over_tau0.1_dp5.4Pa": 8.1,
+  "eps_over_tau0.1_dp1.0Pa": 18.7,
+  "eps_over_tau0.003_dp1.0Pa": 108.1
+ },
+ "heat_crossing_time_yr": {
+  "60.0": 114,
+  "280.0": 2484
+ },
+ "contact_T_rock_inertia_2x_K": {
+  "1300": 983,
+  "1700": 1250
+ },
+ "dT_for_twofold_depth_K": {
+  "850": [
+   65,
+   59
+  ],
+  "1000": [
+   89,
+   82
+  ]
+ },
+ "base_T_lowering_if_confinement_0.4_0.6_rho_g_z_K": {
+  "0.4": [
+   39,
+   84
+  ],
+  "0.2": [
+   45,
+   98
+  ],
+  "0.1": [
+   52,
+   116
+  ]
+ },
+ "sublimation_native_S_vacuum": {
+  "300K": {
+   "P_Pa": 0.0034,
+   "time_to_lose_1mm_s": 150000.0
+  },
+  "400K": {
+   "P_Pa": 6.3,
+   "time_to_lose_1mm_s": 94.0
+  }
+ },
+ "poleward_ratio_implied_by_coefficient": {
+  "central": 0.923,
+  "range_pm_1.96se": [
+   0.875,
+   0.974
+  ]
+ }
+}

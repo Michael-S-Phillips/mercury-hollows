@@ -1,0 +1,13 @@
+{
+ "n_faculae": 29,
+ "swapped": {
+  "median_km": 9.45619572195023,
+  "within_25km": 24,
+  "within_50km": 25
+ },
+ "as_labeled": {
+  "median_km": 1051.4592104337494,
+  "within_25km": 0,
+  "within_50km": 0
+ }
+}

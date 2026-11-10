@@ -1,0 +1,96 @@
+{
+ "targets": 26,
+ "frames": 23,
+ "knobs": 14,
+ "measured_clean": 6,
+ "knobs_clean": 4,
+ "flags": {
+  "multi": 10,
+  "clean": 6,
+  "no_shadow": 5,
+  "short;multi": 4,
+  "short": 1
+ },
+ "correction": {
+  "b_lnpx": 0.78,
+  "b_lntan": -0.734,
+  "px0": 14.24,
+  "inc0": 67.6
+ },
+ "knob_clean": [
+  {
+   "knob": 273,
+   "ktype": "Knob (uncertain)",
+   "num": "1045760870",
+   "px_m": 14.64,
+   "inc_local": 75.71,
+   "emission": 2.2,
+   "shadow_px": 6.75,
+   "depth_m": 25.19,
+   "depth_corr_m": 35.11
+  },
+  {
+   "knob": 905,
+   "ktype": "Knob (<5 km)",
+   "num": "0220461795",
+   "px_m": 23.77,
+   "inc_local": 81.06,
+   "emission": 30.67,
+   "shadow_px": 6.25,
+   "depth_m": 27.17,
+   "depth_corr_m": 36.95
+  },
+  {
+   "knob": 51,
+   "ktype": "Knob (certain)",
+   "num": "0220720885",
+   "px_m": 19.21,
+   "inc_local": 74.57,
+   "emission": 25.8,
+   "shadow_px": 7.0,
+   "depth_m": 41.21,
+   "depth_corr_m": 43.81
+  },
+  {
+   "knob": 400,
+   "ktype": "Knob (uncertain)",
+   "num": "0250768013",
+   "px_m": 33.77,
+   "inc_local": 76.82,
+   "emission": 33.57,
+   "shadow_px": 5.5,
+   "depth_m": 52.2,
+   "depth_corr_m": 40.3
+  },
+  {
+   "knob": 51,
+   "ktype": "Knob (certain)",
+   "num": "0251055861",
+   "px_m": 26.39,
+   "inc_local": 72.18,
+   "emission": 23.99,
+   "shadow_px": 4.25,
+   "depth_m": 39.44,
+   "depth_corr_m": 29.27
+  },
+  {
+   "knob": 51,
+   "ktype": "Knob (certain)",
+   "num": "0251055873",
+   "px_m": 26.78,
+   "inc_local": 72.19,
+   "emission": 24.1,
+   "shadow_px": 4.5,
+   "depth_m": 42.42,
+   "depth_corr_m": 31.12
+  }
+ ],
+ "knob_median_corr_m": 36.0,
+ "base_auto_median_corr_m": 32.3,
+ "base_n": 455,
+ "base_auto_corr_m_p10_p90": [
+  18.5,
+  61.7
+ ],
+ "auto_over_manual_validation": 1.236
+}

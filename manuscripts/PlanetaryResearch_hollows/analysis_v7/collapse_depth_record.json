@@ -1,0 +1,301 @@
+{
+ "assumptions": [
+  "Hollow depth h = phi * d, where d = P_S(T) / (rho g) is the depth at which the vapor pressure of sulfur at the charging",
+  "temperature T equals the overburden of the whole column, and phi is the volume fraction of the layer lost on collapse",
+  "(native sulfur plus the pore space that closes). Vapor pressure as in analysis_v3/sulfur_charge.py (Section S16):",
+  "ln(P/p_b) = B (1/T_b - 1/T), T_b = 717.8 K, p_b = 101,325 Pa, B = 7,750-8,420 K; rho = 2,000-3,000 kg/m3; g = 3.70 m/s2."
+ ],
+ "depth_targets_m": {
+  "raw_median": 20.8,
+  "corrected_medians_lt60": [
+   24,
+   28
+  ]
+ },
+ "by_phi": {
+  "1.0": {
+   "20.8m": {
+    "d_m": [
+     20.8,
+     20.8
+    ],
+    "T_K": [
+     744,
+     777
+    ],
+    "P_MPa": [
+     0.154,
+     0.231
+    ]
+   },
+   "24-28m": {
+    "d_m": [
+     24.0,
+     28.0
+    ],
+    "T_K": [
+     754,
+     801
+    ],
+    "P_MPa": [
+     0.178,
+     0.311
+    ]
+   },
+   "K_drop_for_depth_ratio_0.77_at_Tmid": [
+    19.9,
+    18.3
+   ],
+   "depth_ratio_for_20K_drop_at_Tmid": [
+    0.769,
+    0.751
+   ],
+   "rock_volume_heated_above_1200K_per_layer_volume_10volpctS": [
+    8.0,
+    8.6
+   ],
+   "rock_column_m_for_24m_hollow_if_10volpctS": [
+    192,
+    206
+   ]
+  },
+  "0.4": {
+   "20.8m": {
+    "d_m": [
+     52.0,
+     52.0
+    ],
+    "T_K": [
+     810,
+     856
+    ],
+    "P_MPa": [
+     0.385,
+     0.577
+    ]
+   },
+   "24-28m": {
+    "d_m": [
+     60.0,
+     70.0
+    ],
+    "T_K": [
+     821,
+     885
+    ],
+    "P_MPa": [
+     0.444,
+     0.777
+    ]
+   },
+   "K_drop_for_depth_ratio_0.77_at_Tmid": [
+    23.9,
+    22.0
+   ],
+   "depth_ratio_for_20K_drop_at_Tmid": [
+    0.804,
+    0.789
+   ],
+   "rock_volume_heated_above_1200K_per_layer_volume_10volpctS": [
+    8.0,
+    8.6
+   ],
+   "rock_column_m_for_24m_hollow_if_10volpctS": [
+    480,
+    516
+   ]
+  },
+  "0.3": {
+   "20.8m": {
+    "d_m": [
+     69.3,
+     69.3
+    ],
+    "T_K": [
+     833,
+     884
+    ],
+    "P_MPa": [
+     0.513,
+     0.77
+    ]
+   },
+   "24-28m": {
+    "d_m": [
+     80.0,
+     93.3
+    ],
+    "T_K": [
+     845,
+     915
+    ],
+    "P_MPa": [
+     0.592,
+     1.036
+    ]
+   },
+   "K_drop_for_depth_ratio_0.77_at_Tmid": [
+    25.4,
+    23.4
+   ],
+   "depth_ratio_for_20K_drop_at_Tmid": [
+    0.815,
+    0.801
+   ],
+   "rock_volume_heated_above_1200K_per_layer_volume_10volpctS": [
+    8.0,
+    8.6
+   ],
+   "rock_column_m_for_24m_hollow_if_10volpctS": [
+    640,
+    688
+   ]
+  },
+  "0.2": {
+   "20.8m": {
+    "d_m": [
+     104.0,
+     104.0
+    ],
+    "T_K": [
+     868,
+     927
+    ],
+    "P_MPa": [
+     0.77,
+     1.154
+    ]
+   },
+   "24-28m": {
+    "d_m": [
+     120.0,
+     140.0
+    ],
+    "T_K": [
+     881,
+     961
+    ],
+    "P_MPa": [
+     0.888,
+     1.554
+    ]
+   },
+   "K_drop_for_depth_ratio_0.77_at_Tmid": [
+    27.7,
+    25.6
+   ],
+   "depth_ratio_for_20K_drop_at_Tmid": [
+    0.83,
+    0.816
+   ],
+   "rock_volume_heated_above_1200K_per_layer_volume_10volpctS": [
+    8.0,
+    8.6
+   ],
+   "rock_column_m_for_24m_hollow_if_10volpctS": [
+    960,
+    1032
+   ]
+  },
+  "0.1": {
+   "20.8m": {
+    "d_m": [
+     208.0,
+     208.0
+    ],
+    "T_K": [
+     935,
+     1010
+    ],
+    "P_MPa": [
+     1.539,
+     2.309
+    ]
+   },
+   "24-28m": {
+    "d_m": [
+     240.0,
+     280.0
+    ],
+    "T_K": [
+     950,
+     1051
+    ],
+    "P_MPa": [
+     1.776,
+     3.108
+    ]
+   },
+   "K_drop_for_depth_ratio_0.77_at_Tmid": [
+    32.7,
+    30.1
+   ],
+   "depth_ratio_for_20K_drop_at_Tmid": [
+    0.854,
+    0.842
+   ],
+   "rock_volume_heated_above_1200K_per_layer_volume_10volpctS": [
+    8.0,
+    8.6
+   ],
+   "rock_column_m_for_24m_hollow_if_10volpctS": [
+    1920,
+    2064
+   ]
+  },
+  "0.05": {
+   "20.8m": {
+    "d_m": [
+     416.0,
+     416.0
+    ],
+    "T_K": [
+     1012,
+     1111
+    ],
+    "P_MPa": [
+     3.078,
+     4.618
+    ]
+   },
+   "24-28m": {
+    "d_m": [
+     480.0,
+     560.0
+    ],
+    "T_K": [
+     1030,
+     1160
+    ],
+    "P_MPa": [
+     3.552,
+     6.216
+    ]
+   },
+   "K_drop_for_depth_ratio_0.77_at_Tmid": [
+    39.0,
+    36.0
+   ],
+   "depth_ratio_for_20K_drop_at_Tmid": [
+    0.877,
+    0.867
+   ],
+   "rock_volume_heated_above_1200K_per_layer_volume_10volpctS": [
+    8.0,
+    8.6
+   ],
+   "rock_column_m_for_24m_hollow_if_10volpctS": [
+    3840,
+    4128
+   ]
+  }
+ },
+ "critical_point_check": {
+  "T_K": 1314,
+  "P_measured_MPa": 20.7,
+  "P_relation_MPa": [
+   13.6,
+   20.8
+  ]
+ }
+}

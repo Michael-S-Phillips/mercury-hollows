@@ -1,0 +1,93 @@
+{
+ "rows": [
+  {
+   "D": "10-15",
+   "caloris_field": "0/23",
+   "caloris_any": "1/23",
+   "iso_field": "2/452",
+   "iso_any": "11/452",
+   "C_cal": 0.39,
+   "C_iso": 0.34
+  },
+  {
+   "D": "15-20",
+   "caloris_field": "0/13",
+   "caloris_any": "0/13",
+   "iso_field": "0/170",
+   "iso_any": "2/170",
+   "C_cal": 0.28,
+   "C_iso": 0.36
+  },
+  {
+   "D": "20-25",
+   "caloris_field": "0/6",
+   "caloris_any": "2/6",
+   "iso_field": "1/108",
+   "iso_any": "7/108",
+   "C_cal": 0.33,
+   "C_iso": 0.34
+  },
+  {
+   "D": "25-30",
+   "caloris_field": "1/4",
+   "caloris_any": "1/4",
+   "iso_field": "1/77",
+   "iso_any": "2/77",
+   "C_cal": 0.38,
+   "C_iso": 0.32
+  },
+  {
+   "D": "30-35",
+   "caloris_field": "3/5",
+   "caloris_any": "4/5",
+   "iso_field": "1/57",
+   "iso_any": "4/57",
+   "C_cal": 0.32,
+   "C_iso": 0.35
+  },
+  {
+   "D": "35-40",
+   "caloris_field": "3/6",
+   "caloris_any": "3/6",
+   "iso_field": "5/43",
+   "iso_any": "8/43",
+   "C_cal": 0.78,
+   "C_iso": 0.28
+  },
+  {
+   "D": "40-50",
+   "caloris_field": "2/3",
+   "caloris_any": "2/3",
+   "iso_field": "3/69",
+   "iso_any": "9/69",
+   "C_cal": 0.62,
+   "C_iso": 0.33
+  },
+  {
+   "D": "50-70",
+   "caloris_field": "2/4",
+   "caloris_any": "3/4",
+   "iso_field": "10/56",
+   "iso_any": "11/56",
+   "C_cal": 0.26,
+   "C_iso": 0.32
+  },
+  {
+   "D": "70-250",
+   "caloris_field": "3/3",
+   "caloris_any": "3/3",
+   "iso_field": "42/119",
+   "iso_any": "54/119",
+   "C_cal": 0.28,
+   "C_iso": 0.32
+  }
+ ],
+ "D_band": [
+  28.5,
+  42.3
+ ],
+ "counts": {
+  "d_ex<2.5": "0/128",
+  "d_ex>=2.5": "14/32"
+ }
+}

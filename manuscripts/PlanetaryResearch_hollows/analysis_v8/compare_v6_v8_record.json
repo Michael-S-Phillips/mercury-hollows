@@ -1,0 +1,1249 @@
+{
+ "v6": {
+  "counts": {
+   "nodes": 31624,
+   "basins_kept": 53,
+   "nested": 14916,
+   "zone_none": 16638,
+   "zone_wall": 9788,
+   "zone_floor": 4565,
+   "zone_peak": 563,
+   "chain_0": 16638,
+   "chain_1": 12890,
+   "chain_2": 1955,
+   "chain_3": 71,
+   "fill_only": 2023,
+   "fill_unknown_nested": 1751,
+   "hosts": 705,
+   "hosts_nested": 385
+  },
+  "fits_hosts": {
+   "base": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5101.9,
+    "coef": {}
+   },
+   "nested": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5041.2,
+    "coef": {
+     "nested": [
+      0.6764,
+      0.0862,
+      4.14e-15
+     ]
+    }
+   },
+   "zone": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5041.5,
+    "coef": {
+     "C(zone_c)[T.peak]": [
+      0.8782,
+      0.3015,
+      0.00358
+     ],
+     "C(zone_c)[T.floor]": [
+      0.856,
+      0.1249,
+      7.24e-12
+     ],
+     "C(zone_c)[T.wall]": [
+      0.5745,
+      0.0973,
+      3.51e-09
+     ],
+     "C(zone_c)[T.fill_only]": [
+      0.8137,
+      0.2024,
+      5.81e-05
+     ]
+    }
+   },
+   "chain": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5036.6,
+    "coef": {
+     "C(chain.clip(upper=3))[T.1]": [
+      0.6232,
+      0.089,
+      2.51e-12
+     ],
+     "C(chain.clip(upper=3))[T.2]": [
+      1.0454,
+      0.1623,
+      1.18e-10
+     ],
+     "C(chain.clip(upper=3))[T.3]": [
+      1.6629,
+      0.6171,
+      0.00704
+     ]
+    }
+   },
+   "z_base": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5099.0,
+    "coef": {
+     "z_base": [
+      0.0042,
+      0.0018,
+      0.02
+     ]
+    }
+   },
+   "ln_zown": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5111.4,
+    "coef": {
+     "ln_zown": [
+      1.0591,
+      0.0381,
+      7.21e-170
+     ]
+    }
+   },
+   "ln_zmax": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5572.7,
+    "coef": {
+     "ln_zmax": [
+      0.3898,
+      0.0219,
+      5.25e-71
+     ]
+    }
+   },
+   "ln_zown_zmax": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5100.4,
+    "coef": {
+     "ln_zown": [
+      0.9471,
+      0.0476,
+      3.69e-88
+     ],
+     "ln_zmax": [
+      0.1222,
+      0.033,
+      0.000216
+     ]
+    }
+   },
+   "z_base_fillknown": {
+    "n": 29803,
+    "hosts": 651,
+    "aic": 4698.1,
+    "coef": {
+     "z_base": [
+      0.0174,
+      0.003,
+      1.2e-08
+     ]
+    }
+   },
+   "dAIC_vs_base": {
+    "nested": -60.7,
+    "zone": -60.4,
+    "chain": -65.3,
+    "z_base": -3.0,
+    "ln_zown": 9.5,
+    "ln_zmax": 470.8,
+    "ln_zown_zmax": -1.5
+   },
+   "dAIC_vs_nested": {
+    "zone": 0.3,
+    "chain": -4.6,
+    "z_base": 57.8,
+    "ln_zown": 70.2,
+    "ln_zmax": 531.5,
+    "ln_zown_zmax": 59.2
+   }
+  },
+  "h09": {
+   "all": {
+    "n": 31554,
+    "events": 606,
+    "OR": 1.85,
+    "ci": [
+     1.54,
+     2.22
+    ],
+    "p": 5.85e-11
+   },
+   "C1_ge_0.5": {
+    "n": 1119,
+    "events": 114,
+    "OR": 1.75,
+    "ci": [
+     1.08,
+     2.86
+    ],
+    "p": 0.0238
+   },
+   "D_10_50": {
+    "n": 14582,
+    "events": 239,
+    "OR": 1.93,
+    "ci": [
+     1.46,
+     2.54
+    ],
+    "p": 3.31e-06
+   },
+   "D_ge10_preservation_controlled": {
+    "n": 4214,
+    "events": 303,
+    "OR": 1.52,
+    "ci": [
+     1.14,
+     2.03
+    ],
+    "p": 0.00477
+   },
+   "outside_northern_plains": "Singular matrix",
+   "parents_lt300_only": {
+    "n": 23212,
+    "events": 413,
+    "OR": 3.1,
+    "ci": [
+     2.43,
+     3.97
+    ],
+    "p": 1.7e-19
+   },
+   "abslat_le60": {
+    "n": 27257,
+    "events": 573,
+    "OR": 1.84,
+    "ci": [
+     1.52,
+     2.23
+    ],
+    "p": 2.7e-10
+   },
+   "inherit_all": {
+    "n": 9655,
+    "events": 185,
+    "OR": 2.39,
+    "ci": [
+     1.73,
+     3.29
+    ],
+    "p": 9.69e-08
+   },
+   "inherit_C1_ge_0.5": {
+    "n": 329,
+    "events": 25,
+    "OR": 5.98,
+    "ci": [
+     1.87,
+     19.12
+    ],
+    "p": 0.00256
+   },
+   "inherit_preservation_controlled": {
+    "n": 1167,
+    "events": 83,
+    "OR": 2.1,
+    "ci": [
+     1.25,
+     3.55
+    ],
+    "p": 0.00528
+   },
+   "parent_kind": {
+    "crater_lt300": {
+     "OR": 2.88,
+     "lo": 2.27,
+     "hi": 3.64,
+     "p": 1.58e-18
+    },
+    "crater_ge300": {
+     "OR": 1.4,
+     "lo": 0.99,
+     "hi": 1.99,
+     "p": 0.0604
+    },
+    "basin": {
+     "OR": 1.47,
+     "lo": 1.17,
+     "hi": 1.85,
+     "p": 0.000983
+    }
+   },
+   "chain": {
+    "1": {
+     "OR": 1.78,
+     "lo": 1.48,
+     "hi": 2.15,
+     "p": 1.96e-09
+    },
+    "2": {
+     "OR": 2.36,
+     "lo": 1.67,
+     "hi": 3.32,
+     "p": 8.85e-07
+    }
+   },
+   "zone": {
+    "peak": {
+     "OR": 2.55,
+     "lo": 1.38,
+     "hi": 4.7,
+     "p": 0.00269
+    },
+    "floor": {
+     "OR": 2.28,
+     "lo": 1.75,
+     "hi": 2.97,
+     "p": 1.18e-09
+    },
+    "wall": {
+     "OR": 1.63,
+     "lo": 1.33,
+     "hi": 2.01,
+     "p": 3.38e-06
+    },
+    "fill_only": {
+     "OR": 2.09,
+     "lo": 1.36,
+     "hi": 3.21,
+     "p": 0.000715
+    }
+   },
+   "within_parent": {
+    "OR": 1.23,
+    "lo": 0.89,
+    "hi": 1.7,
+    "p": 0.202,
+    "parents": 119,
+    "children": 5160,
+    "events": 283,
+    "rates": {
+     "inner": "100/1392",
+     "wall": "183/3768"
+    }
+   },
+   "inherit_anyhollow_parent": {
+    "OR": 2.07,
+    "lo": 1.5,
+    "hi": 2.86,
+    "p": 9.7e-06,
+    "n": 9655,
+    "events": 185,
+    "rates": {
+     "0": "74/7386",
+     "1": "111/2269"
+    }
+   },
+   "nested_local_h09_tests": {
+    "OR": 1.85,
+    "lo": 1.54,
+    "hi": 2.22
+   }
+  },
+  "matched_300km": {
+   "nested_with_matches": 12055,
+   "nested_rate": 0.0159,
+   "matched_isolated_rate": 0.0076,
+   "ratio": 2.0928
+  }
+ },
+ "v8": {
+  "counts": {
+   "nodes": 31623,
+   "basins_kept": 52,
+   "nested": 14916,
+   "zone_none": 16638,
+   "zone_wall": 9788,
+   "zone_floor": 4565,
+   "zone_peak": 563,
+   "chain_0": 16638,
+   "chain_1": 12890,
+   "chain_2": 1955,
+   "chain_3": 71,
+   "fill_only": 2023,
+   "fill_unknown_nested": 1751,
+   "hosts": 705,
+   "hosts_nested": 385
+  },
+  "fits_hosts": {
+   "base": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5102.0,
+    "coef": {}
+   },
+   "nested": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5041.2,
+    "coef": {
+     "nested": [
+      0.6764,
+      0.0862,
+      4.15e-15
+     ]
+    }
+   },
+   "zone": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5041.5,
+    "coef": {
+     "C(zone_c)[T.peak]": [
+      0.8782,
+      0.3015,
+      0.00359
+     ],
+     "C(zone_c)[T.floor]": [
+      0.8559,
+      0.1249,
+      7.25e-12
+     ],
+     "C(zone_c)[T.wall]": [
+      0.5745,
+      0.0973,
+      3.51e-09
+     ],
+     "C(zone_c)[T.fill_only]": [
+      0.8138,
+      0.2024,
+      5.8e-05
+     ]
+    }
+   },
+   "chain": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5036.7,
+    "coef": {
+     "C(chain.clip(upper=3))[T.1]": [
+      0.6232,
+      0.089,
+      2.52e-12
+     ],
+     "C(chain.clip(upper=3))[T.2]": [
+      1.0455,
+      0.1623,
+      1.18e-10
+     ],
+     "C(chain.clip(upper=3))[T.3]": [
+      1.663,
+      0.6171,
+      0.00704
+     ]
+    }
+   },
+   "z_base": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5099.0,
+    "coef": {
+     "z_base": [
+      0.0042,
+      0.0018,
+      0.02
+     ]
+    }
+   },
+   "ln_zown": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5111.5,
+    "coef": {
+     "ln_zown": [
+      1.0593,
+      0.0381,
+      5.41e-170
+     ]
+    }
+   },
+   "ln_zmax": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5573.1,
+    "coef": {
+     "ln_zmax": [
+      0.3899,
+      0.0219,
+      4.87e-71
+     ]
+    }
+   },
+   "ln_zown_zmax": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5100.4,
+    "coef": {
+     "ln_zown": [
+      0.9473,
+      0.0476,
+      3.3e-88
+     ],
+     "ln_zmax": [
+      0.1222,
+      0.033,
+      0.000216
+     ]
+    }
+   },
+   "z_base_fillknown": {
+    "n": 29803,
+    "hosts": 651,
+    "aic": 4698.1,
+    "coef": {
+     "z_base": [
+      0.0174,
+      0.003,
+      1.2e-08
+     ]
+    }
+   },
+   "dAIC_vs_base": {
+    "nested": -60.7,
+    "zone": -60.4,
+    "chain": -65.3,
+    "z_base": -2.9,
+    "ln_zown": 9.5,
+    "ln_zmax": 471.2,
+    "ln_zown_zmax": -1.5
+   },
+   "dAIC_vs_nested": {
+    "zone": 0.3,
+    "chain": -4.6,
+    "z_base": 57.8,
+    "ln_zown": 70.2,
+    "ln_zmax": 531.9,
+    "ln_zown_zmax": 59.2
+   }
+  },
+  "h09": {
+   "all": {
+    "n": 31554,
+    "events": 606,
+    "OR": 1.85,
+    "ci": [
+     1.54,
+     2.22
+    ],
+    "p": 5.73e-11
+   },
+   "C1_ge_0.5": {
+    "n": 1119,
+    "events": 114,
+    "OR": 1.76,
+    "ci": [
+     1.08,
+     2.86
+    ],
+    "p": 0.0233
+   },
+   "D_10_50": {
+    "n": 14582,
+    "events": 239,
+    "OR": 1.93,
+    "ci": [
+     1.46,
+     2.54
+    ],
+    "p": 3.27e-06
+   },
+   "D_ge10_preservation_controlled": {
+    "n": 4214,
+    "events": 303,
+    "OR": 1.52,
+    "ci": [
+     1.14,
+     2.03
+    ],
+    "p": 0.00475
+   },
+   "outside_northern_plains": "Singular matrix",
+   "parents_lt300_only": {
+    "n": 23212,
+    "events": 413,
+    "OR": 3.1,
+    "ci": [
+     2.43,
+     3.97
+    ],
+    "p": 1.68e-19
+   },
+   "abslat_le60": {
+    "n": 27257,
+    "events": 573,
+    "OR": 1.84,
+    "ci": [
+     1.52,
+     2.23
+    ],
+    "p": 2.65e-10
+   },
+   "inherit_all": {
+    "n": 10092,
+    "events": 213,
+    "OR": 2.23,
+    "ci": [
+     1.62,
+     3.07
+    ],
+    "p": 8.8e-07
+   },
+   "inherit_C1_ge_0.5": {
+    "n": 365,
+    "events": 38,
+    "OR": 4.64,
+    "ci": [
+     1.63,
+     13.19
+    ],
+    "p": 0.00402
+   },
+   "inherit_preservation_controlled": {
+    "n": 1295,
+    "events": 100,
+    "OR": 1.68,
+    "ci": [
+     0.99,
+     2.86
+    ],
+    "p": 0.055
+   },
+   "parent_kind": {
+    "crater_lt300": {
+     "OR": 2.89,
+     "lo": 2.28,
+     "hi": 3.65,
+     "p": 1.39e-18
+    },
+    "crater_ge300": {
+     "OR": 1.56,
+     "lo": 1.16,
+     "hi": 2.1,
+     "p": 0.00323
+    },
+    "basin": {
+     "OR": 1.39,
+     "lo": 1.1,
+     "hi": 1.78,
+     "p": 0.007
+    }
+   },
+   "chain": {
+    "1": {
+     "OR": 1.78,
+     "lo": 1.48,
+     "hi": 2.16,
+     "p": 1.93e-09
+    },
+    "2": {
+     "OR": 2.36,
+     "lo": 1.67,
+     "hi": 3.32,
+     "p": 8.8e-07
+    }
+   },
+   "zone": {
+    "peak": {
+     "OR": 2.55,
+     "lo": 1.38,
+     "hi": 4.7,
+     "p": 0.0027
+    },
+    "floor": {
+     "OR": 2.28,
+     "lo": 1.75,
+     "hi": 2.97,
+     "p": 1.18e-09
+    },
+    "wall": {
+     "OR": 1.64,
+     "lo": 1.33,
+     "hi": 2.01,
+     "p": 3.28e-06
+    },
+    "fill_only": {
+     "OR": 2.09,
+     "lo": 1.36,
+     "hi": 3.21,
+     "p": 0.000728
+    }
+   },
+   "within_parent": {
+    "OR": 1.23,
+    "lo": 0.89,
+    "hi": 1.7,
+    "p": 0.203,
+    "parents": 118,
+    "children": 5160,
+    "events": 283,
+    "rates": {
+     "inner": "100/1392",
+     "wall": "183/3768"
+    }
+   },
+   "inherit_anyhollow_parent": {
+    "OR": 1.96,
+    "lo": 1.42,
+    "hi": 2.7,
+    "p": 4.19e-05,
+    "n": 10092,
+    "events": 213,
+    "rates": {
+     "0": "74/7386",
+     "1": "139/2706"
+    }
+   },
+   "nested_local_h09_tests": {
+    "OR": 1.85,
+    "lo": 1.54,
+    "hi": 2.22
+   }
+  },
+  "matched_300km": {
+   "nested_with_matches": 12055,
+   "nested_rate": 0.0159,
+   "matched_isolated_rate": 0.0076,
+   "ratio": 2.0928
+  }
+ },
+ "v8_orgel": {
+  "counts": {
+   "nodes": 31623,
+   "basins_kept": 53,
+   "nested": 14916,
+   "zone_none": 16637,
+   "zone_wall": 9788,
+   "zone_floor": 4565,
+   "zone_peak": 563,
+   "chain_0": 16637,
+   "chain_1": 12890,
+   "chain_2": 1955,
+   "chain_3": 71,
+   "fill_only": 2023,
+   "fill_unknown_nested": 1751,
+   "hosts": 704,
+   "hosts_nested": 385
+  },
+  "fits_hosts": {
+   "base": {
+    "n": 31553,
+    "hosts": 704,
+    "aic": 5101.8,
+    "coef": {}
+   },
+   "nested": {
+    "n": 31553,
+    "hosts": 704,
+    "aic": 5041.1,
+    "coef": {
+     "nested": [
+      0.6764,
+      0.0862,
+      4.14e-15
+     ]
+    }
+   },
+   "zone": {
+    "n": 31553,
+    "hosts": 704,
+    "aic": 5041.4,
+    "coef": {
+     "C(zone_c)[T.peak]": [
+      0.8783,
+      0.3015,
+      0.00358
+     ],
+     "C(zone_c)[T.floor]": [
+      0.856,
+      0.1249,
+      7.21e-12
+     ],
+     "C(zone_c)[T.wall]": [
+      0.5745,
+      0.0973,
+      3.51e-09
+     ],
+     "C(zone_c)[T.fill_only]": [
+      0.8135,
+      0.2024,
+      5.85e-05
+     ]
+    }
+   },
+   "chain": {
+    "n": 31553,
+    "hosts": 704,
+    "aic": 5036.5,
+    "coef": {
+     "C(chain.clip(upper=3))[T.1]": [
+      0.6232,
+      0.089,
+      2.51e-12
+     ],
+     "C(chain.clip(upper=3))[T.2]": [
+      1.0453,
+      0.1623,
+      1.19e-10
+     ],
+     "C(chain.clip(upper=3))[T.3]": [
+      1.6626,
+      0.6171,
+      0.00705
+     ]
+    }
+   },
+   "z_base": {
+    "n": 31553,
+    "hosts": 704,
+    "aic": 5098.8,
+    "coef": {
+     "z_base": [
+      0.0042,
+      0.0018,
+      0.02
+     ]
+    }
+   },
+   "ln_zown": {
+    "n": 31553,
+    "hosts": 704,
+    "aic": 5111.3,
+    "coef": {
+     "ln_zown": [
+      1.0587,
+      0.0382,
+      1.72e-169
+     ]
+    }
+   },
+   "ln_zmax": {
+    "n": 31553,
+    "hosts": 704,
+    "aic": 5570.6,
+    "coef": {
+     "ln_zmax": [
+      0.3887,
+      0.0219,
+      1.91e-70
+     ]
+    }
+   },
+   "ln_zown_zmax": {
+    "n": 31553,
+    "hosts": 704,
+    "aic": 5100.3,
+    "coef": {
+     "ln_zown": [
+      0.9468,
+      0.0476,
+      5.15e-88
+     ],
+     "ln_zmax": [
+      0.1222,
+      0.033,
+      0.000216
+     ]
+    }
+   },
+   "z_base_fillknown": {
+    "n": 29802,
+    "hosts": 650,
+    "aic": 4698.0,
+    "coef": {
+     "z_base": [
+      0.0174,
+      0.003,
+      1.2e-08
+     ]
+    }
+   },
+   "dAIC_vs_base": {
+    "nested": -60.7,
+    "zone": -60.4,
+    "chain": -65.3,
+    "z_base": -3.0,
+    "ln_zown": 9.5,
+    "ln_zmax": 468.9,
+    "ln_zown_zmax": -1.5
+   },
+   "dAIC_vs_nested": {
+    "zone": 0.3,
+    "chain": -4.5,
+    "z_base": 57.8,
+    "ln_zown": 70.2,
+    "ln_zmax": 529.6,
+    "ln_zown_zmax": 59.2
+   }
+  },
+  "h09": {
+   "all": {
+    "n": 31553,
+    "events": 605,
+    "OR": 1.85,
+    "ci": [
+     1.54,
+     2.22
+    ],
+    "p": 5.14e-11
+   },
+   "C1_ge_0.5": {
+    "n": 1119,
+    "events": 114,
+    "OR": 1.76,
+    "ci": [
+     1.08,
+     2.87
+    ],
+    "p": 0.0226
+   },
+   "D_10_50": {
+    "n": 14582,
+    "events": 239,
+    "OR": 1.93,
+    "ci": [
+     1.46,
+     2.54
+    ],
+    "p": 3.09e-06
+   },
+   "D_ge10_preservation_controlled": {
+    "n": 4214,
+    "events": 303,
+    "OR": 1.52,
+    "ci": [
+     1.14,
+     2.03
+    ],
+    "p": 0.00457
+   },
+   "outside_northern_plains": "Singular matrix",
+   "parents_lt300_only": {
+    "n": 23211,
+    "events": 412,
+    "OR": 3.1,
+    "ci": [
+     2.43,
+     3.97
+    ],
+    "p": 1.73e-19
+   },
+   "abslat_le60": {
+    "n": 27256,
+    "events": 572,
+    "OR": 1.84,
+    "ci": [
+     1.53,
+     2.23
+    ],
+    "p": 2.41e-10
+   },
+   "inherit_all": {
+    "n": 9605,
+    "events": 180,
+    "OR": 2.36,
+    "ci": [
+     1.71,
+     3.25
+    ],
+    "p": 1.62e-07
+   },
+   "inherit_C1_ge_0.5": {
+    "n": 326,
+    "events": 25,
+    "OR": 6.2,
+    "ci": [
+     1.94,
+     19.77
+    ],
+    "p": 0.00204
+   },
+   "inherit_preservation_controlled": {
+    "n": 1156,
+    "events": 79,
+    "OR": 2.05,
+    "ci": [
+     1.21,
+     3.48
+    ],
+    "p": 0.00792
+   },
+   "parent_kind": {
+    "crater_lt300": {
+     "OR": 2.88,
+     "lo": 2.27,
+     "hi": 3.64,
+     "p": 1.66e-18
+    },
+    "crater_ge300": {
+     "OR": 1.31,
+     "lo": 0.9,
+     "hi": 1.89,
+     "p": 0.155
+    },
+    "basin": {
+     "OR": 1.5,
+     "lo": 1.2,
+     "hi": 1.88,
+     "p": 0.000422
+    }
+   },
+   "chain": {
+    "1": {
+     "OR": 1.79,
+     "lo": 1.48,
+     "hi": 2.16,
+     "p": 1.72e-09
+    },
+    "2": {
+     "OR": 2.36,
+     "lo": 1.67,
+     "hi": 3.32,
+     "p": 8.88e-07
+    }
+   },
+   "zone": {
+    "peak": {
+     "OR": 2.56,
+     "lo": 1.39,
+     "hi": 4.71,
+     "p": 0.00261
+    },
+    "floor": {
+     "OR": 2.28,
+     "lo": 1.75,
+     "hi": 2.97,
+     "p": 1.1e-09
+    },
+    "wall": {
+     "OR": 1.64,
+     "lo": 1.33,
+     "hi": 2.01,
+     "p": 3.24e-06
+    },
+    "fill_only": {
+     "OR": 2.12,
+     "lo": 1.38,
+     "hi": 3.24,
+     "p": 0.000589
+    }
+   },
+   "within_parent": {
+    "OR": 1.23,
+    "lo": 0.89,
+    "hi": 1.7,
+    "p": 0.203,
+    "parents": 118,
+    "children": 5160,
+    "events": 283,
+    "rates": {
+     "inner": "100/1392",
+     "wall": "183/3768"
+    }
+   },
+   "inherit_anyhollow_parent": {
+    "OR": 2.04,
+    "lo": 1.48,
+    "hi": 2.83,
+    "p": 1.58e-05,
+    "n": 9605,
+    "events": 180,
+    "rates": {
+     "0": "74/7386",
+     "1": "106/2219"
+    }
+   },
+   "nested_local_h09_tests": {
+    "OR": 1.85,
+    "lo": 1.54,
+    "hi": 2.22
+   }
+  },
+  "matched_300km": {
+   "nested_with_matches": 12055,
+   "nested_rate": 0.0159,
+   "matched_isolated_rate": 0.0076,
+   "ratio": 2.0928
+  }
+ },
+ "v8_lunarSU": {
+  "counts": {
+   "nodes": 31623,
+   "basins_kept": 52,
+   "nested": 14916,
+   "zone_none": 16638,
+   "zone_wall": 9788,
+   "zone_floor": 4565,
+   "zone_peak": 563,
+   "chain_0": 16638,
+   "chain_1": 12890,
+   "chain_2": 1955,
+   "chain_3": 71,
+   "fill_only": 2015,
+   "fill_unknown_nested": 1751,
+   "hosts": 705,
+   "hosts_nested": 385
+  },
+  "fits_hosts": {
+   "base": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5102.0,
+    "coef": {}
+   },
+   "nested": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5041.2,
+    "coef": {
+     "nested": [
+      0.6764,
+      0.0862,
+      4.15e-15
+     ]
+    }
+   },
+   "zone": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5041.6,
+    "coef": {
+     "C(zone_c)[T.peak]": [
+      0.8776,
+      0.3015,
+      0.00361
+     ],
+     "C(zone_c)[T.floor]": [
+      0.848,
+      0.1249,
+      1.11e-11
+     ],
+     "C(zone_c)[T.wall]": [
+      0.575,
+      0.0973,
+      3.41e-09
+     ],
+     "C(zone_c)[T.fill_only]": [
+      0.8402,
+      0.2026,
+      3.38e-05
+     ]
+    }
+   },
+   "chain": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5036.7,
+    "coef": {
+     "C(chain.clip(upper=3))[T.1]": [
+      0.6232,
+      0.089,
+      2.52e-12
+     ],
+     "C(chain.clip(upper=3))[T.2]": [
+      1.0455,
+      0.1623,
+      1.18e-10
+     ],
+     "C(chain.clip(upper=3))[T.3]": [
+      1.663,
+      0.6171,
+      0.00704
+     ]
+    }
+   },
+   "z_base": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5103.5,
+    "coef": {
+     "z_base": [
+      0.0003,
+      0.0005,
+      0.511
+     ]
+    }
+   },
+   "ln_zown": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5088.5,
+    "coef": {
+     "ln_zown": [
+      0.8661,
+      0.0299,
+      1.19e-184
+     ]
+    }
+   },
+   "ln_zmax": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5510.3,
+    "coef": {
+     "ln_zmax": [
+      0.3921,
+      0.02,
+      6.43e-86
+     ]
+    }
+   },
+   "ln_zown_zmax": {
+    "n": 31554,
+    "hosts": 705,
+    "aic": 5078.5,
+    "coef": {
+     "ln_zown": [
+      0.7627,
+      0.0407,
+      2.2e-78
+     ],
+     "ln_zmax": [
+      0.1122,
+      0.0314,
+      0.000354
+     ]
+    }
+   },
+   "z_base_fillknown": {
+    "n": 29803,
+    "hosts": 651,
+    "aic": 4715.0,
+    "coef": {
+     "z_base": [
+      0.0032,
+      0.001,
+      0.000938
+     ]
+    }
+   },
+   "dAIC_vs_base": {
+    "nested": -60.7,
+    "zone": -60.4,
+    "chain": -65.3,
+    "z_base": 1.6,
+    "ln_zown": -13.5,
+    "ln_zmax": 408.4,
+    "ln_zown_zmax": -23.5
+   },
+   "dAIC_vs_nested": {
+    "zone": 0.3,
+    "chain": -4.6,
+    "z_base": 62.3,
+    "ln_zown": 47.2,
+    "ln_zmax": 469.1,
+    "ln_zown_zmax": 37.2
+   }
+  }
+ }
+}

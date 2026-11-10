@@ -1,0 +1,10 @@
+               north_az    rot  scale
+image                                
+CN0223615469M     73.78  16.19   1.24
+CN1002981281M     66.87  23.92   1.31
+CN1017701438M     54.16  35.74   1.39
+images: 933  |rot - (90 - north_az)| quantiles (deg): [  0.46   8.31 178.99 179.88]
+corr(scale, 1/cos(lat)): 0.016  corr(scale,emi): 0.022  corr(scale, |rot|): 0.082
+  median scale/1/cos(lat): 1.064  IQR 0.966-1.165
+  median scale/1+|sin(rot)|: 0.951  IQR 0.846-0.983
+  median scale/1/cos(emi): 1.127  IQR 0.985-1.241

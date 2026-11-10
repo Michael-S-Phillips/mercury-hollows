@@ -1,0 +1,298 @@
+{
+ "Ernst2015_plains_km": [
+  2.5,
+  3.5
+ ],
+ "D_for_excavation_depth": {
+  "2.5": 28.5,
+  "3.0": 35.3,
+  "3.5": 42.3
+ },
+ "membership": "v9 crater containment graph: descendants of node 200153 (179 craters >= 10 km); isolated = no parent, D <= 250 km",
+ "completeness": "C1 (1-km hollow, crater center) for both sets; C_cal and C_iso are medians",
+ "n_caloris": 179,
+ "n_isolated": 9728,
+ "rates_Cmin0.0": [
+  {
+   "D": "10-15",
+   "caloris_field": "0/82",
+   "caloris_any": "3/82",
+   "iso_field": "1/3514",
+   "iso_any": "19/3514",
+   "C_cal": 0.14,
+   "C_iso": 0.02
+  },
+  {
+   "D": "15-20",
+   "caloris_field": "0/36",
+   "caloris_any": "1/36",
+   "iso_field": "0/1450",
+   "iso_any": "10/1450",
+   "C_cal": 0.13,
+   "C_iso": 0.02
+  },
+  {
+   "D": "20-25",
+   "caloris_field": "0/20",
+   "caloris_any": "3/20",
+   "iso_field": "1/894",
+   "iso_any": "13/894",
+   "C_cal": 0.12,
+   "C_iso": 0.02
+  },
+  {
+   "D": "25-30",
+   "caloris_field": "1/10",
+   "caloris_any": "1/10",
+   "iso_field": "1/664",
+   "iso_any": "7/664",
+   "C_cal": 0.2,
+   "C_iso": 0.02
+  },
+  {
+   "D": "30-35",
+   "caloris_field": "3/7",
+   "caloris_any": "4/7",
+   "iso_field": "1/495",
+   "iso_any": "7/495",
+   "C_cal": 0.29,
+   "C_iso": 0.03
+  },
+  {
+   "D": "35-40",
+   "caloris_field": "3/9",
+   "caloris_any": "3/9",
+   "iso_field": "6/404",
+   "iso_any": "14/404",
+   "C_cal": 0.52,
+   "C_iso": 0.02
+  },
+  {
+   "D": "40-50",
+   "caloris_field": "2/6",
+   "caloris_any": "2/6",
+   "iso_field": "4/588",
+   "iso_any": "19/588",
+   "C_cal": 0.28,
+   "C_iso": 0.02
+  },
+  {
+   "D": "50-70",
+   "caloris_field": "2/4",
+   "caloris_any": "3/4",
+   "iso_field": "12/742",
+   "iso_any": "25/742",
+   "C_cal": 0.34,
+   "C_iso": 0.02
+  },
+  {
+   "D": "70-250",
+   "caloris_field": "3/5",
+   "caloris_any": "4/5",
+   "iso_field": "74/977",
+   "iso_any": "123/977",
+   "C_cal": 0.34,
+   "C_iso": 0.02
+  }
+ ],
+ "rates_Cmin0.2": [
+  {
+   "D": "10-15",
+   "caloris_field": "0/29",
+   "caloris_any": "3/29",
+   "iso_field": "1/430",
+   "iso_any": "9/430",
+   "C_cal": 0.38,
+   "C_iso": 0.37
+  },
+  {
+   "D": "15-20",
+   "caloris_field": "0/11",
+   "caloris_any": "0/11",
+   "iso_field": "0/160",
+   "iso_any": "2/160",
+   "C_cal": 0.32,
+   "C_iso": 0.38
+  },
+  {
+   "D": "20-25",
+   "caloris_field": "0/8",
+   "caloris_any": "2/8",
+   "iso_field": "0/101",
+   "iso_any": "6/101",
+   "C_cal": 0.38,
+   "C_iso": 0.38
+  },
+  {
+   "D": "25-30",
+   "caloris_field": "1/5",
+   "caloris_any": "1/5",
+   "iso_field": "1/71",
+   "iso_any": "2/71",
+   "C_cal": 0.41,
+   "C_iso": 0.38
+  },
+  {
+   "D": "30-35",
+   "caloris_field": "3/5",
+   "caloris_any": "4/5",
+   "iso_field": "1/52",
+   "iso_any": "3/52",
+   "C_cal": 0.32,
+   "C_iso": 0.4
+  },
+  {
+   "D": "35-40",
+   "caloris_field": "3/6",
+   "caloris_any": "3/6",
+   "iso_field": "5/44",
+   "iso_any": "8/44",
+   "C_cal": 0.86,
+   "C_iso": 0.35
+  },
+  {
+   "D": "40-50",
+   "caloris_field": "2/3",
+   "caloris_any": "2/3",
+   "iso_field": "3/67",
+   "iso_any": "8/67",
+   "C_cal": 0.68,
+   "C_iso": 0.39
+  },
+  {
+   "D": "50-70",
+   "caloris_field": "2/4",
+   "caloris_any": "3/4",
+   "iso_field": "10/78",
+   "iso_any": "11/78",
+   "C_cal": 0.34,
+   "C_iso": 0.35
+  },
+  {
+   "D": "70-250",
+   "caloris_field": "3/4",
+   "caloris_any": "4/4",
+   "iso_field": "41/137",
+   "iso_any": "56/137",
+   "C_cal": 0.37,
+   "C_iso": 0.38
+  }
+ ],
+ "logit_field": {
+  "Intercept": [
+   -16.063,
+   1.423,
+   0.0
+  ],
+  "C(set, Treatment('isolated'))[T.caloris]": [
+   -0.115,
+   3.914,
+   0.97662
+  ],
+  "logD": [
+   6.731,
+   0.779,
+   0.0
+  ],
+  "logD:C(set, Treatment('isolated'))[T.caloris]": [
+   1.67,
+   2.428,
+   0.49148
+  ],
+  "C1": [
+   5.952,
+   0.574,
+   0.0
+  ],
+  "abslat": [
+   -0.031,
+   0.008,
+   0.0001
+  ]
+ },
+ "pred_field_C0.3": {
+  "caloris": [
+   0.004,
+   0.0253,
+   0.0813,
+   0.1813
+  ],
+  "isolated": [
+   0.0006,
+   0.0028,
+   0.0075,
+   0.0155
+  ]
+ },
+ "logit_any": {
+  "Intercept": [
+   -9.042,
+   0.506,
+   0.0
+  ],
+  "C(set, Treatment('isolated'))[T.caloris]": [
+   -0.641,
+   1.874,
+   0.73237
+  ],
+  "logD": [
+   3.539,
+   0.301,
+   0.0
+  ],
+  "logD:C(set, Treatment('isolated'))[T.caloris]": [
+   1.762,
+   1.298,
+   0.1747
+  ],
+  "C1": [
+   4.609,
+   0.333,
+   0.0
+  ],
+  "abslat": [
+   -0.029,
+   0.004,
+   0.0
+  ]
+ },
+ "pred_any_C0.3": {
+  "caloris": [
+   0.0478,
+   0.14,
+   0.2611,
+   0.3866
+  ],
+  "isolated": [
+   0.0119,
+   0.0256,
+   0.0423,
+   0.061
+  ]
+ },
+ "caloris_step_field": {
+  "Intercept": [
+   -26.107,
+   18899.704,
+   0.998898
+  ],
+  "through": [
+   23.559,
+   18899.704,
+   0.999005
+  ],
+  "C1": [
+   5.123,
+   1.669,
+   0.002144
+  ]
+ },
+ "caloris_counts": {
+  "d_ex<2.5": "0/144",
+  "d_ex>=2.5": "14/35"
+ },
+ "caloris_20_40_edge_vs_center": {
+  "rho_p>=0.7": "5/27",
+  "rho_p<0.7": "2/19"
+ }
+}

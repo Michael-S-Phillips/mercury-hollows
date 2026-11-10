@@ -1,0 +1,97 @@
+{
+ "candidates": [
+  {
+   "fid": 1,
+   "center_lat": 55.52,
+   "center_lon": 143.04
+  },
+  {
+   "fid": 2,
+   "center_lat": 50.74,
+   "center_lon": 125.58
+  },
+  {
+   "fid": 3,
+   "center_lat": 55.52,
+   "center_lon": 143.04
+  },
+  {
+   "fid": 4,
+   "center_lat": 50.74,
+   "center_lon": 125.58
+  },
+  {
+   "fid": 5,
+   "center_lat": 18.54,
+   "center_lon": 24.25
+  },
+  {
+   "fid": 7,
+   "center_lat": 31.11,
+   "center_lon": 60.53
+  },
+  {
+   "fid": 8,
+   "center_lat": -19.69,
+   "center_lon": 288.87
+  },
+  {
+   "fid": 9,
+   "center_lat": -20.8,
+   "center_lon": 50.19
+  },
+  {
+   "fid": 10,
+   "center_lat": 11.64,
+   "center_lon": 304.66
+  },
+  {
+   "fid": 11,
+   "center_lat": -31.53,
+   "center_lon": 11.68
+  },
+  {
+   "fid": 12,
+   "center_lat": 27.43,
+   "center_lon": 162.21
+  },
+  {
+   "fid": 13,
+   "center_lat": 40.18,
+   "center_lon": 3.12
+  },
+  {
+   "fid": 14,
+   "center_lat": 41.57,
+   "center_lon": 140.99
+  },
+  {
+   "fid": 15,
+   "center_lat": -5.34,
+   "center_lon": 208.02
+  }
+ ],
+ "arrows_approx": [
+  [
+   45.6,
+   119.5
+  ],
+  [
+   48.3,
+   122.5
+  ],
+  [
+   49.8,
+   128.5
+  ],
+  [
+   48.4,
+   130.5
+  ],
+  [
+   52.3,
+   129.5
+  ]
+ ],
+ "n_hollows_in_frame": 1348
+}

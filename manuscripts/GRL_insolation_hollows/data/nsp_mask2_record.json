@@ -1,0 +1,38 @@
+{
+ "input": "data/data/NSP_map_data/MLA_North_Smooth_Plains_lin_V0.shp",
+ "closing": {
+  "25": {
+   "area_e6_km2": 5.764025,
+   "parts_kept": 1,
+   "parts": 3
+  },
+  "40": {
+   "area_e6_km2": 5.781125,
+   "parts_kept": 1,
+   "parts": 2
+  },
+  "60": {
+   "area_e6_km2": 5.806475,
+   "parts_kept": 1,
+   "parts": 1
+  }
+ },
+ "mask_10ppd": {
+  "25": {
+   "area_e6_km2": 5.764171546779786,
+   "lat_min": 36.65,
+   "lat_max": 89.95
+  },
+  "40": {
+   "area_e6_km2": 5.780718852407102,
+   "lat_min": 36.65,
+   "lat_max": 89.95
+  },
+  "60": {
+   "area_e6_km2": 5.80608474232477,
+   "lat_min": 36.65,
+   "lat_max": 89.95
+  }
+ },
+ "max_rel_area_change_25_60_vs_40": 0.004388016536577499
+}

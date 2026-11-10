@@ -1,0 +1,14 @@
+                n  offset  res_transl  res_rigid  rot_deg  res_sim  scale  res_affine    det
+image                                                                                       
+CN0223615469M  39   2.830       2.640      1.595   16.187    0.024  1.238       0.023  1.530
+CN1002981281M  32   4.328       4.552      2.505   23.917    0.078  1.313       0.041  1.737
+CN1017701438M  65   9.475      10.123      4.824   35.745    0.076  1.392       0.056  1.939
+
+all images with >=6 detections: 933
+  median offset: 4.345 km
+  median res_transl: 3.546 km
+  median res_rigid: 1.839 km
+  median res_sim: 0.140 km
+  median res_affine: 0.042 km
+  |rotation| deg quantiles: [ 5.2 11.8 19.6 41.1 69.6]
+  scale quantiles: [1.063 1.234 1.407]  det<0 fraction: 0.018

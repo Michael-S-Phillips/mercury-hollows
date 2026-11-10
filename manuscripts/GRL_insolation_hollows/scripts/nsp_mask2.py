@@ -1,9 +1,10 @@
 import os as _os_repo  # added for the archive: repository root, or $MERCURY_HOLLOWS_ROOT
 _REPO = _os_repo.environ.get("MERCURY_HOLLOWS_ROOT") or _os_repo.path.abspath(_os_repo.path.join(_os_repo.path.dirname(__file__), "../../.."))
-import numpy as np, pyproj
+# 9 Nov 2026: the printed areas are also written to nsp_mask2_record.json in the working directory. The masks and their computation are unchanged.
+import numpy as np, pyproj, sys, os, json
 from scipy import ndimage
 import geopandas as gpd
-U=_REPO + ""
+U=_REPO + ""; REC={"input":"data/data/NSP_map_data/MLA_North_Smooth_Plains_lin_V0.shp","closing":{},"mask_10ppd":{}}
 R=2439400.0
 # re-derive points in a north polar stereographic frame (true scale at pole) for morphology
 g=gpd.read_file(f"{U}/data/data/NSP_map_data/MLA_North_Smooth_Plains_lin_V0.shp")
@@ -29,6 +30,7 @@ for rad_km in [25,40,60]:
     keep=np.isin(lab,1+np.where(sizes*pix*pix/1e6>2e4)[0])   # drop specks <20,000 km2
     out[rad_km]=keep
     print(rad_km,"km closing: area %.2f e6 km2, %d parts kept of %d"%(keep.sum()*pix*pix/1e12, len(np.unique(lab[keep])), nl))
+    REC["closing"][str(rad_km)]=dict(area_e6_km2=float(keep.sum()*pix*pix/1e12), parts_kept=int(len(np.unique(lab[keep]))), parts=int(nl))
 np.savez_compressed("nsp_laea.npz",**{f"m{k}":v for k,v in out.items()},occ=occ,pix=pix,half=half)
 # map to 10 ppd lat/lon grid
 ppd=10; H=180*ppd; W=360*ppd
@@ -44,3 +46,6 @@ for k,m in out.items():
     a=np.cos(np.radians(LAT))*(np.pi*2439.4/180/ppd)**2
     print(k,"10ppd mask area %.2f e6 km2, lat range %.1f-%.1f"%((a*G).sum()/1e6, LAT[G].min(), LAT[G].max()))
     np.save(f"nsp_mask_10ppd_r{k}.npy",G)
+    REC["mask_10ppd"][str(k)]=dict(area_e6_km2=float((a*G).sum()/1e6), lat_min=float(LAT[G].min()), lat_max=float(LAT[G].max()))
+r40=REC["mask_10ppd"]["40"]["area_e6_km2"]; REC["max_rel_area_change_25_60_vs_40"]=max(abs(v["area_e6_km2"]/r40-1) for v in REC["mask_10ppd"].values())
+json.dump(REC,open("nsp_mask2_record.json","w"),indent=1)

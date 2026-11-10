@@ -1,0 +1,109 @@
+{
+ "FeS_JANAF": {
+  "pS2_Pa": {
+   "900": 9.85e-08,
+   "1000": 6.26e-06,
+   "1100": 0.000193,
+   "1200": 0.0034,
+   "1300": 0.0387,
+   "1400": 0.305,
+   "1500": 1.58,
+   "1600": 5.38
+  },
+  "T_at_0.1Pa_K": 1344,
+  "T_at_1Pa_K": 1471,
+  "T_298K_estimate_K": 1186,
+  "note": "FeS melts near 1,463 K; JANAF rows at 1,500-1,600 K are for the liquid."
+ },
+ "sulfur_condensation": {
+  "T_at_1Pa_K": 375,
+  "T_at_0.1Pa_K_by_slope": {
+   "9029": 342.3,
+   "10684": 347.0
+  }
+ },
+ "sunlight_and_depth": {
+  "T_mean_equatorward_K": 290.59,
+  "T_mean_poleward_K": 269.05,
+  "difference_K": 21.5,
+  "measured_coef_K": [
+   -291,
+   99
+  ],
+  "predicted_coef_if_Tc_includes_Ts": {
+   "0.4": {
+    "Tc_mid_K": 853,
+    "coef_K": [
+     -896,
+     -973
+    ],
+    "K_drop_for_ratio_0.77": [
+     23.9,
+     22.0
+    ],
+    "depth_ratio_for_full_dTs": [
+     0.79,
+     0.774
+    ]
+   },
+   "0.2": {
+    "Tc_mid_K": 921,
+    "coef_K": [
+     -768,
+     -835
+    ],
+    "K_drop_for_ratio_0.77": [
+     27.7,
+     25.6
+    ],
+    "depth_ratio_for_full_dTs": [
+     0.817,
+     0.803
+    ]
+   },
+   "0.1": {
+    "Tc_mid_K": 1000,
+    "coef_K": [
+     -651,
+     -707
+    ],
+    "K_drop_for_ratio_0.77": [
+     32.7,
+     30.1
+    ],
+    "depth_ratio_for_full_dTs": [
+     0.843,
+     0.831
+    ]
+   }
+  },
+  "misfit_in_SE": [
+   -6.9,
+   -3.6
+  ]
+ },
+ "iron_budget": {
+  "Fe_wt_pct": 1.5,
+  "S_max_wt_pct": 0.86,
+  "rho_native_S": 2.07,
+  "rho_rock": [
+   2.8,
+   3.0
+  ],
+  "rock_volume_per_layer_volume_10volpct_S": [
+   8.0,
+   8.6
+  ],
+  "layer_m_for_24m_hollow_phi0.1": 240,
+  "rock_column_m": [
+   1923,
+   2060
+  ]
+ },
+ "floor_lowering": {
+  "m_per_1e5yr": 2.0,
+  "um_per_solar_day": 9.6,
+  "yr_for_24m": 1200000.0,
+  "cycles_per_Gyr": 2076000000.0
+ }
+}

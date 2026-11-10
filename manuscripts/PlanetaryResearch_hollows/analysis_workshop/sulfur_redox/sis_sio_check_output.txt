@@ -1,0 +1,17 @@
+1600 K | CaS: via SiO 0.015 Pa, via SiS 0.001 Pa | MgS: via SiO 0.96 Pa, via SiS 4.2 Pa | MgS+2SiO2->MgSiO3+SiO+S2/2: 4.9 Pa
+1800 K | CaS: via SiO 0.68 Pa, via SiS 0.059 Pa | MgS: via SiO 26 Pa, via SiS 87 Pa | MgS+2SiO2->MgSiO3+SiO+S2/2: 1e+02 Pa
+2000 K | CaS: via SiO 14 Pa, via SiS 1.5 Pa | MgS: via SiO 3.5e+02 Pa, via SiS 9.3e+02 Pa | MgS+2SiO2->MgSiO3+SiO+S2/2: 1.4e+03 Pa
+2300 K | CaS: via SiO 4.6e+02 Pa, via SiS 63 Pa | MgS: via SiO 7e+03 Pa, via SiS 1.5e+04 Pa | MgS+2SiO2->MgSiO3+SiO+S2/2: 3.3e+04 Pa
+1000 K pSiO over SiO2+Si 5.2e-05 Pa
+1100 K pSiO over SiO2+Si 0.0023 Pa
+1200 K pSiO over SiO2+Si 0.054 Pa
+1300 K pSiO over SiO2+Si 0.76 Pa
+1400 K pSiO over SiO2+Si 7.3 Pa
+1500 K pSiO over SiO2+Si 52 Pa
+1600 K pSiO over SiO2+Si 2.8e+02 Pa
+350 K pS2 over condensed S 2.5e-06 Pa
+400 K pS2 over condensed S 0.00057 Pa
+450 K pS2 over condensed S 0.033 Pa
+500 K pS2 over condensed S 0.8 Pa
+600 K pS2 over condensed S 84 Pa
+700 K pS2 over condensed S 2.1e+03 Pa

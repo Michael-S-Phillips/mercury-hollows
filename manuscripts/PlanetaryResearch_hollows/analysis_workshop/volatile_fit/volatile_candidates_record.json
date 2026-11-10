@@ -1,0 +1,486 @@
+{
+ "pressures_MPa": {
+  "1.0": [
+   0.178,
+   0.311
+  ],
+  "0.4": [
+   0.444,
+   0.777
+  ],
+  "0.2": [
+   0.888,
+   1.554
+  ],
+  "0.1": [
+   1.776,
+   3.108
+  ]
+ },
+ "dHapp_kJ": {
+  "meanT_n1": [
+   2.41790428992926,
+   0.8059057857988885,
+   4.055460229668865
+  ],
+  "meanT_n0.5": [
+   4.83580857985852,
+   1.611811571597777,
+   8.11092045933773
+  ],
+  "peakT_n1": [
+   4.193646408699061,
+   1.9119656397297493,
+   6.2512778432105325
+  ],
+  "peakT_n0.5": [
+   8.387292817398121,
+   3.8239312794594986,
+   12.502555686421065
+  ]
+ },
+ "candidates_dH": [
+  {
+   "candidate": "H2O ice -> H2O(g) (reference)",
+   "dH_kJ_per_mol": 50.0,
+   "basis": "JANAF dfH(g) - dfH(l) at 298 K + fusion",
+   "log10_ratio_219_324K_sqrtP": 1.93,
+   "log10_ratio_219_324K_P": 3.86,
+   "log10_ratio_peakT_sqrtP": 1.49,
+   "dH_over_dHapp_meanT_sqrtP": 10.3
+  },
+  {
+   "candidate": "S liquid -> total vapor (CRC fit 375-717 K)",
+   "dH_kJ_per_mol": 75.1,
+   "basis": "slope 9,029 K of the CRC fit used in Section S9",
+   "log10_ratio_219_324K_sqrtP": 2.9,
+   "log10_ratio_219_324K_P": 5.8,
+   "log10_ratio_peakT_sqrtP": 2.23,
+   "dH_over_dHapp_meanT_sqrtP": 15.5
+  },
+  {
+   "candidate": "S8: 8 S(rhombic) -> S8(g)",
+   "dH_kJ_per_mol": 100.4,
+   "basis": "JANAF dfH298 of S8(g)",
+   "log10_ratio_219_324K_sqrtP": 3.88,
+   "log10_ratio_219_324K_P": 7.76,
+   "log10_ratio_peakT_sqrtP": 2.98,
+   "dH_over_dHapp_meanT_sqrtP": 20.8
+  },
+  {
+   "candidate": "S8: 8 S(liquid) -> S8(g)",
+   "dH_kJ_per_mol": 85.6,
+   "basis": "JANAF dfH298 of S8(g) and S(l)",
+   "log10_ratio_219_324K_sqrtP": 3.31,
+   "log10_ratio_219_324K_P": 6.61,
+   "log10_ratio_peakT_sqrtP": 2.54,
+   "dH_over_dHapp_meanT_sqrtP": 17.7
+  },
+  {
+   "candidate": "S2: 2 S(rhombic) -> S2(g)",
+   "dH_kJ_per_mol": 128.6,
+   "basis": "JANAF dfH298 of S2(g)",
+   "log10_ratio_219_324K_sqrtP": 4.97,
+   "log10_ratio_219_324K_P": 9.94,
+   "log10_ratio_peakT_sqrtP": 3.82,
+   "dH_over_dHapp_meanT_sqrtP": 26.6
+  },
+  {
+   "candidate": "S2: 2 S(liquid) -> S2(g)",
+   "dH_kJ_per_mol": 124.9,
+   "basis": "JANAF dfH298 of S2(g) and S(l)",
+   "log10_ratio_219_324K_sqrtP": 4.82,
+   "log10_ratio_219_324K_P": 9.65,
+   "log10_ratio_peakT_sqrtP": 3.71,
+   "dH_over_dHapp_meanT_sqrtP": 25.8
+  },
+  {
+   "candidate": "NaCl(cr) -> NaCl(g)",
+   "dH_kJ_per_mol": 229.7,
+   "basis": "JANAF dfH298",
+   "log10_ratio_219_324K_sqrtP": 8.87,
+   "log10_ratio_219_324K_P": 17.75,
+   "log10_ratio_peakT_sqrtP": 6.83,
+   "dH_over_dHapp_meanT_sqrtP": 47.5
+  },
+  {
+   "candidate": "KCl(cr) -> KCl(g)",
+   "dH_kJ_per_mol": 222.0,
+   "basis": "JANAF dfH298",
+   "log10_ratio_219_324K_sqrtP": 8.58,
+   "log10_ratio_219_324K_P": 17.15,
+   "log10_ratio_peakT_sqrtP": 6.6,
+   "dH_over_dHapp_meanT_sqrtP": 45.9
+  },
+  {
+   "candidate": "Na2S(cr) -> 2 Na(g) + 1/2 S2(g)",
+   "dH_kJ_per_mol": 258.0,
+   "basis": "JANAF dfH298; congruent, per mol of gas (2.5)",
+   "log10_ratio_219_324K_sqrtP": 9.97,
+   "log10_ratio_219_324K_P": 19.93,
+   "log10_ratio_peakT_sqrtP": 7.67,
+   "dH_over_dHapp_meanT_sqrtP": 53.4
+  },
+  {
+   "candidate": "K2S(cr) -> 2 K(g) + 1/2 S2(g)",
+   "dH_kJ_per_mol": 247.5,
+   "basis": "JANAF dfH298; congruent, per mol of gas (2.5)",
+   "log10_ratio_219_324K_sqrtP": 9.56,
+   "log10_ratio_219_324K_P": 19.13,
+   "log10_ratio_peakT_sqrtP": 7.36,
+   "dH_over_dHapp_meanT_sqrtP": 51.2
+  },
+  {
+   "candidate": "MgS(cr) -> Mg(g) + 1/2 S2(g)",
+   "dH_kJ_per_mol": 371.4,
+   "basis": "JANAF dfH298; congruent, per mol of gas (1.5)",
+   "log10_ratio_219_324K_sqrtP": 14.35,
+   "log10_ratio_219_324K_P": 28.7,
+   "log10_ratio_peakT_sqrtP": 11.04,
+   "dH_over_dHapp_meanT_sqrtP": 76.8
+  },
+  {
+   "candidate": "CaS(cr) -> Ca(g) + 1/2 S2(g)",
+   "dH_kJ_per_mol": 476.9,
+   "basis": "JANAF dfH298; congruent, per mol of gas (1.5)",
+   "log10_ratio_219_324K_sqrtP": 18.42,
+   "log10_ratio_219_324K_P": 36.84,
+   "log10_ratio_peakT_sqrtP": 14.17,
+   "dH_over_dHapp_meanT_sqrtP": 98.6
+  },
+  {
+   "candidate": "FeS(cr) -> Fe(s) + 1/2 S2(g)",
+   "dH_kJ_per_mol": 313.6,
+   "basis": "JANAF Fe-025 dfG at 900-1400 K; P_S2 ~ K^2, per mol S2",
+   "log10_ratio_219_324K_sqrtP": 12.11,
+   "log10_ratio_219_324K_P": 24.23,
+   "log10_ratio_peakT_sqrtP": 9.32,
+   "dH_over_dHapp_meanT_sqrtP": 64.9
+  },
+  {
+   "candidate": "C(graphite) -> C(g)",
+   "dH_kJ_per_mol": 716.7,
+   "basis": "JANAF dfH298 of C(g)",
+   "log10_ratio_219_324K_sqrtP": 27.68,
+   "log10_ratio_219_324K_P": 55.37,
+   "log10_ratio_peakT_sqrtP": 21.3,
+   "dH_over_dHapp_meanT_sqrtP": 148.2
+  }
+ ],
+ "T_base_K": {
+  "H2O liquid (Antoine, Liu and Lindsay 1970)": {
+   "1.0": [
+    393,
+    408
+   ],
+   "0.4": [
+    419,
+    439
+   ],
+   "0.2": [
+    445,
+    470
+   ],
+   "0.1": [
+    477,
+    509
+   ],
+   "T_at_1bar": [
+    379,
+    379
+   ]
+  },
+  "Native sulfur (Section S13 curve)": {
+   "1.0": [
+    754,
+    801
+   ],
+   "0.4": [
+    821,
+    885
+   ],
+   "0.2": [
+    881,
+    961
+   ],
+   "0.1": [
+    950,
+    1051
+   ],
+   "T_at_1bar": [
+    717,
+    717
+   ]
+  },
+  "NaCl liquid, total vapor (Stull 1947; Antoine and CC extrapolated above 1,738 K)": {
+   "1.0": [
+    1821,
+    1914
+   ],
+   "0.4": [
+    1976,
+    2089
+   ],
+   "0.2": [
+    2112,
+    2244
+   ],
+   "0.1": [
+    2268,
+    2426
+   ],
+   "T_at_1bar": [
+    1736,
+    1737
+   ]
+  },
+  "KCl liquid, total vapor (Stull 1947; extrapolated above 1,680 K)": {
+   "1.0": [
+    1763,
+    1857
+   ],
+   "0.4": [
+    1919,
+    2035
+   ],
+   "0.2": [
+    2056,
+    2195
+   ],
+   "0.1": [
+    2214,
+    2384
+   ],
+   "T_at_1bar": [
+    1678,
+    1679
+   ]
+  },
+  "Na2S -> 2Na + 1/2 S2 (JANAF; solid extrapolated)": {
+   "1.0": [
+    2316,
+    2443
+   ],
+   "0.4": [
+    2532,
+    2689
+   ],
+   "0.2": [
+    2729,
+    2919
+   ],
+   "0.1": [
+    2969,
+    3203
+   ],
+   "T_at_1bar": [
+    2201,
+    2201
+   ]
+  },
+  "K2S -> 2K + 1/2 S2 (JANAF; solid extrapolated)": {
+   "1.0": [
+    2264,
+    2393
+   ],
+   "0.4": [
+    2485,
+    2649
+   ],
+   "0.2": [
+    2692,
+    2893
+   ],
+   "0.1": [
+    2946,
+    3201
+   ],
+   "T_at_1bar": [
+    2147,
+    2147
+   ]
+  },
+  "MgS -> Mg + 1/2 S2, + MgS(g) (JANAF)": {
+   "1.0": [
+    2774,
+    2872
+   ],
+   "0.4": [
+    2938,
+    3047
+   ],
+   "0.2": [
+    3075,
+    3193
+   ],
+   "0.1": [
+    3222,
+    3352
+   ],
+   "T_at_1bar": [
+    2679,
+    2679
+   ]
+  },
+  "CaS -> Ca + 1/2 S2, + CaS(g) (JANAF)": {
+   "1.0": [
+    3667,
+    3802
+   ],
+   "0.4": [
+    3894,
+    4045
+   ],
+   "0.2": [
+    4083,
+    4248
+   ],
+   "0.1": [
+    4289,
+    4470
+   ],
+   "T_at_1bar": [
+    3536,
+    3536
+   ]
+  },
+  "FeS -> Fe + 1/2 S2 (JANAF Fe-025; extrapolated above 1,600 K)": {
+   "1.0": [
+    3683,
+    3960
+   ],
+   "0.4": [
+    4160,
+    4517
+   ],
+   "0.2": [
+    4612,
+    5055
+   ],
+   "0.1": [
+    5174,
+    5738
+   ],
+   "T_at_1bar": [
+    3436,
+    3436
+   ]
+  },
+  "Graphite -> C(g) (JANAF, monatomic only; 298 K dH, dS)": {
+   "1.0": [
+    4856,
+    5014
+   ],
+   "0.4": [
+    5120,
+    5296
+   ],
+   "0.2": [
+    5340,
+    5532
+   ],
+   "0.1": [
+    5580,
+    5790
+   ],
+   "T_at_1bar": [
+    4704,
+    4704
+   ]
+  }
+ },
+ "T_base_298K_estimates_sulfides": {
+  "Na2S": {
+   "0.4": [
+    2118,
+    2202
+   ],
+   "0.2": [
+    2223,
+    2316
+   ],
+   "0.1": [
+    2339,
+    2442
+   ]
+  },
+  "K2S": {
+   "0.4": [
+    2069,
+    2153
+   ],
+   "0.2": [
+    2174,
+    2266
+   ],
+   "0.1": [
+    2289,
+    2392
+   ]
+  },
+  "MgS": {
+   "0.4": [
+    2761,
+    2860
+   ],
+   "0.2": [
+    2884,
+    2993
+   ],
+   "0.1": [
+    3020,
+    3138
+   ]
+  },
+  "CaS": {
+   "0.4": [
+    3545,
+    3672
+   ],
+   "0.2": [
+    3703,
+    3842
+   ],
+   "0.1": [
+    3877,
+    4029
+   ]
+  }
+ },
+ "S298_from_Shomate": {
+  "S2g": 228.19,
+  "MgSs": 50.3,
+  "MgSg": 225.49,
+  "CaSs": 56.54,
+  "CaSg": 232.59,
+  "Na2Ss": 96.23,
+  "K2Ss": 115.06,
+  "Cg": 158.1
+ },
+ "FeS_formation_fit_900_1400K": {
+  "dH_kJ": -156.8,
+  "dS_J_K": -59.19
+ },
+ "sources": {
+  "S8(g) dfH298 = 100.416 kJ/mol": "NIST-JANAF table S-021, S8(g) (janaf.nist.gov/tables/S-021.html)",
+  "S2(g) dfH298 = 128.60 kJ/mol, S298 = 228.19; Shomate 298-6000 K": "NIST WebBook (C23550450), Chase 1998",
+  "S(l) dfH298 = 1.85 kJ/mol": "NIST WebBook (C7704349), Chase 1998",
+  "S liquid vapor pressure fit ln p = 24.41 - 9029/T (375-717 K); two lowest points 10,684 K; above 718 K B = 7,750-8,420 K": "Section S9/S13 of the supplement (lide2007 = CRC Handbook, 88th ed.)",
+  "NaCl(cr) dfH298 = -411.12, S = 72.11; NaCl(l) -385.92, 95.06; NaCl(g) -181.42, 229.79": "NIST WebBook (C7647145), Chase 1998",
+  "NaCl Antoine 1138-1738 K: A 5.07184, B 8388.497, C -82.638 (bar, K)": "NIST WebBook (C7647145), Stull 1947",
+  "KCl(cr) dfH298 = -436.68, S = 82.56; KCl(l) -421.79, 86.66; KCl(g) -214.68, 239.09": "NIST WebBook (C7447407), Chase 1998",
+  "KCl Antoine 1094-1680 K: A 4.78236, B 7440.691, C -122.709": "NIST WebBook (C7447407), Stull 1947",
+  "Na2S(cr) dfH298 = -366.10, Shomate 298-1445 K": "NIST WebBook (C1313822), Chase 1998",
+  "K2S(cr) dfH298 = -376.56, Shomate 298-1221 K": "NIST WebBook (C1312738), Chase 1998",
+  "Na(g) dfH298 = 107.30, S = 153.65; Shomate 1170-6000 K": "NIST WebBook (C7440235), Chase 1998",
+  "K(g) dfH298 = 89.00, S = 160.34; Shomate 1039-1800, 1800-6000 K": "NIST WebBook (C7440097), Chase 1998",
+  "MgS(cr) dfH298 = -345.72, S = 50.30, Shomate 298-3000 K; MgS(g) 145.23, 225.49": "NIST WebBook (C12032369), Chase 1998",
+  "CaS(cr) dfH298 = -473.21, S = 56.54, Shomate 298-3000 K; CaS(g) 123.59, 232.59": "NIST WebBook (C20548543), Chase 1998",
+  "Mg(g) dfH298 = 147.10, S = 148.65; Shomate 1366-2200, 2200-6000 K": "NIST WebBook (C7439954), Chase 1998",
+  "Ca(g) dfH298 = 177.80, S = 154.89; Shomate 1774-6000 K": "NIST WebBook (C7440702), Chase 1998",
+  "FeS dfG (S2 reference) 900-1600 K": "NIST-JANAF table Fe-025 (janaf_fe025), as tabulated in analysis_v7/supplement_v7_calcs.py",
+  "C(g) dfH298 = 716.669, S = 158.1; Shomate 298-6000 K": "NIST WebBook (C7440440), Chase 1998; graphite S298 = 5.74 J/mol/K (standard value, not fetched)",
+  "H2O(g) dfH298 = -241.83, H2O(l) -285.83 kJ/mol": "NIST WebBook (C7732185), Chase 1998; fusion enthalpy 6.01 kJ/mol (standard value, not fetched)",
+  "H2O Antoine 379-573 K: A 3.55959, B 643.748, C -198.043": "NIST WebBook (C7732185), Liu and Lindsay 1970"
+ }
+}

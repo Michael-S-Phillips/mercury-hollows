@@ -1,0 +1,963 @@
+% Planetary Research - A diamond open access journal
+% Supplementary materials, built on the journal's supplementary-materials template (July 17, 2026).
+% Revision v9 (2026-11-01): aligned with Hollow_Formation_Model_Paper_v4.tex. Evidence audit: v8 S9 (regional slope)
+% cut to the repository; v8 S12 (composition) merged into the depth section (now S9); v8 S15 (transition layer) merged
+% into S5; S4, S8, and S12 (timescales) trimmed; the crater-graph section (now S14) rerun with analysis_v9 (peak-ring
+% uplift beneath peak-ring craters and basins), with the full depth-of-origin comparison moved to the repository.
+% Removed text: cut_material_v4.tex. Bibliography: references_v4.bib.
+% Revision v8 (2026-10-30): aligned with Hollow_Formation_Model_Paper_v3.tex. Addresses the author's comments on v7
+% (response_to_comments_v3.md): new Figure S2 (detection model and completeness), Delta T renamed Delta T_w, S4 rim
+% hollows, S5 comparison with published temperatures and code citation, S6 comparison with published plains maps,
+% S10 and S13 markers resolved, S14 and S16 revised for heating after condensation and collapse during charging
+% (calculations: analysis_v8/model_logic_v8_calcs.py), S17 rerun with the two Caloris nodes merged and with the lunar
+% uplift relation (analysis_v8/).
+% Revision v10 (2026-11-02): aligned with Hollow_Formation_Model_Paper_v5.tex. Adds plains host sizes (S6), depth
+% quantiles and sunlight (S9), steady conduction above the hot rock (S13), and S15 on volcanic vents. Built by
+% _scratch_v10_make_sm10.py. Bibliography: references_v5.bib.
+% Revision v11 (2026-11-03): aligned with Hollow_Formation_Model_Paper_v6.tex. Caloris test on the v9 graph (S7), hot
+% longitudes at +-15 deg, crater population, shape of the rise with Delta T_w and Stage 1 hollows (S8), low-reflectance
+% material and X-ray coverage (S9), candidate volatiles and Figure S7 (S13), parents without hollows (S14), check of vent
+% positions (S15), and new S16 (joint model of hosting). Built by _scratch_v11_make_sm11.py. Bibliography: references_v6.bib.
+% Revision v14 (2026-11-07): aligned with Hollow_Formation_Model_Paper_v6_5.tex. Screened v3 catalog with the refit
+% detection model in every section (numbers changed automatically from code/rerun/out_v3/rerun/changes_all_v3r_g7.csv by
+% _v14_partA_auto.py, then checked and edited by hand); S1 screening; S4 rewritten for the traced and curvature terrain
+% classes with positions within peaks and floors; S13 silica as the oxidant; S14 simple-to-complex transition; new S17
+% (knobs around Caloris). Built by _scratch_v14_make_sm14.py. Bibliography: references_sm14_rumil.bib.
+% Revision v15 (2026-11-07): aligned with Hollow_Formation_Model_Paper_v6_6.tex. S4 from the 62 host craters traced by hand alone
+% (rerun/g16_traced_only), Table S2 rebuilt and Table S3 removed; S2 reference size condensed; S5 hosting comparison of the 368 K layer
+% removed; S13 second steady state; S14 simple-to-complex test removed; S17 Class 1-2 comparison, knob color, and knob depths removed.
+% Built by _scratch_v15_make_sm15.py. Bibliography: references_sm15_rumil.bib.
+% Revision v16 (2026-11-07): S4, S8, and Table S2 from the 111 host craters traced in rounds 1 and 2 (rerun/g18_traced_r3).
+% Built by _scratch_v16_make_sm16.py. Bibliography: references_sm16_rumil.bib.
+% Revision v17 (2026-11-07): S17 compares the knobs with the peaks of Class 1-2 craters traced by hand (rerun/g19_knobs_traced).
+% Built by _scratch_v17_make_sm17.py. Bibliography: references_sm17_rumil.bib.
+% Revision v18 (2026-11-08): no mention or use of the automated curvature classes (S4 agreement sentence removed; S17 curvature sensitivity
+% replaced by the hollow count of the can't-tell craters). Main text unchanged (v6.8).
+% Built by _scratch_v18_make_sm18.py. Bibliography: references_sm18_rumil.bib.
+% Revision v19 (2026-11-09): S16 locates the regional clustering of hosting (rerun/g20_regional_clusters); main-text life-cycle figure is now Figure 7.
+% Built by _scratch_v19_make_sm19.py. Bibliography: references_sm19_rumil.bib.
+% Revision v20 (2026-11-09): sweep for redundancy and side results the paper does not use (sweep_v6_10_v20_changes.md).
+% Built by _scratch_v20_make_sm20.py. Bibliography: references_sm20_rumil.bib.
+% Revision v21 (2026-11-09): with main text v6.11. S9 adds new automatic and hand shadow depths, depth against hollow size, and a
+% blind check of the depths of Blewett et al. (2016) (rerun/g23_smallest_hollows, g24_blewett_compare); the quantile regressions are
+% removed. S10, S11, S13-S15 give the depth results in both sets. S16 uses a composition group (low-reflectance material and color;
+% rerun/g25_composition), refits the regional excess, and adds the province screen; Figure S9 removed. Figure S8 is now Figure 8 of
+% the main text. Built by _scratch_v21_make_sm21.py. Bibliography: references_sm21_rumil.bib.
+% Revision v22 (2026-11-09): wider section-number box in the table of contents (S10 and higher overlapped the titles).
+% Built by _scratch_v22_make_sm22.py. Bibliography: references_sm21_rumil.bib (unchanged).
+% Revision v23 (2026-11-09): new Figure S7 in S9, examples of automatically measured shadows (rerun/g23_smallest_hollows/
+% figS_shadow_examples.py); the color figure is now Figure S8. Built by _scratch_v23_make_sm23.py.
+% Revision v24 (2026-11-09): with main text v6.12. S9: measurement uncertainty (rerun/g26_measurement_error), new Figure S8 of depth
+% against diameter (rerun/g23_smallest_hollows/figS_depth_size.py; the color figure is now Figure S9), and the slope-beneath-the-shadow
+% analysis removed (Michael). Built by _scratch_v24_make_sm24.py. Bibliography: references_sm24_rumil.bib.
+% Build: pdflatex supplementary-materials_v10.tex && biber supplementary-materials_v10 && pdflatex (twice)
+\documentclass{planetary}
+
+\renewcommand{\thesection}{S\arabic{section}}
+\makeatletter
+\patchcmd{\l@section}{\setlength\@tempdima{1.5em}}{\setlength\@tempdima{2.6em}}{}{\PackageWarning{supplement}{TOC section-number width not patched}}
+\makeatother
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\usepackage{xltabular}
+
+% ------ Title block --------------------------------------
+\title{Toward a Geologically Plausible Model of Hollow Formation on Mercury}
+
+% ------ Author block -------------------------------------
+\author[1,*]{Michael S. Phillips\,\orcidlink{0000-0001-8873-2238}}
+\affil[1]{Lunar and Planetary Laboratory, University of Arizona, Tucson, AZ, USA, https://ror.org/03m2x1q45}
+\affil[*]{\textit{Corresponding author:} Michael S. Phillips --- \texttt{phillipsm@arizona.edu}}
+
+% ------ BIB FILE -----------------------------------------
+\addbibresource{references_sm24_rumil.bib}
+% Rumil bib carries ISSN, full dates, and complete author lists; print as in v5 (19 names + et al. above 20).
+\ExecuteBibliographyOptions{maxbibnames=20,minbibnames=19}
+\AtEveryBibitem{\clearfield{issn}\clearfield{month}\clearfield{day}\iffieldundef{doi}{}{\clearfield{url}}}
+
+\date{}
+
+% ------ Document -----------------------------------------
+\begin{document}
+
+\maketitle
+\begin{center}
+    SUPPLEMENTAL MATERIALS
+\end{center}
+
+\thispagestyle{firstpage}
+
+\tableofcontents
+
+\license{}
+
+\newpage
+
+% ------ Main Section -------------------------------------
+
+\section{Hollow detections and their map coordinates}
+\label{sec:positions}
+
+The catalog of \textcite{bickel2025} lists hollows that a deep-learning detector found in images from the narrow-angle camera of the Mercury Dual Imaging System (MDIS). Each detection is a bounding box in one image, given in image pixel coordinates (the column and row within that image), with the latitude and longitude of the box's center. The tests in this paper compare hollows with craters, terrain, and one another at scales below 1~km, so I computed the latitude and longitude of every detection from its image pixel coordinates with the MDIS camera model. With the camera model, the line of sight of each pixel is traced to the surface from the position and pointing of the spacecraft when the image was taken and the optical geometry of the camera. I refer to the latitudes and longitudes in the catalog as the released map coordinates and to mine as the recomputed map coordinates; the two differ by a median of 4.4~km.
+
+I first checked that the released image pixel coordinates refer to the full frame in the orientation of the raw images: at those coordinates, the released thumbnails of four images match the raw images with correlations of 0.97--1.00. For all 4,915 images, I then converted the image pixel coordinates of each bounding-box center to latitude and longitude with the Integrated Software for Imagers and Spectrometers (ISIS) 8.0 \parencite{isis2023}. The ISIS program mdis2isis imports each raw image, spiceinit attaches the reconstructed spacecraft position and pointing \parencite{spice_messenger} and the USGS MESSENGER shape model of Mercury, and campt computes the latitude and longitude of a pixel.
+
+Two checks support the recomputed map coordinates. First, 97.7\% of the recomputed detection centers fall inside the image in which the hollow was detected. Second, a hollow detected in two images should have the same map coordinates in both. For hollows detected in two overlapping images with pixel scales $<$ 60~m, the two detections of the same hollow lie a median of 0.41~km apart with the recomputed map coordinates (1.90~km with the released map coordinates), and the nearest detection in the other image lies within 0.5~km for 52\% of these hollows. Figure~\ref{fig:positions} shows both sets of map coordinates for the detections in three images.
+
+From the detections with confidence $\geq$ 0.75 in images with solar incidence $<$ 85$^\circ$, I built the units used in the rest of the paper. I treated two detections in different images as the same hollow when their recomputed centers are closer than the mean of their equivalent radii, where the equivalent diameter is that of a circle with the area of the detection. Chains of such matches form one hollow, which I represent by its detection in the image with the finest pixel scale, for 6,731 hollows in all.
+
+\textbf{Screening.} The detector also outlines features that are not hollows. \textcite{bickel2025} flagged the 64 detections larger than 10~km, which outline whole host craters, and inspection of image crops showed that many other large detections outline crater bowls or sunlit walls, and that many small host craters, 5--12~km across, owed their status to such a detection. I therefore classified 768 detections on crops of the raw MDIS images as a hollow, a crater bowl, a wall, rim, or slope, another feature, or uncertain. The detections came from four sets: (A) 61 detections at least 0.35 times as wide as the crater whose central half they lie in, of which 56 are crater bowls; (B) 629 other detections $\geq$ 1.5~km across in fields of at most three hollows; (C) 30 detections 1.0--1.5~km across that are the only hollow, or one of two, in their host crater; and (D) a control sample of 48 detections $\geq$ 1.5~km across drawn at random from fields of at least 10 hollows. The crops of set B were classified with the assistance of an AI model (Claude, Anthropic), and I reviewed the detections classified as uncertain. I excluded the 368 detections classified as crater bowls, walls, or other features (253, 99, and 16), and kept the 232 classified as uncertain; excluding them as well changes no conclusion of the paper. In the control sample, 3 of 48 detections are crater bowls or walls, so about 6\% of the detections in large fields, which I did not screen beyond the sample, are probably not hollows. After screening, 6,363 hollows remain, and hollows that lie within 20~km of one another, again linked in chains, form 973 hollow fields.
+
+To measure the error that remains in the recomputed map coordinates, I compared detections of the same hollows in pairs of overlapping images. For each pair of images that share at least one hollow, I matched detections that are each other's nearest neighbor and lie within 3~km of each other, and kept the 1,725 image pairs with at least three matches. Within each image pair, the median offset between matched detections measures how far the map coordinates of one image are shifted relative to those of the other. The scatter of the matches about that median offset measures how consistently the detector outlines the same hollow in different images (Table~\ref{tab:positions}). For image pairs whose coarser image has a pixel scale $<$ 60~m, the median shift is 0.47~km ($\sim$13 pixels), and the matches scatter about the shift by a median of 0.15~km ($\sim$4 pixels). A shift shared by all matches in an image pair comes from errors in the reconstructed position and pointing of the spacecraft. Removing it would require registering each image to a controlled basemap, a mosaic whose images have been adjusted to agree with one another, which I did not do. The shift is $<$ 1.1~km in 90\% of image pairs. A shift of 1.1~km is small compared with the 20~km used to group hollows into fields, and similar to one pixel of the 665~m/pixel topographic model used for terrain classes and slopes.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Offsets between detections of the same hollows in overlapping images.} Recomputed map coordinates of pairs of images with at least three detections matched as mutual nearest neighbors within 3~km, grouped by the pixel scale of the coarser image. The shift is the median offset of the matched detections in an image pair; the scatter is the median distance of the matches from that shift.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{1.6cm} >{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{3.0cm}}
+            \toprule
+            \textbf{Pixel scale of coarser image} & \textbf{Image pairs} & \textbf{Median shift, km (pixels)} & \textbf{90th percentile shift (km)} & \textbf{Median scatter, km (pixels)} \\
+            \hline
+            $<$ 20~m & 85 & 0.11 (6.5) & 0.74 & 0.07 (3.3) \\
+            20--40~m & 782 & 0.41 (14.1) & 0.94 & 0.12 (4.4) \\
+            40--60~m & 565 & 0.61 (12.4) & 1.27 & 0.18 (3.7) \\
+            All $<$ 60~m & 1,432 & 0.47 (13.1) & 1.08 & 0.15 (4.1) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:positions}
+\end{table}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=13cm]{figures/figS1_positions_v3.png}
+    \caption{{\bf Hollow detections at their released and recomputed map coordinates in three MDIS narrow-angle images.} Each row shows one image, map-projected north-up at true scale, with the detections of \textcite{bickel2025} made in that image (confidence $\geq$ 0.75). Left column (a, c, e): released map coordinates; each line joins the released and recomputed locations of a detection. Right column (b, d, f): recomputed map coordinates (circles), and the recomputed map coordinates of detections in other images of the same area that fall on this image (crosses). Row labels give the median distance between the released and recomputed locations. I map-projected each image with a projective transform from image pixel coordinates to map coordinates, fitted to the recomputed map coordinates of all detections in the image (root-mean-square misfit 18--39~m, about one pixel). Two other images projected the same way match their ISIS map projections to within one pixel.}
+    \label{fig:positions}
+\end{figure}
+
+\clearpage
+
+\section{Imaging coverage, detection probability, and completeness}
+\label{sec:coverageS}
+
+I gridded the footprints of all orbital MDIS narrow-angle images \parencite{mdis_cdr} with pixel scale $\leq$ 150~m and incidence $<$ 85$^\circ$ at 10 pixels per degree and recorded the finest pixel scale in each cell. I modeled the detection probability, $p$, that the automated detector of \textcite{bickel2025} finds a hollow in one image, as a function of the hollow's diameter in pixels and the solar incidence angle. The fit uses 85,602 hollow--image pairs, one for every searched image that covers a cataloged hollow, whether or not the hollow was detected in it; 10,214 pairs, of 6,299 hollows, are detections. The model is $p = p_{\max}\,\Phi[(\ln x - \ln x_{50})/\sigma_{\mathrm{lo}}]\,\{1 - \Phi[(\ln x - \ln x_{\mathrm{hi}})/\sigma_{\mathrm{hi}}]\}\,\exp[b(i - 60^\circ)/25^\circ]$, where $x$ is the hollow's diameter in pixels, $i$ is the solar incidence angle, and $\Phi$ is the standard normal cumulative distribution function. A hollow enters the catalog only if detected at least once, so I fitted the model conditional on one detection per hollow, which gives $p_{\max}$ = 0.272, $x_{50}$ = 35.3 pixels, $\sigma_{\mathrm{lo}}$ = 0.585, $x_{\mathrm{hi}}$ = 187.2 pixels, $\sigma_{\mathrm{hi}}$ = 0.346, and $b$ = $-$0.104 (Figure~\ref{fig:completeness}b), over 2--128 pixels and 4--84$^\circ$ incidence (1st--99th percentiles of the pairs).
+
+Combining $p$ with the image footprints gives the number of hollows or hollow fields (Section~\ref{sec:positions}) expected in any region if hollows were distributed uniformly, and I compare regions by the ratio of observed to expected counts. The completeness, $C$, of a map cell is the probability that a hollow 1~km across in the cell is detected in at least one image: $C = 1 - \prod_k (1 - p_k)$, with $p_k$ for image $k$ evaluated at 60$^\circ$ incidence and at a representative pixel scale for its scale band (6.3, 14.1, 26.5, 45.8, 77.5, and 122.5~m for the 0--10, 10--20, 20--35, 35--60, 60--100, and 100--150~m bands; Figure~\ref{fig:completeness}a). The detection model depends on solar incidence but not on local slope, so hollows on poorly lit pole-facing slopes may be under-counted. Unless stated otherwise, uncertainties in this supplement are 95\% intervals; intervals on odds ratios are Wald intervals from the logistic fits, and other intervals come from 2,000 bootstrap resamples of craters, hollows, or images.
+
+\textbf{Size distribution.} For each cataloged hollow, I computed the probability $C_i(D)$ that a hollow of diameter $D$ at its site is detected in at least one of the searched images that cover it, with $p$ evaluated at each image's own pixel scale and solar incidence, on a grid of 121 diameters from 0.03 to 30~km. I fitted size distributions in which the number of hollows larger than $D$ is proportional to $D^{-a}$ over a range of diameters by maximizing $\prod_i f(D_i)\,C_i(D_i) / \int f(D)\,C_i(D)\,\mathrm{d}D$, where $f$ is the corresponding probability density of diameters and the product runs over the cataloged hollows in the range. Conditioning on where each hollow is found removes the effect of where the images are. The exponent $a$ is 1.55 (1.36--1.74) over 0.3--0.7~km, 1.43 (1.35--1.51) over 0.7--3~km, 1.52 (1.39--1.65) over 1--3~km, and 3.26 (2.91--3.62) over 3--12~km, with 95\% intervals from the likelihood profile. Fitted above lower limits of 0.2, 0.3, and 0.5~km with no upper limit, it is 1.57, 1.67, and 1.68. Of the 275 cataloged hollows at sites where a hollow 0.3~km across would be detected with a probability of at least 0.3, 149 are larger than 0.3~km, and their exponent over 0.3--1~km is 2.3 (1.8--2.9). For hollows seen in several images, the largest detection is a median of 5--6\% larger than the one used here above 3~km and 7--10\% larger at 0.5--3~km, so detections that outline only part of a hollow do not explain the steepening above 3~km. The corrected counts in Section~3.1 of the main text weight each cataloged hollow by $1/C_i(D_i)$. I excluded the 64 detections larger than 10~km, which outline whole host craters \parencite{bickel2025}, and the screened detections (Section~\ref{sec:positions}). Of the searched images that cover a cataloged hollow, other than one image in which it was detected, 4.9\% detected it; of those in which the hollow spans 60--200 pixels, 15--17\% did. These fractions are lower limits, because the image footprints are approximate.
+
+\textbf{Reference size.} Completeness depends on the size of the hollow it refers to. I used 1~km throughout because completeness for that size describes where host craters are found about as well as completeness for any other size: in the joint model of hosting (Section~\ref{sec:jointS}), the log-likelihood is $-$1,362 with completeness for 1~km hollows and $-$1,357 with completeness for 0.7~km hollows, the best of the sizes tested, against as low as $-$1,609 for sizes of 0.3--5~km. With completeness for 0.3, 0.5, or 1~km hollows, the odds ratio of hosting is 1.68--1.76 for craters inside older craters, 3.5--5.2 for craters with volcanic vents, 2.9--4.2 for fresh compared with degraded craters $\geq$ 10~km, and 2.2--2.6 for the hot against the warm longitudes within 15$^\circ$ of the equator, and the odds of hosting rise 1.36--1.41 times per 10~K of $\Delta T_\mathrm{w}$ within 60$^\circ$ of the equator. At 30--45$^\circ$N, the hot-longitude excess depends on the reference size (1.49--1.69; $p$ = 0.03--0.10). A completeness that uses no reference size, the expected number of hollows detected in a cell per hollow larger than 1~km present for a size distribution proportional to $D^{-1.6}$, gives odds ratios of 1.75 (1.42--2.17) for nesting, 4.3 (2.5--7.2) for vents, 3.3 (2.1--5.2) for fresh craters, and 1.38 (1.26--1.50) per 10~K of $\Delta T_\mathrm{w}$, and it changes the shares of the joint model by at most 1.7 percentage points, but it fits more poorly than completeness for 1~km hollows (log-likelihood $-$1,421 against $-$1,362).
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{figures/figS_completeness_v3cat.png}
+    \caption{{\bf Detection probability and catalog completeness.} (a) Completeness, $C$, the modeled probability that a hollow 1~km across is detected in at least one searched MDIS narrow-angle image, on a grid of 10 pixels per degree: global equirectangular map (left) and north polar Lambert azimuthal equal-area map from 30$^\circ$N with 0$^\circ$E at the bottom (right). (b) Per-image detection probability, $p$, against hollow diameter in pixels and solar incidence, from the model of Section~\ref{sec:coverageS}; white contours mark $p$ = 0.05--0.25 in steps of 0.05.}
+    \label{fig:completeness}
+\end{figure}
+
+
+\section{Host craters and the hot-longitude test}
+\label{sec:hostsS}
+
+I assigned each hollow to the smallest crater $\geq$ 5~km in the catalog of \textcite{herrick2018} whose 1.1 radii contain it; the 534 craters with assigned hollows are the host craters, or hosts, among the catalog's 31,571 craters. Noon falls at perihelion at the hot longitudes, 0$^\circ$ and 180$^\circ$E, and at aphelion at the warm longitudes, 90$^\circ$ and 270$^\circ$E (Section~2.2 of the main text). $\Delta T_\mathrm{w}$, the modeled mean annual surface temperature at a site minus that at the warm longitude of the same latitude (Section~\ref{sec:thermalS}), is 0 at the warm longitudes and reaches 62~K at the hot longitudes on the equator and 53~K at 60$^\circ$ latitude.
+
+For the 27,271 craters within 60$^\circ$ of the equator (485 hosts), I tested for an excess of hollows at the hot longitudes with a logistic regression of whether a crater hosts hollows on $\Delta T_\mathrm{w}$, log$_{10}$ diameter, their interaction, and absolute latitude. Coverage varies with longitude as well as latitude: if hollows were distributed uniformly, the sectors within 45$^\circ$ of the hot longitudes, half of all longitudes, would hold 0.46--0.58 of the detected fields in each 15$^\circ$ band of northern latitude (0.41--0.51 without fields near Caloris; Section~\ref{sec:coverageS}). I therefore also fitted the regression with the completeness at the crater center as a control. Without completeness, the odds of hosting rise by a factor of 1.38 (1.21--1.57) per 10~K of $\Delta T_\mathrm{w}$ for 10~km craters and by 1.19 (1.09--1.30) for 100~km craters, but the interaction is not significant ($p$ = 0.061; Akaike information criterion, AIC, 3,928; lower is better). With completeness, the factors are 1.44 (1.25--1.66) and 1.29 (1.17--1.42) (interaction $p$ = 0.21; AIC 3,315). Distance in longitude from the nearest warm longitude fits less well than $\Delta T_\mathrm{w}$ (AIC 3,950 against 3,928).
+
+For hollow fields, I compared the ratio of observed to expected fields within 45$^\circ$ of the hot longitudes with the same ratio within 45$^\circ$ of the warm longitudes, in 15$^\circ$ bands of latitude in each hemisphere, excluding fields within 1,200~km of the center of the Caloris basin. Intervals come from 2,000 bootstrap resamples of fields, and $p$ values from 2,000 draws of the same number of fields from the expected distribution. Within 15$^\circ$ of the equator, I fitted the ratio of observed to expected fields in 30$^\circ$ longitude bins with a function of the form $a + b \cos 2\lambda$, where $\lambda$ is east longitude.
+
+\clearpage
+
+\section{Terrain classes and crater setting}
+\label{sec:terrainS}
+
+For the host craters 30--250~km across, I traced the outlines of peaks and peak rings and the foot of the walls by hand on the 166~m/pixel MDIS mosaic \parencite{denevi2018} with a hillshade and contours of the 665~m/pixel global topography \parencite{becker2016,usgs_dem}, in the 114 host craters with at least five hollows. I counted material slumped from the walls onto the floor as wall, and ground enclosed by a peak ring as floor. In 3 of these 114 craters, the peak could not be distinguished from the floor, so the terrain tests use the other 111, which hold 3,323 of the 3,761 hollows (88\%) assigned to the 321 host craters 30--250~km across. Peak and ring terrain lie inside the peak outlines, wall terrain lies between the foot of the wall and 1.05 radii, and floor terrain is the rest inside the foot of the wall. I weighted each cell's area by $C$ and masked superposed cataloged craters $\geq$ 5~km, whose hollows are assigned to them. Hollows count toward a terrain class only if they are assigned to that host. Figure~\ref{fig:terrainexamples} shows the classes in four host craters. In this section, a host is nested if its center lies inside a cataloged crater at least twice its diameter, basin-hosted if it lies inside only a certain or probable basin of \textcite{orgel2020}, and isolated otherwise.
+
+Per unit area and with imaging coverage controlled, hollows are densest on peaks, less dense on floors, and least dense on walls (Table~\ref{tab:terrain}; Figure~2d of the main text). Over the 111 traced host craters, peak density is 7.2 (4.3--12.2) times wall density, and floor density is 1.6 (0.98--2.7) times wall density. The peak-to-wall ratio is 5.6 (3.6--9.5) without the three craters richest in hollows, 6.5 when stratified by slope class in a Mantel--Haenszel rate ratio, and 3.5 (2.5--4.9) when hollow fields are counted in place of individual hollows.
+
+The contrast depends on crater setting (Table~\ref{tab:terrain}; Figure~2d of the main text). Peaks have 14 (7--28) times the hollow density of walls in isolated craters, walls of nested craters have 5.3 times the density of walls of isolated craters, and in nested craters the density on walls exceeds that on floors.
+
+\textbf{Positions within peaks and floors.} I measured height within a peak as $\eta = (z - z_\mathrm{floor})/(z_\mathrm{peak95} - z_\mathrm{floor})$, where $z_\mathrm{floor}$ is the floor elevation, the 20th percentile of elevations 0.15--0.6 radii from the center, and $z_\mathrm{peak95}$ is the 95th percentile of peak elevations, and I divided each peak into thirds of $\eta$. Each ratio compares the density of hollows or hollow fields in one part of a crater's terrain with the density in the rest of that terrain of the same crater, with area weighted by completeness, and its 95\% interval comes from 2,000 bootstrap resamples of craters. Peak terrain within 2~km of the floor has 0.48 (0.39--0.59) times the hollow density and 0.30 (0.17--0.48) times the field density of the rest of the peak (1,448 hollows and 105 fields on the peaks of 92 craters). The highest third of the peaks has 0.99 (0.69--1.48) times the hollow density and 1.51 (1.08--2.07) times the field density of the lower two thirds, and the lowest third has 1.18 (0.87--1.48) times the hollow density of the upper two thirds. A lag forms less readily on steep slopes \parencite{blewett2016}, so I also stratified the peak cells of each crater by slope over one cell of the 665~m topography (0--1, 1--2, 2--4, 4--8, and $>$ 8$^\circ$) in a Mantel--Haenszel rate ratio, for the 93 hosts whose peaks cover at least 30 cells; with slope controlled, the field ratio for the highest third is 1.37 (0.92--2.01).
+
+On floors, floor within 0.2 radii of the center has 0.73 (0.42--1.09) times the hollow density of the rest of the floor (1,175 hollows and 144 fields in 91 craters). Within bins of distance from the center, floor within 0.1 radii of the wall or the peak has 1.04 (0.85--1.27) times the hollow density of floor farther from them, floor beside the wall alone has 0.87 (0.69--1.08) times, and floor beside the peak alone has 1.18 (1.00--1.39) times the hollow density and 1.50 (1.16--1.96) times the field density.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Hollow density by terrain and crater setting.} Hollows per 1,000~km$^2$ of completeness-weighted area in the 111 host craters 30--250~km across whose terrain I traced by hand, and 95\% intervals from 2,000 bootstrap resamples of craters. Shading gives density relative to 8.6 per 1,000~km$^2$, the density over all terrain in the 111 craters: dark orange, $\geq$ 2 times; light orange, 1--2 times; light blue, 0.5--1 times; dark blue, $<$ 0.5 times. The last column gives the ratio of observed to expected hollows when each crater's hollows are spread over its weighted area in proportion to area. Settings are defined in Section~\ref{sec:terrainS}.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.9cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.3cm}}
+            \toprule
+            \textbf{Terrain} & \textbf{All traced host craters (111)} & \textbf{Isolated (67)} & \textbf{Basin-hosted (16)} & \textbf{Nested (28)} & \textbf{Observed/ expected (all)} \\
+            \hline
+            Peak & \cellcolor[HTML]{F0B08F}29.8 (21.5--39.8) & \cellcolor[HTML]{F0B08F}31.0 (21.0--42.4) & \cellcolor[HTML]{F0B08F}24.0 (9.6--59.3) & \cellcolor[HTML]{F0B08F}26.1 (17.7--42.9) & 3.66 (3.24--4.21) \\
+            Floor & \cellcolor[HTML]{DCE7F3}6.8 (4.7--9.5) & \cellcolor[HTML]{DCE7F3}4.9 (3.2--7.2) & \cellcolor[HTML]{FBE3D6}13.1 (5.2--23.7) & \cellcolor[HTML]{DCE7F3}7.4 (3.6--14.6) & 0.81 (0.61--1.05) \\
+            Wall & \cellcolor[HTML]{AFC8E6}4.2 (2.6--6.3) & \cellcolor[HTML]{AFC8E6}2.2 (1.1--3.7) & \cellcolor[HTML]{AFC8E6}4.0 (1.9--6.3) & \cellcolor[HTML]{FBE3D6}11.5 (4.8--21.9) & 0.46 (0.31--0.63) \\
+            Wall, equator-facing & \cellcolor[HTML]{DCE7F3}5.3 (3.0--8.6) & \cellcolor[HTML]{AFC8E6}2.2 (1.0--3.7) & \cellcolor[HTML]{DCE7F3}5.3 (2.2--9.3) & \cellcolor[HTML]{FBE3D6}16.8 (5.6--32.6) & -- \\
+            Wall, pole-facing & \cellcolor[HTML]{AFC8E6}2.9 (1.9--4.3) & \cellcolor[HTML]{AFC8E6}2.2 (1.0--4.1) & \cellcolor[HTML]{AFC8E6}2.3 (1.2--3.5) & \cellcolor[HTML]{DCE7F3}6.1 (3.0--11.0) & -- \\
+            \hline
+        \end{tabularx}}
+    \label{tab:terrain}
+\end{table}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{figures/figS2_terrain_examples_traced_r2.png}
+    \caption{{\bf Terrain classes in four host craters.} The 166~m/pixel MDIS mosaic \parencite{denevi2018} with a light hillshade of the 665~m/pixel topography \parencite{becker2016}, the peak or ring, floor, and wall terrain traced by hand, masked superposed craters, and the hollows assigned to each host. (a) Tyagaraja, 108~km. (b) Praxiteles, 183~km. (c) Scarlatti, 126~km, peak ring. (d) Sander, 49~km, inside Caloris. Distances are from the crater center.}
+    \label{fig:terrainexamples}
+\end{figure}
+
+
+\clearpage
+
+\section{Thermal model and the daily sulfur transition layer}
+\label{sec:thermalS}
+
+I computed temperatures with a one-dimensional thermal model written for this study \parencite{zenodo_this}. It integrates the heat equation in a column of regolith with constant density (1,600~kg~m$^{-3}$), heat capacity (700~J~kg$^{-1}$~K$^{-1}$), and conductivity (0.002~W~m$^{-1}$~K$^{-1}$), which give a thermal inertia of 47~J~m$^{-2}$~K$^{-1}$~s$^{-1/2}$ and a skin depth of 9.3~cm over the 175.9-day solar day. The column has 70 layers 1.9~cm thick, and no heat flows through the lower boundary. Absorbed sunlight is computed from the orbit (eccentricity 0.2056, semimajor axis 0.3871~AU), the 3:2 spin--orbit resonance, and a Bond albedo of 0.09; obliquity is neglected. The surface balances absorbed sunlight, thermal emission at emissivity 0.95, and conduction, solved implicitly at 900 time steps per solar day.
+
+After each solar day, I shifted the temperature of the whole column by an amount set by the day's mean surface energy imbalance, which brings the column to a periodic steady state within 45 solar days. The temperature at the base of the column then equals the time-averaged surface temperature, which I call the mean annual surface temperature. I ran the model on a 5$^\circ$ grid over 0--90$^\circ$ latitude and 0--90$^\circ$E, assuming symmetry about the equator and about the hot longitudes and repetition every 180$^\circ$ of longitude, and interpolated bilinearly elsewhere. I use mean annual surface temperature for $\Delta T_\mathrm{w}$ and for the depth analysis, and noon radiative-equilibrium temperature for walls (Section~\ref{sec:insolationS}). Table~\ref{tab:thermal} lists the modeled temperatures.
+
+In porous regolith, radiation between grains raises the conductivity of hot regolith, so the model, with constant conductivity, gives lower temperatures below the skin depth than a model with temperature-dependent conductivity. The modeled peak temperatures, 702 and 570~K at the equatorial hot and warm longitudes and 644 and 522~K at 45$^\circ$N (Table~\ref{tab:thermal}), agree with the estimates of about 700, 570, 645, and 510~K of \textcite{bauch2021}, and the equatorial difference of 132~K agrees with the 130~K of \textcite{vasavada1999}.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Modeled surface temperatures.} Mean annual and peak surface temperature at the hot longitude (0$^\circ$E) and the warm longitude (90$^\circ$E), and $\Delta T_\mathrm{w}$, the difference in mean annual surface temperature.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.0cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{1.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+            \toprule
+            \textbf{Latitude} & \textbf{Mean annual, hot (K)} & \textbf{Mean annual, warm (K)} & \textbf{$\Delta T_\mathrm{w}$ (K)} & \textbf{Peak, hot (K)} & \textbf{Peak, warm (K)} \\
+            \hline
+            0$^\circ$ & 329 & 267 & 62 & 702 & 570 \\
+            15$^\circ$ & 327 & 265 & 62 & 696 & 565 \\
+            30$^\circ$ & 321 & 260 & 60 & 677 & 550 \\
+            45$^\circ$ & 309 & 252 & 57 & 644 & 522 \\
+            60$^\circ$ & 290 & 238 & 53 & 590 & 479 \\
+            75$^\circ$ & 259 & 214 & 45 & 501 & 406 \\
+            \hline
+        \end{tabularx}}
+    \label{tab:thermal}
+\end{table}
+
+\textbf{The daily sulfur transition layer.} \label{sec:transitionS} Native sulfur changes from the orthorhombic to the monoclinic form near 368~K \parencite{lide2007}; in the model, exposed sulfur-charged regolith breaks apart as it crosses this transition each day (Section 4.1 of the main text). I ran the thermal model on a 5$^\circ$ grid of latitude and longitude with the depth step refined to one-tenth of the 9.3~cm diurnal skin depth, recorded the daily maximum and minimum temperature at each depth over the last modeled solar day, and took $L_{368}$ as the depth at which the daily maximum falls to 368~K, interpolating between nodes. The daily minimum is below 368~K at every depth, so the whole layer above $L_{368}$ crosses 368~K once per Mercury solar day. $L_{368}$ is 22~cm at the hot equator and 10~cm at the warm equator (Table~\ref{tab:transition}). Radiative conduction between grains, and pores filled with sulfur, would raise temperatures below the skin depth and thicken the layer.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Thickness of the layer that crosses 368~K every Mercury solar day.} $L_{368}$ in cm.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{2.6cm}}
+            \toprule
+            \textbf{Latitude} & \textbf{0$^\circ$E (hot)} & \textbf{30$^\circ$E} & \textbf{60$^\circ$E} & \textbf{90$^\circ$E (warm)} \\
+            \hline
+            0$^\circ$ & 21.8 & 20.2 & 16.3 & 9.6 \\
+            30$^\circ$ & 19.2 & 17.9 & 14.4 & 8.6 \\
+            45$^\circ$ & 16.3 & 15.1 & 12.1 & 7.3 \\
+            60$^\circ$ & 12.3 & 11.1 & 8.7 & 5.2 \\
+            75$^\circ$ & 6.8 & 5.5 & 3.4 & 1.8 \\
+            85$^\circ$ & 0.7 & 0.0 & 0.0 & 0.0 \\
+            \hline
+        \end{tabularx}}
+    \label{tab:transition}
+\end{table}
+
+\clearpage
+
+\section{Volcanic plains}
+\label{sec:plainsS}
+
+I built a mask of the northern smooth plains \parencite{head2011} from the lineaments within the plains in the global tectonic map of \textcite{klimczak2025} \parencite{klimczak2025data}. I projected the lineaments to a polar Lambert azimuthal equal-area grid on a sphere of radius 2,439.4~km and closed gaps of up to 40~km by morphological closing. The mask covers 5.8 $\times$ 10$^6$~km$^2$ from 37$^\circ$N to the pole, and its area changes by $<$ 1\% for closing radii of 25--60~km. Its area is close to the 5.59 $\times$ 10$^6$~km$^2$ of the northern smooth plains mapped by \textcite{ostrach2015} and larger than the $\sim$4.7 $\times$ 10$^6$~km$^2$ of \textcite{head2011}. I used the tectonic map because I found no public vector files of the plains outlines of \textcite{head2011} or \textcite{ostrach2015}. Less than 0.1 $\times$ 10$^6$~km$^2$ poleward of 20$^\circ$S is imaged at $\leq$ 40~m/pixel, so the plains and latitude tests apply to the north only.
+
+In cells imaged at $\leq$ 40~m/pixel, hollow fields inside the plains are 0.35 times as dense as outside the plains at 40--60$^\circ$N and 0.13 times as dense at 60--80$^\circ$N (Figure~2a, b of the main text). Field density inside the plains is 30 (20--43) per 10$^6$~km$^2$ at 40--60$^\circ$N and 12 (7--18) at 60--80$^\circ$N, compared with 87 (75--100) and 90 (72--112) outside the plains (95\% Poisson intervals). Craters on the plains are also less likely to host hollows. Among 1,179 craters $\geq$ 10~km at 40--80$^\circ$N whose centers were imaged at $\leq$ 80~m/pixel, the odds that a crater on the plains hosts hollows are 0.40 (0.23--0.70) times the odds for a crater off the plains with the same diameter, latitude, and $\Delta T_\mathrm{w}$. Hollows on the plains lie mostly in larger craters. Of the 1,849 craters $\geq$ 5~km on the plains in the crater containment graph (Section~\ref{sec:dagS}), 20 have hollows within 0.9 radii of their center, and 19 of the 20 are $\geq$ 10~km across, with a median diameter of 34~km, against 10~km for craters on the plains without hollows.
+
+The plains make up 65\% of the area imaged at $\leq$ 40~m/pixel at 60--80$^\circ$N, so the plains account for most of the poleward decline in detected hollows. Outside the plains, field density does not decline toward the pole: density at 60--80$^\circ$N is 0.77--1.04 times that at 40--60$^\circ$N, with and without controls for illumination and for a hollow-rich province at 90--150$^\circ$E, 40--70$^\circ$N (Figure~2b of the main text). At 0--30$^\circ$N, field density outside the plains is 52 (46--60) per 10$^6$~km$^2$. Field density outside the plains therefore does not increase toward the equator, so across the latitudes sampled, insolation does not limit where hollows occur.
+
+\clearpage
+
+\section{Craters inside Caloris that excavate below the volcanic plains}
+\label{sec:calorisS}
+
+\textcite{ernst2015} estimated from the sizes of later craters that excavated low-reflectance material that the volcanic plains inside the Caloris basin are 2.5--3.5~km thick. I estimated excavation depth as 0.1 times the transient crater diameter \parencite{melosh1989}, with transient diameter $D_{sc}^{0.15} D^{0.85}$ for final diameter $D$ \parencite{croft1985}. I used a simple-to-complex transition diameter $D_{sc}$ of 12~km, close to the 11.7 $\pm$ 1.2~km from MESSENGER orbital data \parencite{susorney2016} and the $\sim$12~km from flyby data \parencite{barnouin2012}. Because $D_{sc}$ enters with exponent 0.15, values of 10.5--12.9~km change excavation depth by at most 2\%. Excavation depth then reaches 2.5~km at $D$ = 28.5~km, 3.0~km at 35.3~km, and 3.5~km at 42.3~km. I tested the 179 craters $\geq$ 10~km inside Caloris in the crater containment graph (Section~\ref{sec:dagS}), which assigns each crater a parent, the crater or basin it lies inside (Figure~\ref{fig:calorisA}). Here, completeness is that at the crater center, an isolated crater has no parent, and in the main test a crater hosts hollows if $\geq$ 3 of its assigned hollows lie within 0.9 radii of its center.
+
+No crater inside Caloris whose excavation falls short of 2.5~km hosts three or more hollows (0 of 144), and 14 of 35 craters whose excavation reaches deeper do (Fisher $p$ = 9.8 $\times$ 10$^{-12}$; Figure~2c of the main text). Six of the 144 shallower craters host one or two hollows each; they are 10.7--24.6~km across, with excavation depths of 0.9--2.2~km. Small craters rarely host three or more hollows anywhere: among isolated craters with $C \geq$ 0.2, 2 of 762 craters 10--30~km across do. At that rate, the 53 Caloris craters of this size and completeness would include 0.14 such craters; they include one, 29~km across, whose excavation of 2.6~km reaches below the plains. The absence of such craters among the shallower Caloris craters is therefore expected from crater size alone, and the plains can be tested only among larger craters.
+
+I therefore compared craters of similar size and completeness. At 30--35~km, median completeness is 0.32 in Caloris and 0.40 for isolated craters with $C \geq$ 0.2. At these diameters, 3 of 5 Caloris craters host three or more hollows, compared with 1 of 52 isolated craters outside Caloris ($p$ = 0.001). At 35--40~km, completeness differs (0.86 and 0.35), and the counts are 3 of 6 and 5 of 44. Among Caloris craters 20--40~km across, those in the outer 30\% of the basin radius host hollows at a rate similar to those closer to the center (5 of 27 and 2 of 19; $p$ = 0.68), so the result is not an effect of proximity to the basin rim. Figure~\ref{fig:calorisB} shows four craters inside Caloris that bracket the diameter at which excavation reaches the base of the plains.
+
+Small craters that host hollows inside Caloris lie inside deeper craters more often than elsewhere in the basin. Among the 464 craters $\geq$ 3~km inside Caloris whose excavation falls short of 2.5~km, 3 of the 12 that lie inside a larger crater host at least one hollow, compared with 6 of the 452 whose parent is the basin itself ($p$ = 0.001). The three hosts lie in two parents 83--129~km across, each with excavation below the plains and hollows of its own. Four of the 6 hosts whose parent is the basin lie in the outer fifth of the basin radius, where 195 of the 452 craters lie ($p$ = 0.41), so these hosts are not concentrated near the rim. With completeness and diameter controlled, the odds ratio for craters inside a larger crater is 69 ($p$ = 4 $\times$ 10$^{-5}$), and that for the outer fifth is 2.5 ($p$ = 0.30).
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{figures/figS3_caloris_map_v9_v3cat.jpg}
+    \caption{{\bf Craters inside the Caloris basin.} The 179 craters $\geq$ 10~km inside Caloris in the crater containment graph, on the 166~m/pixel MDIS mosaic \parencite{denevi2018}: craters with excavation depth $<$ 2.5~km (blue rings), craters with excavation depth $\geq$ 2.5~km and fewer than three hollows within 0.9 radii (yellow rings), and craters with three or more hollows within 0.9 radii (orange). Symbol size scales with crater diameter. The dashed circle marks the basin outline of \textcite{orgel2020} and the dotted circle the catalog outline of \textcite{herrick2018}; craters inside either are included.}
+    \label{fig:calorisA}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{figures/figS4_caloris_examples_v3cat.png}
+    \caption{{\bf Four craters inside Caloris.} Craters are shown on the 166~m/pixel MDIS mosaic with hollows in orange (top) and in MDIS enhanced color (bottom), where low-reflectance material appears dark blue \parencite{denevi2018}. (a) A 26~km crater with an excavation depth of $\sim$2.3~km, within the plains, without hollows. (b) Cunningham, 34~km, excavation depth $\sim$2.9~km, with 4 hollows. (c) Sander, 49~km, excavation depth $\sim$4.0~km, with 71 hollows on its floor, peak, walls, and rim. (d) A degraded 38~km crater with an excavation depth of $\sim$3.2~km and no cataloged hollows. Dashed circles mark crater rims.}
+    \label{fig:calorisB}
+\end{figure}
+
+\clearpage
+
+\section{Hollow occurrence and insolation}
+\label{sec:insolationS}
+
+Section~\ref{sec:hostsS} defines host craters, the hot and warm longitudes, and $\Delta T_\mathrm{w}$; ``near'' a longitude means within 45$^\circ$ of it. The hot-to-warm ratio is the ratio of observed to expected numbers (Section~\ref{sec:coverageS}) near the hot longitudes divided by that near the warm longitudes.
+
+\textbf{Longitude.} Within 15$^\circ$ of the equator, with fields within 1,200~km of the Caloris basin center excluded, the hot-to-warm ratio of hollow fields is 1.75 at 0--15$^\circ$N and 1.55 at 0--15$^\circ$S (Table~\ref{tab:insolation}), and fields are 1.64 (1.26--2.14) times as common, relative to expectation, near the hot longitudes as near the warm longitudes (Figure~4a of the main text). Farther north, the ratio falls below 1, to 0.39 (0.24--0.57; $p$ = 0.0005) at 45--60$^\circ$N. Without the hollow-rich province at 90--150$^\circ$E, 40--70$^\circ$N, it is 0.57 (0.36--0.87; $p$ = 0.018), so about 40\% of this reversal, measured on a logarithmic scale, comes from the province, and a reversal remains without it. At 60--75$^\circ$N, excluding the province raises the ratio from 0.66 (0.42--0.98) to 3.2 (1.6--10.0). Counted as individual hollows, the ratio is below 1 at 15--75$^\circ$N (Table~\ref{tab:insolation}), which matches the high hollow density near the warm longitudes found by \textcite{bickel2025}.
+
+\textbf{Crater population.} The excess of hollow fields near the hot longitudes within 15$^\circ$ of the equator does not come from more craters there: craters 5--10~km across are equally dense near the hot and warm longitudes (ratio 1.00), and craters $\geq$ 10~km are 16\% less dense near the hot longitudes. Mean completeness is higher near the hot longitudes (0.097 against 0.073), and the expected counts include this difference. With the expected number of fields in each cell proportional to the completeness-weighted number of craters $\geq$ 5~km, to the completeness-weighted area of those craters, or to a hosting model with diameter, latitude, and completeness but no longitude term, the hot-to-warm ratio is 1.45 (1.11--1.93), 1.56 (1.19--2.08), and 1.77 (1.36--2.37) ($p \leq$ 0.007 for each). Among craters within 15$^\circ$ of the equator, with completeness and diameter controlled, the odds that a crater near the hot longitudes hosts hollows are 2.19 (1.48--3.24) times those of a crater near the warm longitudes, and this odds ratio does not change with diameter ($p$ = 0.40 for the interaction). The interaction of $\Delta T_\mathrm{w}$ with log diameter in Section~\ref{sec:hostsS} is not significant, and it is not significant at 15--30$^\circ$N or 30--45$^\circ$N either ($p$ = 0.92 and 0.20).
+
+\textbf{Hosting by latitude band.} With completeness and diameter controlled, the odds that a crater near the hot longitudes hosts hollows, relative to a crater near the warm longitudes, are 2.60 (1.53--4.40) at 15--30$^\circ$N, 1.49 (0.93--2.39) at 30--45$^\circ$N, 1.55 (0.84--2.85) at 45--60$^\circ$N, and 1.47 (0.65--3.30) at 60--75$^\circ$N. At 15--75$^\circ$N, 140 host craters lie near the hot longitudes and 124 near the warm longitudes, but 1,096 of their hollows lie near the hot longitudes and 2,373 near the warm longitudes. The ten host craters with the most hollows contain 50\% of the hollows at these latitudes, and eight of them lie near the warm longitudes; without these ten craters, 953 hollows lie near the hot longitudes and 780 near the warm longitudes.
+
+\textbf{Shape of the rise with $\Delta T_\mathrm{w}$.} For the 27,257 craters of the containment tests within 60$^\circ$ of the equator (Section~\ref{sec:dagS}; 414 with a hollow within 0.9 radii), I fit logistic regressions of hosting on log$_{10}$ diameter, absolute latitude, completeness at the crater center, and $\Delta T_\mathrm{w}$ in several forms. Compared with a linear term in $\Delta T_\mathrm{w}$, restricted cubic splines with 3--5 degrees of freedom change the AIC by $-$0.7 to +2.1, and the best single step, at 34~K, has an AIC 2.1 lower, including 2 for choosing the step. The data therefore do not distinguish a steady rise from a step near 34~K. In the linear fit, the odds of hosting rise by a factor of 1.37 (1.25--1.50) per 10~K (Figure~\ref{fig:insolationS}c), and a $\cos 2\lambda$ term in place of $\Delta T_\mathrm{w}$ fits worse (AIC higher by 20).
+
+\textbf{Stage 1 hollows.} I matched the stage classifications of \textcite{deutsch2025} (Section~3.5 of the main text), which the catalog of \textcite{bickel2025} includes, to 2,405 of the hollows used here (1,440 Stage 1 and 965 Stage 2), and fit logistic regressions of the Stage 1 classification on $\Delta T_\mathrm{w}$, with solar incidence, pixel scale, emission angle, and latitude as controls and standard errors clustered by hollow field. With all classifications, the odds of Stage 1 change by a factor of 1.10 (0.96--1.25) per 10~K, but the odds of a Stage 2 or 3 classification double per 10$^\circ$ of solar incidence, so classifications from images at high incidence are not reliable. Among the 1,592 hollows classified in images at incidence below 70$^\circ$, the Stage 1 fraction is 0.56--0.71 where $\Delta T_\mathrm{w}$ is below about 45~K and 0.96--1.00 where it is above 50~K, and a step at 44~K fits better than a linear term (AIC lower by 27; odds ratio 3.0, 1.5--6.2; 3.0 without the Caloris region).
+
+\textbf{Wall orientation.} Crater walls are smoothed in the 665~m/pixel global topography (69\% of wall area has regional slopes $<$ 5$^\circ$), so I used position as a proxy for orientation: a hollow poleward of its host's center lies on an equator-facing wall. I used the 2,301 hollows 0.55--1.05 radii from the centers of hosts $\geq$ 15~km. Counted per hollow, the fraction of northern wall hollows on equator-facing walls rises from 0.46 at 0--15$^\circ$N to 0.75 at 60--75$^\circ$N (Figure~\ref{fig:insolationS}a; Table~\ref{tab:insolation}). Averaged over host craters, the fraction differs from 0.5 only at 60--75$^\circ$N, where it is 0.71 (0.54--0.87), so the per-hollow rise at 30--60$^\circ$N comes from a few craters rich in hollows. Per unit area, equator-facing walls of the 111 traced host craters have 1.80 (1.08--3.11) times the hollow density of pole-facing walls (437 and 228 hollows; Table~\ref{tab:terrain}).
+
+\textbf{Noon temperature of walls.} Mercury's spin axis has almost no tilt, so the noon Sun stands at an elevation of 90$^\circ$ minus the latitude. A 30$^\circ$ equator-facing wall at 70$^\circ$N therefore receives noon sunlight at the incidence of flat ground at 40$^\circ$N, and at the hot longitudes its noon temperature is 120~K above that of flat ground at 70$^\circ$N (Figure~\ref{fig:insolationS}b).
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=15cm]{figures/figS5_insolation_v10_v3cat.png}
+    \caption{{\bf Hollow occurrence and insolation.} Figure~4 of the main text shows the ratio of observed to expected hollow fields against longitude and the odds ratio of hosting per 10~K of $\Delta T_\mathrm{w}$ against crater diameter. (a) Fraction of northern wall hollows on equator-facing walls, per hollow and per host crater, with 95\% bootstrap intervals; the diamond excludes hollows within 1,200~km of the Caloris center. (b) Noon radiative-equilibrium temperature of flat ground and of 30$^\circ$ walls (Bond albedo 0.09, emissivity 0.95; conduction and scattered light neglected). (c) Hosting probability against $\Delta T_\mathrm{w}$, the modeled mean annual surface temperature at a crater minus that at the warm longitude of the same latitude, for a crater of median diameter, latitude, and completeness (10.6~km, 29$^\circ$, $C$ = 0.028), from the 27,257 craters $\geq$ 5~km of the containment tests within 60$^\circ$ of the equator (414 hosts): $\Delta T_\mathrm{w}$ bins with 95\% intervals and the logistic fit, in which the odds rise 1.37 (1.25--1.50) times per 10~K. The probability axis is logarithmic.}
+    \label{fig:insolationS}
+\end{figure}
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Hollow occurrence against insolation.} Observed/expected ratios use the detection model of Section~\ref{sec:coverageS}; fields within 1,200~km of the Caloris basin center are excluded from the longitude comparisons. Intervals are 95\% intervals from 2,000 bootstrap resamples, except for the regression coefficients.}
+    \scriptsize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.6cm} >{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}p{2.6cm}}
+            \toprule
+            \textbf{Measure} & \textbf{Group} & \textbf{Result (95\% interval)} & \textbf{Sample} \\
+            \hline
+            Hot-to-warm ratio of observed/expected hollow fields & 0--15$^\circ$N & 1.75 (1.22--2.60) & 113 fields \\
+             & 0--15$^\circ$S & 1.55 (1.04--2.32) & 104 fields \\
+             & 15--30$^\circ$N & 1.19 (0.87--1.64) & 152 fields \\
+             & 30--45$^\circ$N & 0.68 (0.47--0.96) & 131 fields \\
+             & 45--60$^\circ$N & 0.39 (0.24--0.57) & 140 fields \\
+             & 60--75$^\circ$N & 0.66 (0.42--0.98) & 91 fields \\
+             & 45--60$^\circ$N, without the province at 90--150$^\circ$E & 0.57 (0.36--0.87) & 79 fields \\
+             & 60--75$^\circ$N, without the province & 3.2 (1.6--10.0) & 37 fields \\
+            Amplitude $b$ of $a + b \cos 2\lambda$, hollow fields & within 15$^\circ$ of the equator & 0.50 (0.34--0.65); $a$ = 0.99 & 217 fields \\
+            Hot-to-warm ratio of observed/expected hollows & 0--15$^\circ$N & 0.96 (0.83--1.11) & 777 hollows \\
+             & 0--15$^\circ$S & 6.1 (4.8--8.6) & 398 hollows \\
+             & 15--75$^\circ$N, four bands & 0.33--0.57 & \\
+            Odds ratio of a crater hosting hollows per 10~K of $\Delta T_\mathrm{w}$ & 10~km craters & 1.38 (1.21--1.57) & 27,271 craters, \\
+             & 100~km craters & 1.19 (1.09--1.30) & 485 hosts \\
+             & interaction with log diameter & $p$ = 0.061 & \\
+             & 10~km, completeness controlled & 1.44 (1.25--1.66) & \\
+             & 100~km, completeness controlled & 1.29 (1.17--1.42) & \\
+             & interaction, completeness controlled & $p$ = 0.21 & \\
+            Fraction of wall hollows on equator-facing walls, per hollow; per host crater & 0--15$^\circ$N & 0.46 (0.40--0.53); 0.54 (0.42--0.66) & 240 hollows, 49 craters \\
+             & 15--30$^\circ$N & 0.39 (0.35--0.42); 0.52 (0.41--0.63) & 851 hollows, 54 craters \\
+             & 15--30$^\circ$N, Caloris excluded & 0.44 (0.41--0.48); 0.53 (0.40--0.65) & 731 hollows, 47 craters \\
+             & 30--45$^\circ$N & 0.61 (0.57--0.65); 0.48 (0.38--0.59) & 610 hollows, 59 craters \\
+             & 45--60$^\circ$N & 0.71 (0.66--0.75); 0.50 (0.36--0.64) & 325 hollows, 35 craters \\
+             & 60--75$^\circ$N & 0.75 (0.64--0.86); 0.71 (0.54--0.87) & 56 hollows, 26 craters \\
+            Wall density, equator-facing to pole-facing & 111 traced host craters 30--250~km & 1.80 (1.08--3.11) & 665 hollows \\
+            \hline
+        \end{tabularx}}
+    \label{tab:insolation}
+\end{table}
+
+\clearpage
+
+\section{Hollow depth: measurements, uncertainty, hollow size, image geometry, latitude, and composition}
+\label{sec:depthS}
+
+\textbf{Automatic depths.} I measured the shadow of each hollow automatically in the raw MDIS narrow-angle images (experiment data records), using the finest detection of \textcite{bickel2025} of each hollow in images at $\leq$ 20~m/pixel, 58--81$^\circ$ solar incidence, and $\leq$ 50$^\circ$ emission: 2,012 hollows in 713 images. I resampled each detection box, with a margin, on a grid aligned with the Sun's direction at a quarter of a pixel. The threshold between shadow and lit ground is halfway between the 2nd percentile of brightness inside the box and the median brightness of the margin, the edge a person picks on the image. Along each line in the Sun's direction, a shadow is a run of pixels below the threshold that starts at the sunward edge of the box, ends inside the box, and is followed by ground at least as bright as the margin, the lit far wall of a depression. The shadow length is the longest such run after a running median across five neighboring lines. The ground length is the shadow length times the pixel scale times the foreshortening along the Sun's direction, and the depth is the ground length divided by the tangent of the local solar incidence. I excluded boxes without a shadow, shadows that reach the edge of the image or continue past the sunward edge of the box, and images without raw data, which leaves 1,558 depths in 592 images. Figure~\ref{fig:shadowexamples} shows examples. The automatic depths and the hollow diameters (the equivalent diameter of the detection) are archived with the code.
+
+\textbf{Hand measurements.} I measured by hand, on the same images, the shadows of all 135 cataloged hollows imaged at $\leq$ 7~m/pixel (40~m to 1~km across), by marking the sunward rim and the tip of the main shadow. I classed 128 as hollows, 5 as uncertain, and 1 as crater-like, and left 1 unclassed; 132 have measured shadows, 1 a shadow that fills the hollow (a lower limit on depth), and 2 no measurable shadow. For the 114 hollows with both measurements, the hand depth is a median of 1.01 times the automatic depth, 80\% of the pairs agree within 30\%, and the Spearman correlation is 0.88; poleward of 60$^\circ$N the median ratio is 0.98 (16 hollows).
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=13.5cm]{figures/figS_shadow_examples_v1.png}
+    \caption{{\bf Examples of automatically measured shadows.} Raw MDIS narrow-angle images at native resolution, with the detection of \textcite{bickel2025} (yellow box), the shadow measured automatically (red), the direction in which the light travels (arrow), and a scale bar. Each panel title gives the diameter of the hollow, the pixel scale, and the local solar incidence $i$, and each label gives the depth. (a) Six of the hollows I measured by hand at $\leq$ 7~m/pixel, one in each of six size ranges from 40~m to 1~km, each the hollow whose ratio of hand to automatic depth is closest to the median for the set, with the hand measurement in cyan (dashed). In boxes that contain several hollows, the two measurements can fall on different shadows (second, fourth, and fifth panels). (b) Six automatic measurements at 10--20~m/pixel, the range that holds most automatic depths, drawn at random within size ranges of 150--300~m, 300--500~m (two), 500--800~m (two), and 800--1,500~m.}
+    \label{fig:shadowexamples}
+\end{figure}
+
+\textbf{Blind check of the depths of \textcite{blewett2016}.} I located the measurement points of \textcite{blewett2016} on detected hollows in the images they used (817 points), selected all 28 detections with points poleward of 60$^\circ$N and 72 random detections equatorward, at most three per image, and measured by hand the shadow at each of their 178 points without seeing their depths. Their depths are 0.83 (0.77--0.88) times mine at the same points, 0.85 (0.78--0.91) equatorward and 0.81 (0.70--0.92) poleward, with 95\% intervals from bootstrap resamples of images; the shadow lengths differ by the same factor, the incidence angles differ by a median of 0.03$^\circ$, and the two sets rank the hollows alike (Spearman $\rho$ = 0.89). The poleward factor on the ratio is 0.95 (0.82--1.10; $p$ = 0.48), so the two methods differ by the same factor at all latitudes, and the difference lies in where the shadow edges were placed. On the same points, the depths of \textcite{blewett2016} and mine give poleward ratios of 0.84 (0.70--1.02) and 0.88 (0.74--1.05).
+
+\textbf{Measurement uncertainty.} The random scatter of individual depths enters the residuals of each regression, so the intervals, from standard errors clustered by image or from bootstrap resamples of images, include it, together with errors shared within an image. From the three measurements of the 87 detections in the blind check that all three methods measured (the deepest point of \textcite{blewett2016}, my deepest hand measurement, and the automatic depth), I separated the scatter of each method, assuming that their errors are independent. The standard deviation of a single measurement in ln depth is 0.16 (95\% interval 0--0.25) for my hand measurements, 0.28 (0.20--0.35) for those of \textcite{blewett2016}, and 0.29 (0.19--0.39) for the automatic method, with intervals from 1,000 bootstrap resamples of images; from the median absolute deviation, the values are 0.12, 0.23, and 0.20. The difference between observers also has a systematic part, the factor of 0.83 between the depths of \textcite{blewett2016} and mine, which no interval includes; it changes absolute depths but not ratios or slopes within one set of depths. Errors that depend on the regressors would bias the results. In the 111 hollows I measured by hand at $\leq$ 7~m/pixel, ln(hand/automatic) does not change with ln hollow diameter ($-$0.07 $\pm$ 0.10), ln pixel scale, ln tan $i$, position poleward of 60$^\circ$N ($-$0.01 $\pm$ 0.08), or the presence of several shadows in the box, and on the same 102 hollows without uncertain measurements or edge flags, the exponent of depth on diameter is 0.60 $\pm$ 0.10 by hand and 0.67 $\pm$ 0.07 automatically. On the 87 boxes of the blind check, which lie in coarser images, ln(automatic/hand) decreases by 0.27 $\pm$ 0.09 per unit ln pixel scale, which the pixel-scale control in every regression absorbs, and increases by 0.18 $\pm$ 0.09 per unit ln diameter, which, if it holds for the automatic depths, would steepen their dependence on size by up to that amount; it does not change poleward of 60$^\circ$N (0.01 $\pm$ 0.07).
+
+\textbf{Depth and hollow size.} In the hand measurements, the median depth is 5.2~m for hollows 40--100~m across (21 hollows), 11.1~m at 100--150~m (25), 11.8~m at 150--200~m (31), 15.9~m at 200--300~m (32), 18.9~m at 300--500~m (19), and 23.2~m at 0.5--1~km (3), so the ratio of depth to diameter falls from 0.08--0.09 below 150~m to 0.04--0.05 above 300~m. With ln pixel scale and ln tan $i$ as controls, ln depth increases by 0.57 $\pm$ 0.07 per unit ln diameter (131 hollows; 0.57 $\pm$ 0.08 without the 18 measurements I marked as uncertain, and 0.58 $\pm$ 0.08 in a censored fit that includes the limits). A power law with a break in slope and a power law that reaches a plateau both have higher AIC than a single power law (by 3.3 and 2.2), so these data show no step and no plateau between 40~m and 1~km. In the automatic depths, the exponent is 0.61 $\pm$ 0.03 for all hollows and 0.66 $\pm$ 0.04 for hollows $\leq$ 1~km (Figure~5b of the main text); I did not use larger boxes for this fit, because most of them contain several hollows. To test whether size itself or a property of the hollow field sets depth, I compared the exponent within groups of hollows of one field measured in one image, which share pixel scale and incidence, with the exponent between the means of these groups. The exponent within groups is 0.37 $\pm$ 0.10 in the hand measurements (94 hollows in 24 groups) and 0.49 $\pm$ 0.06 in the automatic depths (422 in 121), and between groups it is 0.74 $\pm$ 0.15 and 0.84 $\pm$ 0.10. Grouping by host crater in place of field gives 0.43 and 0.49 within and 0.78 and 0.85 between groups. Depth therefore increases with size within a field, and fields of large hollows are deeper than their size alone predicts. Most of the dependence of measured depth on pixel scale reflects hollow size: at the 817 located points of \textcite{blewett2016}, the coefficient of ln pixel scale falls from 0.85 to 0.55 with the ln diameter of the detection in the regression, and their depths increase by 0.34 $\pm$ 0.04 per unit ln diameter. Figure~\ref{fig:depthsize} shows both sets of depths against diameter.
+
+The measured diameter, a regressor, also has errors, which bias the exponent low and leave part of the effect of size uncontrolled, and the intervals do not include them. Detections of the same hollow in different images at $\leq$ 20~m/pixel differ by a standard deviation of 0.30 in ln diameter (393 hollows, 941 detections), against 0.54 for the hollows with automatic depths at fixed pixel scale and incidence, a reliability of 0.68. Corrected by the method of moments, with intervals from 200 bootstrap resamples of images, the exponent of the automatic depths is 0.90 (0.82--1.00) with all of this variance and 0.73 (0.65--0.80) with half of it, which allows for real differences between outlines in different images. With the two corrections, the size-controlled poleward ratio is 1.01 (0.93--1.09) and 0.99 (0.91--1.07); the ratios of hosts of Classes~3 and 4--5 to hosts of Classes~1--2 are 0.95 (0.86--1.03) and 0.89 (0.80--0.97), and 0.98 (0.89--1.06) and 0.93 (0.85--1.01); and the temperature, nesting, and degradation-state ratios change by at most 0.05. Hollows too shallow to cast a measurable shadow also bias the fits. In 320 of the boxes (17\%) the automatic method found no shadow component, and the automatic depths omit them. Included as upper limits at the depth a shadow of 1.5 pixels would give, in a censored (Tobit) regression, they change the exponent to 0.68 (0.59--0.74) and the size-controlled poleward ratio to 0.91 (0.81--1.02), with intervals from 100 bootstrap resamples of images. Most of these boxes are not shallow hollows, however. The threshold is the minimum depth measurable in each image, so the upper limits lie at the bottom of the measured depths by construction. From the fitted relation of depth to diameter, pixel scale, and incidence and its scatter (0.54 in ln depth, or 30\% more, because the fit to measured depths is censored), hollows that followed the relation would fall below the threshold of their image in 26--70 of the boxes, against 320 observed, and in 1--3 of the 299 boxes 0.8--1.5~km across, against 52. The other boxes are probably detections that are not depressions, such as bright patches, halos, and crater walls, boxes offset from the shadow, or images with too little contrast. The censored fit therefore overstates the effect of the shallowest hollows and bounds it, and the estimates from the measured depths alone, an exponent of 0.61 and a poleward ratio of 0.98, are probably closer.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{figures/figS_depth_size_v1.png}
+    \caption{{\bf Hollow depth against hollow diameter.} (a) My hand measurements at $\leq$ 7~m/pixel, corrected to 5~m/pixel and 70$^\circ$ incidence with the coefficients of the fit. Open circles mark measurements I marked as uncertain, and triangles a shadow that fills the hollow (lower limit) and no measurable shadow (upper limit, at the minimum depth measurable in the image). The line is the fitted power law, depth $\propto D^{0.57}$. (b) The 1,558 automatic depths, corrected to 10~m/pixel and 70$^\circ$ incidence, and the 320 detections without a shadow component as upper limits, plotted at the minimum depth measurable in each image (gray triangles); most of these are probably not shallow hollows (Section~\ref{sec:depthS}). Squares are medians in diameter bins with 95\% intervals from bootstrap resamples of images. The solid line is the least-squares fit (exponent 0.61); the dashed and dotted lines have the exponents corrected for the scatter of measured diameters, with half (0.73) and all (0.90) of the variance between repeat detections.}
+    \label{fig:depthsize}
+\end{figure}
+
+\textbf{Depths of \textcite{blewett2016}.} \textcite{blewett2016} measured 2,518 hollow depths from shadow lengths in 527 images, and I took the solar incidence angle of each image from the MDIS calibrated data record index \parencite{mdis_cdr}. A shadow must be a minimum number of pixels long to be measured, so the minimum measurable depth is proportional to pixel scale divided by the tangent of the solar incidence angle $i$. I therefore regressed ln depth on inverse mean annual temperature with ln pixel scale and ln tan $i$ as controls and standard errors clustered by image. The incidence control corrects this selection only to first order.
+
+\textbf{Sublimation front.} I compare the result with a sublimation front limited by vapor diffusion through a porous lag, using elemental sulfur as a proxy for a volatile with hollow-forming properties \parencite{phillips2021}; the comparison does not assume that sulfur is the hollow-forming volatile. Such a front deepens with the square root of time and of the saturation vapor density \parencite{schorghofer2018}, so, neglecting the weak $1/T$ factor in the vapor density, ln depth falls with inverse temperature at half the slope $B$ of the vapor-pressure curve, $\ln p = A + B/T$. A least-squares fit to the six tabulated vapor pressures of sulfur, 1~Pa to 100~kPa at 375--717~K \parencite{lide2007}, gives $B = -9{,}029$~K, so the front's coefficient on $1/T$ is $-$4,514~K.
+
+\textbf{Temperature and latitude.} Modeled mean annual surface temperature at the 2,518 measured hollows spans 219--324~K. With pixel scale and solar incidence controlled, fitted depth changes 1.5-fold (1.2--2.1) across this range (Table~\ref{tab:depth}). At fixed pixel scale, measured depth falls with solar incidence, as expected from the minimum measurable depth (Table~\ref{tab:depthreg}). The temperature dependence stays small without the incidence control, equatorward of 60$^\circ$, and in images at 60--75$^\circ$ incidence, and in the last two subsets it does not differ from zero. \textcite{phillips2021} reported that hollow depth decreases toward the pole. With incidence controlled, hollows poleward of 60$^\circ$N are 0.77 (0.69--0.86) times as deep as hollows equatorward, against 0.59 (0.52--0.67) without the incidence control. Images of high-latitude hollows have higher incidence (median 75$^\circ$ at 60--75$^\circ$N and 80$^\circ$ at 75--90$^\circ$N, against 68$^\circ$ at 30--45$^\circ$N), so about half of the apparent poleward decrease is an effect of image geometry. Weighted by the number of measured hollows, the band-median temperature (Table~\ref{tab:bands}) is 290.6~K equatorward of 60$^\circ$ and 269.0~K poleward, 21.5~K apart before rounding. In my depths, hollows poleward of 60$^\circ$N are 0.93 (0.83--1.03) times as deep as hollows equatorward, and 0.98 (0.90--1.07) times with hollow size controlled (Table~\ref{tab:depthcomp}). Poleward hollows in my sample are smaller than equatorward hollows (median 363 and 485~m), and 72\% of them lie in the province at 90--150$^\circ$E, 40--70$^\circ$N. At the 817 located points of \textcite{blewett2016}, their own depths give a poleward ratio of 0.89 (0.76--1.04), and 0.95 (0.82--1.10) with the diameter of the detection that contains each point as a control. The poleward decrease is therefore smaller in other samples than in the full set of \textcite{blewett2016}, and it largely disappears once hollow size is controlled. Section~\ref{sec:sulfurS} tests whether a peak temperature at the base of the charged layer that includes the surface temperature (main text Section~4.2) is consistent with these depths.
+
+\textbf{Both sets of depths.} Table~\ref{tab:depthcomp} compares the results of the same regressions on the depths of \textcite{blewett2016} and on my automatic depths, and on mine with ln hollow diameter as a further control. Hollows were assigned to host craters as in Section~\ref{sec:pairsS}, and the color of a host crater is that of its interior (Section~\ref{sec:colorS}). My depths reproduce the small dependence on temperature, the absence of a dependence on nesting and composition, the constant median depth of host craters of all sizes, and the differences between host craters, but not the decrease toward the pole, the increase toward the hot longitudes, or the dependence on color; with hollow size controlled, hollows in hosts of different degradation states have the same depth. For individual hollows, my depths also increase weakly with host diameter, by a factor of 1.13 (1.02--1.25) per tenfold increase with hollow size controlled.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Hollow depth in the two sets of depths.} Regressions of ln depth with ln pixel scale and ln tan $i$ as controls and standard errors clustered by image; 95\% intervals, or coefficients $\pm$ one standard error. The last column adds ln hollow diameter as a control. Ratios compare the depth of the stated group with the depth of the reference group; factors are per unit of the stated variable. For the depths of \textcite{blewett2016}, the host-state and color rows also control for absolute latitude, the $\cos 2\lambda$ row gives the range of quantile regressions at the 10th--90th percentiles of depth, and the host-diameter row the slope of the medians of 87 host craters.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{2.6cm}}
+            \toprule
+            \textbf{Comparison} & \textbf{\textcite{blewett2016}} & \textbf{This study} & \textbf{This study, hollow size controlled} \\
+            \hline
+            Hollows (images) & 2,518 (527) & 1,558 (592) & 1,558 (592) \\
+            Coefficient on $1/T$ & $-$291 $\pm$ 99~K & +105 $\pm$ 91~K & +89 $\pm$ 65~K \\
+            Depth ratio, 324~K to 219~K & 1.5 (1.2--2.1) & 0.86 (0.66--1.12) & 0.88 (0.73--1.06) \\
+            Poleward of 60$^\circ$ to equatorward & 0.77 (0.69--0.86) & 0.93 (0.83--1.03) & 0.98 (0.90--1.07) \\
+            Per unit $\cos 2\lambda$, within 60$^\circ$ of the equator & 1.09--1.15 (quantiles) & 0.94 (0.83--1.06) & 0.96 (0.86--1.07) \\
+            Host diameter, per tenfold increase & 1.00 (0.84--1.20) & 1.16 (1.01--1.34) & 1.13 (1.02--1.25) \\
+            Nested to isolated hosts & 1.02 (0.92--1.14) & 0.94 (0.84--1.04) & 1.01 (0.93--1.09) \\
+            Fresh to degraded hosts & 1.02 (0.89--1.18) & 1.18 (1.00--1.40) & 1.01 (0.88--1.16) \\
+            Hosts of Class~3 to Classes~1--2 & 1.32 (1.14--1.51) & 1.21 (1.04--1.39) & 1.03 (0.90--1.17) \\
+            Hosts of Classes~4--5 to Classes~1--2 & 1.27 (1.12--1.44) & 1.30 (1.10--1.53) & 0.99 (0.85--1.15) \\
+            Hosts with vents to other hosts & 1.10 (0.96--1.28) & 1.14 (0.95--1.37) & 1.16 (1.01--1.35) \\
+            $\geq$ 50\% low-reflectance material within 10~km & 1.09 (1.00--1.20) & 0.99 (0.89--1.10) & 0.95 (0.88--1.03) \\
+            S/Si, 90th to 10th percentile & 0.97 (0.81--1.17) & 0.93 (0.77--1.14) & 1.02 (0.88--1.17) \\
+            Host interior color, per standard deviation of slope & 0.93 (0.88--0.99) & 1.02 (0.95--1.10) & 1.06 (1.01--1.12) \\
+            Between host craters, analysis of variance & $p$ = 3 $\times$ 10$^{-77}$ (87 hosts) & $p$ = 1 $\times$ 10$^{-6}$ (56 hosts) & \\
+            \hline
+        \end{tabularx}}
+    \label{tab:depthcomp}
+\end{table}
+
+\textbf{Host crater and position.} The median depth per host crater does not change with host crater size across host diameters of 5--790~km (Figure~5c of the main text; Table~\ref{tab:depth}); in my depths the slope of log depth on log diameter is 0.02 $\pm$ 0.06 (56 host craters). Within host craters $\geq$ 30~km, hollows on outer floors and lower walls are 0.87 (0.82--0.92) times as deep as hollows on inner floors, and the intervals for the center and for upper walls and rims include 1.
+
+Table~\ref{tab:depthreg} lists the regressions of ln depth, and Table~\ref{tab:bands} the median depth by band of absolute latitude; standard errors are clustered by image. I did not control for absolute latitude in the temperature regressions: with latitude fixed, little temperature variation remains, and the coefficient is $-$151 $\pm$ 195~K, so such a fit does not test the temperature dependence.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Hollow depth against temperature and setting.} Shadow-length depths of \textcite{blewett2016}, with pixel scale and solar incidence controlled unless stated; 95\% intervals, or coefficients $\pm$ one standard error, with standard errors clustered by image (by 15$^\circ$ $\times$ 15$^\circ$ tile for composition). Ratios compare the depth of the stated group with the depth of the reference group. Table~\ref{tab:depthreg} lists the other temperature and latitude regressions, and Table~\ref{tab:xrs} the composition regressions.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{4.6cm}}
+            \toprule
+            \textbf{Comparison} & \textbf{Result} \\
+            \hline
+            \multicolumn{2}{l}{\textit{Temperature (coefficient of ln depth on 1/T, in K)}} \\
+            \quad Pixel scale and incidence controlled (2,518 hollows, 527 images) & $-$291 $\pm$ 99~K ($p$ = 0.003) \\
+            \quad Fitted change in depth across 219--324~K & 1.5-fold (1.2--2.1) \\
+            \quad Diffusion-limited sulfur front & $-$4,514~K; 794-fold \\
+            \quad Poleward of 60$^\circ$ to equatorward & 0.77 (0.69--0.86) \\
+            \multicolumn{2}{l}{\textit{Host crater and region}} \\
+            \quad Host diameter 5--790~km, log$_{10}$ depth per log$_{10}$ diameter (87 craters, 1,894 hollows) & $-$0.00 $\pm$ 0.04 \\
+            \quad Province at 90--150$^\circ$E, 40--70$^\circ$N, to elsewhere at 40--70$^\circ$N & 0.99 (0.90--1.08) \\
+            \multicolumn{2}{l}{\textit{Position in host craters $\geq$ 30~km (to inner floors, 0.25--0.55 radii; crater fixed effects)}} \\
+            \quad Center, $<$ 0.25 radii & 0.92 (0.82--1.04) \\
+            \quad Outer floors and lower walls, 0.55--0.85 radii & 0.87 (0.82--0.92) \\
+            \quad Upper walls and rims, 0.85--1.1 radii & 0.89 (0.79--1.00) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:depth}
+\end{table}
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Regressions of ln depth.} $T$ is mean annual surface temperature; coefficients on $1/T$ are in K. Ratios compare hollows poleward and equatorward of 60$^\circ$.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c}
+            \toprule
+            \textbf{Model} & \textbf{Coefficient} & \textbf{$p$} & \textbf{$n$ (images)} \\
+            \hline
+            $1/T$, pixel scale controlled & $-$272 $\pm$ 126~K & 0.031 & 2,518 (527) \\
+            $1/T$, pixel scale and incidence controlled & $-$291 $\pm$ 99~K & 0.003 & 2,518 (527) \\
+            \quad incidence coefficient (per unit ln tan $i$) & $-$0.74 $\pm$ 0.05 & $<$ 0.001 & \\
+            \quad pixel-scale coefficient (per unit ln pixel scale) & 0.76 $\pm$ 0.04 & $<$ 0.001 & \\
+            $1/T$, equatorward of 60$^\circ$, pixel scale controlled & +35 $\pm$ 132~K & 0.79 & 2,306 (438) \\
+            $1/T$, equatorward of 60$^\circ$, pixel scale and incidence controlled & $-$208 $\pm$ 118~K & 0.078 & 2,306 (438) \\
+            $1/T$, images at 60--75$^\circ$ incidence, pixel scale controlled & +87 $\pm$ 131~K & 0.51 & 1,451 (303) \\
+            Absolute latitude, pixel scale controlled (per degree) & $-$0.0041 $\pm$ 0.0016 & 0.010 & 2,518 (527) \\
+            Absolute latitude, pixel scale and incidence controlled (per degree) & $-$0.0033 $\pm$ 0.0014 & 0.016 & 2,518 (527) \\
+            Poleward/equatorward ratio, pixel scale controlled & 0.59 (0.52--0.67) & & 2,518 (527) \\
+            Poleward/equatorward ratio, pixel scale and incidence controlled & 0.77 (0.69--0.86) & & 2,518 (527) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:depthreg}
+\end{table}
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Median depth by band of absolute latitude.} Depths are corrected to the median pixel scale (14.2~m) and, in the last column, also to the median solar incidence (67.6$^\circ$); 95\% intervals from 2,000 bootstrap resamples of images. Fifty-six of the hollows in the 0--30$^\circ$ band lie at 1.8--3.4$^\circ$S.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.4cm} >{\raggedright\arraybackslash}p{1.7cm} >{\raggedright\arraybackslash}p{1.2cm} >{\raggedright\arraybackslash}p{1.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+            \toprule
+            \textbf{Band} & \textbf{$n$ (images)} & \textbf{$T$ (K)} & \textbf{Incidence} & \textbf{Depth, pixel scale corrected (m)} & \textbf{Depth, pixel scale and incidence corrected (m)} \\
+            \hline
+            0--30$^\circ$ & 579 (100) & 305 & 67.5$^\circ$ & 23.8 (21.3--26.6) & 25.1 (21.7--27.4) \\
+            30--45$^\circ$ & 821 (141) & 291 & 67.6$^\circ$ & 27.5 (24.4--31.2) & 27.5 (26.0--30.1) \\
+            45--60$^\circ$ & 906 (197) & 282 & 65.4$^\circ$ & 22.3 (20.6--24.2) & 24.2 (22.3--25.6) \\
+            60--75$^\circ$ & 191 (79) & 272 & 74.9$^\circ$ & 15.5 (12.7--17.1) & 20.7 (17.7--22.5) \\
+            75--90$^\circ$ & 21 (10) & 243 & 79.9$^\circ$ & 9.6 (4.0--14.5) & 19.0 (10.3--28.5) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:bands}
+\end{table}
+
+\textbf{Composition.} \label{sec:xrsS} I sampled the MESSENGER X-Ray Spectrometer (XRS) ratio maps \parencite{nittler2020} at each depth measurement and regressed ln depth on each standardized ratio with ln pixel scale and ln tan $i$ as controls and standard errors clustered by 15$^\circ$ $\times$ 15$^\circ$ tile (Table~\ref{tab:xrs}). If depth were proportional to bulk S, it would change twofold across the 10th--90th percentile range of S/Si; the 95\% interval excludes that change. At these sites the median map footprint is 322--579~km, depending on the ratio. Across the 10th--90th percentile range of the S/Si, Mg/Si, Ca/Si, and Al/Si ratios at the measured hollows, depth changes by at most 11\%, and every interval includes no change. Depth falls by 25\% across the range of Fe/Si, but the Fe/Si map covers only 736 of the measurements, and with five ratios tested the result does not pass a Bonferroni threshold of $p$ = 0.01. Coverage of the northern hemisphere, where most measured hollows lie, is incomplete: the S/Si and Ca/Si maps cover 39\% of the surface at 60--90$^\circ$N and 64\% at 30--60$^\circ$N, and the Fe/Si map 8\% and 22\%, whereas the Mg/Si and Al/Si maps cover the whole surface. With these maps I can therefore test the dependence of depth on composition only at regional scale. My depths give the same result (Table~\ref{tab:depthcomp}).
+
+\textbf{Low-reflectance material.} I sampled the global map of concentrated low-reflectance material of \textcite{klima2018}, a simple cylindrical grid at 8.3 pixels per degree, within 10~km of each depth measurement. The median measurement has 12\% of this area mapped as concentrated low-reflectance material, and 26\% of the measurements have at least half. With ln pixel scale, ln tan $i$, and the poleward indicator as controls and standard errors clustered by image, hollows with at least half of the surrounding area mapped as low-reflectance material are 1.09 (1.00--1.20) times as deep as other hollows, and depth changes by a factor of 1.17 (1.03--1.34; $p$ = 0.02) from no mapped low-reflectance material to complete coverage. In my depths, hollows with at least half of the surrounding area mapped as low-reflectance material are 0.99 (0.89--1.10) times as deep as other hollows (Table~\ref{tab:depthcomp}).
+
+\textbf{Color.} \label{sec:colorS} I used the global eight-filter color map of MDIS \parencite{mdis_mdr}, which gives reflectance in the wide-angle camera filters at 430, 480, 560, 630, 750, 830, 900, and 1,000~nm, photometrically normalized to an incidence angle of 30$^\circ$, an emission angle of 0$^\circ$, and a phase angle of 30$^\circ$, at 64 pixels per degree \parencite{denevi2018}. For each crater I took the median reflectance in each filter of the pixels within 0.9 radii of its center, and for each depth measurement the median of the pixels within 10~km. Hollows and their halos are bright and have shallow (blue) spectral slopes \parencite{blewettMultispectralImagesMercury2009}, so I excluded pixels within 1~km plus half the equivalent diameter, with the diameter capped at 5~km, of each of the 6,363 cataloged hollows, and within 1~km of each depth measurement. I kept pixels with positive reflectance in every filter, reflectance $\geq$ 0.035 at 750~nm, a 430/750~nm ratio of 0.40--0.85, and a 1,000/750~nm ratio of 0.95--1.60. To remove brightness, I divided each spectrum by its geometric mean over the eight filters and took the logarithm. I then found the principal components of these spectra for the 31,412 craters with at least 20 valid pixels, 99.5\% of the craters (Figure~\ref{fig:color}a). The first component accounts for 88\% of the variance and correlates with ln($R_{750}/R_{430}$) at $r$ = 0.93, so it measures the spectral slope; positive values are redder. The second accounts for 5\% and is a concave-up curvature with its low at 630~nm, within the 600~nm band whose depth \textcite{klima2018} relate to the carbon content of low-reflectance material. Across craters, the second component correlates with the fraction of the crater mapped as concentrated low-reflectance material at Spearman $\rho$ = 0.23, and the first at $\rho$ = $-$0.22. The slope increases poleward ($\rho$ = 0.29 across craters; Figure~\ref{fig:color}c), possibly in part because the photometric normalization is less reliable at high incidence and emission angles \parencite{domingueMercurysGlobalColor2015}, so every regression below includes latitude.
+
+With ln pixel scale, ln tan $i$, and absolute latitude as controls and standard errors clustered by image, depth changes by a factor of 0.90 (0.86--0.94) per standard deviation of the slope of the surroundings and 1.01 (0.97--1.06) per standard deviation of the curvature (Figure~\ref{fig:color}b). The slope factor is 0.92 (0.88--0.96) with the poleward indicator in place of absolute latitude, 0.91 (0.87--0.94) without a latitude control, 0.90 (0.86--0.94) within 60$^\circ$ of the equator, 0.89 with the geometric-mean reflectance also controlled, and 0.84 with 10$^\circ$ latitude bands. Across the 10th--90th percentile range of the slope, 2.4 standard deviations, fitted depth changes by a factor of 0.78--0.82. The slope of the surroundings correlates with absolute latitude at $\rho$ = 0.65 and with the fraction of low-reflectance material within 10~km at $\rho$ = $-$0.46. With that fraction and the poleward indicator in the regression, depth changes by a factor of 0.93 (0.89--0.97) per standard deviation of the slope and 1.08 (0.91--1.28) from no low-reflectance material to complete coverage. Masking removes a median of 17\% of the pixels within 10~km of a measured hollow, and at 76\% of the measurements the unmasked surroundings are bluer than the masked surroundings, so hollow material affects the measured color of the surroundings, and I cannot exclude that halos extending beyond the mask make the surroundings of large or deep hollows bluer. My depths do not show the dependence on color. With the color of the host crater's interior, which I computed for every crater, depth changes by a factor of 0.93 (0.88--0.99) per standard deviation of the slope in the depths of \textcite{blewett2016} and 1.02 (0.95--1.10) in mine, or 1.06 (1.01--1.12) with hollow size controlled (Table~\ref{tab:depthcomp}).
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{figures/figS7_color_v1_v3cat.png}
+    \caption{{\bf Color of crater interiors and hollow surroundings in the MDIS eight-filter map.} (a) Loadings of the first three principal components of the brightness-normalized spectra (each divided by its geometric mean) of 31,412 crater interiors with hollows masked. The shaded band marks the 630~nm filter, within the 600~nm band of \textcite{klima2018}. (b) Depth of the 2,518 hollows measured by \textcite{blewett2016} against the first component (slope) of the surroundings within 10~km, in quintiles, corrected for pixel scale, solar incidence, and absolute latitude and divided by the median, with 95\% intervals from 1,000 bootstrap resamples of images. The dashed line is the fitted trend: depth decreases by a factor of 0.90 for each standard deviation toward redder surroundings. (c) Slope of each crater interior; symbol size increases with crater diameter, and circles mark the 442 host craters.}
+    \label{fig:color}
+\end{figure}
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Hollow depth against X-ray elemental ratios.} The depth ratio compares the 90th and 10th percentiles of each ratio at the measured hollows, with 95\% intervals from standard errors clustered by 15$^\circ$ $\times$ 15$^\circ$ tile.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.2cm} >{\raggedright\arraybackslash}p{2.0cm} >{\raggedright\arraybackslash}p{1.0cm} >{\raggedright\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}p{2.0cm} >{\raggedright\arraybackslash}X}
+            \toprule
+            \textbf{Ratio} & \textbf{$n$ (images)} & \textbf{Tiles} & \textbf{10th--90th percentile} & \textbf{Median footprint (km)} & \textbf{Depth ratio (95\% interval)} \\
+            \hline
+            S/Si & 1,623 (335) & 57 & 0.056--0.113 & 455 & 0.97 (0.81--1.17) \\
+            Mg/Si & 2,518 (527) & 71 & 0.32--0.66 & 322 & 1.02 (0.89--1.16) \\
+            Ca/Si & 1,613 (329) & 55 & 0.12--0.23 & 444 & 1.02 (0.84--1.24) \\
+            Al/Si & 2,518 (527) & 71 & 0.18--0.29 & 346 & 1.11 (0.94--1.31) \\
+            Fe/Si & 736 (160) & 32 & 0.027--0.069 & 579 & 0.75 (0.59--0.95) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:xrs}
+\end{table}
+
+\clearpage
+
+\section{Depth correlation between hollows}
+\label{sec:pairsS}
+
+Hollow depths are similar within individual host craters \parencite{vaughan2012,blewett2013,thomas2014}. I assigned depths to host craters as in Section~\ref{sec:hostsS} and measured the correlation of log$_{10}$ depth, corrected for pixel scale and solar incidence, between pairs of measurements as a function of their separation, separately for pairs in the same image and in different images (Table~\ref{tab:paircorr}).
+
+Pairs of measurements less than 0.2~km apart in different images have correlated depths ($r$ = 0.69). In overlapping images finer than 20~m/pixel, which contain most of the depth measurements (median 14.2~m/pixel), matched detections of the same hollow are offset on the map by a median of 0.11~km (Table~\ref{tab:positions}), so pairs this close probably include many repeat measurements of the same hollow. The correlation therefore limits the scatter of a single measurement to 0.108 in log$_{10}$ depth, or about 28\%. Measurements of different hollows in the same host crater, made in different images, correlate at only $r$ = 0.06--0.36 out to 20~km, and pairs in different host craters more than 2~km apart have uncorrelated depths. Pairs measured in the same image correlate more strongly at every separation, so errors shared within an image add to the correlation. Median depth differs between the 87 host craters with at least three measured hollows (analysis of variance, $F$ = 8.0, $p$ = 3 $\times$ 10$^{-77}$), but host-crater membership explains only 28\% of the variance of corrected depth, and image membership explains 62\%. In my automatic depths, median depth also differs between the 56 host craters with at least three measured hollows ($F$ = 2.25, $p$ = 1 $\times$ 10$^{-6}$). Depth is therefore set at the scale of a host crater or smaller. Within a hollow field, depth increases with hollow size (Section~\ref{sec:depthS}). The median depths of host craters have no regional pattern: craters $<$ 600~km apart are no more alike in depth than distant craters ($r$ = 0.01), and the semivariance of crater-median depth does not rise with separation from 0--300~km to 4,000--8,000~km (permutation $p \geq$ 0.10 in every distance band).
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Correlation of hollow depth between pairs of measurements.} Pearson correlation of log$_{10}$ depth, corrected for pixel scale and solar incidence, between pairs of measurements, by the distance between the two hollows and by whether the two measurements come from the same image and the same host crater.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+            \toprule
+            \textbf{Distance between hollows} & \textbf{Different images, same host crater} & \textbf{Different images, different host craters} & \textbf{Same image} \\
+            \hline
+            $<$ 0.2~km & \multicolumn{2}{l}{0.69 (all pairs from different images)} & 0.70 \\
+            0--0.5~km & 0.36 & 0.57 & 0.67 \\
+            0.5--2~km & 0.18 & 0.32 & 0.50 \\
+            2--5~km & 0.06 & $-$0.01 & 0.40 \\
+            5--10~km & 0.16 & $-$0.06 & 0.35 \\
+            10--20~km & 0.19 & $-$0.07 & 0.25 \\
+            20--60~km & 0.06 & 0.05 & -- \\
+            \hline
+        \end{tabularx}}
+    \label{tab:paircorr}
+\end{table}
+
+\clearpage
+
+\section{Host-crater degradation state}
+\label{sec:hostageS}
+
+I used the 4,216 craters $\geq$ 10~km with a degradation state in the catalog of \textcite{herrick2018}, who classified unfilled craters $>$ 10~km by preservation as fresh (f), standard (s), or degraded (d), and assigned hollows to host craters as in Section~\ref{sec:hostsS}. Odds ratios of hosting come from logistic regressions on degradation state, log$_{10}$ diameter, and absolute latitude. Odds ratios per 10~K of $\Delta T_\mathrm{w}$ (Section~\ref{sec:hostsS}) come from separate regressions within each state for craters within 60$^\circ$ of the equator. Depth ratios come from a regression of corrected ln depth (Section~\ref{sec:pairsS}) on degradation state and absolute latitude, with standard errors clustered by image.
+
+Fresh craters have 4.9 (3.3--7.2) times the odds of degraded craters of hosting hollows, and standard craters 1.9 (1.4--2.6) times, at fixed diameter and latitude (Table~\ref{tab:hostage}). The rise in hosting with $\Delta T_\mathrm{w}$ does not differ between states: the odds rise 1.27 (1.06--1.52), 1.23 (1.04--1.44), and 1.31 (0.99--1.74) times per 10~K of $\Delta T_\mathrm{w}$ in degraded, standard, and fresh craters (interaction $p$ = 0.65 and 0.88). Hollows in fresh hosts are 1.02 (0.89--1.18) times as deep as hollows in degraded hosts, and hollows in standard hosts are 0.95 (0.83--1.09) times as deep (1,531 hollows in 62 craters). In my depths, hollows in fresh hosts are 1.18 (1.00--1.40) times as deep as hollows in degraded hosts, and 1.01 (0.88--1.16) times with ln hollow diameter as a control (660 hollows in 38 craters).
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Hollow hosting and depth by host-crater degradation state.} 95\% intervals in parentheses. The depth columns give hollows and host craters with measured depths.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.3cm} >{\raggedright\arraybackslash}p{1.3cm} >{\raggedright\arraybackslash}p{1.0cm} >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.2cm}}
+            \toprule
+            \textbf{State} & \textbf{Craters} & \textbf{Hosts} & \textbf{Odds ratio of hosting} & \textbf{Odds ratio per 10~K of $\Delta T_\mathrm{w}$ (hosts)} & \textbf{Depth ratio (hollows/craters)} \\
+            \hline
+            Degraded (d) & 1,736 & 97 & 1 (reference) & 1.27 (1.06--1.52; 89) & 1 (reference; 645/22) \\
+            Standard (s) & 2,230 & 125 & 1.94 (1.44--2.62) & 1.23 (1.04--1.44; 120) & 0.95 (0.83--1.09; 464/23) \\
+            Fresh (f) & 250 & 54 & 4.87 (3.27--7.24) & 1.31 (0.99--1.74; 49) & 1.02 (0.89--1.18; 422/17) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:hostage}
+\end{table}
+
+\textbf{Classes of \textcite{kinczykMorphologicalEvaluationCrater2020}.} \textcite{kinczykMorphologicalEvaluationCrater2020} classified all craters $\geq$ 40~km on Mercury into five classes, from Class~1 (discontinuous rims rising only slightly above the surrounding terrain, no ejecta, and no central peak) to Class~5 (crisp rims and bright rays extending several radii), and listed craters buried by lava separately as ghost craters. Their released table lists 3,253 craters. Codes 1--5 hold 1,048, 1,300, 521, 219, and 22 craters and reproduce every column of their Table~2. Code 6 holds 140 craters that the paper does not number, probably its ghost craters, and code 0 holds three that it does not describe; I used neither. I matched each crater one to one to the crater of \textcite{herrick2018} with the closest center within one radius and a diameter ratio of 0.67--1.5, which matches 3,051 craters with a median offset of 0.12 radius and diameter ratios of 0.90--1.12 (5th--95th percentiles). Of the craters in the containment tests, 2,968 have a class from 1 to 5 (231 hosts, with hosting as in Section~\ref{sec:dagS}), and 2,069 of these are craters that \textcite{herrick2018} classed as filled. Odds ratios of hosting come from logistic regressions on class, log$_{10}$ diameter, and absolute latitude, as for the states of \textcite{herrick2018}. Restricting the match to offsets $\leq$ 0.3 radius leaves the odds ratio per class unchanged (2.89; 2.48--3.37).
+
+The odds of hosting rise 2.9 (2.5--3.4) times per class, and 2.5 (2.2--3.0) times with completeness as a control (Table~\ref{tab:kinczyk}). With completeness as a control, separate odds ratios for each class fit better than one factor per class (likelihood-ratio $p$ = 0.018), because the odds rise less from Class~4 to Class~5 than between the other classes. Among the craters that \textcite{herrick2018} classed as filled, the odds of hosting rise 2.2 (1.5--3.2) times per class from Class~1 to Class~3 (29 of 933, 43 of 1,035, and 12 of 97 craters host hollows).
+
+For depth, I assigned each measured hollow to the smallest crater $\geq$ 5~km whose 1.1 radii contain it and regressed ln depth on class (Classes~1--2, 3, and 4--5), ln pixel scale, ln tan $i$, and absolute latitude, with standard errors clustered by image. Hollows in hosts of Classes~3 and 4--5 are 1.32 (1.14--1.51) and 1.27 (1.12--1.44) times as deep as hollows in hosts of Classes~1--2 (1,484 hollows in 80 hosts), and 1.32 (1.13--1.53) and 1.27 (1.05--1.54) with standard errors clustered by host. Of the 41 hosts of Classes~1--2, 36 are craters that \textcite{herrick2018} classed as filled. Without the filled hosts, which leaves 5 degraded hosts of Class~2 (57 hollows) as the reference, the ratios are 1.25 (1.02--1.54) and 1.23 (1.02--1.48). On the same hollows, hollows in fresh, degraded, and standard hosts of \textcite{herrick2018} are 1.23 (1.05--1.45), 1.16 (1.00--1.35), and 0.92 (0.79--1.08) times as deep as hollows in filled hosts, and 1.23 (0.96--1.58), 1.16 (0.94--1.43), and 0.92 (0.72--1.18) with standard errors clustered by host. In my depths (876 hollows in 85 hosts), hollows in hosts of Classes~3 and 4--5 are 1.21 (1.04--1.39) and 1.30 (1.10--1.53) times as deep as hollows in hosts of Classes~1--2, but the hollows in hosts of Classes~1--2 are smaller: their median diameters are 340, 529, and 625~m in hosts of Classes~1--2, 3, and 4--5 (137, 320, and 419 hollows in 44, 16, and 25 hosts). With ln hollow diameter as a control, the ratios are 1.03 (0.90--1.17) and 0.99 (0.85--1.15), so hollows of a given size are as deep in the most degraded hosts as in the others. With stage labels from images at solar incidence below 70$^\circ$ (Section~\ref{sec:insolationS}), Stage 1 hollows lie in 7, 22, and 40 host craters of Classes~1, 2, and 3, and in 35 and 4 host craters of Classes~4 and 5.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Hollow hosting by the degradation class of \textcite{kinczykMorphologicalEvaluationCrater2020}.} Craters $\geq$ 40~km in the containment tests with a class from 1 (most degraded) to 5 (fresh, with rays). Odds ratios of hosting against Class~1, from logistic regressions with log$_{10}$ diameter and absolute latitude as controls, and with completeness added; 95\% intervals in parentheses.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c >{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}p{3.0cm}}
+            \toprule
+            \textbf{Class} & \textbf{Craters} & \textbf{Hosts} & \textbf{Hosting} & \textbf{Odds ratio} & \textbf{With completeness} \\
+            \hline
+            1 & 935 & 29 & 3.1\% & 1 (reference) & 1 (reference) \\
+            2 & 1,281 & 61 & 4.8\% & 2.3 (1.4--3.8) & 2.1 (1.3--3.5) \\
+            3 & 515 & 76 & 15\% & 10.0 (6.0--16.5) & 9.2 (5.5--15.5) \\
+            4 & 215 & 57 & 27\% & 22 (13--38) & 15 (8--26) \\
+            5 & 22 & 8 & 36\% & 39 (14--107) & 18 (5--59) \\
+            Per class & 2,968 & 231 & & 2.9 (2.5--3.4) & 2.5 (2.2--3.0) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:kinczyk}
+\end{table}
+
+\clearpage
+
+\section{Timescales of the life cycle}
+\label{sec:timescalesS}
+
+Table~\ref{tab:timescales} lists the timescale of each step of the life cycle in Figure~7 and Section~4.1 of the main text. I use the degradation stages of \textcite{deutsch2025}: Stage 1 hollows are bright and sharp, Stage 2 hollows are sharp but no longer bright, and Stage 3 hollows are softened and dark.
+
+\textbf{Charging and activity.} Heat conducts out of the hot zone beneath a crater in 10$^3$--10$^6$~yr (Section~3.6 of the main text). If the charged layer collapses within that time, as I propose (Section~\ref{sec:sulfurS}), hollows begin to form during charging, yet hollow floors are $\leq$ $\sim$10$^5$~yr old \parencite{wang2020} in host craters more than 10$^8$~yr old, so scarps and floors are renewed long after charging. Scarps retreat at $\geq$ 1~cm per 10$^4$~yr \parencite{blewett2016}, so a hollow 300~m wide forms within 3 $\times$ 10$^8$~yr, or within $\sim$10$^5$~yr if the crater-retention age of hollow floors (from the density of superposed small craters) dates their growth \parencite{wang2020}.
+
+\textbf{Floor renewal.} Hollow floors have a crater-retention age of $\leq$ 103 (+200, $-$96)~kyr, set by a single probable crater $\sim$28~m across \parencite{wang2020}. If that age dated whole hollows, their average depth of 24~m would imply vertical growth faster than 0.23~mm per yr \parencite{wang2020}. If the depth instead forms by collapse during charging, as I propose, the age dates the renewal of the floor surface by small impacts that breach the sulfur-free residue and by scarp retreat, because a flat floor is lowered by daily cycling by only 1--15~cm before the residue is thicker than the layer that crosses 368~K each day (Section~\ref{sec:sulfurS}).
+
+\textbf{Dormancy.} Hollows in Dominici crater appear to have stopped deepening at a silicate-dominated residue \parencite{emran2025}. Stage 1 and Stage 2 hollows have similar sizes, so hollows darken after they reach full size \parencite{deutsch2025}. If the population is in steady state and both stages are detected equally well, the 1,111 Stage 2 and 1,545 Stage 1 hollows imply that dormancy lasts 0.7 times as long as activity. Halos that fade as crater rays do should fade within $\sim$280~Myr, the age beyond which rays on Mercury are no longer visible \parencite{banks2017}.
+
+\textbf{Fossilization.} By topographic diffusion, the relief of features the size of hollows decreases by only 0.4--2.7~m per Gyr \parencite{phillips2021}, yet Stage 3 hollows are rare, 10 of 2,666 classified hollows \parencite{deutsch2025}. Their rarity implies faster infilling, frequent return to activity, or a bias against detecting hollows without halos. In images at solar incidence $<$ 35$^\circ$, \textcite{deutsch2025} identified only Stage 1 hollows, so observation geometry affects the identification of Stage 2 and 3 hollows.
+
+{\renewcommand{\arraystretch}{1.3}\setlength{\LTcapwidth}{\textwidth}\scriptsize
+        \begin{xltabular}{\textwidth}{>{\raggedright\arraybackslash}p{1.9cm} >{\raggedright\arraybackslash}p{4.0cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.4cm}}
+            \caption{{\bf Timescale estimates for the steps of the life cycle in Figure~7 of the main text.} Stages are the degradation stages of \textcite{deutsch2025}; $\phi$ is the volume fraction lost on collapse (Section~\ref{sec:sulfurS}).}
+            \label{tab:timescales} \\
+            \toprule
+            \textbf{Step} & \textbf{Quantity} & \textbf{Estimate and basis} & \textbf{Source} \\
+            \hline
+            \endfirsthead
+            \multicolumn{4}{l}{\small\sffamily\textbf{Table~\thetable} (continued)} \\
+            \toprule
+            \textbf{Step} & \textbf{Quantity} & \textbf{Estimate and basis} & \textbf{Source} \\
+            \hline
+            \endhead
+            Source & Burial of the older crust by the northern smooth plains & $\geq$ 2.5~Gyr ago (3.7~Gyr in one chronology), from crater model ages & \textcite{ostrach2015} \\
+            Charging and collapse & Excavation and uplift & Minutes, from impact mechanics & \textcite{melosh1989} \\
+            Charging and collapse & Duration of impact heat beneath the crater & 10$^3$--10$^6$~yr by conduction from hot zones 0.2--5~km thick, and in conductive models of craters 20--200~km across; 1.5 to $\geq$ 8~Myr for the water-driven hydrothermal system of the 200~km Chicxulub crater on Earth & This work; \textcite{abramov2005,abramov2007,kring2020,pickersgill2026} \\
+            Charging and collapse & Transport of S$_2$ to cool regolith & Single molecules cross 100~m of fractured rock in 0.6~days to 50~yr, heat in $\sim$300~yr; the front of regolith filled with sulfur advances 8--110 times more slowly than heat & This work (Section~\ref{sec:sulfurS}) \\
+            Charging and collapse & Delivery of sulfur from FeS & $\geq$ 4 $\times$ 10$^4$~yr for 100~m of regolith containing 5~vol\% sulfur & This work (Section~\ref{sec:sulfurS}) \\
+            Charging and collapse & Collapse of the charged layer while hot (proposed) & Within the time the crater stays hot, while the base is at 820--1,050~K, as vapor escapes and the porous regolith compacts; not yet modeled & This work (Section~\ref{sec:sulfurS}) \\
+            Charging and collapse & Thickness of the charged layer beneath a 24--28~m hollow & 60--70~m ($\phi$ = 0.4), 120--140~m (0.2), or 240--280~m (0.1), with the base at 820--1,050~K, from the vapor pressure of sulfur and $h = \phi d$ & This work (Section~4.2 of the main text; Section~\ref{sec:sulfurS}) \\
+            Storage & Loss of sulfur beneath a refractory lag & Slowed to 3.3--6.4~m per Gyr, the rate below which hollows are effectively inactive, beneath a lag 0.13~m (71$^\circ$N) to 15~m (equator) thick & \textcite{phillips2021} \\
+            Storage to activity & Age of craters that host hollows & $<$ 0.3~Gyr (rayed Balanchine) to $>$ 1.7~Gyr (Calorian basins), from stratigraphic ages & \textcite{blewett2013,blewett2016,banks2017} \\
+            Activity & Delay between impact and present activity & Up to $>$ 10$^8$~yr, from host ages compared with the $\leq$ $\sim$10$^5$~yr crater-retention age of hollow floors & \textcite{wang2020}; this work \\
+            Activity & Daily temperature cycles & 2.1 $\times$ 10$^9$ per Gyr, one per Mercury solar day of 176 Earth days & This work \\
+            Activity & New bright patches during the MESSENGER orbital mission & 20 changes within 5--23 months each; 1 of 19 patches lies within 2~km of a cataloged hollow, compared with 0.04 expected by chance & \textcite{speyerer2022}; this work \\
+            Activity (Stage 1) & Lateral scarp retreat & $\geq$ 1~cm per 10$^4$~yr (Balanchine); $\geq$ 1~cm per 7 $\times$ 10$^4$~yr (Raditladi), from hollow width and host age & \textcite{blewett2011,blewett2016} \\
+            Activity (Stage 1) & Crater-retention age of hollow floors & $\leq$ 103 (+200, $-$96)~kyr & \textcite{wang2020} \\
+            Activity (Stage 1) & Vertical growth if the floor age dated whole hollows & $>$ 0.23~mm per yr, or 0.11~mm per Mercury solar day & \textcite{wang2020} \\
+            Activity (Stage 1) & Floor lowering before the residue is thicker than the layer crossing 368~K daily & 1--15~cm for $\phi$ = 0.1--0.4 & This work (Section~\ref{sec:sulfurS}) \\
+            Activity (Stage 1) & Time to widen to $\sim$300~m & 10$^5$--3 $\times$ 10$^8$~yr, from the scarp-retreat and crater-retention rows & This work \\
+            Activity (Stage 1) & Depth & 24--28~m equatorward of 60$^\circ$ in the depths of \textcite{blewett2016}; increases with hollow size & This work (Section~\ref{sec:depthS}) \\
+            Dormancy (Stage 2) & Duration relative to activity & $\sim$0.7, from 1,111 Stage 2 and 1,545 Stage 1 hollows, if the population is in steady state & \textcite{deutsch2025}; this work \\
+            Dormancy (Stage 2) & Fading of bright halos & $\leq$ $\sim$280~Myr, the age beyond which crater rays are not visible & \textcite{banks2017} \\
+            Fossilization (Stage 3) & Erasure of 20--30~m of relief by topographic diffusion & $>$ 4~Gyr, from diffusive lowering of 0.4--2.7~m per Gyr & \textcite{phillips2021} \\
+            Fossilization (Stage 3) & Observed abundance & 10 of 2,666 classified hollows & \textcite{deutsch2025} \\
+            \hline
+        \end{xltabular}}
+
+\clearpage
+
+\section{Sulfur release, vapor pressure, and the depth of the charged layer}
+\label{sec:sulfurS}
+
+In the model (Section~4.1 of the main text), the base of the charged layer lies where the vapor pressure of sulfur at the peak temperature, the base temperature $T_\mathrm{base}$, equals the overburden pressure, and $\phi$ is the fraction of the layer's volume lost on collapse.
+
+\textbf{Sulfur release from sulfides.} In equilibrium with iron metal, the S$_2$ pressure over FeS follows from the reaction Fe + $\tfrac{1}{2}$S$_2$ = FeS. I computed it as $p_{\mathrm{S_2}} = \exp(2\Delta_{\mathrm{f}}G/RT)$ from the free energy of formation of troilite in the NIST-JANAF tables \parencite{janaf_fe025}, which take S$_2$ gas as the reference state of sulfur above 882~K. The S$_2$ pressure over FeS reaches 0.1~Pa at 1,344~K and 1~Pa at 1,471~K, interpolated across the change from solid to liquid FeS (Table~\ref{tab:sulfur}). An estimate from standard enthalpies and entropies at 298~K, with heat-capacity changes neglected, gives 1,186~K for 0.1~Pa, 158~K lower. For MgS and CaS I have only such 298~K estimates \parencite{lide2007}: their S$_2$ pressure reaches 0.1~Pa at 1,470--2,590~K, and by comparison with FeS these temperatures may be too low by a similar amount. Where its vapor can escape, FeS loses sulfur below these temperatures; in experiments at 1,073--1,243~K in H$_2$-rich gas, troilite lost its sulfur as H$_2$S, or as S$_2$ and HS \parencite{tachibana1998}.
+
+\textbf{Silica as the oxidant.} Ca and Mg sulfides also release S$_2$ where silica is reduced to SiO or SiS gas in place of iron. I computed the equilibrium S$_2$ pressure over the pure condensed phases from the thermodynamic data of \textcite{mcbride2002}, with the two gases released in their stoichiometric ratio. For MgS + SiO$_2$ $\rightarrow$ MgO + SiO(g) + $\tfrac{1}{2}$S$_2$(g), the S$_2$ pressure is 0.96~Pa at 1,600~K, 26~Pa at 1,800~K, 350~Pa at 2,000~K, and 7.0~kPa at 2,300~K. For the corresponding reaction of CaS, it is 0.015, 0.68, 14, and 460~Pa. With the same data, the S$_2$ pressure over FeS is 44~Pa at 1,800~K and 2.3~kPa at 2,300~K. Silicon can also leave as SiS: for 2MgS + SiO$_2$ $\rightarrow$ 2MgO + SiS(g) + $\tfrac{1}{2}$S$_2$(g), the S$_2$ pressure is 4.2~Pa at 1,600~K and 87~Pa at 1,800~K, and for MgS + 2SiO$_2$ $\rightarrow$ MgSiO$_3$ + SiO(g) + $\tfrac{1}{2}$S$_2$(g), which forms enstatite in place of MgO, it is 4.9~Pa at 1,600~K and about 100~Pa at 1,800~K, so the pressures for MgO as the product are lower limits. For CaS, the reaction that forms SiS releases less sulfur than the one that forms SiO (0.059 against 0.68~Pa at 1,800~K). As the gas cools, SiO condenses as silica and silicon: over SiO$_2$ + Si, the SiO pressure is 0.76~Pa at 1,300~K and 52~Pa at 1,500~K, so SiO at 1--50~Pa condenses at 1,300--1,500~K. Over condensed sulfur, the S$_2$ pressure is 0.8~Pa at 500~K and 84~Pa at 600~K, so S$_2$ at the same pressures condenses at about 500--600~K, far from the hot rock in which the silica condenses.
+
+\textbf{Condensation.} The lowest tabulated vapor pressure of sulfur is 1~Pa at 375~K \parencite{lide2007}. Extrapolated with slopes of 9,029~K (the fit to the six tabulated values) and 10,684~K (the two lowest values), sulfur vapor at 0.1~Pa condenses below 342--347~K. Below about 1,470~K, the S$_2$ pressure of the vapor released by FeS is less than 1~Pa, so it can condense as native sulfur only where the regolith is cooler than about 340--375~K. These temperatures are upper limits, because S$_2$ polymerizes to larger molecules on cooling. At the base of the charged layer, the vapor pressure of sulfur equals the overburden pressure, 0.4--3.1~MPa (Table~\ref{tab:sulfur}), more than 10$^5$ times the S$_2$ pressure of FeS, so native sulfur at the base condensed in cool regolith and was heated to 820--1,050~K after it arrived.
+
+\textbf{Vapor transport and heating.} At 1,000~K, S$_2$ molecules move at a mean speed $\bar{v}$ of 575~m~s$^{-1}$, and their mean free path at 1~Pa, $\sim$2~cm for a molecular diameter of 0.4~nm, exceeds the width of most fractures. They therefore diffuse mainly by collisions with fracture walls (Knudsen diffusion), with a coefficient $D_K \approx a\bar{v}/3$ for aperture $a$: 0.0019~m$^2$~s$^{-1}$ for $a$ = 10~$\mu$m and 0.19~m$^2$~s$^{-1}$ for $a$ = 1~mm. They cross 100~m of a single fracture in 0.6--60 days, and 100~m of rock in which such fractures make up 1\% of the volume, with a tortuosity of 3, in 0.5--50~yr. Heat conducts across 100~m in 317~yr ($\kappa$ = 10$^{-6}$~m$^2$~s$^{-1}$). Single molecules therefore move faster than heat, but bulk sulfur does not (next paragraph).
+
+\textbf{Sulfur delivery.} Diffusion at these pressures transports little sulfur. The flux through rock with fracture porosity $\epsilon$ and tortuosity $\tau$ is $J = (\epsilon/\tau) D_K M \Delta p/(R T L)$, with $M$ the molar mass of S$_2$, $\Delta p$ the S$_2$ pressure at the source, and $L$ the distance. For $a$ = 1~mm, $T$ = 1,000~K, and $L$ = 100~m, delivering 1.0 $\times$ 10$^4$~kg~m$^{-2}$ of sulfur, the native sulfur in 100~m of regolith that contains 5~vol\% sulfur (2,070~kg~m$^{-3}$), takes 4.1 $\times$ 10$^4$~yr for $\epsilon/\tau$ = 0.1 and $\Delta p$ = 5.4~Pa (FeS at 1,600~K), 2.2 $\times$ 10$^5$~yr for $\epsilon/\tau$ = 0.1 and 1~Pa, and 7.4 $\times$ 10$^6$~yr for $\epsilon/\tau$ = 0.003 and 1~Pa. These times exceed the time a hot zone thinner than about 1~km stays hot (Section~\ref{sec:timescalesS}), so charging with sulfur released from FeS may occur mainly beneath large craters. Native sulfur already in the regolith, such as the charged layer of an older crater, has a much higher vapor pressure, 0.57~kPa at 500~K, and a later impact heats it in place. Filling regolith with sulfur is a diffusion problem like heating it, so both fronts advance as the square root of time. For regolith that contains 5~vol\% sulfur and fractures 1~mm wide, the heat front lies 8 times farther out than the sulfur front for $\epsilon/\tau$ = 0.1 and 5.4~Pa, 19 times for 0.1 and 1~Pa, and 110 times for 0.003 and 1~Pa. Sulfur that an impact releases from FeS therefore condenses beyond the heated regolith or in regolith that has passed its peak temperature, and native sulfur reaches the high temperatures of the base only where it was in place before the heat arrived.
+
+\textbf{Sulfur phases and loss at the surface.} The triple point of monoclinic sulfur, liquid, and vapor lies at 393~K and 2.4~Pa, and that of orthorhombic sulfur, monoclinic sulfur, and vapor at 368.7~K and 0.50~Pa \parencite{steudel2003}. At 298~K, monoclinic sulfur occupies 2.9\% more volume than orthorhombic sulfur (densities 2.008 and 2.066~g~cm$^{-3}$; \cite{steudel2003}), the 368~K expansion of the activity step. On sunlit ground, native sulfur loses 1~mm in about 2 days at 300~K and in about 90~s at 400~K, from the Hertz--Knudsen flux of S$_8$ vapor at the vapor pressure of the fit to the tabulated values, so it cannot persist at the surface.
+
+\textbf{Vapor pressure and the depth of the base.} For the vapor pressure of native sulfur above its normal boiling point, I anchored the Clausius--Clapeyron relation, ln $p$ = const $- B/T$, at the boiling point, 717.8~K and 0.101~MPa, with slopes $B$ of 7,750~K, fitted to the tabulated vapor pressures at 591--717~K, and 8,420~K, the chord from the boiling point to the critical point at 1,314~K and 20.7~MPa \parencite{lide2007}. The fit ln $p$ = 24.41 $-$ 9,029/$T$ used for sublimation fronts at 200--330~K (Section~\ref{sec:depthS}) overestimates the vapor pressure by about 1.5 times above 750~K and is not used here. The base of the native-sulfur layer lies at $d = P_{\mathrm{S}}(T)/(\rho g)$, with $g$ = 3.70~m~s$^{-2}$ and $\rho$ = 2,000--3,000~kg~m$^{-3}$, the bulk density of the column, rock included. This limit assumes cohesionless or pervasively fractured regolith. In regolith with tensile strength $\sigma_T$, pores remain sealed up to a vapor pressure of $\rho g z + \sigma_T$ at depth $z$, so the base lies deeper by $\sigma_T/(\rho g)$, or 45--68~m per 0.5~MPa. Because $P = \rho g z$, the boiling temperature rises with depth at $dT/dz = T^2/(B z)$, which at the base of the layers in Table~\ref{tab:sulfur} is 1.2--1.6~K~m$^{-1}$ for $\phi$ = 0.4, 0.7--1.0~K~m$^{-1}$ for $\phi$ = 0.2, and 0.4--0.6~K~m$^{-1}$ for $\phi$ = 0.1. The base of the native-sulfur layer, with sulfur above it and none below, exists only where the peak temperature rises with depth faster than this; where the peak temperature is nearly uniform with depth, sulfur boils above $d$ and remains below it. Vapor can open vertical fractures where its pressure exceeds the least horizontal stress, which can be 0.4--0.6 times $\rho g z$; with that confinement, the base temperatures in Table~\ref{tab:sulfur} are 40--120~K lower. At fixed $\phi$, a twofold range of depth corresponds to a 60--90~K range of base temperature.
+
+\textbf{Collapse and hollow depth.} If the whole charged layer collapses, the floor lowers by the fraction $\phi$ of the layer's volume that native sulfur and its pore space occupied, and hollow depth is $h = \phi d$. Table~\ref{tab:sulfur} gives the thickness and base temperature of the layer for the median depths of 24--28~m equatorward of 60$^\circ$ (Table~\ref{tab:bands}). After collapse, a compacted, sulfur-free residue remains that is $(1-\phi)/\phi$ times as thick as the lowering of the floor, 1.5--9 times for $\phi$ = 0.4--0.1. Once the residue is thicker than the 10--22~cm layer that crosses 368~K each day (Section~\ref{sec:transitionS}), the charged regolith beneath it no longer crosses 368~K, so a flat floor is lowered by daily cycling by only 1.1--2.4~cm for $\phi$ = 0.1 and 6.7--15~cm for $\phi$ = 0.4, unless small impacts or mass wasting remove the residue.
+
+\textbf{Collapse during charging.} At 820--1,050~K, the vapor pressure of sulfur is 7 $\times$ 10$^6$ to 3 $\times$ 10$^{10}$ times its vapor pressure at present mean annual temperatures of 270--330~K, from the relation above and the fit to the tabulated values. Sulfur sealed in pores stays in place, but sulfur in pores that fail or reopen while the crater is hot, for example as the regolith cools and contracts, leaves quickly. The pore pressure then falls, and the full overburden rests on the grain framework of the sulfidized regolith, which compacts. I have not modeled this coupled heat and vapor transport, the failure or reopening of pores, or the compaction it would cause.
+
+\textbf{Steady conduction above the hot rock.} Once heat has crossed the charged layer, in 110--2,500~yr for 60--280~m, the temperature between the surface and the top of the impact-heated rock approaches a linear profile, $T(z) = T_s + (T_c - T_s)\, z/H$, where $T_c$ is the contact temperature, $T_s$ the mean surface temperature, and $H$ the depth of the hot rock. For the base temperatures and depths of Section~4.2 of the main text and $T_s$ = 300~K, the gradient is 8.5~K~m$^{-1}$ for a base at 855~K and 65~m ($\phi$ = 0.4) and 2.7~K~m$^{-1}$ for a base at 1,000~K and 260~m ($\phi$ = 0.1), so the depth of the base scales as the gradient to the power $-$1.2. A twofold range of hollow depth at fixed $\phi$ therefore allows a 1.8-fold range in $H$. Through rock with a thermal conductivity of 1--2~W~m$^{-1}$~K$^{-1}$, heat flows to the surface along these gradients at 2.7--17~W~m$^{-2}$, which raises the mean temperature of a surface at 300~K with emissivity 0.95 by 0.5--3~K. The hot rock stays near $T_c$ only while it is thicker than the distance heat has diffused, so this steady state applies where the hot rock is thicker than about $H$, and it may not apply beneath craters 5--10~km across. A second steady state would hold the base near the boiling curve of sulfur: sulfur vapor that rises, condenses, and drains back as liquid would maintain a two-phase zone, as the counterflow of steam and water holds vapor-dominated geothermal reservoirs near 240$^\circ$C \parencite{white1971}. Such a heat pipe requires connected pores, unlike the sealed pores of the depth relation.
+
+\textbf{Sunlight and depth.} Weighted by the number of measured hollows, mean annual surface temperature $T_s$ at the hollows that \textcite{blewett2016} measured is 21.5~K lower poleward of 60$^\circ$N than equatorward (Section~\ref{sec:depthS}). A base temperature that falls by the same amount gives depth ratios of 0.77--0.84 for $\phi$ = 0.4--0.1 (Table~\ref{tab:sulfur}). Such a base temperature gives ln $h$ = const $- B/T_\mathrm{base}$, so the coefficient of ln $h$ on $1/T_s$ is $-B T_s^2/T_\mathrm{base}^2$. With $T_s$ = 290~K and $B$ = 7,750--8,420~K, this coefficient is $-$900 to $-$970~K for $\phi$ = 0.4 ($T_\mathrm{base} \approx$ 850~K), $-$770 to $-$840~K for $\phi$ = 0.2, and $-$650 to $-$710~K for $\phi$ = 0.1 ($T_\mathrm{base} \approx$ 1,000~K). A contact temperature between rock at a fixed temperature and regolith that starts at $T_s$, with equal thermal inertias, changes by half as much as $T_s$; it predicts $-$330 to $-$490~K and a poleward depth ratio of 0.88--0.92. With hollow size controlled, my depths give a coefficient of +89 $\pm$ 65~K and a poleward ratio of 0.98 (0.90--1.07) (Table~\ref{tab:depthcomp}), which exclude both, so the base temperature does not include the surface temperature.
+
+\textbf{Iron budget.} Heating rock with 1.5~wt\% iron \parencite{weider2014}, all as FeS, releases at most 0.86~wt\% sulfur. A layer that contains 10~vol\% native sulfur (2.07~g~cm$^{-3}$; \cite{lide2007}) therefore requires the sulfur from 8.0--8.6 times its own volume of rock (2.8--3.0~g~cm$^{-3}$) heated above $\sim$1,300~K, and more where sulfidation consumes sulfur at depth. If native sulfur is the whole volume lost on collapse ($\phi$ = 0.1), the layer beneath a 24~m hollow is 240~m thick and requires the sulfur from a column of such rock 1.9--2.1~km thick. Where pore space that closes on collapse makes up part of $\phi$, a hollow of a given depth requires less sulfur. According to \textcite{weider2014}, Mercury's iron is in sulfides and in metal, so iron entirely as FeS is an upper bound on the sulfur that FeS can supply.
+
+{\renewcommand{\arraystretch}{1.5}\setlength{\LTcapwidth}{\textwidth}\footnotesize
+        \begin{xltabular}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{5.4cm}}
+            \caption{{\bf Sulfur release, condensation, and the depth of the charged layer.} Base temperatures and layer thicknesses are for the corrected median depths of 24--28~m equatorward of 60$^\circ$ in the depths of \textcite{blewett2016} and $\rho$ = 2,000--3,000~kg~m$^{-3}$, with the two vapor-pressure slopes $B$ of Section~\ref{sec:sulfurS}.}
+            \label{tab:sulfur} \\
+            \toprule
+            \textbf{Quantity} & \textbf{Value} \\
+            \hline
+            \endfirsthead
+            \multicolumn{2}{l}{\small\sffamily\textbf{Table~\thetable} (continued)} \\
+            \toprule
+            \textbf{Quantity} & \textbf{Value} \\
+            \hline
+            \endhead
+            \multicolumn{2}{l}{\textit{Sulfur release}} \\
+            \quad FeS $\rightarrow$ Fe (solid) + $\tfrac{1}{2}$S$_2$, NIST-JANAF: S$_2$ pressure at 1,200 / 1,300 / 1,400~K & 0.0034 / 0.039 / 0.31~Pa \\
+            \quad FeS: temperature at 0.1~Pa and at 1~Pa of S$_2$ & 1,344~K and 1,471~K (1,186~K for 0.1~Pa from 298~K data) \\
+            \quad MgS $\rightarrow$ Mg (gas) + $\tfrac{1}{2}$S$_2$, 298~K data & 1,470~K; Mg recombines with S$_2$ on cooling \\
+            \quad MgS + $\tfrac{1}{2}$SiO$_2$ $\rightarrow$ MgO + $\tfrac{1}{2}$Si + $\tfrac{1}{2}$S$_2$, 298~K data & 1,690--1,930~K (Si dissolved in metal at activity 0.01, or pure) \\
+            \quad CaS + $\tfrac{1}{2}$SiO$_2$ $\rightarrow$ CaO + $\tfrac{1}{2}$Si + $\tfrac{1}{2}$S$_2$, 298~K data & 2,280--2,590~K \\
+            \quad MgS + SiO$_2$ $\rightarrow$ MgO + SiO(g) + $\tfrac{1}{2}$S$_2$: S$_2$ pressure at 1,600 / 1,800 / 2,000 / 2,300~K & 0.96 / 26 / 350 / 7,000~Pa \\
+            \quad CaS + SiO$_2$ $\rightarrow$ CaO + SiO(g) + $\tfrac{1}{2}$S$_2$: same temperatures & 0.015 / 0.68 / 14 / 460~Pa \\
+            \quad 2MgS + SiO$_2$ $\rightarrow$ 2MgO + SiS(g) + $\tfrac{1}{2}$S$_2$: at 1,600 / 1,800~K & 4.2 / 87~Pa \\
+            \quad SiO pressure over SiO$_2$ + Si at 1,300 / 1,500~K & 0.76 / 52~Pa \\
+            \quad Condensation of sulfur vapor at 1~Pa / 0.1~Pa (upper limits) & below 375~K / below 342--347~K \\
+            \multicolumn{2}{l}{\textit{Vapor pressure of native sulfur}} \\
+            \quad At 718 / 750 / 800 / 850~K & 0.101 / 0.16--0.17 / 0.31--0.34 / 0.54--0.63~MPa \\
+            \quad At the critical point, 1,314~K & 13.6--20.8~MPa (20.7~MPa tabulated) \\
+            \quad Depth $d$ of the base at 718 / 750 / 800 / 850~K & 9--14 / 15--23 / 28--46 / 49--85~m \\
+            \multicolumn{2}{l}{\textit{Charged layer beneath a 24--28~m hollow, $h = \phi d$}} \\
+            \quad $\phi$ = 1 & $d$ = 24--28~m; 754--801~K \\
+            \quad $\phi$ = 0.4 & $d$ = 60--70~m; 821--885~K; 0.44--0.78~MPa \\
+            \quad $\phi$ = 0.3 & $d$ = 80--93~m; 845--915~K \\
+            \quad $\phi$ = 0.2 & $d$ = 120--140~m; 881--961~K \\
+            \quad $\phi$ = 0.1 & $d$ = 240--280~m; 950--1,051~K; 1.8--3.1~MPa \\
+            \quad $\phi$ = 0.05 & $d$ = 480--560~m; 1,030--1,160~K \\
+            \quad Drop in base temperature that gives 0.77 times the depth, $\phi$ = 1 / 0.4 / 0.2 / 0.1 & 18--20 / 22--24 / 26--28 / 30--33~K \\
+            \quad Depth ratio if the base temperature falls by the full 21.5~K, $\phi$ = 0.4 / 0.2 / 0.1 & 0.77--0.79 / 0.80--0.82 / 0.83--0.84 (measured 0.98, 0.90--1.07, with hollow size controlled) \\
+            \quad Coefficient on $1/T_s$ if the base temperature includes $T_s$, $\phi$ = 0.4 / 0.2 / 0.1 & $-$900 to $-$970 / $-$770 to $-$840 / $-$650 to $-$710~K (measured +89 $\pm$ 65~K, with hollow size controlled) \\
+            \multicolumn{2}{l}{\textit{Budgets and rates}} \\
+            \quad Sulfur released by rock with 1.5~wt\% Fe \parencite{weider2014}, all as FeS & $\leq$ 0.86~wt\% \\
+            \quad Volume of such rock per volume of a layer containing 10~vol\% native sulfur & $\geq$ 8.0--8.6 \\
+            \quad Column of such rock for a 24~m hollow with $\phi$ = 0.1 & $\geq$ 1.9--2.1~km \\
+            \quad Floor lowering by daily cycling before the residue exceeds 10--22~cm, $\phi$ = 0.1 / 0.4 & 1.1--2.4 / 6.7--15~cm \\
+            \multicolumn{2}{l}{\textit{Transport and heating}} \\
+            \quad FeS (liquid): S$_2$ pressure at 1,500 / 1,600~K & 1.6 / 5.4~Pa \\
+            \quad Gradient of the boiling temperature at the base, $\phi$ = 0.4 / 0.2 / 0.1 & 1.2--1.6 / 0.7--1.0 / 0.4--0.6~K~m$^{-1}$ \\
+            \quad S$_2$ at 1,000~K: mean speed; diffusivity in 10~$\mu$m / 1~mm fractures & 575~m~s$^{-1}$; 0.0019 / 0.19~m$^2$~s$^{-1}$ \\
+            \quad Time to cross 100~m: vapor in one fracture / in rock with 1\% fractures ($\tau$ = 3) / heat & 0.6--60 days / 0.5--50~yr / 317~yr \\
+            \quad Time for FeS to deliver 10$^4$~kg~m$^{-2}$ of sulfur across 100~m & 4.1 $\times$ 10$^4$ to 7.4 $\times$ 10$^6$~yr \\
+            \quad Contact temperature, rock at 1,300 / 1,700~K and regolith at 350~K, equal thermal inertias / rock inertia twice the regolith's & 825 / 1,025~K; 980 / 1,250~K \\
+            \quad Heat front relative to the front of regolith filled with 5~vol\% sulfur (distance) & 8--110 times farther \\
+            \quad Lowering of base temperatures if confined by 0.4--0.6~$\rho g z$ & 40--120~K \\
+            \quad Base-temperature range for a twofold range of depth at fixed $\phi$ & 60--90~K \\
+            \quad Time for exposed native sulfur to lose 1~mm at 300 / 400~K & $\sim$2 days / $\sim$90~s \\
+            \quad Vapor pressure of sulfur at 820--1,050~K relative to 270--330~K & 7 $\times$ 10$^6$ to 3 $\times$ 10$^{10}$ \\
+            \quad If the base temperature changes by half as much as $T_s$: coefficient on $1/T_s$; poleward depth ratio, $\phi$ = 0.4 / 0.1 & $-$450 to $-$490 / $-$330 to $-$350~K; 0.88--0.89 / 0.91--0.92 \\
+            \hline
+        \end{xltabular}}
+
+\textbf{Candidate volatiles.} I fitted ln $h$ = $a$ + $b/T$ + $c$ ln $s$ + $e$ ln tan $i$ to the 2,518 depths, where $T$ is the modeled mean annual surface temperature, $s$ the pixel scale, and $i$ the solar incidence, with standard errors clustered by image and 95\% intervals from 2,000 bootstrap resamples of images, and obtained $b$ = $-$291~K ($-$488 to $-$97~K). If hollow depth grew as the square root of a vapor pressure, as for a diffusion-limited front, $b$ would equal $-\Delta H/2R$, which gives an apparent enthalpy of 4.8 (1.6--8.1)~kJ~mol$^{-1}$. The same fit to my automatic depths gives $b$ = +105~K ($-$74 to +284~K) and an apparent enthalpy of $-$1.8 ($-$4.7 to 1.2)~kJ~mol$^{-1}$. The candidate volatiles have sublimation or vaporization enthalpies of 50--717~kJ~mol$^{-1}$ (Table~\ref{tab:volatiles}). A front of any of these would deepen 85-fold to more than 10$^{8}$-fold across 219--324~K, against the measured 1.5-fold and 0.86-fold, so a front driven by surface temperature fits the depths for none of the candidates. In the collapse model, each volatile requires a different base temperature to give the measured depths. For depths of 24--28~m, native sulfur requires 820--1,050~K, whereas NaCl and KCl require 1,920--2,430~K, above their boiling points, and the sulfides and graphite require 2,070 to more than 4,000~K. Among the sulfur, chloride, and sulfide candidates, only native sulfur requires a base temperature below that of impact-heated rock, 1,300--1,700~K. Figure~8 of the main text gives the depth that complete collapse produces for any base temperature and $\phi$.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Candidate volatiles.} Enthalpy of sublimation or vaporization per mole of vapor, from the NIST-JANAF tables through the NIST Chemistry WebBook \parencite{linstrom2001} and, for liquid sulfur, from the vapor pressures of \textcite{lide2007}; the depth ratio across 219--324~K predicted for a diffusion-limited front (depth proportional to the square root of the vapor pressure; measured 1.5); and the base temperature at which the vapor pressure equals the overburden for depths of 24--28~m ($\rho$ = 2,000--3,000~kg~m$^{-3}$). Temperatures above the tabulated ranges are extrapolated. Water ice is included for reference.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{1.6cm} >{\raggedright\arraybackslash}p{2.0cm} >{\raggedright\arraybackslash}p{5.6cm}}
+            \toprule
+            \textbf{Volatile} & \textbf{$\Delta H$ (kJ~mol$^{-1}$)} & \textbf{Depth ratio, 219--324~K} & \textbf{Base temperature (K), $\phi$ = 0.4 / 0.2 / 0.1} \\
+            \hline
+            H$_2$O ice & 50 & 85 & 419--439 / 445--470 / 477--509 \\
+            S, liquid & 75 & 790 & 821--885 / 881--961 / 950--1,051 \\
+            S$_8$ from orthorhombic S & 100 & 7.6 $\times$ 10$^{3}$ & as liquid S \\
+            S$_2$ from orthorhombic S & 129 & 9 $\times$ 10$^{4}$ & as liquid S \\
+            KCl & 222 & 4 $\times$ 10$^{8}$ & 1,919--2,035 / 2,056--2,195 / 2,214--2,384 \\
+            NaCl & 230 & 7 $\times$ 10$^{8}$ & 1,976--2,089 / 2,112--2,244 / 2,268--2,426 \\
+            K$_2$S & 248 & 4 $\times$ 10$^{9}$ & 2,070--2,650 / 2,170--2,890 / 2,290--3,200 \\
+            Na$_2$S & 258 & 9 $\times$ 10$^{9}$ & 2,120--2,690 / 2,220--2,920 / 2,340--3,200 \\
+            FeS (to Fe + S$_2$) & 314 & 1 $\times$ 10$^{12}$ & $>$ 4,100 \\
+            MgS (to Mg + S$_2$) & 371 & 2 $\times$ 10$^{14}$ & 2,760--3,050 / 2,880--3,190 / 3,020--3,350 \\
+            CaS (to Ca + S$_2$) & 477 & 3 $\times$ 10$^{18}$ & 3,550--4,050 / 3,700--4,250 / 3,880--4,470 \\
+            Graphite (to C) & 717 & 5 $\times$ 10$^{27}$ & $>$ 4,800 \\
+            \hline
+        \end{tabularx}}
+    \label{tab:volatiles}
+\end{table}
+
+
+\clearpage
+
+\section{Crater containment graph}
+\label{sec:dagS}
+
+\textbf{Construction.} Section~2.2 of the main text defines the graph, the parent of each crater, and the position of a crater within its parent (peak, floor, or wall). A crater with a parent is nested, a crater without one is isolated, and a nested crater's ancestors are its parent, its parent's parent, and so on. Of the 80 of 94 basins that \textcite{orgel2020} rate certain or probable, I removed 27 that duplicate a cataloged crater, with a center within 0.15 basin radii of the crater's center and a diameter ratio between 0.7 and 1.43, and kept the crater of \textcite{herrick2018}. The two Caloris centers are 130~km apart, outside this tolerance, so I merged them into one node with the basin's center and diameter and the cataloged crater's record, to which hollows are assigned; the 487 craters inside either rim are its children. I flagged 17 nested pairs as possible peak rings (child $\geq$ 20~km, at least 0.3 times the parent's diameter, and centered within 0.2 parent radii) and dropped the inner member of each from the tests. A crater inside a parent $\leq$ 12~km across counts as on the floor. The graph and its code are archived at Zenodo \parencite{zenodo_cratergraph}, and the graph with the merged Caloris node with the code of this study \parencite{zenodo_this}.
+
+Of the 14,916 nested craters in the tests, 12,890 have one ancestor, 1,955 have two, and 71 have three. The tests include 532 of the 534 host craters of Section~\ref{sec:hostsS}, 266 (50\%) of them nested; the other two are inner members of possible peak rings.
+
+\textbf{Depth of origin and fill.} The depth of origin of a crater, the deepest pre-impact level from which it exposes rock, is $z_{\max} = z_{\mathrm{base}} + z_{\mathrm{own}}$, with diameters and depths in km. The crater's own excavation or uplift depth is $z_{\mathrm{own}} = \max(0.1 D_{\mathrm{tc}},\ u_s)$, where 0.1 $D_{\mathrm{tc}}$ is the excavation depth for transient diameter $D_{\mathrm{tc}}$, which is $D/1.2$ for simple craters and $D_{\mathrm{sc}}^{0.15} D^{0.85}$ for complex craters, with a simple-to-complex transition diameter $D_{\mathrm{sc}}$ = 12~km \parencite{croft1985,melosh1989}. The stratigraphic uplift $u_s$ of a complex crater is 0.086 $D^{1.03}$ for terrestrial craters (Equation~13 of \cite{cintala1998}), and in a sensitivity test 0.022 $D^{1.45}$ for lunar craters 17--136~km across (their Equation~12). Both relations were fitted to central-peak craters and give 167~km (terrestrial) and 935~km (lunar) of uplift beneath Caloris. Lunar peak rings expose rock from near the maximum depth of excavation \parencite{baker2015,kring2016}, so for the basins, for peak-ring basins and protobasins (codes pr and pb of \textcite{herrick2018}), and for craters $>$ 120~km without a central peak or multiple peaks (codes cp and mp), I set $u_s$ = 1.05 $\times$ 0.1 $D_{\mathrm{tc}}$, which gives 79~km beneath Caloris. Factors of 0.8 and 1.3 in place of 1.05 change the AIC difference between the best depth-of-origin model and the model with nesting alone by at most 7.7, which leaves every depth-of-origin model at least 17 above the model with nesting alone, and the AIC gained by adding ln $z_{\max}$ to ln $z_{\mathrm{own}}$ by at most 0.2. The base depth $z_{\mathrm{base}}$, the pre-impact depth of the surface on which the crater formed, is zero for an isolated crater; for a nested crater it is the parent's $z_{\mathrm{base}}$, plus the parent's uplift for a crater on the peak or its excavation depth for a crater on the floor. For a crater on its parent's peak or floor, the fill, the material that later filled the parent, is as thick as the depth of a fresh crater of the parent's diameter, 0.241 $D^{0.486}$~km (the 90th percentile of depth among isolated craters of that diameter), minus the parent's depth on the 665~m/pixel topography (Section~\ref{sec:terrainS}), and 3.0~km in Caloris \parencite{ernst2015}. A crater whose own excavation or uplift does not exceed the fill exposes only fill (2,023 fill-only craters). For 1,751 nested craters on the peak or floor of a parent that is a basin other than Caloris or lacks a measured depth, I set the fill to zero.
+
+\textbf{Hosting and controls.} Section~2.2 of the main text defines hosting, the controls of the logistic fits, and the AIC comparisons. The regional hosting fraction is the fraction of other craters within 500~km that host hollows, and the fits use its logarithm.
+
+\textbf{Nesting.} Table~\ref{tab:dag} gives the odds ratios for nesting. In the comparison without regression, I matched each nested crater with the isolated craters within 300~km whose diameters lie within a factor of 1.25 of its diameter and whose completeness lies within 0.15 of its completeness. Of the 12,014 nested craters with at least one match, 0.83\% host hollows, compared with 0.48\% of their matched isolated craters, a ratio of 1.7.
+
+\textbf{Inheritance.} Table~\ref{tab:dag} compares the 10,092 craters inside parent craters (not basins) that host hollows with those inside parent craters that do not. The ratio is similar whether a parent counts as a host when one of its own hollows lies within 0.9 of its radius or when any hollow is assigned to it (97 of 2,579 craters, 3.8\%, against 40 of 7,513, 0.53\%), so it does not depend on how hollows near the edges of child craters are assigned. The merged Caloris node has the cataloged crater's record, so 437 craters inside Caloris enter these tests. With the basin's record they would not, and the ratios would be 3.39 (2.24--5.11), and 2.98 (1.63--5.45) with degradation state controlled, against 2.98 and 2.28 with the cataloged crater's record, so the inheritance is significant with either record.
+
+\textbf{Position within the parent.} The conditional logistic regression compares only craters inside the same parent, with log$_{10}$ diameter and completeness as controls and fill-only craters excluded, and uses the 90 parents whose children include both hosts and non-hosts (4,858 children, 197 hosts). Craters on the peak or floor host hollows 1.25 (0.84--1.86; $p$ = 0.27) times as often as craters on the wall; the raw rates are 77 of 1,322 (5.8\%) and 120 of 3,536 (3.4\%).
+
+\textbf{Depth of origin.} Nesting lowers the AIC of the base model by 38, whereas, with either uplift relation, $z_{\mathrm{base}}$ lowers it by 12 ($p$ = 6 $\times$ 10$^{-5}$), and ln $z_{\max}$ added to ln $z_{\mathrm{own}}$ lowers it by 22 ($p$ = 4 $\times$ 10$^{-7}$; Table~\ref{tab:dagaic}). Every depth-of-origin model has an AIC at least 25 higher than the model with nesting alone, so depth of origin adds a small, significant effect, but nesting predicts hosting far better. The fits restricted to craters whose parent fill could be estimated and the fits with other uplift factors are archived with the code \parencite{zenodo_this}.
+
+\textbf{Depth of origin and the crust.} Mercury's crust is 35 $\pm$ 18~km thick on average \parencite{padovan2015}. Of the 532 host craters, 69 have a depth of origin deeper than 35~km and 40 deeper than 53~km (70 and 41 with the lunar relation), so the deepest hosts may expose mantle rock.
+
+\textbf{Depth in nested and isolated hosts.} I assigned the 2,518 depths of \textcite{blewett2016} to host craters as in Section~\ref{sec:pairsS} and regressed ln depth on a nested-host indicator, with ln pixel scale, ln tan $i$, and inverse mean annual temperature as controls and standard errors clustered by image. Of the 2,518 hollows, 1,960 in 375 images lie in 128 host craters; the other 558 have no host $\geq$ 5~km. Hollows in nested hosts are 1.02 (0.92--1.14; $p$ = 0.71) times as deep as hollows in isolated hosts (751 hollows in 48 craters against 1,209 in 80). The ratio is 1.03 (0.93--1.15) for hosts $\geq$ 10~km, 1.05 (0.91--1.22) for hosts inside hollow-bearing parents, and 1.02 ($p$ = 0.78) with log host diameter as a further control, and clustering by host crater in place of image does not change these results. In my automatic depths, hollows in nested hosts are 0.94 (0.84--1.04) times as deep as hollows in isolated hosts, and 1.01 (0.93--1.09) times with ln hollow diameter as a control (1,145 hollows in 395 images).
+
+\textbf{Limitations.} A parent and its children share a local source, so the inheritance may reflect a rich local source as well as processing by the parent's impact. The depth of origin is a first-order estimate, from uplift relations fitted to central-peak craters and, beneath peak-ring craters and basins, from lunar and terrestrial peak rings. The graph begins at 5~km, and craters that cut a parent's rim without their centers inside it count as isolated, so nesting is undercounted near rims.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Odds ratios of hosting hollows in the crater containment graph.} Hosting means at least one assigned hollow within 0.9 radii, except where stated. Logistic fits include log$_{10}$ diameter, absolute latitude, completeness at the crater center, the northern-plains flag, $\Delta T_\mathrm{w}$, and the logarithm of the regional hosting fraction as controls, except the conditional logistic regression, which includes only log$_{10}$ diameter and completeness; 95\% Wald intervals.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}p{3.4cm}}
+            \toprule
+            \textbf{Comparison and sample} & \textbf{Craters (hosts)} & \textbf{Odds ratio (95\% interval)} \\
+            \hline
+            \multicolumn{3}{l}{\textit{Nested craters against isolated craters}} \\
+            \quad All craters & 31,554 (446) & 1.68 (1.35--2.09) \\
+            \quad Hosting with $\geq$ 3 hollows within 0.9 radii & 31,554 (180) & 1.64 (1.15--2.35) \\
+            \quad Completeness $\geq$ 0.5 & 1,252 (123) & 1.77 (1.11--2.81) \\
+            \quad Craters 10--50~km & 14,582 (182) & 2.05 (1.49--2.82) \\
+            \quad Craters $\geq$ 10~km, degradation state controlled & 4,214 (262) & 1.42 (1.04--1.95) \\
+            \quad Within 60$^\circ$ of the equator & 27,257 (414) & 1.67 (1.33--2.09) \\
+            \quad Craters inside craters $\geq$ 300~km and basins dropped & 23,212 (313) & 2.77 (2.05--3.73) \\
+            \quad Matched isolated craters within 300~km (no regression) & 12,014 nested & 0.83\% against 0.48\%; ratio 1.7 \\
+            \multicolumn{3}{l}{\textit{By parent type, against isolated craters (all craters; 446 hosts)}} \\
+            \quad Inside craters $<$ 300~km & & 2.80 (2.09--3.76) \\
+            \quad Inside craters $\geq$ 300~km & & 1.50 (1.04--2.15) \\
+            \quad Inside basins & & 1.22 (0.91--1.63) \\
+            \multicolumn{3}{l}{\textit{By number of ancestors, against isolated craters}} \\
+            \quad One & 12,890 nested & 1.60 (1.28--2.01) \\
+            \quad Two or three & 2,026 nested & 2.46 (1.61--3.77) \\
+            \multicolumn{3}{l}{\textit{By position in the parent, against isolated craters}} \\
+            \quad Peak & & 2.47 (1.21--5.03) \\
+            \quad Floor & & 2.23 (1.63--3.04) \\
+            \quad Wall & & 1.45 (1.13--1.86) \\
+            \quad Fill-only & 2,023 nested & 1.54 (0.81--2.92) \\
+            \quad Peak or floor against wall, same parent (conditional logit) & 4,858 in 90 parents (197) & 1.25 (0.84--1.86; $p$ = 0.27) \\
+            \multicolumn{3}{l}{\textit{Craters inside a parent crater that hosts hollows, against other parent craters}} \\
+            \quad Parent hosts: own hollow within 0.9 radii & 10,092 (137) & 2.98 (1.98--4.50) \\
+            \quad \quad degradation state controlled & 1,295 (81) & 2.28 (1.25--4.14; $p$ = 0.007) \\
+            \quad \quad completeness $\geq$ 0.5 & 414 (39) & 4.53 (1.71--11.9) \\
+            \quad Parent hosts: any hollow assigned & 10,092 (137) & 2.62 (1.73--3.97); 97/2,579 against 40/7,513 \\
+            \hline
+        \end{tabularx}}
+    \label{tab:dag}
+\end{table}
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Model comparison for nesting and depth of origin.} Logistic fits of hosting (any assigned hollow; 532 hosts among 31,554 craters) without the regional hosting fraction, with the terrestrial uplift relation of \textcite{cintala1998} beneath central-peak craters and $u_s$ = 1.05 $\times$ 0.1 $D_{\mathrm{tc}}$ beneath peak-ring craters and basins. The base model contains log$_{10}$ diameter, absolute latitude, completeness at the crater center, the northern-plains flag, and $\Delta T_\mathrm{w}$. Coefficients are $\pm$ one standard error. With the lunar uplift relation, the position model has an AIC of 3,705.8, the last four models have AICs of 3,733.1, 3,785.3, 4,255.1, and 3,763.6, and the added terms are 0.0100 $\pm$ 0.0025 ($p$ = 7 $\times$ 10$^{-5}$), 1.23 $\pm$ 0.04, 0.54 $\pm$ 0.03, and 0.22 $\pm$ 0.04 ($p$ = 4 $\times$ 10$^{-7}$).}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{1.6cm} >{\raggedright\arraybackslash}p{5.0cm}}
+            \toprule
+            \textbf{Model} & \textbf{AIC} & \textbf{Added term} \\
+            \hline
+            Base & 3,745.2 & -- \\
+            Base + nested & 3,707.7 & 0.63 $\pm$ 0.10 ($p$ = 4 $\times$ 10$^{-10}$) \\
+            Base + position (peak, floor, wall, fill-only) & 3,705.5 & four categories \\
+            Base + number of ancestors (1, 2, 3) & 3,701.7 & three categories \\
+            Base + $z_{\mathrm{base}}$ (km) & 3,732.9 & 0.0101 $\pm$ 0.0025 ($p$ = 6 $\times$ 10$^{-5}$) \\
+            ln $z_{\mathrm{own}}$ in place of log$_{10}$ diameter & 3,754.6 & 1.43 $\pm$ 0.05 \\
+            ln $z_{\max}$ in place of log$_{10}$ diameter & 4,302.8 & 0.51 $\pm$ 0.03 \\
+            ln $z_{\mathrm{own}}$ + ln $z_{\max}$ & 3,732.8 & ln $z_{\max}$: 0.22 $\pm$ 0.04 ($p$ = 4 $\times$ 10$^{-7}$) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:dagaic}
+\end{table}
+
+\textbf{Parents without hollows.} Of the 103 parent craters with at least one child that hosts hollows, 44 host no hollows themselves. Their median completeness at the center is 0.14, against 0.25 for parents that host hollows; 19 have a completeness of at least 0.2, and 5 of at least 0.5. Completeness at the center overstates the coverage of large parents: for Dal\'{i} crater it is 0.62 at the center and 0.11 averaged over the crater. The list of these parents is archived with the code \parencite{zenodo_this}.
+
+\clearpage
+
+
+\section{Volcanic vents}
+\label{sec:ventsS}
+
+I took the map coordinates and classifications of 309 candidate explosive volcanic vents from the catalog of \textcite{pegg2021}. In the copy of the catalog I used, the columns labeled latitude and longitude are exchanged (the column labeled latitude spans $-$179$^\circ$ to 180$^\circ$, and the column labeled longitude $-$77$^\circ$ to 62$^\circ$). With the columns exchanged, a vent falls in Tyagaraja crater (4$^\circ$N, 211$^\circ$E), where \textcite{lucchetti2021} described a pyroclastic vent, and 77 of the 109 vents with good image quality (71\%) are compound, close to the $\sim$70\% that \textcite{pegg2021} reported for well-imaged vent sites. I assigned each vent to the smallest crater $\geq$ 5~km in the catalog of \textcite{herrick2018} whose rim contains it, which places 243 vents in 149 craters, 148 of them in the containment tests.
+
+I checked the exchanged reading in three further ways. Of the 29 named faculae \parencite{iau_gazetteer}, the bright deposits around explosive vents, 24 have a cataloged vent within 25~km under the exchanged reading (median 9.5~km), and none has one within 50~km under the labeled reading. The 166~m/pixel MDIS mosaic \parencite{denevi2018} is brighter within 8~km of a vent than 25--45~km away by a median ratio of 1.09 under the exchanged reading, against 1.00 for coordinates shifted by 100~km and 1.01 for the labeled reading. The catalog's flag for vents inside craters agrees with the exchanged coordinates for 85\% of the vents, against 50\% after a 100~km shift.
+
+I fit logistic regressions of hosting on whether a crater contains a vent, with nesting and the controls of the nesting tests (Table~\ref{tab:vents}). The odds ratio for a vent is 2.5--3.5 in every subset and specification of Table~\ref{tab:vents}, 2.91 (1.60--5.28) for vents flagged in the catalog as inside craters, 3.70 (1.99--6.89) for vents with good or reasonable image quality, 3.64 (1.58--8.38) for vents with good image quality, and 2.81 (1.55--5.09) when a vent counts only within 0.8 radii of the crater's center.
+
+Hollows in the 13 host craters with vents that have measured depths (405 hollows) are 1.10 (0.96--1.28) times as deep as hollows in other host craters, from a regression of ln depth with ln pixel scale, ln tan $i$, and a poleward indicator as controls and standard errors clustered by image; with standard errors clustered by host crater, the interval is 0.96--1.26. In my automatic depths, hollows in host craters with vents are 1.14 (0.95--1.37) times as deep as hollows in other host craters, and 1.16 (1.01--1.35) times with ln hollow diameter as a control.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Hosting of hollows by craters with volcanic vents.} Odds ratios for a crater that contains a vent of \textcite{pegg2021}, from logistic fits with the controls of the nesting tests (Section~\ref{sec:dagS}); 95\% Wald intervals. Host: at least one hollow within 0.9 of the crater radius (446 hosts among 31,554 craters), unless stated.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c}
+            \toprule
+            \textbf{Sample and specification} & \textbf{Craters (with vents)} & \textbf{Odds ratio} \\
+            \hline
+            All craters & 31,554 (148) & 3.46 (1.95--6.13) \\
+            Isolated craters & 16,638 (93) & 2.51 (1.19--5.29) \\
+            Craters $\geq$ 20~km & 7,668 (120) & 3.31 (1.86--5.89) \\
+            All craters, without the regional hosting fraction & 31,554 (148) & 2.98 (1.77--5.03) \\
+            Any assigned hollow within 1.1 radii, without the regional hosting fraction & 31,571 (149) & 2.92 (1.77--4.80) \\
+            \hline
+        \end{tabularx}}
+    \label{tab:vents}
+\end{table}
+
+\clearpage
+
+\section{Joint model of hosting}
+\label{sec:jointS}
+
+\textbf{Variables.} For the 31,554 craters of the containment tests (Section~\ref{sec:dagS}), I grouped the variables of the hosting tests as follows. Detection: completeness at the crater center. Size: log$_{10}$ diameter and its square. Insolation: absolute latitude and its square, $\Delta T_\mathrm{w}$, and $\Delta T_\mathrm{w}$ $\times$ log$_{10}$ diameter. Degradation state: fresh, standard, degraded, and filled craters, against craters without a degradation state, and rayed craters (Section~\ref{sec:hostageS}). Nesting: nested, position on the parent's floor or peak, parent hosts hollows, parent is a basin, and ln depth of origin (Section~\ref{sec:dagS}). Volcanic cover: the northern smooth plains, craters inside Caloris whose excavation falls short of or exceeds 2.5~km (Section~\ref{sec:calorisS}), and fill-only craters. Vents: crater or parent contains a vent (Section~\ref{sec:ventsS}). Composition: the fraction of the crater mapped as concentrated low-reflectance material (Section~\ref{sec:xrsS}) and the spectral slope and curvature of the crater interior, the first two principal components of color (Section~\ref{sec:colorS}), standardized, with slope and curvature set to zero and an indicator set to one for the 142 craters whose interiors have fewer than 20 valid pixels. A crater hosts hollows as in Section~\ref{sec:dagS} (446 hosts).
+
+\textbf{Models.} Section~3.8 of the main text describes the thinned occurrence model, in which detection thins the hollows present in each crater. I fit it as a binomial regression with a complementary log-log link, an offset of 2 ln $D$ for crater area, and ln($C$ + 0.01) in every model, because 18 hosts have $C$ = 0 at the center; the coefficient of ln($C$ + 0.01) is $g$. McFadden $R^2$ is $1 - \ln L/\ln L_0$, where $L$ is the likelihood of the model and $L_0$ that of a baseline model \parencite{mcfadden1974}. The benchmark of 0.2--0.4 for an excellent fit \parencite{mcfadden1977} refers to a baseline with a constant alone, against which $R^2$ is larger than against detection and area. A group's general dominance is the increase in McFadden $R^2$ from adding the group, averaged over all subsets of the other groups, first within subsets of equal size and then across sizes \parencite{azen2003,azen2009}. $R^2$ is relative to a model with detection and area alone, and a group's share is its general dominance as a percentage of the total. Intervals come from 100 bootstrap resamples of 184 spatial blocks of about equal area (15$^\circ$ latitude bands divided in longitude). As checks, I fit the same groups, with detection as a group, in a logistic regression with 200 block resamples; a logistic regression of craters with completeness $\geq$ 0.2, which tests whether poorly imaged craters change the shares; a negative binomial regression of the number of hollows per crater, with offsets for area and completeness; and gradient-boosted trees, with shares from SHapley Additive exPlanations (SHAP) values summed within each group and accuracy from fivefold cross-validation over the spatial blocks.
+
+\textbf{Results.} \textcite{herrick2018} rated only craters $>$ 10~km, so craters without a degradation state are mostly 5--10~km across. In the model with low-reflectance material alone as the composition group, adding an indicator for craters $\geq$ 10~km to the size group leaves the share of degradation state at 39\%; fits to the craters $\geq$ 10~km alone did not converge reliably. Of the physical groups, degradation state has the largest share in every version except the trees, in which crater size has the largest. Insolation has the second largest share in the thinned occurrence model and among well-imaged craters, crater size in the logistic model, and nesting in the count model (Table~\ref{tab:joint}). In the logistic model, craters with vents have 2.6 (0.7--5.2) times the odds of hosting of other craters, an interval that includes 1, and craters on the northern smooth plains 0.27 (0.12--0.55) times, but only 148 craters contain vents and 6\% lie on the plains. The three pre-specified combinations of groups, each the product of two variables, add less than 0.0001 to $R^2$: parent hosts $\times$ vent has an odds ratio of 1.1 (0.001--5), nested $\times$ $\Delta T_\mathrm{w}$ 1.02 (0.87--1.21) per 10~K, and vent $\times$ $\Delta T_\mathrm{w}$ 1.05 (0.54--2.94). In cross-validation, the area under the receiver operating characteristic curve (0.5 for chance, 1 for perfect) is 0.948 for the boosted trees and 0.941 for the logistic model, so combinations and nonlinear effects that the logistic model omits add little. The regional hosting fraction, added last to the thinned occurrence model, raises $R^2$ by 0.030 (0.015--0.042), so part of the regional clustering of host craters is not explained by these variables. On the 27,810 craters with S/Si, Mg/Si, Ca/Si, and Al/Si from the X-Ray Spectrometer maps \parencite{nittler2020}, adding the four ratios to the composition group raises its share from 7.8\% to 9.2\% and lowers the increase from the regional hosting fraction from 0.025 to 0.024.
+
+\textbf{Color.} Color enters the composition group for the 31,412 craters whose interiors have at least 20 valid pixels in the MDIS color map (442 hosts; masking hollows leaves too few pixels in 4 small hosts). Per standard deviation, the density of hollows changes by a factor of 1.12 (0.91--1.33) for the slope and 0.88 (0.77--1.03) for the curvature, and by 2.14 (1.34--3.04) from no low-reflectance material to complete coverage (100 block resamples). With low-reflectance material alone as the composition group, its share is 2.3\% (1--5\%), and the order of the other groups is the same.
+
+\textbf{Location of the clustering.} To find where hosting is clustered beyond the model, I gave each crater the probability of hosting, $P$, that the thinned occurrence model with all seven groups predicts; these probabilities sum to 439.9, against 446 host craters. At each node of a 2$^\circ$ grid of latitude and longitude, I counted the host craters, $O$, and summed the predicted probabilities, $E$, within 500~km, the radius of the regional hosting fraction, and computed $z = (O - E)/\sqrt{\sum P(1 - P)}$. The windows are many and overlap, so I simulated 1,000 sets of host craters from the predicted probabilities and took the 95th percentile of the largest $z$ in each set, over nodes with $E \geq 2$, as the threshold for an excess ($z$ = 5.14), and the 5th percentile of the smallest $z$ as the threshold for a deficit ($z$ = $-$3.22). Nodes above the threshold for an excess form three regions (Figure~6 of the main text), and no node falls below the threshold for a deficit. Within 500~km of the nodes above the threshold lie 112 of the 446 host craters, against 48.8 predicted.
+
+\textbf{The province.} I inspected on image crops all 81 cataloged hollows in the 23 host craters within 500~km of 65$^\circ$N, 125$^\circ$E. All are hollows except two that I could not classify, and each of these two lies in a crater with two other hollows, so all 23 craters remain hosts. Among craters 5--30~km across at 45--75$^\circ$N whose best image is at 20~m/pixel or finer, 13 of 143 in the province host hollows (9.1\%), against 9 of 831 elsewhere (1.1\%), so the excess is not an effect of finer imaging in the province.
+
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Shares of the explained variation in hosting.} General dominance of each group, as a percentage of the $R^2$ explained by the groups listed, with 95\% block-bootstrap intervals where computed; for the thinned occurrence model, from the 87 of 100 resamples whose fits converged. The logistic and tree models use low-reflectance material alone as the composition group. Thinned occurrence: complementary log-log model with area as an offset and completeness in every model. Logistic: all groups including detection. Well-imaged: logistic model of the 4,158 craters with completeness $\geq$ 0.2 (249 hosts), detection omitted from the percentages. Counts: negative binomial model of the number of hollows per crater. Trees: grouped SHAP values of gradient-boosted trees.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c c c}
+            \toprule
+            \textbf{Group} & \textbf{Thinned occurrence} & \textbf{Logistic} & \textbf{Well-imaged} & \textbf{Counts} & \textbf{Trees} \\
+            \hline
+            Detection & offset & 28 (23--32) & -- & offset & 36 \\
+            Degradation state & 37 (29--47) & 19 (16--23) & 25 & 46 & 15 \\
+            Insolation & 18 (11--21) & 17 (14--20) & 23 & 12 & 7 \\
+            Size & 12 (9--20) & 17 (14--20) & 22 & 3 & 18 \\
+            Nesting & 16 (12--19) & 14 (11--16) & 15 & 21 & 15 \\
+            Volcanic cover & 7 (1--10) & 3 (2--5) & 7 & 8 & 0.8 \\
+            Vents & 3 (2--7) & 3 (2--5) & 6 & 3 & 0.3 \\
+            Composition & 7 (3--14) & 0.3 (0.1--1.1) & 1.8 & 7 & 8 \\
+            $R^2$ & 0.23 (0.20--0.27) & 0.42 (0.39--0.47) & 0.38 & 0.09 & -- \\
+            \hline
+        \end{tabularx}}
+    \label{tab:joint}
+\end{table}
+
+
+\clearpage
+
+\section{Hollows on the knobs around Caloris}
+\label{sec:knobsS}
+
+\textbf{Hollow density.} \textcite{wright2020} mapped 2,011 knobs of the Odin Formation around the Caloris basin. Of these knobs, 19 carry 24 cataloged hollows in 15 fields. I compared the completeness-weighted hollow density on the knobs with that of the surrounding terrain 1.5--3 knob radii from each knob. The knobs carry 4.6 hollows per 1,000~km$^2$ of completeness-weighted area, 4.0 (1.9--7.8) times the density of the terrain around them, with intervals from 4,000 bootstrap resamples of knobs; the interval is 1.8--12.8 from a bootstrap of blocks 3$^\circ$ across, and 2.3--6.8 from an exact conditional test. Mean completeness is about 0.1 on both terrains, which inflates the weighted densities equally.
+
+\textbf{Comparison with degraded peaks.} The knobs are as old as Caloris, and the odds of hosting hollows decrease with crater degradation (Section~\ref{sec:hostageS}), so I compared the knobs with the peaks of the most degraded craters, the 2,160 craters 30--250~km across in Classes~1--2 of \textcite{kinczykMorphologicalEvaluationCrater2020}. I traced the peaks by hand, as in Section~\ref{sec:terrainS}, in all 108 of these craters that host hollows and in 60 of the 2,052 that do not. I drew the 60 without replacement with probability proportional to the completeness-weighted area within 0.15 radii of the center, and took with certainty the 5 craters whose probability would otherwise exceed 1. Each sampled crater's completeness-weighted peak area, divided by its probability of selection, contributes to an estimate of the peak area of all 2,052 craters without hollows \parencite[the Horvitz--Thompson estimator;][]{horvitz1952}. In 7 of the craters with hollows and 1 of the sampled craters, the peak could not be distinguished; the 7 contribute neither hollows nor peak area, and the 1 is dropped from the sample. The 7 craters with hollows whose peak could not be distinguished hold only 13 hollows, and 1 of these lies within 0.15 radii of the center. Of the 101 classified craters with hollows, 64 have no peak, and so do 49 of the 59 classified craters in the sample. The peaks hold 74 hollows in 20 craters. Their completeness-weighted area is 8,170~km$^2$ in the craters with hollows and an estimated 4,130~km$^2$ in the craters without, so the hollow density on the peaks of these craters is 6.0 per 1,000~km$^2$. The knobs have 0.76 (0.32--1.63) times this density, with intervals from 4,000 bootstrap resamples of knobs, craters with hollows, and sampled craters without hollows.
+
+\textbf{Limitations.} A knob interior is about 1.4~km in radius, two pixels of the 665~m/pixel topography, and only 65\% of knob interiors stand above the surrounding terrain in that topography. Hollows on knobs are few and clustered in fields.
+
+\clearpage
+
+\printbibliography
+
+\license{}
+
+\end{document}

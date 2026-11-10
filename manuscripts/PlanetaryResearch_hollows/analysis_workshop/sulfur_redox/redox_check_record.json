@@ -1,0 +1,54 @@
+{
+ "source": "Cantera nasa_gas.yaml / nasa_condensed.yaml, cantera 3.2.0",
+ "units": "Pa (S2); kJ/mol (dG)",
+ "S2_Pa": {
+  "1300": {
+   "FeS->Fe+S2/2": 0.041,
+   "FeS+SiO2->FeO+SiO+S2/2": 1.6e-05,
+   "CaS+SiO2->CaO+SiO+S2/2": 4.8e-06,
+   "MgS+SiO2->MgO+SiO+S2/2": 0.00093
+  },
+  "1471": {
+   "FeS->Fe+S2/2": 1.1,
+   "FeS+SiO2->FeO+SiO+S2/2": 0.0021,
+   "CaS+SiO2->CaO+SiO+S2/2": 0.0007,
+   "MgS+SiO2->MgO+SiO+S2/2": 0.069
+  },
+  "1600": {
+   "FeS->Fe+S2/2": 5.7,
+   "FeS+SiO2->FeO+SiO+S2/2": 0.036,
+   "CaS+SiO2->CaO+SiO+S2/2": 0.015,
+   "MgS+SiO2->MgO+SiO+S2/2": 0.96
+  },
+  "1800": {
+   "FeS->Fe+S2/2": 44.0,
+   "FeS+SiO2->FeO+SiO+S2/2": 1.4,
+   "CaS+SiO2->CaO+SiO+S2/2": 0.68,
+   "MgS+SiO2->MgO+SiO+S2/2": 26.0
+  },
+  "2000": {
+   "FeS->Fe+S2/2": 270.0,
+   "FeS+SiO2->FeO+SiO+S2/2": 25.0,
+   "CaS+SiO2->CaO+SiO+S2/2": 14.0,
+   "MgS+SiO2->MgO+SiO+S2/2": 350.0
+  },
+  "2300": {
+   "FeS->Fe+S2/2": 2300.0,
+   "FeS+SiO2->FeO+SiO+S2/2": 750.0,
+   "CaS+SiO2->CaO+SiO+S2/2": 460.0,
+   "MgS+SiO2->MgO+SiO+S2/2": 7000.0
+  },
+  "2600": {
+   "FeS->Fe+S2/2": 12000.0,
+   "FeS+SiO2->FeO+SiO+S2/2": 9900.0,
+   "CaS+SiO2->CaO+SiO+S2/2": 6600.0,
+   "MgS+SiO2->MgO+SiO+S2/2": 69000.0
+  }
+ },
+ "CS2_to_C_2S_dG_kJ": {
+  "400": -50.0,
+  "600": -21.0,
+  "700": -7.5,
+  "800": 5.6
+ }
+}

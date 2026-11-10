@@ -1,0 +1,457 @@
+{
+ "note": "aspect robustness: decompose 15-30N reversal, recheck 30-75N trend",
+ "wall_definition": "0.55 < rho < 1.05 and host_D_km >= 15",
+ "poleward_definition": "sign(lat)*cos(az_deg)>0 = equator-facing wall",
+ "caloris_center": [
+  31.9,
+  161.9
+ ],
+ "R_Mercury_km": 2439.7,
+ "rng_seed": 20260911,
+ "n_bootstrap": 10000,
+ "n_wall_all": 2401,
+ "reproduce_recorded_N_bands": {
+  "0-15": {
+   "n": 267,
+   "frac_poleward": 0.4794007490636704,
+   "n_craters": 63
+  },
+  "15-30": {
+   "n": 874,
+   "frac_poleward": 0.3901601830663616,
+   "n_craters": 60
+  },
+  "30-45": {
+   "n": 621,
+   "frac_poleward": 0.6151368760064412,
+   "n_craters": 60
+  },
+  "45-60": {
+   "n": 330,
+   "frac_poleward": 0.706060606060606,
+   "n_craters": 38
+  },
+  "60-75": {
+   "n": 56,
+   "frac_poleward": 0.75,
+   "n_craters": 26
+  }
+ },
+ "reproduce_match": {
+  "0-15": true,
+  "15-30": true,
+  "30-45": true,
+  "45-60": true,
+  "60-75": true
+ },
+ "decompose_15_30N": {
+  "band": "15-30N",
+  "n": 874,
+  "overall": {
+   "label": "15-30N_all",
+   "n": 874,
+   "n_craters": 60,
+   "k_poleward": 341,
+   "frac_poleward": 0.3901601830663616,
+   "frac_poleward_ci95": [
+    0.35766646452197826,
+    0.4233970643281176
+   ],
+   "binom_p": 8.802204457990698e-11,
+   "per_crater_frac_poleward": 0.5321956121272946,
+   "per_crater_ci95": [
+    0.42379984409821897,
+    0.6404952928936731
+   ],
+   "per_crater_n": 60
+  },
+  "by_caloris": {
+   "lt1200km": {
+    "label": "15-30N_caloris_lt1200",
+    "n": 127,
+    "n_craters": 7,
+    "k_poleward": 7,
+    "frac_poleward": 0.05511811023622047,
+    "frac_poleward_ci95": [
+     0.022444751352238376,
+     0.11026813925997546
+    ],
+    "binom_p": 1.1142593600922467e-27,
+    "per_crater_frac_poleward": 0.47727272727272724,
+    "per_crater_ci95": [
+     0.21428571428571427,
+     0.75
+    ],
+    "per_crater_n": 7
+   },
+   "ge1200km": {
+    "label": "15-30N_caloris_ge1200",
+    "n": 747,
+    "n_craters": 53,
+    "k_poleward": 334,
+    "frac_poleward": 0.44712182061579653,
+    "frac_poleward_ci95": [
+     0.4110673610362705,
+     0.4835953299120887
+    ],
+    "binom_p": 0.004288069022646496,
+    "per_crater_frac_poleward": 0.5394495780514829,
+    "per_crater_ci95": [
+     0.4205227227049356,
+     0.6555497223033929
+    ],
+    "per_crater_n": 53
+   }
+  },
+  "by_hostD": {
+   "D15-30": {
+    "label": "15-30N_D15-30",
+    "n": 50,
+    "n_craters": 18,
+    "k_poleward": 23,
+    "frac_poleward": 0.46,
+    "frac_poleward_ci95": [
+     0.31814917856860875,
+     0.6067580238830781
+    ],
+    "binom_p": 0.6718110337653656,
+    "per_crater_frac_poleward": 0.6432780182780182,
+    "per_crater_ci95": [
+     0.4360209235209235,
+     0.8373015873015873
+    ],
+    "per_crater_n": 18
+   },
+   "D30-100": {
+    "label": "15-30N_D30-100",
+    "n": 85,
+    "n_craters": 18,
+    "k_poleward": 42,
+    "frac_poleward": 0.49411764705882355,
+    "frac_poleward_ci95": [
+     0.38385558260369657,
+     0.604801351409194
+    ],
+    "binom_p": 1.0,
+    "per_crater_frac_poleward": 0.5307678231591275,
+    "per_crater_ci95": [
+     0.35083690162494513,
+     0.7027375201288244
+    ],
+    "per_crater_n": 18
+   },
+   "D>100": {
+    "label": "15-30N_D>100",
+    "n": 739,
+    "n_craters": 24,
+    "k_poleward": 276,
+    "frac_poleward": 0.37347767253044656,
+    "frac_poleward_ci95": [
+     0.33848986654847024,
+     0.40947978070775426
+    ],
+    "binom_p": 6.0569596615807764e-12,
+    "per_crater_frac_poleward": 0.44995464924037737,
+    "per_crater_ci95": [
+     0.27002405607112845,
+     0.6318087953291773
+    ],
+    "per_crater_n": 24
+   }
+  },
+  "peakring_basin_hosts": [
+   {
+    "host_uid": 200153,
+    "host_lat": 31.934,
+    "host_lon": 164.1,
+    "host_D_km": 1595.019,
+    "n_wall_hollows": 102,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200155,
+    "host_lat": 19.835,
+    "host_lon": 43.583,
+    "host_D_km": 895.228,
+    "n_wall_hollows": 3,
+    "k_poleward": 3,
+    "frac_poleward": 1.0
+   },
+   {
+    "host_uid": 200157,
+    "host_lat": 33.26,
+    "host_lon": 226.395,
+    "host_D_km": 788.142,
+    "n_wall_hollows": 30,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200195,
+    "host_lat": 28.898,
+    "host_lon": 246.125,
+    "host_D_km": 308.008,
+    "n_wall_hollows": 2,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200200,
+    "host_lat": 27.777,
+    "host_lon": 57.266,
+    "host_D_km": 295.953,
+    "n_wall_hollows": 65,
+    "k_poleward": 1,
+    "frac_poleward": 0.015
+   },
+   {
+    "host_uid": 200218,
+    "host_lat": 27.197,
+    "host_lon": 119.114,
+    "host_D_km": 254.128,
+    "n_wall_hollows": 206,
+    "k_poleward": 111,
+    "frac_poleward": 0.539
+   },
+   {
+    "host_uid": 200231,
+    "host_lat": 31.027,
+    "host_lon": 69.304,
+    "host_D_km": 239.272,
+    "n_wall_hollows": 1,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200246,
+    "host_lat": 21.675,
+    "host_lon": 341.126,
+    "host_D_km": 221.993,
+    "n_wall_hollows": 4,
+    "k_poleward": 4,
+    "frac_poleward": 1.0
+   },
+   {
+    "host_uid": 200258,
+    "host_lat": 16.767,
+    "host_lon": 194.287,
+    "host_D_km": 208.929,
+    "n_wall_hollows": 3,
+    "k_poleward": 3,
+    "frac_poleward": 1.0
+   },
+   {
+    "host_uid": 200266,
+    "host_lat": 13.756,
+    "host_lon": 274.044,
+    "host_D_km": 205.365,
+    "n_wall_hollows": 1,
+    "k_poleward": 1,
+    "frac_poleward": 1.0
+   },
+   {
+    "host_uid": 200278,
+    "host_lat": 24.691,
+    "host_lon": 323.937,
+    "host_D_km": 199.811,
+    "n_wall_hollows": 1,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200305,
+    "host_lat": 29.417,
+    "host_lon": 75.818,
+    "host_D_km": 184.204,
+    "n_wall_hollows": 2,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200309,
+    "host_lat": 27.202,
+    "host_lon": 299.614,
+    "host_D_km": 183.275,
+    "n_wall_hollows": 194,
+    "k_poleward": 49,
+    "frac_poleward": 0.253
+   },
+   {
+    "host_uid": 200317,
+    "host_lat": 14.705,
+    "host_lon": 238.214,
+    "host_D_km": 179.929,
+    "n_wall_hollows": 2,
+    "k_poleward": 2,
+    "frac_poleward": 1.0
+   },
+   {
+    "host_uid": 200362,
+    "host_lat": 15.341,
+    "host_lon": 310.987,
+    "host_D_km": 161.944,
+    "n_wall_hollows": 93,
+    "k_poleward": 84,
+    "frac_poleward": 0.903
+   },
+   {
+    "host_uid": 200428,
+    "host_lat": 15.705,
+    "host_lon": 329.414,
+    "host_D_km": 145.967,
+    "n_wall_hollows": 9,
+    "k_poleward": 8,
+    "frac_poleward": 0.889
+   },
+   {
+    "host_uid": 200449,
+    "host_lat": 21.909,
+    "host_lon": 350.07,
+    "host_D_km": 141.326,
+    "n_wall_hollows": 1,
+    "k_poleward": 1,
+    "frac_poleward": 1.0
+   },
+   {
+    "host_uid": 200520,
+    "host_lat": 23.865,
+    "host_lon": 181.59,
+    "host_D_km": 129.404,
+    "n_wall_hollows": 2,
+    "k_poleward": 1,
+    "frac_poleward": 0.5
+   },
+   {
+    "host_uid": 200634,
+    "host_lat": 30.505,
+    "host_lon": 86.314,
+    "host_D_km": 113.55,
+    "n_wall_hollows": 1,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200636,
+    "host_lat": 21.48,
+    "host_lon": 284.989,
+    "host_D_km": 113.218,
+    "n_wall_hollows": 1,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200653,
+    "host_lat": 17.846,
+    "host_lon": 207.294,
+    "host_D_km": 111.735,
+    "n_wall_hollows": 10,
+    "k_poleward": 7,
+    "frac_poleward": 0.7
+   },
+   {
+    "host_uid": 200696,
+    "host_lat": 23.468,
+    "host_lon": 337.081,
+    "host_D_km": 107.331,
+    "n_wall_hollows": 3,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200699,
+    "host_lat": 24.706,
+    "host_lon": 356.514,
+    "host_D_km": 107.1,
+    "n_wall_hollows": 2,
+    "k_poleward": 0,
+    "frac_poleward": 0.0
+   },
+   {
+    "host_uid": 200759,
+    "host_lat": 15.246,
+    "host_lon": 111.384,
+    "host_D_km": 102.203,
+    "n_wall_hollows": 1,
+    "k_poleward": 1,
+    "frac_poleward": 1.0
+   }
+  ],
+  "by_peakring": {
+   "is_peakring_D>100": {
+    "label": "15-30N_peakring",
+    "n": 739,
+    "n_craters": 24,
+    "k_poleward": 276,
+    "frac_poleward": 0.37347767253044656,
+    "frac_poleward_ci95": [
+     0.33848986654847024,
+     0.40947978070775426
+    ],
+    "binom_p": 6.0569596615807764e-12,
+    "per_crater_frac_poleward": 0.44995464924037737,
+    "per_crater_ci95": [
+     0.27438581366231174,
+     0.6333659459059747
+    ],
+    "per_crater_n": 24
+   },
+   "not_peakring_D<=100": {
+    "label": "15-30N_notpeakring",
+    "n": 135,
+    "n_craters": 36,
+    "k_poleward": 65,
+    "frac_poleward": 0.48148148148148145,
+    "frac_poleward_ci95": [
+     0.3947365054800228,
+     0.5690565277954992
+    ],
+    "binom_p": 0.7307894394358099,
+    "per_crater_frac_poleward": 0.5870229207185729,
+    "per_crater_ci95": [
+     0.4489458573833574,
+     0.7204833205240813
+    ],
+    "per_crater_n": 36
+   }
+  },
+  "by_hotwarm": {
+   "hot": {
+    "label": "15-30N_hot",
+    "n": 264,
+    "n_craters": 39,
+    "k_poleward": 84,
+    "frac_poleward": 0.3181818181818182,
+    "frac_poleward_ci95": [
+     0.2624290533421345,
+     0.37807310033717834
+    ],
+    "binom_p": 3.397035382454141e-09,
+    "per_crater_frac_poleward": 0.6120952316604491,
+    "per_crater_ci95": [
+     0.4817405078818122,
+     0.7378371588154198
+    ],
+    "per_crater_n": 39
+   },
+   "warm": {
+    "label": "15-30N_warm",
+    "n": 610,
+    "n_craters": 23,
+    "k_poleward": 257,
+    "frac_poleward": 0.42131147540983604,
+    "frac_poleward_ci95": [
+     0.3817711052936125,
+     0.46161722796893867
+    ],
+    "binom_p": 0.00011632207713765307,
+    "per_crater_frac_poleward": 0.3939140301252247,
+    "per_crater_ci95": [
+     0.21336648526612775,
+     0.5786534318474285
+    ],
+    "per_crater_n": 23
+   }
+  }
+ }
+}

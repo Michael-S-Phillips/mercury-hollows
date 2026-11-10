@@ -1,0 +1,88 @@
+{
+ "ring_def": "1.0-2.3 Caloris radii (rim to ~1,000 km beyond it)",
+ "reference": "craters beyond 3 Caloris radii",
+ "sectors": {
+  "N": {
+   "craters": 292,
+   "hosts": 13,
+   "OR": [
+    3.6,
+    1.79,
+    7.25
+   ]
+  },
+  "NE": {
+   "craters": 315,
+   "hosts": 3,
+   "OR": [
+    0.75,
+    0.23,
+    2.46
+   ]
+  },
+  "E": {
+   "craters": 245,
+   "hosts": 24,
+   "OR": [
+    5.97,
+    3.6,
+    9.89
+   ]
+  },
+  "SE": {
+   "craters": 228,
+   "hosts": 1,
+   "OR": [
+    0.1,
+    0.01,
+    0.75
+   ]
+  },
+  "S": {
+   "craters": 221,
+   "hosts": 5,
+   "OR": [
+    0.62,
+    0.24,
+    1.65
+   ]
+  },
+  "SW": {
+   "craters": 261,
+   "hosts": 2,
+   "OR": [
+    0.25,
+    0.06,
+    1.03
+   ]
+  },
+  "W": {
+   "craters": 250,
+   "hosts": 4,
+   "OR": [
+    0.76,
+    0.24,
+    2.45
+   ]
+  },
+  "NW": {
+   "craters": 283,
+   "hosts": 25,
+   "OR": [
+    7.99,
+    4.73,
+    13.47
+   ]
+  }
+ },
+ "b59_center_rc": 2.04,
+ "b59_center_az": 314.7,
+ "NW_ring_near_b59": [
+  194,
+  20
+ ],
+ "NW_ring_away_b59": [
+  89,
+  5
+ ]
+}

@@ -1,0 +1,15 @@
+candidate,dH_kJ_per_mol,basis,log10_ratio_219_324K_sqrtP,log10_ratio_219_324K_P,log10_ratio_peakT_sqrtP,dH_over_dHapp_meanT_sqrtP
+H2O ice -> H2O(g) (reference),50.0,JANAF dfH(g) - dfH(l) at 298 K + fusion,1.93,3.86,1.49,10.3
+S liquid -> total vapor (CRC fit 375-717 K),75.1,"slope 9,029 K of the CRC fit used in Section S9",2.9,5.8,2.23,15.5
+S8: 8 S(rhombic) -> S8(g),100.4,JANAF dfH298 of S8(g),3.88,7.76,2.98,20.8
+S8: 8 S(liquid) -> S8(g),85.6,JANAF dfH298 of S8(g) and S(l),3.31,6.61,2.54,17.7
+S2: 2 S(rhombic) -> S2(g),128.6,JANAF dfH298 of S2(g),4.97,9.94,3.82,26.6
+S2: 2 S(liquid) -> S2(g),124.9,JANAF dfH298 of S2(g) and S(l),4.82,9.65,3.71,25.8
+NaCl(cr) -> NaCl(g),229.7,JANAF dfH298,8.87,17.75,6.83,47.5
+KCl(cr) -> KCl(g),222.0,JANAF dfH298,8.58,17.15,6.6,45.9
+Na2S(cr) -> 2 Na(g) + 1/2 S2(g),258.0,"JANAF dfH298; congruent, per mol of gas (2.5)",9.97,19.93,7.67,53.4
+K2S(cr) -> 2 K(g) + 1/2 S2(g),247.5,"JANAF dfH298; congruent, per mol of gas (2.5)",9.56,19.13,7.36,51.2
+MgS(cr) -> Mg(g) + 1/2 S2(g),371.4,"JANAF dfH298; congruent, per mol of gas (1.5)",14.35,28.7,11.04,76.8
+CaS(cr) -> Ca(g) + 1/2 S2(g),476.9,"JANAF dfH298; congruent, per mol of gas (1.5)",18.42,36.84,14.17,98.6
+FeS(cr) -> Fe(s) + 1/2 S2(g),313.6,"JANAF Fe-025 dfG at 900-1400 K; P_S2 ~ K^2, per mol S2",12.11,24.23,9.32,64.9
+C(graphite) -> C(g),716.7,JANAF dfH298 of C(g),27.68,55.37,21.3,148.2

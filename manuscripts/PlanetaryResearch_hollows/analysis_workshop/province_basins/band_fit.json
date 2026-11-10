@@ -1,0 +1,17 @@
+{
+ "hollows_in_box": 645,
+ "band_hollows_within_40km": 257,
+ "band_fields": 16,
+ "band_length_km_5_95": 608,
+ "band_halfwidth_km_median": 18.5,
+ "midpoint": [
+  52.23,
+  130.02
+ ],
+ "band_azimuth_deg": 143.0,
+ "azimuth_to_Caloris_center_deg": 121.7,
+ "angle_band_vs_radial_deg": 21.3,
+ "great_circle_distance_from_Caloris_center_km": 472,
+ "Caloris_radius_km": 778,
+ "band_hollows_in_host_craters": 25
+}

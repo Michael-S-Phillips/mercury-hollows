@@ -1,0 +1,852 @@
+{
+ "inputs": {
+  "depths": "/sessions/rcw-01cubj9exxyvrkk4tagmgbtm/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv",
+  "catalog": "/sessions/rcw-01cubj9exxyvrkk4tagmgbtm/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/test2_craters_h18.csv",
+  "graph_nodes": "/sessions/rcw-01cubj9exxyvrkk4tagmgbtm/mnt/hollows-emissivity/manuscripts/PlanetaryResearch_hollows/analysis_v8/crater_dag_nodes.csv",
+  "graph_columns": {
+   "id": "id",
+   "nesting": "parent (>= 0 nested) / parent_id",
+   "n_ancestors": "chain",
+   "position": "zone (peak rho<0.2, floor 0.2-0.6, wall >=0.6)",
+   "parent_kind": "parent_kind",
+   "parent_hosts": "hosts of the parent row (catalog host flag; NaN for Orgel basins)",
+   "ring_artifact": "possible_ring"
+  },
+  "depth_columns": {
+   "depth": "depth (m), lnh",
+   "pixel_scale": "px (m), lnpx",
+   "incidence": "inc (deg)",
+   "temperature": "T (K, mean annual)",
+   "image": "filename"
+  }
+ },
+ "counts": {
+  "hollows": 2518,
+  "images": 527,
+  "assigned": 1960,
+  "unassigned": 558,
+  "unassigned_images": 164,
+  "assigned_not_in_graph": 0,
+  "host_craters": 128,
+  "host_flag_0_in_catalog": 23,
+  "caloris_as_host": 0
+ },
+ "correction": {
+  "b_lnpx": 0.7804753030964408,
+  "b_ltan": -0.7339084211125108,
+  "px_median_m": 14.240100000000002,
+  "inc_median_deg": 67.59108
+ },
+ "groups_nested_all": {
+  "isolated": {
+   "hollows": 1209,
+   "images": 256,
+   "host_craters": 80,
+   "median_corrected_depth_m": [
+    25.139557239718066,
+    23.385652708238194,
+    26.404395898591904
+   ],
+   "median_raw_depth_m": 21.2177,
+   "median_host_D_km": 94.614619
+  },
+  "nested": {
+   "hollows": 751,
+   "images": 120,
+   "host_craters": 48,
+   "median_corrected_depth_m": [
+    24.956629133939916,
+    22.393779628917162,
+    27.22694920001219
+   ],
+   "median_raw_depth_m": 20.4172,
+   "median_host_D_km": 33.64668
+  }
+ },
+ "nested_all": {
+  "formula": "lnh ~ nested + x + lnpx + ltan",
+  "n": 1960,
+  "n_img": 375,
+  "n_host": 128,
+  "terms": {
+   "nested": {
+    "cluster_image": {
+     "b": 0.02056969842625005,
+     "se": 0.05447966121310257,
+     "p": 0.7057526081215308,
+     "ratio": 1.0207827127124554,
+     "ci95": [
+      0.9174011552528553,
+      1.1358142952037187
+     ]
+    },
+    "cluster_host": {
+     "b": 0.02056969842625005,
+     "se": 0.0774064392811372,
+     "p": 0.7904423281532043,
+     "ratio": 1.0207827127124554,
+     "ci95": [
+      0.8770889007732134,
+      1.1880179371258803
+     ]
+    }
+   }
+  },
+  "x_coef_K": [
+   -258.4633566184272,
+   106.83529071325208
+  ],
+  "lnpx": 0.7649298703966341,
+  "ltan": -0.6975640839857808
+ },
+ "groups_parent_all": {
+  "isolated": {
+   "hollows": 1209,
+   "images": 256,
+   "host_craters": 80,
+   "median_corrected_depth_m": [
+    25.139557239718066,
+    23.561123228150507,
+    26.49704834245716
+   ],
+   "median_raw_depth_m": 21.2177,
+   "median_host_D_km": 94.614619
+  },
+  "parent_hosts": {
+   "hollows": 346,
+   "images": 45,
+   "host_craters": 18,
+   "median_corrected_depth_m": [
+    27.906616692476433,
+    24.466126323313834,
+    32.76721720271159
+   ],
+   "median_raw_depth_m": 20.37675,
+   "median_host_D_km": 35.60879799999999
+  },
+  "parent_crater_no_hollows": {
+   "hollows": 210,
+   "images": 40,
+   "host_craters": 9,
+   "median_corrected_depth_m": [
+    23.109457182784354,
+    19.76133891222005,
+    26.445344850388594
+   ],
+   "median_raw_depth_m": 22.581699999999998,
+   "median_host_D_km": 25.254802
+  },
+  "in_basin": {
+   "hollows": 195,
+   "images": 36,
+   "host_craters": 21,
+   "median_corrected_depth_m": [
+    22.39486862157917,
+    18.367293014865446,
+    26.962339132672252
+   ],
+   "median_raw_depth_m": 18.632,
+   "median_host_D_km": 66.719984
+  }
+ },
+ "parent_all": {
+  "formula": "lnh ~ C(ptype, Treatment('isolated')) + x + lnpx + ltan",
+  "n": 1960,
+  "n_img": 375,
+  "n_host": 128,
+  "terms": {
+   "parent_hosts": {
+    "cluster_image": {
+     "b": 0.04820128372953189,
+     "se": 0.07493467415227496,
+     "p": 0.5200657506413184,
+     "ratio": 1.0493818575619636,
+     "ci95": [
+      0.9060410384986082,
+      1.2154000052856202
+     ]
+    },
+    "cluster_host": {
+     "b": 0.04820128372953189,
+     "se": 0.10828070486044189,
+     "p": 0.6562105034217707,
+     "ratio": 1.0493818575619636,
+     "ci95": [
+      0.8487174954599904,
+      1.2974897876747131
+     ]
+    }
+   },
+   "parent_crater_no_hollows": {
+    "cluster_image": {
+     "b": 0.11278279267589414,
+     "se": 0.09665537231992581,
+     "p": 0.2432689806149687,
+     "ratio": 1.119388767102104,
+     "ci95": [
+      0.9262031007971283,
+      1.3528687291545005
+     ]
+    },
+    "cluster_host": {
+     "b": 0.11278279267589414,
+     "se": 0.1103801346128217,
+     "p": 0.30689113296949755,
+     "ratio": 1.119388767102104,
+     "ci95": [
+      0.901619876073431,
+      1.38975553353076
+     ]
+    }
+   },
+   "in_basin": {
+    "cluster_image": {
+     "b": -0.11057887761328775,
+     "se": 0.07863253678722171,
+     "p": 0.159642832046628,
+     "ratio": 0.8953157070381196,
+     "ci95": [
+      0.7674371825458319,
+      1.0445027078438391
+     ]
+    },
+    "cluster_host": {
+     "b": -0.11057887761328775,
+     "se": 0.09364636334748341,
+     "p": 0.23767687273382088,
+     "ratio": 0.8953157070381196,
+     "ci95": [
+      0.7451827789849411,
+      1.0756961082233583
+     ]
+    }
+   }
+  },
+  "x_coef_K": [
+   -319.1705661319697,
+   116.10661287910288
+  ],
+  "lnpx": 0.7708889891480049,
+  "ltan": -0.6915354210305029
+ },
+ "groups_chain_all": {
+  "0": {
+   "hollows": 1209,
+   "images": 256,
+   "host_craters": 80,
+   "median_corrected_depth_m": [
+    25.139557239718066,
+    23.558933620997127,
+    26.49704834245716
+   ],
+   "median_raw_depth_m": 21.2177,
+   "median_host_D_km": 94.614619
+  },
+  "1": {
+   "hollows": 737,
+   "images": 118,
+   "host_craters": 46,
+   "median_corrected_depth_m": [
+    25.16506277473624,
+    22.889062081005996,
+    27.76976057870801
+   ],
+   "median_raw_depth_m": 20.7015,
+   "median_host_D_km": 34.0083065
+  },
+  "2": {
+   "hollows": 14,
+   "images": 3,
+   "host_craters": 2,
+   "median_corrected_depth_m": [
+    21.07307891816517,
+    10.463287058107623,
+    21.94293440330733
+   ],
+   "median_raw_depth_m": 3.999285,
+   "median_host_D_km": 13.670011
+  }
+ },
+ "chain_all": {
+  "formula": "lnh ~ C(chain3, Treatment('0')) + x + lnpx + ltan",
+  "n": 1960,
+  "n_img": 375,
+  "n_host": 128,
+  "terms": {
+   "1": {
+    "cluster_image": {
+     "b": 0.024655413489929157,
+     "se": 0.0547531813190113,
+     "p": 0.6524934023925494,
+     "ratio": 1.0249618716312214,
+     "ci95": [
+      0.9206633631232729,
+      1.1410759680214546
+     ]
+    },
+    "cluster_host": {
+     "b": 0.024655413489929157,
+     "se": 0.07749364541461652,
+     "p": 0.7503632276501694,
+     "ratio": 1.0249618716312214,
+     "ci95": [
+      0.8805292502759772,
+      1.193085678832943
+     ]
+    }
+   },
+   "2": {
+    "cluster_image": {
+     "b": -0.23327066724869877,
+     "se": 0.11148489052557267,
+     "p": 0.03640300349865021,
+     "ratio": 0.7919391925102897,
+     "ci95": [
+      0.6364935130197332,
+      0.9853481171526184
+     ]
+    },
+    "cluster_host": {
+     "b": -0.23327066724869877,
+     "se": 0.11798889169817697,
+     "p": 0.04803528047338243,
+     "ratio": 0.7919391925102897,
+     "ci95": [
+      0.6284310925078213,
+      0.9979895840784552
+     ]
+    }
+   }
+  },
+  "x_coef_K": [
+   -259.0288962587306,
+   106.60235911274489
+  ],
+  "lnpx": 0.7576176056944569,
+  "ltan": -0.6981802855953609
+ },
+ "groups_nested_ge10": {
+  "isolated": {
+   "hollows": 1206,
+   "images": 254,
+   "host_craters": 78,
+   "median_corrected_depth_m": [
+    25.15612103381195,
+    23.63029372454998,
+    26.52615412138247
+   ],
+   "median_raw_depth_m": 21.267699999999998,
+   "median_host_D_km": 96.958988
+  },
+  "nested": {
+   "hollows": 719,
+   "images": 113,
+   "host_craters": 41,
+   "median_corrected_depth_m": [
+    25.371829717962374,
+    23.07779238545225,
+    27.78094569517606
+   ],
+   "median_raw_depth_m": 21.1841,
+   "median_host_D_km": 48.957575
+  }
+ },
+ "nested_ge10": {
+  "formula": "lnh ~ nested + x + lnpx + ltan",
+  "n": 1925,
+  "n_img": 367,
+  "n_host": 119,
+  "terms": {
+   "nested": {
+    "cluster_image": {
+     "b": 0.03276120554952033,
+     "se": 0.05527641582726543,
+     "p": 0.5533955779101627,
+     "ratio": 1.0333037625738664,
+     "ci95": [
+      0.9272050231053971,
+      1.1515432284580494
+     ]
+    },
+    "cluster_host": {
+     "b": 0.03276120554952033,
+     "se": 0.078441092083203,
+     "p": 0.6762003918682288,
+     "ratio": 1.0333037625738664,
+     "ci95": [
+      0.8860487255307198,
+      1.2050315462163497
+     ]
+    }
+   }
+  },
+  "x_coef_K": [
+   -267.533488219242,
+   106.89298411585433
+  ],
+  "lnpx": 0.7586793673290041,
+  "ltan": -0.6995532891076485
+ },
+ "groups_parent_ge10": {
+  "isolated": {
+   "hollows": 1206,
+   "images": 254,
+   "host_craters": 78,
+   "median_corrected_depth_m": [
+    25.15612103381195,
+    23.613365057926593,
+    26.527210021502498
+   ],
+   "median_raw_depth_m": 21.267699999999998,
+   "median_host_D_km": 96.958988
+  },
+  "parent_hosts": {
+   "hollows": 343,
+   "images": 43,
+   "host_craters": 16,
+   "median_corrected_depth_m": [
+    27.99118630124632,
+    24.521033295092096,
+    33.031714907158346
+   ],
+   "median_raw_depth_m": 20.3793,
+   "median_host_D_km": 42.932984
+  },
+  "parent_crater_no_hollows": {
+   "hollows": 188,
+   "images": 36,
+   "host_craters": 6,
+   "median_corrected_depth_m": [
+    23.66177619318669,
+    19.68803239944122,
+    26.662021033183887
+   ],
+   "median_raw_depth_m": 24.77445,
+   "median_host_D_km": 32.027556
+  },
+  "in_basin": {
+   "hollows": 188,
+   "images": 34,
+   "host_craters": 19,
+   "median_corrected_depth_m": [
+    22.955848522512383,
+    19.11766945653902,
+    27.14789951148882
+   ],
+   "median_raw_depth_m": 19.6629,
+   "median_host_D_km": 76.041476
+  }
+ },
+ "parent_ge10": {
+  "formula": "lnh ~ C(ptype, Treatment('isolated')) + x + lnpx + ltan",
+  "n": 1925,
+  "n_img": 367,
+  "n_host": 119,
+  "terms": {
+   "parent_hosts": {
+    "cluster_image": {
+     "b": 0.044486729495128725,
+     "se": 0.07517808389290494,
+     "p": 0.5540171332105326,
+     "ratio": 1.0454911024236289,
+     "ci95": [
+      0.902251191443813,
+      1.2114715454105816
+     ]
+    },
+    "cluster_host": {
+     "b": 0.044486729495128725,
+     "se": 0.1072075277023213,
+     "p": 0.6781719106289632,
+     "ratio": 1.0454911024236289,
+     "ci95": [
+      0.8473512047133768,
+      1.289962932921902
+     ]
+    }
+   },
+   "parent_crater_no_hollows": {
+    "cluster_image": {
+     "b": 0.16114901660393796,
+     "se": 0.10497151587488406,
+     "p": 0.12474232196421038,
+     "ratio": 1.174860029421766,
+     "ci95": [
+      0.9563845914557784,
+      1.4432437547241006
+     ]
+    },
+    "cluster_host": {
+     "b": 0.16114901660393796,
+     "se": 0.10578881997374476,
+     "p": 0.127681522825925,
+     "ratio": 1.174860029421766,
+     "ci95": [
+      0.9548537700952766,
+      1.445557562803763
+     ]
+    }
+   },
+   "in_basin": {
+    "cluster_image": {
+     "b": -0.09551220678824578,
+     "se": 0.07960775567431636,
+     "p": 0.2302227748664155,
+     "ratio": 0.9089072667474145,
+     "ci95": [
+      0.7775997028993159,
+      1.062387776726326
+     ]
+    },
+    "cluster_host": {
+     "b": -0.09551220678824578,
+     "se": 0.0971647276850594,
+     "p": 0.3256110883446137,
+     "ratio": 0.9089072667474145,
+     "ci95": [
+      0.7512963686423438,
+      1.099582606846764
+     ]
+    }
+   }
+  },
+  "x_coef_K": [
+   -362.45425721342036,
+   118.71584316333232
+  ],
+  "lnpx": 0.7580895220760576,
+  "ltan": -0.6883453328591714
+ },
+ "groups_chain_ge10": {
+  "0": {
+   "hollows": 1206,
+   "images": 254,
+   "host_craters": 78,
+   "median_corrected_depth_m": [
+    25.15612103381195,
+    23.388671892527867,
+    26.504145668076962
+   ],
+   "median_raw_depth_m": 21.267699999999998,
+   "median_host_D_km": 96.958988
+  },
+  "1": {
+   "hollows": 718,
+   "images": 112,
+   "host_craters": 40,
+   "median_corrected_depth_m": [
+    25.408016998768417,
+    23.036161622721465,
+    27.76395913284733
+   ],
+   "median_raw_depth_m": 21.1563,
+   "median_host_D_km": 49.7453835
+  },
+  "2": {
+   "hollows": 1,
+   "images": 1,
+   "host_craters": 1,
+   "median_corrected_depth_m": [
+    21.94293440330733,
+    21.94293440330733,
+    21.94293440330733
+   ],
+   "median_raw_depth_m": 33.7218,
+   "median_host_D_km": 19.741392
+  }
+ },
+ "chain_ge10": {
+  "formula": "lnh ~ C(chain3, Treatment('0')) + x + lnpx + ltan",
+  "n": 1925,
+  "n_img": 367,
+  "n_host": 119,
+  "terms": {
+   "1": {
+    "cluster_image": {
+     "b": 0.032973472243242874,
+     "se": 0.05534710381669619,
+     "p": 0.5513369974663197,
+     "ratio": 1.033523121827667,
+     "ci95": [
+      0.9272733775421159,
+      1.1519472781411666
+     ]
+    },
+    "cluster_host": {
+     "b": 0.032973472243242874,
+     "se": 0.07852467034036477,
+     "p": 0.6745495469393948,
+     "ratio": 1.033523121827667,
+     "ci95": [
+      0.8860916585641297,
+      1.2054848198021937
+     ]
+    }
+   },
+   "2": {
+    "cluster_image": {
+     "b": -0.10551808273578117,
+     "se": 0.04477807233841754,
+     "p": 0.018449670298339164,
+     "ratio": 0.8998582008015766,
+     "ci95": [
+      0.8242485926035722,
+      0.9824035962161511
+     ]
+    },
+    "cluster_host": {
+     "b": -0.10551808273578117,
+     "se": 0.0649986589599158,
+     "p": 0.10450635762774274,
+     "ratio": 0.8998582008015766,
+     "ci95": [
+      0.7922205495361274,
+      1.0221203956701
+     ]
+    }
+   }
+  },
+  "x_coef_K": [
+   -267.65737750194717,
+   106.91575197755799
+  ],
+  "lnpx": 0.7587508475435355,
+  "ltan": -0.6998341760643683
+ },
+ "zone_counts_nested_hollows": {
+  "wall": 625,
+  "floor": 126
+ },
+ "parent_kind_counts_nested_hollows": {
+  "crater": 556,
+  "basin": 195
+ },
+ "possible_ring_hollows": 0,
+ "nested_all_hostlogD": {
+  "ratio": 1.0167650175267013,
+  "ci95": [
+   0.9067145738487435,
+   1.14017258648203
+  ],
+  "p": 0.7760504507665811,
+  "b_logD": [
+   -0.013447873670021739,
+   0.058345342534455405
+  ]
+ },
+ "parents_of_nested_hosts": {
+  "200183": {
+   "hollows": 165,
+   "host_craters": 2,
+   "images": 30,
+   "kind": "crater",
+   "D_km": 380.465519,
+   "group": "parent_crater_no_hollows"
+  },
+  "200153": {
+   "hollows": 100,
+   "host_craters": 3,
+   "images": 12,
+   "kind": "crater",
+   "D_km": 1555.91479183,
+   "group": "parent_hosts"
+  },
+  "200195": {
+   "hollows": 92,
+   "host_craters": 2,
+   "images": 8,
+   "kind": "crater",
+   "D_km": 308.00785,
+   "group": "parent_hosts"
+  },
+  "200157": {
+   "hollows": 78,
+   "host_craters": 3,
+   "images": 9,
+   "kind": "crater",
+   "D_km": 788.141571,
+   "group": "parent_hosts"
+  },
+  "orgel_b59": {
+   "hollows": 62,
+   "host_craters": 13,
+   "images": 16,
+   "kind": "basin",
+   "D_km": 700.585784534,
+   "group": "in_basin"
+  },
+  "orgel_b74": {
+   "hollows": 56,
+   "host_craters": 1,
+   "images": 5,
+   "kind": "basin",
+   "D_km": 588.949630856,
+   "group": "in_basin"
+  },
+  "orgel_b72": {
+   "hollows": 46,
+   "host_craters": 1,
+   "images": 7,
+   "kind": "basin",
+   "D_km": 628.748802685,
+   "group": "in_basin"
+  },
+  "200349": {
+   "hollows": 25,
+   "host_craters": 1,
+   "images": 2,
+   "kind": "crater",
+   "D_km": 167.741702,
+   "group": "parent_hosts"
+  },
+  "200159": {
+   "hollows": 17,
+   "host_craters": 1,
+   "images": 4,
+   "kind": "crater",
+   "D_km": 746.282,
+   "group": "parent_hosts"
+  },
+  "orgel_b60": {
+   "hollows": 14,
+   "host_craters": 3,
+   "images": 4,
+   "kind": "basin",
+   "D_km": 876.937941965,
+   "group": "in_basin"
+  },
+  "200158": {
+   "hollows": 13,
+   "host_craters": 2,
+   "images": 3,
+   "kind": "crater",
+   "D_km": 758.125077,
+   "group": "parent_hosts"
+  },
+  "200391": {
+   "hollows": 13,
+   "host_craters": 1,
+   "images": 2,
+   "kind": "crater",
+   "D_km": 154.456666,
+   "group": "parent_crater_no_hollows"
+  },
+  "200199": {
+   "hollows": 9,
+   "host_craters": 1,
+   "images": 2,
+   "kind": "crater",
+   "D_km": 296.482214,
+   "group": "parent_crater_no_hollows"
+  },
+  "200986": {
+   "hollows": 8,
+   "host_craters": 1,
+   "images": 2,
+   "kind": "crater",
+   "D_km": 88.826651,
+   "group": "parent_crater_no_hollows"
+  },
+  "orgel_b63": {
+   "hollows": 8,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "basin",
+   "D_km": 699.513436438,
+   "group": "in_basin"
+  },
+  "200422": {
+   "hollows": 8,
+   "host_craters": 2,
+   "images": 2,
+   "kind": "crater",
+   "D_km": 146.680038,
+   "group": "parent_hosts"
+  },
+  "orgel_b79": {
+   "hollows": 7,
+   "host_craters": 1,
+   "images": 2,
+   "kind": "basin",
+   "D_km": 644.758519644,
+   "group": "in_basin"
+  },
+  "200765": {
+   "hollows": 5,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "crater",
+   "D_km": 101.622454,
+   "group": "parent_crater_no_hollows"
+  },
+  "200255": {
+   "hollows": 5,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "crater",
+   "D_km": 210.492952,
+   "group": "parent_hosts"
+  },
+  "109251": {
+   "hollows": 5,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "crater",
+   "D_km": 47.180005,
+   "group": "parent_crater_no_hollows"
+  },
+  "201361": {
+   "hollows": 4,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "crater",
+   "D_km": 71.850718,
+   "group": "parent_crater_no_hollows"
+  },
+  "200309": {
+   "hollows": 4,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "crater",
+   "D_km": 183.275445,
+   "group": "parent_hosts"
+  },
+  "200336": {
+   "hollows": 2,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "crater",
+   "D_km": 171.500567,
+   "group": "parent_hosts"
+  },
+  "orgel_b61": {
+   "hollows": 2,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "basin",
+   "D_km": 359.915545954,
+   "group": "in_basin"
+  },
+  "200333": {
+   "hollows": 2,
+   "host_craters": 1,
+   "images": 2,
+   "kind": "crater",
+   "D_km": 172.27005,
+   "group": "parent_hosts"
+  },
+  "200341": {
+   "hollows": 1,
+   "host_craters": 1,
+   "images": 1,
+   "kind": "crater",
+   "D_km": 170.067774,
+   "group": "parent_crater_no_hollows"
+  }
+ },
+ "note": "Groups with fewer than 3 host craters (>= 2 ancestors: 2 hosts, 14 hollows, 3 images; 1 hollow with hosts >= 10 km) are not interpretable; their coefficients are recorded but not reported.",
+ "check_S11_craters_ge3": {
+  "craters": 87,
+  "hollows": 1894
+ }
+}
