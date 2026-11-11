@@ -8,7 +8,7 @@ The crater containment graph (craters that formed inside older craters, and an i
 
 ## Running the scripts
 
-The analyses ran in a working folder mounted at `~/mnt/hollows-emissivity`, and the scripts in this repository are byte-identical to the scripts that wrote the archived records. Most scripts therefore locate their inputs under `~/mnt/hollows-emissivity`. Link the repository there before running anything:
+The analyses ran in a working folder mounted at `~/mnt/hollows-emissivity`, and the scripts in this repository are byte-identical to the scripts that wrote the archived records, except for one line of `R/g4_completeness/g2/threshold.py` changed in v0.3.1 (see Versions). Most scripts therefore locate their inputs under `~/mnt/hollows-emissivity`. Link the repository there before running anything:
 
 ```bash
 bash setup_root.sh        # creates ~/mnt/hollows-emissivity -> this repository (stops if that path already exists)
@@ -73,6 +73,8 @@ The following analyses were rerun from this repository, with `~/mnt/hollows-emis
 - the Caloris tests on the refit grid (`G3_CAT=v3 G3_GRID=v3r` with `R/g3_catalog/caloris/caloris_v9.py` and `caloris_v9_controls.py`, records in `caloris/out_v3r/`), which differ only in the recorded paths of their inputs;
 - the depth regressions on the automatic depths (`R/g23_smallest_hollows/depth_paper.py`, which reads the external map of low-reflectance material of Klima et al., 2018), the depth fits on the screened-mask colors (`R/g6_remaining/color/depth_color_fits.py`), and the text numbers (`R/g27_text_numbers/text_numbers.py`).
 
+A rerun on 11 November 2026 (v0.3.1) with Python 3.11.13, NumPy 2.3.3, pandas 2.3.2, SciPy 1.16.2, statsmodels 0.14.6, and Matplotlib 3.10.6 completes every step above except `depth_paper.py`, whose external map was not at hand. Its records agree with the archived records to floating-point precision (the last digit) rather than byte for byte, with one exception: in `R/g4_completeness/g2/out/v3r/threshold.json`, the pointwise 95% band around the spline (`spline_shape` `lo` and `hi`) differs by up to 2.4%, while every estimate in the record agrees to 10⁻¹¹. The paper does not use the band. Figure 4 differs from the submitted figure only in how its text is rendered.
+
 Partial checks:
 - **Joint model with the composition group** (`R/g25_composition/comp_model.py`). A run with 2 bootstrap draws reproduces every point estimate (R² 0.226, the shares, and the coefficients) to 10⁻¹⁵. The archived intervals come from 100 draws, which were not rerun.
 - **Records that need Cantera or external data.** `P/analysis_workshop/sulfur_redox/redox_check.py` (Cantera; `redox_check_record.json`) and `G/scripts/nsp_mask2.py` (the northern smooth plains lineament map; `nsp_mask2_record.json`) were not rerun here.
@@ -99,12 +101,14 @@ The author measured and classified features by hand in browser pages; the export
 | USGS MESSENGER global DEM, 665 m/pixel (`data/DEMs/`) | `peak_wall_test/measure_all.py`, `nested_build.py`, traced terrain and position builders, knob scripts | USGS Astrogeology (Becker et al., 2016) |
 | MDIS global mosaics, 166 m/pixel monochrome and 665 m/pixel enhanced color | map figures, tracing pages | USGS Astrogeology (Denevi et al., 2018) |
 | Low-reflectance material map (`data/Concentrated_LRM_560_params_BW.tif`) | `depth_paper.py`, composition steps | Klima et al. (2018) |
-| Volcanic vent catalog (`data/data/MER_Vent_Locations_Classifications.csv`) | vent tests | source to be cited |
+| Volcanic vent catalog (`data/data/MER_Vent_Locations_Classifications.csv`) | vent tests | Pegg et al. (2021) |
 | Northern smooth plains lineament map (`data/data/NSP_map_data/`) | `G/scripts/nsp_mask2.py` | Klimczak et al. (2025); the resulting mask is included |
 | Kinczyk et al. (2020) degradation table | `P/analysis_workshop/kinczyk_degradation/` | Kinczyk et al. (2020) supplement; the matched classes are included |
 | ISIS 8 with MESSENGER kernels; Cantera (sulfur-redox checks) | georeferencing; `P/analysis_workshop/sulfur_redox/` | USGS Astrogeology; cantera.org |
 
 ## Versions
+
+**v0.3.1 (November 2026).** Two steps of `run_g2.sh` failed in v0.2.0 to v0.3.0. `latcorr5.py` (Section S6) reads `code/rerun/latitude/incidence_null/out_inc60_75/coverage_10ppd.npz`, which v0.2.0 removed; the file is restored from v0.1.0, and the record it writes is byte-identical to the archived one. `threshold.py` (Section 3.5 and S8) read the design of a formula model as `model_spec`, which statsmodels 0.14 calls `design_info`; it now reads either. The vent catalog is credited to Pegg et al. (2021).
 
 **v0.3.0 (November 2026).** Removes from `manuscripts/` the manuscript drafts (v6.13 to v6.15, supplement v24 to v27), the GRL document builders, and the analyses and figures that neither the reproduction check nor the provenance tables use (195 files). The submitted manuscript and supplement, and every script, input, and record that `run_all.sh` or `provenance/` names, are unchanged. The removed files remain in v0.2.1.
 

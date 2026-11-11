@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this code or these data, please cite them as below, together with the source data sets listed in LICENSE-DATA.md."
 title: "Mercury hollows: code and derived data for a hollow formation model"
-version: 0.3.0
+version: 0.3.1
 doi: 10.5281/zenodo.24121932
 license: [MIT, CC-BY-4.0]
 type: software

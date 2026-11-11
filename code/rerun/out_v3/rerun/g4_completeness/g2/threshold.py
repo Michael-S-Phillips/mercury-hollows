@@ -73,7 +73,8 @@ def run(d, ctrl, tag):
     m4 = fit(f"h09 ~ {ctrl} + cr(dT, df=4)", d)
     g = np.linspace(0, d.dT.max(), 63); ref = d.iloc[[0] * len(g)].copy(); ref["dT"] = g
     for k in ("logD", "abslat", "C1", "lc", "logD2"): ref[k] = d[k].median()
-    import patsy; X = np.asarray(patsy.build_design_matrices([m4.model.data.model_spec], ref)[0])
+    spec = getattr(m4.model.data, "model_spec", None) or m4.model.data.design_info  # v0.3.1: statsmodels 0.14 names it design_info
+    import patsy; X = np.asarray(patsy.build_design_matrices([spec], ref)[0])
     X0 = X - X[0]; eta = X0 @ m4.params.values; se_ = np.sqrt(np.einsum("ij,jk,ik->i", X0, m4.cov_params().values, X0))
     R["spline_shape"] = dict(dT=g.tolist(), OR=np.exp(eta).tolist(), lo=np.exp(eta - 1.96 * se_).tolist(), hi=np.exp(eta + 1.96 * se_).tolist())
     # empirical: host rate / C1-adjusted host rate in dT bins

@@ -11,5 +11,6 @@ The derived products redistribute or are computed from these data sets; cite the
 - Nittler, L. R., and others (2020). Global major-element maps of Mercury from four years of MESSENGER X-Ray Spectrometer observations. *Icarus*, 345, 113716. doi:10.1016/j.icarus.2020.113716 (X-ray ratio maps, from the NASA Planetary Data System).
 - Becker, K. J., and others (2016). First global digital elevation model of Mercury. 47th Lunar and Planetary Science Conference, abstract 2959 (topography used for terrain and slope classes).
 - Denevi, B. W., and others (2018). Calibration, projection, and final image products of MESSENGER's Mercury Dual Imaging System. *Space Science Reviews*, 214, 2. doi:10.1007/s11214-017-0440-y (MDIS mosaics and images).
+- Pegg, D. L., Rothery, D. A., Balme, M. R., and Conway, S. J. (2021). Explosive vent sites on Mercury: Commonplace multiple eruptions and their implications. *Icarus*, 365, 114510. doi:10.1016/j.icarus.2021.114510 (volcanic vent catalog).
 
 MESSENGER images, navigation data, and X-Ray Spectrometer maps are from the NASA Planetary Data System.
