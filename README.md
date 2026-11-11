@@ -49,7 +49,7 @@ Folders keep the layout in which the analyses ran, so scripts find one another's
 | `P/analysis_v3/`, `P/analysis_v7/`, `P/analysis_v8/`, `P/analysis_v9/` | Sulfur release and vapor pressure, transition layer, collapse depth, model-logic calculations, first graph versions |
 | `P/analysis_workshop/` | Volatile fits, sulfur redox, Kinczyk classes, vent checks, depth pilot, province basins, Caloris |
 | `P/figscripts/` | Life-cycle figure (Figure 7, `lifecycle_fig_v12.py`) and base temperature against φ (Figure 8) |
-| `P/submission/` | The submitted manuscript and supplement (`Hollow_Formation_Model_Paper_final.tex` = v6.16, `supplementary-materials_final.tex` = v28) and their figures (`figures/`) |
+| `P/submission/` | The submitted manuscript and supplement (`Hollow_Formation_Model_Paper_final.tex` = v6.17, `supplementary-materials_final.tex` = v29) and their figures (`figures/`) |
 | `peak_wall_test/` | DEM morphometry of the cataloged craters (`morph_all.csv`) and the Caloris children |
 | `R/g27_text_numbers/` | Numbers that the text computes from stated inputs (S2, S8, S13, Section 3.6), recorded in `text_numbers.json` |
 | `R/g28_fig2a/` | Figure 2 with panel a on the MDIS mosaic (`layers.py` needs the external 166 m mosaic; `make_figs_pr_v10.py` draws the figure) |
@@ -57,7 +57,7 @@ Folders keep the layout in which the analyses ran, so scripts find one another's
 
 ## Where each result comes from
 
-`provenance/main_text.csv` (150 rows) and `provenance/supplement.csv` (114 rows) map every quantitative result of the manuscript and the supplement to the script that computed it and the record that holds it, with the JSON key or table column where one was found. The column `value_found` says whether the printed value appears in the record exactly (`yes`), after rounding or a simple derivation (`approx`), or not at all (`no`, with a note). `provenance/figures.csv` gives the script, the data, and any external data behind each of the 17 figures; every submitted figure is byte-identical to its script's output. These tables were compiled on 9 November 2026 by matching the printed values against the records.
+`provenance/main_text.csv` (151 rows) and `provenance/supplement.csv` (118 rows) map every quantitative result of the manuscript and the supplement to the script that computed it and the record that holds it, with the JSON key or table column where one was found. The column `value_found` says whether the printed value appears in the record exactly (`yes`), after rounding or a simple derivation (`approx`), or not at all (`no`, with a note). `provenance/figures.csv` gives the script, the data, and any external data behind each of the 17 figures; every submitted figure is byte-identical to its script's output. These tables were compiled on 9 November 2026 by matching the printed values against the records; the row for Equation S1 and Table S21 was added on 11 November 2026, and the table numbers follow supplement v29.
 
 ## Reproduction check (9 November 2026)
 
@@ -71,12 +71,13 @@ The following analyses were rerun from this repository, with `~/mnt/hollows-emis
 - the traced terrain tests (`R/g18_traced_r3/terrain/analyze.py out_v3/rows_tracedonly_r3_v3.csv`) and the knob ratio (`knob_ratio_design.py`);
 - the model calculations in `P/analysis_v3` (sulfur charge, FeS vapor), `P/analysis_v7`, `P/analysis_v8`, and `P/analysis_workshop/volatile_fit`;
 - the Caloris tests on the refit grid (`G3_CAT=v3 G3_GRID=v3r` with `R/g3_catalog/caloris/caloris_v9.py` and `caloris_v9_controls.py`, records in `caloris/out_v3r/`), which differ only in the recorded paths of their inputs;
+- the coefficients of the joint model, Equation S1 and Table S21 (`R/g25_composition/coef_table.py` with `SM_DIR` set to `R/g4_completeness/g1/summary_model/v3r`; rerun on 11 November 2026);
 - the depth regressions on the automatic depths (`R/g23_smallest_hollows/depth_paper.py`, which reads the external map of low-reflectance material of Klima et al., 2018), the depth fits on the screened-mask colors (`R/g6_remaining/color/depth_color_fits.py`), and the text numbers (`R/g27_text_numbers/text_numbers.py`).
 
 A rerun on 11 November 2026 (v0.3.1) with Python 3.11.13, NumPy 2.3.3, pandas 2.3.2, SciPy 1.16.2, statsmodels 0.14.6, and Matplotlib 3.10.6 completes every step above except `depth_paper.py`, whose external map was not at hand. Its records agree with the archived records to floating-point precision (the last digit) rather than byte for byte, with one exception: in `R/g4_completeness/g2/out/v3r/threshold.json`, the pointwise 95% band around the spline (`spline_shape` `lo` and `hi`) differs by up to 2.4%, while every estimate in the record agrees to 10⁻¹¹. The paper does not use the band. Figure 4 differs from the submitted figure only in how its text is rendered.
 
 Partial checks:
-- **Joint model with the composition group** (`R/g25_composition/comp_model.py`). A run with 2 bootstrap draws reproduces every point estimate (R² 0.226, the shares, and the coefficients) to 10⁻¹⁵. The archived intervals come from 100 draws, which were not rerun.
+- **Joint model with the composition group** (`R/g25_composition/comp_model.py`). A run with 2 bootstrap draws reproduces every point estimate (R² 0.226, the shares, and the coefficients) to 10⁻¹⁵. The archived intervals come from 100 draws, which were not rerun with `comp_model.py`. `coef_table.py` fits the same model to the same 100 block resamples and reproduces the composition factors and intervals of `comp.json` to 10⁻¹⁴.
 - **Records that need Cantera or external data.** `P/analysis_workshop/sulfur_redox/redox_check.py` (Cantera; `redox_check_record.json`) and `G/scripts/nsp_mask2.py` (the northern smooth plains lineament map; `nsp_mask2_record.json`) were not rerun here.
 
 Not rerun, because the steps need external data: georeferencing (ISIS and MDIS EDRs), the catalog screen and the automatic shadow depths (MDIS EDRs), the completeness grid (MDIS CDR index), DEM morphometry, terrain measurements and hollow positions on peaks (USGS 665 m DEM), MDIS color (MDR tiles), and the map figures (MDIS mosaics). Their outputs are archived.
@@ -107,6 +108,8 @@ The author measured and classified features by hand in browser pages; the export
 | ISIS 8 with MESSENGER kernels; Cantera (sulfur-redox checks) | georeferencing; `P/analysis_workshop/sulfur_redox/` | USGS Astrogeology; cantera.org |
 
 ## Versions
+
+**v0.4.1 (November 2026).** Matches the submitted manuscript v6.17 and supplement v29. v6.17 changes wording only, and both files no longer carry the version comments at the top. v29 adds to Section S16 the fitted thinned occurrence model with every term and coefficient (Equation S1) and a table of the factor by which each term changes the density of hollows, with 95% intervals (Table S21). `R/g25_composition/coef_table.py` (new) computes them and writes `coef_table.csv` and `coef_table.json`; `run_all.sh` reruns it, and `provenance/supplement.csv` has a row for it. In `provenance/supplement.csv`, the rows for Tables S10 to S20 gave table numbers one too high; they now match the supplement. The figures are unchanged. The Zenodo record labeled v0.4.0 (10.5281/zenodo.24146453) was archived by mistake from the v0.3.1 commit and holds the same files as v0.3.1; v0.4.0 has no other release.
 
 **v0.3.1 (November 2026).** Two steps of `run_g2.sh` failed in v0.2.0 to v0.3.0. `latcorr5.py` (Section S6) reads `code/rerun/latitude/incidence_null/out_inc60_75/coverage_10ppd.npz`, which v0.2.0 removed; the file is restored from v0.1.0, and the record it writes is byte-identical to the archived one. `threshold.py` (Section 3.5 and S8) read the design of a formula model as `model_spec`, which statsmodels 0.14 calls `design_info`; it now reads either. The vent catalog is credited to Pegg et al. (2021).
 

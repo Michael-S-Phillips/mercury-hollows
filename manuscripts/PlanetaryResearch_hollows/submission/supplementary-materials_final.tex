@@ -1,70 +1,6 @@
 % Planetary Research - A diamond open access journal
 % Supplementary materials, built on the journal's supplementary-materials template (July 17, 2026).
-% Revision v9 (2026-11-01): aligned with Hollow_Formation_Model_Paper_v4.tex. Evidence audit: v8 S9 (regional slope)
-% cut to the repository; v8 S12 (composition) merged into the depth section (now S9); v8 S15 (transition layer) merged
-% into S5; S4, S8, and S12 (timescales) trimmed; the crater-graph section (now S14) rerun with analysis_v9 (peak-ring
-% uplift beneath peak-ring craters and basins), with the full depth-of-origin comparison moved to the repository.
-% Removed text: cut_material_v4.tex. Bibliography: references_v4.bib.
-% Revision v8 (2026-10-30): aligned with Hollow_Formation_Model_Paper_v3.tex. Addresses the author's comments on v7
-% (response_to_comments_v3.md): new Figure S2 (detection model and completeness), Delta T renamed Delta T_w, S4 rim
-% hollows, S5 comparison with published temperatures and code citation, S6 comparison with published plains maps,
-% S10 and S13 markers resolved, S14 and S16 revised for heating after condensation and collapse during charging
-% (calculations: analysis_v8/model_logic_v8_calcs.py), S17 rerun with the two Caloris nodes merged and with the lunar
-% uplift relation (analysis_v8/).
-% Revision v10 (2026-11-02): aligned with Hollow_Formation_Model_Paper_v5.tex. Adds plains host sizes (S6), depth
-% quantiles and sunlight (S9), steady conduction above the hot rock (S13), and S15 on volcanic vents. Built by
-% _scratch_v10_make_sm10.py. Bibliography: references_v5.bib.
-% Revision v11 (2026-11-03): aligned with Hollow_Formation_Model_Paper_v6.tex. Caloris test on the v9 graph (S7), hot
-% longitudes at +-15 deg, crater population, shape of the rise with Delta T_w and Stage 1 hollows (S8), low-reflectance
-% material and X-ray coverage (S9), candidate volatiles and Figure S7 (S13), parents without hollows (S14), check of vent
-% positions (S15), and new S16 (joint model of hosting). Built by _scratch_v11_make_sm11.py. Bibliography: references_v6.bib.
-% Revision v14 (2026-11-07): aligned with Hollow_Formation_Model_Paper_v6_5.tex. Screened v3 catalog with the refit
-% detection model in every section (numbers changed automatically from code/rerun/out_v3/rerun/changes_all_v3r_g7.csv by
-% _v14_partA_auto.py, then checked and edited by hand); S1 screening; S4 rewritten for the traced and curvature terrain
-% classes with positions within peaks and floors; S13 silica as the oxidant; S14 simple-to-complex transition; new S17
-% (knobs around Caloris). Built by _scratch_v14_make_sm14.py. Bibliography: references_sm14_rumil.bib.
-% Revision v15 (2026-11-07): aligned with Hollow_Formation_Model_Paper_v6_6.tex. S4 from the 62 host craters traced by hand alone
-% (rerun/g16_traced_only), Table S2 rebuilt and Table S3 removed; S2 reference size condensed; S5 hosting comparison of the 368 K layer
-% removed; S13 second steady state; S14 simple-to-complex test removed; S17 Class 1-2 comparison, knob color, and knob depths removed.
-% Built by _scratch_v15_make_sm15.py. Bibliography: references_sm15_rumil.bib.
-% Revision v16 (2026-11-07): S4, S8, and Table S2 from the 111 host craters traced in rounds 1 and 2 (rerun/g18_traced_r3).
-% Built by _scratch_v16_make_sm16.py. Bibliography: references_sm16_rumil.bib.
-% Revision v17 (2026-11-07): S17 compares the knobs with the peaks of Class 1-2 craters traced by hand (rerun/g19_knobs_traced).
-% Built by _scratch_v17_make_sm17.py. Bibliography: references_sm17_rumil.bib.
-% Revision v18 (2026-11-08): no mention or use of the automated curvature classes (S4 agreement sentence removed; S17 curvature sensitivity
-% replaced by the hollow count of the can't-tell craters). Main text unchanged (v6.8).
-% Built by _scratch_v18_make_sm18.py. Bibliography: references_sm18_rumil.bib.
-% Revision v19 (2026-11-09): S16 locates the regional clustering of hosting (rerun/g20_regional_clusters); main-text life-cycle figure is now Figure 7.
-% Built by _scratch_v19_make_sm19.py. Bibliography: references_sm19_rumil.bib.
-% Revision v20 (2026-11-09): sweep for redundancy and side results the paper does not use (sweep_v6_10_v20_changes.md).
-% Built by _scratch_v20_make_sm20.py. Bibliography: references_sm20_rumil.bib.
-% Revision v21 (2026-11-09): with main text v6.11. S9 adds new automatic and hand shadow depths, depth against hollow size, and a
-% blind check of the depths of Blewett et al. (2016) (rerun/g23_smallest_hollows, g24_blewett_compare); the quantile regressions are
-% removed. S10, S11, S13-S15 give the depth results in both sets. S16 uses a composition group (low-reflectance material and color;
-% rerun/g25_composition), refits the regional excess, and adds the province screen; Figure S9 removed. Figure S8 is now Figure 8 of
-% the main text. Built by _scratch_v21_make_sm21.py. Bibliography: references_sm21_rumil.bib.
-% Revision v22 (2026-11-09): wider section-number box in the table of contents (S10 and higher overlapped the titles).
-% Built by _scratch_v22_make_sm22.py. Bibliography: references_sm21_rumil.bib (unchanged).
-% Revision v23 (2026-11-09): new Figure S7 in S9, examples of automatically measured shadows (rerun/g23_smallest_hollows/
-% figS_shadow_examples.py); the color figure is now Figure S8. Built by _scratch_v23_make_sm23.py.
-% Revision v24 (2026-11-09): with main text v6.12. S9: measurement uncertainty (rerun/g26_measurement_error), new Figure S8 of depth
-% against diameter (rerun/g23_smallest_hollows/figS_depth_size.py; the color figure is now Figure S9), and the slope-beneath-the-shadow
-% analysis removed (Michael). Built by _scratch_v24_make_sm24.py. Bibliography: references_sm24_rumil.bib.
-% Revision v25 final (2026-11-09), in submission/, with main text v6.14 final: numbers corrected to the final (v3r) completeness grid and to
-% their records. S2 pair ranges of the v3 pairs (rerun/g27_text_numbers), size-weighted completeness values for one exponent, log-likelihood
-% and largest-detection range rounded from the records; S7 Caloris tests rerun on the v3r grid (rerun/g3_catalog/caloris/out_v3r); S8 mean
-% completeness on the v3r grid; S9 color fits on the screened mask (rerun/g6_remaining/color/depth_color_fits.py) and Figure S9 redrawn
-% from the screened-mask PCA (figS7_color_v2_v3cat); S9 no-shadow expectation; S12 stage counts attributed to Deutsch et al. (2025).
-% Built by _scratch_v25_make_sm25.py. Bibliography: references_sm25_rumil.bib.
-% Revision v26 (2026-11-10), submission/supplementary-materials_final.tex, with main text v6.15: S8 wall-area share from the hand-traced
-% classes (61% of the wall area of the 111 traced hosts; rerun/g27_text_numbers), replacing 69% from the automated classes, which the paper
-% does not use (repository session). Built by _scratch_v26_make_sm26.py. Bibliography: references_supplement_final_rumil.bib.
-% Revision v27 (2026-11-10), submission/supplementary-materials_final.tex, with main text v6.15: Figure S1 v4, with the right-hand titles
-% shortened to "Recomputed coordinates" and the count of detections in other images inside each panel (analysis_v3/figS_positions_v4.py;
-% Michael). Built by _scratch_v27_make_sm27.py.
-% Revision v28 (2026-11-10), submission/supplementary-materials_final.tex, with main text v6.16: Michael's comments on v27 ("mean surface
-% temperature", the average over a solar day; pressure-driven flow of S2, citing Alexander et al. 2024; Sunlight and depth shortened; the vent
-% check cut to one sentence; significance shading in the effect tables; Murchie et al. 2015 in S9; wording). Built by _scratch_v28_make_sm28.py.
+
 % Build: pdflatex supplementary-materials_v10.tex && biber supplementary-materials_v10 && pdflatex (twice)
 \documentclass{planetary}
 
@@ -74,6 +10,7 @@
 \makeatother
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
 \usepackage{xltabular}
 
 % ------ Title block --------------------------------------
@@ -930,6 +867,21 @@ Hollows in the 13 host craters with vents that have measured depths (405 hollows
 
 \textbf{Color.} Color enters the composition group for the 31,412 craters whose interiors have at least 20 valid pixels in the MDIS color map (442 hosts; masking hollows leaves too few pixels in 4 small hosts). Per standard deviation, the density of hollows changes by a factor of 1.12 (0.91--1.33) for the slope and 0.88 (0.77--1.03) for the curvature, and by 2.14 (1.34--3.04) from no low-reflectance material to complete coverage (100 block resamples). With low-reflectance material alone as the composition group, its share is 2.3\% (1--5\%), and the order of the other groups is the same.
 
+\textbf{Fitted model.} With all seven groups, the fitted thinned occurrence model is
+\begin{align}
+& \ln[-\ln(1 - P)] = 2\ln D + 0.949\ln(C + 0.01) - 7.234 \nonumber\\
+& \qquad - 1.969\,\ell + 0.452\,(\ell - 1.114)^2 \nonumber\\
+& \qquad - 0.00124\,|\phi| - 0.0393\,(|\phi| - 34.12)^2/100 \nonumber\\
+& \qquad + 0.232\,\Delta T_\mathrm{w}/10 - 0.0371\,(\Delta T_\mathrm{w}/10)(\ell - 1.114) \nonumber\\
+& \qquad + 1.903\,\mathrm{fresh} + 1.194\,\mathrm{standard} + 0.840\,\mathrm{degraded} - 0.535\,\mathrm{filled} - 0.000548\,\mathrm{rayed} \nonumber\\
+& \qquad - 0.0787\,\mathrm{nested} + 0.0192\,\mathrm{floor} + 0.223\,\mathrm{peak} + 1.238\,\mathrm{parent\ hosts} \nonumber\\
+& \qquad + 0.144\,\mathrm{basin} + 0.204\,(\ln z - 0.359) \nonumber\\
+& \qquad - 1.252\,\mathrm{plains} - 1.442\,\mathrm{Caloris}_{<2.5} - 1.052\,\mathrm{Caloris}_{\geq 2.5} + 0.318\,\mathrm{fill\ only} \nonumber\\
+& \qquad + 0.638\,\mathrm{vent} + 0.356\,\mathrm{parent\ vent} \nonumber\\
+& \qquad + 0.761\,f_\mathrm{LRM} + 0.112\,s - 0.126\,c + 2.678\,\mathrm{no\ color}, \label{eq:jointS}
+\end{align}
+where $D$ is the crater diameter in km, $\ell = \log_{10} D$, $|\phi|$ is the absolute latitude in degrees, $\Delta T_\mathrm{w}$ is in K, $z$ is the depth of origin in km (at least 0.1~km), $f_\mathrm{LRM}$ is the fraction of the crater mapped as concentrated low-reflectance material, and $s$ and $c$ are the standardized spectral slope and curvature. The other terms are indicators, equal to 1 or 0, of the variables in the first paragraph of this section. Floor and peak give the position of a nested crater on its parent against a position on the wall, basin marks a parent that is a basin, plains marks the northern smooth plains, and the subscripts of Caloris give the excavation depth in km. The constants 1.114, 34.12, and 0.359 are the means of $\ell$, $|\phi|$, and $\ln z$ over the 31,554 craters. The offset $2\ln D$ omits the factor $\pi/4$ of the crater area, so the intercept includes that factor and the constant of proportionality of the detection probability. Table~\ref{tab:jointcoef} gives the factor by which each term changes the density of hollows, $e^{\beta}$, with intervals from the same 100 block resamples as the factors for color above; $g$ is 0.95 (0.82--1.09). The indicator for craters without color keeps these 142 craters in the model, and its coefficient is not interpreted: in 4 of these craters, which host hollows, masking the hollows leaves fewer than 20 valid pixels, so the indicator depends partly on hosting.
+
 \textbf{Location of the clustering.} To find where hosting is clustered beyond the model, I gave each crater the probability of hosting, $P$, that the thinned occurrence model with all seven groups predicts; these probabilities sum to 439.9, against 446 host craters. At each node of a 2$^\circ$ grid of latitude and longitude, I counted the host craters, $O$, and summed the predicted probabilities, $E$, within 500~km, the radius of the regional hosting fraction, and computed $z = (O - E)/\sqrt{\sum P(1 - P)}$. The windows are many and overlap, so I simulated 1,000 sets of host craters from the predicted probabilities and took the 95th percentile of the largest $z$ in each set, over nodes with $E \geq 2$, as the threshold for an excess ($z$ = 5.14), and the 5th percentile of the smallest $z$ as the threshold for a deficit ($z$ = $-$3.22). Nodes above the threshold for an excess form three regions (Figure~6 of the main text), and no node falls below the threshold for a deficit. Within 500~km of the nodes above the threshold lie 112 of the 446 host craters, against 48.8 predicted.
 
 \textbf{The province.} I inspected on image crops all 81 cataloged hollows in the 23 host craters within 500~km of 65$^\circ$N, 125$^\circ$E. All are hollows except two that I could not classify, and each of these two lies in a crater with two other hollows, so all 23 craters remain hosts. Among craters 5--30~km across at 45--75$^\circ$N whose best image is at 20~m/pixel or finer, 13 of 143 in the province host hollows (9.1\%), against 9 of 831 elsewhere (1.1\%), so the excess is not an effect of false detections or of finer imaging in the province.
@@ -954,6 +906,54 @@ Hollows in the 13 host craters with vents that have measured depths (405 hollows
             \hline
         \end{tabularx}}
     \label{tab:joint}
+\end{table}
+
+\begin{table}[!ht]
+    \mytablestyle
+    \renewcommand{\arraystretch}{1.3}
+    \caption{{\bf Coefficients of the thinned occurrence model.} Factor by which each term of Equation~\ref{eq:jointS} changes the density of hollows ($e^{\beta}$ per unit of the term), with 95\% intervals from 100 block-bootstrap resamples. The model includes all seven groups and is fit to 31,554 craters (446 hosts). Craters (hosts): the number of craters for which the indicator equals 1, and the number of these that host hollows. Light orange: the 95\% interval lies above no change (1); light blue: below; unshaded: it includes no change.}
+    \footnotesize{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}p{3.8cm}}
+            \toprule
+            \textbf{Term} & \textbf{Craters (hosts)} & \textbf{Factor (95\% interval)} \\
+            \hline
+            \multicolumn{3}{l}{\textit{Size}} \\
+            \quad log$_{10}$ diameter, $\ell$ & -- & \cellcolor[HTML]{DCE7F3}0.14 (0.029--0.85) \\
+            \quad $(\ell - 1.114)^2$ & -- & 1.57 (0.88--3.40) \\
+            \multicolumn{3}{l}{\textit{Insolation}} \\
+            \quad Absolute latitude, $|\phi|$ (per degree) & -- & 0.999 (0.991--1.009) \\
+            \quad $(|\phi| - 34.12)^2/100$ & -- & 0.96 (0.93--1.00) \\
+            \quad $\Delta T_\mathrm{w}/10$ (per 10~K) & -- & \cellcolor[HTML]{FBE3D6}1.26 (1.08--1.48) \\
+            \quad $(\Delta T_\mathrm{w}/10)(\ell - 1.114)$ & -- & 0.96 (0.81--1.18) \\
+            \multicolumn{3}{l}{\textit{Degradation state, against craters without a state}} \\
+            \quad Fresh & 250 (53) & \cellcolor[HTML]{FBE3D6}6.71 (3.62--14.0) \\
+            \quad Standard & 2,230 (117) & \cellcolor[HTML]{FBE3D6}3.30 (1.89--5.96) \\
+            \quad Degraded & 1,734 (92) & \cellcolor[HTML]{FBE3D6}2.32 (1.35--4.06) \\
+            \quad Filled & 12,779 (145) & 0.59 (0.32--1.05) \\
+            \quad Rayed & 74 (10) & 1.00 (0.38--1.75) \\
+            \multicolumn{3}{l}{\textit{Nesting}} \\
+            \quad Nested & 14,916 (221) & 0.92 (0.63--1.27) \\
+            \quad On the parent's floor, against its wall & 4,565 (82) & 1.02 (0.65--1.96) \\
+            \quad On the parent's peak, against its wall & 563 (13) & 1.25 (0.58--3.05) \\
+            \quad Parent hosts hollows & 2,579 (97) & \cellcolor[HTML]{FBE3D6}3.45 (2.06--6.82) \\
+            \quad Parent is a basin & 4,824 (84) & 1.15 (0.68--2.04) \\
+            \quad Depth of origin, $\ln z - 0.359$ & -- & 1.23 (0.99--1.47) \\
+            \multicolumn{3}{l}{\textit{Volcanic cover}} \\
+            \quad Northern smooth plains & 1,849 (20) & \cellcolor[HTML]{DCE7F3}0.29 (0.16--0.54) \\
+            \quad Inside Caloris, excavation $<$ 2.5~km & 464 (8) & 0.24 (0.037--1.01) \\
+            \quad Inside Caloris, excavation $\geq$ 2.5~km & 35 (17) & 0.35 (0.10--1.64) \\
+            \quad Excavates only fill & 2,023 (11) & 1.37 (0.22--3.82) \\
+            \multicolumn{3}{l}{\textit{Vents}} \\
+            \quad Contains a vent & 148 (34) & 1.89 (0.92--4.01) \\
+            \quad Parent contains a vent & 997 (35) & 1.43 (0.50--3.61) \\
+            \multicolumn{3}{l}{\textit{Composition}} \\
+            \quad Low-reflectance material, $f_\mathrm{LRM}$ (0 to 1) & -- & \cellcolor[HTML]{FBE3D6}2.14 (1.34--3.04) \\
+            \quad Spectral slope, $s$ (per standard deviation) & -- & 1.12 (0.91--1.33) \\
+            \quad Spectral curvature, $c$ (per standard deviation) & -- & 0.88 (0.77--1.03) \\
+            \quad No color & 142 (4) & not interpreted \\
+            \hline
+        \end{tabularx}}
+    \label{tab:jointcoef}
 \end{table}
 
 

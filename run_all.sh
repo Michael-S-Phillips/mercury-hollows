@@ -19,6 +19,7 @@ run "$R/g3_catalog/caloris" "G3_CAT=v3 G3_GRID=v3r python3 caloris_v9.py"
 run "$R/g3_catalog/caloris" "G3_CAT=v3 G3_GRID=v3r python3 caloris_v9_controls.py"
 run "$R/g6_remaining/color" "python3 depth_color_fits.py v3"
 run "$R/g27_text_numbers" "python3 text_numbers.py"
+run "$R/g25_composition" "SM_DIR=$R/g4_completeness/g1/summary_model/v3r python3 coef_table.py"
 for s in depth_regress within_field bench_analyze fig_depth_v3; do run "$R/g23_smallest_hollows" "python3 $s.py"; done
 [ -f "$ROOT/data/Concentrated_LRM_560_params_BW.tif" ] && run "$R/g23_smallest_hollows" "python3 depth_paper.py"
 run "$R/g24_blewett_compare" "python3 cmp_analyze.py"
