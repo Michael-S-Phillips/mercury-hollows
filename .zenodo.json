@@ -1,7 +1,6 @@
 {
   "title": "Mercury hollows: code and derived data for a hollow formation model",
   "upload_type": "software",
-  "version": "0.2.0",
   "description": "Analysis code, derived data, analysis records, hand-measurement data, and figure scripts behind the paper \"Toward a Geologically Plausible Model of Hollow Formation on Mercury\" (Phillips, submitted to Planetary Research). The record contains: the 19,110 hollow detections of Bickel et al. (2025) at positions recomputed through the MDIS camera model; the merged hollows and hollow fields, screened to remove crater bowls, crater walls, and other features (6,363 hollows in 973 fields); imaging coverage, the detection model refit on the screened catalog, and completeness grids; host-crater assignments; the crater containment graph, degradation states, vents, and the joint model of hosting with its composition group; the hot-longitude, temperature, latitude, and wall-orientation tests; the size distribution of hollows; hand tracings of host-crater terrain and the peak, floor, and wall tests; automatic and hand shadow depths, a blind check of published depths, and their measurement uncertainty; MDIS eight-filter color of crater interiors; the thermal model; the sulfur-release, vapor-pressure, and collapse calculations; the records of every fit; tables that map each result and figure of the paper to its script and record; and the figures as submitted. The crater containment graph is also archived separately with its interactive map (mercury-crater-graph).",
   "creators": [
     {
