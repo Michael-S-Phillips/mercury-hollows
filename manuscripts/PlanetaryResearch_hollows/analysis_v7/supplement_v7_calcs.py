@@ -6,7 +6,7 @@ Writes supplement_v7_calcs_record.json next to this script. Inputs:
     JANAF takes S2(g) as the sulfur reference state above 882 K, so for Fe(s) + 1/2 S2 = FeS,
     p(S2) [bar] = exp(2 dfG / RT).
   - collapse_depth_record.json (this folder): charging temperatures and depth ratios for h = phi d.
-  - depth_reanalysis_record.json (mercury-hollows, GRL_insolation_hollows/records): band medians of mean annual
+  - depth_reanalysis_record.json (mercury-hollows, insolation_thermal/records): band medians of mean annual
     temperature and counts of measured hollows, and the depth regression on 1/T.
   - sulfur_charge_record.json (analysis_v3): vapor-pressure anchor and slopes B; iron budget.
 """

@@ -3,7 +3,7 @@
 Writes out/v2_reproduction.json."""
 import json, os
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, *[".."] * 5))
-PR = f"{ROOT}/manuscripts/PlanetaryResearch_hollows"; W6 = f"{PR}/analysis_workshop/insolation_v6"; G = f"{ROOT}/manuscripts/GRL_insolation_hollows/records"
+PR = f"{ROOT}/manuscripts/PlanetaryResearch_hollows"; W6 = f"{PR}/analysis_workshop/insolation_v6"; G = f"{ROOT}/manuscripts/insolation_thermal/records"
 PAIRS = {"dT_record.json": f"{PR}/analysis_v3/dT_record.json", "dT_plains_record.json": f"{PR}/analysis_v3/dT_plains_record.json",
          "dT_hosting_completeness_record.json": f"{PR}/analysis_v7/dT_hosting_completeness_record.json",
          "transition_layer_hilat_record.json": f"{PR}/analysis_v3/transition_layer_hilat_record.json",

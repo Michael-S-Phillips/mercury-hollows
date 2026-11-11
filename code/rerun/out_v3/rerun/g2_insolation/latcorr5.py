@@ -1,4 +1,4 @@
-# g2 copy of manuscripts/GRL_insolation_hollows/scripts/latcorr5.py (6 Nov 2026). Changed: input/output paths and env only (see make_copies.py).
+# g2 copy of manuscripts/insolation_thermal/scripts/latcorr5.py (6 Nov 2026). Changed: input/output paths and env only (see make_copies.py).
 """Incidence-controlled version: searched area = cells covered by 60-75 deg incidence frames; fields counted only if
 at least one member hollow was detected in a 60-75 deg frame."""
 # --- g2 rerun (6 Nov 2026): catalog inputs and output folder; paths and env only ---
@@ -6,12 +6,12 @@ import os as _g2_os
 G2_HERE = _g2_os.path.dirname(_g2_os.path.abspath(__file__)); G2_ROOT = _g2_os.path.abspath(_g2_os.path.join(G2_HERE, *[".."] * 5))
 G2_CAT = _g2_os.environ.get("G2_CAT", "v3"); IN = f"{G2_HERE}/inputs/{G2_CAT}"; G2_OUT = f"{G2_HERE}/out/{G2_CAT}"
 _g2_os.makedirs(G2_OUT, exist_ok=True)
-G2_GRLDATA = f"{G2_ROOT}/manuscripts/GRL_insolation_hollows/data"
+G2_INSOLDATA = f"{G2_ROOT}/manuscripts/insolation_thermal/data"
 # --- end g2 block ---
 import numpy as np, pandas as pd, json
 from scipy import stats
 U=f"{G2_ROOT}/code/rerun"; ppd=10
-cov=np.load(f"{U}/latitude/incidence_null/out_inc60_75/coverage_10ppd.npz")["bestpx"].astype(float); nsp=np.load(f"{G2_GRLDATA}/nsp_mask_10ppd_r40.npy")
+cov=np.load(f"{U}/latitude/incidence_null/out_inc60_75/coverage_10ppd.npz")["bestpx"].astype(float); nsp=np.load(f"{G2_INSOLDATA}/nsp_mask_10ppd_r40.npy")
 det=pd.read_csv(f"{U}/out_v2/detections_qc.csv"); h=pd.read_csv(f"{IN}/hollows_canonical_inc.csv"); f=pd.read_csv(f"{IN}/fields.csv")
 ok_h=set(det.loc[(det.inc>=60)&(det.inc<=75),"hollow_id"].dropna().astype(int))
 ok_f=set(h.loc[h.hollow_id.isin(ok_h),"field_id"].dropna().astype(int))

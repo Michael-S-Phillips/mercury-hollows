@@ -5,7 +5,7 @@ dT = mean annual surface temperature at the crater minus that at the warm longit
 at the same latitude, from the 1-D thermal model grid (thermal.py, thermal_grid.npz)."""
 import os
 import sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
-G = os.path.expanduser(_REPO + "")+"/manuscripts/GRL_insolation_hollows"
+G = os.path.expanduser(_REPO + "")+"/manuscripts/insolation_thermal"
 sys.path.insert(0, f"{G}/scripts"); import thermal
 z = np.load(f"{G}/data/thermal_grid.npz"); la, lo, T = z["la"], z["lo"], z["G"]
 s = pd.read_csv(f"{G}/data/test2_craters_h18.csv"); s = s[(s.diameter >= 5) & (s.abslat <= 60)].copy()

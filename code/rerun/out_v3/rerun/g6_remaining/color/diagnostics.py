@@ -3,7 +3,7 @@
 import os, json, numpy as np, pandas as pd
 from scipy import stats
 cr = pd.read_csv('crater_color.csv'); cf = pd.read_csv(os.environ.get('G6_CF', os.path.expanduser('~/mnt/hollows-emissivity/manuscripts/PlanetaryResearch_hollows/analysis_workshop/summary_model/crater_features.csv')))
-hv = pd.read_csv('hollow_color.csv'); ho = pd.read_csv(os.path.expanduser('~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv'))
+hv = pd.read_csv('hollow_color.csv'); ho = pd.read_csv(os.path.expanduser('~/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/test1_rows_inc.csv'))
 c = cr.join(cf[['h09', 'lrm', 'nsp', 'abslat', 'logD']])
 c = c[c.ok]
 out = {}

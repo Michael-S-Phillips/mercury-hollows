@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Copies peak_wall.py, analyze.py (peak_wall_test) and terrain_table.py (analysis_v3) into terrain/ and changes only input paths,
 output paths and env settings. Env G3_CAT = v2 | v3 | v3b. Host assignments: code/rerun/latitude/aspect/host_assignments.csv (v2;
-same bytes as the GRL copy) or code/rerun/out_v3/host_assignments_{v}.csv; field ids from the matching canonical file.
+same bytes as the insolation_thermal copy) or code/rerun/out_v3/host_assignments_{v}.csv; field ids from the matching canonical file.
 Outputs: terrain/out_{G3_CAT}/."""
 import os
 HE = os.path.expanduser("~/mnt/hollows-emissivity"); DST = os.path.dirname(os.path.abspath(__file__)) + "/terrain"

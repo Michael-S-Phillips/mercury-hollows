@@ -8,7 +8,7 @@
     ln pixel scale, ln tan(incidence), and |latitude| (OLS without color), median per quintile relative to the overall
     median, 95% intervals from 1,000 bootstrap resamples of images; line = fitted 0.903 per SD (color_record.json).
 Inputs: analysis_workshop/color_mdr/{pca_record.json, crater_color.csv, hollow_color.csv},
-summary_model/crater_features_xrs.csv (h09), GRL_insolation_hollows/data/test1_rows_inc.csv.
+summary_model/crater_features_xrs.csv (h09), insolation_thermal/data/test1_rows_inc.csv.
 Usage: python3 color_fig_v1.py <manuscripts dir> <output png>"""
 import sys, os, json, numpy as np, pandas as pd, statsmodels.formula.api as smf  # g5: os imported here (used above its original import)
 import matplotlib; matplotlib.use("Agg")
@@ -35,7 +35,7 @@ c = pd.read_csv("%s/crater_color.csv" % CDIR, dtype={"id": str}, usecols=["id", 
 G1S = os.path.expanduser("~/mnt/hollows-emissivity/code/rerun/out_v3/rerun/g1_graph_joint/summary_model/v3")  # g5: g1 joint-model rerun, v3 catalog
 f = pd.read_csv("%s/crater_features_xrs.csv" % G1S, dtype={"id": str}, usecols=["id", "h09"])  # g5: v3 h09 (was analysis_workshop/summary_model/crater_features_xrs.csv)
 c = c[c.ok.fillna(False).astype(bool)].merge(f, on="id", how="left")
-t = pd.read_csv("%s/GRL_insolation_hollows/data/test1_rows_inc.csv" % M); t["row"] = np.arange(len(t))
+t = pd.read_csv("%s/insolation_thermal/data/test1_rows_inc.csv" % M); t["row"] = np.arange(len(t))
 h = pd.read_csv("%s/hollow_color.csv" % CDIR, usecols=["row", "set_pc1", "set_pc2"])
 t = t.merge(h, on="row", how="left").dropna(subset=["set_pc1"]).reset_index(drop=True)
 t["ltan"] = np.log(np.tan(np.radians(t.inc)))

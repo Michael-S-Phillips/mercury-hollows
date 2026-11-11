@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Copies the Caloris scripts into caloris/ and changes only input paths, output paths and env settings.
-Env G3_CAT = v2 | v3 | v3b. Host assignments: GRL copy (v2) or code/rerun/out_v3/host_assignments_{v}.csv; containment-graph nodes:
+Env G3_CAT = v2 | v3 | v3b. Host assignments: insolation_thermal copy (v2) or code/rerun/out_v3/host_assignments_{v}.csv; containment-graph nodes:
 inputs/crater_dag_nodes_{v}.csv (prep_inputs.py). Outputs: caloris/out_{G3_CAT}/."""
 import os
 HE = os.path.expanduser("~/mnt/hollows-emissivity"); DST = os.path.dirname(os.path.abspath(__file__)) + "/caloris"
 HDR = ('import os as _os\nG3 = _os.path.expanduser("~/mnt/hollows-emissivity/code/rerun/out_v3/rerun/g3_catalog")\n'
        'CAT = _os.environ.get("G3_CAT", "v3"); ODIR = f"{G3}/caloris/out_{CAT}"; _os.makedirs(ODIR, exist_ok=True)\n'
-       'HOSTS = (_os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/host_assignments.csv") if CAT == "v2"\n'
+       'HOSTS = (_os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/host_assignments.csv") if CAT == "v2"\n'
        '         else _os.path.expanduser(f"~/mnt/hollows-emissivity/code/rerun/out_v3/host_assignments_{CAT}.csv"))\n')
 def copy(src, name, reps, after):
     t = open(src).read()

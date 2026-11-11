@@ -8,7 +8,7 @@ equilibrium, T_peak = [S(r) cos(i) (1-A)/(eps sigma)]^(1/4), maximized over one 
 e = 0.2056, a = 0.3871 AU, A = 0.07, eps = 0.95, flat ground, no conduction or shadowing). Writes depth_T_fit_record.json."""
 import json, os, numpy as np, pandas as pd, statsmodels.formula.api as smf
 HERE = os.path.dirname(os.path.abspath(__file__))
-D = os.path.join(HERE, "../../../GRL_insolation_hollows/data/test1_rows_inc.csv")
+D = os.path.join(HERE, "../../../insolation_thermal/data/test1_rows_inc.csv")
 R = 8.314462618
 d = pd.read_csv(D)
 d["img"] = d.filename.astype("category").cat.codes

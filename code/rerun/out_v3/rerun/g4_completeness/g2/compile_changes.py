@@ -13,7 +13,7 @@ the bracket names the catalog(s) where this happens."""
 import os, json, csv, math
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, *[".."] * 6))
 MAP = dict(x.split("=") for x in os.environ.get("G4_MAP", "").split(",") if x)   # g4: catalog column -> out/<folder>
-PR = f"{ROOT}/manuscripts/PlanetaryResearch_hollows"; W6 = f"{PR}/analysis_workshop/insolation_v6"; GR = f"{ROOT}/manuscripts/GRL_insolation_hollows/records"
+PR = f"{ROOT}/manuscripts/PlanetaryResearch_hollows"; W6 = f"{PR}/analysis_workshop/insolation_v6"; GR = f"{ROOT}/manuscripts/insolation_thermal/records"
 REC = {"latcorr_density_record.json": f"{GR}/latcorr_density_record.json", "latcorr_inc60_75_record.json": f"{GR}/latcorr_inc60_75_record.json",
        "dT_plains_record.json": f"{PR}/analysis_v3/dT_plains_record.json", "dT_record.json": f"{PR}/analysis_v3/dT_record.json",
        "dT_hosting_completeness_record.json": f"{PR}/analysis_v7/dT_hosting_completeness_record.json",

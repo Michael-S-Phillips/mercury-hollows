@@ -11,7 +11,7 @@ BLOCK = ('# --- g2 rerun (6 Nov 2026): catalog inputs and output folder; paths a
          'G2_HERE = _g2_os.path.dirname(_g2_os.path.abspath(__file__)); G2_ROOT = _g2_os.path.abspath(_g2_os.path.join(G2_HERE, *[".."] * 5))\n'
          'G2_CAT = _g2_os.environ.get("G2_CAT", "v3"); IN = f"{G2_HERE}/inputs/{G2_CAT}"; G2_OUT = f"{G2_HERE}/out/{G2_CAT}"\n'
          '_g2_os.makedirs(G2_OUT, exist_ok=True)\n'
-         'G2_GRLDATA = f"{G2_ROOT}/manuscripts/GRL_insolation_hollows/data"\n'
+         'G2_INSOLDATA = f"{G2_ROOT}/manuscripts/insolation_thermal/data"\n'
          '# --- end g2 block ---\n')
 SPEC = {
  f"{PR}/analysis_v3/dT_hosting.py": [
@@ -27,23 +27,23 @@ SPEC = {
     'pd.read_csv(f"{G2_ROOT}/manuscripts/PlanetaryResearch_hollows/analysis_v9/crater_dag_nodes.csv", dtype={"id": str}, low_memory=False)', 1),
    ('open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "dT_hosting_completeness_record.json"), "w")', 'open(f"{G2_OUT}/dT_hosting_completeness_record.json", "w")', 1)],
  f"{PR}/analysis_v3/transition_layer_hilat.py": [
-   ('z=np.load(f"{TH}/thermal_grid.npz")', 'z=np.load(f"{G2_GRLDATA}/thermal_grid.npz")', 1),
+   ('z=np.load(f"{TH}/thermal_grid.npz")', 'z=np.load(f"{G2_INSOLDATA}/thermal_grid.npz")', 1),
    ('open("transition_layer_hilat_record.json","w")', 'open(f"{G2_OUT}/transition_layer_hilat_record.json","w")', 2)],
- "manuscripts/GRL_insolation_hollows/scripts/latcorr.py": [
+ "manuscripts/insolation_thermal/scripts/latcorr.py": [
    ('U="/mnt/user-data/uploads/hollows-emissivity"', 'U=G2_ROOT', 1),
-   ('nsp=np.load("nsp_mask_10ppd_r40.npy")', 'nsp=np.load(f"{G2_GRLDATA}/nsp_mask_10ppd_r40.npy")', 1),
+   ('nsp=np.load("nsp_mask_10ppd_r40.npy")', 'nsp=np.load(f"{G2_INSOLDATA}/nsp_mask_10ppd_r40.npy")', 1),
    ('f=pd.read_csv(f"{U}/code/rerun/out_v2/fields.csv"); h=pd.read_csv(f"{U}/code/rerun/out_v2/hollows_canonical.csv")',
     'f=pd.read_csv(f"{IN}/fields.csv"); h=pd.read_csv(f"{IN}/hollows_canonical.csv")', 1),
    ('T.to_csv("density_by_band.csv",index=False)', 'T.to_csv(f"{G2_OUT}/density_by_band.csv",index=False)', 1),
    ('f.to_csv("fields_flagged.csv",index=False)', 'f.to_csv(f"{G2_OUT}/fields_flagged.csv",index=False)', 1)],
- "manuscripts/GRL_insolation_hollows/scripts/latcorr3.py": [
+ "manuscripts/insolation_thermal/scripts/latcorr3.py": [
    ('U="/mnt/user-data/uploads/hollows-emissivity"', 'U=G2_ROOT', 1),
    ('T=pd.read_csv("density_by_band.csv"); f=pd.read_csv("fields_flagged.csv")', 'T=pd.read_csv(f"{G2_OUT}/density_by_band.csv"); f=pd.read_csv(f"{G2_OUT}/fields_flagged.csv")', 1),
-   ('nsp=np.load("nsp_mask_10ppd_r40.npy")', 'nsp=np.load(f"{G2_GRLDATA}/nsp_mask_10ppd_r40.npy")', 1),
+   ('nsp=np.load("nsp_mask_10ppd_r40.npy")', 'nsp=np.load(f"{G2_INSOLDATA}/nsp_mask_10ppd_r40.npy")', 1),
    ('open("latcorr_density_record.json","w")', 'open(f"{G2_OUT}/latcorr_density_record.json","w")', 1)],
- "manuscripts/GRL_insolation_hollows/scripts/latcorr5.py": [
+ "manuscripts/insolation_thermal/scripts/latcorr5.py": [
    ('U="/mnt/user-data/uploads/hollows-emissivity/code/rerun"', 'U=f"{G2_ROOT}/code/rerun"', 1),
-   ('nsp=np.load("nsp_mask_10ppd_r40.npy")', 'nsp=np.load(f"{G2_GRLDATA}/nsp_mask_10ppd_r40.npy")', 1),
+   ('nsp=np.load("nsp_mask_10ppd_r40.npy")', 'nsp=np.load(f"{G2_INSOLDATA}/nsp_mask_10ppd_r40.npy")', 1),
    ('h=pd.read_csv(f"{U}/out_v2/hollows_canonical.csv"); f=pd.read_csv(f"{U}/out_v2/fields.csv")',
     'h=pd.read_csv(f"{IN}/hollows_canonical_inc.csv"); f=pd.read_csv(f"{IN}/fields.csv")', 1),
    ('open("latcorr_inc60_75_record.json","w")', 'open(f"{G2_OUT}/latcorr_inc60_75_record.json","w")', 1)],
@@ -88,7 +88,7 @@ SPEC = {
  f"{W6}/stage_test_lowinc.py": [('open(f"{HERE}/stage_test_lowinc.json", "w")', 'open(f"{G2_OUT}/stage_test_lowinc.json", "w")', 1)],
  f"{PR}/figscripts/make_figs_pr_insolation_v9.py": [
    ('_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))', '_ROOT = G2_ROOT', 1),
-   ('OUT = os.environ.get("GRL_FIGS", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures"))', 'OUT = os.environ.get("GRL_FIGS", G2_OUT)', 1),
+   ('OUT = os.environ.get("INSOL_FIGS", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures"))', 'OUT = os.environ.get("INSOL_FIGS", G2_OUT)', 1),
    ('json.load(open(f"{_ROOT}/manuscripts/PlanetaryResearch_hollows/analysis_workshop/insolation_v6/cos2lon_fit_lat15.json"))', 'json.load(open(f"{G2_OUT}/cos2lon_fit_lat15.json"))', 1),
    ('s = pd.read_csv(f"{G}/data/test2_craters_h18.csv")', 's = pd.read_csv(f"{IN}/test2_craters_h18.csv")', 1),
    ('a = pd.read_csv(f"{G}/data/aspect_wall_hollows.csv")', 'a = pd.read_csv(f"{G2_OUT}/aspect_wall_hollows.csv")', 1)],

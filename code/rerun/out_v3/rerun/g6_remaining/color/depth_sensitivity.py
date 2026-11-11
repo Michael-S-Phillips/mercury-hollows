@@ -5,7 +5,7 @@ image: (a) |lat| control, measurements within 60 deg of the equator; (b) |lat| a
 (c) 10 deg latitude bands (categorical) instead of |lat|. Usage: depth_sensitivity.py <cat>; writes out_<cat>/depth_sensitivity.json."""
 import os, sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
 cat = sys.argv[1]; HERE = os.path.dirname(os.path.abspath(__file__))
-t = pd.read_csv(os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")); t["row"] = np.arange(len(t))
+t = pd.read_csv(os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/test1_rows_inc.csv")); t["row"] = np.arange(len(t))
 h = pd.read_csv(f"{HERE}/out_{cat}/hollow_color.csv")
 t = t.merge(h[["row", "set_pc1", "set_pc2", "set_albedo_gm"]], on="row", how="left").dropna(subset=["set_pc1", "set_pc2"]).reset_index(drop=True)
 t["ltan"] = np.log(np.tan(np.radians(t.inc))); t["lnalb"] = np.log(t.set_albedo_gm); t["band"] = (t.latitude // 10).astype(int).astype(str)

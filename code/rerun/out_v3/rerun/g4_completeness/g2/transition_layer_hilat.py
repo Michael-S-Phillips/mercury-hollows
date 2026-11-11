@@ -8,12 +8,12 @@ import os as _g2_os
 G2_HERE = _g2_os.path.dirname(_g2_os.path.abspath(__file__)); G2_ROOT = _g2_os.path.abspath(_g2_os.path.join(G2_HERE, *[".."] * 6))
 G2_CAT = _g2_os.environ.get("G2_CAT", "v3"); IN = f"{G2_HERE}/inputs/{G2_CAT}"; G2_OUT = f"{G2_HERE}/out/{G2_CAT}"
 _g2_os.makedirs(G2_OUT, exist_ok=True)
-G2_GRLDATA = f"{G2_ROOT}/manuscripts/GRL_insolation_hollows/data"
+G2_INSOLDATA = f"{G2_ROOT}/manuscripts/insolation_thermal/data"
 # --- end g2 block ---
 import sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
 TH, CR, GR = sys.argv[1], sys.argv[2], sys.argv[3]
 sys.path.insert(0, TH); import thermal as th
-z=np.load(f"{G2_GRLDATA}/thermal_grid.npz"); la,lo,T=z["la"],z["lo"],z["G"]
+z=np.load(f"{G2_INSOLDATA}/thermal_grid.npz"); la,lo,T=z["la"],z["lo"],z["G"]
 g=np.load(GR)
 s=pd.read_csv(CR); s=s[s.diameter>=5].copy()
 s["dT"]=th.lookup(la,lo,T,s.latitude.values,s.longitude.values)-th.lookup(la,lo,T,s.latitude.values,np.full(len(s),90.0))

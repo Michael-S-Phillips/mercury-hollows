@@ -6,8 +6,8 @@ dropped): 31,554 craters. Writes crater_features.csv.
 Sources:
   analysis_v9/crater_dag_nodes.csv  size, completeness C1, latitude, dT (Delta T_w), northern smooth plains flag (nsp),
                                     filled/preserved, nesting (parent, zone, chain), depth of origin z_max, fill_only, hosts
-  GRL_insolation_hollows/data/host_assignments.csv   hollows within 0.9 radii (h09, the paper's host definition)
-  GRL_insolation_hollows/data/test2_craters_h18.csv  ejecta code (rayed = contains 'r')
+  insolation_thermal/data/host_assignments.csv   hollows within 0.9 radii (h09, the paper's host definition)
+  insolation_thermal/data/test2_craters_h18.csv  ejecta code (rayed = contains 'r')
   data/data/MER_Vent_Locations_Classifications.csv   vents (headers swapped: lat = 'Lon', lon = 'Lat'); smallest crater >= 5 km
                                                      whose rim contains the vent (as in test 8)
   data/Concentrated_LRM_560_params_BW.tif            LRM raster (no georeference; read as equirectangular, -180..180 E, 90N at
@@ -32,7 +32,7 @@ h = pd.read_csv(HOSTS, usecols=["host_uid", "rho"]).dropna()
 h["host_uid"] = h.host_uid.astype(int).astype(str)
 n["n09"] = n.id.map(h[h.rho <= 0.9].host_uid.value_counts()).fillna(0).astype(int); n["h09"] = (n.n09 > 0).astype(int)
 # rayed
-t2 = pd.read_csv(f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test2_craters_h18.csv", usecols=["unique_id", "ejecta"], dtype={"unique_id": str})
+t2 = pd.read_csv(f"{ROOT}/manuscripts/insolation_thermal/data/test2_craters_h18.csv", usecols=["unique_id", "ejecta"], dtype={"unique_id": str})
 n["rayed"] = n.id.map(dict(zip(t2.unique_id, t2.ejecta.fillna("").astype(str).str.contains("r")))).fillna(False).astype(int)
 # vents
 v = pd.read_csv(f"{ROOT}/data/data/MER_Vent_Locations_Classifications.csv"); v.columns = [c.strip() for c in v.columns]

@@ -12,7 +12,7 @@ orange: our automatic depths (depth_paper_rows.csv, 1,558 hollows); dark gray: M
 Writes fig_depth_v2.png (400 dpi) and .pdf, 15 cm wide, and fig_depth_v2_numbers.json."""
 import os, json, numpy as np, pandas as pd, statsmodels.formula.api as smf, matplotlib as mpl; mpl.use("Agg"); import matplotlib.pyplot as plt
 from scipy.spatial import cKDTree
-HE = os.path.expanduser("~/mnt/hollows-emissivity"); GRL = f"{HE}/manuscripts/GRL_insolation_hollows"
+HE = os.path.expanduser("~/mnt/hollows-emissivity"); INSOL = f"{HE}/manuscripts/insolation_thermal"
 INK, MUTED, GRID, BLUE, ORANGE = "#1a1a19", "#6b6b67", "#e4e3df", "#2a78d6", "#eb6834"
 mpl.rcParams.update({"font.family": "DejaVu Sans", "font.size": 6.8, "axes.linewidth": .6, "axes.edgecolor": "#5a5a57", "xtick.labelsize": 6.2, "ytick.labelsize": 6.2})
 a = pd.read_csv("depth_paper_rows.csv"); a["img"] = a.img.astype(str)
@@ -29,7 +29,7 @@ def boot_median(sel, col, nb=1000):
 NUM = {"coef": dict(lnpx=round(bp, 3), ltan=round(bt, 3), lnD=round(bD, 3))}
 fig, (e1, e2, e3) = plt.subplots(1, 3, figsize=(5.9, 2.35))
 # (a)
-DR = json.load(open(f"{GRL}/records/depth_reanalysis_record.json")); bk = ["0-30", "30-45", "45-60", "60-75", "75-90"]
+DR = json.load(open(f"{INSOL}/records/depth_reanalysis_record.json")); bk = ["0-30", "30-45", "45-60", "60-75", "75-90"]
 T_ = np.array([DR["bands"][k]["T_med"] for k in bk]); y = np.array([DR["bands"][k]["hc"] for k in bk])
 e1.errorbar(T_ - 0.8, y[:, 0], yerr=[y[:, 0] - y[:, 1], y[:, 2] - y[:, 0]], fmt="o", ms=3.8, color=BLUE, mfc="white", mew=1.0, lw=.8, capsize=1.8, zorder=5, label="Blewett et al. (2016)")
 ours = []
@@ -63,8 +63,8 @@ e2.set_xscale("log"); e2.set_yscale("log"); e2.set_xlim(.03, 1.3); e2.set_ylim(1
 e2.set_xticks([.05, .1, .2, .5, 1]); e2.set_xticklabels(["0.05", "0.1", "0.2", "0.5", "1"]); e2.set_yticks([1, 2, 5, 10, 20, 50, 100]); e2.set_yticklabels(["1", "2", "5", "10", "20", "50", "100"]); e2.minorticks_off()
 e2.set_xlabel("Hollow diameter (km)"); e2.set_ylabel("Depth, corrected (m)"); e2.legend(frameon=False, fontsize=5.9, loc="lower right", handletextpad=.3, borderpad=.2)
 # (c) Blewett per-host medians (as v6.10) and ours
-d = pd.read_csv(f"{GRL}/data/test1_rows_inc.csv"); d["ltan"] = np.log(np.tan(np.radians(d.inc)))
-cr = pd.read_csv(f"{GRL}/data/test2_craters_h18.csv"); cr = cr[cr.diameter >= 5]
+d = pd.read_csv(f"{INSOL}/data/test1_rows_inc.csv"); d["ltan"] = np.log(np.tan(np.radians(d.inc)))
+cr = pd.read_csv(f"{INSOL}/data/test2_craters_h18.csv"); cr = cr[cr.diameter >= 5]
 def xyz(la, lo): la, lo = np.radians(la), np.radians(lo); return np.column_stack([np.cos(la) * np.cos(lo), np.cos(la) * np.sin(lo), np.sin(la)])
 tree = cKDTree(xyz(cr.latitude.values, cr.lon360.values)); P = xyz(d.latitude.values, d.longitude.values % 360); Dkm = cr.diameter.values; host = np.full(len(d), -1)
 for i, cl in enumerate(tree.query_ball_point(P, r=0.36)):

@@ -12,7 +12,7 @@ CAT = _os.environ.get("G3_CAT", "v3"); ODIR = f"{G3}/caloris/out_{CAT}"
 GRID = _os.environ.get("G3_GRID", "")
 if GRID: ODIR = f"{G3}/caloris/out_{CAT}{GRID[2:] if GRID.startswith(CAT) else GRID}"
 _os.makedirs(ODIR, exist_ok=True)
-HOSTS = (_os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/host_assignments.csv") if CAT == "v2"
+HOSTS = (_os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/host_assignments.csv") if CAT == "v2"
          else _os.path.expanduser(f"~/mnt/hollows-emissivity/code/rerun/out_v3/host_assignments_{CAT}.csv"))
 H = ODIR
 c = pd.read_csv(f"{H}/caloris_v9_small_craters.csv", dtype={"id": str, "parent_id": str})

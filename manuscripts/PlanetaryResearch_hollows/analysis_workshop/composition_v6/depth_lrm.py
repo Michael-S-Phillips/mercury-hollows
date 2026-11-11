@@ -6,7 +6,7 @@ indicator, lrm_local >= 0.5), ln pixel scale, ln tan(incidence), and poleward-of
 host-level LRM fraction (crater_features.csv) for hollows assigned to hosts. Writes depth_lrm_record.json."""
 import os, json, numpy as np, pandas as pd, rasterio, statsmodels.formula.api as smf, warnings; warnings.filterwarnings("ignore")
 ROOT = os.path.expanduser("~/mnt/hollows-emissivity"); HERE = os.path.dirname(os.path.abspath(__file__))
-d = pd.read_csv(f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")
+d = pd.read_csv(f"{ROOT}/manuscripts/insolation_thermal/data/test1_rows_inc.csv")
 d["ltan"] = np.log(np.tan(np.radians(d.inc))); d["pole"] = (d.abslat >= 60).astype(int); d["img"] = d.filename.astype(str)
 L = rasterio.open(f"{ROOT}/data/Concentrated_LRM_560_params_BW.tif").read(1) > 0; ny, nx = L.shape; ppd = nx / 360
 R = 2439.4; out = []

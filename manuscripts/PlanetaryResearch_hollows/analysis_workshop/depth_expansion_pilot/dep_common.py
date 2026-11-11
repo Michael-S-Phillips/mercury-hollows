@@ -1,13 +1,13 @@
 """Shared loaders for the hollow shadow-depth pilot (depth_expansion_pilot).
 
 Inputs (ROOT = hollows-emissivity root, default ~/mnt/hollows-emissivity):
-- Blewett et al. (2016) shadow-length depths: ROOT/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv
+- Blewett et al. (2016) shadow-length depths: ROOT/manuscripts/insolation_thermal/data/test1_rows_inc.csv
 - Bickel et al. (2024) release CSV (0.7 confidence, 19,110 detections): ROOT/data/bickel-2024/Bickel_et_al_2024_MDIS_hollows_07_v1.0.csv
   (row i of the release = fid i+1 of the GeoPackage; checked on MDIS ID and box centre)
 - Camera-model positions and box corners: ROOT/GIS/vector/bickel2024_hollows_corrected.gpkg
   (hollows_points_corrected; hollows_bbox_cameramodel, corner order (x0,y0),(x1,y0),(x1,y1),(x0,y1), checked against a
   frame-level fit)
-- Herrick et al. (2018) craters: ROOT/manuscripts/GRL_insolation_hollows/data/test2_craters_h18.csv
+- Herrick et al. (2018) craters: ROOT/manuscripts/insolation_thermal/data/test2_craters_h18.csv
 - MDIS NAC EDRs (PDS MSGRMDS_1001) from the PDS Imaging Node mirror
   https://planetarydata.jpl.nasa.gov/img/data/messenger/MSGRMDS_1001/DATA/YYYY_DOY/EN<num>M.IMG, cached outside the
   project (EDR_CACHE, default ~/edr_cache on the VM); the directory is the UTC date of the Bickel 'Earth datetime'
@@ -19,10 +19,10 @@ from scipy.spatial import cKDTree
 
 ROOT = os.path.expanduser(os.environ.get("HOLLOWS_ROOT", "~/mnt/hollows-emissivity"))
 HERE = os.path.dirname(os.path.abspath(__file__))
-F_BLEWETT = f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv"
+F_BLEWETT = f"{ROOT}/manuscripts/insolation_thermal/data/test1_rows_inc.csv"
 F_BICKEL = f"{ROOT}/data/bickel-2024/Bickel_et_al_2024_MDIS_hollows_07_v1.0.csv"
 F_GPKG = f"{ROOT}/GIS/vector/bickel2024_hollows_corrected.gpkg"
-F_CRATERS = f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test2_craters_h18.csv"
+F_CRATERS = f"{ROOT}/manuscripts/insolation_thermal/data/test2_craters_h18.csv"
 EDR_URL = "https://planetarydata.jpl.nasa.gov/img/data/messenger/MSGRMDS_1001/DATA"
 EDR_CACHE = os.path.expanduser(os.environ.get("EDR_CACHE", "~/edr_cache"))
 R_M = 2439.7  # km, as in the paper's host assignment

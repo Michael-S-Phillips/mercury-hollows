@@ -8,8 +8,8 @@ v3 and v3b. Writes inputs/<cat>/:
   fields.csv                 v2: code/rerun/out_v2/fields.csv unchanged (1,228 fields, as used by every v2 field analysis);
                              v3/v3b: the same rows restricted to fields with >= 1 non-trace hollow, n_nontrace recounted.
                              Field ids and centroids are kept from v2 (README of out_v3: fields left with no hollows disappear).
-  host_assignments.csv       v2: GRL_insolation_hollows/data/host_assignments.csv; v3/v3b: out_v3/host_assignments_<cat>.csv
-  test2_craters_h18.csv      GRL_insolation_hollows/data/test2_craters_h18.csv with `hosts` reset from host_assignments
+  host_assignments.csv       v2: insolation_thermal/data/host_assignments.csv; v3/v3b: out_v3/host_assignments_<cat>.csv
+  test2_craters_h18.csv      insolation_thermal/data/test2_craters_h18.csv with `hosts` reset from host_assignments
                              (= test2_h18.py with its host-assignment path changed)
   crater_features.csv        analysis_workshop/summary_model/crater_features.csv with hosts, h09, n09 recomputed from
                              host_assignments as in build_features.py; parent_hosts and ln_local (functions of hosts, not
@@ -20,7 +20,7 @@ v3 and v3b. Writes inputs/<cat>/:
 import os, json, numpy as np, pandas as pd
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", "..", "..", ".."))
-PR = f"{ROOT}/manuscripts/PlanetaryResearch_hollows"; G = f"{ROOT}/manuscripts/GRL_insolation_hollows"
+PR = f"{ROOT}/manuscripts/PlanetaryResearch_hollows"; G = f"{ROOT}/manuscripts/insolation_thermal"
 SRC = {"v2": dict(canon=f"{ROOT}/code/rerun/out_v2/hollows_canonical.csv", ha=f"{G}/data/host_assignments.csv"),
        "v3": dict(canon=f"{ROOT}/code/rerun/out_v3/hollows_canonical_v3.csv", ha=f"{ROOT}/code/rerun/out_v3/host_assignments_v3.csv"),
        "v3b": dict(canon=f"{ROOT}/code/rerun/out_v3/hollows_canonical_v3b.csv", ha=f"{ROOT}/code/rerun/out_v3/host_assignments_v3b.csv")}

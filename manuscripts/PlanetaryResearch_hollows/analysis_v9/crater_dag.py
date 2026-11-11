@@ -18,8 +18,8 @@ up. For each crater the script estimates the deepest pre-impact level it exposes
 These are first-order scalings; the tests below ask only whether the extra depth from nesting predicts hosting.
 
 Inputs (relative to the hollows-emissivity root, passed as argv[1]): Herrick et al. (2018) craters with host flags
-(manuscripts/GRL_insolation_hollows/data/test2_craters_h18.csv), Orgel et al. (2020) basins (peak_wall_test/orgel_basins.csv),
-DEM morphometry (peak_wall_test/morph_all.csv), hollow host assignments (manuscripts/GRL_insolation_hollows/data/host_assignments.csv), completeness
+(manuscripts/insolation_thermal/data/test2_craters_h18.csv), Orgel et al. (2020) basins (peak_wall_test/orgel_basins.csv),
+DEM morphometry (peak_wall_test/morph_all.csv), hollow host assignments (manuscripts/insolation_thermal/data/host_assignments.csv), completeness
 grid (code/rerun/out_v2/completeness_10ppd.npz), plains mask, thermal grid.
 Writes crater_dag_nodes.csv and crater_dag_record.json next to this script.
 Usage: python3 crater_dag.py ~/mnt/hollows-emissivity
@@ -61,7 +61,7 @@ CAL_MODE = os.environ.get("CRATER_DAG_CALORIS", "catalog"); SU_REL = os.environ.
 assert CAL_MODE in ("catalog", "orgel") and SU_REL in ("terrestrial", "lunar", "double")
 BASIN_REL = os.environ.get("CRATER_DAG_BASIN", "v22"); K_RING = float(os.environ.get("CRATER_DAG_KRING", "1.05"))
 D_PR = float(os.environ.get("CRATER_DAG_DPR", "120")); assert BASIN_REL in ("v22", "v8")
-G = f"{ROOT}/manuscripts/GRL_insolation_hollows"
+G = f"{ROOT}/manuscripts/insolation_thermal"
 R_M, DSC = 2439.4, 12.0
 sys.path.insert(0, f"{G}/scripts"); import thermal
 

@@ -10,7 +10,7 @@ import dep_common as C
 step = sys.argv[1]
 if step == "select":
     c = pd.read_csv(f"{OUT}/bowl_candidates.csv"); c["field_n"] = c.field_id.map(c.groupby("field_id").size())
-    ha = pd.read_csv(f"{HE}/manuscripts/GRL_insolation_hollows/data/host_assignments.csv", usecols=["hollow_id", "host_uid", "rho"])
+    ha = pd.read_csv(f"{HE}/manuscripts/insolation_thermal/data/host_assignments.csv", usecols=["hollow_id", "host_uid", "rho"])
     n09 = ha[ha.rho <= 0.9].groupby("host_uid").size(); ha["host_n09"] = ha.host_uid.map(n09).fillna(0)
     c = c.merge(ha[["hollow_id", "host_uid", "rho", "host_n09"]].rename(columns={"rho": "host_rho"}), on="hollow_id", how="left")
     A = c.bowl_cr >= 0

@@ -7,9 +7,9 @@ hollow); host attributes from crater_features_xrs.csv (v3r) and kinczyk_matched.
 depth_color_lrm.py; T from the paper's thermal grid. Writes depth_paper.json."""
 import os, sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf, rasterio, warnings; warnings.filterwarnings("ignore")
 from scipy.spatial import cKDTree
-HE = os.path.expanduser("~/mnt/hollows-emissivity"); GRL = f"{HE}/manuscripts/GRL_insolation_hollows"; RR = f"{HE}/code/rerun/out_v3/rerun"
-sys.path.insert(0, f"{GRL}/scripts"); from thermal import lookup
-g = np.load(f"{GRL}/data/thermal_grid.npz")
+HE = os.path.expanduser("~/mnt/hollows-emissivity"); INSOL = f"{HE}/manuscripts/insolation_thermal"; RR = f"{HE}/code/rerun/out_v3/rerun"
+sys.path.insert(0, f"{INSOL}/scripts"); from thermal import lookup
+g = np.load(f"{INSOL}/data/thermal_grid.npz")
 a = pd.read_csv("depth_all.csv"); fl = a["flags"].fillna("")
 a = a[(a.depth_m > 0) & ~fl.str.contains("no_shadow|edge_sun|frame_edge|no_edr")].copy()
 ha = pd.read_csv(f"{RR}/g2_insolation/inputs/v3/host_assignments.csv")[["hollow_id", "host_uid", "rho"]]; ha["host_uid"] = ha.host_uid.astype("Int64").astype(str)

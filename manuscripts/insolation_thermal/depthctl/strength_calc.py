@@ -26,7 +26,7 @@ for name, sy in [("granular 2 MPa", 2e6), ("granular 7 MPa", 7e6), ("granular 10
     Hs = [sy / (2900 * g), sy / (2000 * g)]
     fw[name] = dict(H_star_m=Hs, depth_m_for_phi_2_8_to_5_5pct=[phi(0.02) * Hs[0], phi(0.04) * Hs[1]])
 R["forward"] = fw
-json.dump(R, open(_REPO + "/manuscripts/GRL_insolation_hollows/depthctl/strength_calc_record.json", "w"), indent=1)
+json.dump(R, open(_REPO + "/manuscripts/insolation_thermal/depthctl/strength_calc_record.json", "w"), indent=1)
 print("phi:", {k: round(v * 100, 2) for k, v in R["phi_vol"].items()}, "vol%")
 for k, v in out.items(): print(k, "H = %.0f m" % v["H_m"], "sigma = %.1f-%.1f MPa" % tuple(v["sigma_MPa"]))
 for k, v in fw.items(): print(k, "H* = %.0f-%.0f m" % tuple(v["H_star_m"]), "d = %.0f-%.0f m" % tuple(v["depth_m_for_phi_2_8_to_5_5pct"]))

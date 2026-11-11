@@ -1,11 +1,11 @@
-# g2 copy of manuscripts/GRL_insolation_hollows/scripts/latcorr.py (6 Nov 2026). Changed: input/output paths and env only (see make_copies.py).
+# g2 copy of manuscripts/insolation_thermal/scripts/latcorr.py (6 Nov 2026). Changed: input/output paths and env only (see make_copies.py).
 """Hollow-field density and per-crater host fraction by latitude, corrected for NAC image coverage and the northern smooth plains (NSP)."""
 # --- g2 rerun (6 Nov 2026): catalog inputs and output folder; paths and env only ---
 import os as _g2_os
 G2_HERE = _g2_os.path.dirname(_g2_os.path.abspath(__file__)); G2_ROOT = _g2_os.path.abspath(_g2_os.path.join(G2_HERE, *[".."] * 5))
 G2_CAT = _g2_os.environ.get("G2_CAT", "v3"); IN = f"{G2_HERE}/inputs/{G2_CAT}"; G2_OUT = f"{G2_HERE}/out/{G2_CAT}"
 _g2_os.makedirs(G2_OUT, exist_ok=True)
-G2_GRLDATA = f"{G2_ROOT}/manuscripts/GRL_insolation_hollows/data"
+G2_INSOLDATA = f"{G2_ROOT}/manuscripts/insolation_thermal/data"
 # --- end g2 block ---
 import numpy as np, pandas as pd, json
 from scipy import stats
@@ -13,7 +13,7 @@ import statsmodels.formula.api as smf
 U=G2_ROOT
 ppd=10; H=180*ppd; W=360*ppd
 cov=np.load(f"{U}/code/rerun/out_v2/coverage_10ppd.npz")["bestpx"].astype(float)     # NaN = not searched
-nsp=np.load(f"{G2_GRLDATA}/nsp_mask_10ppd_r40.npy")
+nsp=np.load(f"{G2_INSOLDATA}/nsp_mask_10ppd_r40.npy")
 latc=90-(np.arange(H)+0.5)/ppd
 cell_km2=np.cos(np.radians(latc))[:,None]*(np.pi*2439.4/180/ppd)**2*np.ones((1,W))
 def rc(lat,lon):

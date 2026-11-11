@@ -4,7 +4,7 @@ _REPO = _os_repo.environ.get("MERCURY_HOLLOWS_ROOT") or _os_repo.path.abspath(_o
 (reproduces percrater_record.json nsp_model: n = 1,179, 107 hosts), with dT in place of longitude distance."""
 import os
 import sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
-G=os.path.expanduser(_REPO + "")+"/manuscripts/GRL_insolation_hollows"; sys.path.insert(0,f"{G}/scripts"); import thermal
+G=os.path.expanduser(_REPO + "")+"/manuscripts/insolation_thermal"; sys.path.insert(0,f"{G}/scripts"); import thermal
 s = pd.read_csv(f"{G}/data/test2_craters_h18.csv")
 z=np.load(f"{G}/data/thermal_grid.npz"); la,lo,T=z["la"],z["lo"],z["G"]
 s["dT"]=thermal.lookup(la,lo,T,s.latitude.values,s.longitude.values)-thermal.lookup(la,lo,T,s.latitude.values,np.full(len(s),90.0))

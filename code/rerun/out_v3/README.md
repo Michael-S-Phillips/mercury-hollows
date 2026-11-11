@@ -18,7 +18,7 @@ O (other) or U (uncertain).
 - `hollows_canonical_v3.csv`: v2 columns. is_crater_trace = v2 trace OR class in {B, W, O}. 6,299 non-trace hollows (v2: 6,667).
 - `hollows_canonical_v3b.csv`: also excludes U. 6,067 non-trace hollows.
 - Both files keep is_crater_trace_v2, screen_class, is_spurious_v3 and is_uncertain_v3.
-- `host_assignments_v3.csv` and `_v3b.csv`: GRL_insolation_hollows/data/host_assignments.csv with the excluded hollows removed.
+- `host_assignments_v3.csv` and `_v3b.csv`: insolation_thermal/data/host_assignments.csv with the excluded hollows removed.
   Host assignment is per hollow, so filtering equals reassigning.
   - Any-hollow hosts: v2 707, v3 534, v3b 441.
   - h09 hosts: v2 608, v3 448, v3b 371.

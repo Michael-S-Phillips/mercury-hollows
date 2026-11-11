@@ -5,12 +5,12 @@ Question (Michael, 30 Oct 2026): do hollows in host craters that formed inside a
 depths from hollows in isolated host craters, with the controls the paper uses for depth (Section S10)?
 
 Inputs (argv[1] = hollows-emissivity root; default ~/mnt/hollows-emissivity):
-- G/data/test1_rows_inc.csv: the 2,518 shadow-length depths of Blewett et al. (2016) with pixel scale (px, m), depth (m),
+- manuscripts/insolation_thermal/data/test1_rows_inc.csv: the 2,518 shadow-length depths of Blewett et al. (2016) with pixel scale (px, m), depth (m),
   image (filename), mean annual surface temperature (T, K) and solar incidence (inc, deg) from the MDIS CDR index
   (written by depth_reanalysis.py; identical to the copy in the mercury-hollows repository).
-- G/data/test2_craters_h18.csv: Herrick et al. (2018) catalog (the catalog crater_dag.py reads).
+- manuscripts/insolation_thermal/data/test2_craters_h18.csv: Herrick et al. (2018) catalog (the catalog crater_dag.py reads).
 - P/analysis_v8/crater_dag_nodes.csv: containment graph, merged Caloris (v8 default run).
-Host assignment, as in G/depthctl/depth_structure.py (Section S11) and Section S3: the smallest catalog crater >= 5 km whose
+Host assignment, as in manuscripts/insolation_thermal/depthctl/depth_structure.py (Section S11) and Section S3: the smallest catalog crater >= 5 km whose
 1.1 radii contain the hollow (R_Mercury = 2439.7 km, catalog geometry). Hosts are joined to the graph by catalog id.
 Regression, as in depth_reanalysis.py (Section S10, model T_px_inc): ln depth ~ group + 1/T + ln px + ln tan(inc), OLS with
 standard errors clustered by image. Depth ratio = exp(b). Sensitivity: SEs clustered by host crater; possible ring
@@ -25,7 +25,7 @@ from scipy.spatial import cKDTree
 import statsmodels.formula.api as smf
 
 ROOT = os.path.expanduser(sys.argv[1] if len(sys.argv) > 1 else "~/mnt/hollows-emissivity")
-G = f"{ROOT}/manuscripts/GRL_insolation_hollows"
+G = f"{ROOT}/manuscripts/insolation_thermal"
 # g1 rerun (6 Nov 2026): copy of analysis_v8/depth_nested/depth_nested.py; only input/output paths changed: graph nodes (with the
 # recomputed hosting flag) from g1_graph_joint/<CATALOG>/crater_dag_nodes.csv (v9 graph; same parents as v8), output in depth_nested/<CATALOG>/.
 _G1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); CAT = os.environ["CATALOG"]

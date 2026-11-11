@@ -6,7 +6,7 @@ hollows in vent craters should also differ in depth (gentler gradient above a de
 should not differ.
 Inputs: data/data/MER_Vent_Locations_Classifications.csv (309 vents; Lat, Lon, Compound, Image Quality, Facula, In Crater);
 analysis_v9/crater_dag_nodes.csv (craters and basins with hosting flag, nesting, and the controls of the paper's base model:
-logD, abslat, C1 completeness, nsp smooth plains, dT = Delta T_w); GRL_insolation_hollows/data/test1_rows_inc.csv (depths).
+logD, abslat, C1 completeness, nsp smooth plains, dT = Delta T_w); insolation_thermal/data/test1_rows_inc.csv (depths).
 Vent assignment: a crater 'has a vent' if a vent lies within 1.0 of its radius (great circle, R = 2439.7 km).
 Hosting: logit hosts ~ vent + nested + logD + abslat + C1 + nsp + dT, on craters (kind == crater) >= 5 km with a hosting flag;
 also isolated craters only, and craters >= 20 km only.
@@ -73,7 +73,7 @@ logit(cs[cs.nested == 0], pspec.replace(" + nested", ""), "paperspec_isolated")
 logit(cs[cs.D >= 20], pspec, "paperspec_D_ge20")
 logit(cs, pspec.replace(" + ln_local", ""), "paperspec_no_local")
 # depth
-d = pd.read_csv(f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")
+d = pd.read_csv(f"{ROOT}/manuscripts/insolation_thermal/data/test1_rows_inc.csv")
 d["ltan"] = np.log(np.tan(np.radians(d.inc))); d["img"] = d.filename.astype(str); d["pole"] = (d.abslat >= 60).astype(int)
 cr = n[(n.kind == "crater") & (n.D >= 5)].reset_index(drop=True)
 t2 = cKDTree(xyz(cr.lat.values, cr.lon.values % 360)); Pt = xyz(d.latitude.values, d.longitude.values % 360); host = np.full(len(d), -1)

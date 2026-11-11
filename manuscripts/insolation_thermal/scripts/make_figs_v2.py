@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os as _os_repo  # added for the archive: repository root, or $MERCURY_HOLLOWS_ROOT
 _REPO = _os_repo.environ.get("MERCURY_HOLLOWS_ROOT") or _os_repo.path.abspath(_os_repo.path.join(_os_repo.path.dirname(__file__), "../../.."))
-"""Figures 1-3 of the GRL letter on the setting and depth of hollows on Mercury (draft v2).
+"""Figures 1-3 of the INSOL letter on the setting and depth of hollows on Mercury (draft v2).
 Figure 4 (life-cycle schematic) is drawn by lifecycle_fig.py.
 
 Fig 1  insolation: (a) longitude profile of hollow fields, (b) hot/warm odds of hosting vs crater size,
@@ -12,11 +12,11 @@ Fig 2  exposure of older crust: (a) north polar map with the smooth-plains mask,
 Fig 3  depth: (a) median depth by latitude band against mean annual temperature, (b) median depth per host crater vs size
 
 Inputs (environment variables give the folders):
-  GRL_DIR      data/test2_craters_h18.csv, data/aspect_wall_hollows.csv, records/hotwarm_record.json
+  INSOL_DIR      data/test2_craters_h18.csv, data/aspect_wall_hollows.csv, records/hotwarm_record.json
   HOLLOWS_DIR  code/rerun/out_v2/coverage_10ppd.npz, fields.csv; peak_wall_test/peak_wall_by_setting.json,
                peak_wall_test/caloris_test_record.json
-  GRL_SCRIPTS  nsp_laea.npz, latcorr_density_record.json, latcorr_inc60_75_record.json
-  GRL_WORK     data/test1_rows_inc.csv and records/depth_reanalysis_record.json (from depth_reanalysis.py)
+  INSOL_SCRIPTS  nsp_laea.npz, latcorr_density_record.json, latcorr_inc60_75_record.json
+  INSOL_WORK     data/test1_rows_inc.csv and records/depth_reanalysis_record.json (from depth_reanalysis.py)
 Writes figs/fig1-3 (.png, .pdf) and figs/figure_numbers_v2.json.
 """
 import json, os
@@ -26,11 +26,11 @@ import pyproj
 from scipy.stats import beta
 from scipy.spatial import cKDTree
 
-G = os.environ.get("GRL_DIR", _REPO + "/manuscripts/GRL_insolation_hollows")
+G = os.environ.get("INSOL_DIR", _REPO + "/manuscripts/insolation_thermal")
 U = os.environ.get("HOLLOWS_DIR", _REPO + "")
-S = os.environ.get("GRL_SCRIPTS", _REPO + "/manuscripts/GRL_insolation_hollows/scripts")
-W = os.environ.get("GRL_WORK", _REPO + "/manuscripts/GRL_insolation_hollows")
-OUT = os.environ.get("GRL_FIGS", _REPO + "/manuscripts/GRL_insolation_hollows/figs")
+S = os.environ.get("INSOL_SCRIPTS", _REPO + "/manuscripts/insolation_thermal/scripts")
+W = os.environ.get("INSOL_WORK", _REPO + "/manuscripts/insolation_thermal")
+OUT = os.environ.get("INSOL_FIGS", _REPO + "/manuscripts/insolation_thermal/figs")
 PW = f"{U}/peak_wall_test"
 
 mpl.rcParams.update({"font.family": "DejaVu Sans", "font.size": 7.5,

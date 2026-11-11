@@ -9,7 +9,7 @@ so figscripts/make_figs_pr_v9.py can draw Figure 1c from it. Differences from ca
   - completeness = C1 (1-km hollow, at the crater center; nodes table) in place of C_mean, for both sets. The C_cal/C_iso
     columns are medians, as in caloris_test.py;
   - basin-relative position rho_p = distance from the Orgel et al. (2020) Caloris center in Orgel radii.
-Hosting: GRL_insolation_hollows/data/host_assignments.csv (same bytes as the file caloris_test.py read); n_in = hollows within
+Hosting: insolation_thermal/data/host_assignments.csv (same bytes as the file caloris_test.py read); n_in = hollows within
 0.9 radii; field = n_in >= 3; any = n_in >= 1. Run after caloris_v9.py (reads caloris_v9_craters_ge10km.csv)."""
 import os, json, warnings; warnings.filterwarnings("ignore")
 import numpy as np, pandas as pd, statsmodels.formula.api as smf

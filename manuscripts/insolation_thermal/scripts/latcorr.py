@@ -7,7 +7,7 @@ import statsmodels.formula.api as smf
 U=_REPO + ""
 ppd=10; H=180*ppd; W=360*ppd
 cov=np.load(f"{U}/code/rerun/out_v2/coverage_10ppd.npz")["bestpx"].astype(float)     # NaN = not searched
-nsp=np.load(_REPO + "/manuscripts/GRL_insolation_hollows/data/nsp_mask_10ppd_r40.npy")
+nsp=np.load(_REPO + "/manuscripts/insolation_thermal/data/nsp_mask_10ppd_r40.npy")
 latc=90-(np.arange(H)+0.5)/ppd
 cell_km2=np.cos(np.radians(latc))[:,None]*(np.pi*2439.4/180/ppd)**2*np.ones((1,W))
 def rc(lat,lon):
@@ -33,11 +33,11 @@ for hemi,sgn in [("N",1),("S",-1)]:
                 dens=kf/A*1e6 if A>0 else np.nan; ci=[x/A*1e6 for x in pois_ci(kf)] if A>0 else [np.nan,np.nan]
                 rows.append(dict(hemi=hemi,band=f"{lo}-{hi}",cls=cname,zone=zone,area_1e6km2=A/1e6,fields=kf,hollows=kh,
                                  field_density=dens,ci_lo=ci[0],ci_hi=ci[1],hollow_density=kh/A*1e6 if A>0 else np.nan))
-T=pd.DataFrame(rows); T.to_csv(_REPO + "/manuscripts/GRL_insolation_hollows/data/density_by_band.csv",index=False)
+T=pd.DataFrame(rows); T.to_csv(_REPO + "/manuscripts/insolation_thermal/data/density_by_band.csv",index=False)
 pd.set_option("display.width",250)
 for cname in ["all<=150","<=40","40-80","80-150"]:
     t=T[(T.hemi=="N")&(T.cls==cname)].pivot(index="band",columns="zone",values=["area_1e6km2","fields","field_density"]).round(2)
     print(f"\n=== North, searched class {cname} m/px: area (1e6 km2), fields, fields per 1e6 km2 ==="); print(t.to_string())
 t=T[(T.hemi=="S")&(T.cls=="all<=150")&(T.zone=="all")][["band","area_1e6km2","fields","field_density","ci_lo","ci_hi"]].round(2)
 print("\n=== South, all searched ==="); print(t.to_string(index=False))
-f.to_csv(_REPO + "/manuscripts/GRL_insolation_hollows/data/fields_flagged.csv",index=False)
+f.to_csv(_REPO + "/manuscripts/insolation_thermal/data/fields_flagged.csv",index=False)

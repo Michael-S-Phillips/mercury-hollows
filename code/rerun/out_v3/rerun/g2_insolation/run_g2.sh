@@ -11,7 +11,7 @@ for s in $LIST; do
   t0=$(date +%s)
   case $s in
     dT_hosting_completeness) python3 $s.py "$ROOT" - > $L/$s.log 2>&1 ;;
-    transition_layer_hilat) python3 $s.py "$ROOT/manuscripts/GRL_insolation_hollows/scripts" "inputs/$CAT/test2_craters_h18.csv" "$ROOT/manuscripts/PlanetaryResearch_hollows/analysis_v3/transition_layer_grid.npz" > $L/$s.log 2>&1 ;;
+    transition_layer_hilat) python3 $s.py "$ROOT/manuscripts/insolation_thermal/scripts" "inputs/$CAT/test2_craters_h18.csv" "$ROOT/manuscripts/PlanetaryResearch_hollows/analysis_v3/transition_layer_grid.npz" > $L/$s.log 2>&1 ;;
     *) python3 $s.py > $L/$s.log 2>&1 ;;
   esac
   echo "$CAT $s exit=$? $(( $(date +%s) - t0 ))s" >> out/$CAT/run_status.txt

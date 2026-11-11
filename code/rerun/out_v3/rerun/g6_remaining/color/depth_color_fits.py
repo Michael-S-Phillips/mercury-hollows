@@ -7,7 +7,7 @@ out_<cat>/hollow_color.csv (hollows of the screened v3 catalog masked) in place 
 (version-2 mask). Usage: depth_color_fits.py [cat=v3]; writes out_<cat>/depth_color_fits.json."""
 import os, sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
 cat = sys.argv[1] if len(sys.argv) > 1 else "v3"; HERE = os.path.dirname(os.path.abspath(__file__))
-t = pd.read_csv(os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")); t["row"] = np.arange(len(t))
+t = pd.read_csv(os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/test1_rows_inc.csv")); t["row"] = np.arange(len(t))
 h = pd.read_csv(f"{HERE}/out_{cat}/hollow_color.csv")
 t = t.merge(h[["row", "set_pc1", "set_pc2"]], on="row", how="left").dropna(subset=["set_pc1", "set_pc2"])
 t["ltan"] = np.log(np.tan(np.radians(t.inc))); t["pole"] = (t.abslat >= 60).astype(int); g = pd.factorize(t.filename)[0]

@@ -8,7 +8,7 @@ degraded; confirm against the catalog documentation). Rays from column 'ejecta' 
 (3) corrected hollow depth (Blewett et al. 2016; pixel scale and incidence controlled) by host class,
     standard errors clustered by image."""
 import sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
-G = _REPO + "/manuscripts/GRL_insolation_hollows"
+G = _REPO + "/manuscripts/insolation_thermal"
 sys.path.insert(0, G + "/scripts"); import thermal
 z = np.load(G + "/data/thermal_grid.npz"); la, lo, T = z["la"], z["lo"], z["G"]
 R = {}
@@ -29,7 +29,7 @@ for k, g in s2.groupby("preserved"):
 mi = smf.logit("hosts ~ dT * C(pres) + logD + abslat", data=s2).fit(disp=0)
 R["interaction_p"] = {k: float(v) for k, v in mi.pvalues.items() if "dT:" in k}
 # depth by host class (reuses the hollow-to-host assignment of depth_structure.py)
-exec(open(_REPO + "/manuscripts/GRL_insolation_hollows/depthctl/depth_structure.py").read().split("R = {")[0])
+exec(open(_REPO + "/manuscripts/insolation_thermal/depthctl/depth_structure.py").read().split("R = {")[0])
 h = d[d.host >= 0].copy(); h["pres"] = cr.preserved.values[h.host.values]
 h = h[h.pres.isin(["f", "s", "d"])].copy(); h["pres"] = pd.Categorical(h.pres, categories=["d", "s", "f"]); h["abslat"] = np.abs(h.latitude)
 md = smf.ols("res ~ C(pres) + abslat", data=h).fit(cov_type="cluster", cov_kwds={"groups": pd.factorize(h.filename)[0]})

@@ -8,7 +8,7 @@ The crater containment graph (craters that formed inside older craters, and an i
 
 ## Running the scripts
 
-The analyses ran in a working folder mounted at `~/mnt/hollows-emissivity`, and the scripts in this repository are byte-identical to the scripts that wrote the archived records, except for one line of `R/g4_completeness/g2/threshold.py` changed in v0.3.1 (see Versions). Most scripts therefore locate their inputs under `~/mnt/hollows-emissivity`. Link the repository there before running anything:
+The analyses ran in a working folder mounted at `~/mnt/hollows-emissivity`, and the scripts in this repository are byte-identical to the scripts that wrote the archived records, except for one line of `R/g4_completeness/g2/threshold.py` changed in v0.3.1 and the folder and variable names changed in v0.4.2 (see Versions). Most scripts therefore locate their inputs under `~/mnt/hollows-emissivity`. Link the repository there before running anything:
 
 ```bash
 bash setup_root.sh        # creates ~/mnt/hollows-emissivity -> this repository (stops if that path already exists)
@@ -28,7 +28,7 @@ Scripts kept from version 0.1.0 instead find the repository root from their own 
 
 ## Layout
 
-Folders keep the layout in which the analyses ran, so scripts find one another's outputs by the same relative paths. `R/` below is `code/rerun/out_v3/rerun/`, `G/` is `manuscripts/GRL_insolation_hollows/`, and `P/` is `manuscripts/PlanetaryResearch_hollows/`. `G/` and `P/` hold only the submitted manuscript and the scripts, inputs, and records that the reproduction check and the provenance tables use; drafts and superseded analyses are in v0.2.1.
+Folders keep the layout in which the analyses ran, so scripts find one another's outputs by the same relative paths. `R/` below is `code/rerun/out_v3/rerun/`, `I/` is `manuscripts/insolation_thermal/`, and `P/` is `manuscripts/PlanetaryResearch_hollows/`. `I/` and `P/` hold only the submitted manuscript and the scripts, inputs, and records that the reproduction check and the provenance tables use; drafts and superseded analyses are in v0.2.1.
 
 | Folder | Contents |
 |---|---|
@@ -45,7 +45,7 @@ Folders keep the layout in which the analyses ran, so scripts find one another's
 | `R/g12_tracer/`, `R/g13_traced/`, `R/g17_tracer_round2/`, `R/g18_traced_r3/` | Hand tracings of host terrain and the peak, floor, and wall tests (Section S4, Figure 2d, Figure S3) |
 | `R/g20_regional_clusters/`, `R/g25_composition/`, `R/g22_province_screen/` | Regional excess of host craters over the joint model, the composition group, and the visual screen of the excess regions (Section 3.8, Figure 6, Section S16) |
 | `R/g23_smallest_hollows/`, `R/g24_blewett_compare/`, `R/g26_measurement_error/` | Automatic shadow depths, hand depths, the blind check of Blewett et al. (2016) depths, and measurement uncertainty (Section 3.7, Figure 5, Section S9, Figures S7 and S8) |
-| `G/scripts/`, `G/depthctl/`, `G/data/`, `G/records/` | Thermal model, plains mask, Blewett depth tables, XRS maps |
+| `I/scripts/`, `I/depthctl/`, `I/data/`, `I/records/` | Thermal model, plains mask, Blewett depth tables, XRS maps |
 | `P/analysis_v3/`, `P/analysis_v7/`, `P/analysis_v8/`, `P/analysis_v9/` | Sulfur release and vapor pressure, transition layer, collapse depth, model-logic calculations, first graph versions |
 | `P/analysis_workshop/` | Volatile fits, sulfur redox, Kinczyk classes, vent checks, depth pilot, province basins, Caloris |
 | `P/figscripts/` | Life-cycle figure (Figure 7, `lifecycle_fig_v12.py`) and base temperature against φ (Figure 8) |
@@ -78,7 +78,7 @@ A rerun on 11 November 2026 (v0.3.1) with Python 3.11.13, NumPy 2.3.3, pandas 2.
 
 Partial checks:
 - **Joint model with the composition group** (`R/g25_composition/comp_model.py`). A run with 2 bootstrap draws reproduces every point estimate (R² 0.226, the shares, and the coefficients) to 10⁻¹⁵. The archived intervals come from 100 draws, which were not rerun with `comp_model.py`. `coef_table.py` fits the same model to the same 100 block resamples and reproduces the composition factors and intervals of `comp.json` to 10⁻¹⁴.
-- **Records that need Cantera or external data.** `P/analysis_workshop/sulfur_redox/redox_check.py` (Cantera; `redox_check_record.json`) and `G/scripts/nsp_mask2.py` (the northern smooth plains lineament map; `nsp_mask2_record.json`) were not rerun here.
+- **Records that need Cantera or external data.** `P/analysis_workshop/sulfur_redox/redox_check.py` (Cantera; `redox_check_record.json`) and `I/scripts/nsp_mask2.py` (the northern smooth plains lineament map; `nsp_mask2_record.json`) were not rerun here.
 
 Not rerun, because the steps need external data: georeferencing (ISIS and MDIS EDRs), the catalog screen and the automatic shadow depths (MDIS EDRs), the completeness grid (MDIS CDR index), DEM morphometry, terrain measurements and hollow positions on peaks (USGS 665 m DEM), MDIS color (MDR tiles), and the map figures (MDIS mosaics). Their outputs are archived.
 
@@ -103,17 +103,19 @@ The author measured and classified features by hand in browser pages; the export
 | MDIS global mosaics, 166 m/pixel monochrome and 665 m/pixel enhanced color | map figures, tracing pages | USGS Astrogeology (Denevi et al., 2018) |
 | Low-reflectance material map (`data/Concentrated_LRM_560_params_BW.tif`) | `depth_paper.py`, composition steps | Klima et al. (2018) |
 | Volcanic vent catalog (`data/data/MER_Vent_Locations_Classifications.csv`) | vent tests | Pegg et al. (2021) |
-| Northern smooth plains lineament map (`data/data/NSP_map_data/`) | `G/scripts/nsp_mask2.py` | Klimczak et al. (2025); the resulting mask is included |
+| Northern smooth plains lineament map (`data/data/NSP_map_data/`) | `I/scripts/nsp_mask2.py` | Klimczak et al. (2025); the resulting mask is included |
 | Kinczyk et al. (2020) degradation table | `P/analysis_workshop/kinczyk_degradation/` | Kinczyk et al. (2020) supplement; the matched classes are included |
 | ISIS 8 with MESSENGER kernels; Cantera (sulfur-redox checks) | georeferencing; `P/analysis_workshop/sulfur_redox/` | USGS Astrogeology; cantera.org |
 
 ## Versions
 
+**v0.4.2 (November 2026).** Renames the folder that holds the thermal model, plains mask, Blewett depth tables, XRS maps, and their records to `manuscripts/insolation_thermal/` (alias `I/` in this README). Every path to the folder is changed to match, in the scripts, the provenance tables, and the three records that store input paths (`depth_nested_record.json` in `R/g1_graph_joint/depth_nested/v3/` and `P/analysis_v8/depth_nested/`, and `R/g3_catalog/caloris/out_v2/caloris_v9_record.json`). The variables and environment variables that point to the folder are renamed to match (`INSOL`, `INSOL_DIR`, `INSOL_SCRIPTS`, `INSOL_WORK`, `INSOL_FIGS`, and `G2_INSOLDATA`). No number, figure, or manuscript file changes.
+
 **v0.4.1 (November 2026).** Matches the submitted manuscript v6.17 and supplement v29. v6.17 changes wording only, and both files no longer carry the version comments at the top. v29 adds to Section S16 the fitted thinned occurrence model with every term and coefficient (Equation S1) and a table of the factor by which each term changes the density of hollows, with 95% intervals (Table S21). `R/g25_composition/coef_table.py` (new) computes them and writes `coef_table.csv` and `coef_table.json`; `run_all.sh` reruns it, and `provenance/supplement.csv` has a row for it. In `provenance/supplement.csv`, the rows for Tables S10 to S20 gave table numbers one too high; they now match the supplement. The figures are unchanged. The Zenodo record labeled v0.4.0 (10.5281/zenodo.24146453) was archived by mistake from the v0.3.1 commit and holds the same files as v0.3.1; v0.4.0 has no other release.
 
 **v0.3.1 (November 2026).** Two steps of `run_g2.sh` failed in v0.2.0 to v0.3.0. `latcorr5.py` (Section S6) reads `code/rerun/latitude/incidence_null/out_inc60_75/coverage_10ppd.npz`, which v0.2.0 removed; the file is restored from v0.1.0, and the record it writes is byte-identical to the archived one. `threshold.py` (Section 3.5 and S8) read the design of a formula model as `model_spec`, which statsmodels 0.14 calls `design_info`; it now reads either. The vent catalog is credited to Pegg et al. (2021).
 
-**v0.3.0 (November 2026).** Removes from `manuscripts/` the manuscript drafts (v6.13 to v6.15, supplement v24 to v27), the GRL document builders, and the analyses and figures that neither the reproduction check nor the provenance tables use (195 files). The submitted manuscript and supplement, and every script, input, and record that `run_all.sh` or `provenance/` names, are unchanged. The removed files remain in v0.2.1.
+**v0.3.0 (November 2026).** Removes from `manuscripts/` the manuscript drafts (v6.13 to v6.15, supplement v24 to v27), the document builders of an earlier manuscript, and the analyses and figures that neither the reproduction check nor the provenance tables use (195 files). The submitted manuscript and supplement, and every script, input, and record that `run_all.sh` or `provenance/` names, are unchanged. The removed files remain in v0.2.1.
 
 **v0.2.0 (November 2026).** Matches the submitted manuscript v6.16 and supplement v28, held as `manuscripts/PlanetaryResearch_hollows/submission/Hollow_Formation_Model_Paper_final.tex` and `supplementary-materials_final.tex` (the submission folder holds only the current version; v6.13, v6.14, v6.15, v24, v25, v26 and v27 are one level up). v6.15 redraws Figure 2a on the MDIS mosaic (`g28_fig2a`) and letters the panels of Figure 7 (`lifecycle_fig_v12.py`); v26 takes the S8 wall-area share from the traced classes, and v27 fixes the panel titles of Figure S1 (`analysis_v3/figS_positions_v4.py`). v6.16 and v28 rename the solar-day average "mean surface temperature" (Figure 5 v4, `g23_smallest_hollows/fig_depth_v4.py`) and add the pressure-driven flow of S2 to S13 (`g29_pressure_flow/pressure_flow.py`). The corrections came from the provenance cross-check: crater counts and the Caloris tests on the refit completeness grid (`g3_catalog/caloris/out_v3r`, Figure 2c), the S2 pair ranges and rounding, the S9 color fits on the screened mask (`g6_remaining/color/depth_color_fits.py`) with Figure S9 redrawn from it, and new records for numbers that had none (`g27_text_numbers`, `redox_check_record.json`, `nsp_mask2_record.json`); `depth_paper.py` now writes every key of its record. The provenance tables describe v6.15 and v27. Adds the screened catalog and every rerun on it (`code/rerun/out_v3/`), the refit detection model and completeness grid, the hand-traced terrain classes, the automatic and hand shadow depths and their uncertainty, MDIS color, the Kinczyk degradation classes, the joint model of hosting with the composition group, the regional excess, the knobs, the provenance tables, and the submitted figures. The automated relief-threshold terrain classes and the analyses that the paper no longer uses (slope tests, the version-6 figures and their data tables, superseded latitude records) are removed. `build_v3_catalog.py` is new: it rebuilds the screened catalog files, which were first made by commands run outside a script, and it reproduces them exactly.
 

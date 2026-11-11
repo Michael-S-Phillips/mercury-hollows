@@ -19,7 +19,7 @@ from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
 W = [430, 480, 560, 630, 750, 830, 900, 1000]
 BASE = os.path.expanduser('~/mnt/hollows-emissivity')
 CF = os.environ.get('G6_CF', os.path.join(BASE, 'manuscripts/PlanetaryResearch_hollows/analysis_workshop/summary_model/crater_features.csv'))
-HF = os.path.join(BASE, 'manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv')
+HF = os.path.join(BASE, 'manuscripts/insolation_thermal/data/test1_rows_inc.csv')
 NMIN = 20
 HILAT = 70.0
 

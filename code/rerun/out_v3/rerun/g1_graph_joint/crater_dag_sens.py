@@ -9,7 +9,7 @@ import numpy as np, pandas as pd
 from scipy.spatial import cKDTree
 import statsmodels.formula.api as smf
 ROOT = os.path.expanduser(sys.argv[1] if len(sys.argv) > 1 else "~/mnt/hollows-emissivity")
-OUT = os.environ.get("CRATER_DAG_OUT", os.path.dirname(os.path.abspath(__file__))); G = f"{ROOT}/manuscripts/GRL_insolation_hollows"
+OUT = os.environ.get("CRATER_DAG_OUT", os.path.dirname(os.path.abspath(__file__))); G = f"{ROOT}/manuscripts/insolation_thermal"
 n = pd.read_csv(f"{OUT}/crater_dag_nodes.csv", dtype={"id": str, "parent_id": str})
 h = pd.read_csv(HOSTS, usecols=["host_uid", "rho"]).dropna(); h["host_uid"] = h.host_uid.astype(int).astype(str)
 n["h09"] = n.id.map(h[h.rho <= 0.9].host_uid.value_counts()).fillna(0).gt(0).astype(int)

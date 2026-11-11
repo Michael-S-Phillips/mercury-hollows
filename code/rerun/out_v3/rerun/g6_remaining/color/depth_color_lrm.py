@@ -6,7 +6,7 @@ z(set_pc1), z(set_pc2), lrm_local, ln pixel scale, ln tan(incidence), and a pole
 Also the correlation of setting PC1 with lrm_local. Writes depth_color_lrm_record.json."""
 import os, json, numpy as np, pandas as pd, rasterio, statsmodels.formula.api as smf, warnings; warnings.filterwarnings("ignore")
 ROOT = os.path.expanduser("~/mnt/hollows-emissivity"); HERE = os.getcwd()
-d = pd.read_csv(f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv"); d["row"] = np.arange(len(d))
+d = pd.read_csv(f"{ROOT}/manuscripts/insolation_thermal/data/test1_rows_inc.csv"); d["row"] = np.arange(len(d))
 d["ltan"] = np.log(np.tan(np.radians(d.inc))); d["pole"] = (d.abslat >= 60).astype(int); d["img"] = d.filename.astype(str)
 L = rasterio.open(f"{ROOT}/data/Concentrated_LRM_560_params_BW.tif").read(1) > 0; ny, nx = L.shape; ppd = nx / 360
 R = 2439.4; out = []

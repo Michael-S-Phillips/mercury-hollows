@@ -7,7 +7,7 @@ Samples: all 2,518 depths; equatorward of 60 deg only. Writes test1b_additive_so
 """
 import os, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
 ROOT = os.path.expanduser("~/mnt/hollows-emissivity")
-d = pd.read_csv(f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")
+d = pd.read_csv(f"{ROOT}/manuscripts/insolation_thermal/data/test1_rows_inc.csv")
 d["ltan"] = np.log(np.tan(np.radians(d.inc))); d["img"] = d.filename.astype(str)
 d["T10"] = d["T"] / 10.0; d["c2"] = np.cos(np.radians(2 * d.longitude))
 taus = [0.1, 0.25, 0.5, 0.75, 0.9]; rng = np.random.default_rng(7); R = {}

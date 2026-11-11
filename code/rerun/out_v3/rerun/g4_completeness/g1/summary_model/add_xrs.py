@@ -1,7 +1,7 @@
 # g4 copy of code/rerun/out_v3/rerun/g1_graph_joint/summary_model/add_xrs.py (6 Nov 2026). Changed: none (verbatim) (see make_copies_g1.py).
 #!/usr/bin/env python3
 """Summary model, step 7 input (3 Nov 2026): add MESSENGER XRS element ratios (Nittler et al. RDR maps, 2015-04-24, in
-GRL_insolation_hollows/data/xrs_maps) to crater_features.csv. Maps are 4 pixels per degree, simple cylindrical,
+insolation_thermal/data/xrs_maps) to crater_features.csv. Maps are 4 pixels per degree, simple cylindrical,
 -180..180 E, 90N at the top, 8-bit, 0 = missing. The PDS labels list LINES = 1440 and LINE_SAMPLES = 720, but the files
 are 720 lines x 1440 samples (1,036,800 bytes; read this way, the high-Mg region and the Caloris high-Al/Si interior fall
 in the right places). Values are sampled at the crater center: S/Si, Mg/Si, Ca/Si, Al/Si, Fe/Si (NaN where missing), and
@@ -10,7 +10,7 @@ import os, numpy as np, pandas as pd
 # g1 rerun (6 Nov 2026): copy of analysis_workshop/summary_model/add_xrs.py; only input/output paths changed. SM_DIR (env) is the
 # folder holding this catalog's crater_features*.csv and out/ (g1_graph_joint/summary_model/<CATALOG>).
 HERE = os.environ["SM_DIR"]
-X = os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/xrs_maps")
+X = os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/xrs_maps")
 SCALE = {"s__si": 0.147, "mg_si": None, "ca_si": None, "al_si": None, "fe_si": None}
 def scale_from_label(fn):
     t = open(fn).read(); import re

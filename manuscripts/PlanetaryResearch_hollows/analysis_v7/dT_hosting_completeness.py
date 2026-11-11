@@ -5,7 +5,7 @@ center) is taken from the crater-graph node table (mercury-crater-graph, outputs
 Herrick unique_id. Usage: python3 dT_hosting_completeness.py <mercury-hollows repo root> <mercury-crater-graph repo root>"""
 import sys, os, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
 REPO, MCG = sys.argv[1], sys.argv[2]
-G = f"{REPO}/manuscripts/GRL_insolation_hollows"; sys.path.insert(0, f"{G}/scripts"); import thermal
+G = f"{REPO}/manuscripts/insolation_thermal"; sys.path.insert(0, f"{G}/scripts"); import thermal
 z = np.load(f"{G}/data/thermal_grid.npz"); la, lo, T = z["la"], z["lo"], z["G"]
 s = pd.read_csv(f"{G}/data/test2_craters_h18.csv"); s = s[(s.diameter >= 5) & (s.abslat <= 60)].copy()
 s["dT"] = thermal.lookup(la, lo, T, s.latitude.values, s.longitude.values) - thermal.lookup(la, lo, T, s.latitude.values, np.full(len(s), 90.0))

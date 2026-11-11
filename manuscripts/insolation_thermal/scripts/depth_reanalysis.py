@@ -9,8 +9,8 @@ v2 corrections to the v1 analysis:
 Incidence comes from the MDIS CDR cumulative index (MSGRMDS_2001, CUMINDEX.TAB), joined on the product number (EN... -> CN...).
 Writes data/test1_rows_inc.csv and records/depth_reanalysis_record.json. Standard errors are clustered by image."""
 import json, os, pickle, numpy as np, pandas as pd, statsmodels.formula.api as smf
-G = os.environ.get("GRL_DIR", _REPO + "/manuscripts/GRL_insolation_hollows")
-W = os.environ.get("GRL_WORK", _REPO + "/manuscripts/GRL_insolation_hollows")
+G = os.environ.get("INSOL_DIR", _REPO + "/manuscripts/insolation_thermal")
+W = os.environ.get("INSOL_WORK", _REPO + "/manuscripts/insolation_thermal")
 IDX = os.environ.get("CDR_INDEX", _REPO + "/external/mdis_index/cdr_index.pkl")
 os.makedirs(f"{W}/records", exist_ok=True); os.makedirs(f"{W}/data", exist_ok=True)
 d = pd.read_csv(f"{G}/data/test1_rows.csv")

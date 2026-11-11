@@ -73,7 +73,7 @@ mp = fit("h09 ~ dT10 + C(grp) + logD + abslat", s2); R["dT_per10K_pooled_ge40"] 
 
 # 5. Depth by host class (hosts as in step5_depth.py: smallest crater >= 5 km whose 1.1 radii contain the hollow)
 R_M = 2439.4
-d = pd.read_csv(f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")
+d = pd.read_csv(f"{ROOT}/manuscripts/insolation_thermal/data/test1_rows_inc.csv")
 def xyz(la, lo):
     la, lo = np.radians(la), np.radians(lo); return np.c_[np.cos(la)*np.cos(lo), np.cos(la)*np.sin(lo), np.sin(la)]
 t = cKDTree(xyz(f.lat.values, f.lon.values % 360)); P = xyz(d.latitude.values, d.longitude.values % 360); host = np.full(len(d), -1)

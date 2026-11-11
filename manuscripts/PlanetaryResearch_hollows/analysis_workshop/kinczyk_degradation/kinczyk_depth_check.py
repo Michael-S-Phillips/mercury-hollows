@@ -9,7 +9,7 @@ f = pd.read_csv(f"{HERE}/../summary_model/crater_features.csv", low_memory=False
 m = pd.read_csv(f"{HERE}/kinczyk_matched.csv", low_memory=False, dtype={"id": str})
 k = m[m.id.notna() & m.kclass.between(1, 5)].copy(); k["kc"] = k.kclass.astype(int); kk = k.set_index("id")
 R_M = 2439.4
-d = pd.read_csv(f"{ROOT}/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")
+d = pd.read_csv(f"{ROOT}/manuscripts/insolation_thermal/data/test1_rows_inc.csv")
 def xyz(la, lo):
     la, lo = np.radians(la), np.radians(lo); return np.c_[np.cos(la)*np.cos(lo), np.cos(la)*np.sin(lo), np.sin(la)]
 t = cKDTree(xyz(f.lat.values, f.lon.values % 360)); P = xyz(d.latitude.values, d.longitude.values % 360); host = np.full(len(d), -1)

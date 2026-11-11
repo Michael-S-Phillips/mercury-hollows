@@ -16,7 +16,7 @@ figures/figS5_insolation_v8.png/.pdf (all four panels) and figures/fig3_insolati
 the figure, as fig3_insolation_v6.py cropped it). Run without arguments.
 
 Original docstring follows.
-Planetary Research version (15 cm wide). Figures 1, 2, and 4 of the paper, from the GRL figure script on the setting and depth of hollows on Mercury (draft v2).
+Planetary Research version (15 cm wide). Figures 1, 2, and 4 of the paper, from the earlier figure script on the setting and depth of hollows on Mercury (draft v2).
 Figure 4 (life-cycle schematic) is drawn by lifecycle_fig.py.
 
 Fig 1  insolation: (a) longitude profile of hollow fields, (b) hot/warm odds of hosting vs crater size,
@@ -27,11 +27,11 @@ Fig 2  exposure of older crust: (a) north polar map with the smooth-plains mask,
 Fig 3  depth: (a) median depth by latitude band against mean annual temperature, (b) median depth per host crater vs size
 
 Inputs (environment variables give the folders):
-  GRL_DIR      data/test2_craters_h18.csv, data/aspect_wall_hollows.csv, records/hotwarm_record.json
+  INSOL_DIR      data/test2_craters_h18.csv, data/aspect_wall_hollows.csv, records/hotwarm_record.json
   HOLLOWS_DIR  code/rerun/out_v2/coverage_10ppd.npz, fields.csv; peak_wall_test/peak_wall_by_setting.json,
                peak_wall_test/caloris_test_record.json
-  GRL_SCRIPTS  nsp_laea.npz, latcorr_density_record.json, latcorr_inc60_75_record.json
-  GRL_WORK     data/test1_rows_inc.csv and records/depth_reanalysis_record.json (from depth_reanalysis.py)
+  INSOL_SCRIPTS  nsp_laea.npz, latcorr_density_record.json, latcorr_inc60_75_record.json
+  INSOL_WORK     data/test1_rows_inc.csv and records/depth_reanalysis_record.json (from depth_reanalysis.py)
 Writes figs/fig1-3 (.png, .pdf) and figs/figure_numbers_v2.json.
 """
 # --- g2 rerun (6 Nov 2026): catalog inputs and output folder; paths and env only ---
@@ -39,7 +39,7 @@ import os as _g2_os
 G2_HERE = _g2_os.path.dirname(_g2_os.path.abspath(__file__)); G2_ROOT = _g2_os.path.abspath(_g2_os.path.join(G2_HERE, *[".."] * 6))
 G2_CAT = _g2_os.environ.get("G2_CAT", "v3"); IN = f"{G2_HERE}/inputs/{G2_CAT}"; G2_OUT = f"{G2_HERE}/out/{G2_CAT}"
 _g2_os.makedirs(G2_OUT, exist_ok=True)
-G2_GRLDATA = f"{G2_ROOT}/manuscripts/GRL_insolation_hollows/data"
+G2_INSOLDATA = f"{G2_ROOT}/manuscripts/insolation_thermal/data"
 # --- end g2 block ---
 import json, os
 import numpy as np, pandas as pd, matplotlib as mpl, matplotlib.pyplot as plt
@@ -49,11 +49,11 @@ from scipy.stats import beta
 from scipy.spatial import cKDTree
 
 _ROOT = G2_ROOT   # v8: hollows-emissivity
-G = os.environ.get("GRL_DIR", f"{_ROOT}/manuscripts/GRL_insolation_hollows")
+G = os.environ.get("INSOL_DIR", f"{_ROOT}/manuscripts/insolation_thermal")
 U = os.environ.get("HOLLOWS_DIR", _ROOT)
-S = os.environ.get("GRL_SCRIPTS", "/home/claude/grl/scripts")
-W = os.environ.get("GRL_WORK", "/home/claude/grl")
-OUT = os.environ.get("GRL_FIGS", G2_OUT)   # v8
+S = os.environ.get("INSOL_SCRIPTS", "/home/claude/insolation_thermal/scripts")
+W = os.environ.get("INSOL_WORK", "/home/claude/insolation_thermal")
+OUT = os.environ.get("INSOL_FIGS", G2_OUT)   # v8
 PW = f"{U}/peak_wall_test"
 
 mpl.rcParams.update({"font.family": "DejaVu Sans", "font.size": 7.5,

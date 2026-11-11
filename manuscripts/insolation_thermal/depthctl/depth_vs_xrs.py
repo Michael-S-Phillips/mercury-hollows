@@ -5,7 +5,7 @@ _REPO = _os_repo.environ.get("MERCURY_HOLLOWS_ROOT") or _os_repo.path.abspath(_o
 2015-04-24 release; 4 pix/deg simple cylindrical, rows 90N->90S, columns 180W->180E, 8-bit with label scaling) at each depth
 measurement and regresses corrected log depth on each ratio. Writes depthctl/depth_vs_xrs_record.json."""
 import json, re, os, numpy as np, pandas as pd, statsmodels.formula.api as smf
-H = _REPO + "/manuscripts/GRL_insolation_hollows/depthctl"
+H = _REPO + "/manuscripts/insolation_thermal/depthctl"
 def load(kind, el):
     lbl = open(f"{H}/../data/xrs_maps/xrs_{kind}_{el}_20150424.lbl").read()
     sf = float(re.search(r"SCALING_FACTOR\s*=\s*([0-9.eE+-]+)", lbl).group(1))
@@ -13,7 +13,7 @@ def load(kind, el):
     a[a == 0] = np.nan; return a * sf
 els = ["s__si", "mg_si", "ca_si", "al_si", "fe_si"]
 M = {e: load("map", e) for e in els}; U = {e: load("unc", e) for e in els}; F = {e: load("res", e) for e in els}
-d = pd.read_csv(_REPO + "/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")
+d = pd.read_csv(_REPO + "/manuscripts/insolation_thermal/data/test1_rows_inc.csv")
 d["ltan"] = np.log10(np.tan(np.radians(d.inc))); d["lp"] = np.log10(d.px); d["ld"] = np.log10(d.depth)
 d["img"] = d.filename.astype("category").cat.codes
 lon180 = ((d.longitude + 180) % 360) - 180

@@ -2,16 +2,16 @@
 """g23 step 11 (9 Nov): the paper's latitude and color depth regressions on automatic depths (depth_all.csv), with and without hollow size,
 with and without the province, beside the same models on the 2,518 Blewett et al. (2016) depths (test1_rows_inc.csv).
 - Clean automatic depths: depth > 0 and no pilot flag no_shadow, edge_sun, frame_edge (as dvs_analyze.py).
-- T: mean annual surface temperature from the paper's thermal grid (GRL_insolation_hollows thermal.lookup). Poleward = lat >= 60N.
+- T: mean annual surface temperature from the paper's thermal grid (insolation_thermal thermal.lookup). Poleward = lat >= 60N.
 - Color: the host crater's interior color (crater_color.csv pc1 = spectral slope, pc2 = curvature; within 0.9 R, hollows masked), z-scored
   over the rows of each data set. The paper's depth-color result uses the surroundings within 10 km of each depth point; that map
   extraction is not rerun here, so the Blewett depths are also fitted with host color as a bridge.
 - OLS of ln depth, standard errors clustered by image, as in the paper. Writes depth_regress.json."""
 import os, sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf, warnings; warnings.filterwarnings("ignore")
-HE = os.path.expanduser("~/mnt/hollows-emissivity"); GRL = f"{HE}/manuscripts/GRL_insolation_hollows"
-sys.path.insert(0, f"{GRL}/scripts"); from thermal import lookup
+HE = os.path.expanduser("~/mnt/hollows-emissivity"); INSOL = f"{HE}/manuscripts/insolation_thermal"
+sys.path.insert(0, f"{INSOL}/scripts"); from thermal import lookup
 sys.path.insert(0, f"{HE}/manuscripts/PlanetaryResearch_hollows/analysis_workshop/depth_expansion_pilot"); import dep_common as C
-g = np.load(f"{GRL}/data/thermal_grid.npz")
+g = np.load(f"{INSOL}/data/thermal_grid.npz")
 col = pd.read_csv("../g6_remaining/color/out_v3/crater_color.csv")[["id", "pc1", "pc2"]].rename(columns={"id": "host_uid"}); col["host_uid"] = col.host_uid.astype(str)
 def xyz(la, lo): la, lo = np.radians(la), np.radians(lo); return np.c_[np.cos(la) * np.cos(lo), np.cos(la) * np.sin(lo), np.sin(la)]
 prov = lambda la, lo: (xyz(la, lo) @ xyz(np.array([65.0]), np.array([125.0]))[0]) >= np.cos(500 / 2439.7)
@@ -24,7 +24,7 @@ a["lnh"] = np.log(a.depth_m); a["lnD"] = np.log(a.D_can_m / 1000); a["lnpx"] = n
 a["T"] = lookup(g["la"], g["lo"], g["G"], a.lat.values, a.lon.values); a["x"] = 1 / a["T"]; a["pole"] = (a.lat >= 60).astype(int); a["abslat"] = a.lat.abs()
 a["prov"] = prov(a.lat.values, a.lon.values); a["img"] = a.num.astype(str)
 # Blewett depths
-b = pd.read_csv(f"{GRL}/data/test1_rows_inc.csv"); b["x"] = 1 / b["T"]; b["ltan"] = np.log(np.tan(np.radians(b.inc))); b["pole"] = (b.abslat >= 60).astype(int)
+b = pd.read_csv(f"{INSOL}/data/test1_rows_inc.csv"); b["x"] = 1 / b["T"]; b["ltan"] = np.log(np.tan(np.radians(b.inc))); b["pole"] = (b.abslat >= 60).astype(int)
 b["img"] = b.filename.astype(str); b["prov"] = prov(b.latitude.values, b.longitude.values % 360)
 hb = C.assign_hosts(b.latitude.values, b.longitude.values % 360); b["host_uid"] = hb[0] if isinstance(hb, tuple) else hb
 b["host_uid"] = b.host_uid.astype(str); b = b.merge(col, on="host_uid", how="left")

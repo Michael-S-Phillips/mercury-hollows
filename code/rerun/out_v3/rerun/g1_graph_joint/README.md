@@ -8,7 +8,7 @@ spurious detections removed (`../../hollows_canonical_v3.csv`, `_v3b.csv`; see `
 ## Inputs
 - Host assignments: `code/rerun/out_v3/host_assignments_v3.csv` / `_v3b.csv` (`hostfiles.py` selects them with the
   environment variable `CATALOG` = v3 or v3b; `v2` points to the original files and was used only to check the copies).
-- The crater table `GRL_insolation_hollows/data/test2_craters_h18.csv` carries the v2 hosting flag `hosts` (any assigned
+- The crater table `insolation_thermal/data/test2_craters_h18.csv` carries the v2 hosting flag `hosts` (any assigned
   hollow; it equals the host set of host_assignments.csv exactly). `inputs/make_inputs.py` writes
   `inputs/test2_craters_h18_v3.csv` / `_v3b.csv` with `hosts` recomputed (534 and 441 hosts) and every other column unchanged.
 - Hosts within 0.9 radii (h09) in the tests: 606 (v2), 446 (v3), 370 (v3b); any-hollow hosts in the tests: 705, 532, 440.

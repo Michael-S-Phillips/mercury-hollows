@@ -19,8 +19,8 @@ import json, csv, io, sys, numpy as np, pandas as pd
 import statsmodels.api as sm, statsmodels.formula.api as smf
 from scipy.spatial import cKDTree
 from common_null import *
-sys.path.insert(0, f"{ROOT}/manuscripts/GRL_insolation_hollows/scripts"); import thermal
-G = f"{ROOT}/manuscripts/GRL_insolation_hollows/data"
+sys.path.insert(0, f"{ROOT}/manuscripts/insolation_thermal/scripts"); import thermal
+G = f"{ROOT}/manuscripts/insolation_thermal/data"
 
 H = pd.read_csv(IN + "/hollows_canonical.csv"); H = H[~H.is_crater_trace.astype(bool)].reset_index(drop=True)
 L = pd.read_csv(f"{IN}/canonical_stage_labels.csv")

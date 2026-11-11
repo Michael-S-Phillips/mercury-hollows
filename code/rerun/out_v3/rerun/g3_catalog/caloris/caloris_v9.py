@@ -3,7 +3,7 @@
 """Caloris penetration test on the v9 crater containment graph (2 Nov 2026).
 Reruns peak_wall_test/caloris_test.py with membership from analysis_v9/crater_dag_nodes.csv: every crater descendant of
 the merged Caloris node 200153 (Orgel center and diameter; footprint = union of Orgel and catalog circles). Isolated =
-craters with no parent in the v9 graph, D <= 250 km. Hosting from GRL_insolation_hollows/data/host_assignments.csv
+craters with no parent in the v9 graph, D <= 250 km. Hosting from insolation_thermal/data/host_assignments.csv
 (identical bytes to the code/rerun/latitude/aspect copy used by v5). Completeness: C1 (1-km hollow, at crater center,
 nodes table) is primary because C_mean (morph_all.csv) is missing for 47 isolated craters 10-40 km (mostly at lon ~ 0/360);
 C_mean results are given as a sensitivity on the craters that have it.
@@ -20,11 +20,11 @@ CAT = _os.environ.get("G3_CAT", "v3"); ODIR = f"{G3}/caloris/out_{CAT}"
 GRID = _os.environ.get("G3_GRID", "")
 if GRID: ODIR = f"{G3}/caloris/out_{CAT}{GRID[2:] if GRID.startswith(CAT) else GRID}"
 _os.makedirs(ODIR, exist_ok=True)
-HOSTS = (_os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/host_assignments.csv") if CAT == "v2"
+HOSTS = (_os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/host_assignments.csv") if CAT == "v2"
          else _os.path.expanduser(f"~/mnt/hollows-emissivity/code/rerun/out_v3/host_assignments_{CAT}.csv"))
 sys.setrecursionlimit(20000)
 ROOT = os.path.expanduser(sys.argv[1] if len(sys.argv) > 1 else "~/mnt/hollows-emissivity")
-P = f"{ROOT}/manuscripts/PlanetaryResearch_hollows"; G = f"{ROOT}/manuscripts/GRL_insolation_hollows"
+P = f"{ROOT}/manuscripts/PlanetaryResearch_hollows"; G = f"{ROOT}/manuscripts/insolation_thermal"
 OUT = ODIR
 NODES = (_os.path.expanduser("~/mnt/hollows-emissivity/code/rerun/out_v3/rerun/g4_completeness/g1/v3r/crater_dag_nodes.csv")
          if GRID == "v3r" else f"{G3}/inputs/crater_dag_nodes_{CAT}.csv")

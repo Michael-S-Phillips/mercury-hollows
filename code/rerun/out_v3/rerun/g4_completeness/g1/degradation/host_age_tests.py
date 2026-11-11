@@ -11,7 +11,7 @@ import sys, json, numpy as np, pandas as pd, statsmodels.formula.api as smf
 import os as _os, sys as _sys; _G1 = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))); _sys.path.insert(0, _G1)
 from hostfiles import HOSTS, CRATERS, CAT; OUTDIR = f"{_G1}/degradation/{CAT}"; _os.makedirs(OUTDIR, exist_ok=True)
 FEATURES = f"{_G1}/summary_model/{CAT}/crater_features.csv"; KDIR = _os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/PlanetaryResearch_hollows/analysis_workshop/kinczyk_degradation")
-G = _os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows")
+G = _os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/insolation_thermal")
 sys.path.insert(0, G + "/scripts"); import thermal
 z = np.load(G + "/data/thermal_grid.npz"); la, lo, T = z["la"], z["lo"], z["G"]
 R = {}
@@ -33,7 +33,7 @@ mi = smf.logit("hosts ~ dT * C(pres) + logD + abslat", data=s2).fit(disp=0)
 R["interaction_p"] = {k: float(v) for k, v in mi.pvalues.items() if "dT:" in k}
 # depth by host class (reuses the hollow-to-host assignment of depth_structure.py)
 if _os.environ.get("RUN_DEPTH") == "1":
-  exec(open("/home/claude/grl/depthctl/depth_structure.py").read().split("R = {")[0])
+  exec(open("/home/claude/insolation_thermal/depthctl/depth_structure.py").read().split("R = {")[0])
   h = d[d.host >= 0].copy(); h["pres"] = cr.preserved.values[h.host.values]
   h = h[h.pres.isin(["f", "s", "d"])].copy(); h["pres"] = pd.Categorical(h.pres, categories=["d", "s", "f"]); h["abslat"] = np.abs(h.latitude)
   md = smf.ols("res ~ C(pres) + abslat", data=h).fit(cov_type="cluster", cov_kwds={"groups": pd.factorize(h.filename)[0]})

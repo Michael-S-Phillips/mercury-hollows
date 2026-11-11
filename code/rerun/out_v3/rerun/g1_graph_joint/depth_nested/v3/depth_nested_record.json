@@ -1,7 +1,7 @@
 {
  "inputs": {
-  "depths": "/sessions/rcw-01cubj9exxyvrkk4tagmgbtm/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv",
-  "catalog": "/sessions/rcw-01cubj9exxyvrkk4tagmgbtm/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/test2_craters_h18.csv",
+  "depths": "/sessions/rcw-01cubj9exxyvrkk4tagmgbtm/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/test1_rows_inc.csv",
+  "catalog": "/sessions/rcw-01cubj9exxyvrkk4tagmgbtm/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/test2_craters_h18.csv",
   "graph_nodes": "/sessions/rcw-01cubj9exxyvrkk4tagmgbtm/mnt/hollows-emissivity/code/rerun/out_v3/rerun/g1_graph_joint/v3/crater_dag_nodes.csv",
   "graph_columns": {
    "id": "id",

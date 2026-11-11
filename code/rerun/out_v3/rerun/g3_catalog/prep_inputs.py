@@ -11,7 +11,7 @@ import os, json, numpy as np, pandas as pd
 HE = os.path.expanduser("~/mnt/hollows-emissivity"); OUT = os.path.dirname(os.path.abspath(__file__)) + "/inputs"
 V3 = f"{HE}/code/rerun/out_v3"
 canon = {"v2": f"{HE}/code/rerun/out_v2/hollows_canonical.csv", "v3": f"{V3}/hollows_canonical_v3.csv", "v3b": f"{V3}/hollows_canonical_v3b.csv"}
-hosts = {"v2": f"{HE}/manuscripts/GRL_insolation_hollows/data/host_assignments.csv", "v3": f"{V3}/host_assignments_v3.csv", "v3b": f"{V3}/host_assignments_v3b.csv"}
+hosts = {"v2": f"{HE}/manuscripts/insolation_thermal/data/host_assignments.csv", "v3": f"{V3}/host_assignments_v3.csv", "v3b": f"{V3}/host_assignments_v3b.csv"}
 v2 = pd.read_csv(canon["v2"]); hn = v2[~v2.is_crater_trace.astype(bool)].reset_index(drop=True)
 CV = pd.read_csv(f"{HE}/code/rerun/out_v2/completeness_pairs.csv")
 CV["hollow_id"] = hn.hollow_id.values[CV.h.values]

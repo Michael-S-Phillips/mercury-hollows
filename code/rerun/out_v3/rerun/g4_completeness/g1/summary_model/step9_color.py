@@ -55,7 +55,7 @@ if __name__ == "__main__":
     R["composition_share_gain"] = {"point": R["variants"]["lrm_pc"]["point"]["share"]["composition"] - R["variants"]["lrm_only"]["point"]["share"]["composition"],
                                    "ci": q([y["share"]["composition"] - x["share"]["composition"] for x, y in zip(a, b)])}
     # (2) depth
-    t = pd.read_csv(f"{U}/GRL_insolation_hollows/data/test1_rows_inc.csv"); h = pd.read_csv(f"{U}/PlanetaryResearch_hollows/analysis_workshop/color_mdr/hollow_color.csv")
+    t = pd.read_csv(f"{U}/insolation_thermal/data/test1_rows_inc.csv"); h = pd.read_csv(f"{U}/PlanetaryResearch_hollows/analysis_workshop/color_mdr/hollow_color.csv")
     t["row"] = np.arange(len(t)); t = t.merge(h[["row", "set_pc1", "set_pc2", "all_pc1"]], on="row", how="left").dropna(subset=["set_pc1", "set_pc2"])
     t["ltan"] = np.log(np.tan(np.radians(t.inc))); t["pole"] = (t.abslat >= 60).astype(int); g = pd.factorize(t.filename)[0]
     for k in ["set_pc1", "set_pc2"]: t[k + "_z"] = (t[k] - t[k].mean()) / t[k].std()

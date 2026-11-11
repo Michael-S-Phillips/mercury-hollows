@@ -5,8 +5,8 @@ _REPO = _os_repo.environ.get("MERCURY_HOLLOWS_ROOT") or _os_repo.path.abspath(_o
 Inputs: data/test1_rows_inc.csv (Blewett 2016 depths + incidence), Herrick 2018 craters. Writes depthctl/depth_structure_record.json."""
 import json, numpy as np, pandas as pd, statsmodels.formula.api as smf
 from scipy.spatial import cKDTree
-G = _REPO + "/manuscripts/GRL_insolation_hollows"
-d = pd.read_csv(_REPO + "/manuscripts/GRL_insolation_hollows/data/test1_rows_inc.csv")
+G = _REPO + "/manuscripts/insolation_thermal"
+d = pd.read_csv(_REPO + "/manuscripts/insolation_thermal/data/test1_rows_inc.csv")
 d["ltan"] = np.log10(np.tan(np.radians(d.inc))); d["lp"] = np.log10(d.px); d["ld"] = np.log10(d.depth)
 c = smf.ols("ld ~ lp + ltan", data=d).fit(); d["res"] = c.resid           # corrected log10 depth (anomaly)
 cr = pd.read_csv(f"{G}/data/test2_craters_h18.csv"); cr = cr[cr.diameter >= 5].reset_index(drop=True)
@@ -63,6 +63,6 @@ R["position_effects_vs_inner_floor"] = {k.split("[T.")[1].rstrip("]"): [float(10
                                          for k in fe.params.index if k.startswith("C(pos")}
 R["position_n"] = big.pos.value_counts().to_dict()
 # ---- does depth depend on host age class or setting? (Herrick preservation if present)
-json.dump(R, open(_REPO + "/manuscripts/GRL_insolation_hollows/depthctl/depth_structure_record.json", "w"), indent=1)
+json.dump(R, open(_REPO + "/manuscripts/insolation_thermal/depthctl/depth_structure_record.json", "w"), indent=1)
 print(json.dumps(R, indent=1))
-pc.to_csv(_REPO + "/manuscripts/GRL_insolation_hollows/depthctl/crater_median_depths.csv")
+pc.to_csv(_REPO + "/manuscripts/insolation_thermal/depthctl/crater_median_depths.csv")

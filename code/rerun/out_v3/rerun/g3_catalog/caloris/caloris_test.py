@@ -4,7 +4,7 @@ import statsmodels.formula.api as smf
 import os as _os
 G3 = _os.path.expanduser("~/mnt/hollows-emissivity/code/rerun/out_v3/rerun/g3_catalog")
 CAT = _os.environ.get("G3_CAT", "v3"); ODIR = f"{G3}/caloris/out_{CAT}"; _os.makedirs(ODIR, exist_ok=True)
-HOSTS = (_os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/GRL_insolation_hollows/data/host_assignments.csv") if CAT == "v2"
+HOSTS = (_os.path.expanduser("~/mnt/hollows-emissivity/manuscripts/insolation_thermal/data/host_assignments.csv") if CAT == "v2"
          else _os.path.expanduser(f"~/mnt/hollows-emissivity/code/rerun/out_v3/host_assignments_{CAT}.csv"))
 ch=pd.read_csv(_os.path.expanduser("~/mnt/hollows-emissivity/peak_wall_test/nested_children_classified.csv")); m=pd.read_csv(_os.path.expanduser("~/mnt/hollows-emissivity/peak_wall_test/morph_all_nested.csv"))
 ha=pd.read_csv(HOSTS)
