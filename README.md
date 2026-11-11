@@ -28,7 +28,7 @@ Scripts kept from version 0.1.0 instead find the repository root from their own 
 
 ## Layout
 
-Folders keep the layout in which the analyses ran, so scripts find one another's outputs by the same relative paths. `R/` below is `code/rerun/out_v3/rerun/`, `G/` is `manuscripts/GRL_insolation_hollows/`, and `P/` is `manuscripts/PlanetaryResearch_hollows/`.
+Folders keep the layout in which the analyses ran, so scripts find one another's outputs by the same relative paths. `R/` below is `code/rerun/out_v3/rerun/`, `G/` is `manuscripts/GRL_insolation_hollows/`, and `P/` is `manuscripts/PlanetaryResearch_hollows/`. `G/` and `P/` hold only the submitted manuscript and the scripts, inputs, and records that the reproduction check and the provenance tables use; drafts and superseded analyses are in v0.2.1.
 
 | Folder | Contents |
 |---|---|
@@ -49,7 +49,7 @@ Folders keep the layout in which the analyses ran, so scripts find one another's
 | `P/analysis_v3/`, `P/analysis_v7/`, `P/analysis_v8/`, `P/analysis_v9/` | Sulfur release and vapor pressure, transition layer, collapse depth, model-logic calculations, first graph versions |
 | `P/analysis_workshop/` | Volatile fits, sulfur redox, Kinczyk classes, vent checks, depth pilot, province basins, Caloris |
 | `P/figscripts/` | Life-cycle figure (Figure 7, `lifecycle_fig_v12.py`) and base temperature against φ (Figure 8) |
-| `P/submission/` | The submitted manuscript and supplement (`Hollow_Formation_Model_Paper_final.tex` = v6.16, `supplementary-materials_final.tex` = v28; earlier versions one level up) and their figures (`figures/`) |
+| `P/submission/` | The submitted manuscript and supplement (`Hollow_Formation_Model_Paper_final.tex` = v6.16, `supplementary-materials_final.tex` = v28) and their figures (`figures/`) |
 | `peak_wall_test/` | DEM morphometry of the cataloged craters (`morph_all.csv`) and the Caloris children |
 | `R/g27_text_numbers/` | Numbers that the text computes from stated inputs (S2, S8, S13, Section 3.6), recorded in `text_numbers.json` |
 | `R/g28_fig2a/` | Figure 2 with panel a on the MDIS mosaic (`layers.py` needs the external 166 m mosaic; `make_figs_pr_v10.py` draws the figure) |
@@ -105,6 +105,8 @@ The author measured and classified features by hand in browser pages; the export
 | ISIS 8 with MESSENGER kernels; Cantera (sulfur-redox checks) | georeferencing; `P/analysis_workshop/sulfur_redox/` | USGS Astrogeology; cantera.org |
 
 ## Versions
+
+**v0.3.0 (November 2026).** Removes from `manuscripts/` the manuscript drafts (v6.13 to v6.15, supplement v24 to v27), the GRL document builders, and the analyses and figures that neither the reproduction check nor the provenance tables use (195 files). The submitted manuscript and supplement, and every script, input, and record that `run_all.sh` or `provenance/` names, are unchanged. The removed files remain in v0.2.1.
 
 **v0.2.0 (November 2026).** Matches the submitted manuscript v6.16 and supplement v28, held as `manuscripts/PlanetaryResearch_hollows/submission/Hollow_Formation_Model_Paper_final.tex` and `supplementary-materials_final.tex` (the submission folder holds only the current version; v6.13, v6.14, v6.15, v24, v25, v26 and v27 are one level up). v6.15 redraws Figure 2a on the MDIS mosaic (`g28_fig2a`) and letters the panels of Figure 7 (`lifecycle_fig_v12.py`); v26 takes the S8 wall-area share from the traced classes, and v27 fixes the panel titles of Figure S1 (`analysis_v3/figS_positions_v4.py`). v6.16 and v28 rename the solar-day average "mean surface temperature" (Figure 5 v4, `g23_smallest_hollows/fig_depth_v4.py`) and add the pressure-driven flow of S2 to S13 (`g29_pressure_flow/pressure_flow.py`). The corrections came from the provenance cross-check: crater counts and the Caloris tests on the refit completeness grid (`g3_catalog/caloris/out_v3r`, Figure 2c), the S2 pair ranges and rounding, the S9 color fits on the screened mask (`g6_remaining/color/depth_color_fits.py`) with Figure S9 redrawn from it, and new records for numbers that had none (`g27_text_numbers`, `redox_check_record.json`, `nsp_mask2_record.json`); `depth_paper.py` now writes every key of its record. The provenance tables describe v6.15 and v27. Adds the screened catalog and every rerun on it (`code/rerun/out_v3/`), the refit detection model and completeness grid, the hand-traced terrain classes, the automatic and hand shadow depths and their uncertainty, MDIS color, the Kinczyk degradation classes, the joint model of hosting with the composition group, the regional excess, the knobs, the provenance tables, and the submitted figures. The automated relief-threshold terrain classes and the analyses that the paper no longer uses (slope tests, the version-6 figures and their data tables, superseded latitude records) are removed. `build_v3_catalog.py` is new: it rebuilds the screened catalog files, which were first made by commands run outside a script, and it reproduces them exactly.
 

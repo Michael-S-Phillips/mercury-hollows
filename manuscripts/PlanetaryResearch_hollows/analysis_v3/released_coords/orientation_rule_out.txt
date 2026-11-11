@@ -1,9 +1,0 @@
-(1) orientation predicted by comparing corner coordinates per axis matches the best-fitting orientation in 927 of 933 images
-    median error of the predicted reconstruction vs released (km), quantiles 50/90: [0.439 2.03 ] (corners from the camera model, not the label)
-(2) label corners interpolated within the tilted frame vs camera-model coordinates:
-    CN0223615469M: n=39, median distance to camera-model coordinates 0.06 km (released: 2.83 km)
-    CN0258458455M: n=7, median distance to camera-model coordinates 0.53 km (released: 2.46 km)
-    CN1002981281M: n=32, median distance to camera-model coordinates 0.39 km (released: 4.33 km)
-    CN1017701438M: n=65, median distance to camera-model coordinates 0.20 km (released: 9.48 km)
-    CN1017816487M: n=8, median distance to camera-model coordinates 0.19 km (released: 10.05 km)
-    CN1035674191M: n=29, median distance to camera-model coordinates 0.62 km (released: 22.70 km)
